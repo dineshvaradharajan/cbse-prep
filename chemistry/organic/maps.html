@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/concepts.css">
+<style>
+:root{
+  --subject-color:#16a34a;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#166534;
+}
+.visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:1.5rem}
+.visual-card{background:#fff;border:1px solid var(--sand-200);border-radius:12px;overflow:hidden}
+.visual-card.full-width{grid-column:1/-1}
+.visual-header{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.1rem;border-bottom:1px solid var(--sand-100)}
+.visual-title{font-family:'Newsreader',serif;font-size:.95rem;font-weight:600;color:var(--ink)}
+.visual-tag{font-size:.62rem;font-weight:700;background:var(--subject-bg);color:var(--subject-color);border:1px solid var(--subject-border);border-radius:999px;padding:.15rem .55rem}
+.visual-body{padding:1rem 1.1rem}
+.visual-note{font-size:.72rem;color:var(--ink-3);margin-top:.6rem;line-height:1.6}
+.roadmap-wrap{padding:.5rem 0 1rem}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.5rem}
+.hub-center{background:var(--subject-bg);border:2px solid var(--subject-border);border-radius:10px;padding:.6rem 1rem;font-family:'Newsreader',serif;font-weight:700;font-size:.95rem;color:var(--subject-color);text-align:center}
+.rnode{background:var(--sand-50);border:1px solid var(--sand-200);border-radius:8px;padding:.5rem .8rem;font-size:.77rem;color:var(--ink-2);display:flex;align-items:center;gap:.4rem}
+.arrow-lbl{font-size:.65rem;color:var(--ink-3);flex-shrink:0}
+.react-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem;margin-bottom:1rem}
+.react-card{background:#fff;border:1px solid var(--sand-200);border-radius:10px;overflow:hidden}
+.rc-top{display:flex;align-items:center;gap:.6rem;padding:.65rem .9rem;background:var(--sand-50);border-bottom:1px solid var(--sand-100)}
+.rc-icon{font-size:1.1rem;flex-shrink:0}
+.rc-title{font-size:.8rem;font-weight:700;color:var(--ink)}
+.rc-reagent{font-size:.68rem;color:var(--ink-3)}
+.rc-body{padding:.65rem .9rem;font-family:monospace;font-size:.78rem;color:#166534;background:#f0fdf4;line-height:1.8}
+.mech-card{background:#fff;border:1px solid var(--sand-200);border-radius:12px;overflow:hidden;margin-bottom:1rem}
+.mech-header{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.1rem;background:var(--sand-50);border-bottom:1px solid var(--sand-100)}
+.mech-title{font-family:'Newsreader',serif;font-size:.9rem;font-weight:600;color:var(--ink)}
+.mech-tag{font-size:.62rem;font-weight:700;border-radius:999px;padding:.15rem .5rem;color:#fff}
+.mech-body{padding:1rem 1.1rem}
+.steps{display:flex;flex-direction:column;gap:.65rem}
+.step{display:flex;gap:.75rem;align-items:flex-start}
+.step-num{width:22px;height:22px;border-radius:50%;background:var(--subject-color);color:#fff;font-size:.65rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.step-body{font-size:.77rem;color:var(--ink-2);line-height:1.7}
+.fg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;margin-bottom:1rem}
+.fg-card{background:#fff;border:1px solid var(--sand-200);border-radius:10px;overflow:hidden}
+.fg-head{display:flex;align-items:center;justify-content:space-between;padding:.6rem .85rem;border-bottom:1px solid var(--sand-100)}
+.fg-head-name{font-weight:700;font-size:.8rem;color:var(--ink)}
+.fg-head-tag{font-size:.6rem;font-weight:700;background:var(--sand-100);border-radius:4px;padding:.1rem .35rem;color:var(--ink-3)}
+.fg-formula{font-family:monospace;font-size:.85rem;background:#f0fdf4;color:#166534;border-bottom:1px solid #86efac;padding:.5rem .85rem;display:block}
+.fg-note{font-size:.72rem;color:var(--ink-2);padding:.5rem .85rem;line-height:1.6}
+.fg-section-label{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:1rem 0 .5rem}
+.eq{font-family:monospace;font-size:.82em;background:var(--sand-100);border-radius:4px;padding:.1rem .4rem;display:inline-block;color:var(--ink-2)}
+.eq.good{background:#f0fdf4;color:#166534}
+.hc-eq{font-family:monospace;font-size:.8rem;color:#166534;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:.35rem .7rem;display:block;margin:.3rem 0;line-height:1.6}
+.hc-sub{font-size:.68rem;color:var(--ink-3);margin-top:.25rem}
+.bio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem;margin-bottom:1rem}
+.bio-card{background:#fff;border:1px solid var(--sand-200);border-radius:10px;overflow:hidden}
+.bio-head{padding:.6rem .9rem;font-weight:700;font-size:.82rem;background:var(--sand-50);border-bottom:1px solid var(--sand-100)}
+.bio-body{padding:.5rem .9rem}
+.bio-row{display:flex;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--sand-100);font-size:.74rem}
+.bio-row:last-child{border-bottom:none}
+.bio-key{font-weight:700;color:var(--ink-3);min-width:80px;flex-shrink:0}
+.bio-val{color:var(--ink-2);line-height:1.5}
+.bio-tip{background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:.4rem .7rem;font-size:.72rem;color:#78350f;margin-top:.4rem}
+.amine-wrap{overflow-x:auto;margin-bottom:1rem}
+.basicity-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--sand-200)}
+.basicity-table th{background:var(--subject-color);color:#fff;padding:.55rem .85rem;text-align:left;font-size:.7rem;font-weight:700}
+.basicity-table td{padding:.55rem .85rem;border-bottom:1px solid var(--sand-100);font-size:.74rem;color:var(--ink-2)}
+.basicity-table tr:last-child td{border-bottom:none}
+.pka{font-family:monospace;font-weight:700;color:#0891b2}
+.section-sub{font-size:.78rem;color:var(--ink-3);margin-bottom:1rem;line-height:1.5}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.vs-col{background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:.85rem 1rem}
+.legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
+.leg{display:flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--ink-3)}
+.leg-dot{width:10px;height:10px;border-radius:50%}
+.tip{font-size:.74rem;color:#78350f;background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:.4rem .7rem;margin-top:.4rem}
+.diag-box{background:var(--sand-50);border:1px solid var(--sand-200);border-radius:8px;padding:1rem;text-align:center;font-family:monospace;font-size:.82rem;color:var(--ink-2);line-height:2;margin:.5rem 0}
+@media(max-width:500px){.vs-grid{grid-template-columns:1fr}}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Chemistry Concept Maps — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Organic Chemistry &middot; CBSE XII &middot; Visual Learning</div>
+  <h1>Organic Chemistry<br>Concept Maps</h1>
+  <p class="sub">Visual reaction pathways, mechanism step-cards, and memory shortcuts — built for students who find organic chemistry overwhelming.</p>
+</div>
+
+<!-- NAV -->
+<nav class="section-nav">
+  <div class="section-nav-inner">
+    <button class="tab active" onclick="showTab('roadmap',this)">🗺 Reaction Roadmap</button>
+    <button class="tab" onclick="showTab('funcgroups',this)">🔬 Functional Groups</button>
+    <button class="tab" onclick="showTab('carbonyl',this)">⚗️ Carbonyl Hub</button>
+    <button class="tab" onclick="showTab('amines',this)">💊 Amine Web</button>
+    <button class="tab" onclick="showTab('mechanisms',this)">🔬 Mechanisms</button>
+    <button class="tab" onclick="showTab('biomol',this)">🌿 Biomolecules</button>
+    <button class="tab" onclick="showTab('visuals',this)">📐 Key Diagrams</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB: FUNCTIONAL GROUPS
+═══════════════════════════════════════════════════ -->
+<div class="tab-section" id="funcgroups">
+
+  <h2 class="section-title">🔬 Functional Groups — CBSE XII Quick Reference</h2>
+  <p class="section-sub">The 11 functional groups you must recognise instantly. Each group has its own characteristic reactions — master these structures first.</p>
+
+  <!-- Aromatic Foundation -->
+  <p class="fg-section-label">🌀 Aromatic Foundation</p>
+  <div class="fg-grid" style="grid-template-columns:1fr">
+    <div class="fg-card" style="max-width:420px;margin:0 auto;width:100%">
+      <div class="fg-head">
+        <span class="fg-head-name">Benzene Ring</span>
+        <span class="fg-head-tag">Foundation</span>
+      </div>
+      <div class="fg-body">
+        <svg viewBox="0 0 290 115" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <polygon points="75,35 99,49 99,77 75,91 51,77 51,49" fill="#fffbeb" stroke="#1c1917" stroke-width="2"/>
+          <line x1="79" y1="39" x2="95" y2="49" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="95" y1="76" x2="79" y2="87" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="55" y1="49" x2="55" y2="77" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="75" y="108" text-anchor="middle" font-size="9" fill="#78716c">Kekulé</text>
+          <line x1="145" y1="20" x2="145" y2="105" stroke="#d8d1c4" stroke-width="1" stroke-dasharray="4,3"/>
+          <polygon points="215,35 239,49 239,77 215,91 191,77 191,49" fill="#f0fdf4" stroke="#1c1917" stroke-width="2"/>
+          <circle cx="215" cy="63" r="16" fill="none" stroke="#1c1917" stroke-width="1.5"/>
+          <text x="215" y="108" text-anchor="middle" font-size="9" fill="#78716c">Delocalized</text>
+        </svg>
+        <div class="fg-formula">C₆H₆</div>
+        <div class="fg-note">Foundation of aromatic chemistry. All positions equivalent. EAS reactions preferred (not EAd).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ch 10 -->
+  <p class="fg-section-label">Ch 10 — Haloalkanes &amp; Haloarenes</p>
+  <div class="fg-grid">
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Alkyl Halide</span><span class="fg-head-tag">Ch 10</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="20" y="47" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="32" y1="42" x2="70" y2="42" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="84" cy="42" r="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="84" y="47" text-anchor="middle" font-size="15" font-weight="700" fill="#b45309">X</text>
+          <text x="84" y="66" text-anchor="middle" font-size="9" fill="#92400e">F, Cl, Br, I</text>
+        </svg>
+        <div class="fg-formula">R–X</div>
+        <div class="fg-note">X = F, Cl, Br, or I. Named haloalkane (aliphatic) or haloarene (aromatic).</div>
+      </div>
+    </div>
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Aryl Halide</span><span class="fg-head-tag">Ch 10</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 160 115" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <polygon points="80,38 106,53 106,83 80,98 54,83 54,53" fill="none" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="84" y1="42" x2="102" y2="53" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="102" y1="82" x2="84" y2="93" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="58" y1="53" x2="58" y2="83" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="80" y1="38" x2="80" y2="21" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="80" cy="12" r="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="80" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">X</text>
+        </svg>
+        <div class="fg-formula">Ar–X</div>
+        <div class="fg-note">Haloarenes are less reactive to nucleophilic substitution due to C–X bond resonance with ring.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ch 11 -->
+  <p class="fg-section-label">Ch 11 — Alcohols, Phenols &amp; Ethers</p>
+  <div class="fg-grid">
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Alcohol</span><span class="fg-head-tag">Ch 11</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 160 85" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="18" y="45" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="30" y1="40" x2="60" y2="40" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="72" cy="40" r="12" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+          <text x="72" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">O</text>
+          <circle cx="60" cy="30" r="2" fill="#059669"/>
+          <circle cx="66" cy="28" r="2" fill="#059669"/>
+          <circle cx="78" cy="28" r="2" fill="#059669"/>
+          <circle cx="84" cy="30" r="2" fill="#059669"/>
+          <line x1="81" y1="46" x2="105" y2="62" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="113" y="67" font-size="13" font-weight="700" fill="#1c1917">H</text>
+        </svg>
+        <div class="fg-formula">R–OH</div>
+        <div class="fg-note">–OH (hydroxyl) group. Primary, secondary, tertiary based on C bearing the OH.</div>
+      </div>
+    </div>
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Phenol</span><span class="fg-head-tag">Ch 11</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <polygon points="80,48 104,62 104,90 80,104 56,90 56,62" fill="none" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="84" y1="52" x2="100" y2="62" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="100" y1="89" x2="84" y2="99" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="60" y1="62" x2="60" y2="90" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="80" y1="48" x2="80" y2="34" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="80" cy="25" r="11" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+          <text x="80" y="29" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">O</text>
+          <line x1="88" y1="18" x2="104" y2="9" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="111" y="7" font-size="12" font-weight="700" fill="#1c1917">H</text>
+        </svg>
+        <div class="fg-formula">Ar–OH</div>
+        <div class="fg-note">More acidic than alcohol (phenoxide ion stabilised by resonance with ring).</div>
+      </div>
+    </div>
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Ether</span><span class="fg-head-tag">Ch 11</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 190 75" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="15" y="42" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="27" y1="37" x2="55" y2="37" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="67" cy="37" r="12" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+          <text x="67" y="41" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">O</text>
+          <line x1="79" y1="37" x2="115" y2="37" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="124" y="42" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R'</text>
+        </svg>
+        <div class="fg-formula">R–O–R'</div>
+        <div class="fg-note">Ethers are relatively inert — good solvents. Cleavage occurs only with conc. HI or HBr.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ch 12 -->
+  <p class="fg-section-label">Ch 12 — Aldehydes, Ketones &amp; Carboxylic Acids</p>
+  <div class="fg-grid">
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Aldehyde</span><span class="fg-head-tag">Ch 12</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 170 115" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="22" y="72" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="34" y1="67" x2="82" y2="67" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="95" cy="67" r="13" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="95" y="71" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">C</text>
+          <line x1="91" y1="54" x2="91" y2="26" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="99" y1="54" x2="99" y2="26" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="95" cy="17" r="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="95" y="21" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">O</text>
+          <line x1="105" y1="74" x2="128" y2="94" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="135" y="99" font-size="13" font-weight="700" fill="#1c1917">H</text>
+        </svg>
+        <div class="fg-formula">R–CHO</div>
+        <div class="fg-note">Carbonyl carbon (C=O) at end of chain. Always has H on carbonyl C.</div>
+      </div>
+    </div>
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Ketone</span><span class="fg-head-tag">Ch 12</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 185 110" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="18" y="68" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="30" y1="63" x2="80" y2="63" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="93" cy="63" r="13" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="93" y="67" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">C</text>
+          <line x1="106" y1="63" x2="150" y2="63" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="160" y="68" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R'</text>
+          <line x1="89" y1="50" x2="89" y2="22" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="97" y1="50" x2="97" y2="22" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="93" cy="13" r="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="93" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">O</text>
+        </svg>
+        <div class="fg-formula">R–CO–R'</div>
+        <div class="fg-note">Carbonyl C flanked by two carbons. Cannot be oxidised further without breaking C–C bonds.</div>
+      </div>
+    </div>
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Carboxylic Acid</span><span class="fg-head-tag">Ch 12</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 210 110" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="15" y="66" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="27" y1="61" x2="75" y2="61" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="88" cy="61" r="13" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="88" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">C</text>
+          <line x1="84" y1="48" x2="84" y2="20" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="92" y1="48" x2="92" y2="20" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="88" cy="11" r="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="88" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">O</text>
+          <line x1="101" y1="61" x2="132" y2="61" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="143" cy="61" r="11" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+          <text x="143" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">O</text>
+          <line x1="154" y1="61" x2="175" y2="61" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="183" y="65" font-size="13" font-weight="700" fill="#1c1917">H</text>
+        </svg>
+        <div class="fg-formula">R–COOH</div>
+        <div class="fg-note">Most acidic common organic group. Carboxylate anion (RCOO⁻) is resonance-stabilised.</div>
+      </div>
+    </div>
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Ester</span><span class="fg-head-tag">Ch 12</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="12" y="65" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="24" y1="60" x2="67" y2="60" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="80" cy="60" r="13" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="80" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">C</text>
+          <line x1="76" y1="47" x2="76" y2="19" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="84" y1="47" x2="84" y2="19" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="80" cy="10" r="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="80" y="14" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">O</text>
+          <line x1="93" y1="60" x2="124" y2="60" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="135" cy="60" r="11" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+          <text x="135" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">O</text>
+          <line x1="146" y1="60" x2="175" y2="60" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="185" y="65" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R'</text>
+        </svg>
+        <div class="fg-formula">R–COO–R'</div>
+        <div class="fg-note">Formed from carboxylic acid + alcohol. Pleasant fruity smell. Hydrolysis gives back acid + alcohol.</div>
+      </div>
+    </div>
+    <div class="fg-card">
+      <div class="fg-head"><span class="fg-head-name">Amide</span><span class="fg-head-tag">Ch 12</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 210 115" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="12" y="70" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="24" y1="65" x2="67" y2="65" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="80" cy="65" r="13" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="80" y="69" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">C</text>
+          <line x1="76" y1="52" x2="76" y2="24" stroke="#1c1917" stroke-width="1.8"/>
+          <line x1="84" y1="52" x2="84" y2="24" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="80" cy="15" r="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="80" y="19" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">O</text>
+          <line x1="93" y1="65" x2="124" y2="65" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="136" cy="65" r="12" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="136" y="69" text-anchor="middle" font-size="13" font-weight="700" fill="#5b21b6">N</text>
+          <line x1="144" y1="57" x2="164" y2="39" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="170" y="34" font-size="13" font-weight="700" fill="#1c1917">H</text>
+          <line x1="148" y1="65" x2="170" y2="65" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="178" y="69" font-size="13" font-weight="700" fill="#1c1917">H</text>
+        </svg>
+        <div class="fg-formula">R–CONH₂</div>
+        <div class="fg-note">Weakest acid among carbonyl derivatives. C–N bond has partial double-bond character (resonance).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ch 13 -->
+  <p class="fg-section-label">Ch 13 — Amines</p>
+  <div class="fg-grid" style="grid-template-columns:1fr">
+    <div class="fg-card" style="max-width:280px;margin:0 auto;width:100%">
+      <div class="fg-head"><span class="fg-head-name">Amine (Primary)</span><span class="fg-head-tag">Ch 13</span></div>
+      <div class="fg-body">
+        <svg viewBox="0 0 170 110" xmlns="http://www.w3.org/2000/svg" font-family="Lato,sans-serif">
+          <text x="18" y="60" font-size="12" font-weight="700" fill="#5c5347" font-style="italic">R</text>
+          <line x1="30" y1="55" x2="67" y2="55" stroke="#1c1917" stroke-width="1.8"/>
+          <circle cx="80" cy="55" r="13" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="80" y="59" text-anchor="middle" font-size="13" font-weight="700" fill="#5b21b6">N</text>
+          <circle cx="73" cy="40" r="2" fill="#7c3aed"/>
+          <circle cx="79" cy="37" r="2" fill="#7c3aed"/>
+          <line x1="88" y1="47" x2="112" y2="28" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="119" y="23" font-size="13" font-weight="700" fill="#1c1917">H</text>
+          <line x1="88" y1="63" x2="112" y2="82" stroke="#1c1917" stroke-width="1.8"/>
+          <text x="119" y="88" font-size="13" font-weight="700" fill="#1c1917">H</text>
+        </svg>
+        <div class="fg-formula">R–NH₂</div>
+        <div class="fg-note">Basic character due to lone pair on N. 1° &gt; 2° &gt; 3° basicity in gas phase, reversed in water.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end #funcgroups -->
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 1: REACTION ROADMAP
+═══════════════════════════════════════════════════ -->
+<div class="tab-section active" id="roadmap">
+  <h2 class="section-title">🗺 Functional Group Reaction Roadmap</h2>
+  <p class="section-sub">Every arrow = one reaction step. <strong>Read left-to-right = oxidation. Right-to-left = reduction.</strong> Hover over a box to highlight it. Learn the chain, not isolated reactions.</p>
+
+  <div class="roadmap-wrap">
+  <svg viewBox="0 0 940 580" style="width:100%;height:auto">
+    <defs>
+      <!-- Arrow markers -->
+      <marker id="arr-ox" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#ea580c"/></marker>
+      <marker id="arr-red" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#2563eb"/></marker>
+      <marker id="arr-sub" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#7c3aed"/></marker>
+      <marker id="arr-add" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#16a34a"/></marker>
+      <marker id="arr-elim" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#be185d"/></marker>
+      <marker id="arr-gray" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#78716c"/></marker>
+    </defs>
+
+    <!-- ─── ROW 1: Main oxidation chain ─── -->
+    <!-- Alkane -->
+    <g class="rnode">
+      <rect x="20" y="40" width="120" height="56" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+      <text x="80" y="63" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">Alkane</text>
+      <text x="80" y="78" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">C−H only</text>
+    </g>
+
+    <!-- Arrow: Alkane → Haloalkane (halogenation) -->
+    <line x1="140" y1="68" x2="188" y2="68" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr-sub)"/>
+    <rect x="145" y="52" width="38" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="164" y="62" text-anchor="middle" class="arrow-lbl" fill="#7c3aed" font-size="9">X₂, hν</text>
+    <!-- Arrow back: Haloalkane → Alkane (reduction) -->
+    <line x1="192" y1="78" x2="144" y2="78" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-red)"/>
+    <text x="164" y="92" text-anchor="middle" class="arrow-lbl" fill="#2563eb" font-size="8.5">Zn/HCl</text>
+
+    <!-- Haloalkane -->
+    <g class="rnode">
+      <rect x="190" y="40" width="130" height="56" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+      <text x="255" y="63" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6">Alkyl Halide</text>
+      <text x="255" y="78" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−X</text>
+    </g>
+
+    <!-- Arrow: Haloalkane → Alcohol (hydrolysis) -->
+    <line x1="320" y1="68" x2="368" y2="68" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-add)"/>
+    <rect x="326" y="52" width="36" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="344" y="62" text-anchor="middle" class="arrow-lbl" fill="#16a34a" font-size="9">aq. KOH</text>
+    <!-- Arrow back: Alcohol → Haloalkane -->
+    <line x1="372" y1="78" x2="324" y2="78" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-sub)"/>
+    <text x="344" y="92" text-anchor="middle" class="arrow-lbl" fill="#7c3aed" font-size="8.5">PCl₅/SOCl₂</text>
+
+    <!-- Alcohol -->
+    <g class="rnode">
+      <rect x="370" y="40" width="120" height="56" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+      <text x="430" y="63" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Alcohol</text>
+      <text x="430" y="78" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−OH</text>
+    </g>
+
+    <!-- Arrow: Alcohol → Aldehyde (oxidation) -->
+    <line x1="490" y1="68" x2="538" y2="68" stroke="#ea580c" stroke-width="2" marker-end="url(#arr-ox)"/>
+    <rect x="496" y="52" width="36" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="514" y="62" text-anchor="middle" class="arrow-lbl" fill="#ea580c" font-size="9">PCC/CrO₃</text>
+    <!-- Arrow back: Aldehyde → Alcohol (reduction) -->
+    <line x1="542" y1="78" x2="494" y2="78" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-red)"/>
+    <text x="514" y="92" text-anchor="middle" class="arrow-lbl" fill="#2563eb" font-size="8.5">NaBH₄</text>
+
+    <!-- Aldehyde -->
+    <g class="rnode">
+      <rect x="540" y="40" width="120" height="56" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+      <text x="600" y="63" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">Aldehyde</text>
+      <text x="600" y="78" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−CHO</text>
+    </g>
+
+    <!-- Arrow: Aldehyde → COOH (oxidation) -->
+    <line x1="660" y1="68" x2="708" y2="68" stroke="#ea580c" stroke-width="2" marker-end="url(#arr-ox)"/>
+    <rect x="664" y="52" width="40" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="684" y="62" text-anchor="middle" class="arrow-lbl" fill="#ea580c" font-size="9">K₂Cr₂O₇</text>
+    <!-- Arrow back: COOH → Alcohol (LiAlH₄ reduces all the way) -->
+    <line x1="712" y1="78" x2="664" y2="78" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-red)"/>
+    <text x="684" y="92" text-anchor="middle" class="arrow-lbl" fill="#2563eb" font-size="8.5">LiAlH₄</text>
+
+    <!-- Carboxylic Acid -->
+    <g class="rnode">
+      <rect x="710" y="40" width="140" height="56" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+      <text x="780" y="58" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b">Carboxylic Acid</text>
+      <text x="780" y="73" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−COOH</text>
+      <text x="780" y="87" text-anchor="middle" font-size="8" fill="#dc2626">9 marks chapter!</text>
+    </g>
+
+    <!-- ─── ROW 2: Branch off Haloalkane ─── -->
+    <!-- Down arrow from Haloalkane: SN2 with KCN -->
+    <line x1="255" y1="96" x2="255" y2="158" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr-sub)"/>
+    <rect x="218" y="116" width="36" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="236" y="126" text-anchor="middle" class="arrow-lbl" fill="#7c3aed" font-size="9">alc. KOH</text>
+
+    <!-- Alkene (from elimination of HX) -->
+    <g class="rnode">
+      <rect x="190" y="160" width="130" height="50" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+      <text x="255" y="181" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">Alkene</text>
+      <text x="255" y="197" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−CH=CH₂</text>
+    </g>
+
+    <!-- Arrow: Alkene → Alcohol (hydration, Markovnikov) -->
+    <line x1="320" y1="185" x2="380" y2="120" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-add)"/>
+    <text x="368" y="160" text-anchor="middle" class="arrow-lbl" fill="#16a34a" font-size="8.5">H₂O/H⁺</text>
+
+    <!-- Down arrow from Haloalkane: NH₃ (Gabriel / reduction of nitrile) -->
+    <line x1="285" y1="96" x2="390" y2="158" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-sub)"/>
+    <text x="360" y="132" text-anchor="middle" class="arrow-lbl" fill="#9333ea" font-size="9">NH₃</text>
+
+    <!-- ─── ROW 2: Branch off Alcohol ─── -->
+    <!-- Down arrow from Alcohol: dehydration to Alkene -->
+    <line x1="430" y1="96" x2="325" y2="158" stroke="#be185d" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-elim)"/>
+    <text x="360" y="142" text-anchor="middle" class="arrow-lbl" fill="#be185d" font-size="8.5">conc. H₂SO₄</text>
+
+    <!-- Down arrow from Alcohol: oxidation to Ketone (2°) -->
+    <line x1="450" y1="96" x2="480" y2="158" stroke="#ea580c" stroke-width="2" marker-end="url(#arr-ox)"/>
+    <rect x="452" y="116" width="42" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="473" y="126" text-anchor="middle" class="arrow-lbl" fill="#ea580c" font-size="9">K₂Cr₂O₇</text>
+    <text x="473" y="137" text-anchor="middle" class="arrow-lbl" fill="#ea580c" font-size="8">(2° alcohol)</text>
+
+    <!-- Ketone -->
+    <g class="rnode">
+      <rect x="440" y="160" width="120" height="50" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+      <text x="500" y="181" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">Ketone</text>
+      <text x="500" y="197" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−CO−R'</text>
+    </g>
+
+    <!-- Arrow: Ketone → 2° Alcohol (reduction) -->
+    <line x1="480" y1="160" x2="455" y2="96" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-red)"/>
+
+    <!-- ─── ROW 2: Branch off Aldehyde ─── -->
+    <!-- Down arrow from Aldehyde: HCN addition -->
+    <line x1="600" y1="96" x2="600" y2="158" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-add)"/>
+    <rect x="610" y="115" width="30" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="625" y="125" text-anchor="middle" class="arrow-lbl" fill="#16a34a" font-size="9">HCN</text>
+
+    <!-- Cyanohydrin -->
+    <g class="rnode">
+      <rect x="540" y="160" width="130" height="50" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+      <text x="605" y="181" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Cyanohydrin</text>
+      <text x="605" y="197" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−CH(OH)−CN</text>
+    </g>
+
+    <!-- ─── ROW 2: Branches off COOH ─── -->
+    <!-- COOH → Ester -->
+    <line x1="780" y1="96" x2="780" y2="158" stroke="#0891b2" stroke-width="2" marker-end="url(#arr-sub)"/>
+    <rect x="784" y="115" width="46" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="807" y="125" text-anchor="middle" class="arrow-lbl" fill="#0891b2" font-size="9">R'OH/H⁺</text>
+
+    <!-- Ester -->
+    <g class="rnode">
+      <rect x="710" y="160" width="140" height="50" fill="#e0f2fe" stroke="#0891b2" stroke-width="2"/>
+      <text x="780" y="181" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">Ester</text>
+      <text x="780" y="197" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−COOR'</text>
+    </g>
+
+    <!-- ─── ROW 3: Amines ─── -->
+    <!-- Arrow from Haloalkane down to Amine (via NH₃, 3 steps) -->
+    <line x1="400" y1="160" x2="400" y2="248" stroke="#9333ea" stroke-width="2" marker-end="url(#arr-sub)"/>
+
+    <!-- Arrow: COOH → Amide → Amine (Hoffmann, via 2 steps) -->
+    <line x1="750" y1="96" x2="670" y2="248" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-sub)"/>
+    <text x="720" y="190" text-anchor="middle" class="arrow-lbl" fill="#9333ea" font-size="8.5">→ amide</text>
+    <text x="720" y="201" text-anchor="middle" class="arrow-lbl" fill="#9333ea" font-size="8.5">→ Hoffmann</text>
+
+    <!-- Amine -->
+    <g class="rnode">
+      <rect x="340" y="250" width="340" height="56" fill="#fdf4ff" stroke="#9333ea" stroke-width="2.5"/>
+      <text x="510" y="275" text-anchor="middle" font-size="12" font-weight="700" fill="#6d28d9">Amine (1°)</text>
+      <text x="510" y="295" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−NH₂ (aliphatic) or Ar−NH₂ (aromatic)</text>
+    </g>
+
+    <!-- Arrow: Amine → Diazonium (aromatic only) -->
+    <line x1="680" y1="278" x2="760" y2="278" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-sub)"/>
+    <rect x="682" y="263" width="74" height="14" fill="rgba(253,252,250,.9)"/>
+    <text x="719" y="273" text-anchor="middle" class="arrow-lbl" fill="#dc2626" font-size="9">NaNO₂/HCl, 0–5°C</text>
+    <text x="719" y="298" text-anchor="middle" class="arrow-lbl" fill="#78716c" font-size="8">(aromatic only)</text>
+
+    <!-- Diazonium -->
+    <g class="rnode">
+      <rect x="760" y="250" width="155" height="56" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+      <text x="837" y="273" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b">Diazonium Salt</text>
+      <text x="837" y="289" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">Ar−N₂⁺ Cl⁻</text>
+    </g>
+
+    <!-- Row 4: Diazonium products -->
+    <line x1="800" y1="306" x2="760" y2="370" stroke="#78716c" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+    <text x="762" y="348" text-anchor="middle" class="arrow-lbl" fill="#78716c" font-size="8.5">Sandmeyer</text>
+    <text x="762" y="359" text-anchor="middle" class="arrow-lbl" fill="#78716c" font-size="8">(CuCl/CuBr)</text>
+
+    <line x1="837" y1="306" x2="837" y2="370" stroke="#78716c" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+    <text x="854" y="342" text-anchor="middle" class="arrow-lbl" fill="#78716c" font-size="8.5">HBF₄</text>
+
+    <line x1="875" y1="306" x2="910" y2="370" stroke="#be185d" stroke-width="1.5" marker-end="url(#arr-elim)"/>
+    <text x="910" y="345" text-anchor="middle" class="arrow-lbl" fill="#be185d" font-size="8.5">β-naphthol</text>
+    <text x="910" y="356" text-anchor="middle" class="arrow-lbl" fill="#be185d" font-size="8">(coupling)</text>
+
+    <!-- Diazonium product boxes -->
+    <g class="rnode"><rect x="710" y="372" width="90" height="46" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+      <text x="755" y="393" text-anchor="middle" font-size="10" font-weight="700" fill="#6d28d9">Ar−Cl / Ar−Br</text>
+      <text x="755" y="408" text-anchor="middle" font-size="8.5" fill="#78716c">aryl halide</text></g>
+
+    <g class="rnode"><rect x="808" y="372" width="58" height="46" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+      <text x="837" y="393" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">Ar−F</text>
+      <text x="837" y="408" text-anchor="middle" font-size="8.5" fill="#78716c">fluorobenzene</text></g>
+
+    <g class="rnode"><rect x="875" y="372" width="60" height="46" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+      <text x="905" y="393" text-anchor="middle" font-size="10" font-weight="700" fill="#9d174d">Azo Dye</text>
+      <text x="905" y="408" text-anchor="middle" font-size="8.5" fill="#78716c">Ar−N=N−Ar</text></g>
+
+    <!-- ─── Memory tip box ─── -->
+    <rect x="20" y="438" width="900" height="133" rx="10" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+    <text x="40" y="463" font-size="11" font-weight="800" fill="#92400e" font-family="'Lato',sans-serif">💡 Memory Shortcuts</text>
+    <text x="40" y="481" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">→  Oxidation state of carbon:  Alkane (−4) → Alcohol (−2) → Aldehyde (0) → COOH (+2)</text>
+    <text x="40" y="497" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">→  PCC / CrO₃ stops at aldehyde from 1° alcohol;  K₂Cr₂O₇ goes all the way to COOH</text>
+    <text x="40" y="513" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">→  NaBH₄ reduces only C=O (aldehyde/ketone);  LiAlH₄ reduces everything (even ester, amide)</text>
+    <text x="40" y="529" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">→  SN2 prefers 1° (less bulky);  SN1 prefers 3° (stable carbocation). Water → SN1, CN⁻ → SN2</text>
+    <text x="40" y="545" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">→  Diazonium coupling ONLY for aromatic amines (ArNH₂), NOT aliphatic (RNH₂)</text>
+  </svg>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 2: CARBONYL HUB
+═══════════════════════════════════════════════════ -->
+<div class="tab-section" id="carbonyl">
+  <h2 class="section-title">⚗️ Carbonyl Chemistry Hub</h2>
+  <p class="section-sub">The C=O group is the star of organic chemistry. Everything attacks the electrophilic carbon. Learn <em>who attacks</em> and <em>what you get</em>.</p>
+
+  <div class="hub-grid">
+    <div class="hub-center">
+      <h3>C=O (Carbonyl Group)</h3>
+      <div class="hc-sub">The carbon is electron-poor (δ+) → nucleophiles attack it</div>
+      <div class="hc-eq">Cδ+=Oδ−</div>
+      <div style="margin-top:.75rem;font-size:.72rem;color:var(--ink-3)">Aldehyde (R−CHO) is MORE reactive than Ketone (R−CO−R') because:<br>less steric hindrance + less electron donation to C=O</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:12px;padding:1.25rem">
+      <div style="font-size:.78rem;font-weight:800;color:var(--ink);margin-bottom:.75rem">🔑 Key Principle</div>
+      <div style="font-size:.76rem;color:var(--ink-2);line-height:1.8">
+        <strong>Nucleophilic Addition</strong> = nucleophile (Nu⁻) attacks the electrophilic C<br>
+        → π bond breaks → O becomes O⁻ → protonation → product<br><br>
+        <strong>Oxidation vs Reduction:</strong><br>
+        Aldehyde can be <em>oxidised</em> to COOH (Tollens, Fehling — positive for RCHO, NOT for R₂CO)<br>
+        Aldehyde &amp; Ketone can both be <em>reduced</em> to alcohol (NaBH₄)
+      </div>
+    </div>
+  </div>
+
+  <div class="react-grid">
+    <div class="react-card" style="border-left-color:#16a34a">
+      <div class="rc-top">
+        <div class="rc-icon">🔵</div>
+        <div>
+          <div class="rc-title">Addition of HCN → Cyanohydrin</div>
+          <div class="rc-reagent" style="color:#16a34a">Reagent: HCN (base catalyst)</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        <div class="eq">R−CHO + HCN → R−CH(OH)−CN</div>
+        <strong>Mechanism:</strong> CN⁻ (nucleophile) attacks C of C=O → tetrahedral intermediate (alkoxide) → protonation by HCN → cyanohydrin<br>
+        <div class="tip">💡 Cyanohydrin contains CN group → acid hydrolysis → α-hydroxy acid (one more carbon than the starting aldehyde)</div>
+      </div>
+    </div>
+
+    <div class="react-card" style="border-left-color:#7c3aed">
+      <div class="rc-top">
+        <div class="rc-icon">🟣</div>
+        <div>
+          <div class="rc-title">Grignard Reagent Addition</div>
+          <div class="rc-reagent" style="color:#7c3aed">Reagent: R'MgX (dry ether)</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        HCHO → 1° alcohol | RCHO → 2° alcohol | R₂CO → 3° alcohol<br>
+        <div class="eq">RCHO + R'MgX → R−CH(OH)−R' (after H₃O⁺)</div>
+        <div class="tip">💡 Grignard is a carbanion (R⁻ equivalent) — very strong nucleophile. Always write Mg in the formula. Product has one more carbon than starting carbonyl.</div>
+      </div>
+    </div>
+
+    <div class="react-card" style="border-left-color:#ea580c">
+      <div class="rc-top">
+        <div class="rc-icon">🟠</div>
+        <div>
+          <div class="rc-title">Aldol Condensation</div>
+          <div class="rc-reagent" style="color:#ea580c">Reagent: dilute NaOH (must have α-H)</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        Step 1: OH⁻ removes α-H → enolate<br>
+        Step 2: Enolate attacks C=O of another molecule<br>
+        Step 3: β-hydroxy aldehyde (aldol product)<br>
+        Step 4: Heat → dehydration → α,β-unsaturated carbonyl<br>
+        <div class="eq">2 CH₃CHO → CH₃CH(OH)CH₂CHO → CH₃CH=CHCHO</div>
+        <div class="tip">💡 Memory trick: "Aldol = Alcohol + Aldehyde" — product has both groups initially</div>
+      </div>
+    </div>
+
+    <div class="react-card" style="border-left-color:#dc2626">
+      <div class="rc-top">
+        <div class="rc-icon">🔴</div>
+        <div>
+          <div class="rc-title">Cannizzaro Reaction</div>
+          <div class="rc-reagent" style="color:#dc2626">Reagent: conc. NaOH (no α-H!)</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        For aldehydes WITHOUT α-H (HCHO, PhCHO, CCl₃CHO)<br>
+        One molecule is <strong>oxidised</strong> → RCOO⁻ (acid)<br>
+        Other is <strong>reduced</strong> → RCH₂OH (alcohol)<br>
+        <div class="eq">2 HCHO + NaOH → CH₃OH + HCOONa</div>
+        <div class="tip">💡 Cannizzaro = disproportionation. Key word: "no α-H". Formaldehyde and benzaldehyde are classic examples.</div>
+      </div>
+    </div>
+
+    <div class="react-card" style="border-left-color:#0891b2">
+      <div class="rc-top">
+        <div class="rc-icon">🔷</div>
+        <div>
+          <div class="rc-title">Reduction — Clemmensen vs Wolff-Kishner</div>
+          <div class="rc-reagent" style="color:#0891b2">C=O → CH₂ (complete removal)</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        <strong>Clemmensen:</strong> Zn(Hg)/conc. HCl (acidic, acid-stable compound)<br>
+        <strong>Wolff-Kishner:</strong> NH₂NH₂ then KOH/Δ (basic condition)<br>
+        <div class="eq">R−CO−R' → R−CH₂−R'</div>
+        <div class="tip">💡 Use Clemmensen if product is acid-stable; use Wolff-Kishner if product is base-stable. Both remove the oxygen completely.</div>
+      </div>
+    </div>
+
+    <div class="react-card" style="border-left-color:#15803d">
+      <div class="rc-top">
+        <div class="rc-icon">🟢</div>
+        <div>
+          <div class="rc-title">Reactions of Carboxylic Acid</div>
+          <div class="rc-reagent" style="color:#15803d">RCOOH → many derivatives</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        RCOOH + R'OH → Ester (H⁺ catalyst, Fischer esterification)<br>
+        RCOOH + SOCl₂ → RCOCl (acid chloride — most reactive derivative)<br>
+        RCOOH + NH₃ → RCONH₂ (amide — then Hoffmann → amine)<br>
+        RCOOH + LiAlH₄ → RCH₂OH (1° alcohol)<br>
+        <div class="tip">💡 Reactivity of acid derivatives: RCOCl &gt; RCOOH &gt; RCONH₂. Acyl chloride reacts with everything!</div>
+      </div>
+    </div>
+
+    <div class="react-card" style="border-left-color:#d97706">
+      <div class="rc-top">
+        <div class="rc-icon">🟡</div>
+        <div>
+          <div class="rc-title">Tollens vs Fehling Test</div>
+          <div class="rc-reagent" style="color:#d97706">Distinguish aldehydes from ketones</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        <strong>Tollens (silver mirror test):</strong> RCHO + Ag(NH₃)₂⁺ → RCOOH + Ag↓ (silver mirror)<br>
+        <strong>Fehling:</strong> RCHO + Cu²⁺(blue) → RCOOH + Cu₂O↓ (brick red ppt)<br>
+        Ketones: NO reaction with either (no oxidation)<br>
+        <div class="tip">💡 Exception: Fructose (a ketone) gives Fehling's positive because it isomerises to glucose in alkaline conditions</div>
+      </div>
+    </div>
+
+    <div class="react-card" style="border-left-color:#be185d">
+      <div class="rc-top">
+        <div class="rc-icon">🩷</div>
+        <div>
+          <div class="rc-title">Acidity of Carboxylic Acids</div>
+          <div class="rc-reagent" style="color:#be185d">RCOOH &gt; phenol &gt; alcohol</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        pKa: RCOOH (~4.8) &lt; phenol (~10) &lt; alcohol (~16)<br>
+        <strong>–I group</strong> (Cl, NO₂) near COOH → <strong>increases</strong> acidity (stabilises RCO₂⁻)<br>
+        <strong>+I group</strong> (CH₃) → <strong>decreases</strong> acidity<br>
+        <div class="eq">ClCH₂COOH &gt; CH₃COOH &gt; (CH₃)₃CCOOH</div>
+        <div class="tip">💡 The closer the electron-withdrawing group to COOH, the stronger the acid. Cl at α-carbon has bigger effect than at γ-carbon.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 3: AMINE WEB
+═══════════════════════════════════════════════════ -->
+<div class="tab-section" id="amines">
+  <h2 class="section-title">💊 Amine Web — Synthesis Routes &amp; Properties</h2>
+  <p class="section-sub">Amines are key in CBSE because of basicity questions (5 marks), Hoffmann degradation (5 marks), and diazonium salt reactions (5 marks). Learn these three clusters.</p>
+
+  <div class="amine-wrap">
+  <svg viewBox="0 0 820 480" style="width:100%;height:auto">
+    <defs>
+      <marker id="a-sub" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#7c3aed"/></marker>
+      <marker id="a-ox" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#ea580c"/></marker>
+      <marker id="a-red" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#2563eb"/></marker>
+      <marker id="a-dk" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#44403c"/></marker>
+    </defs>
+
+    <!-- Central: Amine (1°) -->
+    <rect x="300" y="195" width="220" height="60" rx="10" fill="#fdf4ff" stroke="#9333ea" stroke-width="3"/>
+    <text x="410" y="221" text-anchor="middle" font-size="13" font-weight="800" fill="#6d28d9" font-family="'Lato',sans-serif">Primary Amine (1°)</text>
+    <text x="410" y="242" text-anchor="middle" font-size="10" fill="#78716c" font-family="monospace">R−NH₂</text>
+
+    <!-- === SYNTHESIS ROUTES (LEFT SIDE) === -->
+    <text x="20" y="30" font-size="12" font-weight="800" fill="#44403c" font-family="'Lato',sans-serif">HOW TO MAKE AMINES</text>
+
+    <!-- Route 1: Alkyl halide + NH₃ -->
+    <rect x="20" y="45" width="200" height="48" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="120" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#5b21b6" font-family="'Lato',sans-serif">Alkyl Halide + NH₃</text>
+    <text x="120" y="82" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−X + NH₃ → R−NH₂</text>
+    <line x1="220" y1="69" x2="298" y2="210" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#a-sub)"/>
+    <text x="268" y="148" text-anchor="middle" font-size="8.5" fill="#7c3aed" font-family="'Lato',sans-serif">SN2</text>
+
+    <!-- Route 2: Nitro reduction -->
+    <rect x="20" y="115" width="200" height="48" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="120" y="134" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e" font-family="'Lato',sans-serif">Nitro Reduction</text>
+    <text x="120" y="151" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">Ar−NO₂ + Fe/HCl → Ar−NH₂</text>
+    <line x1="220" y1="139" x2="298" y2="220" stroke="#2563eb" stroke-width="1.5" marker-end="url(#a-red)"/>
+    <text x="263" y="190" text-anchor="middle" font-size="8.5" fill="#2563eb" font-family="'Lato',sans-serif">reduction</text>
+
+    <!-- Route 3: Hoffmann from amide -->
+    <rect x="20" y="185" width="200" height="60" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="120" y="205" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d" font-family="'Lato',sans-serif">Hoffmann Degradation</text>
+    <text x="120" y="222" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">RCONH₂ + Br₂/NaOH</text>
+    <text x="120" y="237" text-anchor="middle" font-size="9" fill="#15803d" font-family="'Lato',sans-serif">→ RNH₂ (−1 carbon)</text>
+    <line x1="220" y1="215" x2="298" y2="225" stroke="#16a34a" stroke-width="1.5" marker-end="url(#a-sub)"/>
+
+    <!-- Route 4: Gabriel synthesis (brief) -->
+    <rect x="20" y="265" width="200" height="48" rx="8" fill="#e0f2fe" stroke="#0891b2" stroke-width="1.5"/>
+    <text x="120" y="284" text-anchor="middle" font-size="10" font-weight="700" fill="#0369a1" font-family="'Lato',sans-serif">Gabriel Synthesis</text>
+    <text x="120" y="301" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">Phthalimide → 1° amine only</text>
+    <line x1="220" y1="289" x2="298" y2="240" stroke="#0891b2" stroke-width="1.5" marker-end="url(#a-sub)"/>
+    <text x="270" y="278" text-anchor="middle" font-size="8.5" fill="#0891b2" font-family="'Lato',sans-serif">pure 1°</text>
+
+    <!-- === REACTIONS (RIGHT SIDE) === -->
+    <text x="560" y="30" font-size="12" font-weight="800" fill="#44403c" font-family="'Lato',sans-serif">WHAT AMINES DO</text>
+
+    <!-- Acylation -->
+    <rect x="555" y="45" width="240" height="48" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="675" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b" font-family="'Lato',sans-serif">Acylation → Amide</text>
+    <text x="675" y="81" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−NH₂ + RCOCl → RCONHR</text>
+    <line x1="520" y1="210" x2="553" y2="69" stroke="#44403c" stroke-width="1.5" marker-end="url(#a-dk)"/>
+
+    <!-- Diazotisation (aromatic) -->
+    <rect x="555" y="115" width="240" height="60" rx="8" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+    <text x="675" y="136" text-anchor="middle" font-size="10" font-weight="700" fill="#9d174d" font-family="'Lato',sans-serif">Diazotisation (ArNH₂ only)</text>
+    <text x="675" y="153" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">Ar−NH₂ + NaNO₂/HCl, 0–5°C</text>
+    <text x="675" y="168" text-anchor="middle" font-size="9" fill="#be185d" font-family="'Lato',sans-serif">→ Ar−N₂⁺Cl⁻ (diazonium salt)</text>
+    <line x1="520" y1="220" x2="553" y2="145" stroke="#44403c" stroke-width="1.5" marker-end="url(#a-dk)"/>
+
+    <!-- Carbylamine test -->
+    <rect x="555" y="200" width="240" height="48" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="675" y="219" text-anchor="middle" font-size="10" font-weight="700" fill="#5b21b6" font-family="'Lato',sans-serif">Carbylamine Test (1° amines)</text>
+    <text x="675" y="236" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R−NH₂ + CHCl₃/KOH → R−NC (isocyanide, foul smell)</text>
+    <line x1="520" y1="225" x2="553" y2="224" stroke="#44403c" stroke-width="1.5" marker-end="url(#a-dk)"/>
+
+    <!-- Mustard oil reaction (2° only brief) -->
+    <rect x="555" y="270" width="240" height="48" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <text x="675" y="290" text-anchor="middle" font-size="10" font-weight="700" fill="#065f46" font-family="'Lato',sans-serif">2° Amine → N-nitrosoamine</text>
+    <text x="675" y="307" text-anchor="middle" font-size="9" fill="#78716c" font-family="monospace">R₂NH + HNO₂ → R₂N−N=O</text>
+    <line x1="520" y1="240" x2="553" y2="294" stroke="#44403c" stroke-width="1.5" marker-end="url(#a-dk)"/>
+
+    <!-- Diazonium → products box -->
+    <rect x="20" y="360" width="780" height="100" rx="10" fill="#fff7ed" stroke="#d97706" stroke-width="1.5"/>
+    <text x="30" y="385" font-size="11" font-weight="800" fill="#92400e" font-family="'Lato',sans-serif">🔥 Diazonium Salt Reactions (Most Important for Exam)</text>
+    <text x="30" y="405" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">ArN₂⁺Cl⁻  →  Ar−Cl (Sandmeyer: CuCl)  |  Ar−Br (Sandmeyer: CuBr)  |  Ar−CN (CuCN)  |  Ar−F (Balz-Schiemann: HBF₄)</text>
+    <text x="30" y="423" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">ArN₂⁺Cl⁻  →  Ar−OH (H₂O, warm)  |  Ar−H (H₃PO₂/Hypophosphorous acid: deamination)</text>
+    <text x="30" y="441" font-size="10" fill="#44403c" font-family="'Lato',sans-serif">ArN₂⁺Cl⁻  →  Azo dye (coupling with phenol / β-naphthol in alkaline medium → Ar−N=N−Ar', coloured)</text>
+    <text x="30" y="459" font-size="9" fill="#78716c" font-family="'Lato',sans-serif">💡 Sandmeyer = Cu salt needed; Gattermann = Cu powder instead. Always learn: which Cu compound for which product.</text>
+  </svg>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">Basicity Order Reference</h3>
+  <table class="basicity-table">
+    <thead><tr><th>Compound</th><th>Type</th><th>pKb</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><strong>(CH₃)₂NH</strong></td><td>2° aliphatic</td><td><span class="pka">3.27</span></td><td>Best +I effect + best solvation of conjugate acid in water</td></tr>
+      <tr><td><strong>CH₃NH₂</strong></td><td>1° aliphatic</td><td><span class="pka">3.38</span></td><td>+I effect from one methyl group</td></tr>
+      <tr><td><strong>(CH₃)₃N</strong></td><td>3° aliphatic</td><td><span class="pka">4.22</span></td><td>Steric hindrance prevents good solvation of (CH₃)₃NH⁺</td></tr>
+      <tr><td><strong>NH₃</strong></td><td>–</td><td><span class="pka">4.74</span></td><td>No +I substituents</td></tr>
+      <tr><td><strong>C₆H₅NH₂ (aniline)</strong></td><td>1° aromatic</td><td><span class="pka">9.40</span></td><td>Lone pair delocalised into benzene ring → unavailable to donate to H⁺</td></tr>
+      <tr><td><strong>4-NO₂−C₆H₄−NH₂</strong></td><td>1° aromatic</td><td><span class="pka">13.0</span></td><td>–NO₂ withdraws electrons further → even less basic</td></tr>
+    </tbody>
+  </table>
+  <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:.75rem 1rem;margin-top:.75rem;font-size:.76rem;color:#92400e">
+    <strong>Exam trick for gas phase vs aqueous:</strong> In <em>gas phase</em>, order is (CH₃)₃N &gt; (CH₃)₂NH &gt; CH₃NH₂ (purely inductive). In <em>aqueous</em>, (CH₃)₂NH wins because trimethylammonium ion ((CH₃)₃NH⁺) is bulky and poorly solvated. CBSE usually asks aqueous basicity — answer is 2° &gt; 1° &gt; 3°.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 4: MECHANISMS
+═══════════════════════════════════════════════════ -->
+<div class="tab-section" id="mechanisms">
+  <h2 class="section-title" style="font-size:1.9rem">🔬 Reaction Mechanisms — Step by Step</h2>
+  <p class="section-sub">For full marks, draw curly arrows and name each intermediate. These 4 mechanisms cover ~20 marks in CBSE exam.</p>
+
+  <!-- SN1 vs SN2 -->
+  <div class="mech-card">
+    <div class="mech-header">
+      <div class="mech-title">SN1 vs SN2 — Nucleophilic Substitution</div>
+      <span class="mech-tag">5 marks</span>
+    </div>
+    <div class="mech-body">
+      <div class="vs-grid">
+        <div class="vs-col" style="background:#f5f3ff;border-color:#c4b5fd">
+          <h4 style="color:#5b21b6">SN1 (Unimolecular)</h4>
+          <ul>
+            <li>Rate = k[R−X] only</li>
+            <li>2-step: ionisation → Nu attack</li>
+            <li>Carbocation intermediate</li>
+            <li>3° substrate preferred (stable C⁺)</li>
+            <li>Racemisation of product</li>
+            <li>Polar protic solvent (H₂O, ROH)</li>
+            <li>Weak nucleophile (H₂O)</li>
+          </ul>
+        </div>
+        <div class="vs-col" style="background:#f0fdf4;border-color:#86efac">
+          <h4 style="color:#15803d">SN2 (Bimolecular)</h4>
+          <ul>
+            <li>Rate = k[R−X][Nu⁻]</li>
+            <li>1-step: concerted backside attack</li>
+            <li>No intermediate (transition state only)</li>
+            <li>1° substrate preferred (less steric)</li>
+            <li>Walden inversion (R → S or vice versa)</li>
+            <li>Polar aprotic solvent (DMSO, acetone)</li>
+            <li>Strong nucleophile (CN⁻, OH⁻)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="diag-box" style="margin-top:1rem">
+        <svg width="680" height="140" viewBox="0 0 680 140">
+          <!-- SN1 diagram -->
+          <text x="10" y="20" font-size="15" font-weight="700" fill="#5b21b6" font-family="'Lato',sans-serif">SN1:</text>
+          <text x="52" y="20" font-size="14" fill="#44403c" font-family="monospace">R₃C−X  →  [R₃C⁺]  +  X⁻  →  R₃C−Nu</text>
+          <text x="52" y="42" font-size="13" fill="#78716c" font-family="'Lato',sans-serif">Step 1: slow (rate-determining)  |  Step 2: fast</text>
+          <text x="52" y="62" font-size="13" fill="#78716c" font-family="'Lato',sans-serif">Nu⁻ attacks flat carbocation from BOTH sides → racemic mixture (50:50)</text>
+          <!-- SN2 diagram -->
+          <text x="10" y="94" font-size="15" font-weight="700" fill="#15803d" font-family="'Lato',sans-serif">SN2:</text>
+          <text x="52" y="94" font-size="14" fill="#44403c" font-family="monospace">Nu⁻  +  R−X  →  [Nu···C···X]‡  →  Nu−R  +  X⁻</text>
+          <text x="52" y="116" font-size="13" fill="#78716c" font-family="'Lato',sans-serif">One concerted step. Nu attacks from BACK → configuration inverts (like umbrella flipping)</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aldol Condensation mechanism -->
+  <div class="mech-card">
+    <div class="mech-header">
+      <div class="mech-title">Aldol Condensation — Complete Mechanism</div>
+      <span class="mech-tag">5 marks</span>
+    </div>
+    <div class="mech-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:#16a34a">1</div>
+          <div class="step-body"><strong>Deprotonation of α-carbon:</strong> OH⁻ removes the α-H (H on carbon next to C=O) → forms enolate ion (carbanion)<br>
+          <span class="eq good">CH₃CHO + OH⁻ → ⁻CH₂CHO + H₂O</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#7c3aed">2</div>
+          <div class="step-body"><strong>Nucleophilic attack:</strong> Enolate carbon attacks the electrophilic C=O of the second aldehyde molecule<br>
+          <span class="eq good">⁻CH₂CHO + CH₃CHO → [CH₃CH(O⁻)CH₂CHO]</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#ea580c">3</div>
+          <div class="step-body"><strong>Protonation → Aldol product:</strong> The alkoxide O⁻ picks up H⁺ from water → β-hydroxy aldehyde<br>
+          <span class="eq good">→ CH₃−CH(OH)−CH₂−CHO (3-hydroxybutanal)</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#dc2626">4</div>
+          <div class="step-body"><strong>Dehydration (on heating) → Condensation product:</strong> Loss of H₂O from β-hydroxy group → α,β-unsaturated carbonyl<br>
+          <span class="eq good">CH₃−CH(OH)−CH₂−CHO → CH₃−CH=CH−CHO + H₂O (but-2-enal)</span></div>
+        </div>
+      </div>
+      <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:.6rem 1rem;margin-top:.85rem;font-size:.75rem;color:#92400e">
+        <strong>Key terms:</strong> Aldol product = β-hydroxy aldehyde (step 3 product, cold). Aldol condensation product = α,β-unsaturated carbonyl (step 4, on heating).<br>
+        <strong>Condition for aldol:</strong> Compound MUST have α-H. Formaldehyde (HCHO) has no α-H → Cannizzaro instead.
+      </div>
+    </div>
+  </div>
+
+  <!-- Hoffmann Bromamide -->
+  <div class="mech-card">
+    <div class="mech-header">
+      <div class="mech-title">Hoffmann Bromamide Degradation — 4-Step Mechanism</div>
+      <span class="mech-tag">5 marks</span>
+    </div>
+    <div class="mech-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:#7c3aed">1</div>
+          <div class="step-body"><strong>N-Bromination:</strong> Br₂ + NaOH → NaOBr. NaOBr brominates the nitrogen of the amide<br>
+          <span class="eq good">RCONH₂ + Br₂/NaOH → RCONHBr (N-bromoamide)</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#dc2626">2</div>
+          <div class="step-body"><strong>Deprotonation:</strong> NaOH removes N−H → forms anion (RCON⁻Br)<br>
+          <span class="eq good">RCONHBr + NaOH → RCON⁻Br + H₂O</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#ea580c">3</div>
+          <div class="step-body"><strong>Isocyanate formation:</strong> Br⁻ leaves → nitrogen migrates with its lone pair → R−N=C=O (isocyanate, KEY intermediate!)<br>
+          <span class="eq good">RCON⁻Br → R−N=C=O + Br⁻</span><br>
+          <em>This is why the product has ONE LESS CARBON — the C=O of isocyanate is lost next</em></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#16a34a">4</div>
+          <div class="step-body"><strong>Hydrolysis of isocyanate:</strong> H₂O attacks → carbamic acid → decarboxylation → primary amine<br>
+          <span class="eq good">R−N=C=O + H₂O → R−NH−COOH → R−NH₂ + CO₂</span></div>
+        </div>
+      </div>
+      <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:.6rem 1rem;margin-top:.85rem;font-size:.75rem;color:#92400e">
+        <strong>Memory:</strong> "Hoffmann = one less carbon". RCONH₂ (n carbons) → RNH₂ (n−1 carbons).<br>
+        Example: Ethanamide (CH₃CONH₂) → Methylamine (CH₃NH₂)
+      </div>
+    </div>
+  </div>
+
+  <!-- Nucleophilic Addition Mechanism -->
+  <div class="mech-card">
+    <div class="mech-header">
+      <div class="mech-title">Nucleophilic Addition to C=O — General Mechanism</div>
+      <span class="mech-tag">3–5 marks</span>
+    </div>
+    <div class="mech-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:#0891b2">1</div>
+          <div class="step-body"><strong>Polarisation of C=O:</strong> Oxygen is more electronegative → C is δ+ (electrophilic)<br>
+          <span class="eq">Cδ+= Oδ−  ←→  ⁺C−O⁻ (resonance)</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#7c3aed">2</div>
+          <div class="step-body"><strong>Nucleophile attacks C:</strong> Nu⁻ donates electron pair to C → π bond breaks → O becomes O⁻ (alkoxide)<br>
+          <span class="eq good">Nu⁻ + R−CHO → R−CH(Nu)−O⁻  (tetrahedral intermediate)</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:#16a34a">3</div>
+          <div class="step-body"><strong>Protonation:</strong> O⁻ picks up H⁺ (from solvent or acid) → final product<br>
+          <span class="eq good">R−CH(Nu)−O⁻ + H⁺ → R−CH(Nu)−OH</span></div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem">
+        <div style="background:var(--sand-50);border:1px solid var(--sand-200);border-radius:8px;padding:.75rem;font-size:.74rem">
+          <strong style="color:#7c3aed">Nu⁻ = CN⁻ → Cyanohydrin</strong><br>R−CH(OH)−CN → hydrolyse → α-hydroxy acid
+        </div>
+        <div style="background:var(--sand-50);border:1px solid var(--sand-200);border-radius:8px;padding:.75rem;font-size:.74rem">
+          <strong style="color:#dc2626">Nu⁻ = RMgX → Grignard</strong><br>→ 1°, 2° or 3° alcohol depending on carbonyl type
+        </div>
+        <div style="background:var(--sand-50);border:1px solid var(--sand-200);border-radius:8px;padding:.75rem;font-size:.74rem">
+          <strong style="color:#16a34a">Nu = NH₂OH → Oxime</strong><br>R₂C=O + H₂NOH → R₂C=N−OH + H₂O
+        </div>
+        <div style="background:var(--sand-50);border:1px solid var(--sand-200);border-radius:8px;padding:.75rem;font-size:.74rem">
+          <strong style="color:#ea580c">Nu = RNH₂ → Imine (Schiff base)</strong><br>R−CHO + R'NH₂ → R−CH=N−R' + H₂O
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 5: BIOMOLECULES
+═══════════════════════════════════════════════════ -->
+<div class="tab-section" id="biomol">
+  <h2 class="section-title">🌿 Biomolecules — Visual Quick Maps</h2>
+  <p class="section-sub">7 marks from biomolecules. Focus on: types + linkages + bonds + function. Don't memorise structures — memorise the logic.</p>
+
+  <div class="bio-grid">
+    <!-- Carbohydrates -->
+    <div class="bio-card">
+      <div class="bio-head" style="background:#15803d">🍬 Carbohydrates</div>
+      <div class="bio-body">
+        <div class="bio-row"><span class="bio-key">Monosaccharides</span><span class="bio-val">Glucose, Fructose, Galactose — cannot be hydrolysed further</span></div>
+        <div class="bio-row"><span class="bio-key">Disaccharides</span><span class="bio-val">Sucrose (Glu+Fru), Maltose (Glu+Glu), Lactose (Glu+Gal)</span></div>
+        <div class="bio-row"><span class="bio-key">Polysaccharides</span><span class="bio-val">Starch, Cellulose, Glycogen</span></div>
+        <div class="bio-row"><span class="bio-key">Starch linkage</span><span class="bio-val">α-1,4 (amylose straight) + α-1,6 (amylopectin branched)</span></div>
+        <div class="bio-row"><span class="bio-key">Cellulose linkage</span><span class="bio-val">β-1,4 — linear, indigestible. Structural role in plants</span></div>
+        <div class="bio-row"><span class="bio-key">Reducing sugar</span><span class="bio-val">Has free −CHO or open-chain keto: Glucose, Fructose, Maltose, Lactose</span></div>
+        <div class="bio-row"><span class="bio-key">Non-reducing</span><span class="bio-val">Sucrose — both anomeric carbons used in glycosidic bond</span></div>
+        <div class="bio-tip">💡 Test: reducing sugars give Tollens/Fehling positive. Sucrose does NOT — it has no free −CHO or −OH at C1.</div>
+      </div>
+    </div>
+
+    <!-- Proteins -->
+    <div class="bio-card">
+      <div class="bio-head" style="background:#2563eb">🧬 Proteins</div>
+      <div class="bio-body">
+        <div class="bio-row"><span class="bio-key">Monomer</span><span class="bio-val">Amino acids (H₂N−CHR−COOH) — 20 types, linked by peptide bonds (−CO−NH−)</span></div>
+        <div class="bio-row"><span class="bio-key">1° Structure</span><span class="bio-val">Sequence of amino acids. Bond: peptide (covalent). Determined by DNA.</span></div>
+        <div class="bio-row"><span class="bio-key">2° Structure</span><span class="bio-val">α-helix or β-pleated sheet. Bond: H-bonds (between C=O and N-H of chain)</span></div>
+        <div class="bio-row"><span class="bio-key">3° Structure</span><span class="bio-val">3D folding. Bonds: disulphide (–S–S–), H-bonds, hydrophobic, ionic</span></div>
+        <div class="bio-row"><span class="bio-key">4° Structure</span><span class="bio-val">Multiple subunits. E.g., Haemoglobin (2α + 2β). Non-covalent forces.</span></div>
+        <div class="bio-row"><span class="bio-key">Denaturation</span><span class="bio-val">Disrupts 2°, 3°, 4° (NOT 1°). Heat, acid, organic solvents. Loses activity.</span></div>
+        <div class="bio-tip">💡 Memory: "1234 = primary(peptide), secondary(H-bond), tertiary(disulphide), quaternary(subunits)"</div>
+      </div>
+    </div>
+
+    <!-- Nucleic Acids -->
+    <div class="bio-card">
+      <div class="bio-head" style="background:#dc2626">🧪 Nucleic Acids</div>
+      <div class="bio-body">
+        <div class="bio-row"><span class="bio-key">Monomer</span><span class="bio-val">Nucleotide = nitrogenous base + pentose sugar + phosphate group</span></div>
+        <div class="bio-row"><span class="bio-key">DNA sugars</span><span class="bio-val">Deoxyribose (2′-H); RNA: Ribose (2′-OH)</span></div>
+        <div class="bio-row"><span class="bio-key">DNA bases</span><span class="bio-val">Adenine (A), Guanine (G), Cytosine (C), Thymine (T)</span></div>
+        <div class="bio-row"><span class="bio-key">RNA bases</span><span class="bio-val">A, G, C, Uracil (U) — no thymine</span></div>
+        <div class="bio-row"><span class="bio-key">Watson-Crick</span><span class="bio-val">A=T (2 H-bonds), G≡C (3 H-bonds). Anti-parallel strands.</span></div>
+        <div class="bio-row"><span class="bio-key">DNA vs RNA</span><span class="bio-val">DNA: double-stranded, T instead of U, deoxyribose. RNA: single-stranded, ribose</span></div>
+        <div class="bio-tip">💡 "AT 2, GC 3" — A pairs with T (2 bonds), G pairs with C (3 bonds). More GC = stronger/harder to denature DNA.</div>
+      </div>
+    </div>
+
+    <!-- Enzymes and Vitamins -->
+    <div class="bio-card">
+      <div class="bio-head" style="background:#7c3aed">🔑 Enzymes &amp; Vitamins</div>
+      <div class="bio-body">
+        <div class="bio-row"><span class="bio-key">Enzyme nature</span><span class="bio-val">Proteins (globular). Act as biological catalysts — specific to one reaction.</span></div>
+        <div class="bio-row"><span class="bio-key">Active site</span><span class="bio-val">Pocket on enzyme where substrate binds. Complementary shape to substrate.</span></div>
+        <div class="bio-row"><span class="bio-key">Lock &amp; Key</span><span class="bio-val">Rigid active site matches substrate exactly (like lock and key)</span></div>
+        <div class="bio-row"><span class="bio-key">Induced Fit</span><span class="bio-val">Active site changes shape slightly to embrace substrate — more accurate model</span></div>
+        <div class="bio-row"><span class="bio-key">Fat-soluble</span><span class="bio-val">Vitamins A, D, E, K — stored in fatty tissues</span></div>
+        <div class="bio-row"><span class="bio-key">Water-soluble</span><span class="bio-val">Vitamins B-complex, C — not stored, need regular intake</span></div>
+        <div class="bio-tip">💡 "Fat-soluble ADEK, water-soluble B&C" — common exam question about deficiency diseases links to which vitamin.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Biomolecule Comparison Table -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.75rem 0 .75rem">Key Distinctions Examiners Love to Ask</h3>
+  <table class="basicity-table">
+    <thead><tr><th>Question Pattern</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Starch vs Cellulose</td><td>Starch: α-1,4 glycosidic bonds, energy storage, digestible. Cellulose: β-1,4, structural, not digestible by humans</td></tr>
+      <tr><td>DNA vs RNA</td><td>DNA: double-stranded, deoxyribose, thymine; RNA: single-stranded, ribose, uracil</td></tr>
+      <tr><td>Why sucrose is non-reducing</td><td>Both C-1 of glucose and C-2 of fructose are involved in glycosidic bond → no free −CHO or free anomeric −OH</td></tr>
+      <tr><td>What is mutarotation?</td><td>Change in optical rotation when α or β-D-glucose dissolves in water → equilibrium mixture via open-chain form</td></tr>
+      <tr><td>What happens in denaturation?</td><td>2°/3°/4° structure disrupted, NOT primary. Loses biological activity. Boiling egg white is classic example.</td></tr>
+      <tr><td>Essential amino acids</td><td>Cannot be synthesised by body, must come from diet. 10 out of 20 amino acids are essential.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 6: KEY DIAGRAMS
+═══════════════════════════════════════════════════ -->
+<div class="tab-section" id="visuals">
+  <h2 class="section-title" style="font-size:1.9rem">📐 Key Diagrams — Must-Know Visuals</h2>
+  <p class="section-sub">6 high-yield visual concepts that unlock marks across Haloalkanes, Stereochemistry, and Mechanism questions.</p>
+
+  <div class="visual-grid">
+
+    <!-- ── CARD 1: SN2 Mechanism (full-width) ──────────────────── -->
+    <div class="visual-card full-width">
+      <div class="visual-header">
+        <span class="visual-title">SN2 — Nucleophilic Substitution Mechanism</span>
+        <span class="visual-tag">Haloalkanes • 5 marks</span>
+      </div>
+      <div class="visual-body">
+        <svg viewBox="0 0 760 180" font-family="Lato,sans-serif" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="ah1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0,8 3,0 6" fill="#374151"/>
+            </marker>
+            <marker id="ah-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0,8 3,0 6" fill="#16a34a"/>
+            </marker>
+            <marker id="ah-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0,8 3,0 6" fill="#dc2626"/>
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="252" height="180" fill="#f0fdf4" rx="0"/>
+          <rect x="252" y="0" width="254" height="180" fill="#eff6ff" rx="0"/>
+          <rect x="506" y="0" width="254" height="180" fill="#fdf4ff" rx="0"/>
+          <line x1="252" y1="0" x2="252" y2="180" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <line x1="506" y1="0" x2="506" y2="180" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <text x="126" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#374151" letter-spacing="1">BEFORE</text>
+          <text x="379" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#374151" letter-spacing="1">TRANSITION STATE ‡</text>
+          <text x="633" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#374151" letter-spacing="1">AFTER (Inverted)</text>
+          <!-- PANEL 1 -->
+          <text x="28" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">Nu⁻</text>
+          <line x1="42" y1="95" x2="108" y2="95" stroke="#16a34a" stroke-width="1.8" marker-end="url(#ah-green)"/>
+          <circle cx="130" cy="95" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="130" y="99" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">C</text>
+          <line x1="144" y1="95" x2="188" y2="95" stroke="#374151" stroke-width="2"/>
+          <text x="200" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">X</text>
+          <line x1="130" y1="81" x2="130" y2="55" stroke="#374151" stroke-width="2"/>
+          <text x="130" y="50" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₁</text>
+          <polygon points="130,109 104,132 112,136" fill="#374151"/>
+          <text x="96" y="146" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₂</text>
+          <line x1="130" y1="109" x2="154" y2="133" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="162" y="146" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₃</text>
+          <text x="126" y="167" text-anchor="middle" font-size="9" fill="#374151">Nu⁻ attacks from BACK (180° to X)</text>
+          <!-- PANEL 2 -->
+          <text x="284" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">Nu</text>
+          <line x1="296" y1="95" x2="358" y2="95" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="5,3"/>
+          <circle cx="379" cy="95" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="379" y="99" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">C</text>
+          <line x1="393" y1="95" x2="450" y2="95" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5,3"/>
+          <text x="462" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">X</text>
+          <text x="488" y="86" text-anchor="middle" font-size="16" font-weight="700" fill="#7c3aed">‡</text>
+          <line x1="379" y1="81" x2="379" y2="54" stroke="#374151" stroke-width="2"/>
+          <text x="379" y="49" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₁</text>
+          <line x1="379" y1="109" x2="354" y2="134" stroke="#374151" stroke-width="2"/>
+          <text x="347" y="147" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₂</text>
+          <line x1="379" y1="109" x2="404" y2="134" stroke="#374151" stroke-width="2"/>
+          <text x="412" y="147" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₃</text>
+          <text x="379" y="167" text-anchor="middle" font-size="9" fill="#374151">C is sp²-like (flat). Partial bonds shown as dashed.</text>
+          <!-- PANEL 3 -->
+          <text x="544" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">Nu</text>
+          <line x1="557" y1="95" x2="612" y2="95" stroke="#16a34a" stroke-width="2"/>
+          <circle cx="633" cy="95" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="633" y="99" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">C</text>
+          <line x1="647" y1="95" x2="686" y2="95" stroke="#dc2626" stroke-width="1.8" marker-end="url(#ah-red)"/>
+          <text x="706" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">X⁻</text>
+          <line x1="633" y1="109" x2="633" y2="135" stroke="#374151" stroke-width="2"/>
+          <text x="633" y="148" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₁</text>
+          <polygon points="633,81 658,56 650,52" fill="#374151"/>
+          <text x="666" y="50" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₂</text>
+          <line x1="633" y1="81" x2="609" y2="57" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="601" y="51" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">R₃</text>
+          <text x="633" y="167" text-anchor="middle" font-size="9" fill="#374151">Walden Inversion — like umbrella turning inside-out</text>
+        </svg>
+        <p class="visual-note">💡 SN2 only happens with 1° substrates (unhindered). 3° substrates prefer SN1 instead. Backside attack = inversion of configuration = R becomes S or vice versa.</p>
+      </div>
+    </div>
+
+    <!-- ── CARD 2: Carbocation Stability ──────────────────────── -->
+    <div class="visual-card">
+      <div class="visual-header">
+        <span class="visual-title">Carbocation Stability Order</span>
+        <span class="visual-tag">SN1 • E1 • 5 marks</span>
+      </div>
+      <div class="visual-body">
+        <svg viewBox="0 0 700 165" font-family="Lato,sans-serif" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="stabGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#fee2e2;stop-opacity:0.6"/>
+              <stop offset="100%" style="stop-color:#dcfce7;stop-opacity:0.6"/>
+            </linearGradient>
+            <marker id="ah2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0,8 3,0 6" fill="#15803d"/>
+            </marker>
+          </defs>
+          <rect x="10" y="10" width="680" height="125" fill="url(#stabGrad)" rx="8"/>
+          <!-- Methyl -->
+          <circle cx="80" cy="62" r="20" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+          <text x="80" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b">C⁺</text>
+          <line x1="80" y1="42" x2="80" y2="22" stroke="#374151" stroke-width="1.8"/>
+          <text x="80" y="18" text-anchor="middle" font-size="11" fill="#374151">H</text>
+          <line x1="62" y1="72" x2="45" y2="88" stroke="#374151" stroke-width="1.8"/>
+          <text x="38" y="99" text-anchor="middle" font-size="11" fill="#374151">H</text>
+          <line x1="98" y1="72" x2="115" y2="88" stroke="#374151" stroke-width="1.8"/>
+          <text x="122" y="99" text-anchor="middle" font-size="11" fill="#374151">H</text>
+          <text x="80" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">CH₃⁺</text>
+          <text x="80" y="122" text-anchor="middle" font-size="9.5" fill="#dc2626">Methyl</text>
+          <text x="80" y="134" text-anchor="middle" font-size="9" fill="#991b1b">Least Stable</text>
+          <!-- Primary -->
+          <circle cx="230" cy="62" r="20" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+          <text x="230" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="#c2410c">C⁺</text>
+          <line x1="230" y1="42" x2="230" y2="22" stroke="#374151" stroke-width="1.8"/>
+          <text x="230" y="18" text-anchor="middle" font-size="11" fill="#374151">H</text>
+          <line x1="210" y1="62" x2="188" y2="62" stroke="#374151" stroke-width="1.8"/>
+          <text x="181" y="66" text-anchor="middle" font-size="11" fill="#374151">H</text>
+          <line x1="230" y1="82" x2="230" y2="100" stroke="#374151" stroke-width="1.8"/>
+          <rect x="218" y="100" width="24" height="14" fill="#fed7aa" stroke="#ea580c" stroke-width="1" rx="3"/>
+          <text x="230" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#c2410c">R</text>
+          <text x="230" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">RCH₂⁺</text>
+          <text x="230" y="134" text-anchor="middle" font-size="9.5" fill="#ea580c">1° Primary</text>
+          <!-- Secondary -->
+          <circle cx="430" cy="62" r="20" fill="#ecfdf5" stroke="#16a34a" stroke-width="2"/>
+          <text x="430" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">C⁺</text>
+          <line x1="430" y1="42" x2="430" y2="22" stroke="#374151" stroke-width="1.8"/>
+          <text x="430" y="18" text-anchor="middle" font-size="11" fill="#374151">H</text>
+          <line x1="410" y1="62" x2="388" y2="62" stroke="#374151" stroke-width="1.8"/>
+          <rect x="364" y="55" width="24" height="14" fill="#bbf7d0" stroke="#16a34a" stroke-width="1" rx="3"/>
+          <text x="376" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">R</text>
+          <line x1="450" y1="62" x2="472" y2="62" stroke="#374151" stroke-width="1.8"/>
+          <rect x="472" y="55" width="24" height="14" fill="#bbf7d0" stroke="#16a34a" stroke-width="1" rx="3"/>
+          <text x="484" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#166534">R</text>
+          <text x="430" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">R₂CH⁺</text>
+          <text x="430" y="122" text-anchor="middle" font-size="9.5" fill="#16a34a">2° Secondary</text>
+          <!-- Tertiary -->
+          <circle cx="610" cy="62" r="20" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+          <text x="610" y="67" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">C⁺</text>
+          <line x1="610" y1="42" x2="610" y2="24" stroke="#374151" stroke-width="1.8"/>
+          <rect x="598" y="12" width="24" height="14" fill="#86efac" stroke="#15803d" stroke-width="1" rx="3"/>
+          <text x="610" y="23" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">R</text>
+          <line x1="592" y1="72" x2="572" y2="90" stroke="#374151" stroke-width="1.8"/>
+          <rect x="554" y="90" width="24" height="14" fill="#86efac" stroke="#15803d" stroke-width="1" rx="3"/>
+          <text x="566" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">R</text>
+          <line x1="628" y1="72" x2="648" y2="90" stroke="#374151" stroke-width="1.8"/>
+          <rect x="636" y="90" width="24" height="14" fill="#86efac" stroke="#15803d" stroke-width="1" rx="3"/>
+          <text x="648" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">R</text>
+          <text x="610" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">R₃C⁺</text>
+          <text x="610" y="134" text-anchor="middle" font-size="9" fill="#14532d">3° — MOST STABLE</text>
+          <!-- Stability arrow -->
+          <line x1="30" y1="153" x2="672" y2="153" stroke="#15803d" stroke-width="2" marker-end="url(#ah2)"/>
+          <text x="350" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="#15803d" letter-spacing="0.5">INCREASING STABILITY →</text>
+        </svg>
+        <p class="visual-note">💡 More alkyl groups = more hyperconjugation + +I inductive effect → disperses positive charge. Benzyl (C₆H₅–CH₂⁺) and allyl (CH₂=CH–CH₂⁺) are also highly stable due to resonance.</p>
+      </div>
+    </div>
+
+    <!-- ── CARD 3: Inductive Effect ────────────────────────────── -->
+    <div class="visual-card">
+      <div class="visual-header">
+        <span class="visual-title">Inductive Effect — Electron Push &amp; Pull</span>
+        <span class="visual-tag">Acidity • Reactivity</span>
+      </div>
+      <div class="visual-body">
+        <svg viewBox="0 0 680 170" font-family="Lato,sans-serif" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="ah3" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+              <polygon points="0 0,7 2.5,0 5" fill="#0891b2"/>
+            </marker>
+            <marker id="ah4" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+              <polygon points="0 0,7 2.5,0 5" fill="#d97706"/>
+            </marker>
+          </defs>
+          <rect x="2" y="2" width="330" height="166" fill="#ecfeff" rx="8"/>
+          <rect x="348" y="2" width="330" height="166" fill="#fffbeb" rx="8"/>
+          <line x1="340" y1="0" x2="340" y2="170" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <!-- LEFT: -I Effect -->
+          <text x="165" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#0891b2">−I Effect (Electron Withdrawal)</text>
+          <circle cx="55" cy="70" r="22" fill="#cffafe" stroke="#0891b2" stroke-width="2"/>
+          <text x="55" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#0e7490">F</text>
+          <circle cx="145" cy="70" r="22" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"/>
+          <text x="145" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">CH₂</text>
+          <circle cx="258" cy="70" r="28" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"/>
+          <text x="258" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">COOH</text>
+          <line x1="77" y1="70" x2="119" y2="70" stroke="#374151" stroke-width="2"/>
+          <line x1="108" y1="63" x2="88" y2="63" stroke="#0891b2" stroke-width="1.5" marker-end="url(#ah3)"/>
+          <line x1="167" y1="70" x2="226" y2="70" stroke="#374151" stroke-width="2"/>
+          <line x1="214" y1="63" x2="184" y2="63" stroke="#0891b2" stroke-width="1.5" marker-end="url(#ah3)"/>
+          <text x="55" y="48" text-anchor="middle" font-size="11" fill="#0891b2">δ−</text>
+          <text x="145" y="48" text-anchor="middle" font-size="11" fill="#374151">δ+</text>
+          <text x="258" y="48" text-anchor="middle" font-size="11" fill="#374151">δ+</text>
+          <text x="18" y="115" font-size="10.5" font-weight="700" fill="#0891b2">−I Groups:</text>
+          <text x="18" y="129" font-size="10" fill="#374151">–F, –Cl, –NO₂, –CN, –COOH</text>
+          <text x="18" y="145" font-size="10" fill="#0891b2">↑ Increases acidity of COOH group</text>
+          <text x="165" y="160" text-anchor="middle" font-size="9.5" fill="#155e75">F–CH₂–COOH  (fluoroacetic acid)</text>
+          <!-- RIGHT: +I Effect -->
+          <text x="513" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#d97706">+I Effect (Electron Donation)</text>
+          <circle cx="395" cy="70" r="22" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+          <text x="395" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">CH₃</text>
+          <circle cx="485" cy="70" r="22" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"/>
+          <text x="485" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">CH₂</text>
+          <circle cx="598" cy="70" r="28" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"/>
+          <text x="598" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">COOH</text>
+          <line x1="417" y1="70" x2="459" y2="70" stroke="#374151" stroke-width="2"/>
+          <line x1="428" y1="63" x2="448" y2="63" stroke="#d97706" stroke-width="1.5" marker-end="url(#ah4)"/>
+          <line x1="507" y1="70" x2="566" y2="70" stroke="#374151" stroke-width="2"/>
+          <line x1="518" y1="63" x2="548" y2="63" stroke="#d97706" stroke-width="1.5" marker-end="url(#ah4)"/>
+          <text x="395" y="48" text-anchor="middle" font-size="11" fill="#d97706">δ+</text>
+          <text x="598" y="48" text-anchor="middle" font-size="11" fill="#374151">δ−</text>
+          <text x="358" y="115" font-size="10.5" font-weight="700" fill="#d97706">+I Groups:</text>
+          <text x="358" y="129" font-size="10" fill="#374151">–CH₃, –C₂H₅, –alkyl</text>
+          <text x="358" y="145" font-size="10" fill="#d97706">↓ Decreases acidity of COOH group</text>
+          <text x="513" y="160" text-anchor="middle" font-size="9.5" fill="#78716c">CH₃–CH₂–COOH  (propanoic acid)</text>
+        </svg>
+        <p class="visual-note">💡 The -I effect of halogens explains: FCH₂COOH &gt; ClCH₂COOH &gt; BrCH₂COOH &gt; CH₃COOH (acidity order). More electronegative = stronger -I = more acidic.</p>
+      </div>
+    </div>
+
+    <!-- ── CARD 4: Benzene Positions ───────────────────────────── -->
+    <div class="visual-card">
+      <div class="visual-header">
+        <span class="visual-title">Benzene Ring — Ortho / Meta / Para</span>
+        <span class="visual-tag">EAS • Boards favourite</span>
+      </div>
+      <div class="visual-body">
+        <svg viewBox="0 0 680 200" font-family="Lato,sans-serif" xmlns="http://www.w3.org/2000/svg">
+          <line x1="340" y1="0" x2="340" y2="200" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <!-- LEFT: Kekulé Benzene -->
+          <polygon points="170,45 218,72.5 218,127.5 170,155 122,127.5 122,72.5" fill="#fefce8" stroke="#374151" stroke-width="2.5" fill-opacity="0.8"/>
+          <line x1="175" y1="52" x2="214" y2="73" stroke="#374151" stroke-width="2"/>
+          <line x1="213" y1="126" x2="173" y2="148" stroke="#374151" stroke-width="2"/>
+          <line x1="128" y1="127" x2="128" y2="73" stroke="#374151" stroke-width="2"/>
+          <!-- Position 1 -->
+          <line x1="170" y1="45" x2="170" y2="22" stroke="#374151" stroke-width="2"/>
+          <text x="170" y="17" text-anchor="middle" font-size="9.5" fill="#374151">1 (substituent)</text>
+          <circle cx="170" cy="45" r="8" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+          <text x="170" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#374151">1</text>
+          <!-- Positions 2,6 ortho -->
+          <circle cx="218" cy="72.5" r="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="218" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="#1e40af">2</text>
+          <text x="244" y="70" font-size="9.5" fill="#2563eb">2 — ortho</text>
+          <circle cx="122" cy="72.5" r="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="122" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="#1e40af">6</text>
+          <text x="60" y="70" font-size="9.5" fill="#2563eb">6 — ortho</text>
+          <!-- Positions 3,5 meta -->
+          <circle cx="218" cy="127.5" r="8" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+          <text x="218" y="132" text-anchor="middle" font-size="9" font-weight="700" fill="#c2410c">3</text>
+          <text x="232" y="133" font-size="9.5" fill="#ea580c">3 — meta</text>
+          <circle cx="122" cy="127.5" r="8" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+          <text x="122" y="132" text-anchor="middle" font-size="9" font-weight="700" fill="#c2410c">5</text>
+          <text x="68" y="133" font-size="9.5" fill="#ea580c">5 — meta</text>
+          <!-- Position 4 para -->
+          <circle cx="170" cy="155" r="8" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+          <text x="170" y="159" text-anchor="middle" font-size="9" font-weight="700" fill="#991b1b">4</text>
+          <text x="170" y="175" text-anchor="middle" font-size="9.5" fill="#dc2626">4 — para</text>
+          <text x="170" y="193" text-anchor="middle" font-size="9.5" fill="#6b7280">Kekulé structure</text>
+          <!-- RIGHT: Delocalized Benzene -->
+          <polygon points="510,45 558,72.5 558,127.5 510,155 462,127.5 462,72.5" fill="#f0fdf4" stroke="#374151" stroke-width="2.5" fill-opacity="0.8"/>
+          <circle cx="510" cy="100" r="32" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+          <line x1="510" y1="45" x2="510" y2="22" stroke="#374151" stroke-width="2"/>
+          <text x="510" y="17" text-anchor="middle" font-size="9.5" fill="#374151">1</text>
+          <circle cx="510" cy="45" r="8" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+          <text x="510" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#374151">1</text>
+          <circle cx="558" cy="72.5" r="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="558" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="#1e40af">2</text>
+          <circle cx="558" cy="127.5" r="8" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+          <text x="558" y="132" text-anchor="middle" font-size="9" font-weight="700" fill="#c2410c">3</text>
+          <circle cx="510" cy="155" r="8" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+          <text x="510" y="159" text-anchor="middle" font-size="9" font-weight="700" fill="#991b1b">4</text>
+          <circle cx="462" cy="127.5" r="8" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+          <text x="462" y="132" text-anchor="middle" font-size="9" font-weight="700" fill="#c2410c">5</text>
+          <circle cx="462" cy="72.5" r="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="462" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="#1e40af">6</text>
+          <text x="510" y="193" text-anchor="middle" font-size="9.5" fill="#16a34a">Delocalized structure (more accurate)</text>
+          <text x="370" y="164" font-size="9" fill="#374151">ortho=1,2 | meta=1,3 | para=1,4</text>
+        </svg>
+        <p class="visual-note">💡 In EAS: –OH, –NH₂, –CH₃ are ortho/para directors. –NO₂, –COOH, –CHO are meta directors. Board questions often ask to predict position of substitution.</p>
+      </div>
+    </div>
+
+    <!-- ── CARD 5: Aldol Condensation (full-width) ─────────────── -->
+    <div class="visual-card full-width">
+      <div class="visual-header">
+        <span class="visual-title">Aldol Condensation — Complete Mechanism</span>
+        <span class="visual-tag">Carbonyl • 5 marks</span>
+      </div>
+      <div class="visual-body">
+        <svg viewBox="0 0 760 175" font-family="Lato,sans-serif" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="ah5" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+              <polygon points="0 0,7 2.5,0 5" fill="#374151"/>
+            </marker>
+          </defs>
+          <rect x="2" y="2" width="186" height="171" fill="#f0fdf4" rx="8"/>
+          <rect x="192" y="2" width="186" height="171" fill="#eff6ff" rx="8"/>
+          <rect x="382" y="2" width="186" height="171" fill="#fefce8" rx="8"/>
+          <rect x="572" y="2" width="186" height="171" fill="#fdf2f8" rx="8"/>
+          <line x1="183" y1="88" x2="195" y2="88" stroke="#374151" stroke-width="2.5" marker-end="url(#ah5)"/>
+          <line x1="373" y1="88" x2="385" y2="88" stroke="#374151" stroke-width="2.5" marker-end="url(#ah5)"/>
+          <line x1="563" y1="88" x2="575" y2="88" stroke="#374151" stroke-width="2.5" marker-end="url(#ah5)"/>
+          <!-- Step 1 -->
+          <circle cx="20" cy="22" r="11" fill="#16a34a"/>
+          <text x="20" y="27" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>
+          <text x="96" y="22" text-anchor="middle" font-size="11.5" font-weight="700" fill="#15803d">α-H Removal</text>
+          <text x="15" y="52" font-size="10.5" fill="#374151">CH₃–CHO  +  OH⁻</text>
+          <line x1="95" y1="58" x2="95" y2="68" stroke="#374151" stroke-width="1.5" marker-end="url(#ah5)"/>
+          <rect x="15" y="72" width="115" height="22" fill="#bbf7d0" stroke="#16a34a" stroke-width="1" rx="4"/>
+          <text x="72" y="87" text-anchor="middle" font-size="10.5" font-weight="700" fill="#14532d">⁻CH₂CHO (enolate)</text>
+          <text x="95" y="115" text-anchor="middle" font-size="9.5" fill="#374151">OH⁻ removes α-H</text>
+          <text x="95" y="130" text-anchor="middle" font-size="9.5" fill="#15803d">→ carbanion (enolate)</text>
+          <text x="95" y="148" text-anchor="middle" font-size="9" fill="#6b7280">Base removes α-hydrogen</text>
+          <text x="95" y="162" text-anchor="middle" font-size="9" fill="#6b7280">adjacent to C=O</text>
+          <!-- Step 2 -->
+          <circle cx="210" cy="22" r="11" fill="#2563eb"/>
+          <text x="210" y="27" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2</text>
+          <text x="283" y="22" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d4ed8">Nucleophilic Attack</text>
+          <text x="200" y="52" font-size="10" fill="#374151">⁻CH₂CHO attacks C=O</text>
+          <line x1="283" y1="58" x2="283" y2="68" stroke="#374151" stroke-width="1.5" marker-end="url(#ah5)"/>
+          <rect x="200" y="72" width="165" height="22" fill="#bfdbfe" stroke="#2563eb" stroke-width="1" rx="4"/>
+          <text x="283" y="87" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">alkoxide intermediate</text>
+          <text x="283" y="115" text-anchor="middle" font-size="9.5" fill="#374151">⁻CH₂CHO + CH₃CHO</text>
+          <path d="M 260,122 Q 283,135 306,122" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#ah5)"/>
+          <text x="283" y="152" text-anchor="middle" font-size="9" fill="#1d4ed8">Enolate is the nucleophile</text>
+          <text x="283" y="165" text-anchor="middle" font-size="9" fill="#6b7280">C–C bond forms here</text>
+          <!-- Step 3 -->
+          <circle cx="400" cy="22" r="11" fill="#d97706"/>
+          <text x="400" y="27" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3</text>
+          <text x="472" y="22" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b45309">Aldol Product</text>
+          <text x="390" y="50" font-size="9.5" fill="#374151">β-hydroxyaldehyde formed:</text>
+          <line x1="472" y1="56" x2="472" y2="66" stroke="#374151" stroke-width="1.5" marker-end="url(#ah5)"/>
+          <rect x="385" y="70" width="178" height="22" fill="#fef3c7" stroke="#d97706" stroke-width="1" rx="4"/>
+          <text x="474" y="85" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">CH₃–CH(OH)–CH₂–CHO</text>
+          <text x="390" y="110" font-size="11" fill="#d97706">★</text>
+          <text x="404" y="112" font-size="9.5" font-weight="700" fill="#d97706">This is the ALDOL product</text>
+          <text x="472" y="128" text-anchor="middle" font-size="9" fill="#374151">–OH on β-carbon</text>
+          <text x="472" y="142" text-anchor="middle" font-size="9" fill="#374151">3-hydroxybutanal</text>
+          <text x="472" y="158" text-anchor="middle" font-size="9" fill="#6b7280">No heat needed for this step</text>
+          <!-- Step 4 -->
+          <circle cx="590" cy="22" r="11" fill="#be185d"/>
+          <text x="590" y="27" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">4</text>
+          <text x="660" y="22" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9d174d">Dehydration</text>
+          <text x="583" y="50" font-size="9.5" fill="#374151">–H₂O (on heating):</text>
+          <line x1="660" y1="56" x2="660" y2="66" stroke="#374151" stroke-width="1.5" marker-end="url(#ah5)"/>
+          <rect x="578" y="70" width="166" height="22" fill="#fce7f3" stroke="#be185d" stroke-width="1" rx="4"/>
+          <text x="661" y="85" text-anchor="middle" font-size="9.5" font-weight="700" fill="#831843">CH₃–CH=CH–CHO + H₂O</text>
+          <text x="661" y="108" text-anchor="middle" font-size="9.5" font-weight="700" fill="#be185d">crotonaldehyde</text>
+          <text x="661" y="122" text-anchor="middle" font-size="9" fill="#374151">α,β-unsaturated aldehyde</text>
+          <text x="661" y="136" text-anchor="middle" font-size="9" fill="#374151">Δ (heat) drives water loss</text>
+          <text x="661" y="150" text-anchor="middle" font-size="9" fill="#374151">conjugated C=C–C=O system</text>
+          <text x="661" y="165" text-anchor="middle" font-size="9" fill="#6b7280">more stable (extended π)</text>
+        </svg>
+        <p class="visual-note">💡 Aldol needs α-H (HCHO and (CH₃)₃CCHO have no α-H → Cannizzaro instead). Heating drives dehydration. Crossed aldol = mix of two different aldehydes (less useful, not asked in CBSE boards usually).</p>
+      </div>
+    </div>
+
+    <!-- ── CARD 6: Hybridisation Shapes ────────────────────────── -->
+    <div class="visual-card">
+      <div class="visual-header">
+        <span class="visual-title">Hybridisation — Shapes &amp; Bond Angles</span>
+        <span class="visual-tag">Bonding • Geometry</span>
+      </div>
+      <div class="visual-body">
+        <svg viewBox="0 0 680 175" font-family="Lato,sans-serif" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="222" height="171" fill="#f5f3ff" rx="8"/>
+          <rect x="228" y="2" width="222" height="171" fill="#f0fdf4" rx="8"/>
+          <rect x="454" y="2" width="224" height="171" fill="#eff6ff" rx="8"/>
+          <line x1="226" y1="0" x2="226" y2="175" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <line x1="452" y1="0" x2="452" y2="175" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <!-- sp³ -->
+          <text x="113" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="#6d28d9">sp³</text>
+          <circle cx="113" cy="88" r="7" fill="#7c3aed"/>
+          <text x="113" y="93" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">C</text>
+          <line x1="113" y1="81" x2="113" y2="52" stroke="#374151" stroke-width="2"/>
+          <circle cx="113" cy="46" r="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="113" y="50" text-anchor="middle" font-size="10" fill="#374151">H</text>
+          <line x1="107" y1="94" x2="74" y2="120" stroke="#374151" stroke-width="2"/>
+          <circle cx="68" cy="126" r="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="68" y="130" text-anchor="middle" font-size="10" fill="#374151">H</text>
+          <line x1="119" y1="94" x2="152" y2="120" stroke="#374151" stroke-width="2"/>
+          <circle cx="158" cy="126" r="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="158" y="130" text-anchor="middle" font-size="10" fill="#374151">H</text>
+          <line x1="113" y1="95" x2="113" y2="118" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,2"/>
+          <circle cx="113" cy="124" r="9" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="113" y="128" text-anchor="middle" font-size="10" fill="#6b7280">H</text>
+          <path d="M 105,75 Q 95,88 104,98" stroke="#6d28d9" stroke-width="1.2" fill="none"/>
+          <text x="55" y="85" text-anchor="middle" font-size="9.5" fill="#6d28d9">109.5°</text>
+          <text x="113" y="150" text-anchor="middle" font-size="9.5" fill="#374151">CH₄ (methane)</text>
+          <text x="113" y="163" text-anchor="middle" font-size="9" font-weight="700" fill="#6d28d9" letter-spacing="0.5">TETRAHEDRAL</text>
+          <!-- sp² -->
+          <text x="339" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="#15803d">sp²</text>
+          <circle cx="339" cy="90" r="7" fill="#16a34a"/>
+          <text x="339" y="95" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">C</text>
+          <line x1="339" y1="83" x2="339" y2="52" stroke="#374151" stroke-width="2"/>
+          <circle cx="339" cy="46" r="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+          <text x="339" y="50" text-anchor="middle" font-size="10" fill="#374151">H</text>
+          <line x1="333" y1="96" x2="304" y2="124" stroke="#374151" stroke-width="2"/>
+          <circle cx="298" cy="130" r="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+          <text x="298" y="134" text-anchor="middle" font-size="10" fill="#374151">H</text>
+          <line x1="345" y1="96" x2="374" y2="124" stroke="#374151" stroke-width="2"/>
+          <line x1="376" y1="122" x2="398" y2="104" stroke="#374151" stroke-width="2"/>
+          <line x1="373" y1="128" x2="395" y2="110" stroke="#374151" stroke-width="2"/>
+          <circle cx="403" cy="100" r="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+          <text x="403" y="104" text-anchor="middle" font-size="10" fill="#374151">C</text>
+          <ellipse cx="339" cy="90" rx="7" ry="16" fill="none" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="3,2"/>
+          <text x="360" y="68" font-size="8.5" fill="#16a34a">π</text>
+          <text x="275" y="80" text-anchor="middle" font-size="9.5" fill="#15803d">120°</text>
+          <path d="M 330,80 Q 322,90 330,100" stroke="#15803d" stroke-width="1.2" fill="none"/>
+          <text x="339" y="155" text-anchor="middle" font-size="9.5" fill="#374151">CH₂=CH₂, C=O</text>
+          <text x="339" y="167" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d" letter-spacing="0.5">TRIGONAL PLANAR</text>
+          <!-- sp -->
+          <text x="566" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="#1d4ed8">sp</text>
+          <circle cx="484" cy="88" r="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="484" y="92" text-anchor="middle" font-size="10" fill="#374151">H</text>
+          <line x1="493" y1="88" x2="522" y2="88" stroke="#374151" stroke-width="2"/>
+          <circle cx="530" cy="88" r="9" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+          <text x="530" y="92" text-anchor="middle" font-size="10" font-weight="700" fill="#1e40af">C</text>
+          <line x1="539" y1="84" x2="601" y2="84" stroke="#374151" stroke-width="2"/>
+          <line x1="539" y1="88" x2="601" y2="88" stroke="#374151" stroke-width="2"/>
+          <line x1="539" y1="92" x2="601" y2="92" stroke="#374151" stroke-width="2"/>
+          <circle cx="610" cy="88" r="9" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+          <text x="610" y="92" text-anchor="middle" font-size="10" font-weight="700" fill="#1e40af">C</text>
+          <line x1="619" y1="88" x2="648" y2="88" stroke="#374151" stroke-width="2"/>
+          <circle cx="656" cy="88" r="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="656" y="92" text-anchor="middle" font-size="10" fill="#374151">H</text>
+          <path d="M 500,76 Q 566,62 632,76" stroke="#1d4ed8" stroke-width="1.2" fill="none"/>
+          <text x="566" y="60" text-anchor="middle" font-size="9.5" fill="#1d4ed8">180°</text>
+          <text x="566" y="120" text-anchor="middle" font-size="9.5" fill="#374151">CH≡CH (ethyne), CO₂</text>
+          <text x="566" y="135" text-anchor="middle" font-size="9" fill="#374151">2 sp + 2 unhybridised p orbitals</text>
+          <text x="566" y="150" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8" letter-spacing="0.5">LINEAR</text>
+        </svg>
+        <p class="visual-note">💡 Carbocation (R₃C⁺) is sp² hybridised — it's flat/planar (that's why Nu can attack from both sides → racemisation in SN1). In SN2 the transition state is also sp²-like.</p>
+      </div>
+    </div>
+
+  </div><!-- end .visual-grid -->
+</div><!-- end #visuals -->
+
+</div><!-- /container -->
+<script src="../../js/tab-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+/* ─── Chapter Summary Pages ──────────────────────────────────────────────── */
+
+/* Chapter bar with overflow "More" dropdown */
+.chapter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 16px;
+  position: relative;
+}
+.chapter-tabs {
+  display: flex;
+  gap: 6px;
+  overflow: hidden;
+  flex: 1;
+  align-items: center;
+}
+/* .tab base styles in base.css */
+
+.more-btn {
+  font-size: .82em;
+  font-weight: 700;
+  padding: 8px 14px;
+  border: 2px solid var(--sand-300);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--sand-700);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 6px;
+  display: none;
+  transition: all .2s;
+  font-family: 'Lato', sans-serif;
+}
+.more-btn:hover { border-color: var(--sand-400) }
+.more-btn.has-active { background: var(--sand-900); color: #fff; border-color: var(--sand-900) }
+
+.more-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid var(--sand-300);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  padding: 6px;
+  z-index: 100;
+  display: none;
+  min-width: 200px;
+}
+.more-dropdown.open { display: block }
+.more-dropdown .tab {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0;
+  font-size: .82em;
+}
+.more-dropdown .tab:hover  { background: var(--sand-100) }
+.more-dropdown .tab.active { background: var(--sand-900); color: #fff }
+
+/* Chapter section panels */
+.ch-section { display: none; padding: 2rem 0 3rem }
+.ch-section.active { display: block }
+
+/* Chapter banner header */
+.ch-banner {
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.ch-num {
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .3rem;
+  opacity: .75;
+}
+.ch-title {
+  font-family: 'Newsreader', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: .3rem;
+}
+.ch-sub   { font-size: .78rem; opacity: .8; line-height: 1.5 }
+.ch-marks-badge {
+  font-family: 'Newsreader', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
+}
+.ch-marks-badge span {
+  display: block;
+  font-size: .6rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-top: .1rem;
+}
+
+/* Two-column content grid */
+.block-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Content block card */
+.content-block {
+  background: #fff;
+  border: 1px solid var(--sand-200);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.block-head {
+  padding: .75rem 1.1rem;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.block-body { padding: 1rem 1.1rem }
+.block-body p {
+  font-size: .77rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: .5rem;
+}
+.block-body p:last-child { margin-bottom: 0 }
+
+/* Formula list (inside blocks) */
+.formula-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .5rem }
+.formula-list li { display: flex; flex-direction: column; gap: .18rem }
+.fl-name  { font-size: .67rem; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em }
+.fl-eq    { font-family: monospace; font-size: .79rem; color: #166534; background: #f0fdf4; border: 1px solid #86efac; border-radius: 5px; padding: .25rem .6rem; display: inline-block; line-height: 1.55 }
+.fl-note  { font-size: .68rem; color: var(--ink-3); line-height: 1.5 }
+
+/* Tips list */
+.tip-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .65rem }
+.tip-list li { display: flex; align-items: flex-start; gap: .6rem; font-size: .77rem; color: var(--ink-2); line-height: 1.65 }
+.tip-icon { flex-shrink: 0; font-size: .85rem; margin-top: .05rem }
+.tip-item strong { color: var(--ink) }
+
+/* Tricks / exam-tip box */
+.trick-box {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 10px;
+  padding: .85rem 1.1rem;
+  margin-bottom: .85rem;
+}
+.trick-box h4 { font-size: .72rem; font-weight: 800; color: #92400e; margin-bottom: .5rem; letter-spacing: .03em }
+.trick-box p, .trick-box li { font-size: .76rem; color: #78350f; line-height: 1.7 }
+.trick-box ul { margin-left: 1rem }
+.trick-box .eq { background: #fef3c7; border: 1px solid #fde68a; color: #92400e }
+
+/* Numerical cards */
+.num-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1.5rem }
+.num-card { background: #fff; border: 1px solid var(--sand-200); border-radius: 10px; padding: 1rem 1.1rem; border-left: 4px solid var(--subject-color) }
+.nc-q    { font-size: .78rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; line-height: 1.4 }
+.nc-step { font-size: .74rem; color: var(--ink-2); line-height: 1.7 }
+.nc-step .ans { font-family: monospace; background: #f0fdf4; border: 1px solid #86efac; border-radius: 4px; padding: .1rem .5rem; font-size: .85em; display: inline-block; color: #166534; font-weight: 700 }
+
+/* Must-read list */
+.mustread {
+  background: var(--hot-bg);
+  border: 1.5px solid var(--hot-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.mustread h4 { font-family: 'Newsreader', serif; color: #991b1b; font-weight: 700; font-size: .9rem; margin-bottom: .6rem }
+.mustread ol { margin-left: 1.2rem }
+.mustread ol li { font-size: .77rem; color: #7f1d1d; line-height: 1.85; padding: .1rem 0 }
+.mustread ol li strong { color: #991b1b }
+
+/* Summary table */
+.sum-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid var(--sand-200); margin-bottom: 1.25rem }
+.sum-table th { padding: .65rem .9rem; text-align: left; font-size: .7rem; font-weight: 700; letter-spacing: .03em; color: #fff }
+.sum-table td { padding: .65rem .9rem; border-bottom: 1px solid var(--sand-100); font-size: .75rem; vertical-align: top; color: var(--ink-2) }
+.sum-table tr:last-child td { border-bottom: none }
+.sum-table tr:hover td { background: var(--sand-50) }
+
+/* Common mistakes box */
+.mistake-box {
+  background: #fdf2f8;
+  border: 1.5px solid #f9a8d4;
+  border-radius: 10px;
+  padding: .85rem 1.1rem;
+  margin-bottom: .85rem;
+}
+.mistake-box h4 { font-size: .72rem; font-weight: 800; color: #9d174d; margin-bottom: .5rem }
+.mistake-box ul { margin-left: 1rem }
+.mistake-box li { font-size: .75rem; color: #831843; line-height: 1.75 }
+
+@media (max-width: 640px) {
+  .block-grid { grid-template-columns: 1fr }
+  .ch-banner  { padding: 1rem 1.25rem }
+  .ch-title   { font-size: 1.3rem }
+  .ch-marks-badge { font-size: 1.6rem }
+}

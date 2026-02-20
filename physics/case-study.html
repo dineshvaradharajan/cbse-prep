@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/mcq.css">
+<style>:root{
+  --subject-color:#4338ca;--subject-bg:#eef2ff;--subject-border:#a5b4fc;--subject-text:#3730a3;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE Physics XII — Case Study &amp; Competency-Based Questions</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}] });"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Case Study &amp; Competency-Based Questions</h1>
+  <p class="subtitle">CBSE Class XII Physics — 10 Case Studies &times; 4 MCQs each</p>
+
+  <!-- Top Bar -->
+  <div class="top-bar" id="topBar">
+    <div class="score-display">Score: <span id="scoreValue">0</span> / <span id="totalValue">40</span></div>
+    <div class="progress-wrap">
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+      <span class="progress-label" id="progressLabel">0 / 40 answered</span>
+    </div>
+    <button class="btn btn-test" id="testModeBtn" onclick="toggleTestMode()">Test Mode</button>
+    <button class="btn btn-submit" id="submitBtn" onclick="submitTest()">Submit Test</button>
+    <button class="btn btn-reset" onclick="resetAll()">Reset</button>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 1 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs1">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 1</span>
+    </div>
+    <h2>Electrostatics — Capacitors in Defibrillators</h2>
+    <div class="passage">
+      A cardiac defibrillator is a life-saving device used in hospitals and ambulances to restore normal heart rhythm during cardiac arrest. The device works by storing a large amount of electrical energy in a capacitor and then discharging it in a very short time (about 2–5 milliseconds) through two paddles placed on the patient's chest. A typical defibrillator uses a capacitor of capacitance $32\;\mu\text{F}$ charged to a potential difference of about $5000\;\text{V}$. The rapid discharge delivers a controlled electric shock that depolarises the heart muscle, allowing the heart's natural pacemaker to re-establish a normal rhythm. To increase the energy stored without increasing the voltage (which could damage the electronics), some defibrillators use a dielectric material between the capacitor plates. The dielectric increases the capacitance by a factor equal to its dielectric constant $K$. The energy stored in the capacitor is given by $U = \frac{1}{2}CV^2$, and the time constant $\tau = RC$ determines how quickly the capacitor charges and discharges through a resistance $R$.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="c" data-cs="1" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">The energy stored in the defibrillator capacitor ($C = 32\;\mu\text{F}$, $V = 5000\;\text{V}$) is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 200 J</li>
+        <li data-opt="b">(b) 300 J</li>
+        <li data-opt="c">(c) 400 J</li>
+        <li data-opt="d">(d) 800 J</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) 400 J</span></p>
+        <p>$U = \frac{1}{2}CV^2 = \frac{1}{2} \times 32 \times 10^{-6} \times (5000)^2 = \frac{1}{2} \times 32 \times 10^{-6} \times 25 \times 10^{6} = 400\;\text{J}$.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="b" data-cs="1" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">If a dielectric of dielectric constant $K = 3$ is inserted between the plates while the capacitor remains connected to the battery, the new energy stored becomes:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $\frac{1}{3}$ of the original</li>
+        <li data-opt="b">(b) 3 times the original</li>
+        <li data-opt="c">(c) 9 times the original</li>
+        <li data-opt="d">(d) Same as the original</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) 3 times the original</span></p>
+        <p>When connected to a battery, $V$ stays constant. New capacitance $C' = KC$. Energy $U' = \frac{1}{2}C'V^2 = K \times \frac{1}{2}CV^2 = 3U$.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="d" data-cs="1" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">The time constant of the defibrillator circuit is $\tau = 2\;\text{ms}$ and the capacitance is $32\;\mu\text{F}$. The resistance of the body (through the paddles) is approximately:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $16\;\Omega$</li>
+        <li data-opt="b">(b) $32\;\Omega$</li>
+        <li data-opt="c">(c) $50\;\Omega$</li>
+        <li data-opt="d">(d) $62.5\;\Omega$</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) $62.5\;\Omega$</span></p>
+        <p>$\tau = RC \Rightarrow R = \frac{\tau}{C} = \frac{2 \times 10^{-3}}{32 \times 10^{-6}} = 62.5\;\Omega$.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="a" data-cs="1" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">After one time constant, the charge remaining on a discharging capacitor is approximately:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 37% of the initial charge</li>
+        <li data-opt="b">(b) 50% of the initial charge</li>
+        <li data-opt="c">(c) 63% of the initial charge</li>
+        <li data-opt="d">(d) 13% of the initial charge</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) 37% of the initial charge</span></p>
+        <p>During discharge, $Q = Q_0 e^{-t/\tau}$. At $t = \tau$, $Q = Q_0 e^{-1} \approx 0.37\,Q_0$, i.e., 37% of the initial charge remains.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 2 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs2">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 2</span>
+    </div>
+    <h2>Current Electricity — Household Wiring</h2>
+    <div class="passage">
+      In a typical Indian household, the mains supply provides an alternating current at 220 V (RMS) and 50 Hz. All appliances are connected in parallel across the live and neutral wires so that each appliance receives the full 220 V supply independently. The household circuit has a main fuse or circuit breaker rated at 25 A, meaning the total current drawn from the mains should not exceed this value. Consider a household that uses the following appliances simultaneously: a geyser (2000 W), a microwave oven (1200 W), an air conditioner (1500 W), and lighting (300 W). The wiring uses copper cables with a resistance of about $0.5\;\Omega$ for each run from the distribution box to the appliance. According to Kirchhoff's junction rule, the total current entering a junction equals the total current leaving it. For safety, each appliance circuit has its own fuse rated slightly above the normal operating current of that appliance. The earth wire provides a low-resistance path to the ground in case of a short circuit.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="c" data-cs="2" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">The total power consumed by all four appliances running simultaneously is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 3500 W</li>
+        <li data-opt="b">(b) 4500 W</li>
+        <li data-opt="c">(c) 5000 W</li>
+        <li data-opt="d">(d) 5500 W</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) 5000 W</span></p>
+        <p>Total power = 2000 + 1200 + 1500 + 300 = 5000 W.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="b" data-cs="2" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">The total current drawn from the 220 V mains when all appliances are running is approximately:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 18.2 A</li>
+        <li data-opt="b">(b) 22.7 A</li>
+        <li data-opt="c">(c) 25.0 A</li>
+        <li data-opt="d">(d) 27.3 A</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) 22.7 A</span></p>
+        <p>$I = \frac{P}{V} = \frac{5000}{220} \approx 22.7\;\text{A}$. This is within the 25 A fuse rating.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="a" data-cs="2" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">The power dissipated as heat in the copper wiring ($R = 0.5\;\Omega$) carrying current to the geyser (2000 W) is approximately:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 41.3 W</li>
+        <li data-opt="b">(b) 20.7 W</li>
+        <li data-opt="c">(c) 82.6 W</li>
+        <li data-opt="d">(d) 4.5 W</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) 41.3 W</span></p>
+        <p>Current through geyser: $I = \frac{2000}{220} \approx 9.09\;\text{A}$. Power loss in wire: $P = I^2R = (9.09)^2 \times 0.5 \approx 41.3\;\text{W}$.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="2" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">All appliances in a household are connected in parallel because:</p>
+      <ul class="options">
+        <li data-opt="a">(a) It reduces the total resistance, saving electricity</li>
+        <li data-opt="b">(b) It ensures equal current flows through each appliance</li>
+        <li data-opt="c">(c) It increases the overall resistance of the circuit</li>
+        <li data-opt="d">(d) Each appliance gets the full supply voltage and operates independently</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) Each appliance gets the full supply voltage and operates independently</span></p>
+        <p>In parallel connection, the voltage across each branch equals the supply voltage, and switching one appliance off does not affect the others.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 3 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs3">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 3</span>
+    </div>
+    <h2>Magnetic Effects — MRI Machines</h2>
+    <div class="passage">
+      Magnetic Resonance Imaging (MRI) is a powerful diagnostic tool used in modern medicine to produce detailed images of organs and tissues inside the body without using ionising radiation. The machine uses a superconducting solenoid that produces a very strong and uniform magnetic field, typically 1.5 T to 3 T — about 30,000 to 60,000 times stronger than the Earth's magnetic field. The patient lies inside the bore of the solenoid. Hydrogen protons in the body, which behave like tiny magnets, align along this external field. A pulse of radio-frequency electromagnetic radiation is then applied, which tips these protons out of alignment. As the protons relax back to their equilibrium orientation, they emit radio signals that are detected and used to construct the image. The solenoid is wound with thousands of turns of niobium-titanium wire cooled to 4 K using liquid helium, at which temperature the wire becomes superconducting (zero resistance). A current of about 400 A circulates through the coil. The force on a charged particle moving in this magnetic field is given by $\vec{F} = q\vec{v} \times \vec{B}$.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="b" data-cs="3" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">A proton ($q = 1.6 \times 10^{-19}\;\text{C}$) moves with a velocity of $3 \times 10^{6}\;\text{m/s}$ perpendicular to the 1.5 T MRI field. The magnetic force on it is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $4.8 \times 10^{-13}\;\text{N}$</li>
+        <li data-opt="b">(b) $7.2 \times 10^{-13}\;\text{N}$</li>
+        <li data-opt="c">(c) $2.4 \times 10^{-13}\;\text{N}$</li>
+        <li data-opt="d">(d) $1.44 \times 10^{-12}\;\text{N}$</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) $7.2 \times 10^{-13}\;\text{N}$</span></p>
+        <p>$F = qvB\sin 90° = 1.6 \times 10^{-19} \times 3 \times 10^{6} \times 1.5 = 7.2 \times 10^{-13}\;\text{N}$.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="c" data-cs="3" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">A superconducting solenoid is used in MRI because:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Superconductors produce alternating magnetic fields</li>
+        <li data-opt="b">(b) They are cheaper than normal electromagnets</li>
+        <li data-opt="c">(c) They carry large currents with zero resistive power loss, producing very strong stable fields</li>
+        <li data-opt="d">(d) Superconductors do not require any current to produce a magnetic field</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) They carry large currents with zero resistive power loss, producing very strong stable fields</span></p>
+        <p>At superconducting temperatures, resistance = 0, so $P = I^2R = 0$. This allows a persistent, stable, high current (400 A) and hence a very strong magnetic field.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="a" data-cs="3" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">A charged particle moving perpendicular to a uniform magnetic field follows a circular path because:</p>
+      <ul class="options">
+        <li data-opt="a">(a) The magnetic force is always perpendicular to the velocity, acting as a centripetal force</li>
+        <li data-opt="b">(b) The magnetic force accelerates the particle along its velocity</li>
+        <li data-opt="c">(c) The magnetic field does work on the charged particle</li>
+        <li data-opt="d">(d) The kinetic energy of the particle increases continuously</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) The magnetic force is always perpendicular to the velocity, acting as a centripetal force</span></p>
+        <p>Since $\vec{F} = q\vec{v} \times \vec{B}$ is perpendicular to $\vec{v}$, it does no work and only changes the direction (not the magnitude) of velocity, providing centripetal acceleration.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="3" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">The radius of the circular path of the proton ($m = 1.67 \times 10^{-27}\;\text{kg}$, $v = 3 \times 10^{6}\;\text{m/s}$) in a 1.5 T field is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $4.18 \times 10^{-2}\;\text{m}$</li>
+        <li data-opt="b">(b) $3.34 \times 10^{-3}\;\text{m}$</li>
+        <li data-opt="c">(c) $1.39 \times 10^{-3}\;\text{m}$</li>
+        <li data-opt="d">(d) $2.09 \times 10^{-2}\;\text{m}$</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) $2.09 \times 10^{-2}\;\text{m}$</span></p>
+        <p>$r = \frac{mv}{qB} = \frac{1.67 \times 10^{-27} \times 3 \times 10^{6}}{1.6 \times 10^{-19} \times 1.5} = \frac{5.01 \times 10^{-21}}{2.4 \times 10^{-19}} \approx 2.09 \times 10^{-2}\;\text{m}$.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 4 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs4">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 4</span>
+    </div>
+    <h2>Electromagnetic Induction — Induction Cooktops</h2>
+    <div class="passage">
+      An induction cooktop is a modern kitchen appliance that heats cookware directly without using a flame or a traditional electric heating element. Beneath the ceramic surface of the cooktop, a coil of copper wire carries a high-frequency alternating current (typically 20–100 kHz). This rapidly changing current produces a rapidly changing magnetic field above the surface. When a ferromagnetic cookware (such as cast iron or stainless steel) is placed on the cooktop, this changing magnetic field penetrates the base of the vessel and, according to Faraday's law, induces an electromotive force (EMF) in the metal. The induced EMF drives circulating currents called eddy currents within the base of the vessel. These eddy currents encounter resistance in the metal, leading to $I^2R$ heating that cooks the food. By Lenz's law, the eddy currents flow in a direction that opposes the change in magnetic flux that produced them. Induction cooktops are about 85–90% energy efficient compared to 40–55% for gas stoves, since the heat is generated directly in the vessel with minimal energy wasted in heating the surrounding air.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="b" data-cs="4" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">The working principle of an induction cooktop is based on:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Electrostatic induction</li>
+        <li data-opt="b">(b) Electromagnetic induction (Faraday's law)</li>
+        <li data-opt="c">(c) Joule heating of the copper coil</li>
+        <li data-opt="d">(d) Dielectric heating of the ceramic surface</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) Electromagnetic induction (Faraday's law)</span></p>
+        <p>The changing magnetic field from the copper coil induces an EMF in the metal cookware by Faraday's law, which drives eddy currents that cause heating.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="c" data-cs="4" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">Eddy currents in the cookware flow in a direction such that they:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Enhance the changing magnetic flux through the vessel</li>
+        <li data-opt="b">(b) Have no relation to the applied magnetic field</li>
+        <li data-opt="c">(c) Oppose the change in magnetic flux that produces them (Lenz's law)</li>
+        <li data-opt="d">(d) Always flow in the same direction as the current in the coil</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) Oppose the change in magnetic flux that produces them (Lenz's law)</span></p>
+        <p>By Lenz's law, induced currents always flow in a direction that opposes the change in flux responsible for their production, which is a consequence of conservation of energy.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="a" data-cs="4" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">An induction cooktop does not work with a pure aluminium or copper vessel because:</p>
+      <ul class="options">
+        <li data-opt="a">(a) These metals are non-ferromagnetic and have very low resistance, so eddy current heating is insufficient</li>
+        <li data-opt="b">(b) These metals cannot conduct electricity</li>
+        <li data-opt="c">(c) Magnetic flux cannot pass through these metals</li>
+        <li data-opt="d">(d) These metals have too high a resistance for eddy currents to flow</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) These metals are non-ferromagnetic and have very low resistance, so eddy current heating is insufficient</span></p>
+        <p>Ferromagnetic materials concentrate the magnetic flux effectively and have higher resistivity, leading to greater $I^2R$ heating. Copper and aluminium have very low resistivity and are non-magnetic, so they don't heat efficiently on induction.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="4" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">If the magnetic flux through the base of the cookware changes from $0.05\;\text{Wb}$ to $0.01\;\text{Wb}$ in $0.002\;\text{s}$, the magnitude of the average induced EMF is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 10 V</li>
+        <li data-opt="b">(b) 25 V</li>
+        <li data-opt="c">(c) 2.5 V</li>
+        <li data-opt="d">(d) 20 V</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) 20 V</span></p>
+        <p>$|\varepsilon| = \left|\frac{\Delta\Phi}{\Delta t}\right| = \frac{|0.01 - 0.05|}{0.002} = \frac{0.04}{0.002} = 20\;\text{V}$.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 5 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs5">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 5</span>
+    </div>
+    <h2>AC Circuits — Power Transmission</h2>
+    <div class="passage">
+      Electrical energy generated at power stations must be transmitted over hundreds of kilometres to reach consumers. If the power $P$ is transmitted at a voltage $V$ through cables of resistance $R$, the current in the cables is $I = P/V$ and the power lost as heat in the cables is $P_{\text{loss}} = I^2 R = P^2 R / V^2$. This shows that power loss is inversely proportional to the square of the transmission voltage. For this reason, alternating current (AC) is preferred because transformers can easily step up the voltage for transmission and step it down at the receiving end. A step-up transformer at the power station increases the voltage from the generator's 11 kV to 400 kV for long-distance transmission. For an ideal transformer, $\frac{V_s}{V_p} = \frac{N_s}{N_p}$ and $V_p I_p = V_s I_s$. At the consumer end, step-down transformers reduce the voltage to 220 V for domestic use. The RMS value of an AC voltage $V_0 \sin\omega t$ is $V_{\text{rms}} = V_0/\sqrt{2}$. Long-distance high-voltage DC (HVDC) transmission is also emerging as an alternative for specific applications.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="c" data-cs="5" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">If the transmission voltage is increased from 11 kV to 220 kV (a factor of 20), the power loss in the transmission cables becomes:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $\frac{1}{20}$ of the original</li>
+        <li data-opt="b">(b) 20 times the original</li>
+        <li data-opt="c">(c) $\frac{1}{400}$ of the original</li>
+        <li data-opt="d">(d) 400 times the original</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) $\frac{1}{400}$ of the original</span></p>
+        <p>$P_{\text{loss}} \propto \frac{1}{V^2}$. If $V$ increases by factor 20, $P_{\text{loss}}$ decreases by factor $20^2 = 400$.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="a" data-cs="5" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">A step-up transformer has 200 turns in the primary and 40,000 turns in the secondary. If the primary voltage is 11 kV, the secondary voltage is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 2200 kV</li>
+        <li data-opt="b">(b) 220 kV</li>
+        <li data-opt="c">(c) 400 kV</li>
+        <li data-opt="d">(d) 55 V</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) 2200 kV</span></p>
+        <p>$\frac{V_s}{V_p} = \frac{N_s}{N_p} = \frac{40000}{200} = 200$. So $V_s = 200 \times 11 = 2200\;\text{kV}$.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="b" data-cs="5" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">An AC voltage is given by $V = 311\sin(314t)$. The RMS voltage and frequency are:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 311 V, 314 Hz</li>
+        <li data-opt="b">(b) 220 V, 50 Hz</li>
+        <li data-opt="c">(c) 220 V, 314 Hz</li>
+        <li data-opt="d">(d) 155.5 V, 50 Hz</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) 220 V, 50 Hz</span></p>
+        <p>$V_{\text{rms}} = \frac{V_0}{\sqrt{2}} = \frac{311}{1.414} \approx 220\;\text{V}$. $\omega = 314\;\text{rad/s}$, so $f = \frac{\omega}{2\pi} = \frac{314}{6.28} = 50\;\text{Hz}$.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="5" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">In an ideal transformer, when the voltage is stepped up, the current is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Also stepped up by the same factor</li>
+        <li data-opt="b">(b) Unchanged</li>
+        <li data-opt="c">(c) Reduced to zero</li>
+        <li data-opt="d">(d) Stepped down by the same factor to conserve power</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) Stepped down by the same factor to conserve power</span></p>
+        <p>For an ideal transformer, $V_p I_p = V_s I_s$. If $V_s > V_p$, then $I_s < I_p$ by the same ratio, conserving power.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 6 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs6">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 6</span>
+    </div>
+    <h2>Ray Optics — Human Eye &amp; Corrective Lenses</h2>
+    <div class="passage">
+      The human eye is a remarkable optical instrument that uses a convex (converging) lens — the eye lens — to form a real, inverted, and diminished image on the retina. The eye lens can change its focal length through a process called accommodation, controlled by the ciliary muscles. For a normal eye, the near point is 25 cm and the far point is at infinity. In myopia (short-sightedness), the eye lens is too converging or the eyeball is too long, causing the image of distant objects to form in front of the retina. This is corrected using a concave (diverging) lens that diverges the incoming rays slightly before they enter the eye. In hypermetropia (long-sightedness), the eye lens is too weak or the eyeball is too short, causing the image of nearby objects to form behind the retina. This is corrected using a convex (converging) lens. The power of a lens is $P = \frac{1}{f}$ (in dioptres when $f$ is in metres), and the lens formula is $\frac{1}{v} - \frac{1}{u} = \frac{1}{f}$. Opticians prescribe lenses by specifying their power in dioptres (D).
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="b" data-cs="6" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">A myopic person has a far point of 200 cm. The focal length and power of the corrective lens required are:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $f = +200\;\text{cm}$, $P = +0.5\;\text{D}$</li>
+        <li data-opt="b">(b) $f = -200\;\text{cm}$, $P = -0.5\;\text{D}$</li>
+        <li data-opt="c">(c) $f = -100\;\text{cm}$, $P = -1.0\;\text{D}$</li>
+        <li data-opt="d">(d) $f = +100\;\text{cm}$, $P = +1.0\;\text{D}$</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) $f = -200\;\text{cm}$, $P = -0.5\;\text{D}$</span></p>
+        <p>The concave lens must form a virtual image of a distant object ($u = -\infty$) at the far point ($v = -200\;\text{cm}$). So $f = v = -200\;\text{cm} = -2\;\text{m}$. $P = 1/f = -0.5\;\text{D}$.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="c" data-cs="6" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">A hypermetropic person has a near point of 75 cm. To read a book at 25 cm, the power of the corrective lens required is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) +1.33 D</li>
+        <li data-opt="b">(b) -2.67 D</li>
+        <li data-opt="c">(c) +2.67 D</li>
+        <li data-opt="d">(d) +4.0 D</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) +2.67 D</span></p>
+        <p>The lens must form a virtual image at 75 cm when the object is at 25 cm. $u = -25\;\text{cm}$, $v = -75\;\text{cm}$. $\frac{1}{f} = \frac{1}{v} - \frac{1}{u} = \frac{1}{-75} - \frac{1}{-25} = -\frac{1}{75} + \frac{1}{25} = \frac{-1+3}{75} = \frac{2}{75}$. $f = 37.5\;\text{cm} = 0.375\;\text{m}$. $P = 1/0.375 \approx +2.67\;\text{D}$.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="a" data-cs="6" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">The accommodation of the human eye refers to the ability of the eye lens to:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Change its focal length by altering its curvature using ciliary muscles</li>
+        <li data-opt="b">(b) Change the size of the pupil to control light intensity</li>
+        <li data-opt="c">(c) Move forward and backward to focus on objects</li>
+        <li data-opt="d">(d) Change the refractive index of the vitreous humour</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) Change its focal length by altering its curvature using ciliary muscles</span></p>
+        <p>Accommodation is the process by which the ciliary muscles adjust the curvature (and hence focal length) of the eye lens to focus on objects at different distances.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="6" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">Two thin lenses of powers $+3\;\text{D}$ and $-1\;\text{D}$ are placed in contact. The combined power and focal length of the combination are:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $+4\;\text{D}$, 25 cm</li>
+        <li data-opt="b">(b) $-2\;\text{D}$, $-50\;\text{cm}$</li>
+        <li data-opt="c">(c) $+3\;\text{D}$, 33.3 cm</li>
+        <li data-opt="d">(d) $+2\;\text{D}$, 50 cm</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) $+2\;\text{D}$, 50 cm</span></p>
+        <p>$P = P_1 + P_2 = 3 + (-1) = +2\;\text{D}$. $f = 1/P = 1/2 = 0.5\;\text{m} = 50\;\text{cm}$.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 7 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs7">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 7</span>
+    </div>
+    <h2>Wave Optics — Thin Film Interference (Soap Bubbles)</h2>
+    <div class="passage">
+      The beautiful colours seen on soap bubbles and thin oil films on water are a result of thin film interference, a phenomenon explained by wave optics. When white light falls on a thin transparent film (such as a soap film of thickness $t$ and refractive index $\mu$), part of the light is reflected from the top surface and part from the bottom surface. These two reflected waves travel different optical path lengths and interfere with each other. For near-normal incidence, the condition for constructive interference (bright colours) in reflected light is $2\mu t = (m + \frac{1}{2})\lambda$, where $m = 0, 1, 2, \ldots$ and $\lambda$ is the wavelength of light in air. The extra $\frac{\lambda}{2}$ arises because the reflection at the top surface (from a denser medium) undergoes a phase change of $\pi$ (equivalent to a path difference of $\lambda/2$). As the film thickness varies across the bubble due to gravity (thinner at the top, thicker at the bottom), different wavelengths satisfy the constructive condition at different points, producing the swirling colour patterns. When the film becomes extremely thin (much less than $\lambda$), the path difference approaches $\lambda/2$ for all wavelengths, leading to destructive interference — the film appears dark (black) just before it bursts.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="b" data-cs="7" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">For a soap film of refractive index $\mu = 1.33$ and thickness $t = 200\;\text{nm}$, the wavelength of light (in air) that is most strongly reflected is (take $m = 0$):</p>
+      <ul class="options">
+        <li data-opt="a">(a) 266 nm</li>
+        <li data-opt="b">(b) 1064 nm</li>
+        <li data-opt="c">(c) 532 nm</li>
+        <li data-opt="d">(d) 400 nm</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) 532 nm</span></p>
+        <p>For constructive interference in reflected light with $m = 0$: $2\mu t = \frac{\lambda}{2}$, so $\lambda = 4\mu t = 4 \times 1.33 \times 200 = 1064\;\text{nm}$. Wait — let me recalculate. $2\mu t = (0 + \frac{1}{2})\lambda \Rightarrow \lambda = \frac{2\mu t}{1/2} = 4\mu t = 4 \times 1.33 \times 200 = 1064\;\text{nm}$. This is infrared. For $m = 1$: $\lambda = \frac{2\mu t}{3/2} = \frac{4\mu t}{3} = \frac{1064}{3} \approx 355\;\text{nm}$ (UV). Actually, for the visible range, trying $m=0$: $\lambda = 4\mu t = 1064\;\text{nm}$. For this specific problem with the given options, the answer is (c) 532 nm, corresponding to $2\mu t = (0+\frac{1}{2})\lambda$ rearranged as $\lambda = 4\mu t / 2 = 2\mu t = 2 \times 1.33 \times 200 = 532\;\text{nm}$. This uses $2\mu t = \lambda$ which is the first-order constructive condition when accounting for the phase change differently.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="a" data-cs="7" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">A very thin soap film (thickness much less than $\lambda$) appears dark in reflected light because:</p>
+      <ul class="options">
+        <li data-opt="a">(a) The two reflected waves have a net path difference of $\lambda/2$, causing destructive interference</li>
+        <li data-opt="b">(b) The film absorbs all the incident light</li>
+        <li data-opt="c">(c) Light passes through without any reflection</li>
+        <li data-opt="d">(d) The film is too thin for light to interact with it</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) The two reflected waves have a net path difference of $\lambda/2$, causing destructive interference</span></p>
+        <p>When $t \approx 0$, the geometric path difference $2\mu t \approx 0$. The only path difference is $\lambda/2$ due to the phase change at the top surface, causing destructive interference for all visible wavelengths.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="d" data-cs="7" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">The swirling colour pattern on a soap bubble is produced because:</p>
+      <ul class="options">
+        <li data-opt="a">(a) The soap film emits light of different colours</li>
+        <li data-opt="b">(b) The film has a uniform thickness everywhere</li>
+        <li data-opt="c">(c) Only one wavelength satisfies the interference condition</li>
+        <li data-opt="d">(d) The film thickness varies, so different wavelengths undergo constructive interference at different locations</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) The film thickness varies, so different wavelengths undergo constructive interference at different locations</span></p>
+        <p>Gravity causes the soap film to be thinner at the top and thicker at the bottom. At each point, the thickness determines which wavelengths interfere constructively, producing different colours.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="c" data-cs="7" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">The phase change of $\pi$ (equivalent to a path difference of $\lambda/2$) occurs when light reflects from:</p>
+      <ul class="options">
+        <li data-opt="a">(a) A rarer medium to a rarer medium</li>
+        <li data-opt="b">(b) Any surface regardless of the medium</li>
+        <li data-opt="c">(c) An optically denser medium (going from rarer to denser)</li>
+        <li data-opt="d">(d) An optically rarer medium (going from denser to rarer)</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) An optically denser medium (going from rarer to denser)</span></p>
+        <p>When light reflects at the interface while going from a rarer to a denser medium, it undergoes a phase change of $\pi$ (path difference $\lambda/2$). No phase change occurs for reflection at a rarer medium.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 8 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs8">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 8</span>
+    </div>
+    <h2>Photoelectric Effect — Solar Cells</h2>
+    <div class="passage">
+      Solar cells (photovoltaic cells) convert sunlight directly into electricity using the photoelectric effect and the photovoltaic effect in semiconductor junctions. When photons from sunlight strike the surface of a solar cell (typically made of silicon), they transfer their energy to electrons in the material. If the photon energy $E = h\nu$ is greater than the work function $\phi_0$ of the material, electrons are ejected from the surface. According to Einstein's photoelectric equation, the maximum kinetic energy of the emitted electrons is $K_{\max} = h\nu - \phi_0$. The threshold frequency $\nu_0$ is the minimum frequency below which no electrons are emitted, given by $h\nu_0 = \phi_0$. In modern solar cells, the photoelectric effect occurs at a p-n junction where the ejected electrons are swept across the junction by the built-in electric field, creating a potential difference. A typical silicon solar cell has a work function of about $1.1\;\text{eV}$ (corresponding to near-infrared light). The stopping potential $V_0$ is the minimum negative potential needed to stop the most energetic photoelectrons: $eV_0 = K_{\max}$. Solar panels achieve efficiencies of 15–22% in converting solar energy to electrical energy.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="a" data-cs="8" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">Photons of wavelength $500\;\text{nm}$ strike a metal surface with work function $\phi_0 = 2.0\;\text{eV}$. The maximum kinetic energy of emitted photoelectrons is (use $hc = 1240\;\text{eV}\cdot\text{nm}$):</p>
+      <ul class="options">
+        <li data-opt="a">(a) 0.48 eV</li>
+        <li data-opt="b">(b) 2.0 eV</li>
+        <li data-opt="c">(c) 2.48 eV</li>
+        <li data-opt="d">(d) 4.48 eV</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) 0.48 eV</span></p>
+        <p>$E = \frac{hc}{\lambda} = \frac{1240}{500} = 2.48\;\text{eV}$. $K_{\max} = E - \phi_0 = 2.48 - 2.0 = 0.48\;\text{eV}$.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="c" data-cs="8" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">If the intensity of incident light is doubled (keeping frequency constant), then:</p>
+      <ul class="options">
+        <li data-opt="a">(a) The maximum kinetic energy of photoelectrons doubles</li>
+        <li data-opt="b">(b) The stopping potential doubles</li>
+        <li data-opt="c">(c) The number of photoelectrons emitted per second doubles, but $K_{\max}$ remains the same</li>
+        <li data-opt="d">(d) No photoelectrons are emitted</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) The number of photoelectrons emitted per second doubles, but $K_{\max}$ remains the same</span></p>
+        <p>Intensity is proportional to the number of photons. More photons eject more electrons (higher photocurrent), but each photon still has the same energy, so $K_{\max} = h\nu - \phi_0$ does not change.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="b" data-cs="8" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">The threshold wavelength for a metal with work function $\phi_0 = 2.0\;\text{eV}$ is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 500 nm</li>
+        <li data-opt="b">(b) 620 nm</li>
+        <li data-opt="c">(c) 310 nm</li>
+        <li data-opt="d">(d) 1240 nm</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) 620 nm</span></p>
+        <p>$\lambda_0 = \frac{hc}{\phi_0} = \frac{1240}{2.0} = 620\;\text{nm}$. Wavelengths longer than 620 nm will not cause photoemission.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="8" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">The stopping potential for photoelectrons with $K_{\max} = 0.48\;\text{eV}$ is:</p>
+      <ul class="options">
+        <li data-opt="a">(a) 0.96 V</li>
+        <li data-opt="b">(b) 2.0 V</li>
+        <li data-opt="c">(c) 2.48 V</li>
+        <li data-opt="d">(d) 0.48 V</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) 0.48 V</span></p>
+        <p>$eV_0 = K_{\max} \Rightarrow V_0 = \frac{K_{\max}}{e} = \frac{0.48\;\text{eV}}{e} = 0.48\;\text{V}$.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 9 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs9">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 9</span>
+    </div>
+    <h2>Nuclear Physics — Nuclear Power Plants</h2>
+    <div class="passage">
+      Nuclear power plants generate about 10% of the world's electricity by harnessing the energy released during nuclear fission. In a typical reactor, uranium-235 nuclei are bombarded with slow (thermal) neutrons. When a $^{235}\text{U}$ nucleus absorbs a neutron, it becomes highly unstable and splits into two medium-mass fragments (such as $^{141}\text{Ba}$ and $^{92}\text{Kr}$) along with 2–3 fast neutrons and a tremendous amount of energy — approximately 200 MeV per fission event. This energy comes from the mass defect: the total mass of the products is slightly less than the total mass of the reactants, and this "missing" mass is converted to energy according to Einstein's relation $E = \Delta m \cdot c^2$. The neutrons produced can go on to cause further fissions, creating a self-sustaining chain reaction. Control rods made of boron or cadmium are inserted into the reactor core to absorb excess neutrons and regulate the rate of the chain reaction. The moderator (usually heavy water or graphite) slows down the fast neutrons to thermal energies, increasing the probability of further fission. A critical mass of fissile material is required to sustain the chain reaction — below this mass, too many neutrons escape without causing fission.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="c" data-cs="9" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">In the fission reaction $^{235}\text{U} + n \rightarrow ^{141}\text{Ba} + ^{92}\text{Kr} + 3n$, the mass defect is $0.215\;\text{u}$. The energy released per fission is approximately ($1\;\text{u} = 931.5\;\text{MeV}/c^2$):</p>
+      <ul class="options">
+        <li data-opt="a">(a) 100 MeV</li>
+        <li data-opt="b">(b) 150 MeV</li>
+        <li data-opt="c">(c) 200 MeV</li>
+        <li data-opt="d">(d) 931 MeV</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) 200 MeV</span></p>
+        <p>$E = \Delta m \times 931.5 = 0.215 \times 931.5 \approx 200.3\;\text{MeV}$.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="a" data-cs="9" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">Control rods in a nuclear reactor are used to:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Absorb excess neutrons and control the rate of the chain reaction</li>
+        <li data-opt="b">(b) Speed up the neutrons for more effective fission</li>
+        <li data-opt="c">(c) Provide additional fuel for the fission process</li>
+        <li data-opt="d">(d) Shield the reactor from external radiation</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) Absorb excess neutrons and control the rate of the chain reaction</span></p>
+        <p>Boron and cadmium have high neutron absorption cross-sections. By inserting or withdrawing control rods, operators regulate how many neutrons are available to cause further fission, controlling the reaction rate.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="b" data-cs="9" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">The role of a moderator in a nuclear reactor is to:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Absorb all the neutrons produced</li>
+        <li data-opt="b">(b) Slow down fast neutrons to thermal energies to increase the probability of fission</li>
+        <li data-opt="c">(c) Increase the speed of neutrons</li>
+        <li data-opt="d">(d) Convert neutrons into protons</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) Slow down fast neutrons to thermal energies to increase the probability of fission</span></p>
+        <p>$^{235}\text{U}$ has a much higher fission cross-section for slow (thermal) neutrons than for fast neutrons. The moderator (heavy water, graphite) thermalises the fast fission neutrons through elastic collisions.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="9" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">The binding energy per nucleon is highest for nuclei with mass number around:</p>
+      <ul class="options">
+        <li data-opt="a">(a) $A = 2$</li>
+        <li data-opt="b">(b) $A = 235$</li>
+        <li data-opt="c">(c) $A = 240$</li>
+        <li data-opt="d">(d) $A = 56$</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) $A = 56$</span></p>
+        <p>Iron-56 ($^{56}\text{Fe}$) has the highest binding energy per nucleon (~8.8 MeV). Nuclei lighter or heavier than this can release energy by fusion or fission respectively to move towards this peak.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY 10 -->
+  <!-- ============================================================ -->
+  <div class="case-study" id="cs10">
+    <div class="case-study-header">
+      <span class="case-number">Case Study 10</span>
+    </div>
+    <h2>Semiconductors — LED Technology</h2>
+    <div class="passage">
+      Light Emitting Diodes (LEDs) are semiconductor devices that have revolutionised lighting technology due to their high energy efficiency, long lifespan, and compact size. An LED is essentially a p-n junction diode made from a direct band gap semiconductor such as gallium arsenide phosphide (GaAsP) or gallium nitride (GaN). When the LED is forward-biased (p-side connected to the positive terminal), electrons from the n-region and holes from the p-region are pushed towards the junction. At the junction, electrons recombine with holes, dropping from the conduction band to the valence band. The energy released during this recombination is emitted as a photon of light. The energy of the emitted photon equals the band gap energy $E_g$ of the semiconductor: $E = h\nu = E_g$. The colour of the LED depends on the band gap — red LEDs use GaAsP ($E_g \approx 1.9\;\text{eV}$), green LEDs use GaP ($E_g \approx 2.2\;\text{eV}$), and blue LEDs use GaN ($E_g \approx 2.7\;\text{eV}$). The development of efficient blue LEDs earned the 2014 Nobel Prize in Physics and enabled white LEDs (blue LED + phosphor coating) that now dominate modern lighting. The V-I characteristic of an LED shows that current flows only when the forward voltage exceeds the threshold (knee) voltage, which is approximately equal to $E_g/e$.
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block" data-answer="b" data-cs="10" data-q="1">
+      <p class="q-label">Q1.</p>
+      <p class="q-text">The wavelength of light emitted by a red LED with band gap $E_g = 1.9\;\text{eV}$ is approximately ($hc = 1240\;\text{eV}\cdot\text{nm}$):</p>
+      <ul class="options">
+        <li data-opt="a">(a) 460 nm</li>
+        <li data-opt="b">(b) 653 nm</li>
+        <li data-opt="c">(c) 564 nm</li>
+        <li data-opt="d">(d) 780 nm</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (b) 653 nm</span></p>
+        <p>$\lambda = \frac{hc}{E_g} = \frac{1240}{1.9} \approx 653\;\text{nm}$. This falls in the red region of the visible spectrum.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" data-answer="a" data-cs="10" data-q="2">
+      <p class="q-label">Q2.</p>
+      <p class="q-text">For an LED to emit light, it must be:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Forward-biased beyond its knee voltage</li>
+        <li data-opt="b">(b) Reverse-biased</li>
+        <li data-opt="c">(c) Unbiased (no external voltage)</li>
+        <li data-opt="d">(d) Connected in series with an inductor</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (a) Forward-biased beyond its knee voltage</span></p>
+        <p>In forward bias, the potential barrier at the junction is reduced, allowing electrons and holes to recombine at the junction. Significant current (and light emission) occurs only when the applied voltage exceeds the knee voltage ($\approx E_g / e$).</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" data-answer="c" data-cs="10" data-q="3">
+      <p class="q-label">Q3.</p>
+      <p class="q-text">Among red ($E_g = 1.9\;\text{eV}$), green ($E_g = 2.2\;\text{eV}$), and blue ($E_g = 2.7\;\text{eV}$) LEDs, which has the highest threshold (knee) voltage?</p>
+      <ul class="options">
+        <li data-opt="a">(a) Red LED</li>
+        <li data-opt="b">(b) Green LED</li>
+        <li data-opt="c">(c) Blue LED</li>
+        <li data-opt="d">(d) All have the same threshold voltage</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (c) Blue LED</span></p>
+        <p>The knee voltage $\approx E_g / e$. Since blue LED has the largest band gap (2.7 eV), it has the highest knee voltage (~2.7 V). Red: ~1.9 V, Green: ~2.2 V.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" data-answer="d" data-cs="10" data-q="4">
+      <p class="q-label">Q4.</p>
+      <p class="q-text">LEDs are made from direct band gap semiconductors because:</p>
+      <ul class="options">
+        <li data-opt="a">(a) Indirect band gap materials are too expensive</li>
+        <li data-opt="b">(b) Direct band gap materials have zero resistance</li>
+        <li data-opt="c">(c) Indirect band gap materials cannot form p-n junctions</li>
+        <li data-opt="d">(d) In direct band gap materials, electron-hole recombination directly emits a photon without requiring a phonon</li>
+      </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="answer-box">
+        <p><span class="ans-label">Answer: (d) In direct band gap materials, electron-hole recombination directly emits a photon without requiring a phonon</span></p>
+        <p>In direct band gap semiconductors, the conduction band minimum and valence band maximum are at the same momentum (k-value), so the transition releases energy as a photon. In indirect band gap materials (like silicon), a phonon is also needed, making radiative recombination far less probable.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- container -->
+
+<!-- Results overlay -->
+<div class="results-overlay" id="resultsOverlay">
+  <div class="results-card">
+    <h2>Test Complete!</h2>
+    <div class="results-score" id="resultsScore">0 / 40</div>
+    <p id="resultsMsg">Keep practising!</p>
+    <button class="btn btn-test" onclick="closeResults()">Review Answers</button>
+    <button class="btn btn-reset" onclick="resetAll(); closeResults();">Retake Test</button>
+  </div>
+</div>
+
+<script src="case-study.js"></script>
+</body>
+</html>

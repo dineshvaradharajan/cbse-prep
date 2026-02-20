@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/mcq.css">
+<style>:root{
+  --subject-color:#b45309;--subject-bg:#fffbeb;--subject-border:#fde68a;--subject-text:#92400e;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inorganic Chemistry MCQ — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">&#8592; Back to Home</a>
+<div class="hero">
+  <div class="badge">Inorganic Chemistry XII &middot; MCQ Bank</div>
+  <h1>Inorganic Chemistry MCQs</h1>
+  <p class="sub">55+ direct NCERT questions from d &amp; f-Block Elements and Coordination Compounds — click an option to reveal the answer.</p>
+</div>
+
+<nav class="ch-nav">
+  <div class="ch-nav-inner">
+    <button class="ch-btn active" onclick="showCh('dblock',this)">Ch 4 — d &amp; f-Block Elements</button>
+    <button class="ch-btn" onclick="showCh('coord',this)">Ch 5 — Coordination Compounds</button>
+  </div>
+</nav>
+
+<!-- CH4: d & f BLOCK -->
+<div id="dblock" class="ch-panel active">
+  <div class="ch-heading">⚗️ d &amp; f-Block Elements <span class="ch-mark-badge" style="background:#0891b2">9 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="dblock-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="dblock-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('dblock')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="dblock">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">The electronic configuration of Chromium (Cr, Z=24) is an exception. It is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>[Ar] 3d⁴ 4s²</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>[Ar] 3d⁵ 4s¹</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>[Ar] 3d⁶ 4s⁰</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>[Ar] 3d³ 4s²</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — [Ar] 3d⁵ 4s¹.</strong> Expected configuration is [Ar] 3d⁴ 4s², but one electron moves from 4s to 3d to achieve a half-filled d⁵ configuration. Half-filled (d⁵) subshells have extra stability due to: (1) symmetrical distribution of electrons, (2) maximum exchange energy (each electron can exchange with 4 others → 10 exchanges for d⁵). Similarly, Cu ([Ar] 3d¹⁰ 4s¹) has fully-filled d¹⁰ stability.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="dblock">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">The electronic configuration of Copper (Cu, Z=29) is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>[Ar] 3d⁹ 4s²</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>[Ar] 3d⁸ 4s²</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>[Ar] 3d¹⁰ 4s¹</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>[Ar] 3d¹⁰ 4s²</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — [Ar] 3d¹⁰ 4s¹.</strong> Expected: [Ar] 3d⁹ 4s². Actual: [Ar] 3d¹⁰ 4s¹, because a completely filled d¹⁰ subshell is extra stable. Note: Cu forms Cu⁺ ([Ar] 3d¹⁰) and Cu²⁺ ([Ar] 3d⁹) ions. Cu⁺ is diamagnetic (no unpaired electrons), Cu²⁺ is paramagnetic (one unpaired electron). Both Cr and Cu are classic exceptions to the Aufbau principle in the first transition series.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="dblock">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">Which of the following is NOT considered a transition element according to NCERT definition?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Iron (Fe)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Manganese (Mn)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Copper (Cu)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Zinc (Zn)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Zinc (Zn).</strong> NCERT defines transition elements as those with incompletely filled d-orbitals in their ground state OR in commonly occurring oxidation states. Zn: [Ar] 3d¹⁰ 4s² (ground state) and Zn²⁺: [Ar] 3d¹⁰. Since d-orbitals are completely filled in both ground state and common ion, Zn is NOT a transition metal. Also, Sc (only Sc³⁺ has d⁰) and Zn are placed at the boundaries but Zn is excluded by the d-orbital criterion.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="dblock">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">The change in oxidation state of Mn in KMnO₄ when it reacts in acidic medium is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>+7 → +2 (MnO₄⁻ → Mn²⁺, gain of 5 electrons)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>+7 → +4 (MnO₄⁻ → MnO₂)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>+7 → +6 (MnO₄⁻ → MnO₄²⁻)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>+7 → 0 (MnO₄⁻ → Mn metal)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — +7 → +2.</strong> KMnO₄ acts differently depending on medium: (1) Acidic medium: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (pink/violet → nearly colourless; change = 5e⁻). (2) Neutral/faintly alkaline: MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂↓ + 4OH⁻ (brown precipitate; change = 3e⁻). (3) Strongly alkaline: MnO₄⁻ + e⁻ → MnO₄²⁻ (manganate ion, green; change = 1e⁻). Acidic medium is the strongest oxidising condition.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="dblock">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">The colour of KMnO₄ (potassium permanganate) is purple/violet even though Mn⁷⁺ has no d-electrons. This is due to:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>d-d electronic transitions</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Charge transfer transitions (O → Mn)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Spin-orbit coupling</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Absorption of UV radiation only</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Charge transfer.</strong> Mn in KMnO₄ is Mn⁷⁺ (d⁰) — no d electrons for d-d transitions. The intense purple colour arises from charge transfer: electrons are transferred from O²⁻ ligands to the empty d-orbitals of Mn⁷⁺. These transitions involve higher energy and produce more intense colours than d-d transitions. Similarly, K₂Cr₂O₇ (Cr⁶⁺, d⁰) is orange due to charge transfer from O to Cr. TiO₂ (Ti⁴⁺, d⁰) is white because charge transfer absorbs only UV.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="dblock">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">The change in oxidation state of Cr in K₂Cr₂O₇ in acidic medium is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>+6 → +3 — gain of 6 electrons per Cr₂O₇²⁻ unit</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>+7 → +3</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>+6 → +3, gain of 6 electrons total (3 per Cr atom × 2 Cr atoms)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>+6 → +2</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Cr₂O₇²⁻ gains 6e⁻ total.</strong> Half-reaction: Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O. Each Cr goes from +6 to +3 (gain of 3e⁻), and with 2 Cr atoms: total 6e⁻ gained. K₂Cr₂O₇ is an orange oxidising agent used for: (1) FeSO₄ titration, (2) oxidising organic compounds, (3) preparing chromium compounds. Dichromate (orange) and chromate (yellow) are interconverted by pH: Cr₂O₇²⁻ + 2OH⁻ ⇌ 2CrO₄²⁻ + H₂O.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="dblock">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">Transition metals generally show paramagnetism because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>They have high atomic masses</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>They are all metals and metals are always paramagnetic</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>They have variable valency</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>They have unpaired d-electrons, each contributing to magnetic moment</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Unpaired d-electrons.</strong> Magnetic moment μ = √(n(n+2)) BM, where n = number of unpaired electrons. Mn²⁺ (d⁵, 5 unpaired e⁻): μ = √35 ≈ 5.92 BM. Cu²⁺ (d⁹, 1 unpaired): μ = √3 ≈ 1.73 BM. Zn²⁺ (d¹⁰, 0 unpaired): diamagnetic. Exception: Zn and Sc³⁺ have fully filled/empty d-orbitals → diamagnetic. The element with highest paramagnetism in first transition series is Mn or Cr (5 or 6 unpaired electrons).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="dblock">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">Lanthanide contraction is caused by:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Poor shielding by 4f electrons — as 4f electrons are added across the lanthanide series, nuclear charge increases but shielding remains poor, causing effective nuclear charge and thus contraction</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Decreasing atomic mass across the lanthanide series</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Strong shielding by 4f electrons</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Lanthanides are radioactive and lose mass</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Poor 4f shielding.</strong> As we move across the lanthanide series (La to Lu), electrons are added to the inner 4f orbitals. The 4f orbitals are diffuse and provide poor shielding of the outer electrons from the nuclear charge. So effective nuclear charge (Z<sub>eff</sub>) increases → outer electrons pulled inward → gradual decrease in atomic and ionic radius. This is lanthanide contraction. Consequence: 4d and 5d elements (e.g., Zr and Hf) have nearly identical radii, making them chemically similar and hard to separate.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="dblock">
+    <div class="mcq-num">Q9</div>
+    <div class="mcq-q">Due to lanthanide contraction, the atomic radii of which pair of elements are nearly identical?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Ti and Zr</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Zr and Hf</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Cr and Mo</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Fe and Ru</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Zr and Hf.</strong> Zirconium (4d, Period 5) and Hafnium (5d, Period 6) have almost identical radii (~159 pm) due to lanthanide contraction. The 14 lanthanide elements intervene between Period 5 and Period 6, causing contraction that exactly offsets the expected increase in radius going from 4d to 5d. This makes Zr and Hf the most chemically similar pair in all of chemistry — extremely difficult to separate. Similarly, Nb/Ta and Mo/W pairs have similar properties.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="dblock">
+    <div class="mcq-num">Q10</div>
+    <div class="mcq-q">Actinides show more variable oxidation states than lanthanides because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Actinides have higher atomic masses</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Actinides are radioactive</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The 5f, 6d, and 7s orbitals are close in energy — all can participate in bonding</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Actinides form ionic bonds only</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Close energy 5f/6d/7s orbitals.</strong> In actinides, the 5f, 6d, and 7s orbitals have similar energies, so electrons from all three can participate in bond formation → wide range of oxidation states. Uranium (U) shows +3 to +6; Plutonium (Pu) shows +3 to +7. Lanthanides mostly show +3 (since 4f, 5d, 6s energy gap is larger, 4f electrons are less available for bonding). Most stable state for lanthanides is +3; for actinides +3 to +6 are common.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="dblock">
+    <div class="mcq-num">Q11</div>
+    <div class="mcq-q">Catalytic activity of transition metals is attributed to:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Their high melting points</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Their large atomic radii</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Their metallic lustre</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Variable oxidation states and ability to adsorb reactant gases on their surface</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Variable oxidation states + adsorption.</strong> Transition metals are excellent catalysts because: (1) Variable oxidation states allow them to accept and donate electrons easily (form intermediates and regenerate). (2) Their surfaces can adsorb reactant molecules, holding them in positions that favour reaction (heterogeneous catalysis). Examples: Fe in Haber process (N₂ + H₂ → NH₃), V₂O₅ in Contact process (SO₂ → SO₃), Ni in hydrogenation of oils. Pt and Pd catalyse many reactions.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="dblock">
+    <div class="mcq-num">Q12</div>
+    <div class="mcq-q">Interstitial compounds of transition metals have which of the following properties?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Hard, high melting point, retain metallic conductivity, chemically inert</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Soft, low melting point, non-conducting</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Soluble in common acids and bases</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Ionic in nature with fixed stoichiometry</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Hard, high MP, conducting, inert.</strong> Interstitial compounds are formed when small atoms (H, C, N, B) are trapped in the interstices (voids) of the metallic crystal lattice. Examples: TiC (titanium carbide), Fe₄N (iron nitride), PdH₀.₇ (palladium hydride). Properties: (1) harder than pure metal (distorted lattice); (2) higher melting point; (3) retain metallic conductivity; (4) chemically inert; (5) non-stoichiometric (variable composition). They are NOT ionic (no electron transfer).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="dblock">
+    <div class="mcq-num">Q13</div>
+    <div class="mcq-q">FeSO₄·7H₂O (green vitriol), CuSO₄·5H₂O (blue vitriol), and ZnSO₄·7H₂O (white vitriol) — the vivid colours of Fe and Cu sulphates are due to:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Charge transfer in the sulphate ion</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>d-d electronic transitions in incompletely filled d-orbitals of Fe²⁺ and Cu²⁺</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Presence of crystal water (H₂O)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>High oxidation state of transition metal</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — d-d transitions.</strong> Fe²⁺ (3d⁶, 4 unpaired e⁻) → green colour. Cu²⁺ (3d⁹, 1 unpaired e⁻) → blue colour. In both, d-orbitals are partially filled, and electrons can absorb visible light energy to jump between d-orbital levels split by the ligand field (here, water molecules). The absorbed colour determines the observed (complementary) colour. Anhydrous CuSO₄ is white because Cu²⁺ without water ligands has different d-splitting; ZnSO₄ is white because Zn²⁺ has d¹⁰ (no d-d transitions possible).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="dblock">
+    <div class="mcq-num">Q14</div>
+    <div class="mcq-q">The highest melting point among all metals belongs to:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Iron (Fe)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Chromium (Cr)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Tungsten (W, 3422°C)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Manganese (Mn)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Tungsten (W).</strong> Tungsten (W, Z=74) has the highest melting point of all metals at 3422°C. This is due to very strong metallic bonding — W has 6 unpaired electrons available for metallic bonding (configuration [Xe] 4f¹⁴ 5d⁴ 6s²). High melting points are a characteristic of transition metals (strong metallic bonds due to participation of d-electrons). Exception: Mercury (Hg) is a liquid at room temperature (d¹⁰ 6s², no d-electron bonding contribution).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="dblock">
+    <div class="mcq-num">Q15</div>
+    <div class="mcq-q">Which transition metal is liquid at room temperature?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Zinc (Zn)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Gallium (Ga)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Cadmium (Cd)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Mercury (Hg)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Mercury (Hg).</strong> Mercury is the only metal that is liquid at room temperature (mp = −38.83°C). Configuration: [Xe] 4f¹⁴ 5d¹⁰ 6s². The d and s orbitals are completely filled → weak metallic bonding. Also, relativistic effects contract the 6s orbital, making it less available for bonding. This is why Hg has an anomalously low melting point. Note: Gallium (Ga) melts at 29.76°C (melts in your palm) but is not a transition metal.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="dblock">
+    <div class="mcq-num">Q16</div>
+    <div class="mcq-q">The number of unpaired electrons in Mn²⁺ (Z=25) ion is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>5</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>4</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>3</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>2</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — 5 unpaired electrons.</strong> Mn: [Ar] 3d⁵ 4s². Mn²⁺ loses 2 electrons from 4s: [Ar] 3d⁵. A d⁵ configuration has all 5 d-orbitals singly occupied (by Hund's rule, one electron in each d-orbital, all with same spin). So 5 unpaired electrons. Magnetic moment μ = √(5×7) = √35 ≈ 5.92 BM. Mn²⁺ is very lightly coloured (nearly colourless/faint pink) because d⁵ d-d transitions are spin-forbidden (all spins parallel → transitions require spin flip).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="dblock">
+    <div class="mcq-num">Q17</div>
+    <div class="mcq-q">Transition metals form alloys more readily with each other because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>They all have the same crystal structure</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Their atomic radii are similar, so atoms can replace each other in the metallic lattice</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>They all form ionic bonds</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>They have identical electronic configurations</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Similar atomic radii.</strong> Transition metals across a period have gradually changing but similar atomic sizes. When atoms of similar size are mixed, they can substitute for one another in the metallic lattice forming a substitutional solid solution (alloy) without too much lattice distortion. This is Hume-Rothery's rule. Alloys of transition metals (steel = Fe+C, brass = Cu+Zn, bronze = Cu+Sn) are generally harder and stronger than pure metals.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="dblock">
+    <div class="mcq-num">Q18</div>
+    <div class="mcq-q">In the first transition series, which element has the highest oxidation state?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Iron (Fe, max +6)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Chromium (Cr, max +6)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Manganese (Mn, max +7 in KMnO₄)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Vanadium (V, max +5)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Mn, +7.</strong> Across the first transition series, the maximum oxidation state increases from Sc (+3) to Mn (+7 in KMnO₄), then decreases towards the end. This is because early transition metals can use all their d and s electrons for bonding, but later ones have more d-electrons that are harder to remove. After Mn, the electrons pair up and the high oxidation states become less stable due to increased nuclear charge. Mn shows +2 to +7, maximum is +7 in permanganate.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="dblock">
+    <div class="mcq-num">Q19</div>
+    <div class="mcq-q">When K₂Cr₂O₇ solution is made alkaline, it converts to:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>CrO₃ (orange)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Cr₂O₃ (green)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>CrO₄²⁻ remains unchanged</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>CrO₄²⁻ (chromate, yellow) — the orange dichromate converts to yellow chromate</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Yellow chromate.</strong> The dichromate–chromate equilibrium: Cr₂O₇²⁻ (orange) + 2OH⁻ ⇌ 2CrO₄²⁻ (yellow) + H₂O. In acidic medium: 2CrO₄²⁻ + 2H⁺ → Cr₂O₇²⁻ + H₂O. So: orange in acidic/neutral, yellow in basic. This interconversion is used to test for these ions. Both Cr(VI) species are oxidising agents; dichromate is used more commonly in titrations (more stable in acid).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="dblock">
+    <div class="mcq-num">Q20</div>
+    <div class="mcq-q">The most stable oxidation state for most lanthanides is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>+2</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>+3</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>+4</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>+5</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — +3.</strong> Most lanthanides show +3 as their most stable and common oxidation state. This is because removing 3 electrons (2 from 6s + 1 from 5d or 4f) gives a stable [Xe] core or half-filled/fully-filled 4f configurations. Some exceptions: Ce⁴⁺ (+4, stable — loses 4f¹ to get empty 4f⁰ = Xe configuration), Eu²⁺ (+2, stable — half-filled 4f⁷), Yb²⁺ (+2, stable — fully filled 4f¹⁴). All lanthanides form +3 ions; some also form +2 or +4.</div>
+  </div>
+</div>
+
+<!-- CH5: COORDINATION COMPOUNDS -->
+<div id="coord" class="ch-panel">
+  <div class="ch-heading">🔗 Coordination Compounds <span class="ch-mark-badge" style="background:#7c3aed">9 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="coord-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="coord-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('coord')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="coord">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">The IUPAC name of [Co(NH₃)₆]Cl₃ is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Cobalt hexaammine trichloride</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Hexaaminecobalt(III) chloride</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Hexaamminecobalt(III) chloride</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Trichloridehexaamminecobalt</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Hexaamminecobalt(III) chloride.</strong> IUPAC rules: (1) Cation before anion (complex cation, Cl⁻ is counter ion). (2) Ligands named before metal: ammine (NH₃, neutral ligand). (3) Number of ligands: hexa (6). (4) Metal with oxidation state: Co³⁺ → cobalt(III). Co³⁺ charge: 3+ = 6×0 (NH₃) + Co, so Co is +3. (5) Chloride is the anion. Note: "ammine" has double 'm' to distinguish from organic "amine" groups.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="coord">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">The IUPAC name of K₄[Fe(CN)₆] is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Potassium hexacyanoferrate(II) — yellow prussiate of potash</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Potassium hexacyanoferrate(III) — red prussiate</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Potassium iron cyanide</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Ferrous potassium cyanide</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Potassium hexacyanoferrate(II).</strong> K₄[Fe(CN)₆]: 4K⁺ are counter ions (potassium). Complex ion [Fe(CN)₆]⁴⁻: 6 CN⁻ (cyano ligands), Fe charge = 4− − 6×(−1) = +2, so Fe(II) → ferrate(II) (complex is anionic → metal suffix is "-ate"). Yellow prussiate of potash, used in blueprinting (Turnbull's blue test). K₃[Fe(CN)₆] = potassium hexacyanoferrate(III) = red prussiate of potash (Fe³⁺ with 6 CN⁻).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="coord">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">The coordination number of Co in [Co(en)₂Cl₂]⁺ is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>4</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>6</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>5</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>2</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — 6.</strong> en (ethylenediamine) is a bidentate ligand — each en donates 2 pairs of electrons to the metal. So 2 en ligands donate 2×2 = 4 coordination bonds. Plus 2 Cl⁻ (monodentate) donate 2 bonds. Total coordination number = 4 + 2 = 6. The complex is octahedral. To find Co oxidation state: [x + 0(×2) + (−1)(×2)] = +1 → x = +3. Co is +3.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="coord">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">EDTA (ethylenediaminetetraacetic acid) is which type of ligand?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Monodentate</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Bidentate (2 donor atoms)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Tetradentate (4 donor atoms)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Hexadentate (6 donor atoms — 2N + 4O)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Hexadentate.</strong> EDTA structure has 2 nitrogen atoms and 4 carboxylate oxygen atoms, all capable of donating electron pairs to the metal. Total 6 donor atoms → hexadentate. EDTA can wrap around a metal completely, forming 5 chelate rings with one metal ion. It is used in medicine (lead poisoning treatment), water softening (binds Ca²⁺, Mg²⁺), and analytical chemistry (complexometric titrations). The chelate effect makes EDTA complexes very stable.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="coord">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">According to Werner's theory, "primary valence" of a metal in a complex is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The ionisable valence — satisfied by counter ions outside the coordination sphere</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>The coordination number — satisfied by ligands inside square brackets</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The number of electrons donated by ligands</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The total number of bonds in the complex</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Ionisable valence.</strong> Werner proposed two types of valences: Primary valence = oxidation state of the metal, satisfied by ionisable anions (outside coordination sphere). Secondary valence = coordination number, satisfied by ligands inside the coordination sphere (inside square brackets). Example: [Co(NH₃)₆]Cl₃ — primary valence = 3 (three Cl⁻ outside satisfy Co³⁺); secondary valence = 6 (six NH₃ inside satisfy CN = 6). Secondary valence is always fixed and directed in space (explains geometry).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="coord">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">According to Crystal Field Theory (CFT), in an octahedral complex, d-orbitals split into:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Two sets: e<sub>g</sub> (lower, 2 orbitals) and t₂g (higher, 3 orbitals)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Five equal energy orbitals</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Two sets: t₂g (lower, 3 orbitals) and e<sub>g</sub> (higher, 2 orbitals) — splitting energy = Δₒ</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Three sets of equal orbitals</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — t₂g lower, e<sub>g</sub> higher.</strong> In an octahedral field, 6 ligands approach along x, y, z axes. The d<sub>x²-y²</sub> and d<sub>z²</sub> orbitals (e<sub>g</sub> set) point directly at ligands → greater repulsion → higher energy. The d<sub>xy</sub>, d<sub>xz</sub>, d<sub>yz</sub> orbitals (t₂g set) point between axes → less repulsion → lower energy. Crystal field splitting Δₒ (or 10Dq). Strong field ligands give large Δₒ → low spin; weak field give small Δₒ → high spin.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="coord">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">The spectrochemical series of ligands is (in order of increasing field strength):</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>CO > CN⁻ > F⁻ > H₂O > NH₃</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>I⁻ < Br⁻ < Cl⁻ < F⁻ < OH⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻ < CO</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>CO < CN⁻ < NH₃ < H₂O < F⁻ < Cl⁻</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>F⁻ > Cl⁻ > Br⁻ > I⁻ > H₂O > NH₃ > CN⁻ > CO</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Weak to strong field order.</strong> The spectrochemical series ranks ligands by their ability to split d-orbitals (Δ value). Weak field ligands (halides, OH⁻) → small Δ → high spin, less pairing. Strong field ligands (CN⁻, CO) → large Δ → low spin, forced pairing. Memory tip: "I Bring Cold Fluids, Our Hot Nervous English Nation Considers Carbon Monoxide" — I < Br < Cl < F < OH < H₂O < NH₃ < en < NO₂⁻ < CN⁻ < CO.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="coord">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">[NiCl₄]²⁻ is tetrahedral and paramagnetic. The hybridisation of Ni²⁺ in this complex is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>dsp²</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>d²sp³</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>sp³d</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>sp³</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — sp³.</strong> Ni²⁺: [Ar] 3d⁸. Cl⁻ is a weak-field ligand. Does not force pairing. 4 Cl⁻ ligands occupy one 4s + three 4p orbitals → sp³ hybridisation → tetrahedral geometry. 2 unpaired electrons remain in 3d → paramagnetic. Compare: [Ni(CN)₄]²⁻ — CN⁻ is strong field, forces pairing of 3d⁸ electrons, freeing one 3d orbital → dsp² hybridisation → square planar → diamagnetic. Same metal, different geometry depending on ligand field strength.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="coord">
+    <div class="mcq-num">Q9</div>
+    <div class="mcq-q">Linkage isomerism is exhibited by complexes containing which type of ligand?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Ambidentate ligands — can bond through two different donor atoms (e.g., NO₂⁻: N or O; SCN⁻: S or N)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Polydentate ligands like EDTA</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Two different monodentate ligands</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Only neutral ligands</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Ambidentate ligands.</strong> Linkage isomers differ only in which donor atom of an ambidentate ligand is coordinated. NO₂⁻ bonded through N = nitro (−NO₂); through O = nitrito (−ONO). Example: [Co(NH₃)₅(NO₂)]²⁺ vs [Co(NH₃)₅(ONO)]²⁺. SCN⁻ bonded through S = thiocyanato (S-SCN); through N = isothiocyanato (N-NCS). These are not the same compound — they have different physical properties and reactivity.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="coord">
+    <div class="mcq-num">Q10</div>
+    <div class="mcq-q">Ionisation isomers differ in:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Spatial arrangement of ligands (cis vs trans)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Which donor atom of the ligand is bonded to metal</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Which ions are inside vs outside the coordination sphere — they ionise differently in solution</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The metal's oxidation state</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Different ionisation in solution.</strong> Ionisation isomers have the same overall composition but different ions inside and outside the coordination sphere. [Co(NH₃)₅Br]SO₄ gives Br⁻ inside (no precipitate with AgNO₃) and SO₄²⁻ outside (precipitate with BaCl₂). [Co(NH₃)₅SO₄]Br gives SO₄²⁻ inside and Br⁻ outside (precipitate with AgNO₃). They can be distinguished by testing their solutions with AgNO₃ and BaCl₂. Same molecular formula, different connectivity.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="coord">
+    <div class="mcq-num">Q11</div>
+    <div class="mcq-q">Geometrical (cis-trans) isomerism is shown by the square planar complex [Pt(NH₃)₂Cl₂]. Cisplatin (the anticancer drug) is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Trans-[PtCl₂(NH₃)₂]</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>cis-[PtCl₂(NH₃)₂] — both Cl on same side</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>[Pt(NH₃)₄]²⁺Cl₂</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>[Pt(en)Cl₂]</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — cis isomer.</strong> In cisplatin, both Cl⁻ ligands are on the same side (cis) of the square planar Pt²⁺ complex. Cisplatin (cis-diamminedichloroplatinum II) is used in cancer chemotherapy. It works by cross-linking with guanine bases in DNA, preventing replication. The trans isomer (transplatin) is pharmacologically inactive. Geometrical isomerism requires: (1) rigid geometry, (2) at least two different kinds of ligands. Square planar [MA₂B₂] and octahedral [MA₄B₂] type complexes show cis-trans isomerism.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="coord">
+    <div class="mcq-num">Q12</div>
+    <div class="mcq-q">Optical isomerism is exhibited by [Co(en)₃]³⁺. The two optical isomers are designated as:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>cis and trans</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Facial (fac) and meridional (mer)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>R and S</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Δ (delta) and Λ (lambda) — d and l forms</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Δ and Λ.</strong> [Co(en)₃]³⁺ is a tris-chelate octahedral complex with a propeller-like (helical) structure. The two non-superimposable mirror image forms are called: Δ (delta, right-handed propeller) and Λ (lambda, left-handed). They rotate plane-polarised light in opposite directions. Optical isomers: same molecular formula, same connectivity, but non-superimposable mirror images (chiral molecules). No plane/centre of symmetry. d-form and l-form are detected by polarimetry.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="coord">
+    <div class="mcq-num">Q13</div>
+    <div class="mcq-q">The Effective Atomic Number (EAN) of [Ni(CO)₄] equals 36. This corresponds to the configuration of:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Argon (Ar, Z=18)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Xenon (Xe, Z=54)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Krypton (Kr, Z=36)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Radon (Rn, Z=86)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Krypton (Kr, Z=36).</strong> EAN = atomic number of metal − electrons lost + electrons donated by ligands. Ni (Z=28) in [Ni(CO)₄] is Ni⁰ (CO is neutral, no ionisation). Each CO donates 2 electrons. EAN = 28 − 0 + 4×2 = 28 + 8 = 36 = Kr. This satisfies the EAN rule (complexes tend to achieve noble gas configuration). [Fe(CO)₅]: EAN = 26 + 5×2 = 36 = Kr. [Cr(CO)₆]: EAN = 24 + 6×2 = 36 = Kr.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="coord">
+    <div class="mcq-num">Q14</div>
+    <div class="mcq-q">Chelate effect: complexes with polydentate ligands are more stable than those with equivalent monodentate ligands. The primary thermodynamic reason is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Entropy gain (ΔS > 0) — replacing n monodentate ligands with fewer polydentate ligands releases more particles, increasing disorder</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Stronger metal-ligand bond energy in chelates</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Chelating ligands are always negatively charged</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Chelates have higher molar mass</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Entropy (ΔS > 0).</strong> [M(NH₃)₂]²⁺ + en → [M(en)]²⁺ + 2NH₃. One bidentate ligand replaces two monodentate ligands. Number of free particles increases (2 NH₃ released): ΔS > 0. Since ΔG = ΔH − TΔS, a positive ΔS lowers ΔG (makes it more negative) → more stable complex. The enthalpy changes are similar, so entropy is the key driver. This entropy-driven stability is the "chelate effect." Larger chelate rings are less stable (entropy advantage decreases).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="coord">
+    <div class="mcq-num">Q15</div>
+    <div class="mcq-q">The complex [Fe(CN)₆]³⁻ has 1 unpaired electron (low spin), while [Fe(H₂O)₆]³⁺ has 5 unpaired electrons (high spin). This difference is because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Fe³⁺ is more stable with water than with cyanide</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>CN⁻ causes much larger crystal field splitting (large Δₒ > pairing energy) forcing electron pairing; H₂O gives small Δₒ < pairing energy, so electrons remain unpaired</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Fe³⁺ in water is octahedral but in cyanide it is tetrahedral</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Fe changes oxidation state from +3 to +2 in cyanide complex</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Large Δₒ for CN⁻ forces pairing.</strong> Fe³⁺ is d⁵. CN⁻ (strong field): Δₒ > pairing energy → electrons pair up in t₂g before filling e<sub>g</sub>. Configuration: t₂g⁵e<sub>g</sub>⁰ → 1 unpaired electron (low spin). H₂O (weak field): Δₒ < pairing energy → Hund's rule followed → t₂g³e<sub>g</sub>² → 5 unpaired electrons (high spin). Both are octahedral (coordination number 6). Low spin: inner orbital, d²sp³. High spin: outer orbital, sp³d².</div>
+  </div>
+</div>
+
+</div><script src="../../js/mcq.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* ─── CBSEPrep Base Styles ───────────────────────────────────────────────── */
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+
+/* Design tokens */
+:root {
+  /* Sand palette */
+  --sand-50:  #fdfcfa;
+  --sand-100: #f7f5f0;
+  --sand-200: #eae6dd;
+  --sand-300: #d8d1c4;
+  --sand-400: #b8ad9a;
+  --sand-700: #5c5347;
+  --sand-900: #2c2822;
+
+  /* Ink palette */
+  --ink:   #1c1917;
+  --ink-2: #44403c;
+  --ink-3: #78716c;
+
+  /* Semantic */
+  --hot:        #dc2626;
+  --hot-bg:     #fef2f2;
+  --hot-border: #fca5a5;
+
+  /* Subject theming — overridden per page via inline :root */
+  --subject-color:  var(--sand-900);
+  --subject-bg:     var(--sand-100);
+  --subject-border: var(--sand-300);
+  --subject-text:   var(--ink-2);
+}
+
+/* Document */
+html {
+  scroll-behavior: smooth;
+  font-size: 105%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--sand-50);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Dot-grid background texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--sand-200) .5px, transparent .5px);
+  background-size: 24px 24px;
+  opacity: .3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layout container */
+.container {
+  max-width: 80%;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Back navigation */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .72rem;
+  color: var(--ink-3);
+  text-decoration: none;
+  padding: .4rem 0;
+  margin-top: 1.25rem;
+  font-weight: 600;
+  transition: color .2s;
+}
+.back-link:hover { color: var(--ink) }
+
+/* Bare page title + subtitle (outside .hero wrapper) */
+.container > h1 {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+}
+.container > .subtitle {
+  font-size: .8rem;
+  color: var(--ink-3);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+/* Page hero */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--sand-200);
+}
+.hero .badge {
+  display: inline-block;
+  background: var(--subject-bg);
+  border: 1px solid var(--subject-border);
+  border-radius: 999px;
+  padding: .25rem .75rem;
+  font-size: .7rem;
+  color: var(--subject-color);
+  margin-bottom: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.hero .sub {
+  font-size: .82rem;
+  color: var(--ink-3);
+  margin: .4rem auto 0;
+  max-width: 540px;
+  line-height: 1.6;
+}
+.hero .stat-row, .hero .marks-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+.hero .stat-item, .hero .marks-item {
+  text-align: center;
+}
+.hero .stat-item .num, .hero .marks-item .num {
+  font-family: 'Newsreader', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.hero .stat-item .lbl, .hero .marks-item .lbl {
+  font-size: .62rem;
+  color: var(--ink-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* Shared tab button (used by chapter-nav and section-nav) */
+.tab {
+  font-size: .82em;
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 2px solid var(--sand-300);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--sand-700);
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+}
+.tab:hover  { border-color: var(--sand-400); color: var(--sand-900) }
+.tab.active { background: var(--sand-900); color: #fff; border-color: var(--sand-900) }
+
+/* Monospace formula inline */
+.mono { font-family: monospace; font-size: .82em }
+
+/* Equation chip */
+.eq {
+  font-family: monospace;
+  background: var(--sand-100);
+  border-radius: 4px;
+  padding: .1rem .4rem;
+  font-size: .85em;
+  display: inline-block;
+  margin: .1rem 0;
+  color: var(--ink-2);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container { max-width: 100%; width: 100% }
+}

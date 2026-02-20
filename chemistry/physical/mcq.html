@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/mcq.css">
+<style>:root{
+  --subject-color:#0891b2;--subject-bg:#ecfeff;--subject-border:#67e8f9;--subject-text:#0e7490;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Chemistry MCQ — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">&#8592; Back to Home</a>
+<div class="hero">
+  <div class="badge">Physical Chemistry XII &middot; MCQ Bank</div>
+  <h1>Physical Chemistry MCQs</h1>
+  <p class="sub">75+ direct NCERT questions from Solutions, Electrochemistry &amp; Chemical Kinetics — click an option to reveal the answer.</p>
+</div>
+
+<nav class="ch-nav">
+  <div class="ch-nav-inner">
+    <button class="ch-btn active" onclick="showCh('sol',this)">Ch 1 — Solutions</button>
+    <button class="ch-btn" onclick="showCh('electro',this)">Ch 2 — Electrochemistry</button>
+    <button class="ch-btn" onclick="showCh('kinetics',this)">Ch 3 — Chemical Kinetics</button>
+  </div>
+</nav>
+
+<!-- CH1: SOLUTIONS -->
+<div id="sol" class="ch-panel active">
+  <div class="ch-heading">🧪 Solutions <span class="ch-mark-badge" style="background:#059669">7 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="sol-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="sol-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('sol')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="sol">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">According to Henry's law, with an increase in temperature, the solubility of a gas in a liquid:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Increases</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Decreases</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Remains unchanged</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>First increases then decreases</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Decreases.</strong> Henry's law: p = K<sub>H</sub> × x. As temperature rises, K<sub>H</sub> increases, meaning for the same partial pressure, mole fraction (solubility) decreases. Gases are less soluble at higher temperatures — that's why carbonated drinks fizz more when warm. This is also why dissolved oxygen in water decreases in summer, affecting aquatic life.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="sol">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">Raoult's law states that the partial vapour pressure of a component in an ideal solution is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Equal to its vapour pressure in pure state</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Proportional to its molality</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Equal to its mole fraction multiplied by its vapour pressure in pure state (P<sub>A</sub> = x<sub>A</sub> × P°<sub>A</sub>)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Independent of concentration</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — P<sub>A</sub> = x<sub>A</sub> × P°<sub>A</sub>.</strong> Raoult's law applies to ideal solutions where solute-solvent interactions equal pure component interactions. The partial pressure of each component is directly proportional to its mole fraction. The total pressure is P = x<sub>A</sub>P°<sub>A</sub> + x<sub>B</sub>P°<sub>B</sub>. Solutions that follow this law at all concentrations are called ideal solutions (e.g., benzene + toluene).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="sol">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">Ethanol–water mixture shows positive deviation from Raoult's law. This is because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>A–B (ethanol–water) interactions are weaker than A–A and B–B interactions</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>A–B interactions are stronger than pure component interactions</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The vapour pressure of the mixture equals sum of pure vapour pressures</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Both components have equal boiling points</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Weaker A–B interactions.</strong> In ethanol–water, hydrogen bonds between unlike molecules are weaker than those between like molecules. This makes it easier for molecules to escape into vapour phase → higher vapour pressure than predicted by Raoult's law → positive deviation. The mixture has a minimum boiling azeotrope (boils at lower temperature than either pure component). Volume of mixing > 0, ΔH<sub>mix</sub> > 0.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="sol">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Acetone–chloroform mixture shows negative deviation from Raoult's law. The azeotrope formed has a:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Minimum boiling point</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Maximum boiling point</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Same boiling point as pure components</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>No definite boiling point</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Maximum boiling point.</strong> Negative deviation: A–B interactions stronger than A–A or B–B (H-bond between C=O of acetone and CHCl₃ hydrogen). Vapour pressure is lower than ideal → maximum boiling azeotrope (mixture boils at higher T than either pure component). ΔV<sub>mix</sub> < 0, ΔH<sub>mix</sub> < 0. Contrast with ethanol–water (positive deviation → minimum boiling azeotrope at 95.5% ethanol).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="sol">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">Colligative properties depend on:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The chemical nature of the solute</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">C</span>The size of solute molecules</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The charge on solute ions</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Only the number of solute particles, not their nature</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Number of particles only.</strong> Colligative properties (relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmotic pressure) depend solely on the number of solute particles per unit volume/mass of solvent — not on the identity, size, or charge of the particles. This is why electrolytes that dissociate show greater effects than non-electrolytes at the same concentration.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="sol">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">The formula for elevation of boiling point is ΔT<sub>b</sub> = K<sub>b</sub> × m. Here K<sub>b</sub> (ebullioscopic constant) depends on:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The nature of the solvent only</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>The nature of the solute only</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Both solute and solvent</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Temperature of solution</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Nature of solvent only.</strong> K<sub>b</sub> = RT²<sub>b</sub>M / (1000 × ΔH<sub>vap</sub>). It depends only on the solvent's boiling point (T<sub>b</sub>), molar mass (M), and enthalpy of vaporisation. For water: K<sub>b</sub> = 0.52 K·kg/mol. For benzene: K<sub>b</sub> = 2.53 K·kg/mol. The same K<sub>b</sub> applies regardless of which solute is dissolved in that solvent.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="sol">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">The van't Hoff factor (i) for K₂SO₄ (complete dissociation) is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>1</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>2</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>3</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>4</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — i = 3.</strong> K₂SO₄ → 2K⁺ + SO₄²⁻. One formula unit gives 3 ions, so i = 3. For NaCl → Na⁺ + Cl⁻, i = 2. For AlCl₃ → Al³⁺ + 3Cl⁻, i = 4. For glucose (non-electrolyte), i = 1. Colligative properties are multiplied by i: ΔT<sub>b</sub> = i × K<sub>b</sub> × m, showing electrolytes have stronger effects than non-electrolytes at same concentration.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="sol">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">van't Hoff factor for acetic acid in benzene is less than 1 because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Acetic acid dissociates in benzene</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Benzene reacts with acetic acid</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Acetic acid is a weak electrolyte</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Acetic acid forms dimers in benzene (association via H-bonding)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Dimerisation (association).</strong> In non-polar benzene, acetic acid molecules associate via hydrogen bonds to form dimers (2 CH₃COOH → (CH₃COOH)₂). Two molecules act as one particle, so the effective number of particles decreases. i < 1 for association. The molar mass measured is ~120 g/mol (double the actual 60 g/mol). This is abnormal molar mass due to association.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="sol">
+    <div class="mcq-num">Q9</div>
+    <div class="mcq-q">Osmotic pressure (π) is given by π = iMRT. If two solutions have the same osmotic pressure at the same temperature, they are called:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Hypertonic solutions</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Isotonic solutions</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Hypotonic solutions</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Colloidal solutions</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Isotonic solutions.</strong> Isotonic solutions have equal osmotic pressures at the same temperature. When a cell is placed in an isotonic solution, no net flow of water occurs. Normal saline (0.9% NaCl) is isotonic with blood. If a cell is in a hypertonic solution (higher π outside), water flows out → plasmolysis/crenation. In a hypotonic solution (lower π outside), water flows in → cell swells/haemolysis.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="sol">
+    <div class="mcq-num">Q10</div>
+    <div class="mcq-q">Osmotic pressure method is preferred for determining molar mass of polymers and proteins because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>It requires less solute</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Proteins dissolve easily in osmotic cells</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Even dilute solutions of large molecules give measurable osmotic pressure; ΔT<sub>b</sub> and ΔT<sub>f</sub> are too small to measure accurately</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>It is the simplest colligative property to measure</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Measurable pressure even at high molar mass.</strong> For a polymer of molar mass 100,000 g/mol, even a 1% solution gives ΔT<sub>b</sub> ≈ 0.00052 K and ΔT<sub>f</sub> ≈ 0.00186 K — too small to measure precisely. But osmotic pressure for the same solution: π = nRT/V gives a measurable value (~0.24 atm). Osmotic pressure has the largest effect per mole of all colligative properties.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="sol">
+    <div class="mcq-num">Q11</div>
+    <div class="mcq-q">Why is molality preferred over molarity for expressing concentration in colligative property calculations?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Molality is temperature-independent (mass-based); molarity changes with temperature as volume expands/contracts</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Molality is easier to calculate</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Molarity cannot be used for electrolytes</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Molality gives larger numerical values</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Temperature independence.</strong> Molality = moles of solute / kg of solvent. Since both moles and mass are unaffected by temperature changes, molality is constant at all temperatures. Molarity = moles / litre of solution; as temperature changes, the volume of solution changes, so molarity changes. For colligative property formulas (ΔT<sub>b</sub>, ΔT<sub>f</sub>), molality gives temperature-independent results.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="sol">
+    <div class="mcq-num">Q12</div>
+    <div class="mcq-q">Which aqueous solution would have the highest boiling point (same molal concentration)?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Glucose (C₆H₁₂O₆)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>NaCl</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>CaCl₂</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>AlCl₃</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — AlCl₃.</strong> ΔT<sub>b</sub> = i × K<sub>b</sub> × m. van't Hoff factors: glucose i=1, NaCl i=2, CaCl₂ i=3, AlCl₃ i=4. Higher i → greater ΔT<sub>b</sub> → higher boiling point. AlCl₃ → Al³⁺ + 3Cl⁻ gives 4 particles per formula unit, highest colligative effect.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="sol">
+    <div class="mcq-num">Q13</div>
+    <div class="mcq-q">In reverse osmosis, pressure applied is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Less than osmotic pressure — solvent flows from solution to pure solvent</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Greater than osmotic pressure — solvent flows from solution through membrane (water purification)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Equal to osmotic pressure — no net flow</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Any pressure — direction does not matter</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Greater than osmotic pressure.</strong> In normal osmosis, solvent flows from low concentration (pure solvent) to high concentration (solution). In reverse osmosis, an external pressure exceeding the osmotic pressure is applied to the solution side, forcing solvent back through the semipermeable membrane from solution to pure solvent. This is the basis of desalination plants and water purifiers (RO purifiers).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="sol">
+    <div class="mcq-num">Q14</div>
+    <div class="mcq-q">The relative lowering of vapour pressure (ΔP/P°) equals:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Mole fraction of solvent</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Molality of solution</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Mole fraction of solute (x<sub>B</sub>)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Mole fraction of solute divided by molarity</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Mole fraction of solute.</strong> From Raoult's law: P = x<sub>A</sub>P°<sub>A</sub>, so (P°<sub>A</sub> − P) / P°<sub>A</sub> = 1 − x<sub>A</sub> = x<sub>B</sub>. The relative lowering of vapour pressure equals the mole fraction of the solute. This is the simplest form of the law and applies to dilute solutions of non-volatile solutes. It is also a colligative property — depends only on number of solute particles.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="sol">
+    <div class="mcq-num">Q15</div>
+    <div class="mcq-q">Which of the following is NOT a colligative property?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Optical rotation</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Elevation of boiling point</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Depression of freezing point</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Osmotic pressure</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Optical rotation.</strong> The four colligative properties are: (1) Relative lowering of vapour pressure, (2) Elevation of boiling point, (3) Depression of freezing point, (4) Osmotic pressure. Optical rotation (ability to rotate plane-polarised light) depends on the specific structure/chirality of the molecule — it is not a colligative property.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="sol">
+    <div class="mcq-num">Q16</div>
+    <div class="mcq-q">The cryoscopic constant K<sub>f</sub> for water is 1.86 K·kg/mol. A solution of 6 g of urea (MW = 60) in 200 g of water will show a freezing point depression of:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>0.465 K</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>0.93 K</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>1.86 K</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>0.186 K</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — 0.93 K.</strong> Moles of urea = 6/60 = 0.1 mol. Molality m = 0.1 mol / 0.2 kg = 0.5 mol/kg. ΔT<sub>f</sub> = K<sub>f</sub> × m = 1.86 × 0.5 = 0.93 K. So the solution freezes at 0 − 0.93 = −0.93°C instead of 0°C. Urea is a non-electrolyte (i=1). Remember: depression of freezing point means the solution freezes at a lower temperature.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="sol">
+    <div class="mcq-num">Q17</div>
+    <div class="mcq-q">A solution that causes a cell to shrink (lose water by osmosis) is called:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Hypotonic</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Isotonic</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Dilute</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Hypertonic</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Hypertonic.</strong> A hypertonic solution has higher solute concentration (higher osmotic pressure) than the cell fluid. Water flows out of the cell by osmosis (from low to high concentration) causing the cell to shrink — plasmolysis in plant cells, crenation in RBCs. A hypotonic solution (lower concentration outside) causes water to flow into the cell, making it swell and possibly burst (haemolysis).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="sol">
+    <div class="mcq-num">Q18</div>
+    <div class="mcq-q">In a binary solution, if vapour pressure is plotted against mole fraction of a component, an ideal solution gives:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>A curve above the Raoult's law line (positive deviation)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>A curve below the Raoult's law line (negative deviation)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>A straight line (Raoult's law line)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>A horizontal line</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Straight line.</strong> For an ideal solution obeying Raoult's law: P<sub>total</sub> = x<sub>A</sub>P°<sub>A</sub> + x<sub>B</sub>P°<sub>B</sub>, which is a linear equation in mole fraction. Plotting P vs x gives a straight line between P°<sub>A</sub> and P°<sub>B</sub>. Positive deviation: curve above this line. Negative deviation: curve below. Ideal solutions: benzene + toluene, hexane + heptane (similar molecules).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="sol">
+    <div class="mcq-num">Q19</div>
+    <div class="mcq-q">The degree of dissociation (α) of an electrolyte AB₂ (dissociates into A²⁺ + 2B⁻) is related to van't Hoff factor i by:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>i = 1 + α</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>i = 1 + 2α (since n = 3 ions from 1 formula unit: i = 1 + (n−1)α)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>i = 1 − α</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>i = 3α</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — i = 1 + 2α.</strong> For AB₂ → A²⁺ + 2B⁻, n = 3 particles from 1 unit. General formula: i = 1 + (n − 1)α. Here n = 3, so i = 1 + (3−1)α = 1 + 2α. For complete dissociation (α = 1): i = 3, confirming K₂SO₄ result. For NaCl (n=2): i = 1 + α. This formula connects the measurable van't Hoff factor to the degree of dissociation — useful for weak electrolytes.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="sol">
+    <div class="mcq-num">Q20</div>
+    <div class="mcq-q">An aqueous solution of 0.1 M NaCl has osmotic pressure greater than 0.1 M glucose because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>NaCl dissociates into Na⁺ and Cl⁻, giving ~0.2 M effective particle concentration</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>NaCl has lower molar mass than glucose</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Glucose is a non-electrolyte and does not dissolve in water</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>NaCl has a higher density in solution</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — NaCl dissociates.</strong> π = iMRT. For 0.1 M glucose: i=1, π = 1×0.1×R×T = 0.1RT. For 0.1 M NaCl: i≈2 (complete dissociation), π = 2×0.1×R×T = 0.2RT. Since π<sub>NaCl</sub> > π<sub>glucose</sub>, NaCl solution is hypertonic relative to glucose solution of the same concentration. This is why colligative properties are always larger for electrolytes.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="sol">
+    <div class="mcq-num">Q21</div>
+    <div class="mcq-q">Mole fraction of a solute in a solution is 0.1. If the solvent has vapour pressure of 80 mmHg, the vapour pressure of the solution is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>88 mmHg</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>8 mmHg</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>72 mmHg</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>72 mmHg</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — 72 mmHg.</strong> Mole fraction of solute x<sub>B</sub> = 0.1, so mole fraction of solvent x<sub>A</sub> = 1 − 0.1 = 0.9. By Raoult's law: P = x<sub>A</sub> × P°<sub>A</sub> = 0.9 × 80 = 72 mmHg. Alternatively: ΔP/P° = x<sub>B</sub> = 0.1, so ΔP = 8 mmHg, P = 80 − 8 = 72 mmHg. The vapour pressure is lowered by adding solute.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="sol">
+    <div class="mcq-num">Q22</div>
+    <div class="mcq-q">Which pair of liquids would form an ideal solution (no deviation from Raoult's law)?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Ethanol and water</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Benzene and toluene</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Acetone and chloroform</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>HCl and water</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Benzene and toluene.</strong> Ideal solutions form when solute–solvent interactions are similar to pure component interactions (ΔH<sub>mix</sub> ≈ 0, ΔV<sub>mix</sub> ≈ 0). Benzene (C₆H₆) and toluene (C₇H₈) are both non-polar, aromatic hydrocarbons with similar structures. Their intermolecular forces are nearly identical. Examples: hexane + heptane, CCl₄ + SiCl₄. Ethanol + water and acetone + CHCl₃ show deviations due to different intermolecular forces.</div>
+  </div>
+</div>
+
+<!-- CH2: ELECTROCHEMISTRY -->
+<div id="electro" class="ch-panel">
+  <div class="ch-heading">⚡ Electrochemistry <span class="ch-mark-badge" style="background:#0891b2">9 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="electro-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="electro-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('electro')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="electro">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">A galvanic (voltaic) cell converts:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Chemical energy to electrical energy</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Electrical energy to chemical energy</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Mechanical energy to electrical energy</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Thermal energy to electrical energy</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Chemical to electrical energy.</strong> In a galvanic (voltaic) cell, a spontaneous redox reaction produces electrical energy. Example: Daniell cell (Zn–Cu). Oxidation at anode (negative terminal in galvanic cell): Zn → Zn²⁺ + 2e⁻. Reduction at cathode (positive terminal): Cu²⁺ + 2e⁻ → Cu. Electrons flow from anode to cathode through external circuit. Contrast: electrolytic cell uses electrical energy to drive non-spontaneous reactions.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="electro">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">In a galvanic cell, the electrode where oxidation occurs is called the:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Cathode (positive terminal)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Anode (negative terminal)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Cathode (negative terminal)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Anode (positive terminal)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Anode, negative terminal.</strong> Mnemonic: OIL RIG at anode (Oxidation Is Loss), reduction at cathode. In a galvanic cell: anode is negative (electrons leave it), cathode is positive (electrons arrive). In electrolytic cell: anode is positive (connected to +ve battery terminal), cathode is negative. Oxidation always at anode and reduction always at cathode — this rule applies to both types of cells.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="electro">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">The standard hydrogen electrode (SHE) is assigned E° = 0 V. Its conditions are:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>1 atm H₂, 0.1 M H⁺, Pt electrode</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>1 atm H₂, 1 M H⁺, graphite electrode</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>1 atm H₂, 1 M H⁺, Pt electrode (H⁺/H₂)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>2 atm H₂, 1 M H⁺, Pt electrode</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — 1 atm H₂, 1 M H⁺, Pt electrode.</strong> SHE: Pt electrode immersed in 1 M HCl (a<sub>H⁺</sub> = 1), H₂ gas bubbled at 1 atm. By convention, E°(H⁺/H₂) = 0.00 V. All other standard electrode potentials are measured relative to SHE. E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub>. The Pt electrode is used because it is inert (does not react) but conducts electricity.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="electro">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">The Nernst equation at 298 K is E = E° − (0.0592/n)log Q. For the reaction Zn + Cu²⁺ → Zn²⁺ + Cu, when [Zn²⁺] = [Cu²⁺], the EMF equals:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>0 V</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>0.0296 V</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>0.0592 V</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>E° (standard EMF, 1.10 V)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — E°.</strong> When [Zn²⁺] = [Cu²⁺], Q = [Zn²⁺]/[Cu²⁺] = 1. log(1) = 0. So E = E° − (0.0592/2) × 0 = E°. The Daniell cell has E° = E°<sub>Cu²⁺/Cu</sub> − E°<sub>Zn²⁺/Zn</sub> = +0.34 − (−0.76) = +1.10 V. The Nernst equation shows E = E° only when all concentrations are at standard state (1 M) or when they are equal and cancel.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="electro">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">The relationship between ΔG° and E°<sub>cell</sub> is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>ΔG° = +nFE°<sub>cell</sub></button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>ΔG° = −nFE°<sub>cell</sub></button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>ΔG° = nFE°<sub>cell</sub> / RT</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>ΔG° = nRT / E°<sub>cell</sub></button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — ΔG° = −nFE°<sub>cell</sub>.</strong> For a spontaneous reaction, ΔG° < 0 and E°<sub>cell</sub> > 0 (they have opposite signs). F = Faraday constant = 96,500 C/mol. n = number of electrons transferred. This relationship links thermodynamics (ΔG°) to electrochemistry (E°). Also: ΔG° = −RT ln K<sub>eq</sub> = −nFE°, so E° = (RT/nF) ln K<sub>eq</sub>. A cell with E°<sub>cell</sub> > 0 has K > 1 (products favoured).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="electro">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Faraday's first law of electrolysis states that the mass of substance deposited (w) is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>w = (M × I × t) / (n × F) — proportional to charge passed (Q = It)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>w = n × F × I</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>w proportional to the voltage applied</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>w = M / (n × I × t)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — w = MIt/nF.</strong> Faraday's first law: mass deposited is directly proportional to the quantity of electricity passed (Q = I × t). w = (M/nF) × Q = (M × I × t)/(n × F). Where M = molar mass, n = number of electrons in electrode reaction, F = 96500 C/mol. Example: depositing Cu (M=64, n=2): w = (64 × I × t)/(2 × 96500). 96500 C deposits 1 equivalent (M/n grams) of any substance.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="electro">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">Kohlrausch's law states that the molar conductance at infinite dilution (Λ°<sub>m</sub>) equals:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The product of individual ion conductances</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Conductance at a specific concentration</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The sum of limiting molar conductances of individual ions (λ°<sub>cation</sub> + λ°<sub>anion</sub>)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Conductance divided by cell constant</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Sum of individual ion conductances.</strong> Kohlrausch's law of independent migration of ions: Λ°<sub>m</sub> = ν<sub>+</sub>λ°<sub>+</sub> + ν<sub>−</sub>λ°<sub>−</sub>. At infinite dilution, each ion makes its own independent contribution to conductance regardless of what other ions are present. Used to calculate Λ°<sub>m</sub> for weak electrolytes (like acetic acid) by combining data from strong electrolytes: Λ°<sub>m</sub>(CH₃COOH) = Λ°<sub>m</sub>(CH₃COONa) + Λ°<sub>m</sub>(HCl) − Λ°<sub>m</sub>(NaCl).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="electro">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">In the lead storage battery (during discharge), at the anode:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>PbO₂ is reduced to PbSO₄</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>PbSO₄ is reduced to Pb</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Pb is oxidised to Pb²⁺ ions in solution</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Pb is oxidised to PbSO₄ (insoluble)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Pb → PbSO₄ at anode.</strong> Lead storage battery reactions during discharge: Anode (−): Pb + SO₄²⁻ → PbSO₄ + 2e⁻ (oxidation). Cathode (+): PbO₂ + 4H⁺ + SO₄²⁻ + 2e⁻ → PbSO₄ + 2H₂O (reduction). Overall: Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O. Both electrodes become coated with PbSO₄ during discharge; H₂SO₄ is consumed (density decreases — used to check charge level).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="electro">
+    <div class="mcq-num">Q9</div>
+    <div class="mcq-q">Molar conductance of an electrolyte solution:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Decreases with dilution for both strong and weak electrolytes</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Increases with dilution for both strong and weak electrolytes (approaches Λ°<sub>m</sub>)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Remains constant for strong electrolytes</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>First increases then decreases with dilution</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Increases with dilution for both.</strong> Molar conductance (Λ<sub>m</sub> = κ × 1000/M) increases with dilution: for strong electrolytes — interionic attractions decrease as concentration drops (Λ<sub>m</sub> = Λ°<sub>m</sub> − A√C, Debye-Hückel-Onsager equation); for weak electrolytes — degree of dissociation (α) increases dramatically with dilution, releasing more ions. Both approach Λ°<sub>m</sub> at infinite dilution, but weak electrolytes rise much more steeply.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="electro">
+    <div class="mcq-num">Q10</div>
+    <div class="mcq-q">Corrosion of iron (rusting) is an electrochemical process. The iron acts as the:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Cathode (gains electrons)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Electrolyte</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Anode (loses electrons — Fe → Fe²⁺ + 2e⁻)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Inert electrode</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Iron is the anode.</strong> In rusting, iron forms a tiny galvanic cell with an impurity (e.g., carbon). Fe (anode): Fe → Fe²⁺ + 2e⁻ (oxidation). At cathode (impurity): O₂ + 4H⁺ + 4e⁻ → 2H₂O (in acidic medium) or O₂ + 2H₂O + 4e⁻ → 4OH⁻ (neutral/basic). Overall: 4Fe + 3O₂ + xH₂O → 2Fe₂O₃·xH₂O (rust). Requires both O₂ and water. Prevention: galvanisation (Zn coating), painting, cathodic protection.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="electro">
+    <div class="mcq-num">Q11</div>
+    <div class="mcq-q">Galvanisation (coating iron with zinc) prevents corrosion because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Zn has a lower reduction potential than Fe; Zn acts as the sacrificial anode (corrodes preferentially)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Zn has a higher reduction potential than Fe</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Zn does not react with water at all</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Zn forms an insoluble layer that stops all reactions</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Sacrificial anode.</strong> E°(Zn²⁺/Zn) = −0.76 V, E°(Fe²⁺/Fe) = −0.44 V. Zinc has a more negative (lower) reduction potential → stronger tendency to oxidise (corrode). In a galvanic cell, Zn acts as anode and Fe as cathode. Zn corrodes preferentially, protecting Fe even if the coating is scratched. This is called cathodic protection (Fe is cathodically protected). Used in galvanised iron sheets (GI pipes, roofing sheets).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="electro">
+    <div class="mcq-num">Q12</div>
+    <div class="mcq-q">In the electrolysis of molten NaCl (Down's cell), sodium metal is produced at the:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Anode (positive terminal)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Both anode and cathode</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The cell body (not an electrode)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Cathode (negative terminal) — Na⁺ + e⁻ → Na</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Cathode.</strong> In Down's cell (molten NaCl): Cathode (−): Na⁺ + e⁻ → Na (reduction, liquid Na floats to top). Anode (+): 2Cl⁻ → Cl₂ + 2e⁻ (oxidation, chlorine gas). Overall: 2NaCl → 2Na + Cl₂. This is how metallic sodium is commercially produced. In the chlor-alkali process (electrolysis of brine/NaCl solution): cathode gives NaOH + H₂, anode gives Cl₂.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="electro">
+    <div class="mcq-num">Q13</div>
+    <div class="mcq-q">The conductance of an electrolyte solution increases with temperature because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>More ions are produced at higher temperature</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Ionic mobility increases (viscosity decreases) with temperature, allowing faster ion movement</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The number of charge carriers decreases</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Higher temperature lowers activation energy for reduction</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Increased ionic mobility.</strong> Unlike metals (where resistance increases with temperature due to lattice vibrations), electrolyte solutions conduct better at higher temperatures. As temperature rises, viscosity of the solvent decreases and ions can move faster (higher mobility). This increases conductance. This is the opposite of metallic conduction and is a key distinguishing feature of ionic/electrolytic conduction.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="electro">
+    <div class="mcq-num">Q14</div>
+    <div class="mcq-q">A hydrogen fuel cell uses H₂ and O₂. The overall reaction and product are:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>2H₂ + O₂ → 2H₂O₂ (hydrogen peroxide)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>H₂ + O → H₂O at very high temperature</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>2H₂ + O₂ → 2H₂O (water only — clean energy)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>H₂ + O₂ → H₂O + CO₂</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — 2H₂ + O₂ → 2H₂O.</strong> In a hydrogen fuel cell: Cathode: O₂ + 4H⁺ + 4e⁻ → 2H₂O. Anode: 2H₂ → 4H⁺ + 4e⁻. Overall: 2H₂ + O₂ → 2H₂O + electrical energy. The only product is water — zero carbon emissions. High efficiency (~70% vs ~40% for combustion engines). Used in Apollo space missions, submarines, electric vehicles. Fuel is supplied continuously (unlike batteries which store chemicals internally).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="electro">
+    <div class="mcq-num">Q15</div>
+    <div class="mcq-q">How many Faradays are required to deposit 1 mole of aluminium (Al³⁺ + 3e⁻ → Al) during electrolysis?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>3 Faradays (3 × 96500 C)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>1 Faraday</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>2 Faradays</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>27 Faradays</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — 3 Faradays.</strong> To deposit 1 mole of Al, 3 moles of electrons are needed (n = 3). 1 Faraday = charge of 1 mole of electrons = 96,500 C. So 3 F = 3 × 96,500 = 289,500 C. For Cu (n=2): 2 F per mole. For Ag (n=1): 1 F per mole. This follows from Faraday's second law: different substances are deposited in proportion to their equivalent masses (M/n) by the same charge.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="electro">
+    <div class="mcq-num">Q16</div>
+    <div class="mcq-q">The specific conductance (κ) and cell constant (G*) are related as:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>κ = G* / G (where G = conductance)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>κ = G × G* (conductance × cell constant)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>κ = G* − G</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>κ = G + G*</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — κ = G × G*.</strong> Cell constant G* = l/A (length between electrodes / area). Specific conductance κ = G × (l/A) = G × G*. Units: G in siemens (S), G* in cm⁻¹, κ in S·cm⁻¹. Molar conductance Λ<sub>m</sub> = κ × 1000/M (in S·cm²·mol⁻¹, where M is molarity in mol/L). The cell constant is determined experimentally using a solution of known conductance (e.g., KCl).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="electro">
+    <div class="mcq-num">Q17</div>
+    <div class="mcq-q">For a spontaneous electrochemical reaction, which of the following is always true?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>E°<sub>cell</sub> < 0 and ΔG° > 0</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>E°<sub>cell</sub> = 0 and ΔG° = 0</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>E°<sub>cell</sub> > 0 and ΔG° > 0</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>E°<sub>cell</sub> > 0 and ΔG° < 0</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — E°<sub>cell</sub> > 0 and ΔG° < 0.</strong> For a spontaneous reaction: ΔG° < 0 (thermodynamics). Since ΔG° = −nFE°<sub>cell</sub>, if ΔG° < 0 then E°<sub>cell</sub> > 0 (positive EMF). The equilibrium constant K > 1 for a spontaneous reaction. At equilibrium, ΔG = 0 and EMF = 0. These three conditions are equivalent: ΔG° < 0 ⟺ E°<sub>cell</sub> > 0 ⟺ K > 1.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="electro">
+    <div class="mcq-num">Q18</div>
+    <div class="mcq-q">Electroplating: the object to be plated with copper is connected to:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Anode (positive terminal) of battery</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Neither anode nor cathode</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Cathode (negative terminal) — Cu²⁺ + 2e⁻ → Cu deposits on object</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Anode — copper deposits by oxidation</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Cathode.</strong> In electroplating: cathode = object to be plated (reduction deposits the metal). Anode = pure copper strip (which slowly dissolves: Cu → Cu²⁺ + 2e⁻). Electrolyte = CuSO₄ solution. As copper deposits on cathode, the copper anode dissolves, maintaining Cu²⁺ concentration. Current flows: battery positive → anode → (through solution) → cathode → battery negative.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="electro">
+    <div class="mcq-num">Q19</div>
+    <div class="mcq-q">The Nernst equation shows that EMF of a cell at equilibrium (when Q = K<sub>eq</sub>):</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Is equal to E°<sub>cell</sub></button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Is zero (the cell is dead)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Is maximum</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Is negative</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Zero.</strong> E = E° − (0.0592/n)log Q. At equilibrium, Q = K<sub>eq</sub>, and E = 0. So 0 = E° − (0.0592/n)log K<sub>eq</sub>, giving E° = (0.0592/n)log K<sub>eq</sub>. This is why a discharged battery has EMF = 0 — the cell has reached equilibrium. The relationship E° = (0.0592/n)log K allows calculation of equilibrium constants from standard electrode potentials.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="electro">
+    <div class="mcq-num">Q20</div>
+    <div class="mcq-q">During charging of a lead storage battery:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>PbSO₄ at both electrodes is converted back: anode → PbO₂, cathode → Pb; H₂SO₄ is regenerated</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Pb is converted to PbSO₄ at both electrodes</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>H₂ gas is produced at anode</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Density of H₂SO₄ decreases during charging</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Reverse reaction restores original electrodes.</strong> During charging (electrolytic cell driven by external power): at anode (+), PbSO₄ → PbO₂ (oxidation); at cathode (−), PbSO₄ → Pb (reduction); H₂O is consumed and H₂SO₄ is regenerated. The density of H₂SO₄ increases during charging (back to ~1.28 g/mL when fully charged). A fully charged battery has well-separated Pb and PbO₂ electrodes and concentrated H₂SO₄.</div>
+  </div>
+</div>
+
+<!-- CH3: CHEMICAL KINETICS -->
+<div id="kinetics" class="ch-panel">
+  <div class="ch-heading">⏱ Chemical Kinetics <span class="ch-mark-badge" style="background:#dc2626">7 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="kinetics-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="kinetics-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('kinetics')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kinetics">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">The unit of rate constant (k) for a zero order reaction is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>s⁻¹</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>L mol⁻¹ s⁻¹</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>mol L⁻¹ s⁻¹</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>L² mol⁻² s⁻¹</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — mol L⁻¹ s⁻¹.</strong> For rate = k[A]⁰ = k (zero order), rate has units mol L⁻¹ s⁻¹, so k has units mol L⁻¹ s⁻¹. General formula for units of k: (mol L⁻¹)^(1−n) s⁻¹, where n = order. Zero order (n=0): mol L⁻¹ s⁻¹. First order (n=1): s⁻¹. Second order (n=2): L mol⁻¹ s⁻¹. Third order (n=3): L² mol⁻² s⁻¹.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kinetics">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">Half-life of a first order reaction is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>t½ = [A]₀ / 2k (depends on initial concentration)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>t½ = 0.693 / k (independent of initial concentration)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>t½ = k / 0.693</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>t½ = 1 / k[A]₀</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — t½ = 0.693/k.</strong> For first order: [A] = [A]₀e^(−kt). At t = t½, [A] = [A]₀/2. Solving: t½ = ln2/k = 0.693/k. The half-life is constant and independent of initial concentration — a unique property of first order reactions. This is why radioactive decay (always first order) has a constant half-life. Compare: zero order t½ = [A]₀/2k (depends on [A]₀).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="kinetics">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">The difference between molecularity and order of reaction is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Both are always equal</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Molecularity can be fractional; order cannot</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Order is always a whole number; molecularity can be fractional</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Molecularity is always a positive integer (theoretical); order is determined experimentally and can be fractional, zero, or negative</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Key distinction.</strong> Molecularity: number of molecules/ions that collide simultaneously in an elementary reaction step. Always a positive integer (1=unimolecular, 2=bimolecular, 3=termolecular max — higher are statistically improbable). It is a theoretical/mechanistic concept. Order: sum of exponents in the experimental rate law (rate = k[A]^m[B]^n). Determined from experiment. Can be 0, fractional, or even negative. For complex multi-step reactions, order ≠ molecularity.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="kinetics">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Pseudo first order reaction: hydrolysis of ethyl acetate in acidic water — the water concentration is not included in the rate law because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Water is present in huge excess; its concentration barely changes and is treated as constant (absorbed into k')</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Water does not participate in the reaction</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Water has zero order dependence always</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The reaction is truly first order and involves only ester</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Excess water (pseudo constant).</strong> True rate: rate = k[ester][H₂O]. Since [H₂O] >> [ester] and barely changes, it is absorbed into a pseudo rate constant: k' = k[H₂O]. Rate = k'[ester]. This appears first order — a pseudo first order reaction. Other examples: inversion of cane sugar (sucrose hydrolysis), acid hydrolysis of methyl acetate. The prefix "pseudo" means "false" — it looks like first order but is actually second order.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kinetics">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">Arrhenius equation k = Ae^(−Ea/RT). A graph of ln k vs 1/T gives:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>A curve with positive slope</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>A straight line with positive slope (intercept = Ea/R)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>A straight line with negative slope = −Ea/R (intercept = ln A)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>A horizontal line</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Slope = −Ea/R.</strong> ln k = ln A − Ea/(RT). Comparing with y = c + mx: y = ln k, x = 1/T, slope m = −Ea/R, intercept = ln A. The slope is negative (as 1/T increases, ln k decreases → k decreases). Ea = −R × slope. This is the standard method to determine activation energy experimentally from a series of rate constant measurements at different temperatures.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kinetics">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">A catalyst increases the rate of reaction by:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Increasing the activation energy (Ea)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Lowering the activation energy (Ea) by providing an alternative reaction pathway</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Increasing the enthalpy change (ΔH) of the reaction</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Being consumed in the reaction, shifting equilibrium</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Lowers Ea.</strong> A catalyst provides an alternative mechanism with lower activation energy. More molecules can cross the energy barrier → faster reaction. Key points: (1) catalyst is NOT consumed — regenerated in each cycle; (2) does not change ΔH, ΔG, or equilibrium constant; (3) increases BOTH forward and reverse rates equally; (4) does not change the equilibrium position. The transition state is different (lower energy) but the reactants and products are unchanged.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="kinetics">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">For the reaction 2NO + O₂ → 2NO₂, if rate = k[NO]²[O₂], the overall order of reaction is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>1</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>2</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>4</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>3</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — 3rd order.</strong> Overall order = sum of all powers of concentration in rate law = 2 (for NO) + 1 (for O₂) = 3. Order w.r.t. NO = 2 (second order in NO); order w.r.t. O₂ = 1 (first order in O₂). Note: the stoichiometric coefficients in the balanced equation (2 for NO and 1 for O₂) do NOT necessarily equal the orders in the rate law. Rate law is always determined experimentally.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="kinetics">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">Radioactive decay follows first order kinetics. The half-life of Carbon-14 is 5730 years. Its rate constant k equals:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>k = 0.693 / 5730 yr⁻¹ ≈ 1.21 × 10⁻⁴ yr⁻¹</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>k = 5730 / 0.693 yr⁻¹</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>k = 5730 yr⁻¹</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>k = 0.693 × 5730 yr⁻¹</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — k = 0.693/t½.</strong> From t½ = 0.693/k → k = 0.693/t½ = 0.693/5730 ≈ 1.21 × 10⁻⁴ yr⁻¹. This k is used in carbon dating: age of sample = (2.303/k) × log([N]₀/[N]). Since living organisms have constant C-14 (equilibrium with atmosphere), and dead organisms decay at this known rate, the ratio of C-14 to stable C-12 gives the age. Used for samples up to ~50,000 years old.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kinetics">
+    <div class="mcq-num">Q9</div>
+    <div class="mcq-q">For a first order reaction, if the initial concentration [A]₀ is doubled, the half-life:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Doubles</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Halves</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Remains the same</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Quadruples</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Remains the same.</strong> t½ = 0.693/k for first order. The half-life is independent of [A]₀ — it depends only on k, which is a constant at given temperature. This is the distinguishing feature of first order kinetics: equal time intervals lead to equal fractional decreases. After 1 half-life: 50% remains. After 2 half-lives: 25%. After n half-lives: (1/2)ⁿ fraction remains. Zero order t½ = [A]₀/2k does depend on initial concentration.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kinetics">
+    <div class="mcq-num">Q10</div>
+    <div class="mcq-q">The rate of a reaction increases approximately 2–3 times for every 10°C rise in temperature. This is explained by Arrhenius equation because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The activation energy decreases by 10 kJ/mol for every 10°C rise</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>The fraction of molecules with energy ≥ Ea increases exponentially with temperature (e^(−Ea/RT) term)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Collision frequency doubles every 10°C</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The pre-exponential factor A doubles every 10°C</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Exponential increase in fraction with E ≥ Ea.</strong> In the Boltzmann distribution, the fraction of molecules with energy ≥ Ea = e^(−Ea/RT). A 10°C rise causes this fraction to roughly double for typical reactions with Ea ≈ 50–80 kJ/mol. Collision frequency increases only ~2% per 10°C rise (proportional to √T), which alone cannot explain the large rate increase. The exponential dependence in the Arrhenius equation accounts for this temperature sensitivity.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="kinetics">
+    <div class="mcq-num">Q11</div>
+    <div class="mcq-q">The rate determining step in a multi-step reaction mechanism is the:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Fastest step (highest rate constant)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Step with the most reactant molecules</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Step that produces the most product</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The slowest step (highest activation energy) — it controls the overall reaction rate</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Slowest step.</strong> In a multi-step mechanism, the overall reaction rate cannot be faster than its slowest step. Analogy: a production line moves at the pace of its slowest worker. The rate law of the overall reaction corresponds to the molecularity of this slowest (rate-determining) step. If the slow step involves A and B, then rate = k[A][B] — the rate law can be deduced from the mechanism. Intermediates appear and disappear but do NOT appear in the overall rate law.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="kinetics">
+    <div class="mcq-num">Q12</div>
+    <div class="mcq-q">Threshold energy is related to activation energy by:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Threshold energy = Activation energy + Average kinetic energy of reactant molecules</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Threshold energy = Activation energy only</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Threshold energy < Activation energy</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Threshold energy = Activation energy − Average kinetic energy</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Threshold = Ea + average KE.</strong> Threshold energy is the minimum energy that colliding molecules must possess for reaction to occur. Activation energy (Ea) = Threshold energy − Average kinetic energy of reactants. Since reactant molecules already have some average kinetic energy (½mv²), they need only to acquire the additional energy (Ea) to reach the threshold. A catalyst lowers Ea (and thereby lowers the threshold energy required for the reaction to proceed).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kinetics">
+    <div class="mcq-num">Q13</div>
+    <div class="mcq-q">The integrated rate law for a first order reaction is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>[A]<sub>t</sub> = [A]₀ − kt</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>1/[A]<sub>t</sub> − 1/[A]₀ = kt</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>ln[A]<sub>t</sub> = ln[A]₀ − kt (or log[A]<sub>t</sub> = log[A]₀ − kt/2.303)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>[A]<sub>t</sub> = [A]₀ × e^(+kt)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Logarithmic decay.</strong> First order: −d[A]/dt = k[A] → integrating: ln[A]<sub>t</sub> = ln[A]₀ − kt. In log form: log[A]<sub>t</sub> = log[A]₀ − (k/2.303)t. Plot of log[A] vs t gives a straight line with slope = −k/2.303. Compare: Zero order: [A]<sub>t</sub> = [A]₀ − kt (linear). Second order: 1/[A]<sub>t</sub> = 1/[A]₀ + kt. The shape of the concentration–time graph identifies the order.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kinetics">
+    <div class="mcq-num">Q14</div>
+    <div class="mcq-q">Collision theory states that not all collisions between reactant molecules lead to products because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Most molecules are too heavy to collide</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Collisions must have energy ≥ threshold energy AND the correct orientation (steric factor/probability factor)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Molecules cannot collide in solution, only in gas phase</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Collisions always result in products but products revert immediately</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Energy AND orientation requirements.</strong> Two conditions must be met for an effective collision: (1) Energy condition: kinetic energy of colliding molecules ≥ threshold energy (Ea). (2) Orientation condition (steric factor p): molecules must approach each other in the correct geometric orientation. The rate = p × Z × e^(−Ea/RT), where Z = collision frequency and p = steric/probability factor (0 < p ≤ 1). For most reactions, only a tiny fraction (10⁻⁶ to 10⁻⁹) of all collisions are effective.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="kinetics">
+    <div class="mcq-num">Q15</div>
+    <div class="mcq-q">Which of the following statements about order of reaction is CORRECT?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Order is always equal to the stoichiometric coefficient of the reactant</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Order must always be a positive integer</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Order can only be 1 or 2 for real reactions</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Order is determined experimentally; can be zero, fractional, or negative</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Experimentally determined; any value possible.</strong> Order of reaction can be: zero (e.g., thermal decomposition of HI on gold surface), fractional (e.g., decomposition of acetaldehyde is 1.5 order), negative (increasing [B] decreases rate in some chain reactions), positive integer. It is NOT necessarily equal to stoichiometric coefficients (except for elementary reactions). It is always determined by experiment, not predicted from the balanced equation alone.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kinetics">
+    <div class="mcq-num">Q16</div>
+    <div class="mcq-q">A reaction is second order in A and first order in B. If [A] is doubled keeping [B] constant, the rate will:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Double</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Triple</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Quadruple (4×)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Increase by 8 times</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — 4 times.</strong> Rate = k[A]²[B]. If [A] → 2[A] and [B] constant: New rate = k(2[A])²[B] = k × 4[A]²[B] = 4 × original rate. Since rate is proportional to [A]², doubling [A] increases rate by 2² = 4. If [B] is also doubled: rate = k(2[A])²(2[B]) = 4 × 2 = 8 times. This type of calculation is essential for CBSE numericals on rate law.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="kinetics">
+    <div class="mcq-num">Q17</div>
+    <div class="mcq-q">The pre-exponential factor A in the Arrhenius equation represents:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The frequency factor — related to collision frequency and the probability of correct orientation</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>The activation energy</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The rate constant at 0°C</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The equilibrium constant</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Frequency factor.</strong> In k = Ae^(−Ea/RT), A (also called pre-exponential factor or frequency factor) represents the frequency of collisions with the correct orientation. It has the same units as k. Physically, A = p × Z, where p = steric factor (probability of correct orientation) and Z = total collision frequency. A is approximately independent of temperature (or weakly dependent via √T). It represents the maximum possible rate constant at infinite temperature (when all collisions are effective).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kinetics">
+    <div class="mcq-num">Q18</div>
+    <div class="mcq-q">For a zero order reaction A → Products, the graph of [A] vs time is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Exponential decay curve</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Straight line with negative slope (rate = k = constant)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Hyperbola</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Straight line with positive slope</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Straight line with negative slope.</strong> For zero order: rate = k (constant). d[A]/dt = −k → integrating: [A] = [A]₀ − kt. This is a linear equation: y = [A], x = t, slope = −k, y-intercept = [A]₀. The concentration decreases linearly with time until [A] = 0. Half-life = [A]₀/2k. Examples of zero order reactions: thermal decomposition of HI on gold surface, photochemical reactions, enzyme-catalysed reactions at saturation.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kinetics">
+    <div class="mcq-num">Q19</div>
+    <div class="mcq-q">The activation energy of a reaction can be calculated from the Arrhenius equation using rate constants at two temperatures:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Ea = R(T₁ + T₂) × log(k₂/k₁)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Ea = R × (T₁ × T₂) / (T₂ − T₁)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>log(k₂/k₁) = (Ea/2.303R) × (1/T₁ − 1/T₂), so Ea = 2.303R × log(k₂/k₁) / (1/T₁ − 1/T₂)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Ea = 2.303R × T₁T₂ × log(k₂/k₁)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Two-temperature Arrhenius formula.</strong> From ln(k₂/k₁) = (Ea/R)(1/T₁ − 1/T₂), rearranging to log: log(k₂/k₁) = (Ea/2.303R) × (1/T₁ − 1/T₂). This is the standard NCERT formula for numerical problems. Note: T must be in Kelvin. If k increases when T increases (T₂ > T₁), then k₂ > k₁ and Ea > 0 (always positive). Units of Ea: J/mol or kJ/mol.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="kinetics">
+    <div class="mcq-num">Q20</div>
+    <div class="mcq-q">Increasing the concentration of reactants generally increases the rate of reaction because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>It decreases the activation energy</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>It increases the temperature of the reaction mixture</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>It changes the orientation of molecules</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>More molecules per unit volume → more frequent collisions per unit time → more effective collisions</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — More collisions.</strong> Higher concentration means more reactant molecules per unit volume. By collision theory, collision frequency (Z) is proportional to concentration. More total collisions → more collisions with energy ≥ Ea → higher rate. This is captured in the rate law: rate = k[A]^m. For zero order reactions (rate = k), concentration has no effect — this occurs when molecules must first be adsorbed on a surface (surface becomes saturated, limiting the rate).</div>
+  </div>
+</div>
+
+</div><script src="../../js/mcq.js"></script>
+</body>
+</html>

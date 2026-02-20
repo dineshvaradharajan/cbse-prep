@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/chapter.css">
+<style>:root{
+  --subject-color:#0891b2;--subject-bg:#ecfeff;--subject-border:#67e8f9;--subject-text:#0e7490;
+  --c1:#0891b2;--c2:#16a34a;--c3:#ea580c;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Chemistry Chapters — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">← Back to Hub</a>
+
+<h1>Physical Chemistry Chapters</h1>
+<p class="subtitle">Chapter summaries, must-read concepts, exam tips, tricks and numerical patterns for Solutions, Electrochemistry and Chemical Kinetics.</p>
+
+<div class="chapter-bar">
+  <div class="chapter-tabs" id="chapterTabs">
+    <button class="tab active" data-tab="solutions" onclick="showCh('solutions',this)">1. Solutions</button>
+    <button class="tab" data-tab="electro" onclick="showCh('electro',this)">2. Electrochemistry</button>
+    <button class="tab" data-tab="kinetics" onclick="showCh('kinetics',this)">3. Chemical Kinetics</button>
+  </div>
+  <button class="more-btn" id="moreBtn" onclick="toggleMoreDropdown()">More ▾</button>
+  <div class="more-dropdown" id="moreDropdown"></div>
+</div>
+
+<!-- ═══════════════════════════════ SOLUTIONS ═══════════════════════════════ -->
+<div class="ch-section active" id="solutions">
+
+  <div class="ch-banner" style="background:#e0f2fe;color:#0c4a6e">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 1</div>
+      <div class="ch-title">Solutions</div>
+      <div class="ch-sub">Types of solutions · concentration terms · Raoult's Law · colligative properties · van't Hoff factor</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#0369a1">7<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — These exact concepts appear every year</h4>
+    <ol>
+      <li><strong>All 4 colligative property formulas</strong> — ΔP/P°, ΔTb, ΔTf, π — with van't Hoff factor version</li>
+      <li><strong>Raoult's Law</strong> — statement, formula, ideal vs non-ideal solutions, positive and negative deviation with examples</li>
+      <li><strong>van't Hoff factor (i)</strong> — definition, formula for dissociation (i = 1 + (n−1)α), numerical calculation</li>
+      <li><strong>Henry's Law</strong> — for gases in liquids (p = KH × χ), applications (carbonated drinks, scuba diving)</li>
+      <li><strong>Azeotropes</strong> — minimum boiling (positive deviation) vs maximum boiling (negative deviation) with examples</li>
+    </ol>
+  </div>
+
+  <!-- Summary -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#0891b2"><th>Concept</th><th>Key Fact</th><th>Example / Value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Types of solutions</strong></td><td>Gas in liquid (most common), liquid in liquid, solid in liquid</td><td>O₂ in water, ethanol in water, salt in water</td></tr>
+      <tr><td><strong>Mole fraction (χ)</strong></td><td>χA = nA / (nA + nB); χA + χB = 1</td><td>Dimensionless</td></tr>
+      <tr><td><strong>Molality (m)</strong></td><td>moles of solute / kg of solvent</td><td>mol kg⁻¹; independent of temperature</td></tr>
+      <tr><td><strong>Molarity (M)</strong></td><td>moles of solute / L of solution</td><td>mol L⁻¹; depends on temperature</td></tr>
+      <tr><td><strong>Raoult's Law</strong></td><td class="mono">pA = χA × p°A ; p_total = χA p°A + χB p°B</td><td>Ideal solution — like dissolves in like</td></tr>
+      <tr><td><strong>Positive deviation</strong></td><td>A–B < A–A / B–B interactions; p_obs > Raoult</td><td>Ethanol + cyclohexane, acetone + CS₂</td></tr>
+      <tr><td><strong>Negative deviation</strong></td><td>A–B > A–A / B–B; p_obs < Raoult</td><td>CHCl₃ + acetone, HNO₃ + water</td></tr>
+      <tr><td><strong>Relative lowering of VP</strong></td><td class="mono">ΔP/P°A = χB = nB/(nA+nB)</td><td>Dimensionless colligative property</td></tr>
+      <tr><td><strong>Elevation of BP</strong></td><td class="mono">ΔTb = Kb × m (× i for electrolyte)</td><td>Kb(water) = 0.52 K kg mol⁻¹</td></tr>
+      <tr><td><strong>Depression of FP</strong></td><td class="mono">ΔTf = Kf × m (× i for electrolyte)</td><td>Kf(water) = 1.86 K kg mol⁻¹</td></tr>
+      <tr><td><strong>Osmotic pressure</strong></td><td class="mono">π = iCRT = inRT/V</td><td>R = 0.083 L bar mol⁻¹ K⁻¹</td></tr>
+      <tr><td><strong>van't Hoff factor i</strong></td><td>i > 1 for dissociation; i < 1 for association</td><td>NaCl: i≈2, MgCl₂: i≈3, acetic acid (assoc): i<1</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <!-- Key Formulas -->
+    <div class="content-block">
+      <div class="block-head" style="background:#e0f2fe;color:#0369a1">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Raoult's Law</span>
+            <code class="fl-eq">pA = χA × p°A</code>
+            <span class="fl-note">p°A = vapour pressure of pure A; χA = mole fraction</span>
+          </li>
+          <li>
+            <span class="fl-name">Relative lowering of VP</span>
+            <code class="fl-eq">(p°A − pA) / p°A = χB = nB / (nA + nB)</code>
+          </li>
+          <li>
+            <span class="fl-name">Elevation of boiling point</span>
+            <code class="fl-eq">ΔTb = Kb × m × i</code>
+            <span class="fl-note">Kb(water) = 0.52 K kg mol⁻¹</span>
+          </li>
+          <li>
+            <span class="fl-name">Depression of freezing point</span>
+            <code class="fl-eq">ΔTf = Kf × m × i</code>
+            <span class="fl-note">Kf(water) = 1.86 K kg mol⁻¹</span>
+          </li>
+          <li>
+            <span class="fl-name">Osmotic pressure</span>
+            <code class="fl-eq">π = iCRT = i(n/V)RT</code>
+            <span class="fl-note">C = molarity; R = 0.083 L bar mol⁻¹ K⁻¹ or 8.314 J mol⁻¹ K⁻¹</span>
+          </li>
+          <li>
+            <span class="fl-name">van't Hoff factor — dissociation</span>
+            <code class="fl-eq">i = 1 + (n − 1)α</code>
+            <span class="fl-note">n = number of ions; α = degree of dissociation</span>
+          </li>
+          <li>
+            <span class="fl-name">van't Hoff factor — association</span>
+            <code class="fl-eq">i = 1 − (1 − 1/n)α</code>
+            <span class="fl-note">n = number of molecules associating; e.g., acetic acid dimerisation n=2</span>
+          </li>
+          <li>
+            <span class="fl-name">Henry's Law</span>
+            <code class="fl-eq">p = KH × χ</code>
+            <span class="fl-note">Higher KH → lower solubility of gas</span>
+          </li>
+          <li>
+            <span class="fl-name">Molar mass from colligative property</span>
+            <code class="fl-eq">M₂ = (w₂ × Kf × 1000) / (ΔTf × w₁)</code>
+            <span class="fl-note">w₁ = solvent mass in g; w₂ = solute mass in g</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tips & Tricks -->
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Exam Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Molality vs Molarity:</strong> Whenever temperature appears in the question or if Kb/Kf is used → use molality (m). Molarity (M) is used for osmotic pressure formula. Trick: "m = mass, M = molarity (not temperature-safe)"</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>i values to memorise:</strong> NaCl→i=2, BaCl₂→i=3, MgCl₂→i=3, Al₂(SO₄)₃→i=5, glucose→i=1, acetic acid (dilute)→i≈1 (association in non-polar, dimerisation in benzene→i=0.5)</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Reverse calculation trick:</strong> If ΔTf/ΔTb is given, rearrange to find molar mass M₂ = (w₂ × Kb or Kf × 1000) / (ΔT × w₁). This is a guaranteed 3–5 mark numerical.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Azeotrope memory:</strong> Positive deviation → minimum boiling azeotrope (ethanol+water at 95.5%). Negative deviation → maximum boiling azeotrope (HNO₃+water). "Positive = runs away faster = lower BP"</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Henry's Law application:</strong> Deep-sea divers get nitrogen narcosis because N₂ dissolves more at high pressure. Soft drinks lose CO₂ on opening because pressure drops. Always link formula to application.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Isotonic solutions:</strong> Same osmotic pressure (π₁ = π₂). Important in medicine — IV saline is isotonic with blood. Hypertonic solution → cell shrinks (plasmolysis). Hypotonic → cell swells (turgidity).</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Common mistake — units:</strong> Kf and Kb are in K·kg·mol⁻¹, not K·mol⁻¹. Never drop the "kg" unit or you'll get wrong answer.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tricks -->
+  <div class="trick-box">
+    <h4>🔢 Calculation Shortcut — Molar mass from freezing point depression</h4>
+    <p>Standard CBSE 5-mark numerical: "2g of X dissolved in 50g water, ΔTf = 0.372°C. Find molar mass."</p>
+    <p style="margin-top:.4rem">Step 1: m = ΔTf / Kf = 0.372 / 1.86 = <span class="eq">0.2 mol kg⁻¹</span></p>
+    <p>Step 2: moles of X = m × mass of solvent (in kg) = 0.2 × 0.05 = <span class="eq">0.01 mol</span></p>
+    <p>Step 3: M = mass / moles = 2 / 0.01 = <span class="eq">200 g mol⁻¹</span></p>
+    <p style="margin-top:.4rem;font-size:.72rem;color:#92400e"><strong>Single formula:</strong> M₂ = (w₂ × Kf × 1000) / (ΔTf × w₁) = (2 × 1.86 × 1000) / (0.372 × 50) = 200 ✓</p>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔢 van't Hoff factor — degree of dissociation</h4>
+    <p>Given: 0.5M KCl solution, ΔTf = 1.85°C. Kf = 1.86. Find i and α.</p>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>i = ΔTf / (Kf × m) = 1.85 / (1.86 × 0.5) = <span class="eq">1.99 ≈ 2</span></li>
+      <li>KCl → K⁺ + Cl⁻, so n = 2: i = 1 + (2−1)α → 1.99 = 1 + α → <span class="eq">α = 0.99 (99% dissociation)</span></li>
+    </ul>
+  </div>
+
+  <!-- Common mistakes -->
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes to Avoid</h4>
+    <ul>
+      <li>Using molarity (M) instead of molality (m) in ΔTf, ΔTb formulas — <em>these need m, not M</em></li>
+      <li>Forgetting the van't Hoff factor i for electrolytes — glucose: i=1, NaCl: i=2</li>
+      <li>Confusing Kb (0.52) with Kf (1.86) — remember Kf is BIGGER ("Freezing is harder, needs bigger K")</li>
+      <li>Not converting solvent mass to kg in molality formula (g → divide by 1000)</li>
+      <li>In osmotic pressure: using R = 8.314 J but forgetting π is in Pa not bar (or use R = 0.083 L bar)</li>
+    </ul>
+  </div>
+
+  <!-- Numerical patterns -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.75rem">🔢 Standard Numerical Patterns</h3>
+  <div class="num-grid">
+    <div class="num-card" style="border-left-color:#0891b2">
+      <div class="nc-q">Find molar mass from ΔTf data</div>
+      <div class="nc-step">Given: w₂ g solute, w₁ g water, ΔTf observed<br>
+      → m = ΔTf / Kf &nbsp;→ n₂ = m × (w₁/1000) &nbsp;→ M = w₂/n₂<br>
+      Or: <span class="eq">M₂ = (w₂ × 1000 × Kf) / (ΔTf × w₁)</span><br>
+      <span class="ans">Units: g mol⁻¹</span></div>
+    </div>
+    <div class="num-card" style="border-left-color:#0891b2">
+      <div class="nc-q">Calculate vapour pressure of solution</div>
+      <div class="nc-step">Given: p°A, composition (mass of A and B)<br>
+      → Convert to moles → χA = nA/(nA+nB) → χB = 1−χA<br>
+      <span class="eq">pA = χA × p°A; pB = χB × p°B; p_total = pA + pB</span><br>
+      <span class="ans">Units: mm Hg or Pa</span></div>
+    </div>
+    <div class="num-card" style="border-left-color:#7c3aed">
+      <div class="nc-q">Calculate degree of dissociation from colligative property</div>
+      <div class="nc-step">Find i from: i = ΔTf_observed / ΔTf_normal<br>
+      Use: <span class="eq">i = 1 + (n−1)α</span><br>
+      Rearrange: <span class="eq">α = (i−1)/(n−1)</span><br>
+      <span class="ans">α is between 0 and 1 (multiply by 100 for %)</span></div>
+    </div>
+    <div class="num-card" style="border-left-color:#7c3aed">
+      <div class="nc-q">Osmotic pressure numerical</div>
+      <div class="nc-step">Given: molarity C, temperature T<br>
+      <span class="eq">π = CRT = (n/V)RT</span><br>
+      For electrolyte: <span class="eq">π = iCRT</span><br>
+      Reverse: find M₂ from π measurement → <span class="eq">M = ρRT/π</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ELECTROCHEMISTRY ═══════════════════════════════ -->
+<div class="ch-section" id="electro">
+
+  <div class="ch-banner" style="background:#dcfce7;color:#14532d">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 2</div>
+      <div class="ch-title">Electrochemistry</div>
+      <div class="ch-sub">Galvanic cells · electrode potential · Nernst equation · conductance · electrolysis · Faraday's laws</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#15803d">9<span>marks (highest)</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — 9 marks chapter, most paper coverage</h4>
+    <ol>
+      <li><strong>Nernst equation</strong> — derivation (from ΔG = ΔG° + RT ln Q), formula, numerical application</li>
+      <li><strong>E°cell calculation</strong> — E°cell = E°cathode − E°anode; relation to ΔG° and K</li>
+      <li><strong>Cell notation</strong> — anode (oxidation) on left | salt bridge || cathode (reduction) on right</li>
+      <li><strong>Kohlrausch's Law</strong> — Λ°m(weak electrolyte) from strong electrolyte data</li>
+      <li><strong>Faraday's laws</strong> — mass deposited = (M × I × t) / (n × F); volume of gas at STP</li>
+      <li><strong>ΔG°, E°cell, K relationship</strong> — ΔG° = −nFE° = −RT ln K; E° = (0.0591/n) log K at 298K</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#16a34a"><th>Concept</th><th>Key Fact</th><th>Value / Formula</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Galvanic cell</strong></td><td>Chemical energy → electrical energy. Anode: oxidation (−). Cathode: reduction (+).</td><td>Zn−Cu Daniell cell</td></tr>
+      <tr><td><strong>EMF of cell</strong></td><td class="mono">E°cell = E°cathode − E°anode</td><td>E°cell > 0 → spontaneous</td></tr>
+      <tr><td><strong>SHE potential</strong></td><td>Standard Hydrogen Electrode = reference electrode</td><td>E° = 0.00 V (by convention)</td></tr>
+      <tr><td><strong>Nernst equation</strong></td><td class="mono">E = E° − (RT/nF) ln Q = E° − (0.0591/n) log Q</td><td>At 298K only</td></tr>
+      <tr><td><strong>ΔG° and E°cell</strong></td><td class="mono">ΔG° = −nFE°cell</td><td>F = 96500 C mol⁻¹</td></tr>
+      <tr><td><strong>E° and K</strong></td><td class="mono">E° = (0.0591/n) log K at 298K</td><td>K = equilibrium constant of cell rxn</td></tr>
+      <tr><td><strong>Conductance (G)</strong></td><td class="mono">G = 1/R; unit = S (siemens)</td><td>Increases with concentration (for strong electrolyte)</td></tr>
+      <tr><td><strong>Molar conductivity (Λm)</strong></td><td class="mono">Λm = κ × 1000/C (C in mol L⁻¹)</td><td>κ = specific conductance (S cm⁻¹)</td></tr>
+      <tr><td><strong>Kohlrausch's Law</strong></td><td>Λ°m = ν₊λ°₊ + ν₋λ°₋ (sum of ionic conductivities)</td><td>For any electrolyte at infinite dilution</td></tr>
+      <tr><td><strong>Faraday's 1st Law</strong></td><td class="mono">m = Z × I × t (Z = electrochemical equivalent)</td><td>m in grams; I in amperes; t in seconds</td></tr>
+      <tr><td><strong>Faraday's 2nd Law</strong></td><td>Same charge → mass deposited ∝ equivalent weight</td><td>M/n ratio determines amount</td></tr>
+      <tr><td><strong>Mass from electrolysis</strong></td><td class="mono">m = (M × I × t) / (n × F)</td><td>n = electrons per ion; F = 96500 C</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#dcfce7;color:#14532d">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Nernst Equation (at 298K)</span>
+            <code class="fl-eq">E = E° − (0.0591/n) × log([products]/[reactants])</code>
+            <span class="fl-note">n = moles of electrons transferred; use reduction potential for each electrode</span>
+          </li>
+          <li>
+            <span class="fl-name">ΔG° from E°cell</span>
+            <code class="fl-eq">ΔG° = −nFE°cell (n in mol, F = 96500 C mol⁻¹, E° in V)</code>
+          </li>
+          <li>
+            <span class="fl-name">E° from equilibrium constant K</span>
+            <code class="fl-eq">E° = (0.0591/n) × log K at 298K</code>
+          </li>
+          <li>
+            <span class="fl-name">Molar conductivity</span>
+            <code class="fl-eq">Λm = (κ × 1000) / C</code>
+            <span class="fl-note">κ = specific conductance (S cm⁻¹), C = molarity (mol L⁻¹), Λm in S cm² mol⁻¹</span>
+          </li>
+          <li>
+            <span class="fl-name">Kohlrausch's Law</span>
+            <code class="fl-eq">Λ°m = ν₊λ°₊ + ν₋λ°₋</code>
+          </li>
+          <li>
+            <span class="fl-name">Indirect Λ°m (weak electrolyte)</span>
+            <code class="fl-eq">Λ°m(CH₃COOH) = Λ°m(HCl) + Λ°m(CH₃COONa) − Λ°m(NaCl)</code>
+          </li>
+          <li>
+            <span class="fl-name">Degree of dissociation from conductance</span>
+            <code class="fl-eq">α = Λm / Λ°m</code>
+          </li>
+          <li>
+            <span class="fl-name">Electrolysis — mass deposited</span>
+            <code class="fl-eq">m = (M × I × t) / (n × F)</code>
+            <span class="fl-note">M = molar mass (g/mol), I = current (A), t = time (s), n = charge on ion, F = 96500 C</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Exam Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Cell notation rule:</strong> Anode (oxidation) ALWAYS on left. Cathode (reduction) ALWAYS on right. Single | = phase boundary. Double || = salt bridge. E.g., Zn | Zn²⁺(c₁) || Cu²⁺(c₂) | Cu</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Spontaneity check:</strong> E°cell > 0 → spontaneous → ΔG° < 0 → K > 1. Three ways to say the same thing. If exam asks "is the cell feasible?", calculate E°cell and check if positive.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Nernst shortcut:</strong> At 298K, 0.0591/n × log Q. If Q = 1 (equal concentrations), E = E°. If Q < 1, E > E° (cell more powerful). If Q > 1, E < E°.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Kohlrausch trick:</strong> Write the formula like adding and subtracting ionic terms. CH₃COOH needs H⁺ and CH₃COO⁻ ionic conductivities → get them from HCl (gives H⁺) and CH₃COONa (gives CH₃COO⁻), subtract NaCl (removes common Na⁺, Cl⁻).</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Electrolysis products:</strong> At cathode: metal ion reduced → metal deposited (Ag⁺→Ag, Cu²⁺→Cu). At anode: anion oxidised (Cl⁻→Cl₂; SO₄²⁻ ion is oxidised only if no easier option; water gives O₂ if dilute H₂SO₄).</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Faraday shortcut:</strong> 1 Faraday (96500 C) deposits 1 equivalent of any metal. Equivalent mass = M/n. So for Cu (n=2): 96500C deposits 63.5/2 = 31.75g. Scale proportionally.</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Λm for strong vs weak:</strong> Strong electrolyte (HCl, NaCl): Λm increases with dilution and can be extrapolated to zero concentration. Weak electrolyte (CH₃COOH): Λm rises steeply near zero concentration → CAN'T extrapolate → use Kohlrausch.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔢 Complete Nernst Numerical Walkthrough</h4>
+    <p>Q: Calculate E_cell for Zn−Cu cell. [Zn²⁺] = 0.001M, [Cu²⁺] = 0.1M. E°(Zn²⁺/Zn) = −0.76V, E°(Cu²⁺/Cu) = +0.34V.</p>
+    <ul style="margin-top:.4rem">
+      <li>Step 1: E°cell = E°cathode − E°anode = 0.34 − (−0.76) = <span class="eq">+1.10V</span></li>
+      <li>Step 2: Cell reaction: Zn + Cu²⁺ → Zn²⁺ + Cu (n = 2 electrons)</li>
+      <li>Step 3: Q = [Zn²⁺]/[Cu²⁺] = 0.001/0.1 = 0.01</li>
+      <li>Step 4: E = 1.10 − (0.0591/2) × log(0.01) = 1.10 − (0.02955)(−2) = <span class="eq">1.10 + 0.059 = 1.159V</span></li>
+    </ul>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔢 Electrolysis Numerical</h4>
+    <p>Q: How many grams of Cu are deposited by 0.5A for 30 min from CuSO₄ solution? (M = 63.5, n = 2)</p>
+    <ul style="margin-top:.4rem">
+      <li>t = 30 × 60 = 1800 s; charge = I × t = 0.5 × 1800 = <span class="eq">900 C</span></li>
+      <li>m = (M × I × t) / (n × F) = (63.5 × 900) / (2 × 96500) = <span class="eq">0.296 g</span></li>
+    </ul>
+    <p style="margin-top:.4rem;font-size:.72rem">Shortcut check: 96500C deposits 63.5/2 = 31.75g. 900C deposits 31.75 × (900/96500) = 0.296g ✓</p>
+  </div>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes to Avoid</h4>
+    <ul>
+      <li>Writing E°cell = E°anode − E°cathode (it's <em>cathode minus anode</em>, not the other way)</li>
+      <li>Using Nernst equation with concentration ratios inverted — Q = [products]/[reactants] for cell reaction</li>
+      <li>Confusing cathode and anode: in galvanic cell, cathode is positive (reduction). In electrolytic cell, cathode is negative.</li>
+      <li>Forgetting to convert time to seconds in Faraday's law (always use seconds)</li>
+      <li>Using n = 1 for Cu²⁺ (it's n = 2, two electrons needed to reduce Cu²⁺ to Cu)</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.75rem">🔢 Standard Numerical Patterns</h3>
+  <div class="num-grid">
+    <div class="num-card" style="border-left-color:#16a34a">
+      <div class="nc-q">Nernst equation — find E_cell or equilibrium concentration</div>
+      <div class="nc-step">E = E° − (0.0591/n) log Q<br>
+      Q = [reduced form]/[oxidised form] for cell reaction<br>
+      <span class="ans">If E = 0 → cell at equilibrium; if E > 0 → spontaneous</span></div>
+    </div>
+    <div class="num-card" style="border-left-color:#16a34a">
+      <div class="nc-q">Find K from E°cell</div>
+      <div class="nc-step">log K = (n × E°cell) / 0.0591<br>
+      Example: E°cell = 0.295V, n = 2<br>
+      log K = (2 × 0.295)/0.0591 = 9.98 → <span class="ans">K ≈ 10¹⁰</span></div>
+    </div>
+    <div class="num-card" style="border-left-color:#7c3aed">
+      <div class="nc-q">Kohlrausch — find Λ°m for weak electrolyte</div>
+      <div class="nc-step">Λ°m(RCOOH) = Λ°m(RCOONa) + Λ°m(HCl) − Λ°m(NaCl)<br>
+      = 91 + 426 − 126 = <span class="ans">391 S cm² mol⁻¹</span><br>
+      α = Λm(at c) / Λ°m(calculated)</div>
+    </div>
+    <div class="num-card" style="border-left-color:#7c3aed">
+      <div class="nc-q">Electrolysis — mass deposited &amp; volume of gas</div>
+      <div class="nc-step">m = (M × I × t) / (n × F)<br>
+      Volume at STP: V = (22400 × I × t) / (n × F) mL<br>
+      For O₂ (n=4): <span class="ans">96500C → 5600 mL O₂ at STP</span></div>
+    </div>
+  </div>
+
+  <!-- BATTERIES -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">🔋 Batteries &amp; Fuel Cells</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#16a34a"><th>Type</th><th>Anode Reaction</th><th>Cathode Reaction</th><th>EMF / Key Fact</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Dry Cell (Leclanche)</strong><br><small>Primary; non-rechargeable</small></td>
+        <td class="mono">Zn → Zn²⁺ + 2e⁻</td>
+        <td class="mono">MnO₂ + NH₄⁺ + e⁻ → MnO(OH) + NH₃</td>
+        <td>~1.5 V. Zn container = anode. Graphite rod = cathode. NH₄Cl paste = electrolyte.</td>
+      </tr>
+      <tr>
+        <td><strong>Mercury Cell</strong><br><small>Primary; constant EMF</small></td>
+        <td class="mono">Zn(Hg) + 2OH⁻ → ZnO + H₂O + 2e⁻</td>
+        <td class="mono">HgO + H₂O + 2e⁻ → Hg + 2OH⁻</td>
+        <td>~1.35 V. Constant EMF throughout life. Used in hearing aids, watches.</td>
+      </tr>
+      <tr>
+        <td><strong>Lead Storage Battery</strong><br><small>Secondary; rechargeable</small></td>
+        <td class="mono">Pb + SO₄²⁻ → PbSO₄ + 2e⁻</td>
+        <td class="mono">PbO₂ + 4H⁺ + SO₄²⁻ + 2e⁻ → PbSO₄ + 2H₂O</td>
+        <td>~2 V per cell; 12 V battery has 6 cells. Electrolyte: dil. H₂SO₄. On charging, reactions reverse. H₂SO₄ consumed during discharge.</td>
+      </tr>
+      <tr>
+        <td><strong>Nickel–Cadmium Cell</strong><br><small>Secondary; rechargeable</small></td>
+        <td class="mono">Cd + 2OH⁻ → Cd(OH)₂ + 2e⁻</td>
+        <td class="mono">NiO(OH) + H₂O + e⁻ → Ni(OH)₂ + OH⁻</td>
+        <td>~1.25 V. Longer life than dry cell. Used in portable electronics.</td>
+      </tr>
+      <tr>
+        <td><strong>H₂–O₂ Fuel Cell</strong><br><small>Continuous; not a battery</small></td>
+        <td class="mono">H₂ + 2OH⁻ → 2H₂O + 2e⁻ &nbsp;(anode, KOH electrolyte)</td>
+        <td class="mono">O₂ + 2H₂O + 4e⁻ → 4OH⁻ &nbsp;(cathode)</td>
+        <td>Overall: 2H₂ + O₂ → 2H₂O. ~70% efficient (vs ~40% for combustion engine). No pollution — only water produced. Used in space vehicles.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="trick-box">
+    <h4>💡 Fuel Cell vs Battery — Key Distinction for Exams</h4>
+    <p><strong>Battery:</strong> Stores chemical energy; reactants are finite; goes "dead". <strong>Fuel cell:</strong> Converts fuel energy directly to electrical energy as long as fuel (H₂) is supplied — it is NOT exhausted. Efficiency higher than combustion. Products are just water (eco-friendly). Used in Apollo space missions.</p>
+    <p style="margin-top:.4rem"><strong>Lead storage battery memory:</strong> BOTH electrodes become PbSO₄ during discharge ("both lead to sulfate"). During charging: PbSO₄ at anode → Pb; PbSO₄ at cathode → PbO₂.</p>
+  </div>
+
+  <!-- CORROSION -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">🦠 Corrosion — Electrochemical Theory</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#16a34a"><th>Aspect</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Definition</strong></td><td>Slow deterioration of a metal by reaction with its environment (oxidation by O₂/moisture)</td></tr>
+      <tr><td><strong>Rusting of iron — anode (oxidation)</strong></td><td class="mono">Fe → Fe²⁺ + 2e⁻ &nbsp;(at surface pits, impurities)</td></tr>
+      <tr><td><strong>Rusting of iron — cathode (reduction)</strong></td><td class="mono">O₂ + 2H₂O + 4e⁻ → 4OH⁻ &nbsp;(at grain boundaries)</td></tr>
+      <tr><td><strong>Rust formation</strong></td><td>Fe²⁺ + 2OH⁻ → Fe(OH)₂ → further oxidised to Fe(OH)₃ → dehydrates to Fe₂O₃·xH₂O (rust, reddish-brown)</td></tr>
+      <tr><td><strong>Why moist conditions?</strong></td><td>Water acts as electrolyte to complete the circuit between anode and cathode regions on the metal surface</td></tr>
+      <tr><td><strong>Why CO₂/acid rain speeds corrosion?</strong></td><td>CO₂ + H₂O → H₂CO₃ → increases H⁺ → faster reduction at cathode</td></tr>
+      <tr><td><strong>Prevention — Galvanisation</strong></td><td>Coating with Zn. Zn is more active than Fe → Zn corrodes preferentially (sacrificial). Even if Zn coat scratched, Fe still protected.</td></tr>
+      <tr><td><strong>Prevention — Tinning</strong></td><td>Coating with Sn (less active than Fe). Only protects while coat is intact — if scratched, Fe corrodes faster (Fe acts as anode, Sn as cathode in galvanic couple).</td></tr>
+      <tr><td><strong>Prevention — Cathodic protection</strong></td><td>Connect a more active metal (Mg, Zn) as sacrificial anode to iron structure. Used for underground pipes, ship hulls.</td></tr>
+      <tr><td><strong>Prevention — Coating/Painting</strong></td><td>Prevents contact of O₂ and moisture with metal surface. Physical barrier method.</td></tr>
+      <tr><td><strong>Prevention — Alloying</strong></td><td>Stainless steel (Fe + Cr + Ni) — Cr forms thin passive oxide layer (Cr₂O₃) that prevents further corrosion.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes — Batteries &amp; Corrosion</h4>
+    <ul>
+      <li>Confusing primary (non-rechargeable) and secondary (rechargeable) cells — dry cell and mercury cell are primary; lead storage and Ni-Cd are secondary</li>
+      <li>In fuel cell: H₂ is oxidised at anode (not cathode). O₂ is reduced at cathode.</li>
+      <li>In lead storage battery: acid is H₂SO₄ not HCl. During discharge, density of H₂SO₄ decreases (it is consumed).</li>
+      <li>Galvanised iron: Zn corrodes first even if scratched (protects Fe). Tinned iron: if scratched, Fe corrodes faster (Sn is less active, acts as cathode).</li>
+      <li>Rust = Fe₂O₃·xH₂O — not simply Fe₂O₃. The hydrated form is the actual rust.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ CHEMICAL KINETICS ═══════════════════════════════ -->
+<div class="ch-section" id="kinetics">
+
+  <div class="ch-banner" style="background:#fff7ed;color:#7c2d12">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 3</div>
+      <div class="ch-title">Chemical Kinetics</div>
+      <div class="ch-sub">Rate of reaction · rate law · order · molecularity · integrated rate equations · Arrhenius equation · collision theory</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#c2410c">7<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — These patterns repeat every year</h4>
+    <ol>
+      <li><strong>Rate law determination from data table</strong> — finding order with respect to each reactant and overall order</li>
+      <li><strong>Arrhenius equation</strong> — k = Ae^(−Ea/RT); logarithmic form log(k₂/k₁) = (Ea/2.303R)(1/T₁ − 1/T₂)</li>
+      <li><strong>First-order integrated rate law</strong> — k = (2.303/t) log([A]₀/[A]t); half-life = 0.693/k</li>
+      <li><strong>Units of rate constant k</strong> — depend on order: zero → mol L⁻¹ s⁻¹; first → s⁻¹; second → L mol⁻¹ s⁻¹</li>
+      <li><strong>Order vs Molecularity</strong> — order is experimental (can be fraction); molecularity is theoretical (always integer)</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#ea580c"><th>Concept</th><th>Key Fact</th><th>Formula / Value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rate of reaction</strong></td><td>Change in concentration per unit time; always positive</td><td class="mono">r = −(1/a) d[A]/dt = +(1/c) d[C]/dt</td></tr>
+      <tr><td><strong>Rate law</strong></td><td>r = k[A]ˣ[B]ʸ; order = x+y (found experimentally)</td><td>k = rate constant; depends on T, not concentration</td></tr>
+      <tr><td><strong>Zero order</strong></td><td>[A]t = [A]₀ − kt</td><td>k units: mol L⁻¹ s⁻¹; t½ = [A]₀/2k</td></tr>
+      <tr><td><strong>First order</strong></td><td class="mono">ln[A]t = ln[A]₀ − kt</td><td>k units: s⁻¹; t½ = 0.693/k (independent of [A])</td></tr>
+      <tr><td><strong>Second order</strong></td><td class="mono">1/[A]t = 1/[A]₀ + kt</td><td>k units: L mol⁻¹ s⁻¹; t½ = 1/(k[A]₀)</td></tr>
+      <tr><td><strong>Pseudo first order</strong></td><td>Second order but one reactant in large excess → behaves as first order</td><td>e.g., hydrolysis of ester in water (water >> ester)</td></tr>
+      <tr><td><strong>Molecularity</strong></td><td>Number of molecules reacting in elementary step</td><td>Always 1, 2, or 3 (never 0 or fraction)</td></tr>
+      <tr><td><strong>Arrhenius equation</strong></td><td class="mono">k = A × e^(−Ea/RT)</td><td>A = frequency factor; Ea = activation energy (J mol⁻¹)</td></tr>
+      <tr><td><strong>Activation energy</strong></td><td>Minimum energy needed for reaction to occur</td><td>Higher Ea → slower reaction; catalyst lowers Ea</td></tr>
+      <tr><td><strong>Catalyst effect</strong></td><td>Lowers Ea without being consumed. Does NOT change ΔH or K.</td><td>Both forward and backward rates increase equally</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#fff7ed;color:#c2410c">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Rate law</span>
+            <code class="fl-eq">r = k[A]ˣ[B]ʸ  (overall order = x + y)</code>
+          </li>
+          <li>
+            <span class="fl-name">First order — integrated</span>
+            <code class="fl-eq">k = (2.303/t) × log([A]₀/[A]t)</code>
+            <span class="fl-note">Equivalent: [A]t = [A]₀ × e^(−kt)</span>
+          </li>
+          <li>
+            <span class="fl-name">First order — half-life</span>
+            <code class="fl-eq">t½ = 0.693/k</code>
+            <span class="fl-note">Independent of initial concentration — unique property of 1st order</span>
+          </li>
+          <li>
+            <span class="fl-name">Time for n half-lives</span>
+            <code class="fl-eq">fraction remaining = (1/2)ⁿ after n half-lives</code>
+            <span class="fl-note">After 1 t½ → 50%; after 2 t½ → 25%; after 3 t½ → 12.5%</span>
+          </li>
+          <li>
+            <span class="fl-name">Arrhenius equation</span>
+            <code class="fl-eq">k = A × e^(−Ea/RT)</code>
+          </li>
+          <li>
+            <span class="fl-name">Arrhenius — log form (two temperatures)</span>
+            <code class="fl-eq">log(k₂/k₁) = (Ea/2.303R) × (1/T₁ − 1/T₂)</code>
+            <span class="fl-note">R = 8.314 J mol⁻¹ K⁻¹; use K for temperature, not °C</span>
+          </li>
+          <li>
+            <span class="fl-name">Units of k (by order)</span>
+            <code class="fl-eq">zero: mol L⁻¹ s⁻¹ | first: s⁻¹ | second: L mol⁻¹ s⁻¹</code>
+            <span class="fl-note">General formula: units = (mol L⁻¹)^(1−n) × s⁻¹</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Exam Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Order from data table — the doubling trick:</strong> Pick two rows where only [A] changes (keep [B] constant). If rate doubles when [A] doubles → order w.r.t A = 1. If rate quadruples → order = 2. If no change → order = 0.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>k units shortcut:</strong> Rate always has units mol L⁻¹ s⁻¹. k × [A]^n must equal this. So k = (mol L⁻¹ s⁻¹) / (mol L⁻¹)^n = mol^(1−n) L^(n−1) s⁻¹. For n=1: s⁻¹. For n=2: L mol⁻¹ s⁻¹.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Half-life is constant for first order only.</strong> If a question says "the half-life is 10 min regardless of initial concentration" → it's first order. Calculate k = 0.693/t½ = 0.693/10 = 0.0693 min⁻¹.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Arrhenius graph:</strong> Plot log k (y-axis) vs 1/T (x-axis) → straight line with slope = −Ea/2.303R. If slope is given, Ea = −slope × 2.303 × 8.314.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Temperature coefficient:</strong> Rate doubles for every 10°C rise (approximately). If rate at T=310K is double rate at 300K, use Arrhenius two-temp formula to find Ea ≈ 53 kJ/mol.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Pseudo first order:</strong> Hydrolysis of sucrose (C₁₂H₂₂O₁₁ + H₂O → glucose + fructose) is second order overall but pseudo first order because water is in huge excess. Rate = k'[sucrose] where k' = k[H₂O].</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Never say "order = molecularity":</strong> Order is found from experiment; molecularity is the number of molecules in the elementary step. Molecularity cannot be zero or a fraction. Order can be zero, fraction, or negative.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔢 Rate Law from Data Table — Step-by-Step</h4>
+    <p>Standard question: Given 3 rows of [A], [B], rate data. Find x, y, k.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:.75rem;margin:.5rem 0">
+      <tr style="background:#fff7ed"><th style="padding:.3rem .6rem;text-align:center;border:1px solid #fed7aa">Exp</th><th style="padding:.3rem .6rem;border:1px solid #fed7aa">[A] (mol/L)</th><th style="padding:.3rem .6rem;border:1px solid #fed7aa">[B] (mol/L)</th><th style="padding:.3rem .6rem;border:1px solid #fed7aa">Rate (mol/L/s)</th></tr>
+      <tr><td style="padding:.3rem .6rem;text-align:center;border:1px solid #fed7aa">1</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">0.10</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">0.10</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">2.0 × 10⁻⁴</td></tr>
+      <tr style="background:var(--sand-50)"><td style="padding:.3rem .6rem;text-align:center;border:1px solid #fed7aa">2</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">0.20</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">0.10</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">4.0 × 10⁻⁴</td></tr>
+      <tr><td style="padding:.3rem .6rem;text-align:center;border:1px solid #fed7aa">3</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">0.10</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">0.20</td><td style="padding:.3rem .6rem;border:1px solid #fed7aa">4.0 × 10⁻⁴</td></tr>
+    </table>
+    <ul style="margin-top:.3rem">
+      <li>Exp 1 vs 2: [A] doubles, [B] fixed, rate doubles → order w.r.t A = <span class="eq">1</span></li>
+      <li>Exp 1 vs 3: [B] doubles, [A] fixed, rate doubles → order w.r.t B = <span class="eq">1</span></li>
+      <li>Overall order = 1 + 1 = <span class="eq">2</span>; Rate = k[A][B]</li>
+      <li>k = rate / ([A][B]) = 2.0×10⁻⁴ / (0.10 × 0.10) = <span class="eq">0.02 L mol⁻¹ s⁻¹</span></li>
+    </ul>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔢 Arrhenius — Find Activation Energy</h4>
+    <p>Q: Rate constant doubles from 300K to 310K. Find Ea.</p>
+    <ul style="margin-top:.4rem">
+      <li>log(k₂/k₁) = (Ea/2.303R) × (1/T₁ − 1/T₂)</li>
+      <li>log 2 = (Ea / 2.303 × 8.314) × (1/300 − 1/310)</li>
+      <li>0.301 = (Ea / 19.14) × (10/93000) = (Ea / 19.14) × 1.075 × 10⁻⁴</li>
+      <li>Ea = (0.301 × 19.14) / (1.075 × 10⁻⁴) = <span class="eq">≈ 53.6 kJ mol⁻¹</span></li>
+    </ul>
+  </div>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes to Avoid</h4>
+    <ul>
+      <li>Using temperature in °C instead of Kelvin in Arrhenius formula (always convert: K = °C + 273)</li>
+      <li>Confusing rate constant k with rate r. k is constant at fixed T; r depends on concentration.</li>
+      <li>Writing t½ = 0.693/k for all orders (this is ONLY for first order)</li>
+      <li>Getting order wrong: if rate quadruples when [A] doubles → (2)^x = 4 → x = 2, not x = 4</li>
+      <li>Not writing units of k in the answer — examiners deduct a mark for missing units</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.75rem">🔢 Standard Numerical Patterns</h3>
+  <div class="num-grid">
+    <div class="num-card" style="border-left-color:#ea580c">
+      <div class="nc-q">Time for given % decomposition (1st order)</div>
+      <div class="nc-step">80% decomposed → [A]t = 20% of [A]₀<br>
+      k = (2.303/t) × log([A]₀/[A]t) = (2.303/t) × log(100/20)<br>
+      k = (2.303/t) × log 5 = (2.303 × 0.699)/t<br>
+      <span class="ans">t = 2.303 × 0.699 / k</span></div>
+    </div>
+    <div class="num-card" style="border-left-color:#ea580c">
+      <div class="nc-q">Number of half-lives to reduce to given fraction</div>
+      <div class="nc-step">Reduce to 1/16 of original:<br>
+      (1/2)ⁿ = 1/16 = (1/2)⁴ → <span class="ans">n = 4 half-lives</span><br>
+      Total time = 4 × t½ = 4 × 0.693/k</div>
+    </div>
+    <div class="num-card" style="border-left-color:#7c3aed">
+      <div class="nc-q">Find Ea from rate constants at two temperatures</div>
+      <div class="nc-step">Given k₁ at T₁ and k₂ at T₂:<br>
+      <span class="eq">log(k₂/k₁) = (Ea/2.303R)(1/T₁ − 1/T₂)</span><br>
+      Rearrange: <span class="ans">Ea = 2.303R × log(k₂/k₁) / (1/T₁ − 1/T₂)</span></div>
+    </div>
+    <div class="num-card" style="border-left-color:#7c3aed">
+      <div class="nc-q">Verify first order from data</div>
+      <div class="nc-step">Calculate k at different times: k = (2.303/t) log([A]₀/[A]t)<br>
+      If k is <strong>constant</strong> across all time points → <span class="ans">first order confirmed</span><br>
+      If half-life is constant regardless of [A] → also first order</div>
+    </div>
+  </div>
+
+  <!-- ZERO ORDER REACTIONS -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">⓪ Zero-Order Reactions</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#ea580c"><th>Parameter</th><th>Zero Order</th><th>First Order (for comparison)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rate law</strong></td><td class="mono">rate = k &nbsp;(independent of [A])</td><td class="mono">rate = k[A]</td></tr>
+      <tr><td><strong>Integrated rate law</strong></td><td class="mono">[A] = [A]₀ − kt</td><td class="mono">ln[A] = ln[A]₀ − kt</td></tr>
+      <tr><td><strong>Half-life (t½)</strong></td><td class="mono">t½ = [A]₀ / 2k &nbsp;(depends on [A]₀)</td><td class="mono">t½ = 0.693 / k &nbsp;(independent of [A]₀)</td></tr>
+      <tr><td><strong>Units of k</strong></td><td class="mono">mol L⁻¹ s⁻¹ (concentration/time)</td><td class="mono">s⁻¹</td></tr>
+      <tr><td><strong>Graph: [A] vs t</strong></td><td>Straight line, slope = −k</td><td>Curve (exponential decay)</td></tr>
+      <tr><td><strong>Examples</strong></td><td>Decomposition of NH₃ on Pt surface; decomposition of HI on Au; enzyme-catalysed reactions at high substrate concentration</td><td>Radioactive decay; hydrolysis of alkyl halides in dilute alkali</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PSEUDO FIRST-ORDER -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">🔀 Pseudo First-Order Reactions</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#ea580c"><th>Aspect</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Definition</strong></td><td>A reaction that is actually of higher order (usually second order overall) but appears to be first order because one reactant is present in large excess (its concentration is effectively constant)</td></tr>
+      <tr><td><strong>Condition</strong></td><td>One reactant present in very large excess → its concentration doesn't change appreciably → treated as constant → "pseudo" first order</td></tr>
+      <tr><td><strong>Example 1 — Acid hydrolysis of ethyl acetate</strong></td><td class="mono">CH₃COOC₂H₅ + H₂O → CH₃COOH + C₂H₅OH<br>Rate = k[ester][H₂O] but [H₂O] is constant (solvent) → Rate = k′[ester] where k′ = k[H₂O]</td></tr>
+      <tr><td><strong>Example 2 — Inversion of sucrose</strong></td><td class="mono">C₁₂H₂₂O₁₁ + H₂O → C₆H₁₂O₆ + C₆H₁₂O₆<br>H₂O in excess → pseudo first order. Rate = k′[sucrose]. Studied by measuring optical rotation (sucrose is dextrorotatory; product mixture is levorotatory).</td></tr>
+      <tr><td><strong>Why called "pseudo"?</strong></td><td>The reaction is NOT truly first order — it's actually second order. It only behaves as first order under specific conditions (excess of one reactant). The effective rate constant k′ = k × [excess reactant].</td></tr>
+      <tr><td><strong>Distinguishing from true first order</strong></td><td>Vary concentration of the "constant" reactant — if k′ changes, it was pseudo first order. A true first-order rate constant k does not depend on any concentration.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="trick-box">
+    <h4>🎯 Zero-Order vs First-Order — Quick Memory Card</h4>
+    <p><strong>Zero order:</strong> [A] falls linearly with time. t½ is halved every half-life (successive half-lives decrease). k has units of concentration/time. Reaction stops when [A] = 0 (limited catalyst surface). Examples: NH₃/Pt, HI/Au.</p>
+    <p style="margin-top:.4rem"><strong>Pseudo first order trick:</strong> Whenever water is a reactant and the reaction is in aqueous solution, it's a candidate for pseudo first order. Water is the solvent → always in huge excess → its concentration (~55.5 mol/L) is constant.</p>
+  </div>
+</div>
+
+</div><!-- /container --><script src="../../js/chapter-nav.js"></script>
+</body>
+</html>

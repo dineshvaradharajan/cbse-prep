@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/chapter.css">
+<style>:root{
+  --subject-color:#16a34a;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#166534;
+  --c1:#be185d;--c2:#2563eb;--c3:#dc2626;--c4:#9333ea;--c5:#15803d;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Chemistry Chapters — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">← Back to Hub</a>
+
+<h1>Organic Chemistry Chapters</h1>
+<p class="subtitle">Chapter summaries, must-reads, tips, tricks and reaction patterns for all 5 organic chapters — Haloalkanes to Biomolecules.</p>
+
+<div class="chapter-bar">
+  <div class="chapter-tabs" id="chapterTabs">
+    <button class="tab active" data-tab="halo" onclick="showCh('halo',this)">6. Haloalkanes</button>
+    <button class="tab" data-tab="alc" onclick="showCh('alc',this)">7. Alcohols &amp; Phenols</button>
+    <button class="tab" data-tab="carb" onclick="showCh('carb',this)">8. Aldehydes &amp; Ketones</button>
+    <button class="tab" data-tab="amine" onclick="showCh('amine',this)">9. Amines</button>
+    <button class="tab" data-tab="bio" onclick="showCh('bio',this)">10. Biomolecules</button>
+  </div>
+  <button class="more-btn" id="moreBtn" onclick="toggleMoreDropdown()">More ▾</button>
+  <div class="more-dropdown" id="moreDropdown"></div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CH 6: HALOALKANES & HALOARENES
+════════════════════════════════════════ -->
+<div class="ch-section active" id="halo">
+  <div class="ch-banner" style="background:#fce7f3;color:#500724">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 6</div>
+      <div class="ch-title">Haloalkanes &amp; Haloarenes</div>
+      <div class="ch-sub">Classification · SN1 · SN2 · E1 · E2 · reactivity order · polyhalogen compounds</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#be185d">6<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read</h4>
+    <ol>
+      <li><strong>SN1 vs SN2 mechanism</strong> — conditions, substrate preference, stereochemical outcome (racemisation vs Walden inversion)</li>
+      <li><strong>Reactivity order of alkyl halides:</strong> R–I &gt; R–Br &gt; R–Cl &gt; R–F (bond strength); 3° &gt; 2° &gt; 1° for SN1; 1° &gt; 2° &gt; 3° for SN2</li>
+      <li><strong>Why haloarenes are less reactive</strong> — resonance delocalisation of lone pair into ring makes C–X bond shorter and stronger</li>
+      <li><strong>Elimination (E2)</strong> — strong base + heat → alkene; competes with SN2 at 2°/3°</li>
+      <li><strong>Polyhalogen compounds</strong> — CHCl₃ (chloroform), CCl₄, freons, DDT — uses and environmental effects</li>
+    </ol>
+  </div>
+
+  <table class="sum-table">
+    <thead><tr style="background:#be185d"><th>Concept</th><th>Key Fact</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Alkyl halide order (SN1)</strong></td><td>3° &gt; 2° &gt; 1° — more substituted = more stable carbocation</td><td>(CH₃)₃CBr &gt; (CH₃)₂CHBr &gt; CH₃CH₂Br</td></tr>
+      <tr><td><strong>Alkyl halide order (SN2)</strong></td><td>1° &gt; 2° &gt; 3° — less steric hindrance = easier backside attack</td><td>CH₃Br reacts fastest with SN2</td></tr>
+      <tr><td><strong>Halogen leaving group order</strong></td><td>I⁻ &gt; Br⁻ &gt; Cl⁻ &gt; F⁻ — iodide is best leaving group (weakest C–I bond)</td><td>RI most reactive; RF least reactive</td></tr>
+      <tr><td><strong>SN1 stereochemistry</strong></td><td>Flat carbocation attacked from both sides → racemic mixture (50:50 R:S)</td><td>(R)-2-bromobutane → racemic butan-2-ol</td></tr>
+      <tr><td><strong>SN2 stereochemistry</strong></td><td>Backside attack → complete inversion of configuration (Walden inversion)</td><td>(R) → (S) product exclusively</td></tr>
+      <tr><td><strong>Elimination vs Substitution</strong></td><td>High temperature + strong bulky base → E2 elimination (alkene). Low T + strong small nucleophile → SN2</td><td>KOH/alc. → alkene; KOH/aq. → alcohol</td></tr>
+      <tr><td><strong>Haloarenes — less reactive</strong></td><td>C–X bond has partial double bond character (resonance). Carbon is sp² (less electron-dense). Ion pair formation (SN1) not favoured.</td><td>C₆H₅Cl won't react with KOH (aq.) easily</td></tr>
+      <tr><td><strong>Finkelstein reaction</strong></td><td>R–Cl + NaI (dry acetone) → R–I + NaCl↓ (NaCl insoluble drives reaction)</td><td>Converts chloroalkane to iodoalkane</td></tr>
+      <tr><td><strong>Swarts reaction</strong></td><td>R–Cl + AgF → R–F + AgCl↓ (to make fluoroalkane)</td><td>Useful since direct fluorination is explosive</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#fce7f3;color:#9d174d">🔬 SN1 vs SN2 — Side by Side</div>
+      <div class="block-body">
+        <table style="width:100%;border-collapse:collapse;font-size:.73rem">
+          <tr style="background:#fce7f3"><th style="padding:.3rem .5rem;text-align:left"></th><th style="padding:.3rem .5rem;text-align:center;color:#9d174d">SN1</th><th style="padding:.3rem .5rem;text-align:center;color:#15803d">SN2</th></tr>
+          <tr><td style="padding:.28rem .5rem;font-weight:600">Steps</td><td style="padding:.28rem .5rem;text-align:center">2 (slow + fast)</td><td style="padding:.28rem .5rem;text-align:center">1 (concerted)</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.28rem .5rem;font-weight:600">Rate law</td><td style="padding:.28rem .5rem;text-align:center">k[RX]</td><td style="padding:.28rem .5rem;text-align:center">k[RX][Nu⁻]</td></tr>
+          <tr><td style="padding:.28rem .5rem;font-weight:600">Intermediate</td><td style="padding:.28rem .5rem;text-align:center">Carbocation</td><td style="padding:.28rem .5rem;text-align:center">Transition state</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.28rem .5rem;font-weight:600">Substrate</td><td style="padding:.28rem .5rem;text-align:center">3° (stable C⁺)</td><td style="padding:.28rem .5rem;text-align:center">1° (less hindrance)</td></tr>
+          <tr><td style="padding:.28rem .5rem;font-weight:600">Stereochem</td><td style="padding:.28rem .5rem;text-align:center">Racemisation</td><td style="padding:.28rem .5rem;text-align:center">Inversion (R↔S)</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.28rem .5rem;font-weight:600">Solvent</td><td style="padding:.28rem .5rem;text-align:center">Polar protic</td><td style="padding:.28rem .5rem;text-align:center">Polar aprotic</td></tr>
+          <tr><td style="padding:.28rem .5rem;font-weight:600">Nucleophile</td><td style="padding:.28rem .5rem;text-align:center">Weak (H₂O)</td><td style="padding:.28rem .5rem;text-align:center">Strong (CN⁻, OH⁻)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Umbrella flip trick for SN2:</strong> Draw Nu attacking the back of C–X. All three groups flip to the other side (like an umbrella inverting in wind). Configuration changes from R to S or vice versa.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>KOH trick:</strong> KOH in <em>alcohol</em> → elimination (alkene). KOH in <em>water</em> (aqueous) → substitution (alcohol). Alcoholic KOH is basic but non-nucleophilic, so E2 dominates.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Grignard reagent preparation:</strong> R–X + Mg (dry ether) → R–MgX. Grignard is the most reactive carbanion equivalent. Reacts with CO₂ → RCOOH (one more carbon), HCHO → 1° alcohol, RCHO → 2° alcohol, R₂CO → 3° alcohol.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>DDT and Freons (memory):</strong> DDT = dichlorodiphenyltrichloroethane, banned (bio-accumulates in food chain). Freons = CFCs, destroy ozone layer by releasing Cl• radicals. Both are polyhalogen compounds.</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Haloarenes need drastic conditions:</strong> To hydrolyse chlorobenzene → phenol, need NaOH at 300°C and 300 atm pressure (Dow process). Normal SN2 doesn't work due to C–Cl resonance in ring.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🧠 Named Reactions — Memory Tips</h4>
+    <p><strong>Finkelstein:</strong> NaI/acetone → makes R–I (NaCl precipitates, drives reaction forward)</p>
+    <p><strong>Swarts:</strong> Metal fluorides (AgF, SbF₃) → makes R–F</p>
+    <p><strong>Wurtz:</strong> 2 RX + Na → R–R (chain doubling)</p>
+  </div>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes</h4>
+    <ul>
+      <li>Confusing reactivity in SN1 (3° fastest) with SN2 (1° fastest) — the substrate effects are opposite</li>
+      <li>Forgetting that F⁻ is the worst leaving group (strongest C–F bond) but HF is the strongest acid</li>
+      <li>Saying haloarenes don't react at all — they undergo electrophilic substitution (EAS) at ring easily; it's nucleophilic substitution that's hard</li>
+      <li>In iodoform test: CH₃CHO gives iodoform; HCHO does NOT (no methyl group attached to CHO)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CH 7: ALCOHOLS, PHENOLS & ETHERS
+════════════════════════════════════════ -->
+<div class="ch-section" id="alc">
+  <div class="ch-banner" style="background:#eff6ff;color:#1e3a8a">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 7</div>
+      <div class="ch-title">Alcohols, Phenols &amp; Ethers</div>
+      <div class="ch-sub">Acidic strength · Kolbe · Reimer-Tiemann · Lucas test · esterification · dehydration · Williamson synthesis</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#2563eb">6<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read</h4>
+    <ol>
+      <li><strong>Acidic strength order:</strong> RCOOH &gt; phenol &gt; alcohol &gt; water — know pKa values and reason (resonance stabilisation of phenoxide)</li>
+      <li><strong>Reactions of phenol</strong> — electrophilic substitution (–OH is ortho/para director): bromination, nitration; also Kolbe reaction, Reimer-Tiemann reaction</li>
+      <li><strong>Oxidation of alcohols:</strong> 1° → aldehyde (PCC) → carboxylic acid (K₂Cr₂O₇); 2° → ketone; 3° → resistant to oxidation (no α-H)</li>
+      <li><strong>Lucas test</strong> — distinguishes 1°, 2°, 3° alcohols; 3° reacts immediately (turbidity), 2° in 5 min, 1° no reaction in cold</li>
+      <li><strong>Williamson Ether Synthesis</strong> — R–O⁻Na⁺ + R'–X → R–O–R' (SN2); best with 1° alkyl halide</li>
+    </ol>
+  </div>
+
+  <table class="sum-table">
+    <thead><tr style="background:#2563eb"><th>Concept</th><th>Key Fact / Reaction</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Acidic strength</strong></td><td>RCOOH (pKa≈5) &gt; PhOH (pKa≈10) &gt; ROH (pKa≈16) &gt; H₂O (pKa≈15.7)</td><td>Phenol &gt; ethanol because phenoxide ion is resonance-stabilised</td></tr>
+      <tr><td><strong>Effect of ring substituents on phenol acidity</strong></td><td>Electron-withdrawing groups (–NO₂, –Cl) → increase acidity; Electron-donating (+CH₃, +OH) → decrease acidity</td><td>4-nitrophenol is more acidic than phenol</td></tr>
+      <tr><td><strong>Oxidation of 1° alcohol</strong></td><td>PCC/CrO₃ → aldehyde (stops here); K₂Cr₂O₇/H⁺ → carboxylic acid (goes further)</td><td>CH₃CH₂OH → CH₃CHO (PCC) → CH₃COOH (K₂Cr₂O₇)</td></tr>
+      <tr><td><strong>Oxidation of 2° alcohol</strong></td><td>Any oxidising agent → ketone</td><td>(CH₃)₂CHOH → CH₃COCH₃ (propan-2-one)</td></tr>
+      <tr><td><strong>3° alcohol</strong></td><td>Resistant to mild oxidation (no α-H on C bearing OH)</td><td>(CH₃)₃COH → no reaction with PCC</td></tr>
+      <tr><td><strong>Dehydration of alcohol</strong></td><td>Conc. H₂SO₄, 170°C → alkene (intramolecular); 140°C → ether (intermolecular)</td><td>CH₃CH₂OH → CH₂=CH₂ (170°C) or CH₃CH₂–O–CH₂CH₃ (140°C)</td></tr>
+      <tr><td><strong>Kolbe's reaction</strong></td><td>Sodium phenoxide + CO₂ (300°C, high pressure) → sodium salicylate → salicylic acid (aspirin precursor)</td><td>PhONa + CO₂ → o-HOC₆H₄COONa</td></tr>
+      <tr><td><strong>Reimer-Tiemann reaction</strong></td><td>Phenol + CHCl₃/NaOH → o-hydroxybenzaldehyde (salicylaldehyde); CHCl₃ forms dichlorocarbene (:CCl₂) which is the electrophile</td><td>PhOH + CHCl₃ + NaOH → 2-hydroxybenzaldehyde</td></tr>
+      <tr><td><strong>Williamson synthesis</strong></td><td>R'–ONa + R–X (1° alkyl halide) → R'–O–R (ether)</td><td>C₂H₅ONa + CH₃I → C₂H₅OCH₃ (methoxyethane)</td></tr>
+      <tr><td><strong>Lucas test</strong></td><td>Conc. HCl + ZnCl₂. 3°: turbidity immediately. 2°: 5 min. 1°: no turbidity at RT.</td><td>Turbidity = insoluble alkyl chloride formed</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#eff6ff;color:#1e3a8a">🔬 Reactions of Phenol — Summary</div>
+      <div class="block-body">
+        <ul class="tip-list" style="gap:.5rem">
+          <li><span class="tip-icon">1</span><div><strong>Bromination (dilute, room temp):</strong> PhOH + Br₂(aq) → 2,4,6-tribromophenol↓ (white ppt). No catalyst needed — –OH activates ring strongly. Test for phenol.</div></li>
+          <li><span class="tip-icon">2</span><div><strong>Nitration (dilute HNO₃):</strong> Gives mixture of o- and p-nitrophenol (mild conditions). Conc. HNO₃ → 2,4,6-trinitrophenol (picric acid).</div></li>
+          <li><span class="tip-icon">3</span><div><strong>Kolbe's reaction:</strong> PhONa + CO₂ (pressure, 300°C) → sodium salicylate → HCl acidification → salicylic acid. <em>CO₂ acts as a mild electrophile for the electron-rich phenoxide ring.</em></div></li>
+          <li><span class="tip-icon">4</span><div><strong>Reimer-Tiemann:</strong> PhOH + CHCl₃ + NaOH(aq) → o-hydroxybenzaldehyde. Electrophile = dichlorocarbene (:CCl₂). Product = salicylaldehyde.</div></li>
+          <li><span class="tip-icon">5</span><div><strong>FeCl₃ test:</strong> Phenol gives violet/purple colouration with FeCl₃ solution. Distinguishes phenol from alcohol.</div></li>
+          <li><span class="tip-icon">6</span><div><strong>Esterification:</strong> PhOH + (CH₃CO)₂O → phenyl acetate + CH₃COOH. Phenol doesn't react with RCOOH directly (unlike alcohols); needs acid anhydride or acid chloride.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Acidic strength with resonance:</strong> Phenoxide ion (PhO⁻) has 5 resonance structures — the negative charge delocalises into the ring. Alkoxide (RO⁻) has no resonance → less stable → alcohol is weaker acid. "Stable conjugate base = stronger acid"</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>PCC vs K₂Cr₂O₇ trick:</strong> PCC (pyridinium chlorochromate) is a mild oxidant — stops at aldehyde stage from 1° alcohol. K₂Cr₂O₇/H⁺ or KMnO₄ are strong — convert aldehyde further to COOH. Use PCC to isolate aldehyde.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Victor Meyer test (CBSE sometimes asks):</strong> 1° → red colour; 2° → blue colour; 3° → colourless. Based on nitrous acid reaction, then Liebermann's nitroso reaction.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Ether cleavage by HI:</strong> R–O–R' + HI → ROH + R'I (SN2). With excess HI → both become R–I and R'–I. Phenyl ethers: ArO–R + HI → ArOH + RI (phenol cannot form PhI easily — sp² carbon).</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Williamson synthesis with 3° halide:</strong> Use 3° alkyl halide → gives elimination (E2) not substitution. Always choose 1° alkyl halide for the halide component. The alkoxide can be any type.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>⚖️ Acidic Strength Comparisons — Exam Ready</h4>
+    <ul>
+      <li>RCOOH &gt; H₂CO₃ &gt; ArOH &gt; H₂O &gt; ROH &gt; RC≡CH &gt; NH₃</li>
+      <li>4-NO₂-C₆H₄OH &gt; C₆H₄(OH)₂ &gt; C₆H₅OH &gt; 4-CH₃-C₆H₄OH (electron-donating groups decrease acidity)</li>
+      <li>CCl₃COOH &gt; CHCl₂COOH &gt; CH₂ClCOOH &gt; CH₃COOH (more Cl = more electron withdrawal = stronger acid)</li>
+      <li>Formic acid (HCOOH) &gt; acetic acid (CH₃COOH) — CH₃ is +I group, decreases acidity</li>
+    </ul>
+    <p style="margin-top:.4rem;font-size:.72rem;color:#92400e">💡 Rule: Anything stabilising the conjugate base (anion) increases acid strength. EWG stabilise, EDG destabilise.</p>
+  </div>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes</h4>
+    <ul>
+      <li>Saying phenol is more acidic than carboxylic acid — it's the other way: RCOOH &gt; phenol</li>
+      <li>Using R–X that is 3° in Williamson synthesis → E2 elimination occurs instead of SN2 substitution</li>
+      <li>Saying 3° alcohol gets oxidised — it doesn't unless very harsh conditions (ring cleavage)</li>
+      <li>Forgetting Lucas test uses both ZnCl₂ AND conc. HCl together</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CH 8: ALDEHYDES, KETONES & CARBOXYLIC ACIDS
+════════════════════════════════════════ -->
+<div class="ch-section" id="carb">
+  <div class="ch-banner" style="background:#fef2f2;color:#450a0a">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 8</div>
+      <div class="ch-title">Aldehydes, Ketones &amp; Carboxylic Acids</div>
+      <div class="ch-sub">Nucleophilic addition · Aldol · Cannizzaro · Clemmensen · Tollens · Fehling · acidity · acid derivatives</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#dc2626">8<span>marks (highest)</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — 8 marks, highest weightage in organic</h4>
+    <ol>
+      <li><strong>Nucleophilic addition mechanism</strong> — HCN, NaHSO₃, Grignard, NH₂OH (oxime), R–NH₂ (imine); draw curly arrows</li>
+      <li><strong>Aldol condensation</strong> — 4-step mechanism; requires α-H; cold → aldol product; hot → condensation product</li>
+      <li><strong>Cannizzaro reaction</strong> — for aldehydes without α-H; disproportionation in conc. NaOH</li>
+      <li><strong>Distinction tests</strong> — Tollens (silver mirror), Fehling (brick red ppt), 2,4-DNP, iodoform test</li>
+      <li><strong>Acidity of carboxylic acids</strong> — effect of –I and +I groups; relative acidity with phenol/alcohol</li>
+      <li><strong>Clemmensen vs Wolff-Kishner</strong> — both reduce C=O to –CH₂–; Clemmensen in acid, Wolff-Kishner in base</li>
+    </ol>
+  </div>
+
+  <table class="sum-table">
+    <thead><tr style="background:#dc2626"><th>Reaction / Test</th><th>Reagent / Condition</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tollens test</strong></td><td>Ag(NH₃)₂⁺ (silver ammonia solution), warm</td><td>Aldehyde → silver mirror on tube wall. Ketone → no reaction.</td></tr>
+      <tr><td><strong>Fehling's test</strong></td><td>Cu²⁺ (Fehling A + B), warm</td><td>Aliphatic aldehyde → brick red Cu₂O↓. Aromatic aldehyde (PhCHO) → no reaction. Fructose → positive.</td></tr>
+      <tr><td><strong>2,4-DNP test</strong></td><td>2,4-dinitrophenylhydrazine</td><td>Both aldehydes AND ketones → yellow/orange precipitate (2,4-DNP derivative). Identifies C=O.</td></tr>
+      <tr><td><strong>Iodoform test</strong></td><td>I₂/NaOH, warm</td><td>CH₃CHO, CH₃COR, CH₃CH(OH)R → yellow CHI₃↓ + antiseptic smell. HCHO → no iodoform.</td></tr>
+      <tr><td><strong>HCN addition</strong></td><td>HCN + NaCN catalyst</td><td>→ Cyanohydrin; R–CH(OH)CN. Hydrolyse → α-hydroxy acid. +1 carbon.</td></tr>
+      <tr><td><strong>NaHSO₃ addition</strong></td><td>Saturated sodium bisulphite solution</td><td>→ Crystalline addition product. Used to purify aldehydes and methyl ketones.</td></tr>
+      <tr><td><strong>Grignard addition</strong></td><td>R'MgX (dry ether), then H₃O⁺</td><td>HCHO → 1° alcohol; RCHO → 2° alcohol; R₂CO → 3° alcohol</td></tr>
+      <tr><td><strong>Reduction to alcohol</strong></td><td>NaBH₄ or LiAlH₄</td><td>C=O → CHOH. NaBH₄ is milder (only C=O); LiAlH₄ reduces all (ester, amide too)</td></tr>
+      <tr><td><strong>Clemmensen reduction</strong></td><td>Zn(Hg) + conc. HCl, heat</td><td>C=O → –CH₂– (complete deoxygenation). Acid conditions.</td></tr>
+      <tr><td><strong>Wolff-Kishner reduction</strong></td><td>NH₂NH₂ + KOH/ethylene glycol, heat</td><td>C=O → –CH₂–. Basic conditions.</td></tr>
+      <tr><td><strong>Aldol condensation</strong></td><td>Dilute NaOH (α-H required), cold then hot</td><td>2 × RCHO → β-hydroxy aldehyde (cold) → α,β-unsaturated carbonyl (hot)</td></tr>
+      <tr><td><strong>Cannizzaro reaction</strong></td><td>Conc. NaOH (no α-H)</td><td>2 HCHO → CH₃OH + HCOONa. Disproportionation.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="h3-gap">🔬 Nucleophilic Addition — Mechanism (4 marks)</h3>
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#fef2f2;color:#991b1b">📐 General Mechanism (3 steps)</div>
+      <div class="block-body">
+        <div class="mech-steps">
+          <div class="mech-step">
+            <div class="ms-num" style="background:#0891b2">1</div>
+            <div class="ms-body"><strong>Polarisation:</strong> C=O → Cδ+–Oδ⁻. C is electrophilic. (Aldehyde more reactive than ketone — less steric hindrance and less +I from alkyl groups)</div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#7c3aed">2</div>
+            <div class="ms-body"><strong>Nucleophile attacks C:</strong> Nu:⁻ donates pair to C → π bond breaks → O becomes O⁻ (tetrahedral alkoxide intermediate)
+            <span class="eq green">Nu:⁻ + R–CHO → R–CH(Nu)–O⁻</span></div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#16a34a">3</div>
+            <div class="ms-body"><strong>Protonation of O⁻:</strong> O⁻ picks up H⁺ from solvent or HNu → final addition product
+            <span class="eq green">R–CH(Nu)–O⁻ + H⁺ → R–CH(Nu)–OH</span></div>
+          </div>
+        </div>
+        <div style="margin-top:.75rem;background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:.5rem .7rem;font-size:.72rem;color:#92400e">
+          <strong>Reactivity order:</strong> HCHO &gt; CH₃CHO &gt; PhCHO &gt; CH₃COCH₃ &gt; CH₃COC₂H₅<br>
+          Less steric + less +I effect = more reactive. Ketones are less reactive than aldehydes.
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fef2f2;color:#991b1b">📐 Aldol Condensation — 4 Steps</div>
+      <div class="block-body">
+        <div class="mech-steps">
+          <div class="mech-step">
+            <div class="ms-num" style="background:#16a34a">1</div>
+            <div class="ms-body"><strong>Deprotonation:</strong> OH⁻ removes α-H → enolate ion (carbanion)
+            <span class="eq">CH₃CHO + OH⁻ → ⁻CH₂CHO + H₂O</span></div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#7c3aed">2</div>
+            <div class="ms-body"><strong>Nucleophilic attack:</strong> Enolate attacks C=O of 2nd molecule
+            <span class="eq">⁻CH₂CHO + CH₃CHO → CH₃CH(O⁻)CH₂CHO</span></div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#ea580c">3</div>
+            <div class="ms-body"><strong>Protonation → Aldol product (cold):</strong>
+            <span class="eq green">CH₃CH(OH)CH₂CHO (3-hydroxybutanal)</span></div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#dc2626">4</div>
+            <div class="ms-body"><strong>Dehydration on heating → condensation product:</strong>
+            <span class="eq green">CH₃CH=CHCHO + H₂O (but-2-enal)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔍 Distinguishing Aldehydes from Ketones — Quick Chart</h4>
+    <table style="width:100%;border-collapse:collapse;font-size:.73rem">
+      <tr style="background:#fef2f2"><th style="padding:.3rem .6rem;text-align:left">Test</th><th style="padding:.3rem .6rem">Aldehyde result</th><th style="padding:.3rem .6rem">Ketone result</th></tr>
+      <tr><td style="padding:.28rem .6rem">Tollens</td><td style="padding:.28rem .6rem;color:#15803d;font-weight:600">Silver mirror ✓</td><td style="padding:.28rem .6rem;color:#dc2626">No reaction ✗</td></tr>
+      <tr style="background:var(--sand-50)"><td style="padding:.28rem .6rem">Fehling's</td><td style="padding:.28rem .6rem;color:#15803d;font-weight:600">Brick red Cu₂O ppt ✓ (aliphatic only)</td><td style="padding:.28rem .6rem;color:#dc2626">No reaction ✗</td></tr>
+      <tr><td style="padding:.28rem .6rem">Schiff's</td><td style="padding:.28rem .6rem;color:#15803d;font-weight:600">Pink/red colour ✓</td><td style="padding:.28rem .6rem;color:#dc2626">No reaction ✗</td></tr>
+      <tr style="background:var(--sand-50)"><td style="padding:.28rem .6rem">2,4-DNP</td><td style="padding:.28rem .6rem;color:#15803d;font-weight:600">Orange ppt ✓</td><td style="padding:.28rem .6rem;color:#15803d;font-weight:600">Orange ppt ✓ (both give positive)</td></tr>
+      <tr><td style="padding:.28rem .6rem">Iodoform (I₂/NaOH)</td><td style="padding:.28rem .6rem;color:#15803d;font-weight:600">CH₃CHO → CHI₃↓ ✓</td><td style="padding:.28rem .6rem;color:#15803d;font-weight:600">CH₃COR → CHI₃↓ ✓ (methyl ketone only)</td></tr>
+    </table>
+  </div>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes</h4>
+    <ul>
+      <li>Benzaldehyde (PhCHO) does NOT give Fehling's test positive (though it's an aldehyde) — aromatic aldehydes don't reduce Fehling's</li>
+      <li>Fructose (a ketose) gives Fehling's and Tollens positive — because it isomerises to glucose in alkaline medium</li>
+      <li>Iodoform test: HCHO does NOT give iodoform (no CH₃ group); CH₃CHO does give iodoform</li>
+      <li>In Aldol: writing "requires α-H" but not explaining that HCHO and PhCHO have no α-H → they give Cannizzaro instead</li>
+      <li>Using NaBH₄ to reduce ester — it doesn't; only LiAlH₄ reduces ester, amide, carboxylic acid</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CH 9: AMINES
+════════════════════════════════════════ -->
+<div class="ch-section" id="amine">
+  <div class="ch-banner" style="background:#faf5ff;color:#3b0764">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 9</div>
+      <div class="ch-title">Amines</div>
+      <div class="ch-sub">Classification · basicity order · preparation · diazonium salts · Hoffmann degradation · carbylamine test</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#9333ea">6<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read</h4>
+    <ol>
+      <li><strong>Basicity order</strong> — aliphatic 2° &gt; 1° &gt; 3° &gt; NH₃ &gt; aromatic; with 3 reasons (inductive, resonance, solvation)</li>
+      <li><strong>Hoffmann bromamide degradation</strong> — 4-step mechanism; product has one less carbon</li>
+      <li><strong>Diazonium salt reactions</strong> — Sandmeyer (ArCl, ArBr, ArCN), Balz-Schiemann (ArF), coupling (azo dye), deamination (Ar–H)</li>
+      <li><strong>Carbylamine test</strong> — only 1° amines (R–NH₂ + CHCl₃ + KOH → isocyanide, foul smell)</li>
+      <li><strong>Preparation methods</strong> — reduction of nitro, nitrile, amide; Gabriel synthesis (pure 1°); Hoffmann degradation</li>
+    </ol>
+  </div>
+
+  <table class="sum-table">
+    <thead><tr style="background:#9333ea"><th>Concept</th><th>Key Fact</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Basicity — aliphatic</strong></td><td>Aqueous: 2° &gt; 1° &gt; 3° &gt; NH₃ (solvation controls 3°). Gas phase: 3° &gt; 2° &gt; 1° &gt; NH₃</td><td>(CH₃)₂NH (pKb 3.27) &gt; CH₃NH₂ (3.38) &gt; (CH₃)₃N (4.22)</td></tr>
+      <tr><td><strong>Basicity — aromatic</strong></td><td>Aniline &lt; NH₃ &lt; aliphatic amines (lone pair delocalised into benzene ring → less available)</td><td>C₆H₅NH₂ pKb = 9.38 (much less basic)</td></tr>
+      <tr><td><strong>Effect of substituents on aniline</strong></td><td>–NO₂ (EWG, para/ortho) → decreases basicity. –CH₃, –OCH₃ (EDG) → increases basicity</td><td>4-NO₂-aniline (pKb 13) &lt; aniline (9.4) &lt; 4-CH₃-aniline (8.9)</td></tr>
+      <tr><td><strong>Gabriel synthesis</strong></td><td>Phthalimide + RX (SN2) → N-alkylphthalimide → hydrazine hydrate → 1° amine (pure, no 2°/3°)</td><td>Only way to get pure 1° amine without contamination</td></tr>
+      <tr><td><strong>Hoffmann degradation</strong></td><td>RCONH₂ + Br₂ + 4NaOH → RNH₂ + Na₂CO₃ + 2NaBr + 2H₂O. Product has one fewer carbon.</td><td>CH₃CONH₂ → CH₃NH₂ (one carbon less)</td></tr>
+      <tr><td><strong>Carbylamine test</strong></td><td>Primary amine only: R–NH₂ + CHCl₃ + KOH → R–NC (isocyanide, foul smell)</td><td>2° and 3° amines do NOT give this test</td></tr>
+      <tr><td><strong>Diazotisation</strong></td><td>Aromatic 1° amine + NaNO₂ + HCl (0–5°C) → diazonium salt Ar–N₂⁺Cl⁻. Aliphatic amines give unstable diazonium → N₂ + alcohol immediately</td><td>C₆H₅NH₂ → C₆H₅N₂⁺Cl⁻ (stable at low temp)</td></tr>
+      <tr><td><strong>Sandmeyer reaction</strong></td><td>ArN₂⁺Cl⁻ + CuCl → ArCl; + CuBr → ArBr; + CuCN → ArCN</td><td>Cu salt needed as catalyst</td></tr>
+      <tr><td><strong>Gattermann reaction</strong></td><td>ArN₂⁺Cl⁻ + Cu powder + HCl → ArCl (Cu powder, not CuCl — less efficient Sandmeyer variant)</td><td>Used when CuCl unavailable</td></tr>
+      <tr><td><strong>Azo coupling</strong></td><td>ArN₂⁺Cl⁻ + phenol/aniline (alkaline) → Ar–N=N–Ar' (azo dye, coloured)</td><td>p-hydroxyazobenzene: orange dye</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#faf5ff;color:#5b21b6">📐 Hoffmann Degradation — 4 Steps</div>
+      <div class="block-body">
+        <div class="mech-steps">
+          <div class="mech-step">
+            <div class="ms-num" style="background:#7c3aed">1</div>
+            <div class="ms-body"><strong>N-Bromination:</strong> Br₂/NaOH → NaOBr; attacks N–H of amide
+            <span class="eq">RCONH₂ + NaOBr → RCONHBr (N-bromo amide)</span></div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#dc2626">2</div>
+            <div class="ms-body"><strong>Deprotonation:</strong> Base removes N–H
+            <span class="eq">RCONHBr + NaOH → RCON⁻Br + H₂O</span></div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#ea580c">3</div>
+            <div class="ms-body"><strong>Isocyanate formation:</strong> Br⁻ leaves; N migrates → R–N=C=O (key intermediate — why product has one less C)
+            <span class="eq green">RCON⁻Br → R–N=C=O + Br⁻</span></div>
+          </div>
+          <div class="mech-step">
+            <div class="ms-num" style="background:#16a34a">4</div>
+            <div class="ms-body"><strong>Hydrolysis of isocyanate:</strong>
+            <span class="eq green">R–N=C=O + H₂O → R–NH–COOH → R–NH₂ + CO₂</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>3 reasons for basicity — always give all 3:</strong> (1) Inductive effect — +I of alkyl groups increases electron density on N. (2) Resonance — aromatic amines lose lone pair into ring → less basic. (3) Solvation — bulky (CH₃)₃N⁺H is poorly solvated in water → appears less basic.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Sandmeyer vs Gattermann trick:</strong> Sandmeyer uses CuCl/CuBr (copper salt). Gattermann uses Cu powder + HCl (cheaper but less reliable). "Sandmeyer = salt; Gattermann = granules (powder)"</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Why aliphatic diazonium is unstable:</strong> Aliphatic R–N₂⁺ immediately loses N₂ (very stable molecule) → carbocation → reacts with water → alcohol. Aromatic Ar–N₂⁺ is stabilised by resonance with ring → stable at 0–5°C.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Azo dye coupling conditions:</strong> Always in alkaline medium for phenols (ArO⁻ is better electron donor for coupling). In slightly acidic medium for aromatic amines. The diazonium attacks the phenol/amine at para position preferentially.</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Gabriel gives ONLY 1° amine:</strong> Gabriel synthesis avoids over-alkylation (unlike direct NH₃ alkylation which gives 1°+2°+3° mixture). The phthalimide nitrogen can only be monoalkylated.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔤 Diazonium Salt Reactions — Full Map</h4>
+    <p><strong>Starting material:</strong> ArN₂⁺Cl⁻</p>
+    <ul style="margin-top:.3rem">
+      <li>+ CuCl → <span class="eq">Ar–Cl</span> (Sandmeyer) &nbsp;|&nbsp; + CuBr → <span class="eq">Ar–Br</span> (Sandmeyer)</li>
+      <li>+ CuCN → <span class="eq">Ar–CN</span> (Sandmeyer) &nbsp;|&nbsp; + HBF₄ → <span class="eq">Ar–F</span> (Balz-Schiemann)</li>
+      <li>+ H₂O (warm) → <span class="eq">Ar–OH</span> (phenol) &nbsp;|&nbsp; + H₃PO₂ → <span class="eq">Ar–H</span> (deamination)</li>
+      <li>+ β-naphthol (alkaline) → <span class="eq">Ar–N=N–C₁₀H₇OH</span> (azo dye — scarlet red)</li>
+      <li>+ SnCl₂/HCl → <span class="eq">Ar–NH–NH₂</span> (hydrazine derivative — less common)</li>
+    </ul>
+    <p style="margin-top:.4rem;font-size:.72rem;color:#92400e">💡 Memory: "Sandmeyer = Cu salts give halides; Balz-Schiemann = fluoride via BF₄⁻ salt". The Cu² → Cu¹ redox is why Cu salt is needed in Sandmeyer.</p>
+  </div>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes</h4>
+    <ul>
+      <li>Carbylamine test is for 1° amines ONLY — 2° and 3° amines give no isocyanide smell</li>
+      <li>Diazotisation requires 0–5°C — higher temperature decomposes the diazonium salt</li>
+      <li>Aliphatic diazonium (RN₂⁺) is unstable and can't be used for coupling reactions</li>
+      <li>Writing Sandmeyer as "Cu" alone — specify CuCl for ArCl or CuBr for ArBr</li>
+      <li>Confusing Hoffmann (degradation — amide to amine, -1C) with Hofmann elimination (E2 in quaternary ammonium)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CH 10: BIOMOLECULES
+════════════════════════════════════════ -->
+<div class="ch-section" id="bio">
+  <div class="ch-banner" style="background:#f0fdf4;color:#052e16">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 10</div>
+      <div class="ch-title">Biomolecules</div>
+      <div class="ch-sub">Carbohydrates · proteins · enzymes · vitamins · nucleic acids · hormones</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#15803d">7<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read</h4>
+    <ol>
+      <li><strong>Carbohydrate classification</strong> — mono/di/polysaccharides with examples; reducing vs non-reducing sugars</li>
+      <li><strong>Protein structure</strong> — all 4 levels with bond types; denaturation</li>
+      <li><strong>DNA double helix</strong> — Watson-Crick model; base pairing (A=T 2H-bonds, G≡C 3H-bonds); compare DNA vs RNA</li>
+      <li><strong>Glucose structure</strong> — open chain (Fischer projection) and ring form (Haworth); anomers α and β; mutarotation</li>
+      <li><strong>Enzyme terminology</strong> — lock-and-key vs induced-fit; active site; enzyme specificity</li>
+    </ol>
+  </div>
+
+  <h3 class="h3-gap">🍬 Carbohydrates</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#15803d"><th>Type</th><th>Definition</th><th>Examples</th><th>Key Property</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Monosaccharides</strong></td><td>Simplest; cannot be hydrolysed further</td><td>Glucose, Fructose, Galactose, Ribose</td><td>All reducing sugars</td></tr>
+      <tr><td><strong>Disaccharides</strong></td><td>2 monosaccharide units; hydrolysis gives 2 monosaccharides</td><td>Sucrose, Maltose, Lactose, Cellobiose</td><td>Sucrose = non-reducing; rest are reducing</td></tr>
+      <tr><td><strong>Polysaccharides</strong></td><td>Many monosaccharide units; not sweet, insoluble</td><td>Starch, Cellulose, Glycogen, Chitin</td><td>Non-reducing; structural or storage</td></tr>
+      <tr><td><strong>Starch</strong></td><td>α-D-glucose linked by α-1,4 (amylose: linear) and α-1,6 (amylopectin: branched)</td><td>Rice, wheat, potato</td><td>Energy storage in plants</td></tr>
+      <tr><td><strong>Cellulose</strong></td><td>β-D-glucose linked by β-1,4 glycosidic bonds — linear, rigid</td><td>Cell walls, cotton, wood</td><td>Structural; humans can't digest (no β-glucosidase)</td></tr>
+      <tr><td><strong>Glycogen</strong></td><td>Highly branched α-1,4 and α-1,6 (more branching than starch)</td><td>Liver, muscle</td><td>Energy storage in animals</td></tr>
+      <tr><td><strong>Reducing sugars</strong></td><td>Have free –CHO or potential –CHO (open chain); reduce Tollens/Fehling</td><td>Glucose, Fructose, Maltose, Lactose</td><td>Give positive Fehling's/Tollens</td></tr>
+      <tr><td><strong>Non-reducing sugars</strong></td><td>Both anomeric carbons used in glycosidic bond; no free –CHO</td><td>Sucrose</td><td>Negative Fehling's/Tollens</td></tr>
+      <tr><td><strong>Mutarotation</strong></td><td>Change in optical rotation of α or β-D-glucose dissolved in water → equilibrium mixture via open chain. α: +112°, β: +19°, equilibrium: +52.7°</td><td>Glucose in water</td><td>Open-chain form is the intermediate</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="h3-gap">🧬 Proteins</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#2563eb"><th>Level</th><th>Structure</th><th>Bond / Force</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Primary (1°)</strong></td><td>Sequence of amino acids in polypeptide chain</td><td>Peptide bonds (–CO–NH–), covalent</td><td>Insulin: A-chain (21 aa) + B-chain (30 aa)</td></tr>
+      <tr><td><strong>Secondary (2°)</strong></td><td>α-helix or β-pleated sheet — regular repeating pattern</td><td>H-bonds between C=O and N–H of backbone</td><td>Keratin (α-helix); silk fibroin (β-sheet)</td></tr>
+      <tr><td><strong>Tertiary (3°)</strong></td><td>3D folding of secondary structure; overall shape of protein</td><td>Disulphide bonds (–S–S–), H-bonds, hydrophobic, van der Waals, ionic</td><td>Myoglobin, enzymes</td></tr>
+      <tr><td><strong>Quaternary (4°)</strong></td><td>Association of 2 or more polypeptide subunits</td><td>Non-covalent interactions between subunits</td><td>Haemoglobin (2α + 2β subunits)</td></tr>
+      <tr><td><strong>Denaturation</strong></td><td>Loss of 2°/3°/4° structure; 1° (sequence) intact. Loses biological activity.</td><td>Broken by heat, acid, organic solvents, urea</td><td>Boiling egg white; curdling milk</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="h3-gap">🧪 Nucleic Acids — DNA vs RNA</h3>
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#fef2f2;color:#991b1b">📐 DNA vs RNA Comparison</div>
+      <div class="block-body">
+        <table style="width:100%;border-collapse:collapse;font-size:.73rem">
+          <tr style="background:#fef2f2"><th style="padding:.3rem .5rem;text-align:left"></th><th style="padding:.3rem .5rem;text-align:center;color:#991b1b">DNA</th><th style="padding:.3rem .5rem;text-align:center;color:#15803d">RNA</th></tr>
+          <tr><td style="padding:.28rem .5rem;font-weight:600">Strands</td><td style="padding:.28rem .5rem;text-align:center">Double (anti-parallel)</td><td style="padding:.28rem .5rem;text-align:center">Single</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.28rem .5rem;font-weight:600">Sugar</td><td style="padding:.28rem .5rem;text-align:center">2′-deoxyribose</td><td style="padding:.28rem .5rem;text-align:center">Ribose</td></tr>
+          <tr><td style="padding:.28rem .5rem;font-weight:600">Bases</td><td style="padding:.28rem .5rem;text-align:center">A, G, C, T</td><td style="padding:.28rem .5rem;text-align:center">A, G, C, U</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.28rem .5rem;font-weight:600">Function</td><td style="padding:.28rem .5rem;text-align:center">Genetic information storage</td><td style="padding:.28rem .5rem;text-align:center">Protein synthesis (mRNA, tRNA, rRNA)</td></tr>
+          <tr><td style="padding:.28rem .5rem;font-weight:600">Location</td><td style="padding:.28rem .5rem;text-align:center">Nucleus (mainly)</td><td style="padding:.28rem .5rem;text-align:center">Nucleus + cytoplasm</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.28rem .5rem;font-weight:600">Base pairing</td><td style="padding:.28rem .5rem;text-align:center">A=T (2 H-bonds), G≡C (3 H-bonds)</td><td style="padding:.28rem .5rem;text-align:center">A=U, G≡C</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Carbohydrate formula recognition:</strong> (CH₂O)n — carbonyl + many hydroxyls. Glucose = C₆H₁₂O₆. Sucrose = C₁₂H₂₂O₁₁ (note: -1 water lost in glycosidic bond formation from 2×C₆H₁₂O₆).</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Sucrose is non-reducing — why:</strong> Glucose C-1 (aldehyde carbon) AND fructose C-2 (keto carbon) are BOTH used in the glycosidic bond → no free anomeric –OH → can't open to –CHO form → can't reduce Fehling's.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>"AT 2, GC 3" base pair rule:</strong> A pairs with T using 2 hydrogen bonds; G pairs with C using 3 hydrogen bonds. Higher GC content = higher Tm (melting temperature) of DNA.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Protein structure bonds memory:</strong> "1° = peptide (covalent), 2° = hydrogen, 3° = disulphide + others, 4° = non-covalent". Denaturation breaks 2°/3°/4° but NOT 1° (sequence unchanged).</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Vitamins — fat vs water soluble:</strong> ADEK = fat-soluble (stored in fat). B-complex + C = water-soluble (need daily intake). Deficiency of A → night blindness; C → scurvy; D → rickets; B₁ → beriberi; B₁₂ → pernicious anaemia.</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Fructose is a ketose but reducing:</strong> Fructose has a keto group (not aldehyde) but in alkaline medium (Fehling's/Tollens) it isomerises to an aldose (via enediol) → gives positive test. Examiners love this exception.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🌿 Vitamins &amp; Deficiency — Quick Reference</h4>
+    <table style="width:100%;border-collapse:collapse;font-size:.72rem">
+      <tr style="background:#f0fdf4"><th style="padding:.3rem .6rem;text-align:left">Vitamin</th><th style="padding:.3rem .6rem">Type</th><th style="padding:.3rem .6rem">Deficiency Disease</th><th style="padding:.3rem .6rem">Source</th></tr>
+      <tr><td style="padding:.28rem .6rem">A (Retinol)</td><td style="padding:.28rem .6rem">Fat-soluble</td><td style="padding:.28rem .6rem">Night blindness, Xerophthalmia</td><td style="padding:.28rem .6rem">Carrots, fish liver oil</td></tr>
+      <tr style="background:var(--sand-50)"><td style="padding:.28rem .6rem">B₁ (Thiamine)</td><td style="padding:.28rem .6rem">Water-soluble</td><td style="padding:.28rem .6rem">Beriberi</td><td style="padding:.28rem .6rem">Whole grains</td></tr>
+      <tr><td style="padding:.28rem .6rem">B₂ (Riboflavin)</td><td style="padding:.28rem .6rem">Water-soluble</td><td style="padding:.28rem .6rem">Cheilosis, angular stomatitis</td><td style="padding:.28rem .6rem">Milk, meat</td></tr>
+      <tr style="background:var(--sand-50)"><td style="padding:.28rem .6rem">B₁₂ (Cobalamin)</td><td style="padding:.28rem .6rem">Water-soluble</td><td style="padding:.28rem .6rem">Pernicious anaemia</td><td style="padding:.28rem .6rem">Meat, eggs</td></tr>
+      <tr><td style="padding:.28rem .6rem">C (Ascorbic acid)</td><td style="padding:.28rem .6rem">Water-soluble</td><td style="padding:.28rem .6rem">Scurvy (bleeding gums)</td><td style="padding:.28rem .6rem">Citrus fruits, amla</td></tr>
+      <tr style="background:var(--sand-50)"><td style="padding:.28rem .6rem">D (Calciferol)</td><td style="padding:.28rem .6rem">Fat-soluble</td><td style="padding:.28rem .6rem">Rickets (children), Osteomalacia (adults)</td><td style="padding:.28rem .6rem">Sunlight, fish</td></tr>
+      <tr><td style="padding:.28rem .6rem">K (Phylloquinone)</td><td style="padding:.28rem .6rem">Fat-soluble</td><td style="padding:.28rem .6rem">Poor blood clotting</td><td style="padding:.28rem .6rem">Green vegetables</td></tr>
+    </table>
+  </div>
+
+  <div class="mistake-box">
+    <h4>❌ Common Mistakes</h4>
+    <ul>
+      <li>Saying denaturation changes the primary structure — it does NOT. Only 2°/3°/4° levels are disrupted.</li>
+      <li>Calling sucrose a reducing sugar — it is non-reducing (no free anomeric carbon)</li>
+      <li>Saying cellulose has α-1,4 linkage — it's β-1,4 (β-glucose units). Starch has α-1,4.</li>
+      <li>Forgetting that fructose gives Tollens/Fehling's positive (exception — ketose acting as reducing sugar)</li>
+      <li>Writing DNA base pairing incorrectly — A pairs with T (NOT U); G pairs with C. RNA has U instead of T.</li>
+      <li>Saying glycogen is found in plants — glycogen is in animals (liver/muscle). Starch is the plant storage carbohydrate.</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /container --><script src="../../js/chapter-nav.js"></script>
+</body>
+</html>

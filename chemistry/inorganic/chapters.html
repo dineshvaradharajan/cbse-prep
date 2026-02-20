@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/chapter.css">
+<style>:root{
+  --subject-color:#b45309;--subject-bg:#fffbeb;--subject-border:#fde68a;--subject-text:#92400e;
+  --c1:#b45309;--c2:#7c3aed;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inorganic Chemistry Chapters — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">← Back to Hub</a>
+
+<h1>Inorganic Chemistry Chapters</h1>
+<p class="subtitle">Chapter summaries, must-read concepts, exam tips, tricks and IUPAC/VBT/CFT quick references for d&amp;f Block Elements and Coordination Compounds.</p>
+
+<div class="chapter-bar">
+  <div class="chapter-tabs" id="chapterTabs">
+    <button class="tab active" data-tab="dblock" onclick="showCh('dblock',this)">4. d &amp; f Block Elements</button>
+    <button class="tab" data-tab="coord" onclick="showCh('coord',this)">5. Coordination Compounds</button>
+  </div>
+  <button class="more-btn" id="moreBtn" onclick="toggleMoreDropdown()">More ▾</button>
+  <div class="more-dropdown" id="moreDropdown"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     d & f BLOCK ELEMENTS
+═══════════════════════════════════════════════════ -->
+<div class="ch-section active" id="dblock">
+
+  <div class="ch-banner" style="background:#fef3c7;color:#451a03">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 4</div>
+      <div class="ch-title">d &amp; f Block Elements</div>
+      <div class="ch-sub">Transition metals · variable oxidation states · magnetic properties · lanthanoids · actinoids · KMnO₄ · K₂Cr₂O₇</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#b45309">7<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — These topics appear every year</h4>
+    <ol>
+      <li><strong>Lanthanoid contraction</strong> — cause (poor 4f shielding), 3 consequences (Zr/Hf, 2nd/3rd row d-block similar, basicity of hydroxides)</li>
+      <li><strong>Variable oxidation states</strong> — why d-block shows variable OS (incompletely filled d-orbitals); comparison with p-block</li>
+      <li><strong>KMnO₄ reactions</strong> — acidic, neutral and alkaline medium; preparation from MnO₂</li>
+      <li><strong>Magnetic properties</strong> — number of unpaired electrons determines paramagnetism; μ = √(n(n+2)) BM</li>
+      <li><strong>Electronic configuration of 4th period transition metals</strong> — Cr([Ar]3d⁵4s¹) and Cu([Ar]3d¹⁰4s¹) exceptions</li>
+      <li><strong>K₂Cr₂O₇ reactions</strong> — oxidising action in acidic medium; dichromate test for alcohol</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary — d-Block Characteristics</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#b45309"><th>Property</th><th>Explanation</th><th>Example / Value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Definition</strong></td><td>Elements in which last electron enters d-subshell (Groups 3–12)</td><td>Sc to Zn (1st row), Y to Cd (2nd), La to Hg (3rd)</td></tr>
+      <tr><td><strong>General config</strong></td><td class="mono">(n−1)d¹⁻¹⁰ ns¹⁻²</td><td>Exceptions: Cr (3d⁵4s¹), Cu (3d¹⁰4s¹)</td></tr>
+      <tr><td><strong>Variable oxidation states</strong></td><td>ns and (n−1)d electrons both used. All OS from +1 to highest possible</td><td>Mn: +2 to +7; Fe: +2, +3; Cu: +1, +2</td></tr>
+      <tr><td><strong>Highest OS = group number</strong></td><td>Up to Mn (group 7, max +7). After Mn, highest OS decreases.</td><td>Mn (+7), Cr (+6), V (+5), Ti (+4)</td></tr>
+      <tr><td><strong>Metallic character</strong></td><td>Hard, high MP/BP (except Hg), good conductors</td><td>W highest MP (3410°C); Hg lowest (−39°C)</td></tr>
+      <tr><td><strong>Paramagnetism</strong></td><td>Due to unpaired d-electrons. μ = √(n(n+2)) BM</td><td>Mn²⁺ (d⁵): 5 unpaired → μ = √35 ≈ 5.92 BM</td></tr>
+      <tr><td><strong>Catalytic activity</strong></td><td>Variable OS allows electron transfer; unsaturated d-orbitals adsorb reactants</td><td>Fe in Haber process; V₂O₅ in Contact process; Ni in hydrogenation</td></tr>
+      <tr><td><strong>Colour of compounds</strong></td><td>d–d electronic transition absorbs visible light → complementary colour seen</td><td>Cu²⁺ (d⁹) → blue; Mn²⁺ (d⁵) → faint pink; Zn²⁺ (d¹⁰) → colourless</td></tr>
+      <tr><td><strong>Interstitial compounds</strong></td><td>Small atoms (H, C, N) fit in gaps of metallic lattice → increase hardness</td><td>Steel = Fe + C interstitial; TiH₂ (hydrogen storage)</td></tr>
+      <tr><td><strong>Alloy formation</strong></td><td>Similar atomic sizes allow mixing in metallic lattice</td><td>Brass (Cu+Zn), Bronze (Cu+Sn), Stainless steel (Fe+Cr+Ni)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#fef3c7;color:#92400e">📐 Electronic Configs — Exceptions to Know</div>
+      <div class="block-body">
+        <div class="orbital-grid" style="grid-template-columns:1fr;gap:.6rem">
+          <div class="orb-card" style="border-left-color:#b45309">
+            <div class="orb-title">Cr (Z=24) — 3d⁵ 4s¹ (NOT 3d⁴ 4s²)</div>
+            <div class="orb-config">[Ar] 3d⁵ 4s¹</div>
+            <div class="orb-detail">Half-filled 3d is extra stable (exchange energy maximum). Rule: half-filled and fully-filled d/f subshells are particularly stable.</div>
+          </div>
+          <div class="orb-card" style="border-left-color:#b45309">
+            <div class="orb-title">Cu (Z=29) — 3d¹⁰ 4s¹ (NOT 3d⁹ 4s²)</div>
+            <div class="orb-config">[Ar] 3d¹⁰ 4s¹</div>
+            <div class="orb-detail">Fully-filled 3d is extra stable. Cu²⁺ (3d⁹) is more stable than Cu⁺ (3d¹⁰) in aqueous solution because of high hydration enthalpy of Cu²⁺.</div>
+          </div>
+          <div class="orb-card" style="border-left-color:#92400e">
+            <div class="orb-title">4th Period Transition Metal Ion Configs</div>
+            <div class="orb-config">Fe²⁺: [Ar] 3d⁶ (lose 4s first, then 3d)
+Fe³⁺: [Ar] 3d⁵
+Mn²⁺: [Ar] 3d⁵
+Cu²⁺: [Ar] 3d⁹</div>
+            <div class="orb-detail">Rule: When forming cation from transition metal, always remove 4s electrons first, then 3d.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 Exam Tips &amp; Tricks</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Magnetic moment formula:</strong> μ = √(n(n+2)) BM where n = number of unpaired electrons. Memorise: 1 unpaired → 1.73 BM; 2 → 2.83; 3 → 3.87; 4 → 4.90; 5 → 5.92.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Colour rule — d¹⁰ and d⁰ are colourless:</strong> Zn²⁺ (d¹⁰), Sc³⁺ (d⁰), Ti⁴⁺ (d⁰) — all colourless because no d–d transition is possible. Any ion with partially filled d is coloured.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Why Mn shows maximum OS (+7):</strong> Mn has 7 electrons in outer shell (3d⁵4s²) → all 7 can participate in bonding → maximum OS = +7. Group number = maximum oxidation state (for groups 3–7).</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Catalytic property reason:</strong> Two reasons ALWAYS needed: (1) Variable oxidation states — allows intermediate complex formation, acts as electron shuttle. (2) Large surface area of transition metals — reactants adsorb on surface.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Highest oxidation state in oxo-anions/fluorides:</strong> Mn shows +7 in MnO₄⁻; Cr shows +6 in Cr₂O₇²⁻ and CrO₄²⁻. Beyond Mn, fluorine and oxygen are needed to stabilise high OS (not possible with other ligands).</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>Zn is NOT a transition metal:</strong> Zn has completely filled d-orbitals in ground state AND in common oxidation state (Zn²⁺: d¹⁰). No variable OS, no colour, no paramagnetism → not a true transition element. But it IS a d-block element.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- KMnO4 Section -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.25rem 0 .75rem">🟣 KMnO₄ — Reactions in Different Media</h3>
+  <table class="km-table">
+    <thead><tr><th>Medium</th><th>Reaction with KMnO₄</th><th>Product of Mn</th><th>Colour change</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="med-acid">Acidic (H₂SO₄)</span></td>
+        <td>MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O<br><small>Oxidises FeSO₄, H₂C₂O₄, KI, H₂O₂, SO₂</small></td>
+        <td class="mono">Mn²⁺ (colourless / pale pink)</td>
+        <td>Purple → colourless</td>
+      </tr>
+      <tr>
+        <td><span class="med-neu">Neutral / faintly alkaline</span></td>
+        <td>MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻<br><small>Oxidises iodide to iodate</small></td>
+        <td class="mono">MnO₂ (brown ppt)</td>
+        <td>Purple → brown ppt</td>
+      </tr>
+      <tr>
+        <td><span class="med-alk">Strongly alkaline</span></td>
+        <td>MnO₄⁻ + e⁻ → MnO₄²⁻<br><small>Gains only 1 electron per Mn</small></td>
+        <td class="mono">MnO₄²⁻ (manganate, green)</td>
+        <td>Purple → green</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="trick-box">
+    <h4>🟠 KMnO₄ Important Reactions — Exam Ready</h4>
+    <p><strong>With FeSO₄ (acidic):</strong></p>
+    <p>MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O</p>
+    <p style="margin-top:.4rem"><strong>With H₂C₂O₄ (oxalic acid, acidic, warm):</strong></p>
+    <p>2MnO₄⁻ + 5H₂C₂O₄ + 6H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O</p>
+    <p style="margin-top:.4rem;font-size:.72rem;color:#92400e">💡 This reaction is self-indicating (purple disappears) and is used in permanganate titrations. The reaction is slow at first, then accelerates (autocatalysis by Mn²⁺ produced).</p>
+  </div>
+
+  <!-- K2Cr2O7 Section -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.25rem 0 .75rem">🟠 K₂Cr₂O₇ — Key Facts</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#b45309"><th>Aspect</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Colour &amp; structure</strong></td><td>Orange-red crystals; Cr in +6 OS; Cr₂O₇²⁻ ion has two CrO₄ tetrahedra sharing one O</td></tr>
+      <tr><td><strong>Preparation</strong></td><td>2K₂CrO₄ + H₂SO₄ → K₂Cr₂O₇ + 2KOH + H₂O (acidification of chromate)</td></tr>
+      <tr><td><strong>Acidic medium reaction</strong></td><td class="mono">Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O (E° = +1.33V)</td></tr>
+      <tr><td><strong>With FeSO₄</strong></td><td>K₂Cr₂O₇ + 7H₂SO₄ + 6FeSO₄ → K₂SO₄ + Cr₂(SO₄)₃ + 3Fe₂(SO₄)₃ + 7H₂O</td></tr>
+      <tr><td><strong>With alcohol (test)</strong></td><td>Orange K₂Cr₂O₇ + alcohol → green Cr³⁺. Used in breathalyser test.</td></tr>
+      <tr><td><strong>Chromate ⇌ Dichromate</strong></td><td>2CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O (yellow chromate in base → orange dichromate in acid)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Lanthanoids Section -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.25rem 0 .75rem">🔬 Lanthanoids &amp; Lanthanoid Contraction</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#6d28d9"><th>Aspect</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Definition</strong></td><td>Elements Ce (58) to Lu (71); last electron fills 4f subshell</td></tr>
+      <tr><td><strong>Common OS</strong></td><td>+3 is the most stable for all lanthanoids. Some show +2 (Eu, Sm) or +4 (Ce, Tb).</td></tr>
+      <tr><td><strong>Lanthanoid contraction</strong></td><td>Steady decrease in atomic/ionic radius from La→Lu due to poor shielding by 4f electrons → increasing Z_eff</td></tr>
+      <tr><td><strong>Consequence 1</strong></td><td>Zr (5th period) and Hf (6th period) have almost identical radii (~160 pm) → very difficult to separate</td></tr>
+      <tr><td><strong>Consequence 2</strong></td><td>2nd and 3rd row transition metals (e.g., Mo/W, Nb/Ta, Ru/Os) have similar sizes and properties</td></tr>
+      <tr><td><strong>Consequence 3</strong></td><td>Basicity of lanthanoid hydroxides decreases La(OH)₃ → Lu(OH)₃ (La is most basic)</td></tr>
+      <tr><td><strong>Colour</strong></td><td>Many lanthanoid ions are coloured due to f–f transitions. Lanthanoid series shows a characteristic colour pattern.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="trick-box" style="margin-bottom:0">
+      <h4>🔢 Magnetic Moment Quick Reference</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:.74rem">
+        <tr style="background:#fef3c7"><th style="padding:.3rem .5rem;text-align:left">Ion</th><th style="padding:.3rem .5rem">Config</th><th style="padding:.3rem .5rem">Unpaired e⁻</th><th style="padding:.3rem .5rem">μ (BM)</th><th style="padding:.3rem .5rem">Colour</th></tr>
+        <tr><td style="padding:.25rem .5rem">Sc³⁺</td><td style="padding:.25rem .5rem" class="mono">3d⁰</td><td style="padding:.25rem .5rem;text-align:center">0</td><td style="padding:.25rem .5rem;font-weight:700">0</td><td style="padding:.25rem .5rem">Colourless</td></tr>
+        <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem">Ti³⁺</td><td style="padding:.25rem .5rem" class="mono">3d¹</td><td style="padding:.25rem .5rem;text-align:center">1</td><td style="padding:.25rem .5rem;font-weight:700">1.73</td><td style="padding:.25rem .5rem">Purple</td></tr>
+        <tr><td style="padding:.25rem .5rem">V³⁺</td><td style="padding:.25rem .5rem" class="mono">3d²</td><td style="padding:.25rem .5rem;text-align:center">2</td><td style="padding:.25rem .5rem;font-weight:700">2.83</td><td style="padding:.25rem .5rem">Green</td></tr>
+        <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem">Cr³⁺</td><td style="padding:.25rem .5rem" class="mono">3d³</td><td style="padding:.25rem .5rem;text-align:center">3</td><td style="padding:.25rem .5pm;font-weight:700">3.87</td><td style="padding:.25rem .5rem">Green/violet</td></tr>
+        <tr><td style="padding:.25rem .5rem">Mn²⁺ / Fe³⁺</td><td style="padding:.25rem .5pm" class="mono">3d⁵</td><td style="padding:.25rem .5rem;text-align:center">5</td><td style="padding:.25rem .5rem;font-weight:700;color:#dc2626">5.92 (max)</td><td style="padding:.25rem .5rem">Faint pink / yellow</td></tr>
+        <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem">Fe²⁺</td><td style="padding:.25rem .5rem" class="mono">3d⁶</td><td style="padding:.25rem .5rem;text-align:center">4</td><td style="padding:.25rem .5rem;font-weight:700">4.90</td><td style="padding:.25rem .5rem">Pale green</td></tr>
+        <tr><td style="padding:.25rem .5rem">Cu²⁺</td><td style="padding:.25rem .5rem" class="mono">3d⁹</td><td style="padding:.25rem .5rem;text-align:center">1</td><td style="padding:.25rem .5rem;font-weight:700">1.73</td><td style="padding:.25rem .5rem">Blue</td></tr>
+        <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem">Zn²⁺</td><td style="padding:.25rem .5rem" class="mono">3d¹⁰</td><td style="padding:.25rem .5rem;text-align:center">0</td><td style="padding:.25rem .5rem;font-weight:700">0</td><td style="padding:.25rem .5rem">Colourless</td></tr>
+      </table>
+    </div>
+  </div><!-- /block-grid -->
+
+  <!-- K2Cr2O7 from chromite ore -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">🟠 K₂Cr₂O₇ — Preparation from Chromite Ore</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#b45309"><th>Step</th><th>Reaction</th><th>Conditions</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Step 1 — Roasting chromite ore</strong></td>
+        <td class="mono">4FeCr₂O₄ + 8Na₂CO₃ + 7O₂ → 8Na₂CrO₄ + 2Fe₂O₃ + 8CO₂</td>
+        <td>Chromite ore (iron chromite) roasted with Na₂CO₃ in excess air at high temperature → sodium chromate (yellow solution after leaching)</td>
+      </tr>
+      <tr>
+        <td><strong>Step 2 — Acidification</strong></td>
+        <td class="mono">2Na₂CrO₄ + H₂SO₄ → Na₂Cr₂O₇ + Na₂SO₄ + H₂O</td>
+        <td>Filtrate acidified with H₂SO₄ → CrO₄²⁻ (yellow) converted to Cr₂O₇²⁻ (orange) → sodium dichromate crystallises out</td>
+      </tr>
+      <tr>
+        <td><strong>Step 3 — Conversion to K₂Cr₂O₇</strong></td>
+        <td class="mono">Na₂Cr₂O₇ + 2KCl → K₂Cr₂O₇ + 2NaCl</td>
+        <td>Treatment with KCl → K₂Cr₂O₇ precipitates (less soluble than Na₂Cr₂O₇ at room temperature)</td>
+      </tr>
+      <tr>
+        <td><strong>Chromate ⇌ Dichromate equilibrium</strong></td>
+        <td class="mono">2CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O</td>
+        <td>Yellow (chromate, alkaline) ⇌ Orange (dichromate, acidic). Shift with pH.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Lanthanoids vs Actinoids comparison -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">⚛️ Lanthanoids vs Actinoids — Full Comparison (NCERT Table)</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#6d28d9"><th>Property</th><th>Lanthanoids (4f series, Ce–Lu)</th><th>Actinoids (5f series, Th–Lr)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Series position</strong></td><td>Elements 58–71; 4f electrons filling</td><td>Elements 90–103; 5f electrons filling</td></tr>
+      <tr><td><strong>Electronic configuration</strong></td><td class="mono">[Xe] 4f¹⁻¹⁴ 5d⁰⁻¹ 6s²</td><td class="mono">[Rn] 5f¹⁻¹⁴ 6d⁰⁻¹ 7s²</td></tr>
+      <tr><td><strong>Common oxidation state</strong></td><td>+3 (most stable); few show +2 (Eu, Sm, Yb) or +4 (Ce, Tb, Pr)</td><td>+3 and +4 both common; wide range from +3 to +7 possible (5f, 6d, 7s all similar energy)</td></tr>
+      <tr><td><strong>Oxidation state variety</strong></td><td>Limited variable OS; mostly +3</td><td>Wide range of OS due to comparable 5f, 6d, 7s energies</td></tr>
+      <tr><td><strong>Ionic radii</strong></td><td>Gradual decrease La³⁺(106 pm) → Lu³⁺(86 pm) — lanthanoid contraction</td><td>Gradual decrease — actinoid contraction (greater than lanthanoid contraction due to poor shielding by 5f electrons)</td></tr>
+      <tr><td><strong>Magnetic properties</strong></td><td>Paramagnetic (unpaired 4f electrons); magnetic moments don't follow spin-only formula well</td><td>Paramagnetic; magnetic moments more complex (both spin and orbital contributions)</td></tr>
+      <tr><td><strong>Colour of ions</strong></td><td>Many are coloured (f–f transitions); colour pattern: Ce³⁺ colourless, Pr³⁺ green, Nd³⁺ lilac, Sm³⁺ yellow, Eu³⁺ pale pink, etc.</td><td>Many actinoid ions are also coloured; absorption spectra are sharper than lanthanoids</td></tr>
+      <tr><td><strong>Tendency to form complexes</strong></td><td>Less tendency to form complexes (lanthanoids are hard acids, prefer O-donor ligands)</td><td>Greater tendency (larger ionic size, higher OS available → more complex formation)</td></tr>
+      <tr><td><strong>Radioactivity</strong></td><td>Non-radioactive (except Pm — no stable isotopes)</td><td>All radioactive (all have unstable nuclei; Th, U naturally occurring)</td></tr>
+      <tr><td><strong>Availability / occurrence</strong></td><td>Found in nature (monazite, bastnäsite ores); misch metal alloy = La + Ce + Pr + Nd</td><td>Mostly synthetic (transuranium elements beyond U are man-made); Th and U occur naturally</td></tr>
+      <tr><td><strong>Applications</strong></td><td>Misch metal (lighter flints); CeO₂ (catalytic converters); Nd magnets; La in camera lenses; Eu in TV screens (red phosphor)</td><td>Th and U as nuclear fuels; Pu in nuclear weapons; Am in smoke detectors</td></tr>
+    </tbody>
+  </table>
+
+    <div class="mistake-box" style="margin-bottom:0">
+      <h4>❌ Common Mistakes to Avoid</h4>
+      <ul>
+        <li>Calling Zn a transition metal — it's d-block but NOT transition (d¹⁰ always)</li>
+        <li>Writing electron config: remove 4s before 3d when forming cation (Fe → Fe²⁺: lose 4s², not 3d²)</li>
+        <li>Saying lanthanoids don't show variable OS — they do (most common is +3, but Ce→+4, Eu→+2)</li>
+        <li>Giving only one reason for catalytic activity — always give TWO: variable OS + large surface area</li>
+        <li>In KMnO₄ reactions: product in acidic medium is Mn²⁺ (colourless/pale pink), NOT MnO₂</li>
+        <li>Confusing CrO₄²⁻ (yellow, alkaline) with Cr₂O₇²⁻ (orange, acidic) — they interconvert with pH</li>
+        <li>In K₂Cr₂O₇ preparation: chromite ore (FeCr₂O₄) is roasted with Na₂CO₃, not KOH. KCl is used only in the final step to precipitate K₂Cr₂O₇.</li>
+        <li>Actinoids showing +3 and +4 as common OS (not just +3 like lanthanoids) — because 5f, 6d, 7s are close in energy.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     COORDINATION COMPOUNDS
+═══════════════════════════════════════════════════ -->
+<div class="ch-section" id="coord" style="max-width:80%;margin:0 auto">
+
+  <div class="ch-banner" style="background:#f3e8ff;color:#3b0764">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 5</div>
+      <div class="ch-title">Coordination Compounds</div>
+      <div class="ch-sub">Werner's theory · IUPAC nomenclature · isomerism · VBT · CFT · stability · applications</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#7c3aed">7<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Every year, minimum 5 marks from these</h4>
+    <ol>
+      <li><strong>IUPAC nomenclature rules</strong> — ligand names alphabetically, then metal, then OS in Roman numerals in brackets</li>
+      <li><strong>VBT — hybridisation, geometry, magnetic character</strong> — draw d-orbital diagram; identify inner/outer orbital complex</li>
+      <li><strong>Crystal Field Theory</strong> — d-orbital splitting in octahedral field; Δo; high-spin vs low-spin; colour explanation</li>
+      <li><strong>Types of isomerism</strong> — structural (ionisation, linkage, coordination, solvate) and stereoisomerism (geometric, optical)</li>
+      <li><strong>Werner's theory</strong> — primary valency (ionisable), secondary valency (non-ionisable), coordination number</li>
+      <li><strong>EAN rule</strong> (Effective Atomic Number) — for stable complexes; n(electrons on metal) + n(electrons from ligands) = 36</li>
+    </ol>
+  </div>
+
+  <!-- Werner's Theory -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.75rem">📖 Werner's Theory — Quick Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Meaning</th><th>Example with [Co(NH₃)₆]Cl₃</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Primary valency</strong></td><td>Ionisable valency; satisfied by counter ions outside coordination sphere</td><td>3 Cl⁻ outside → primary valency = 3 → Co is Co³⁺</td></tr>
+      <tr><td><strong>Secondary valency</strong></td><td>Non-ionisable; satisfied by ligands directly bonded to metal</td><td>6 NH₃ inside → secondary valency = 6 → CN = 6</td></tr>
+      <tr><td><strong>Coordination number</strong></td><td>Total number of ligand donor atoms directly bonded to metal</td><td>CN = 6 (6 N atoms from NH₃)</td></tr>
+      <tr><td><strong>Coordination sphere</strong></td><td>Metal + ligands inside square brackets</td><td>[Co(NH₃)₆]³⁺</td></tr>
+      <tr><td><strong>Counter ions</strong></td><td>Ions outside coordination sphere; balance charge; ionise in solution</td><td>3 Cl⁻ (give 3 ions in solution)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- IUPAC Nomenclature -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.5rem 0 .75rem">🔤 IUPAC Nomenclature — Rules &amp; Ligand Names</h3>
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f3e8ff;color:#5b21b6">📋 Naming Rules (in order)</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">1</span><div><strong>Cation before anion</strong> — name cation first (as with ionic compounds)</div></li>
+          <li><span class="tip-icon">2</span><div><strong>Ligands alphabetically</strong> — name all ligands in alphabetical order (ignore prefixes di-, tri- when alphabetising)</div></li>
+          <li><span class="tip-icon">3</span><div><strong>Metal name + OS</strong> — then name the central metal; OS in Roman numerals in parentheses e.g. iron(III)</div></li>
+          <li><span class="tip-icon">4</span><div><strong>Anionic complex</strong> — if complex is an anion, add "-ate" suffix to metal name. e.g. ferrate, chromate, cuprate, platinate</div></li>
+          <li><span class="tip-icon">5</span><div><strong>Bridging ligands</strong> — prefix μ (mu). e.g. μ-oxo for bridging O²⁻</div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#f3e8ff;color:#5b21b6">📋 Key Ligand Names</div>
+      <div class="block-body">
+        <table style="width:100%;border-collapse:collapse;font-size:.73rem">
+          <tr style="background:#f3e8ff"><th style="padding:.3rem .5rem;text-align:left">Formula</th><th style="padding:.3rem .5rem;text-align:left">Ligand name</th><th style="padding:.3rem .5rem;text-align:left">Type</th></tr>
+          <tr><td style="padding:.25rem .5rem" class="mono">NH₃</td><td style="padding:.25rem .5rem">ammine (double m)</td><td style="padding:.25rem .5rem">neutral</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem" class="mono">H₂O</td><td style="padding:.25rem .5rem">aqua</td><td style="padding:.25rem .5rem">neutral</td></tr>
+          <tr><td style="padding:.25rem .5rem" class="mono">CO</td><td style="padding:.25rem .5rem">carbonyl</td><td style="padding:.25rem .5rem">neutral</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem" class="mono">NO</td><td style="padding:.25rem .5rem">nitrosyl</td><td style="padding:.25rem .5rem">neutral</td></tr>
+          <tr><td style="padding:.25rem .5rem" class="mono">Cl⁻</td><td style="padding:.25rem .5rem">chlorido</td><td style="padding:.25rem .5rem">anionic</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem" class="mono">CN⁻</td><td style="padding:.25rem .5rem">cyanido</td><td style="padding:.25rem .5rem">anionic</td></tr>
+          <tr><td style="padding:.25rem .5rem" class="mono">OH⁻</td><td style="padding:.25rem .5rem">hydroxido</td><td style="padding:.25rem .5rem">anionic</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem" class="mono">NO₂⁻</td><td style="padding:.25rem .5rem">nitrito (N-bonded: nitro)</td><td style="padding:.25rem .5rem">anionic</td></tr>
+          <tr><td style="padding:.25rem .5rem" class="mono">SCN⁻</td><td style="padding:.25rem .5rem">thiocyanato (S); isothiocyanato (N)</td><td style="padding:.25rem .5rem">anionic</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem" class="mono">en</td><td style="padding:.25rem .5rem">ethane-1,2-diamine</td><td style="padding:.25rem .5rem">bidentate</td></tr>
+          <tr><td style="padding:.25rem .5rem" class="mono">ox²⁻</td><td style="padding:.25rem .5rem">oxalato</td><td style="padding:.25rem .5rem">bidentate</td></tr>
+          <tr style="background:var(--sand-50)"><td style="padding:.25rem .5rem" class="mono">EDTA⁴⁻</td><td style="padding:.25rem .5rem">edta</td><td style="padding:.25rem .5rem">hexadentate</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔤 IUPAC Naming — Worked Examples</h4>
+    <ul>
+      <li><span class="eq">[Co(NH₃)₆]Cl₃</span> → hexaamminecobalt(III) chloride</li>
+      <li><span class="eq">[PtCl₂(NH₃)₂]</span> → diamminedichloridoplatinum(II)  [Ligands: chlorido (c) before ammine (a)? No — alphabetical: ammine(a) before chlorido(c) → diamminedichloridoplatinum(II)]</li>
+      <li><span class="eq">[Fe(CN)₆]⁴⁻</span> → hexacyanidoferrate(II) ion  ["ferrate" because complex anion]</li>
+      <li><span class="eq">[Co(en)₂Cl₂]⁺</span> → dichloridobis(ethane-1,2-diamine)cobalt(III) ion  [bis- for bidentate ligands]</li>
+      <li><span class="eq">K₃[Fe(C₂O₄)₃]</span> → potassium trisoxalatoferrate(III)</li>
+    </ul>
+    <p style="margin-top:.5rem;font-size:.72rem;color:#92400e">💡 Use <strong>di, tri, tetra</strong> for simple ligands; <strong>bis, tris, tetrakis</strong> for ligands whose names already contain a number (like en, EDTA, ox)</p>
+  </div>
+
+  <!-- Isomerism -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.5rem 0 .75rem">🔀 Types of Isomerism in Coordination Compounds</h3>
+  <div class="iso-grid">
+    <div class="iso-card" style="border-top-color:#dc2626">
+      <div class="iso-type" style="color:#dc2626">Ionisation Isomerism</div>
+      <div class="iso-def">Same formula but different ions inside/outside coordination sphere. Both compounds give different ions in solution.</div>
+      <code class="iso-ex">[Co(NH₃)₅Br]SO₄  vs  [Co(NH₃)₅SO₄]Br</code>
+    </div>
+    <div class="iso-card" style="border-top-color:#ea580c">
+      <div class="iso-type" style="color:#ea580c">Linkage Isomerism</div>
+      <div class="iso-def">Ambidentate ligand (can bond through different atoms) is bonded through different atom in each isomer.</div>
+      <code class="iso-ex">[Co(NH₃)₅NO₂]²⁺ (N-bonded, nitro) vs [Co(NH₃)₅ONO]²⁺ (O-bonded, nitrito)</code>
+    </div>
+    <div class="iso-card" style="border-top-color:#16a34a">
+      <div class="iso-type" style="color:#16a34a">Coordination Isomerism</div>
+      <div class="iso-def">In a salt where both cation and anion are complex ions — ligands are distributed differently between the two centres.</div>
+      <code class="iso-ex">[Co(NH₃)₆][Cr(CN)₆]  vs  [Cr(NH₃)₆][Co(CN)₆]</code>
+    </div>
+    <div class="iso-card" style="border-top-color:#0891b2">
+      <div class="iso-type" style="color:#0891b2">Solvate (Hydrate) Isomerism</div>
+      <div class="iso-def">Different number of water molecules inside vs outside coordination sphere.</div>
+      <code class="iso-ex">[Cr(H₂O)₆]Cl₃  vs  [Cr(H₂O)₅Cl]Cl₂·H₂O  vs  [Cr(H₂O)₄Cl₂]Cl·2H₂O</code>
+    </div>
+    <div class="iso-card" style="border-top-color:#7c3aed">
+      <div class="iso-type" style="color:#7c3aed">Geometric (cis-trans) Isomerism</div>
+      <div class="iso-def">Same ligands arranged differently in space. Possible in square planar (MA₂B₂) and octahedral (MA₄B₂, MA₃B₃) complexes.</div>
+      <code class="iso-ex">cis-[Pt(NH₃)₂Cl₂] (cisplatin, anticancer)  vs  trans-[Pt(NH₃)₂Cl₂]</code>
+    </div>
+    <div class="iso-card" style="border-top-color:#be185d">
+      <div class="iso-type" style="color:#be185d">Optical Isomerism</div>
+      <div class="iso-def">Non-superimposable mirror images (enantiomers). Rotate plane-polarised light. Common in octahedral complexes with bidentate ligands.</div>
+      <code class="iso-ex">[Co(en)₃]³⁺  (Δ and Λ forms);  cis-[CrCl₂(en)₂]⁺</code>
+    </div>
+  </div>
+
+  <!-- VBT -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.5rem 0 .75rem">🔬 VBT — Hybridisation Guide</h3>
+  <div class="orbital-grid">
+    <div class="orb-card">
+      <div class="orb-title">[Co(NH₃)₆]³⁺ — Inner orbital, d²sp³</div>
+      <div class="orb-config">Co³⁺: [Ar] 3d⁶
+Strong field (NH₃): electrons pair in 3d
+3d: [↑↓][↑↓][↑↓][ ][ ] → 2 empty 3d orbitals available
+Hybridisation: d²sp³ (uses 2× inner 3d + 1× 4s + 3× 4p)</div>
+      <div class="orb-detail">Geometry: Octahedral | Unpaired e⁻: 0</div>
+      <div class="orb-result">Diamagnetic</div>
+    </div>
+    <div class="orb-card">
+      <div class="orb-title">[CoF₆]³⁻ — Outer orbital, sp³d²</div>
+      <div class="orb-config">Co³⁺: [Ar] 3d⁶
+Weak field (F⁻): electrons NOT paired in 3d
+3d: [↑↓][↑][↑][↑][↑] → no empty 3d available
+Hybridisation: sp³d² (uses 4s + 3×4p + 2×4d)</div>
+      <div class="orb-detail">Geometry: Octahedral | Unpaired e⁻: 4</div>
+      <div class="orb-result">Paramagnetic (μ = 4.90 BM)</div>
+    </div>
+    <div class="orb-card">
+      <div class="orb-title">[Ni(CO)₄] — sp³, tetrahedral</div>
+      <div class="orb-config">Ni⁰: [Ar] 3d¹⁰
+Strong field CO: all 3d filled
+Hybridisation: sp³
+Geometry: Tetrahedral</div>
+      <div class="orb-detail">Unpaired e⁻: 0 | Special: zero oxidation state Ni</div>
+      <div class="orb-result">Diamagnetic</div>
+    </div>
+    <div class="orb-card">
+      <div class="orb-title">[Ni(CN)₄]²⁻ — dsp², square planar</div>
+      <div class="orb-config">Ni²⁺: [Ar] 3d⁸
+Strong field CN⁻: one 3d pair moves to 4p
+3d: [↑↓][↑↓][↑↓][↑↓][ ] → one 3d empty
+Hybridisation: dsp² (uses one 3d + one 4s + two 4p)</div>
+      <div class="orb-detail">Geometry: Square planar | Unpaired e⁻: 0</div>
+      <div class="orb-result">Diamagnetic</div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>🔬 VBT Decision Flowchart</h4>
+    <p><strong>Step 1:</strong> Write electronic config of metal ion (remove electrons from 4s first)</p>
+    <p><strong>Step 2:</strong> Identify ligand strength — Strong field: CO, CN⁻, NH₃, en, NO₂⁻ | Weak field: F⁻, Cl⁻, Br⁻, I⁻, H₂O</p>
+    <p><strong>Step 3:</strong> Strong field → electrons pair in d → check if inner d-orbitals free → d²sp³ (octahedral) or dsp² (square planar)</p>
+    <p><strong>Step 4:</strong> Weak field → electrons stay unpaired → use outer 4d → sp³d² (octahedral) or sp³ (tetrahedral)</p>
+    <p><strong>Step 5:</strong> Count unpaired electrons → calculate μ = √(n(n+2)) BM → state diamagnetic (n=0) or paramagnetic</p>
+  </div>
+
+  <!-- CFT -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.5rem 0 .75rem">💎 Crystal Field Theory (CFT)</h3>
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f3e8ff;color:#5b21b6">📐 d-Orbital Splitting</div>
+      <div class="block-body">
+        <div style="text-align:center;margin:.5rem 0">
+          <svg width="300" height="130" viewBox="0 0 300 130">
+            <defs>
+              <marker id="arrUp" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#44403c"/></marker>
+              <marker id="arrDn" viewBox="0 0 10 8" refX="1" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,4 L10,8 Z" fill="#44403c"/></marker>
+            </defs>
+            <!-- Free ion level -->
+            <line x1="30" y1="65" x2="75" y2="65" stroke="#78716c" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="10" y="69" font-size="9" fill="#78716c" font-family="monospace">free</text>
+            <!-- eg level (higher) -->
+            <line x1="160" y1="22" x2="230" y2="22" stroke="#dc2626" stroke-width="2.5"/>
+            <text x="234" y="26" font-size="9" fill="#dc2626" font-weight="700" font-family="'Lato',sans-serif">eg</text>
+            <text x="234" y="37" font-size="7.5" fill="#dc2626" font-family="monospace">dz², dx²-y²</text>
+            <!-- t2g level (lower) -->
+            <line x1="160" y1="95" x2="230" y2="95" stroke="#2563eb" stroke-width="2.5"/>
+            <text x="234" y="99" font-size="9" fill="#2563eb" font-weight="700" font-family="'Lato',sans-serif">t₂g</text>
+            <text x="234" y="110" font-size="7.5" fill="#2563eb" font-family="monospace">dxy, dxz, dyz</text>
+            <!-- Δo arrow -->
+            <line x1="150" y1="22" x2="150" y2="95" stroke="#7c3aed" stroke-width="1" marker-end="url(#arrUp)" marker-start="url(#arrDn)"/>
+            <text x="130" y="62" font-size="11" fill="#7c3aed" font-weight="700" font-family="'Lato',sans-serif">Δo</text>
+            <!-- Lines from free to split -->
+            <line x1="75" y1="65" x2="160" y2="22" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="75" y1="65" x2="160" y2="95" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+            <!-- Labels -->
+            <text x="155" y="10" font-size="8" fill="#dc2626" font-family="'Lato',sans-serif">+0.6Δo</text>
+            <text x="100" y="110" font-size="8" fill="#2563eb" font-family="'Lato',sans-serif">−0.4Δo</text>
+          </svg>
+        </div>
+        <ul style="list-style:none;padding:0;font-size:.74rem;color:var(--ink-2);line-height:1.8">
+          <li>• t₂g (3 orbitals): 0.4Δo below avg — <em>lower energy</em></li>
+          <li>• eg (2 orbitals): 0.6Δo above avg — <em>higher energy</em></li>
+          <li>• Large Δo → Strong field → low spin (electrons pair in t₂g)</li>
+          <li>• Small Δo → Weak field → high spin (electrons go to eg)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">💡 CFT Exam Tips</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">🎯</span><div><strong>Spectrochemical series — memorise this sequence:</strong><br>
+          I⁻ &lt; Br⁻ &lt; S²⁻ &lt; SCN⁻ &lt; Cl⁻ &lt; NO₃⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O &lt; NCS⁻ &lt; en &lt; NH₃ &lt; NO₂⁻ &lt; CN⁻ &lt; CO<br>
+          <em>Weak field ←————————————————→ Strong field</em></div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>Colour from CFT:</strong> Δo corresponds to visible light. Electron absorbs this light to jump t₂g → eg. Complementary colour is what we see. Example: [Ti(H₂O)₆]³⁺ absorbs green → looks violet/purple.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>CFSE (Crystal Field Stabilisation Energy):</strong> For d⁶ low spin — 6 electrons in t₂g: CFSE = 6(−0.4Δo) = −2.4Δo. For d⁶ high spin — 4 in t₂g + 2 in eg: CFSE = 4(−0.4Δo) + 2(+0.6Δo) = −0.4Δo. Low spin = more stable.</div></li>
+          <li><span class="tip-icon">🎯</span><div><strong>d¹⁰ complexes have no CFSE</strong> and are often colourless (no d–d transition possible). [Zn(H₂O)₆]²⁺ is colourless.</div></li>
+          <li><span class="tip-icon">⚠️</span><div><strong>VBT vs CFT:</strong> VBT predicts hybridisation and geometry but cannot fully explain colour or exact magnetic behaviour. CFT explains colour and distinguishes high-spin/low-spin better. CBSE may ask for either — read the question.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Applications -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:.5rem 0 .75rem">🌐 Applications of Coordination Compounds</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Application</th><th>Compound</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Anticancer drug</strong></td><td>cis-Platin [Pt(NH₃)₂Cl₂]</td><td>Geometric isomer; binds to DNA; inhibits cell division</td></tr>
+      <tr><td><strong>Extraction of silver/gold</strong></td><td>[Ag(CN)₂]⁻ / [Au(CN)₂]⁻</td><td>Hydrometallurgy: ore + NaCN solution → complex → Zn displaces metal</td></tr>
+      <tr><td><strong>Electroplating</strong></td><td>[Ag(CN)₂]⁻ bath</td><td>Provides slow, controlled release of Ag⁺ for uniform plating</td></tr>
+      <tr><td><strong>EDTA in medicine</strong></td><td>[EDTA-Ca]²⁻</td><td>Lead poisoning treatment — EDTA chelates Pb²⁺, excreted in urine</td></tr>
+      <tr><td><strong>Haemoglobin</strong></td><td>Fe(II) porphyrin complex</td><td>O₂ transport; CO binds more strongly → CO poisoning</td></tr>
+      <tr><td><strong>Chlorophyll</strong></td><td>Mg(II) porphyrin complex</td><td>Photosynthesis</td></tr>
+      <tr><td><strong>Vitamin B₁₂</strong></td><td>Co(III) corrin complex</td><td>First naturally occurring organometallic compound</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="trick-box" style="margin-bottom:0">
+      <h4>🔢 Naming Practice — Quick Test</h4>
+      <ul>
+        <li>[CoCl₃(NH₃)₃] = <span class="eq">triamminetrichloridocobalt(III)</span></li>
+        <li>K₂[PtCl₄] = <span class="eq">potassium tetrachloridoplatinate(II)</span></li>
+        <li>[Cr(en)₃]³⁺ = <span class="eq">tris(ethane-1,2-diamine)chromium(III) ion</span></li>
+        <li>[Fe(CO)₅] = <span class="eq">pentacarbonyliron(0)</span></li>
+        <li>Na₂[Fe(CN)₅NO] = <span class="eq">sodium pentacyanidoitroso­ylferrate(II)</span></li>
+      </ul>
+      <p style="margin-top:.5rem;font-size:.72rem;color:#92400e">💡 For complex anions (inside square bracket negative): metal gets "-ate" suffix. Check common Latin names: Fe → ferrate, Cu → cuprate, Ag → argentate, Au → aurate, Pb → plumbate, Sn → stannate</p>
+    </div>
+    <div class="mistake-box" style="margin-bottom:0">
+      <h4>❌ Common Mistakes to Avoid</h4>
+      <ul>
+        <li>Naming ligands in formula order instead of alphabetical order — always alphabetical</li>
+        <li>Using "ammine" (coordination compound NH₃) vs "amine" (organic compound RNH₂) — double-m for complex</li>
+        <li>Forgetting to use "bis/tris" for complex ligand names (en, ox) — NOT "di/tri"</li>
+        <li>In VBT: forgetting to remove 4s electrons first from metal before checking d configuration for ion</li>
+        <li>Saying high-spin = more stable — WRONG. Low-spin has higher CFSE → more stable (for most cases)</li>
+        <li>Optical isomerism in tetrahedral — ONLY with 4 different ligands; it's rare. Square planar usually doesn't show optical isomerism (planar, mirror image is superimposable).</li>
+        <li>Confusing inner orbital (d²sp³) with outer orbital (sp³d²) — inner uses 3d (inside), outer uses 4d (outside)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STABILITY CONSTANT -->
+  <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">⚖️ Stability of Coordination Compounds</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Stability constant (K_f or K_stab)</strong></td>
+        <td>Equilibrium constant for the formation of a complex ion from its components. Larger K_f → more stable complex.<br>
+        <span class="mono">M^n+ + xL ⇌ [MLₓ]^n+ &nbsp; K_f = [[MLₓ]^n+] / ([M^n+][L]^x)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Instability constant (K_d)</strong></td>
+        <td>Reciprocal of K_f. Represents dissociation of complex.<br><span class="mono">K_d = 1/K_f</span>. Smaller K_d → more stable (less tendency to dissociate).</td>
+      </tr>
+      <tr>
+        <td><strong>Stepwise formation constants</strong></td>
+        <td>For [Cu(NH₃)₄]²⁺: ligands added one by one, each step has its own K₁, K₂, K₃, K₄. Overall K_f = K₁ × K₂ × K₃ × K₄. Stepwise constants generally decrease (each successive ligand harder to add due to steric/electrostatic reasons).</td>
+      </tr>
+      <tr>
+        <td><strong>Factors affecting stability</strong></td>
+        <td>
+          <strong>1. Nature of metal ion:</strong> Higher charge density (charge/radius) → stronger attraction for ligands → more stable. Fe³⁺ > Fe²⁺.<br>
+          <strong>2. Nature of ligand:</strong> Strong field ligands (CN⁻, en, EDTA) → more stable. Chelating ligands (EDTA, en) → much more stable than monodentate (chelate effect).<br>
+          <strong>3. Chelate effect:</strong> Polydentate ligands form more stable complexes than monodentate ligands of comparable donor strength (entropy-driven — more ligand molecules released from solvent cage when chelate forms).
+        </td>
+      </tr>
+      <tr>
+        <td><strong>EDTA complexes</strong></td>
+        <td>EDTA (ethylenediaminetetraacetate) is a hexadentate ligand — forms extremely stable complexes (very large K_f). Used in: water softening (removes Ca²⁺, Mg²⁺), analytical chemistry (complexometric titrations), as antidote to heavy metal poisoning (Pb²⁺, Hg²⁺ poisoning).</td>
+      </tr>
+      <tr>
+        <td><strong>Cisplatin [PtCl₂(NH₃)₂]</strong></td>
+        <td>Square planar Pt(II) complex. <em>cis</em>-isomer is an anticancer drug (binds to DNA, blocks replication of cancer cells). <em>trans</em>-isomer is inactive. Used in treatment of testicular, ovarian, bladder cancer.</td>
+      </tr>
+      <tr>
+        <td><strong>Wilkinson's catalyst [RhCl(PPh₃)₃]</strong></td>
+        <td>Rhodium complex — used as homogeneous catalyst for hydrogenation of alkenes (adds H₂ across C=C at room temperature, atmospheric pressure). Nobel Prize (Wilkinson, 1973).</td>
+      </tr>
+      <tr>
+        <td><strong>Biological coordination compounds</strong></td>
+        <td>
+          <strong>Haemoglobin:</strong> Fe²⁺ in porphyrin ring (haem); O₂ binds reversibly at 6th coordination site.<br>
+          <strong>Chlorophyll:</strong> Mg²⁺ in porphyrin ring; central to photosynthesis.<br>
+          <strong>Vitamin B₁₂:</strong> Co³⁺ complex; essential for red blood cell formation.<br>
+          <strong>Carbonic anhydrase:</strong> Zn²⁺ complex; catalyses CO₂ ⇌ HCO₃⁻ in blood.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="trick-box">
+    <h4>🎯 Applications Summary — Memory Card</h4>
+    <p><strong>EDTA:</strong> Hexadentate → extremely stable → used in water softening, medicine (antidote), analytical titrations.</p>
+    <p style="margin-top:.3rem"><strong>Cisplatin:</strong> cis = cancer drug; trans = inactive. Pt(II), square planar, [PtCl₂(NH₃)₂].</p>
+    <p style="margin-top:.3rem"><strong>Bio complexes mnemonic — Fe, Mg, Co, Zn:</strong> Fe (Hb, blood), Mg (chlorophyll, green), Co (B₁₂, blood cells), Zn (enzyme, carbonic anhydrase).</p>
+    <p style="margin-top:.3rem"><strong>Chelate effect:</strong> More teeth = more stable. EDTA (6 teeth) > en (2 teeth) > NH₃ (1 tooth). Driven by entropy increase.</p>
+  </div>
+
+</div>
+</div><!-- /container --><script src="../../js/chapter-nav.js"></script>
+</body>
+</html>

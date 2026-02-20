@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE Physics XII — 4-Day Study Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    background-color: #f5f3ef;
+    color: #2c2c2c;
+    padding: 40px 20px 80px;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .container { width: 95%; }
+    body { font-size: 16px; padding: 20px 10px 60px; }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Newsreader', serif;
+    color: #1a1a1a;
+  }
+
+  h1 {
+    font-size: 2.6em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.05em;
+    color: #6b6560;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-family: 'Newsreader', serif;
+  }
+
+  h2 {
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0dcd6;
+  }
+
+  h3 {
+    font-size: 1.35em;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #3a3632;
+  }
+
+  h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.03);
+  }
+
+  /* Exam Info Box */
+  .exam-info {
+    background: linear-gradient(135deg, #fdfcfa, #f7f4ee);
+    border: 2px solid #d4c9b8;
+    border-radius: 14px;
+    padding: 30px 36px;
+    margin-bottom: 30px;
+  }
+
+  .exam-info h2 {
+    border-bottom: 2px solid #c9bfb0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+
+  .exam-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .exam-meta-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    border: 1px solid #e8e2d8;
+  }
+
+  .exam-meta-item .label {
+    font-size: 0.78em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8a7f72;
+    margin-bottom: 2px;
+  }
+
+  .exam-meta-item .value {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #2c2820;
+  }
+
+  .paper-pattern {
+    margin-top: 10px;
+  }
+
+  .paper-pattern table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92em;
+  }
+
+  .paper-pattern th {
+    text-align: left;
+    padding: 10px 14px;
+    background: #3a3632;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .paper-pattern th:first-child { border-radius: 8px 0 0 0; }
+  .paper-pattern th:last-child { border-radius: 0 8px 0 0; }
+
+  .paper-pattern td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #ede9e2;
+  }
+
+  .paper-pattern tr:last-child td { border-bottom: none; }
+  .paper-pattern tr:nth-child(even) td { background: #faf8f5; }
+
+  /* Weightage Table */
+  .weightage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+    margin-top: 8px;
+  }
+
+  .weightage-table th {
+    text-align: left;
+    padding: 12px 16px;
+    background: #4a6741;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .weightage-table th:first-child { border-radius: 8px 0 0 0; }
+  .weightage-table th:last-child { border-radius: 0 8px 0 0; text-align: center; }
+
+  .weightage-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid #ede9e2;
+  }
+
+  .weightage-table td:last-child { text-align: center; font-weight: 600; }
+  .weightage-table tr:nth-child(even) td { background: #faf8f5; }
+  .weightage-table tr:last-child td { border-bottom: none; }
+
+  .weightage-table tr.high-weight td {
+    background: #f0f7ee;
+    font-weight: 600;
+  }
+
+  .weightage-table tr.high-weight td:first-child::after {
+    content: " \2605";
+    color: #7a9e3e;
+    font-size: 0.85em;
+  }
+
+  .weightage-table tr.total-row td {
+    background: #3a3632;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05em;
+    border-bottom: none;
+  }
+
+  .weightage-table tr.total-row td:first-child { border-radius: 0 0 0 8px; }
+  .weightage-table tr.total-row td:last-child { border-radius: 0 0 8px 0; }
+
+  .marks-badge {
+    display: inline-block;
+    background: #4a6741;
+    color: #fff;
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 0.88em;
+    font-weight: 700;
+  }
+
+  /* Day Cards */
+  .day-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 0;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.03);
+    overflow: hidden;
+  }
+
+  .day-header {
+    padding: 22px 36px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .day-header h2 {
+    color: #fff;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 1.5em;
+  }
+
+  .day-header .date {
+    font-family: 'Newsreader', serif;
+    font-size: 1.05em;
+    opacity: 0.9;
+    font-style: italic;
+  }
+
+  .day-1 .day-header { background: linear-gradient(135deg, #5b4a8a, #7c6aad); }
+  .day-2 .day-header { background: linear-gradient(135deg, #2e6b5e, #429e87); }
+  .day-3 .day-header { background: linear-gradient(135deg, #8a5c2a, #c08840); }
+  .day-4 .day-header { background: linear-gradient(135deg, #6b2e3d, #a04e63); }
+
+  .day-body { padding: 28px 36px; }
+
+  .time-block {
+    margin-bottom: 22px;
+    padding-left: 18px;
+    border-left: 3px solid #e0dcd6;
+  }
+
+  .time-block:last-child { margin-bottom: 0; }
+
+  .time-label {
+    font-size: 0.82em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9a8e80;
+    margin-bottom: 6px;
+  }
+
+  .day-1 .time-label { color: #7c6aad; }
+  .day-2 .time-label { color: #2e6b5e; }
+  .day-3 .time-label { color: #8a5c2a; }
+  .day-4 .time-label { color: #6b2e3d; }
+
+  /* Checkbox tasks */
+  .task {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 6px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .task input[type="checkbox"] {
+    display: none;
+  }
+
+  .task .checkmark {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #c5bfb5;
+    border-radius: 6px;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    background: #fff;
+  }
+
+  .task .checkmark svg {
+    width: 14px;
+    height: 14px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .task input:checked + .checkmark {
+    background: #4a6741;
+    border-color: #4a6741;
+  }
+
+  .task input:checked + .checkmark svg {
+    opacity: 1;
+  }
+
+  .task .task-text {
+    flex: 1;
+    transition: all 0.2s ease;
+  }
+
+  .task input:checked ~ .task-text {
+    text-decoration: line-through;
+    color: #aaa59d;
+  }
+
+  .task:hover .checkmark {
+    border-color: #8a8278;
+  }
+
+  .task strong {
+    color: #3a3632;
+  }
+
+  /* Special boxes */
+  .stop-box {
+    background: #fdf0ee;
+    border: 2px solid #e8b4ac;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 14px;
+    font-weight: 600;
+    color: #8b3a2e;
+    text-align: center;
+    font-size: 1.05em;
+  }
+
+  .tips-card {
+    background: linear-gradient(135deg, #f7f9f5, #eef3ea);
+    border: 2px solid #b8cca8;
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 30px;
+  }
+
+  .tips-card h2 {
+    color: #3d5a2e;
+    border-bottom-color: #b8cca8;
+  }
+
+  .tip-item {
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    font-size: 0.97em;
+  }
+
+  .tip-item::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-size: 1em;
+  }
+
+  /* Motivational note */
+  .motivation {
+    background: linear-gradient(135deg, #fdfcfa, #f7f4ee);
+    border: 2px solid #d4c9b8;
+    border-radius: 14px;
+    padding: 36px 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .motivation h2 {
+    border-bottom: none;
+    margin-bottom: 14px;
+    font-size: 1.5em;
+  }
+
+  .motivation p {
+    font-family: 'Newsreader', serif;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #5a5550;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .motivation .sign-off {
+    margin-top: 18px;
+    font-style: normal;
+    font-weight: 600;
+    color: #3a3632;
+    font-size: 1em;
+  }
+
+  /* Progress bar */
+  .progress-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #e0dcd6;
+    padding: 12px 20px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .progress-bar-bg {
+    width: 300px;
+    max-width: 50vw;
+    height: 10px;
+    background: #e8e2d8;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4a6741, #7ab866);
+    border-radius: 5px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .progress-text {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #6b6560;
+    white-space: nowrap;
+  }
+
+  /* Print style */
+  @media print {
+    .progress-wrapper { display: none; }
+    body { background: #fff; }
+    .card, .day-card, .exam-info, .tips-card, .motivation {
+      box-shadow: none;
+      break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>CBSE Physics XII</h1>
+  <p class="subtitle">4-Day Study Plan &mdash; Board Exam 2026</p>
+
+  <!-- Exam Info -->
+  <div class="exam-info">
+    <h2>Exam Information</h2>
+    <div class="exam-meta">
+      <div class="exam-meta-item">
+        <div class="label">Subject</div>
+        <div class="value">Physics (042)</div>
+      </div>
+      <div class="exam-meta-item">
+        <div class="label">Total Marks</div>
+        <div class="value">70 (Theory)</div>
+      </div>
+      <div class="exam-meta-item">
+        <div class="label">Duration</div>
+        <div class="value">3 Hours</div>
+      </div>
+    </div>
+
+    <h3>Paper Pattern</h3>
+    <div class="paper-pattern">
+      <table>
+        <thead>
+          <tr>
+            <th>Section</th>
+            <th>Type</th>
+            <th>Questions</th>
+            <th>Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Section A</strong></td>
+            <td>MCQs</td>
+            <td>16 &times; 1</td>
+            <td><span class="marks-badge">16</span></td>
+          </tr>
+          <tr>
+            <td><strong>Section B</strong></td>
+            <td>Assertion-Reason</td>
+            <td>5 &times; 1</td>
+            <td><span class="marks-badge">5</span></td>
+          </tr>
+          <tr>
+            <td><strong>Section C</strong></td>
+            <td>Short Answer &mdash; I</td>
+            <td>7 &times; 2</td>
+            <td><span class="marks-badge">14</span></td>
+          </tr>
+          <tr>
+            <td><strong>Section D</strong></td>
+            <td>Case Study</td>
+            <td>2 &times; 3</td>
+            <td><span class="marks-badge">6</span></td>
+          </tr>
+          <tr>
+            <td><strong>Section E</strong></td>
+            <td>Short Answer &mdash; II</td>
+            <td>5 &times; 3</td>
+            <td><span class="marks-badge">15</span></td>
+          </tr>
+          <tr>
+            <td><strong>Section F</strong></td>
+            <td>Long Answer (internal choice)</td>
+            <td>3 &times; 5</td>
+            <td><span class="marks-badge">15</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Chapter-wise Weightage -->
+  <div class="card">
+    <h2>Chapter-wise Weightage</h2>
+    <table class="weightage-table">
+      <thead>
+        <tr>
+          <th>Unit / Chapters</th>
+          <th>Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="high-weight">
+          <td>Electrostatics (Ch 1&ndash;2)</td>
+          <td><span class="marks-badge">8</span></td>
+        </tr>
+        <tr>
+          <td>Current Electricity (Ch 3)</td>
+          <td>7</td>
+        </tr>
+        <tr class="high-weight">
+          <td>Magnetic Effects of Current &amp; Magnetism (Ch 4&ndash;5)</td>
+          <td><span class="marks-badge">8</span></td>
+        </tr>
+        <tr class="high-weight">
+          <td>EMI &amp; Alternating Current (Ch 6&ndash;7)</td>
+          <td><span class="marks-badge">8</span></td>
+        </tr>
+        <tr>
+          <td>Electromagnetic Waves (Ch 8)</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Ray Optics (Ch 9)</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Wave Optics (Ch 10)</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Dual Nature of Radiation &amp; Matter (Ch 11)</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Atoms &amp; Nuclei (Ch 12&ndash;13)</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Semiconductor Electronics (Ch 14)</td>
+          <td>7</td>
+        </tr>
+        <tr class="total-row">
+          <td>Total</td>
+          <td>70</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-card day-1">
+    <div class="day-header">
+      <h2>Day 1 &mdash; High-Weightage Chapters</h2>
+      <span class="date">Today, Feb 16</span>
+    </div>
+    <div class="day-body">
+
+      <div class="time-block">
+        <div class="time-label">Morning &mdash; 3 hours</div>
+        <label class="task" data-id="d1-1">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Electrostatics (Ch 1&ndash;2):</strong> Revise Coulomb's law, Gauss's theorem, capacitors. Write down all formulas.</span>
+        </label>
+        <label class="task" data-id="d1-2">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Current Electricity (Ch 3):</strong> Kirchhoff's laws, Wheatstone bridge, meter bridge. Revise formulas.</span>
+        </label>
+        <label class="task" data-id="d1-3">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Solve <strong>5 numericals</strong> from Electrostatics &amp; Current Electricity combined.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Afternoon &mdash; 2 hours</div>
+        <label class="task" data-id="d1-4">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Magnetic Effects (Ch 4&ndash;5):</strong> Derivations &mdash; Biot-Savart law, Ampere's circuital law, force between parallel current-carrying wires.</span>
+        </label>
+        <label class="task" data-id="d1-5">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Solve <strong>3 numericals</strong> on moving charges and magnetism.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Evening &mdash; 2 hours</div>
+        <label class="task" data-id="d1-6">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>EMI (Ch 6):</strong> Faraday's law derivation, Lenz's law, self &amp; mutual inductance.</span>
+        </label>
+        <label class="task" data-id="d1-7">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>AC (Ch 7):</strong> LCR series circuit impedance derivation, resonance, transformer working &amp; efficiency.</span>
+        </label>
+        <label class="task" data-id="d1-8">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Solve <strong>3 numericals</strong> on EMI and AC circuits.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Night &mdash; 1 hour</div>
+        <label class="task" data-id="d1-9">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Quick formula revision</strong> for all 4 topics covered today. Read them aloud once.</span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card day-2">
+    <div class="day-header">
+      <h2>Day 2 &mdash; Optics + Modern Physics</h2>
+      <span class="date">Feb 17</span>
+    </div>
+    <div class="day-body">
+
+      <div class="time-block">
+        <div class="time-label">Morning &mdash; 3 hours</div>
+        <label class="task" data-id="d2-1">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Ray Optics (Ch 9):</strong> Draw all ray diagrams &mdash; concave/convex mirror, prism, microscope, telescope.</span>
+        </label>
+        <label class="task" data-id="d2-2">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Derivations: Lens maker's equation, refraction at spherical surface, TIR conditions.</span>
+        </label>
+        <label class="task" data-id="d2-3">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Solve <strong>4 numericals</strong> from Ray Optics (prism, lenses, optical instruments).</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Afternoon &mdash; 2 hours</div>
+        <label class="task" data-id="d2-4">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Wave Optics (Ch 10):</strong> YDSE fringe width derivation, conditions for constructive/destructive interference.</span>
+        </label>
+        <label class="task" data-id="d2-5">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Single slit diffraction &mdash; central maximum width. Solve <strong>2 numericals</strong>.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Evening &mdash; 2 hours</div>
+        <label class="task" data-id="d2-6">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Dual Nature (Ch 11):</strong> Photoelectric effect derivation, Einstein's equation, graphs (V vs f, I vs V).</span>
+        </label>
+        <label class="task" data-id="d2-7">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Atoms (Ch 12):</strong> Bohr's model postulates, energy level derivation, hydrogen spectrum series.</span>
+        </label>
+        <label class="task" data-id="d2-8">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Solve <strong>3 numericals</strong> from Dual Nature and Atoms.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Night &mdash; 1 hour</div>
+        <label class="task" data-id="d2-9">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Nuclei (Ch 13):</strong> Binding energy curve, mass defect, alpha/beta/gamma decay, half-life formula.</span>
+        </label>
+        <label class="task" data-id="d2-10">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>EM Waves (Ch 8):</strong> Quick revision &mdash; spectrum order, displacement current, properties of each wave type.</span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card day-3">
+    <div class="day-header">
+      <h2>Day 3 &mdash; Semiconductors + Practice</h2>
+      <span class="date">Feb 18</span>
+    </div>
+    <div class="day-body">
+
+      <div class="time-block">
+        <div class="time-label">Morning &mdash; 2 hours</div>
+        <label class="task" data-id="d3-1">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Semiconductors (Ch 14):</strong> Intrinsic &amp; extrinsic semiconductors, p-n junction formation, forward &amp; reverse bias.</span>
+        </label>
+        <label class="task" data-id="d3-2">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Zener diode as voltage regulator, rectifier circuits (half-wave &amp; full-wave).</span>
+        </label>
+        <label class="task" data-id="d3-3">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Transistor (NPN/PNP), CE amplifier, logic gates &mdash; <strong>memorize all truth tables</strong> (AND, OR, NOT, NAND, NOR).</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Afternoon &mdash; 3 hours</div>
+        <label class="task" data-id="d3-4">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Solve one full CBSE sample paper</strong> under timed conditions (3 hours, no peeking).</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Evening &mdash; 2 hours</div>
+        <label class="task" data-id="d3-5">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Review mistakes</strong> from the sample paper. Note down every wrong answer and why.</span>
+        </label>
+        <label class="task" data-id="d3-6">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Re-derive</strong> any derivations you got wrong or couldn't recall.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Night &mdash; 1 hour</div>
+        <label class="task" data-id="d3-7">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Assertion-Reason practice:</strong> Solve at least 20 assertion-reason questions across all chapters.</span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card day-4">
+    <div class="day-header">
+      <h2>Day 4 &mdash; Light Revision Only</h2>
+      <span class="date">Feb 19 &mdash; Day Before Exam</span>
+    </div>
+    <div class="day-body">
+
+      <div class="time-block">
+        <div class="time-label">Morning &mdash; 2 hours</div>
+        <label class="task" data-id="d4-1">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Formula sheet revision:</strong> Read through all formulas across every chapter, one by one.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Afternoon &mdash; 1 hour</div>
+        <label class="task" data-id="d4-2">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Important diagrams:</strong> Flip through all circuit diagrams, ray diagrams, and graphs one final time.</span>
+        </label>
+      </div>
+
+      <div class="time-block">
+        <div class="time-label">Evening &mdash; 1 hour</div>
+        <label class="task" data-id="d4-3">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Read derivations</strong> one last time &mdash; just the steps, don't re-derive. Focus on the flow.</span>
+        </label>
+      </div>
+
+      <div class="stop-box">
+        STOP studying by 6 PM &mdash; relax, eat well, sleep early.
+      </div>
+
+      <div class="time-block" style="margin-top: 18px;">
+        <div class="time-label">Night &mdash; Before Bed</div>
+        <label class="task" data-id="d4-4">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text"><strong>Pack your bag:</strong> Admit card, blue/black pens, pencil, ruler, eraser, school ID.</span>
+        </label>
+        <label class="task" data-id="d4-5">
+          <input type="checkbox"><span class="checkmark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="task-text">Remember: <strong>Calculator is NOT allowed.</strong> Keep your water bottle ready.</span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Exam Day Tips -->
+  <div class="tips-card">
+    <h2>Exam Day Strategy</h2>
+    <div class="tip-item" data-icon="1.">
+      <strong>Read the paper for 15 minutes</strong> &mdash; mark the easy questions you'll attempt first.
+    </div>
+    <div class="tip-item" data-icon="2.">
+      <strong>Attempt Section A (MCQs) first</strong> &mdash; quick marks in the bank, builds confidence.
+    </div>
+    <div class="tip-item" data-icon="3.">
+      <strong>For numericals, follow the format:</strong> Given &rarr; Formula &rarr; Substitution &rarr; Answer with units.
+    </div>
+    <div class="tip-item" data-icon="4.">
+      <strong>Draw diagrams even if not asked</strong> &mdash; neatly labelled diagrams earn extra credit.
+    </div>
+    <div class="tip-item" data-icon="5.">
+      <strong>Attempt ALL questions</strong> &mdash; there is no negative marking. Never leave a question blank.
+    </div>
+    <div class="tip-item" data-icon="6.">
+      <strong>Keep 15 minutes for revision</strong> at the end &mdash; check for silly calculation errors.
+    </div>
+  </div>
+
+  <!-- Motivational Note -->
+  <div class="motivation">
+    <h2>You've Got This</h2>
+    <p>
+      You have studied this subject for an entire year. These four days are not about learning something new &mdash; they are about reminding yourself of what you already know. Trust your preparation, stay calm, and give it your best. One paper at a time, one question at a time. The finish line is right there.
+    </p>
+    <p class="sign-off">All the best. Go make it count.</p>
+  </div>
+
+</div>
+
+<!-- Fixed Progress Bar -->
+<div class="progress-wrapper">
+  <span class="progress-text" id="progressText">0 / 0 tasks done</span>
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'cbse-physics-study-plan-v1';
+
+  // Load saved state
+  function loadState() {
+    try {
+      const data = localStorage.getItem(STORAGE_KEY);
+      return data ? JSON.parse(data) : {};
+    } catch(e) {
+      return {};
+    }
+  }
+
+  // Save state
+  function saveState(state) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch(e) {}
+  }
+
+  // Update progress bar
+  function updateProgress() {
+    const checkboxes = document.querySelectorAll('.task input[type="checkbox"]');
+    const total = checkboxes.length;
+    const checked = document.querySelectorAll('.task input[type="checkbox"]:checked').length;
+    const pct = total > 0 ? (checked / total * 100) : 0;
+
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = checked + ' / ' + total + ' tasks done';
+  }
+
+  // Initialize
+  const state = loadState();
+  const tasks = document.querySelectorAll('.task');
+
+  tasks.forEach(function(task) {
+    const id = task.getAttribute('data-id');
+    const checkbox = task.querySelector('input[type="checkbox"]');
+
+    // Restore state
+    if (state[id]) {
+      checkbox.checked = true;
+    }
+
+    // Listen for changes
+    checkbox.addEventListener('change', function() {
+      const currentState = loadState();
+      if (checkbox.checked) {
+        currentState[id] = true;
+      } else {
+        delete currentState[id];
+      }
+      saveState(currentState);
+      updateProgress();
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

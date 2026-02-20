@@ -1,0 +1,108 @@
+/* ─── Formula Reference Pages ────────────────────────────────────────────── */
+
+/* Simple anchor-link chapter nav (formula pages use <a> not <button>) */
+.chapter-nav { margin-bottom: 16px }
+.chapter-nav-inner { display: flex; gap: 6px; flex-wrap: wrap }
+.chapter-nav a {
+  font-size: .82em;
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 2px solid var(--sand-300);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--sand-700);
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+}
+.chapter-nav a:hover  { border-color: var(--sand-400); color: var(--sand-900) }
+.chapter-nav a.active { background: var(--sand-900); color: #fff; border-color: var(--sand-900) }
+
+/* Chapter sections */
+.chapters { padding: 2rem 0 4rem }
+.ch-section { margin-bottom: 2.5rem }
+.ch-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1rem;
+  padding-bottom: .6rem;
+  border-bottom: 2px solid;
+}
+.ch-number { font-family: 'Newsreader', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink-3) }
+.ch-title  { font-family: 'Newsreader', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink) }
+.ch-marks  { font-size: .65rem; font-weight: 700; background: var(--sand-100); border: 1px solid var(--sand-200); border-radius: 999px; padding: .18rem .6rem; color: var(--ink-3); white-space: nowrap }
+
+/* Formula card grid */
+.formula-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .75rem }
+.formula-card {
+  background: #fff;
+  border: 1px solid var(--sand-200);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid;
+}
+.fc-name { font-size: .75rem; font-weight: 700; color: var(--ink); margin-bottom: .35rem }
+.fc-eq {
+  font-family: monospace;
+  font-size: .8rem;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 5px;
+  padding: .3rem .6rem;
+  display: block;
+  margin: .25rem 0;
+  line-height: 1.6;
+  word-break: break-all;
+}
+.fc-note        { font-size: .68rem; color: var(--ink-3); line-height: 1.55; margin-top: .3rem }
+.fc-note strong { color: var(--ink-2) }
+.unit-tag {
+  display: inline-block;
+  font-size: .58rem;
+  font-weight: 700;
+  background: var(--sand-100);
+  border: 1px solid var(--sand-200);
+  border-radius: 4px;
+  padding: .1rem .4rem;
+  color: var(--ink-3);
+  margin-top: .2rem;
+  font-family: monospace;
+}
+
+/* Quick-reference summary box */
+.quick-ref {
+  background: linear-gradient(135deg, var(--subject-bg) 0%, #fff 60%);
+  border: 1.5px solid var(--subject-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.quick-ref h3 {
+  font-family: 'Newsreader', serif;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--subject-color);
+  margin-bottom: .75rem;
+}
+.qr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .5rem }
+.qr-item { display: flex; flex-direction: column; gap: .15rem }
+.qr-label { font-size: .63rem; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em }
+.qr-val {
+  font-family: monospace;
+  font-size: .8rem;
+  color: var(--subject-color);
+  background: var(--subject-bg);
+  border: 1px solid var(--subject-border);
+  border-radius: 4px;
+  padding: .2rem .5rem;
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .chapter-nav-inner { max-width: 100% }
+  .formula-grid { grid-template-columns: 1fr }
+}

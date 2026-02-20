@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSEPrep — Design Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/mcq.css">
+<link rel="stylesheet" href="css/chapter.css">
+<link rel="stylesheet" href="css/formulas.css">
+<link rel="stylesheet" href="css/concepts.css">
+<style>
+:root {
+  --subject-color: #0891b2;
+  --subject-bg: #ecfeff;
+  --subject-border: #67e8f9;
+}
+
+/* Style guide layout */
+.sg-container {
+  max-width: 900px;
+  width: 92%;
+  margin: 0 auto;
+  padding: 0 1.25rem 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section dividers */
+.sg-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--sand-200);
+}
+.sg-section:first-child { border-top: none; margin-top: 0 }
+
+.sg-label {
+  font-size: .65rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: .5rem;
+}
+.sg-title {
+  font-family: 'Newsreader', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .5rem;
+  line-height: 1.2;
+}
+.sg-desc {
+  font-size: .82rem;
+  color: var(--ink-3);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Spec row below each component */
+.sg-spec {
+  margin-top: .75rem;
+  font-family: monospace;
+  font-size: .72rem;
+  color: var(--ink-3);
+  background: var(--sand-100);
+  border: 1px solid var(--sand-200);
+  border-radius: 6px;
+  padding: .4rem .75rem;
+  display: inline-block;
+}
+
+/* Color swatches */
+.swatch-row   { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem }
+.swatch       { display: flex; flex-direction: column; align-items: flex-start; gap: .3rem }
+.swatch-chip  { width: 72px; height: 72px; border-radius: 10px; border: 1px solid rgba(0,0,0,.08) }
+.swatch-name  { font-size: .62rem; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em }
+.swatch-val   { font-family: monospace; font-size: .65rem; color: var(--ink-3) }
+
+/* Feature accent grid */
+.accent-grid  { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .6rem; margin-bottom: 1.5rem }
+.accent-card  { border-radius: 10px; padding: .85rem 1rem; border: 1.5px solid }
+.accent-name  { font-size: .72rem; font-weight: 700; margin-bottom: .2rem }
+.accent-vals  { font-family: monospace; font-size: .62rem; opacity: .75; line-height: 1.6 }
+
+/* Subject chips */
+.subject-row  { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1.5rem }
+.subj-chip    { border-radius: 8px; padding: .5rem 1rem; border: 1.5px solid; font-size: .75rem; font-weight: 700 }
+
+/* Typography specimens */
+.type-row     { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--sand-100) }
+.type-row:last-child { border-bottom: none }
+.type-meta    { font-size: .65rem; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .4rem }
+.type-sample  { color: var(--ink) }
+
+/* Spacing scale */
+.space-row    { display: flex; align-items: flex-end; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem }
+.space-item   { display: flex; flex-direction: column; align-items: center; gap: .35rem }
+.space-bar    { background: var(--sand-300); border-radius: 3px; width: 32px }
+.space-lbl    { font-family: monospace; font-size: .62rem; color: var(--ink-3) }
+
+/* Radius scale */
+.radius-row   { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem }
+.radius-item  { display: flex; flex-direction: column; align-items: center; gap: .5rem }
+.radius-box   { width: 56px; height: 56px; background: var(--sand-200); border: 2px solid var(--sand-300) }
+.radius-lbl   { font-family: monospace; font-size: .62rem; color: var(--ink-3); text-align: center }
+
+/* Component previews */
+.preview-box {
+  background: var(--sand-100);
+  border: 1px solid var(--sand-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.preview-label {
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 1rem;
+}
+
+/* Side by side components */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem }
+@media (max-width: 640px) { .two-col { grid-template-columns: 1fr } }
+
+/* Utility: strip margin from previewed items */
+.preview-box .mcq-card,
+.preview-box .formula-card { margin-bottom: 0 }
+
+/* Page hero */
+.sg-hero {
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+  margin-bottom: 0;
+}
+.sg-hero .badge {
+  display: inline-block;
+  background: var(--sand-200);
+  border: 1px solid var(--sand-300);
+  border-radius: 999px;
+  padding: .25rem .85rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 1rem;
+}
+.sg-hero h1 {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: .5rem;
+}
+.sg-hero .sub { font-size: .85rem; color: var(--ink-3); line-height: 1.6 }
+
+/* Toc */
+.toc { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem }
+.toc a {
+  font-size: .72rem; font-weight: 700; padding: .35rem .9rem;
+  border: 1.5px solid var(--sand-300); border-radius: 8px;
+  background: #fff; color: var(--sand-700); text-decoration: none;
+  transition: all .2s;
+}
+.toc a:hover { border-color: var(--sand-900); color: var(--sand-900) }
+
+/* State demo row */
+.opt-demo { display: flex; flex-direction: column; gap: .4rem }
+</style>
+</head>
+<body>
+<div class="sg-container">
+
+<!-- Hero -->
+<div class="sg-hero">
+  <div class="badge">CBSEPrep · Design System</div>
+  <h1>Style Guide</h1>
+  <p class="sub">Tokens, typography, components and patterns used across every page.</p>
+  <nav class="toc">
+    <a href="#tokens">Tokens</a>
+    <a href="#typography">Typography</a>
+    <a href="#spacing">Spacing</a>
+    <a href="#tabs">Tabs</a>
+    <a href="#mcq">MCQ</a>
+    <a href="#formulas">Formulas</a>
+    <a href="#chapter">Chapters</a>
+    <a href="#callouts">Callouts</a>
+    <a href="#concepts">Concepts</a>
+    <a href="#hero">Hero</a>
+  </nav>
+</div>
+
+<!-- ── 1. Design Tokens ───────────────────────────────────────────────── -->
+<div class="sg-section" id="tokens">
+  <div class="sg-label">01</div>
+  <div class="sg-title">Design Tokens</div>
+  <div class="sg-desc">All colours live as CSS custom properties on <code>:root</code>. Subject accent colours are overridden per-page with a 3-line inline <code>:root</code> block.</div>
+
+  <div class="sg-label" style="margin-top:1.5rem">Sand Palette — neutral base</div>
+  <div class="swatch-row">
+    <div class="swatch"><div class="swatch-chip" style="background:#fdfcfa"></div><span class="swatch-name">sand-50</span><span class="swatch-val">#fdfcfa</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#f7f5f0"></div><span class="swatch-name">sand-100</span><span class="swatch-val">#f7f5f0</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#eae6dd"></div><span class="swatch-name">sand-200</span><span class="swatch-val">#eae6dd</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#d8d1c4"></div><span class="swatch-name">sand-300</span><span class="swatch-val">#d8d1c4</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#b8ad9a"></div><span class="swatch-name">sand-400</span><span class="swatch-val">#b8ad9a</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#5c5347"></div><span class="swatch-name">sand-700</span><span class="swatch-val">#5c5347</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#2c2822"></div><span class="swatch-name">sand-900</span><span class="swatch-val">#2c2822</span></div>
+  </div>
+
+  <div class="sg-label">Ink Palette — text</div>
+  <div class="swatch-row">
+    <div class="swatch"><div class="swatch-chip" style="background:#1c1917"></div><span class="swatch-name">ink</span><span class="swatch-val">#1c1917</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#44403c"></div><span class="swatch-name">ink-2</span><span class="swatch-val">#44403c</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#78716c"></div><span class="swatch-name">ink-3</span><span class="swatch-val">#78716c</span></div>
+  </div>
+
+  <div class="sg-label">Semantic — alerts &amp; states</div>
+  <div class="swatch-row">
+    <div class="swatch"><div class="swatch-chip" style="background:#dc2626"></div><span class="swatch-name">hot / error</span><span class="swatch-val">#dc2626</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#fef2f2"></div><span class="swatch-name">hot-bg</span><span class="swatch-val">#fef2f2</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#16a34a"></div><span class="swatch-name">correct</span><span class="swatch-val">#16a34a</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#f0fdf4"></div><span class="swatch-name">correct-bg</span><span class="swatch-val">#f0fdf4</span></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#166534;border-color:rgba(0,0,0,.15)"></div><span class="swatch-name">formula ink</span><span class="swatch-val">#166534</span></div>
+  </div>
+
+  <div class="sg-label">Subject Accent Colours — override <code>--subject-*</code> per page</div>
+  <div class="accent-grid">
+    <div class="accent-card" style="background:#ecfeff;border-color:#67e8f9">
+      <div class="accent-name" style="color:#0891b2">Physical Chemistry</div>
+      <div class="accent-vals">color: #0891b2<br>bg: #ecfeff<br>border: #67e8f9</div>
+    </div>
+    <div class="accent-card" style="background:#f0fdf4;border-color:#86efac">
+      <div class="accent-name" style="color:#16a34a">Organic Chemistry</div>
+      <div class="accent-vals">color: #16a34a<br>bg: #f0fdf4<br>border: #86efac</div>
+    </div>
+    <div class="accent-card" style="background:#fffbeb;border-color:#fde68a">
+      <div class="accent-name" style="color:#b45309">Inorganic Chemistry</div>
+      <div class="accent-vals">color: #b45309<br>bg: #fffbeb<br>border: #fde68a</div>
+    </div>
+    <div class="accent-card" style="background:#eef2ff;border-color:#a5b4fc">
+      <div class="accent-name" style="color:#4338ca">Physics</div>
+      <div class="accent-vals">color: #4338ca<br>bg: #eef2ff<br>border: #a5b4fc</div>
+    </div>
+  </div>
+
+  <div class="sg-label">Feature Accent Colours — hub page cards</div>
+  <div class="accent-grid">
+    <div class="accent-card" style="background:#fef9ee;border-color:#f0d68a"><div class="accent-name" style="color:#b8860b">Formulas</div><div class="accent-vals">#b8860b / #fef9ee</div></div>
+    <div class="accent-card" style="background:#f0fdf4;border-color:#86efac"><div class="accent-name" style="color:#059669">Assertion–Reason</div><div class="accent-vals">#059669 / #f0fdf4</div></div>
+    <div class="accent-card" style="background:#eff6ff;border-color:#93c5fd"><div class="accent-name" style="color:#2563eb">Strategy</div><div class="accent-vals">#2563eb / #eff6ff</div></div>
+    <div class="accent-card" style="background:#f5f3ff;border-color:#c4b5fd"><div class="accent-name" style="color:#7c3aed">Diagrams</div><div class="accent-vals">#7c3aed / #f5f3ff</div></div>
+    <div class="accent-card" style="background:#fef2f2;border-color:#fca5a5"><div class="accent-name" style="color:#dc2626">Derivations</div><div class="accent-vals">#dc2626 / #fef2f2</div></div>
+    <div class="accent-card" style="background:#fff7ed;border-color:#fdba74"><div class="accent-name" style="color:#ea580c">Numericals</div><div class="accent-vals">#ea580c / #fff7ed</div></div>
+    <div class="accent-card" style="background:#ecfeff;border-color:#67e8f9"><div class="accent-name" style="color:#0891b2">Mock Tests</div><div class="accent-vals">#0891b2 / #ecfeff</div></div>
+    <div class="accent-card" style="background:#fdf2f8;border-color:#f9a8d4"><div class="accent-name" style="color:#be185d">Case Study</div><div class="accent-vals">#be185d / #fdf2f8</div></div>
+  </div>
+</div>
+
+<!-- ── 2. Typography ──────────────────────────────────────────────────── -->
+<div class="sg-section" id="typography">
+  <div class="sg-label">02</div>
+  <div class="sg-title">Typography</div>
+  <div class="sg-desc">Two families: <strong>Newsreader</strong> (serif) for all headings and display text; <strong>Lato</strong> (sans-serif) for body, UI, and buttons. Monospace (system) for equations.</div>
+
+  <div class="type-row">
+    <div class="type-meta">Newsreader · Display heading · 2.2rem · 700</div>
+    <div class="type-sample" style="font-family:'Newsreader',serif;font-size:2.2rem;font-weight:700;line-height:1.15">Physical Chemistry Formula Reference</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Newsreader · Page title · 1.6rem · 700</div>
+    <div class="type-sample" style="font-family:'Newsreader',serif;font-size:1.6rem;font-weight:700">d &amp; f Block Elements</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Newsreader · Section heading · 1.1rem · 600</div>
+    <div class="type-sample" style="font-family:'Newsreader',serif;font-size:1.1rem;font-weight:600">Crystal Field Theory</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Newsreader · Italic · 1rem · 400 — sub-headings &amp; callouts</div>
+    <div class="type-sample" style="font-family:'Newsreader',serif;font-size:1rem;font-style:italic">Lanthanoid contraction affects 5d elements</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Lato · Body · .82rem · 400 — paragraph text</div>
+    <div class="type-sample" style="font-size:.82rem;color:var(--ink-2);line-height:1.7">The Nernst equation relates the reduction potential of an electrochemical reaction to the standard electrode potential, temperature, and activities of the chemical species undergoing reduction and oxidation.</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Lato · Label · .68rem · 700 · uppercase — card labels, badges</div>
+    <div class="type-sample" style="font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)">Chemical Kinetics · 7 Marks · Section A</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Monospace · Equation block — .fc-eq</div>
+    <div style="font-family:monospace;font-size:.85rem;color:#166534;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:.4rem .8rem;display:inline-block">E_cell = E°_cell − (RT/nF) ln Q</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Newsreader · Score display · 1.2rem · 700 — large numerals</div>
+    <div class="type-sample" style="font-family:'Newsreader',serif;font-size:1.2rem;font-weight:700">12 / 15</div>
+  </div>
+</div>
+
+<!-- ── 3. Spacing & Radius ────────────────────────────────────────────── -->
+<div class="sg-section" id="spacing">
+  <div class="sg-label">03</div>
+  <div class="sg-title">Spacing &amp; Radius</div>
+  <div class="sg-desc">Spacing uses a 4px base unit. Border-radius follows semantic roles — UI chips use pill (999px), cards use 10–16px, inner elements use 4–8px.</div>
+
+  <div class="sg-label">Spacing scale</div>
+  <div class="space-row">
+    <div class="space-item"><div class="space-bar" style="height:4px"></div><span class="space-lbl">.25rem<br>4px</span></div>
+    <div class="space-item"><div class="space-bar" style="height:8px"></div><span class="space-lbl">.5rem<br>8px</span></div>
+    <div class="space-item"><div class="space-bar" style="height:12px"></div><span class="space-lbl">.75rem<br>12px</span></div>
+    <div class="space-item"><div class="space-bar" style="height:16px"></div><span class="space-lbl">1rem<br>16px</span></div>
+    <div class="space-item"><div class="space-bar" style="height:20px"></div><span class="space-lbl">1.25rem<br>20px</span></div>
+    <div class="space-item"><div class="space-bar" style="height:24px"></div><span class="space-lbl">1.5rem<br>24px</span></div>
+    <div class="space-item"><div class="space-bar" style="height:32px"></div><span class="space-lbl">2rem<br>32px</span></div>
+    <div class="space-item"><div class="space-bar" style="height:40px"></div><span class="space-lbl">2.5rem<br>40px</span></div>
+  </div>
+
+  <div class="sg-label">Border radius</div>
+  <div class="radius-row">
+    <div class="radius-item"><div class="radius-box" style="border-radius:4px"></div><span class="radius-lbl">4px<br>chips, tags</span></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:6px"></div><span class="radius-lbl">6px<br>buttons</span></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:8px"></div><span class="radius-lbl">8px<br>opts, inner</span></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:10px"></div><span class="radius-lbl">10px<br>formula cards</span></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:12px"></div><span class="radius-lbl">12px<br>MCQ cards</span></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:14px"></div><span class="radius-lbl">14px<br>ch-banner</span></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:16px"></div><span class="radius-lbl">16px<br>hub cards</span></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:999px"></div><span class="radius-lbl">999px<br>badges, pills</span></div>
+  </div>
+</div>
+
+<!-- ── 4. Tabs ────────────────────────────────────────────────────────── -->
+<div class="sg-section" id="tabs">
+  <div class="sg-label">04</div>
+  <div class="sg-title">Navigation Tabs</div>
+  <div class="sg-desc">Two tab styles: <strong>pill tabs</strong> for chapter/section switching (bordered, filled on active); <strong>underline tabs</strong> for MCQ chapter navigation (borderless, underline on active).</div>
+
+  <div class="preview-box">
+    <div class="preview-label">Pill tabs — .tab — used in chapter-nav and section-nav</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="tab active">Solutions</button>
+      <button class="tab">Electrochemistry</button>
+      <button class="tab">Chemical Kinetics</button>
+      <button class="tab">Hover me</button>
+    </div>
+    <div class="sg-spec">css/base.css → .tab · active state: background:var(--sand-900) color:#fff</div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-label">Underline tabs — .ch-btn — used in MCQ chapter nav</div>
+    <div class="ch-nav" style="position:relative;backdrop-filter:none;background:var(--sand-100)">
+      <div class="ch-nav-inner" style="max-width:100%;padding:0">
+        <button class="ch-btn active">Physical Chem</button>
+        <button class="ch-btn">Organic Chem</button>
+        <button class="ch-btn">Inorganic Chem</button>
+      </div>
+    </div>
+    <div class="sg-spec">css/mcq.css → .ch-btn · active state: border-bottom:2.5px solid var(--sand-900)</div>
+  </div>
+</div>
+
+<!-- ── 5. MCQ Components ───────────────────────────────────────────────── -->
+<div class="sg-section" id="mcq">
+  <div class="sg-label">05</div>
+  <div class="sg-title">MCQ Components</div>
+  <div class="sg-desc">Used on all <code>mcq.html</code> and <code>practice.html</code> pages. Option states are set via JS by adding <code>.correct</code> or <code>.wrong</code> class.</div>
+
+  <div class="two-col">
+    <div>
+      <div class="preview-label">Score bar</div>
+      <div class="score-bar">
+        <span class="score-label">Score</span>
+        <span class="score-val">8 / 12</span>
+        <div class="score-progress"><div class="score-fill" style="width:66%;background:#16a34a"></div></div>
+        <button class="reset-btn">Reset</button>
+      </div>
+      <div class="sg-spec">css/mcq.css → .score-bar</div>
+    </div>
+    <div>
+      <div class="preview-label">Score bar — needs work (&lt;70%)</div>
+      <div class="score-bar">
+        <span class="score-label">Score</span>
+        <span class="score-val">3 / 12</span>
+        <div class="score-progress"><div class="score-fill" style="width:25%;background:#ea580c"></div></div>
+        <button class="reset-btn">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-label">MCQ card — all option states</div>
+    <div class="mcq-card">
+      <div class="mcq-num">Q 07</div>
+      <div class="mcq-q">Which of the following reactions is an example of a pseudo first-order reaction?</div>
+      <div class="mcq-opts opt-demo">
+        <button class="opt correct" disabled><span class="opt-letter">A</span> Hydrolysis of ethyl acetate in excess water</button>
+        <button class="opt wrong" disabled><span class="opt-letter">B</span> Decomposition of N₂O₅</button>
+        <button class="opt" disabled><span class="opt-letter">C</span> Reaction between H₂ and I₂</button>
+        <button class="opt" disabled><span class="opt-letter">D</span> Formation of HBr from H₂ and Br₂</button>
+      </div>
+      <div class="mcq-exp" style="display:block">
+        <strong>Correct: A.</strong> In the hydrolysis of CH₃COOC₂H₅ + H₂O, water is present in large excess so its concentration remains essentially constant, making the reaction appear first-order with respect to ester only.
+      </div>
+    </div>
+    <div class="sg-spec">css/mcq.css → .mcq-card · .opt · .opt.correct · .opt.wrong · .mcq-exp</div>
+  </div>
+</div>
+
+<!-- ── 6. Formula Components ──────────────────────────────────────────── -->
+<div class="sg-section" id="formulas">
+  <div class="sg-label">06</div>
+  <div class="sg-title">Formula Components</div>
+  <div class="sg-desc">Used on all <code>formulas.html</code> pages. The left border accent colour is set via the chapter's colour variable. Quick-ref box uses subject colour vars.</div>
+
+  <div class="preview-box">
+    <div class="preview-label">Quick-reference box — .quick-ref</div>
+    <div class="quick-ref">
+      <h3>⚡ Critical Facts — Memorise These First</h3>
+      <div class="qr-grid">
+        <div class="qr-item"><span class="qr-label">Nernst Equation</span><span class="qr-val">E = E° − (RT/nF) ln Q</span></div>
+        <div class="qr-item"><span class="qr-label">Van't Hoff factor</span><span class="qr-val">i = 1 + α(n−1)</span></div>
+        <div class="qr-item"><span class="qr-label">Arrhenius</span><span class="qr-val">k = A·e^(−Ea/RT)</span></div>
+        <div class="qr-item"><span class="qr-label">Half-life (1st order)</span><span class="qr-val">t½ = 0.693 / k</span></div>
+      </div>
+    </div>
+    <div class="sg-spec">css/formulas.css → .quick-ref · .qr-grid · .qr-val — colours from --subject-*</div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-label">Formula card grid — .formula-grid · .formula-card</div>
+    <div class="formula-grid">
+      <div class="formula-card" style="border-left-color:#0891b2">
+        <div class="fc-name">Nernst Equation</div>
+        <code class="fc-eq">E_cell = E°_cell − (0.0592/n) log Q  [at 298 K]</code>
+        <div class="fc-note">n = moles of electrons transferred. Q = reaction quotient. <strong>At equilibrium:</strong> E_cell = 0, so log K = nE°/0.0592.</div>
+        <span class="unit-tag">E: Volts</span>
+      </div>
+      <div class="formula-card" style="border-left-color:#16a34a">
+        <div class="fc-name">Arrhenius Equation</div>
+        <code class="fc-eq">k = A · e^(−Ea/RT)</code>
+        <code class="fc-eq">log(k₂/k₁) = Ea/2.303R · (1/T₁ − 1/T₂)</code>
+        <div class="fc-note"><strong>Ea</strong> = activation energy (J/mol). R = 8.314 J·mol⁻¹·K⁻¹. A = frequency factor.</div>
+      </div>
+    </div>
+    <div class="sg-spec">css/formulas.css → .formula-card · .fc-eq · .fc-note · .unit-tag · border-left sets chapter colour</div>
+  </div>
+</div>
+
+<!-- ── 7. Chapter Summary Components ─────────────────────────────────── -->
+<div class="sg-section" id="chapter">
+  <div class="sg-label">07</div>
+  <div class="sg-title">Chapter Summary Components</div>
+  <div class="sg-desc">Used on <code>chapters.html</code> pages. The banner background and accent colour use inline CSS vars per chapter.</div>
+
+  <div class="preview-box">
+    <div class="preview-label">Chapter banner — .ch-banner</div>
+    <div class="ch-banner" style="background:#e0f2fe;color:#0c4a6e">
+      <div class="ch-banner-left">
+        <div class="ch-num">Chapter 01</div>
+        <div class="ch-title">Solutions</div>
+        <div class="ch-sub">Colligative properties, Raoult's law, osmosis, van't Hoff factor</div>
+      </div>
+      <div class="ch-marks-badge">7<span>marks</span></div>
+    </div>
+    <div class="sg-spec">css/chapter.css → .ch-banner · colours set inline per chapter</div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-label">Two-column block grid — .block-grid · .content-block</div>
+    <div class="block-grid">
+      <div class="content-block">
+        <div class="block-head" style="background:#e0f2fe;color:#0c4a6e">📐 Key Formulae</div>
+        <div class="block-body">
+          <ul class="formula-list">
+            <li><span class="fl-name">Raoult's Law</span><code class="fl-eq">p_A = x_A · p°_A</code></li>
+            <li><span class="fl-name">Elevation of BP</span><code class="fl-eq">ΔT_b = K_b · m</code></li>
+            <li><span class="fl-name">Osmotic Pressure</span><code class="fl-eq">π = CRT = iCRT</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-block">
+        <div class="block-head" style="background:#dcfce7;color:#14532d">💡 Exam Tips</div>
+        <div class="block-body">
+          <ul class="tip-list">
+            <li><span class="tip-icon">→</span><div class="tip-item">Always check whether the solute is electrolyte or non-electrolyte before applying colligative formulas.</div></li>
+            <li><span class="tip-icon">→</span><div class="tip-item"><strong>Van't Hoff factor i &gt; 1</strong> for electrolytes, <strong>i &lt; 1</strong> for associated solutes.</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sg-spec">css/chapter.css → .block-grid · .content-block · .block-head · .formula-list · .tip-list</div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-label">Summary table — .sum-table</div>
+    <table class="sum-table">
+      <thead><tr><th style="background:#0891b2">Battery</th><th style="background:#0891b2">Anode</th><th style="background:#0891b2">Cathode</th><th style="background:#0891b2">EMF</th></tr></thead>
+      <tbody>
+        <tr><td>Dry cell</td><td>Zn</td><td>MnO₂</td><td>1.5 V</td></tr>
+        <tr><td>Lead storage</td><td>Pb</td><td>PbO₂</td><td>2 V/cell</td></tr>
+        <tr><td>H₂–O₂ Fuel cell</td><td>H₂</td><td>O₂</td><td>~1.23 V</td></tr>
+      </tbody>
+    </table>
+    <div class="sg-spec">css/chapter.css → .sum-table · th colour set inline per chapter</div>
+  </div>
+</div>
+
+<!-- ── 8. Callout Boxes ────────────────────────────────────────────────── -->
+<div class="sg-section" id="callouts">
+  <div class="sg-label">08</div>
+  <div class="sg-title">Callout Boxes</div>
+  <div class="sg-desc">Four semantic callout types used inside chapter pages. Each has a fixed colour — not subject-themed.</div>
+
+  <div class="trick-box">
+    <h4>⚡ Exam Trick</h4>
+    <p>For the Nernst equation at 298 K, substitute RT/F = 0.0257 V and multiply by 2.303 to get the <span class="eq">0.0592</span> factor. Never derive from scratch — just recall the substituted form.</p>
+  </div>
+
+  <div class="mistake-box">
+    <h4>✗ Common Mistake</h4>
+    <ul>
+      <li>Confusing <strong>molality</strong> (mol/kg solvent) with <strong>molarity</strong> (mol/L solution) in colligative property formulas — they are not interchangeable.</li>
+      <li>Forgetting to multiply by van't Hoff factor <strong>i</strong> for electrolyte solutions.</li>
+    </ul>
+  </div>
+
+  <div class="mustread">
+    <h4>🔴 Must Read — Definite 5-Mark Topics</h4>
+    <ol>
+      <li>Derive Nernst equation and calculate EMF of a Daniel cell at non-standard conditions.</li>
+      <li>Explain Kohlrausch's law and calculate Λ°m for a weak electrolyte.</li>
+      <li>Derive integrated rate law for first-order reaction; show t½ is concentration-independent.</li>
+    </ol>
+  </div>
+
+  <div style="margin-top:1rem" class="sg-spec">css/chapter.css → .trick-box (amber) · .mistake-box (pink) · .mustread (red)</div>
+</div>
+
+<!-- ── 9. Concepts Page Components ───────────────────────────────────── -->
+<div class="sg-section" id="concepts">
+  <div class="sg-label">09</div>
+  <div class="sg-title">Concepts Page Components</div>
+  <div class="sg-desc">Used on <code>concepts.html</code> and <code>maps.html</code> pages. Frequency badges use a red→green scale by exam recurrence.</div>
+
+  <div class="two-col">
+    <div>
+      <div class="preview-label">Topic card — .topic-card</div>
+      <div class="topic-card" style="border-top-color:#0891b2">
+        <div class="tc-header">
+          <span class="tc-title">Nernst Equation</span>
+          <span class="freq-badge freq-5">Every year</span>
+        </div>
+        <ul class="concept-list">
+          <li><span class="bullet" style="background:#0891b2"></span><div>Derive from Gibbs free energy<div class="years-tag">2023, 2022, 2021, 2019</div></div></li>
+          <li><span class="bullet" style="background:#0891b2"></span><div>Calculate cell EMF using Nernst</div></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="preview-label">Frequency badges — .freq-badge</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.25rem">
+        <span><span class="freq-badge freq-5">Every year</span> &nbsp;freq-5</span>
+        <span><span class="freq-badge freq-4">4 of 5 years</span> &nbsp;freq-4</span>
+        <span><span class="freq-badge freq-3">3 of 5 years</span> &nbsp;freq-3</span>
+        <span><span class="freq-badge freq-2">Occasional</span> &nbsp;freq-2</span>
+        <span><span class="freq-badge freq-1">Rare</span> &nbsp;freq-1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box" style="margin-top:1rem">
+    <div class="preview-label">Concept block — .concept-block (full exam Q + model answer pattern)</div>
+    <div class="concept-block">
+      <div class="cb-header">
+        <span class="cb-title">Arrhenius Equation &amp; Activation Energy</span>
+        <span class="cb-freq">🔥 High Priority</span>
+        <span class="cb-years">Asked 2023, 2022, 2021</span>
+      </div>
+      <div class="pattern-box">
+        <div class="pattern-title">Exact CBSE Question Pattern</div>
+        <div class="pattern-text">"The rate constant of a reaction at 500 K is 1.7 × 10⁻² and at 700 K is 1.7 × 10⁻³. Calculate the activation energy."</div>
+      </div>
+      <div class="variant-box" style="margin-top:.5rem">
+        <div class="variant-title">Common Variant</div>
+        <div style="font-size:.78rem;color:#78350f">Draw and interpret an Arrhenius plot of ln k vs 1/T — slope = −Ea/R.</div>
+      </div>
+    </div>
+    <div class="sg-spec">css/concepts.css → .concept-block · .pattern-box · .variant-box · border-left from --subject-color</div>
+  </div>
+</div>
+
+<!-- ── 10. Hero & Back-link ───────────────────────────────────────────── -->
+<div class="sg-section" id="hero">
+  <div class="sg-label">10</div>
+  <div class="sg-title">Hero &amp; Back-link</div>
+  <div class="sg-desc">Every content page opens with a hero section. The badge colour inherits from <code>--subject-*</code> vars set inline per page.</div>
+
+  <div class="preview-box">
+    <div class="preview-label">Back-link</div>
+    <a class="back-link" href="#">← Back to Hub</a>
+    <div class="sg-spec">css/base.css → .back-link</div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-label">Hero — physical chemistry (teal accent)</div>
+    <div class="hero" style="border:1px solid var(--sand-200);border-radius:12px">
+      <div class="badge">Physical Chemistry XII · MCQ Bank</div>
+      <h1>Physical Chemistry MCQs</h1>
+      <p class="sub">75 NCERT-aligned questions — Solutions, Electrochemistry &amp; Kinetics with instant answer reveal.</p>
+      <div class="stat-row">
+        <div class="stat-item"><div class="num">75</div><div class="lbl">Questions</div></div>
+        <div class="stat-item"><div class="num">3</div><div class="lbl">Chapters</div></div>
+        <div class="stat-item"><div class="num">23</div><div class="lbl">Marks</div></div>
+      </div>
+    </div>
+    <div class="sg-spec">css/base.css → .hero · .hero .badge — uses --subject-bg, --subject-border, --subject-color</div>
+  </div>
+</div>
+
+<!-- ── CSS Files Reference ────────────────────────────────────────────── -->
+<div class="sg-section">
+  <div class="sg-label">Reference</div>
+  <div class="sg-title">CSS File Map</div>
+  <div class="sg-desc">Which CSS file to link for each page type.</div>
+  <table class="sum-table">
+    <thead><tr><th style="background:var(--sand-900)">Page type</th><th style="background:var(--sand-900)">CSS files</th><th style="background:var(--sand-900)">Inline style</th></tr></thead>
+    <tbody>
+      <tr><td>mcq.html, practice.html</td><td><span class="mono">base.css, mcq.css</span></td><td>subject color vars</td></tr>
+      <tr><td>chapters.html</td><td><span class="mono">base.css, chapter.css</span></td><td>subject vars + chapter --c1/c2/c3</td></tr>
+      <tr><td>formulas.html</td><td><span class="mono">base.css, formulas.css</span></td><td>subject color vars</td></tr>
+      <tr><td>concepts.html, maps.html</td><td><span class="mono">base.css, concepts.css</span></td><td>subject color vars</td></tr>
+      <tr><td>named-reactions.html</td><td><span class="mono">base.css, concepts.css</span></td><td>subject color vars</td></tr>
+      <tr><td>derivations, diagrams, strategy…</td><td><span class="mono">base.css</span></td><td>—</td></tr>
+      <tr><td>index.html</td><td>self-contained (unique card grid)</td><td>—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- /sg-container -->
+</body>
+</html>

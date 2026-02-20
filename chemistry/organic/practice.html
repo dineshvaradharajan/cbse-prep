@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/mcq.css">
+<style>:root{
+  --subject-color:#16a34a;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#166534;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Chemistry Practice — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">&#8592; Back to Home</a>
+<div class="hero">
+  <div class="badge">Organic Chemistry XII &middot; Chapter Practice</div>
+  <h1>Chapter Practice</h1>
+  <p class="sub">MCQ practice for Haloalkanes · Alcohols &amp; Phenols · Carbonyl · Amines · Biomolecules — click an option to check your answer.</p>
+</div>
+
+<nav class="ch-nav">
+  <div class="ch-nav-inner">
+    <button class="ch-btn active" onclick="showCh('halo',this)">Ch 6 — Haloalkanes</button>
+    <button class="ch-btn" onclick="showCh('alc',this)">Ch 7 — Alcohols &amp; Phenols</button>
+    <button class="ch-btn" onclick="showCh('carb',this)">Ch 8 — Carbonyl</button>
+    <button class="ch-btn" onclick="showCh('amine',this)">Ch 9 — Amines</button>
+    <button class="ch-btn" onclick="showCh('bio',this)">Ch 10 — Biomolecules</button>
+  </div>
+</nav>
+
+<!-- CH6: HALOALKANES -->
+<div id="halo" class="ch-panel active">
+  <div class="ch-heading">🧪 Haloalkanes &amp; Haloarenes <span class="ch-mark-badge" style="background:#be185d">6 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="halo-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="halo-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('halo')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="halo">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">SN2 reaction proceeds with:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Retention of configuration</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Racemisation</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Inversion of configuration (Walden inversion)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>No change in stereochemistry</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Walden inversion.</strong> In SN2, the nucleophile attacks from the back (anti to the leaving group) in a single concerted step. This causes the spatial arrangement to invert — like an umbrella flipping. R configuration gives S, and vice versa. Complete inversion (100%) distinguishes SN2 from SN1 (racemisation).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="halo">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">Which alkyl halide undergoes SN1 most readily?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>CH₃Br</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>C₂H₅Br</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>(CH₃)₂CHBr</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>(CH₃)₃CBr</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — (CH₃)₃CBr (tert-butyl bromide).</strong> SN1 proceeds via a carbocation intermediate. Tertiary carbocations are most stable (hyperconjugation + inductive effect of 3 alkyl groups). SN1 reactivity: 3° > 2° > 1° > CH₃. CH₃Br is most reactive for SN2.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="halo">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">Reactivity order for SN2 reaction is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>3° > 2° > 1° > CH₃X</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>CH₃X > 1° > 2° > 3°</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>1° > 2° > 3° > CH₃X</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>2° > 1° > 3° > CH₃X</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — CH₃X > 1° > 2° > 3°.</strong> SN2 requires backside attack. Steric hindrance increases from CH₃ to 3°. CH₃X has no substituents on carbon → least hindered → fastest SN2. 3° has three bulky groups blocking nucleophile approach → slowest SN2.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="halo">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Which of the following is least reactive towards nucleophilic substitution?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>CH₃Cl</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>CH₃CH₂Br</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>C₆H₅Cl (chlorobenzene)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>(CH₃)₃CCl</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Chlorobenzene.</strong> The C–Cl bond in aryl halides has partial double bond character due to resonance (lone pair of Cl delocalised into the ring). This makes the C–Cl bond stronger and shorter → much harder to break. Also, carbon is sp² hybridised (less available for SN2 backside attack).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="halo">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">In Finkelstein reaction, alkyl iodide is prepared from:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Alkyl chloride/bromide + NaI in acetone</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Alkyl chloride + HI</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Alkene + HI</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Alcohol + KI</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A.</strong> Finkelstein reaction: R–Cl + NaI → R–I + NaCl (in dry acetone). NaCl precipitates out (insoluble in acetone), driving the equilibrium forward. Similarly R–Br + NaI → R–I + NaBr. This is an SN2 reaction.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="halo">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Which of the following solvents favours SN1 over SN2?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Acetone (polar aprotic)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Water (polar protic)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>DMSO (polar aprotic)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Diethyl ether (non-polar)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Water (polar protic).</strong> SN1 produces a carbocation intermediate that needs solvation (stabilisation) by polar protic solvents (water, alcohols) which can form H-bonds. Polar aprotic solvents (DMSO, acetone, DMF) favour SN2 by not solvating (and thereby not slowing down) the nucleophile.</div>
+  </div>
+</div>
+
+<!-- CH7: ALCOHOLS & PHENOLS -->
+<div id="alc" class="ch-panel">
+  <div class="ch-heading">🍺 Alcohols, Phenols &amp; Ethers <span class="ch-mark-badge" style="background:#2563eb">6 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="alc-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="alc-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('alc')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="alc">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">Phenol is more acidic than ethanol because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The O–H bond in phenol is weaker than in ethanol</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>The phenoxide ion is stabilised by resonance with the benzene ring</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Phenol has a higher molecular weight</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Phenol reacts with FeCl₃ to give violet colour</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Phenoxide ion (C₆H₅O⁻) is stabilised by delocalisation of the negative charge over the benzene ring (5 resonance structures). Ethoxide ion (C₂H₅O⁻) has no such resonance stabilisation. Greater stabilisation of conjugate base → stronger acid. pKa(phenol) ≈ 10, pKa(ethanol) ≈ 16.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="alc">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">Lucas reagent (HCl + anhydrous ZnCl₂) is used to distinguish between:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Primary, secondary and tertiary alcohols</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Aldehydes and ketones</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Phenol and alcohol</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Saturated and unsaturated alcohols</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A.</strong> Lucas test: 3° alcohol → immediate turbidity (SN1, stable carbocation); 2° alcohol → turbidity after ~5 minutes; 1° alcohol → no turbidity at room temperature (SN1 too slow, SN2 hindered by ZnCl₂). The turbidity is due to insoluble alkyl chloride formed.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="alc">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">Phenol reacts with bromine water to give:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Monobromophenol</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>2,4,6-tribromophenol (white precipitate)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>4-bromophenol only</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>2-bromophenol only</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — 2,4,6-tribromophenol.</strong> The –OH group is strongly o,p-directing (activating). All three ortho and para positions are substituted in presence of excess bromine water. A white precipitate forms immediately — this is used as a test for phenol. With CS₂ (non-polar solvent), only 4-bromophenol forms.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="alc">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Dehydration of alcohol to form ether occurs at approximately:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>170°C with conc. H₂SO₄</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>140°C with conc. H₂SO₄</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>100°C with conc. H₂SO₄</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>200°C with conc. H₂SO₄</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — 140°C.</strong> At 140°C with conc. H₂SO₄: 2CH₃CH₂OH → CH₃CH₂–O–CH₂CH₃ + H₂O (ether). At 170°C: CH₃CH₂OH → CH₂=CH₂ + H₂O (alkene, elimination dominates). Temperature controls which product forms.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="alc">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">Kolbe's reaction (sodium phenoxide + CO₂, pressure, 125°C) gives:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Salicylic acid (2-hydroxybenzoic acid)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Benzoic acid</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Phenyl carbonate</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>4-hydroxybenzoic acid</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Salicylic acid.</strong> Kolbe's reaction: C₆H₅ONa + CO₂ → C₆H₄(OH)(COONa) → (after acidification) C₆H₄(OH)(COOH) = salicylic acid. CO₂ undergoes electrophilic substitution at the ortho position. Salicylic acid is used to make aspirin (acetylsalicylic acid).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="alc">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Which of the following gives a positive iodoform test?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Methanol (CH₃OH)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>1-propanol</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Ethanol (CH₃CH₂OH)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>1-butanol</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Ethanol.</strong> Iodoform test is positive for: (i) Alcohols with CH₃CH(OH)– group (secondary alcohols with CH₃ group), (ii) CH₃CHO (ethanal), (iii) Methyl ketones (CH₃COR). Ethanol (CH₃CH₂OH) is oxidised to CH₃CHO which undergoes iodoform reaction. CH₃OH, 1-propanol, 1-butanol → negative.</div>
+  </div>
+</div>
+
+<!-- CH8: CARBONYL -->
+<div id="carb" class="ch-panel">
+  <div class="ch-heading">🧬 Aldehydes, Ketones &amp; Acids <span class="ch-mark-badge" style="background:#dc2626">8 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="carb-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="carb-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('carb')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="carb">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">Aldehydes are distinguished from ketones by Tollens' test. The product of a positive Tollens' test is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Blue precipitate of Cu₂O</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Red precipitate of Cu₂O</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Blue solution of CuSO₄</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Silver mirror (Ag metal deposited)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — Silver mirror.</strong> Tollens' reagent = [Ag(NH₃)₂]⁺ (ammoniacal silver nitrate). Aldehyde reduces Ag⁺ to Ag (silver mirror). Ketones do NOT give this test. Fehling's test gives a brick-red precipitate of Cu₂O with aldehydes (not with aromatic aldehydes like benzaldehyde).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="carb">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">Which of the following can undergo aldol condensation?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>HCHO (formaldehyde)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>C₆H₅CHO (benzaldehyde)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>CH₃CHO (ethanal)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>CCl₃CHO (chloral)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — CH₃CHO.</strong> Aldol condensation requires an α-hydrogen (H on the carbon adjacent to the C=O). HCHO has no α-carbon. C₆H₅CHO has no α-H (the adjacent carbon is part of the benzene ring, no H available). CCl₃CHO has no α-H (all replaced by Cl). CH₃CHO has 3 α-H atoms.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="carb">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">Cannizzaro reaction is given by aldehydes that:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Have no α-hydrogen atom</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Have at least one α-hydrogen atom</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Are aromatic only</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>React with dilute acid</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A.</strong> Cannizzaro reaction requires aldehydes with NO α-H (cannot undergo aldol). Examples: HCHO, C₆H₅CHO, (CH₃)₃CCHO. In conc. NaOH, disproportionation occurs: one molecule is oxidised (to carboxylate) and another is reduced (to alcohol). HCHO + HCHO → HCOO⁻ + CH₃OH.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="carb">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Reactivity towards nucleophilic addition follows the order:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Ketones > Aldehydes</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>HCHO > CH₃CHO > (CH₃)₂CO</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>(CH₃)₂CO > CH₃CHO > HCHO</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>CH₃CHO > HCHO > (CH₃)₂CO</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Nucleophilic addition reactivity depends on: (i) electrophilicity of carbonyl C — alkyl groups donate electrons, reducing electrophilicity; (ii) steric hindrance. HCHO (no alkyl groups) > CH₃CHO (1 alkyl group) > (CH₃)₂CO (2 alkyl groups). Aldehydes are more reactive than ketones.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="carb">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">Acid hydrolysis of the cyanohydrin of acetaldehyde (CH₃CHO) gives:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Lactic acid (2-hydroxypropanoic acid)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Acetic acid</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Pyruvic acid</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Glycolic acid</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Lactic acid.</strong> CH₃CHO + HCN → CH₃CH(OH)CN (cyanohydrin) → acid hydrolysis (H₃O⁺, heat) → CH₃CH(OH)COOH = lactic acid (2-hydroxypropanoic acid). This is an important method to increase the carbon chain length by one.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="carb">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Clemmensen reduction converts a carbonyl group to:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>–OH (alcohol)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>–CH₂– (methylene)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>–COOH (carboxylic acid)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>–CHO (aldehyde)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — –CH₂–.</strong> Clemmensen reduction: Zn(Hg)/conc. HCl + heat. C=O → –CH₂–. Used for acid-sensitive compounds. Wolff-Kishner reduction (NH₂NH₂, KOH, ethylene glycol): also C=O → –CH₂– but used in basic conditions. Both reduce the carbonyl completely to a methylene group.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="carb">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">Which acid is the strongest among the following?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>CH₃COOH</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>ClCH₂COOH</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Cl₂CHCOOH</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Cl₃CCOOH (trichloroacetic acid)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — CCl₃COOH.</strong> Electron-withdrawing groups (–I effect) on the α-carbon stabilise the carboxylate anion → increase acidity. More Cl atoms → stronger acid. pKa: CH₃COOH (4.76) > ClCH₂COOH (2.86) > Cl₂CHCOOH (1.48) > Cl₃CCOOH (0.65). Each Cl added increases acid strength.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="carb">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">2,4-DNP (2,4-dinitrophenylhydrazine) test is used to identify:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Carboxylic acids</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">C</span>Alcohols and phenols</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Aldehydes and ketones (carbonyl compounds)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Esters</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Aldehydes and ketones.</strong> 2,4-DNP reacts with both aldehydes and ketones to form orange or yellow 2,4-dinitrophenylhydrazone (a precipitate). This confirms the presence of a C=O group but does NOT distinguish aldehydes from ketones. Tollens' test distinguishes them further.</div>
+  </div>
+</div>
+
+<!-- CH9: AMINES -->
+<div id="amine" class="ch-panel">
+  <div class="ch-heading">💊 Amines <span class="ch-mark-badge" style="background:#9333ea">6 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="amine-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="amine-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('amine')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="amine">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">The correct order of basicity in aqueous solution is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>(CH₃)₃N > (CH₃)₂NH > CH₃NH₂ > NH₃</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>NH₃ > CH₃NH₂ > (CH₃)₂NH > (CH₃)₃N</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>CH₃NH₂ > (CH₃)₂NH > (CH₃)₃N > NH₃</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>(CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D.</strong> In gas phase: (CH₃)₃N > (CH₃)₂NH > CH₃NH₂ > NH₃ (purely inductive effect). In water, solvation of the conjugate acid matters. (CH₃)₃NH⁺ has bulky groups → poor solvation → less stable → 3° amine appears less basic than 2°. So aqueous order: (CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="amine">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">Why is aniline (C₆H₅NH₂) much less basic than methylamine (CH₃NH₂)?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The lone pair on N in aniline is delocalised into the benzene ring, making it less available</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Nitrogen in aniline is sp³ hybridised unlike methylamine</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Aniline has a higher molecular weight than methylamine</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The NH₂ group in aniline is ortho/para directing</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A.</strong> In aniline, the lone pair on N is in conjugation (resonance) with the π system of benzene ring → delocalised over the ring. This makes the lone pair less available to donate to H⁺. pKb(aniline) ≈ 9.4 vs pKb(methylamine) ≈ 3.4. Aniline is sp² hybridised (different from methylamine which is sp³).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="amine">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">Hoffmann bromamide degradation of CH₃CONH₂ (ethanamide) gives:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>CH₃NH₂ and CO₂</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>C₂H₅NH₂ (ethylamine)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>CH₃NH₂ (methylamine)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>CH₃NHOH (hydroxylamine derivative)</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Methylamine (CH₃NH₂).</strong> Hoffmann degradation: RCONH₂ → RNH₂ (one less carbon). CH₃CONH₂ (2 carbons, ethanamide) → CH₃NH₂ (1 carbon, methylamine). Reagents: Br₂ + NaOH. Key intermediate is isocyanate (CH₃–N=C=O) which hydrolyses to give the amine with loss of CO₂.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="amine">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Diazonium salt formation requires reaction of primary aromatic amine with:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Br₂/CCl₄</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>NaNO₂ + HCl, 0–5°C</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>NaOH + Br₂</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>HNO₃ alone</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — NaNO₂ + HCl at 0–5°C.</strong> Diazotisation: ArNH₂ + NaNO₂ + 2HCl → ArN₂⁺Cl⁻ + NaCl + 2H₂O. Temperature must be kept low (0–5°C) to prevent decomposition of the diazonium salt. Diazonium salts are versatile intermediates for making ArX (Sandmeyer), ArOH, ArCN, azo dyes, etc.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="amine">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">Which amine gives a yellow oily N-nitrosamine with NaNO₂/HCl?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Primary amine (RNH₂)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Secondary amine (R₂NH)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Tertiary amine (R₃N)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Quaternary ammonium salt</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Secondary amine.</strong> R₂NH + HNO₂ → R₂N–NO (N-nitrosamine, yellow oily liquid). Primary amines: react with HNO₂ to form unstable diazonium compounds (aliphatic) or stable diazonium salts (aromatic). Tertiary aliphatic amines: form ammonium salts. This is used to distinguish 1°, 2°, 3° amines.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="amine">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Gabriel synthesis is used to prepare:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Secondary amines</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Aromatic primary amines</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Aliphatic primary amines</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Tertiary amines</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Aliphatic primary amines.</strong> Gabriel synthesis: phthalimide + KOH → potassium phthalimide; then + RX → N-alkyl phthalimide; then hydrolysis → RNH₂ (1° amine) + phthalic acid. Cannot be used for aromatic primary amines (ArX does not react with phthalimide anion — poor SN2 reactant).</div>
+  </div>
+</div>
+
+<!-- CH10: BIOMOLECULES -->
+<div id="bio" class="ch-panel">
+  <div class="ch-heading">🌿 Biomolecules <span class="ch-mark-badge" style="background:#15803d">7 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="bio-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="bio-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('bio')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="bio">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">Sucrose is a non-reducing sugar because:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>It has no carbonyl group at all</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>It is a polysaccharide</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Both anomeric carbons (C-1 of glucose and C-2 of fructose) are involved in the glycosidic bond</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>It cannot dissolve in water</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C.</strong> In sucrose, the glycosidic linkage uses C-1 of α-glucose and C-2 of β-fructose (both anomeric positions). This means there is no free –CHO or potential –CHO in open chain form → cannot reduce Fehling's or Tollens' reagent → non-reducing sugar. Maltose and lactose are reducing (one free anomeric –OH).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="bio">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">The secondary structure of proteins is primarily stabilised by:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Disulphide bonds (–S–S–)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Hydrophobic interactions</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Hydrogen bonds between C=O and N–H of peptide bonds</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Ionic bonds</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Hydrogen bonds.</strong> In α-helix: H-bonds between C=O of one peptide bond and N–H of the peptide bond 4 residues away (within the same chain). In β-pleated sheet: H-bonds between parallel or antiparallel chains. Disulphide bonds stabilise tertiary structure. Hydrophobic interactions also stabilise 3° structure.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="bio">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">DNA differs from RNA in that DNA:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Contains deoxyribose instead of ribose sugar</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Contains thymine (T) instead of uracil (U)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Is double stranded (usually) while RNA is single stranded</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>All of the above</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D — All of the above.</strong> DNA vs RNA: (i) Sugar — deoxyribose vs ribose; (ii) Bases — Adenine, Thymine, Guanine, Cytosine vs A, Uracil, G, C; (iii) Strands — double vs single; (iv) Base pairing in DNA: A=T (2 H-bonds) and G≡C (3 H-bonds). Purines (A, G) pair with Pyrimidines (T/U, C).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="bio">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Starch and cellulose differ in:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>The type of monosaccharide unit</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>The type of glycosidic linkage (α vs β)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>The molecular formula of the monomer</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>The number of carbon atoms in each unit</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Both starch and cellulose are made of glucose units (C₆H₁₂O₆). Starch has α-1,4 glycosidic linkages (amylose) and α-1,6 branches (amylopectin) → coiled structure → energy storage → digestible. Cellulose has β-1,4 linkages → straight chains → structural rigidity → not digestible by humans.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="bio">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">Mutarotation is observed in:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Glucose in aqueous solution</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">C</span>Sucrose in aqueous solution</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Starch in aqueous solution</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Cellulose in aqueous solution</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — Glucose.</strong> Mutarotation: the change in optical rotation when α-D-glucose (+112°) or β-D-glucose (+18.7°) dissolves in water, until an equilibrium mixture (+52.7°) is reached. This occurs through the open-chain aldehyde form as an intermediate. Sucrose shows no mutarotation (no free anomeric OH).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="bio">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Denaturation of a protein involves:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Breaking of peptide bonds (primary structure destroyed)</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Disruption of H-bonds, disulphide bonds, and hydrophobic interactions (secondary/tertiary structure)</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Complete hydrolysis of all bonds</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Change in the amino acid sequence</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Denaturation disrupts secondary, tertiary and quaternary structure — but NOT the primary structure (peptide bonds remain intact). H-bonds, disulphide bonds (–S–S–), hydrophobic interactions, and ionic bonds are broken by heat, acids, bases, organic solvents. The protein loses its biological activity. Example: boiling egg white (albumin denaturation).</div>
+  </div>
+</div>
+
+</div><!-- /container --><script src="../../js/mcq.js"></script>
+</body>
+</html>

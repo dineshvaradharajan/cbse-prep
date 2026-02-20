@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<style>
+  /* ── Page wrapper ── */
+  .page-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.25rem 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 2.5rem 0 2rem;
+    border-bottom: 1px solid var(--sand-200);
+    margin-bottom: 2rem;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .hero p {
+    font-size: 0.88rem;
+    color: var(--ink-3);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    margin: 2rem 0 0.75rem;
+  }
+
+  /* ── Options strip ── */
+  .options-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .opt-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    border: 1.5px solid;
+  }
+  .opt-a { background: #eff6ff; border-color: #bfdbfe; }
+  .opt-b { background: #f5f3ff; border-color: #ddd6fe; }
+  .opt-c { background: #fff7ed; border-color: #fed7aa; }
+  .opt-d { background: #fef2f2; border-color: #fca5a5; }
+  .opt-letter {
+    font-family: 'Newsreader', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .opt-a .opt-letter { color: #2563eb; }
+  .opt-b .opt-letter { color: #7c3aed; }
+  .opt-c .opt-letter { color: #ea580c; }
+  .opt-d .opt-letter { color: #dc2626; }
+  .opt-desc {
+    font-size: 0.8rem;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .opt-desc strong { display: block; margin-bottom: 0.1rem; color: var(--ink); }
+
+  /* ── Case card ── */
+  .case-card {
+    background: #fff;
+    border: 1.5px solid var(--sand-200);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .case-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .case-a .case-header { background: #eff6ff; }
+  .case-b .case-header { background: #f5f3ff; }
+  .case-c .case-header { background: #fff7ed; }
+  .case-d .case-header { background: #fef2f2; }
+  .case-badge {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Newsreader', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .case-a .case-badge { background: #2563eb; }
+  .case-b .case-badge { background: #7c3aed; }
+  .case-c .case-badge { background: #ea580c; }
+  .case-d .case-badge { background: #dc2626; }
+  .case-header-text h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+  .case-subtitle {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    font-weight: 600;
+  }
+  .case-body { padding: 1.25rem; }
+
+  /* ── A/R blocks ── */
+  .ar-block {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.6rem;
+  }
+  .ar-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    margin-bottom: 0.25rem;
+  }
+  .ar-text {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  /* ── Steps ── */
+  .steps { display: flex; flex-direction: column; gap: 0; margin: 1rem 0; }
+  .step {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--sand-200);
+    font-size: 0.84rem;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--sand-200);
+    color: var(--ink-2);
+    font-weight: 700;
+    font-size: 0.72rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .step-content { flex: 1; }
+  .step-q { font-weight: 700; color: var(--ink-2); margin-bottom: 0.2rem; }
+  .step-a { color: var(--ink-3); line-height: 1.5; }
+  .yes { color: #15803d; font-weight: 700; }
+  .no  { color: #dc2626; font-weight: 700; }
+
+  /* ── Verdict ── */
+  .verdict {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    padding: 0.4rem 0.85rem;
+    margin: 0.75rem 0;
+  }
+  .verdict-check { color: #15803d; font-size: 1rem; }
+  .verdict-text { font-weight: 700; color: #15803d; font-size: 0.84rem; }
+
+  /* ── Tip ── */
+  .tip {
+    display: flex;
+    gap: 0.5rem;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.82rem;
+    color: #78350f;
+    line-height: 1.55;
+    margin-top: 0.5rem;
+  }
+  .tip-icon { flex-shrink: 0; }
+  .tip-text { flex: 1; }
+
+  /* ── Trap grid ── */
+  .traps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  .trap-card {
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    border: 1.5px solid;
+  }
+  .trap-a { background: #eff6ff; border-color: #bfdbfe; }
+  .trap-d { background: #fef2f2; border-color: #fca5a5; }
+  .trap-topic {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    margin-bottom: 0.5rem;
+  }
+  .trap-a-text, .trap-r-text {
+    font-size: 0.82rem;
+    color: var(--ink-2);
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+  }
+  .trap-reasoning {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin: 0.4rem 0 0.3rem;
+    font-style: italic;
+  }
+  .trap-result {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #15803d;
+    margin-top: 0.35rem;
+  }
+
+  /* ── Method card ── */
+  .method-card {
+    background: var(--sand-900);
+    color: #fff;
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+  }
+  .method-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .method-subtitle {
+    font-size: 0.82rem;
+    color: #d6d3d1;
+    margin-bottom: 1.25rem;
+  }
+  .method-steps { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+  .m-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+  }
+  .m-step-num {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+  .m-step-text { color: #e7e5e4; line-height: 1.5; }
+
+  /* ── Decision flow ── */
+  .decision-flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+  }
+  .decision-item {
+    border-radius: 8px;
+    padding: 0.7rem 0.5rem;
+    text-align: center;
+  }
+  .di-a { background: #eff6ff; }
+  .di-b { background: #f5f3ff; }
+  .di-c { background: #fff7ed; }
+  .di-d { background: #fef2f2; }
+  .decision-condition {
+    font-size: 0.7rem;
+    color: var(--ink-2);
+    line-height: 1.4;
+    margin-bottom: 0.35rem;
+  }
+  .decision-answer {
+    font-family: 'Newsreader', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .di-a .decision-answer { color: #2563eb; }
+  .di-b .decision-answer { color: #7c3aed; }
+  .di-c .decision-answer { color: #ea580c; }
+  .di-d .decision-answer { color: #dc2626; }
+
+  /* ── Pattern card ── */
+  .pattern-card {
+    background: #fff;
+    border: 1px solid var(--sand-200);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .pattern-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+  .pattern-subtitle {
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    margin-bottom: 0.85rem;
+  }
+  .pattern-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .pattern-tag {
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  @media (max-width: 640px) {
+    .options-strip { grid-template-columns: 1fr 1fr; }
+    .decision-flow { grid-template-columns: 1fr 1fr; }
+    .traps-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assertion–Reason Mastery — CBSE Physics XII</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero">
+    <div class="hero-badge">CBSE Physics XII</div>
+    <h1>Assertion–Reason<br>Mastery Guide</h1>
+    <p>A complete framework for solving every A–R question with confidence. Learn the 4 cases, avoid common traps, and master the 10-second method.</p>
+  </div>
+
+  <!-- ═══ THE 4 OPTIONS ═══ -->
+  <div class="section-label">The 4 Answer Types</div>
+  <div class="options-strip">
+    <div class="opt-card opt-a">
+      <div class="opt-letter">A</div>
+      <div class="opt-desc">
+        <strong>Both True + Correct Explanation</strong>
+        Reason directly explains the Assertion
+      </div>
+    </div>
+    <div class="opt-card opt-b">
+      <div class="opt-letter">B</div>
+      <div class="opt-desc">
+        <strong>Both True + Wrong Explanation</strong>
+        True statements but logically independent
+      </div>
+    </div>
+    <div class="opt-card opt-c">
+      <div class="opt-letter">C</div>
+      <div class="opt-desc">
+        <strong>A True, R False</strong>
+        Assertion is correct, Reason is factually wrong
+      </div>
+    </div>
+    <div class="opt-card opt-d">
+      <div class="opt-letter">D</div>
+      <div class="opt-desc">
+        <strong>A False, R True</strong>
+        Assertion is wrong, Reason is factually correct
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CASE 1 ═══ -->
+  <div class="section-label">Detailed Case Studies</div>
+
+  <div class="case-card case-a">
+    <div class="case-header">
+      <div class="case-badge">A</div>
+      <div class="case-header-text">
+        <h3>Both True &amp; Reason Correctly Explains</h3>
+        <div class="case-subtitle">Photoelectric Effect</div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="ar-block">
+        <div class="ar-label">Assertion (A)</div>
+        <div class="ar-text">Kinetic energy of photoelectrons depends on frequency of incident light.</div>
+      </div>
+      <div class="ar-block">
+        <div class="ar-label">Reason (R)</div>
+        <div class="ar-text">According to Einstein's equation, $KE = h\nu - W_0$</div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-q">Is Assertion true?</div>
+            <div class="step-a"><span class="yes">Yes.</span> KE depends on frequency, not intensity.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-q">Is Reason true?</div>
+            <div class="step-a"><span class="yes">Yes.</span> That equation directly shows KE depends on $\nu$.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-q">Does Reason explain Assertion?</div>
+            <div class="step-a"><span class="yes">Yes</span> — the equation proves the statement directly.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <span class="verdict-check">&#10003;</span>
+        <span class="verdict-text">Correct Answer: A</span>
+      </div>
+
+      <div class="tip">
+        <span class="tip-icon">&#128161;</span>
+        <span class="tip-text"><strong>Teaching tip:</strong> If Reason contains a formula that directly proves Assertion, it's usually option <strong>A</strong>.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CASE 2 ═══ -->
+  <div class="case-card case-b">
+    <div class="case-header">
+      <div class="case-badge">B</div>
+      <div class="case-header-text">
+        <h3>Both True but Reason NOT the Explanation</h3>
+        <div class="case-subtitle">Gauss's Law Trap</div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="ar-block">
+        <div class="ar-label">Assertion (A)</div>
+        <div class="ar-text">Net electric flux through a closed surface can be zero.</div>
+      </div>
+      <div class="ar-block">
+        <div class="ar-label">Reason (R)</div>
+        <div class="ar-text">Electric field inside the surface may be zero.</div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-q">Is Assertion true?</div>
+            <div class="step-a"><span class="yes">Yes</span> — if no net charge is enclosed inside.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-q">Is Reason true?</div>
+            <div class="step-a"><span class="yes">Yes</span> — the field can be zero in some cases.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-q">Does field being zero explain zero flux?</div>
+            <div class="step-a"><span class="no">No.</span> Flux depends on <em>enclosed charge</em>, not the field value at every point. These are independent ideas.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <span class="verdict-check">&#10003;</span>
+        <span class="verdict-text">Correct Answer: B</span>
+      </div>
+
+      <div class="tip">
+        <span class="tip-icon">&#128161;</span>
+        <span class="tip-text"><strong>Teaching tip:</strong> If both statements are correct but talk about <strong>different underlying ideas</strong>, it's usually option <strong>B</strong>.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CASE 3 ═══ -->
+  <div class="case-card case-c">
+    <div class="case-header">
+      <div class="case-badge">C</div>
+      <div class="case-header-text">
+        <h3>Assertion True, Reason False</h3>
+        <div class="case-subtitle">Drift Velocity</div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="ar-block">
+        <div class="ar-label">Assertion (A)</div>
+        <div class="ar-text">Drift velocity of electrons in a conductor is very small.</div>
+      </div>
+      <div class="ar-block">
+        <div class="ar-label">Reason (R)</div>
+        <div class="ar-text">Because electrons move randomly at high speed.</div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-q">Is Assertion true?</div>
+            <div class="step-a"><span class="yes">Yes</span> — drift velocity is extremely small (~mm/s).</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-q">Is Reason true?</div>
+            <div class="step-a"><span class="no">No.</span> Random thermal speed is high, but drift velocity is slow because of the <em>electric field effect</em>, not random motion. The reason mixes two concepts.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <span class="verdict-check">&#10003;</span>
+        <span class="verdict-text">Correct Answer: C</span>
+      </div>
+
+      <div class="tip">
+        <span class="tip-icon">&#128161;</span>
+        <span class="tip-text"><strong>Teaching tip:</strong> If the Reason <strong>mixes two different concepts</strong> or uses one to incorrectly explain the other, it's often false — option <strong>C</strong>.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CASE 4 ═══ -->
+  <div class="case-card case-d">
+    <div class="case-header">
+      <div class="case-badge">D</div>
+      <div class="case-header-text">
+        <h3>Assertion False, Reason True</h3>
+        <div class="case-subtitle">Magnetic Force Direction</div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="ar-block">
+        <div class="ar-label">Assertion (A)</div>
+        <div class="ar-text">Magnetic force on a charge is maximum when velocity is parallel to the magnetic field.</div>
+      </div>
+      <div class="ar-block">
+        <div class="ar-label">Reason (R)</div>
+        <div class="ar-text">$F = qvB\sin\theta$</div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-q">Is Assertion true?</div>
+            <div class="step-a"><span class="no">No.</span> If velocity is parallel to $\vec{B}$, then $\theta = 0$, so $\sin 0 = 0$ and $F = 0$. Force is actually <em>zero</em>, not maximum.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-q">Is Reason true?</div>
+            <div class="step-a"><span class="yes">Yes</span> — the formula $F = qvB\sin\theta$ is correct.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <span class="verdict-check">&#10003;</span>
+        <span class="verdict-text">Correct Answer: D</span>
+      </div>
+
+      <div class="tip">
+        <span class="tip-icon">&#128161;</span>
+        <span class="tip-text"><strong>Teaching tip:</strong> Whenever the assertion uses words like <strong>"maximum"</strong> or <strong>"always"</strong>, check the edge cases very carefully.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CBSE TRAP EXAMPLES ═══ -->
+  <div class="section-label">Common CBSE Trap Questions</div>
+  <div class="traps-grid">
+
+    <div class="trap-card trap-a">
+      <div class="trap-topic">Electric Field Inside Conductor</div>
+      <div class="trap-a-text"><strong>A:&nbsp;</strong> Electric field inside a conductor in electrostatic equilibrium is zero.</div>
+      <div class="trap-r-text"><strong>R:&nbsp;</strong> Charges redistribute themselves on the surface.</div>
+      <div class="trap-reasoning">Redistribution directly causes the internal field to become zero.</div>
+      <div class="trap-result">&#10003; Answer: A</div>
+    </div>
+
+    <div class="trap-card trap-d">
+      <div class="trap-topic">Intensity Trap</div>
+      <div class="trap-a-text"><strong>A:&nbsp;</strong> Increasing intensity increases kinetic energy of photoelectrons.</div>
+      <div class="trap-r-text"><strong>R:&nbsp;</strong> Intensity increases number of photons.</div>
+      <div class="trap-reasoning">KE depends on frequency, not intensity. Assertion is false.</div>
+      <div class="trap-result">&#10003; Answer: D</div>
+    </div>
+
+    <div class="trap-card trap-a">
+      <div class="trap-topic">AC Phase — Pure Inductor</div>
+      <div class="trap-a-text"><strong>A:&nbsp;</strong> In a pure inductor, current lags voltage by 90&deg;.</div>
+      <div class="trap-r-text"><strong>R:&nbsp;</strong> Inductive reactance opposes change in current.</div>
+      <div class="trap-reasoning">The opposition to current change is exactly what causes the 90&deg; lag.</div>
+      <div class="trap-result">&#10003; Answer: A</div>
+    </div>
+
+    <div class="trap-card trap-a">
+      <div class="trap-topic">Resonance</div>
+      <div class="trap-a-text"><strong>A:&nbsp;</strong> Current is maximum at resonance in an LCR circuit.</div>
+      <div class="trap-r-text"><strong>R:&nbsp;</strong> Impedance is minimum at resonance.</div>
+      <div class="trap-reasoning">$I = V/Z$&thinsp;. Minimum $Z$ directly gives maximum $I$.</div>
+      <div class="trap-result">&#10003; Answer: A</div>
+    </div>
+
+  </div>
+
+  <!-- ═══ 10-SECOND METHOD ═══ -->
+  <div class="method-card">
+    <div class="method-title">The 10-Second Method</div>
+    <div class="method-subtitle">Ask yourself these 3 questions in order:</div>
+
+    <div class="method-steps">
+      <div class="m-step">
+        <div class="m-step-num">1</div>
+        <div class="m-step-text">Is the <strong>Assertion</strong> scientifically correct?</div>
+      </div>
+      <div class="m-step">
+        <div class="m-step-num">2</div>
+        <div class="m-step-text">Is the <strong>Reason</strong> scientifically correct?</div>
+      </div>
+      <div class="m-step">
+        <div class="m-step-num">3</div>
+        <div class="m-step-text">If both correct &rarr; Does the Reason <strong>directly explain</strong> the Assertion?</div>
+      </div>
+    </div>
+
+    <div class="decision-flow">
+      <div class="decision-item di-a">
+        <div class="decision-condition">Both true<br>+ formula/cause<br>explains directly</div>
+        <div class="decision-answer">A</div>
+      </div>
+      <div class="decision-item di-b">
+        <div class="decision-condition">Both true<br>but statements<br>are independent</div>
+        <div class="decision-answer">B</div>
+      </div>
+      <div class="decision-item di-c">
+        <div class="decision-condition">Assertion true<br>Reason is<br>factually wrong</div>
+        <div class="decision-answer">C</div>
+      </div>
+      <div class="decision-item di-d">
+        <div class="decision-condition">Assertion false<br>Reason is<br>factually correct</div>
+        <div class="decision-answer">D</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECRET PATTERN ═══ -->
+  <div class="pattern-card">
+    <div class="pattern-title">High-Frequency Topics in CBSE</div>
+    <div class="pattern-subtitle">Master these 7 topics and your A–R accuracy goes up drastically.</div>
+    <div class="pattern-tags">
+      <span class="pattern-tag">Photoelectric Effect</span>
+      <span class="pattern-tag">Magnetic Force Direction</span>
+      <span class="pattern-tag">Gauss's Law</span>
+      <span class="pattern-tag">AC Phase Difference</span>
+      <span class="pattern-tag">Drift Velocity</span>
+      <span class="pattern-tag">Logic Gates</span>
+      <span class="pattern-tag">p-n Junction</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

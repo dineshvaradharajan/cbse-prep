@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE XII — Prep Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  :root {
+    --sand-50: #fdfcfa;
+    --sand-100: #f7f5f0;
+    --sand-200: #eae6dd;
+    --sand-300: #d8d1c4;
+    --sand-400: #b8ad9a;
+    --sand-700: #5c5347;
+    --sand-900: #2c2822;
+
+    --ink: #1c1917;
+    --ink-2: #44403c;
+    --ink-3: #78716c;
+
+    --formula-accent: #b8860b;
+    --formula-bg: #fef9ee;
+    --formula-border: #f0d68a;
+
+    --reason-accent: #059669;
+    --reason-bg: #f0fdf4;
+    --reason-border: #86efac;
+
+    --strategy-accent: #2563eb;
+    --strategy-bg: #eff6ff;
+    --strategy-border: #93c5fd;
+
+    --diagrams-accent: #7c3aed;
+    --diagrams-bg: #f5f3ff;
+    --diagrams-border: #c4b5fd;
+
+    --derivations-accent: #dc2626;
+    --derivations-bg: #fef2f2;
+    --derivations-border: #fca5a5;
+
+    --numericals-accent: #ea580c;
+    --numericals-bg: #fff7ed;
+    --numericals-border: #fdba74;
+
+    --plan-accent: #0891b2;
+    --plan-bg: #ecfeff;
+    --plan-border: #67e8f9;
+
+    --casestudy-accent: #be185d;
+    --casestudy-bg: #fdf2f8;
+    --casestudy-border: #f9a8d4;
+
+    --qpaper-accent: #4338ca;
+    --qpaper-bg: #eef2ff;
+    --qpaper-border: #a5b4fc;
+
+    --units-accent: #0f766e;
+    --units-bg: #f0fdfa;
+    --units-border: #5eead4;
+
+    --concepts-accent: #be185d;
+    --concepts-bg: #fdf2f8;
+    --concepts-border: #f9a8d4;
+
+    --chem-reactions-accent: #dc2626;
+    --chem-reactions-bg: #fef2f2;
+    --chem-reactions-border: #fca5a5;
+  }
+
+  html { scroll-behavior: smooth }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--sand-50);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Subtle grid texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--sand-200) 1px, transparent 1px),
+      linear-gradient(90deg, var(--sand-200) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  html {
+    font-size: 120%;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* ── Header ── */
+  header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    animation: fadeUp 0.6s ease-out both;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    background: var(--sand-200);
+    border: 1px solid var(--sand-300);
+    padding: 0.35em 1em;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--sand-900);
+    letter-spacing: -0.02em;
+  }
+
+  h1 span {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.55em;
+    color: var(--ink-3);
+    margin-top: 0.3em;
+    letter-spacing: 0;
+  }
+
+  /* ── Cards ── */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4.5rem 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    background: #fff;
+    border: 1px solid var(--sand-200);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .card:nth-child(1) { animation-delay: 0.1s }
+  .card:nth-child(2) { animation-delay: 0.2s }
+  .card:nth-child(3) { animation-delay: 0.3s }
+  .card:nth-child(4) { animation-delay: 0.4s }
+  .card:nth-child(5) { animation-delay: 0.5s }
+  .card:nth-child(6) { animation-delay: 0.6s }
+  .card:nth-child(7) { animation-delay: 0.7s }
+  .card:nth-child(8) { animation-delay: 0.8s }
+  .card:nth-child(9) { animation-delay: 0.9s }
+  .card:nth-child(10) { animation-delay: 1.0s }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -8px rgba(0,0,0,0.08);
+  }
+
+  .card--formula:hover { border-color: var(--formula-border) }
+  .card--reason:hover  { border-color: var(--reason-border) }
+  .card--strategy:hover { border-color: var(--strategy-border) }
+  .card--diagrams:hover { border-color: var(--diagrams-border) }
+  .card--derivations:hover { border-color: var(--derivations-border) }
+  .card--numericals:hover { border-color: var(--numericals-border) }
+  .card--plan:hover { border-color: var(--plan-border) }
+  .card--casestudy:hover { border-color: var(--casestudy-border) }
+  .card--qpaper:hover { border-color: var(--qpaper-border) }
+  .card--units:hover { border-color: var(--units-border) }
+  .card--concepts:hover { border-color: var(--concepts-border) }
+
+  /* Icon circle */
+  .card-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+  .card--formula .card-icon  { background: var(--formula-bg); border: 1px solid var(--formula-border) }
+  .card--reason .card-icon   { background: var(--reason-bg); border: 1px solid var(--reason-border) }
+  .card--strategy .card-icon { background: var(--strategy-bg); border: 1px solid var(--strategy-border) }
+  .card--diagrams .card-icon { background: var(--diagrams-bg); border: 1px solid var(--diagrams-border) }
+  .card--derivations .card-icon { background: var(--derivations-bg); border: 1px solid var(--derivations-border) }
+  .card--numericals .card-icon { background: var(--numericals-bg); border: 1px solid var(--numericals-border) }
+  .card--plan .card-icon { background: var(--plan-bg); border: 1px solid var(--plan-border) }
+  .card--casestudy .card-icon { background: var(--casestudy-bg); border: 1px solid var(--casestudy-border) }
+  .card--qpaper .card-icon { background: var(--qpaper-bg); border: 1px solid var(--qpaper-border) }
+  .card--units .card-icon { background: var(--units-bg); border: 1px solid var(--units-border) }
+  .card--concepts .card-icon { background: var(--concepts-bg); border: 1px solid var(--concepts-border) }
+
+  .card-body h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+  .card--formula h2  { color: var(--formula-accent) }
+  .card--reason h2   { color: var(--reason-accent) }
+  .card--strategy h2 { color: var(--strategy-accent) }
+  .card--diagrams h2 { color: var(--diagrams-accent) }
+  .card--derivations h2 { color: var(--derivations-accent) }
+  .card--numericals h2 { color: var(--numericals-accent) }
+  .card--plan h2 { color: var(--plan-accent) }
+  .card--casestudy h2 { color: var(--casestudy-accent) }
+  .card--qpaper h2 { color: var(--qpaper-accent) }
+  .card--units h2 { color: var(--units-accent) }
+  .card--concepts h2 { color: var(--concepts-accent) }
+
+  .card-body p {
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    line-height: 1.5;
+  }
+
+  .card-arrow {
+    font-size: 1.4rem;
+    color: var(--sand-400);
+    transition: transform 0.25s ease, color 0.25s ease;
+    flex-shrink: 0;
+  }
+  .card:hover .card-arrow {
+    transform: translateX(4px);
+    color: var(--ink-2);
+  }
+
+  /* ── Subject Tabs ── */
+  .subject-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--sand-200);
+  }
+  .subject-tab {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border: none;
+    background: none;
+    color: var(--ink-3);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+  }
+  .subject-tab:hover { color: var(--ink); }
+  .subject-tab.active {
+    color: var(--sand-900);
+    border-bottom-color: var(--sand-900);
+  }
+  .subject-panel { display: none; }
+  .subject-panel.active { display: block; }
+  .coming-soon {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--ink-3);
+    font-size: 1rem;
+  }
+  .coming-soon span {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── Section headings ── */
+  .section-heading {
+    font-family: 'Newsreader', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink-3);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+  }
+  .section-heading:not(:first-child) {
+    margin-top: 2.5rem;
+  }
+
+  /* ── Chem sub-tabs ── */
+  .chem-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1.5px solid var(--sand-200);
+  }
+  .chem-tab {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.55rem 1.25rem;
+    border: none;
+    background: none;
+    color: var(--ink-3);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 2.5px solid transparent;
+    margin-bottom: -1.5px;
+    letter-spacing: 0.02em;
+  }
+  .chem-tab:hover { color: var(--ink); }
+  .chem-tab.active {
+    color: var(--sand-900);
+    border-bottom-color: var(--sand-900);
+  }
+  .chem-panel { display: none; }
+  .chem-panel.active { display: block; }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    margin-top: 3.5rem;
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    animation: fadeUp 0.6s ease-out 0.4s both;
+  }
+  footer a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px }
+
+  /* ── Animation ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px) }
+    to   { opacity: 1; transform: translateY(0) }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .wrapper { padding: 2rem 1rem 3rem }
+
+    .card {
+      grid-template-columns: 3.5rem 1fr;
+      gap: 1rem;
+      padding: 1.25rem;
+    }
+    .card-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      font-size: 1.3rem;
+      border-radius: 12px;
+    }
+    .card-arrow { display: none }
+    .card-body h2 { font-size: 1.05rem }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="badge">Class XII &bull; 2025-26</div>
+    <h1>CBSE Board Prep<span>Your complete revision toolkit for Class XII board exams</span></h1>
+  </header>
+
+  <div class="subject-tabs">
+    <button class="subject-tab active" onclick="switchSubject('physics')">Physics</button>
+    <button class="subject-tab" onclick="switchSubject('chemistry')">Chemistry</button>
+    <button class="subject-tab" onclick="switchSubject('maths')">Maths</button>
+  </div>
+
+  <div id="physics" class="subject-panel active">
+  <div class="cards">
+    <h3 class="section-heading">Learn</h3>
+
+    <a href="physics/chapters.html" class="card card--qpaper">
+      <div class="card-icon">✎</div>
+      <div class="card-body">
+        <h2>Chapters</h2>
+        <p>Topic-wise concepts & MCQ practice with instant scoring — 7 chapters, 350+ questions.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/formulas.html" class="card card--formula">
+      <div class="card-icon">∑</div>
+      <div class="card-body">
+        <h2>Formula Reference</h2>
+        <p>Every equation you need — organized by chapter, with units and key relationships at a glance.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/derivations.html" class="card card--derivations">
+      <div class="card-icon">∫</div>
+      <div class="card-body">
+        <h2>Important Derivations</h2>
+        <p>15 must-know derivations (3-mark and 5-mark) with step-by-step solutions and examiner tips.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/diagrams.html" class="card card--diagrams">
+      <div class="card-icon">⬡</div>
+      <div class="card-body">
+        <h2>Important Diagrams</h2>
+        <p>50 essential diagrams chapter-wise — circuits, ray diagrams, field lines, graphs, and logic gates.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/assertion-reason.html" class="card card--reason">
+      <div class="card-icon">⇌</div>
+      <div class="card-body">
+        <h2>Assertion–Reason Mastery</h2>
+        <p>Strategies and worked examples for the trickiest question format — learn the logic behind each option.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/units-dimensions.html" class="card card--units">
+      <div class="card-icon">∂</div>
+      <div class="card-body">
+        <h2>Units &amp; Dimensions</h2>
+        <p>Complete cheat sheet — all physical quantities grouped by chapter with SI units, symbols, and dimensional formulas.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/concepts.html" class="card card--concepts">
+      <div class="card-icon">🔥</div>
+      <div class="card-body">
+        <h2>5-Mark Concept Guide</h2>
+        <p>Patterns from 15 years of CBSE papers — priority list, exact question templates, and exam strategy by topic.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <h3 class="section-heading">Practice</h3>
+
+    <a href="physics/mock-tests.html" class="card card--plan">
+      <div class="card-icon">◉</div>
+      <div class="card-body">
+        <h2>Mock Tests</h2>
+        <p>5 full-syllabus timed tests (16 MCQs each, 30 min) — based on CBSE past papers with marks & detailed review.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/numericals.html" class="card card--numericals">
+      <div class="card-icon">≡</div>
+      <div class="card-body">
+        <h2>Must-Do Numericals</h2>
+        <p>25 standard numericals chapter-wise with toggle solutions and progress tracking.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/case-study.html" class="card card--casestudy">
+      <div class="card-icon">◈</div>
+      <div class="card-body">
+        <h2>Case Study Questions</h2>
+        <p>10 real-world case studies with 40 MCQs — practice mode and timed test mode included.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="physics/strategy.html" class="card card--strategy">
+      <div class="card-icon">◎</div>
+      <div class="card-body">
+        <h2>Exam Answer Strategy</h2>
+        <p>Time management, marking-scheme tactics, and chapter-wise tips to maximize your score.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+  </div>
+
+  <div id="chemistry" class="subject-panel">
+
+  <div class="chem-tabs">
+    <button class="chem-tab active" onclick="switchChem('physical',this)">Physical Chemistry</button>
+    <button class="chem-tab" onclick="switchChem('organic',this)">Organic Chemistry</button>
+    <button class="chem-tab" onclick="switchChem('inorganic',this)">Inorganic Chemistry</button>
+  </div>
+
+  <!-- Physical Chemistry -->
+  <div id="chem-physical" class="chem-panel active">
+  <div class="cards">
+    <h3 class="section-heading">Learn</h3>
+
+    <a href="chemistry/physical/chapters.html" class="card card--qpaper">
+      <div class="card-icon">✎</div>
+      <div class="card-body">
+        <h2>Chapters</h2>
+        <p>Solutions, Electrochemistry &amp; Chemical Kinetics — chapter summaries, must-reads, exam tips, tricks, and numerical patterns.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/physical/formulas.html" class="card card--formula">
+      <div class="card-icon">∑</div>
+      <div class="card-body">
+        <h2>Formula Reference</h2>
+        <p>Raoult's law, Nernst equation, Arrhenius, Faraday — all physical chemistry equations organised by chapter.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/physical/concepts.html" class="card card--concepts">
+      <div class="card-icon">🔥</div>
+      <div class="card-body">
+        <h2>5-Mark Concept Guide</h2>
+        <p>Priority list for Solutions, Electrochemistry and Kinetics — Nernst, rate law, Arrhenius model answers.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <h3 class="section-heading">Practice</h3>
+
+    <a href="chemistry/physical/practice.html" class="card card--plan">
+      <div class="card-icon">◉</div>
+      <div class="card-body">
+        <h2>Chapter Practice</h2>
+        <p>MCQ practice for Solutions, Electrochemistry &amp; Chemical Kinetics.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/physical/mcq.html" class="card card--casestudy">
+      <div class="card-icon">🎯</div>
+      <div class="card-body">
+        <h2>MCQ Bank</h2>
+        <p>75+ direct NCERT-based MCQs — Solutions, Electrochemistry &amp; Kinetics with instant answer reveal.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+  </div>
+
+  <!-- Organic Chemistry -->
+  <div id="chem-organic" class="chem-panel">
+  <div class="cards">
+    <h3 class="section-heading">Learn</h3>
+
+    <a href="chemistry/organic/chapters.html" class="card card--qpaper">
+      <div class="card-icon">✎</div>
+      <div class="card-body">
+        <h2>Chapters</h2>
+        <p>Haloalkanes, Alcohols/Phenols, Carbonyl Compounds, Amines &amp; Biomolecules — summaries, mechanisms, tips, tricks and common mistakes.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/organic/maps.html" class="card card--strategy">
+      <div class="card-icon">🗺</div>
+      <div class="card-body">
+        <h2>Concept Maps</h2>
+        <p>Visual reaction roadmaps, mechanism step-cards, amine web, and biomolecule quick maps — for students who find organic hard.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/organic/named-reactions.html" class="card card--derivations">
+      <div class="card-icon">⇌</div>
+      <div class="card-body">
+        <h2>Named Reactions</h2>
+        <p>30+ named reactions with reagents, equations, and CBSE question patterns — Aldol, Cannizzaro, Sandmeyer, Hoffmann, and more.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/organic/formulas.html" class="card card--formula">
+      <div class="card-icon">∑</div>
+      <div class="card-body">
+        <h2>Formula Reference</h2>
+        <p>SN1/SN2 rate laws, acidity orders, Tollens', Fehling's, basicity, diazotisation — all organic key relationships.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/organic/concepts.html" class="card card--concepts">
+      <div class="card-icon">🔥</div>
+      <div class="card-body">
+        <h2>5-Mark Concept Guide</h2>
+        <p>SN1/SN2 mechanism, aldol condensation, amine basicity, nucleophilic addition — full model answers.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <h3 class="section-heading">Practice</h3>
+
+    <a href="chemistry/organic/practice.html" class="card card--plan">
+      <div class="card-icon">◉</div>
+      <div class="card-body">
+        <h2>Chapter Practice</h2>
+        <p>MCQ practice for Haloalkanes, Alcohols, Carbonyl Compounds, Amines &amp; Biomolecules.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/organic/mcq.html" class="card card--casestudy">
+      <div class="card-icon">🎯</div>
+      <div class="card-body">
+        <h2>MCQ Bank</h2>
+        <p>100+ direct NCERT-based MCQs — all 5 organic chapters with instant answer reveal and score tracking.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+  </div>
+
+  <!-- Inorganic Chemistry -->
+  <div id="chem-inorganic" class="chem-panel">
+  <div class="cards">
+    <h3 class="section-heading">Learn</h3>
+
+    <a href="chemistry/inorganic/chapters.html" class="card card--qpaper">
+      <div class="card-icon">✎</div>
+      <div class="card-body">
+        <h2>Chapters</h2>
+        <p>d &amp; f Block Elements and Coordination Compounds — summaries, IUPAC rules, VBT/CFT guide, isomerism, tips and tricks.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/inorganic/formulas.html" class="card card--formula">
+      <div class="card-icon">∑</div>
+      <div class="card-body">
+        <h2>Formula Reference</h2>
+        <p>Magnetic moment, KMnO₄ half-reactions, CFSE, spectrochemical series — all inorganic equations at a glance.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/inorganic/concepts.html" class="card card--concepts">
+      <div class="card-icon">🔥</div>
+      <div class="card-body">
+        <h2>5-Mark Concept Guide</h2>
+        <p>Coordination compounds (VBT, CFT, isomerism), lanthanoid contraction, KMnO₄ — model answers with mark splits.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <h3 class="section-heading">Practice</h3>
+
+    <a href="chemistry/inorganic/practice.html" class="card card--plan">
+      <div class="card-icon">◉</div>
+      <div class="card-body">
+        <h2>Chapter Practice</h2>
+        <p>MCQ practice for d&amp;f Block Elements and Coordination Compounds.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="chemistry/inorganic/mcq.html" class="card card--casestudy">
+      <div class="card-icon">🎯</div>
+      <div class="card-body">
+        <h2>MCQ Bank</h2>
+        <p>50+ direct NCERT-based MCQs — d &amp; f Block Elements and Coordination Compounds with instant feedback.</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+  </div>
+
+  </div>
+
+  <div id="maths" class="subject-panel">
+    <div class="coming-soon">
+      <span>📐</span>
+      Coming soon — Maths chapters are being prepared.
+    </div>
+  </div>
+
+  <footer>
+    Best of luck with your boards! Built for focused revision.
+  </footer>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>

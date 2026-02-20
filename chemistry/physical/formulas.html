@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/formulas.css">
+<style>:root{
+  --subject-color:#0891b2;--subject-bg:#ecfeff;--subject-border:#67e8f9;--subject-text:#0e7490;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Chemistry Formulas — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">← Back to Hub</a>
+
+<div class="hero">
+  <div class="badge">Physical Chemistry XII &middot; 3 Chapters &middot; 23 marks</div>
+  <h1>Physical Chemistry Formula Reference</h1>
+  <p class="sub">Solutions, Electrochemistry &amp; Chemical Kinetics — every equation organised for quick revision.</p>
+</div>
+
+<div class="quick-ref">
+  <h3>⚡ Critical Formulas — Memorise These First</h3>
+  <div class="qr-grid">
+    <div class="qr-item"><span class="qr-label">Nernst Equation</span><span class="qr-val">E = E° − (0.0591/n) log Q</span></div>
+    <div class="qr-item"><span class="qr-label">First-Order k</span><span class="qr-val">k = (2.303/t) log([A]₀/[A])</span></div>
+    <div class="qr-item"><span class="qr-label">Arrhenius</span><span class="qr-val">k = Ae^(−Ea/RT)</span></div>
+    <div class="qr-item"><span class="qr-label">BP Elevation</span><span class="qr-val">ΔTb = Kb × m</span></div>
+    <div class="qr-item"><span class="qr-label">FP Depression</span><span class="qr-val">ΔTf = Kf × m</span></div>
+    <div class="qr-item"><span class="qr-label">Osmotic Pressure</span><span class="qr-val">π = CRT = (n/V)RT</span></div>
+    <div class="qr-item"><span class="qr-label">Faraday's 1st Law</span><span class="qr-val">m = (M/nF) × It</span></div>
+    <div class="qr-item"><span class="qr-label">Half-Life (1st order)</span><span class="qr-val">t½ = 0.693/k</span></div>
+  </div>
+</div>
+
+<nav class="chapter-nav">
+  <div class="chapter-nav-inner">
+    <a href="#sol">1. Solutions</a>
+    <a href="#elec">2. Electrochemistry</a>
+    <a href="#kin">3. Chemical Kinetics</a>
+  </div>
+</nav>
+
+<div class="chapters">
+
+<div class="ch-section" id="sol">
+  <div class="ch-header" style="border-bottom-color:#0891b2">
+    <span class="ch-number">01</span>
+    <span class="ch-title">Solutions</span>
+    <span class="ch-marks">7 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Mole Fraction</div>
+      <code class="fc-eq">xA = nA / (nA + nB)</code>
+      <div class="fc-note">xA + xB = 1. Dimensionless. Used in Raoult's law.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Raoult's Law</div>
+      <code class="fc-eq">pA = xA × p°A   ;   pTotal = pA + pB</code>
+      <div class="fc-note">Valid for ideal solutions. p°A = vapour pressure of pure A.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Relative Lowering of Vapour Pressure</div>
+      <code class="fc-eq">ΔP/P° = (p°A − pA)/p°A = xB</code>
+      <div class="fc-note">xB = mole fraction of solute. ΔP/P° is a colligative property.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Elevation of Boiling Point</div>
+      <code class="fc-eq">ΔTb = Kb × m</code>
+      <span class="unit-tag">Kb: K·kg·mol⁻¹</span>
+      <div class="fc-note">Kb = ebullioscopic constant (water: 0.52). m = molality (mol/kg solvent).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Depression of Freezing Point</div>
+      <code class="fc-eq">ΔTf = Kf × m</code>
+      <span class="unit-tag">Kf: K·kg·mol⁻¹</span>
+      <div class="fc-note">Kf = cryoscopic constant (water: 1.86). Used to find molar mass.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Osmotic Pressure</div>
+      <code class="fc-eq">π = CRT = (n/V)RT</code>
+      <code class="fc-eq">π = iCRT   [for electrolytes]</code>
+      <span class="unit-tag">π: bar or atm</span>
+      <div class="fc-note">Van't Hoff equation. C = molarity (mol/L). R = 0.083 L·bar·mol⁻¹·K⁻¹ (NCERT). i = van't Hoff factor; use for electrolytes (NaCl: i≈2, MgCl₂: i≈3).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Molar Mass from Colligative Properties</div>
+      <code class="fc-eq">M = (Kb × w × 1000) / (ΔTb × W)</code>
+      <div class="fc-note">w = mass of solute (g), W = mass of solvent (g). Also works with Kf/ΔTf.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">van't Hoff Factor</div>
+      <code class="fc-eq">i = observed colligative property / theoretical value</code>
+      <code class="fc-eq">i = 1 + (n−1)α   [dissociation]</code>
+      <code class="fc-eq">i = 1 − (1 − 1/n)α   [association]</code>
+      <div class="fc-note">n = particles formed; α = degree of dissociation/association. i &gt; 1 for dissociation, i &lt; 1 for association.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="elec">
+  <div class="ch-header" style="border-bottom-color:#16a34a">
+    <span class="ch-number">02</span>
+    <span class="ch-title">Electrochemistry</span>
+    <span class="ch-marks">9 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Standard Cell EMF</div>
+      <code class="fc-eq">E°cell = E°cathode − E°anode</code>
+      <div class="fc-note">Cathode = reduction (+ve electrode). Anode = oxidation (−ve electrode).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Nernst Equation</div>
+      <code class="fc-eq">E = E° − (RT/nF) ln Q</code>
+      <code class="fc-eq">E = E° − (0.0591/n) log Q   [at 25°C]</code>
+      <div class="fc-note">n = electrons transferred; F = 96500 C/mol; Q = reaction quotient.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Gibbs Energy &amp; EMF</div>
+      <code class="fc-eq">ΔG° = −nFE°cell</code>
+      <code class="fc-eq">log K = nE° / 0.0591</code>
+      <div class="fc-note">Spontaneous if E°cell &gt; 0 (ΔG° &lt; 0). K = equilibrium constant.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Molar Conductivity</div>
+      <code class="fc-eq">Λm = κ × 1000 / M</code>
+      <span class="unit-tag">S·cm²·mol⁻¹</span>
+      <div class="fc-note">κ = conductivity (S/cm); M = molarity (mol/L). Λm increases as dilution increases.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Kohlrausch's Law</div>
+      <code class="fc-eq">Λ°m = Σν₊λ°₊ + Σν₋λ°₋</code>
+      <code class="fc-eq">Λm = Λ°m − b√c   [strong electrolytes]</code>
+      <div class="fc-note">λ° = limiting molar conductivity of individual ions. Used to find Λ°m of weak electrolytes.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Faraday's First Law</div>
+      <code class="fc-eq">m = ZIt = (M / nF) × It</code>
+      <span class="unit-tag">m: grams</span>
+      <div class="fc-note">Z = electrochemical equivalent = M/(nF). I = current (A); t = time (s).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Faraday's Second Law</div>
+      <code class="fc-eq">m₁/m₂ = E₁/E₂</code>
+      <div class="fc-note">E = equivalent weight = M/n. Same charge deposits masses in ratio of equivalent weights.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Key Constants</div>
+      <code class="fc-eq">F = 96500 C mol⁻¹</code>
+      <code class="fc-eq">RT/F = 0.02569 V   [at 25°C]</code>
+      <div class="fc-note">1 Faraday = charge on 1 mole of electrons. 2.303RT/F = 0.0591 V at 298 K.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="kin">
+  <div class="ch-header" style="border-bottom-color:#ea580c">
+    <span class="ch-number">03</span>
+    <span class="ch-title">Chemical Kinetics</span>
+    <span class="ch-marks">7 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Rate of Reaction</div>
+      <code class="fc-eq">r = −(1/a) d[A]/dt = +(1/b) d[B]/dt</code>
+      <div class="fc-note">For aA → bB. Rate is always positive. Units: mol L⁻¹ s⁻¹.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Rate Law</div>
+      <code class="fc-eq">r = k [A]^m [B]^n</code>
+      <div class="fc-note">m, n = orders (determined experimentally, not from stoichiometry). Overall order = m + n.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Units of Rate Constant k</div>
+      <code class="fc-eq">k: (mol L⁻¹)^(1−n) s⁻¹</code>
+      <div class="fc-note">Zero order: mol L⁻¹ s⁻¹. First order: s⁻¹. Second order: L mol⁻¹ s⁻¹.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Zero Order Integrated Rate Law</div>
+      <code class="fc-eq">[A] = [A]₀ − kt</code>
+      <code class="fc-eq">t½ = [A]₀ / 2k</code>
+      <div class="fc-note">Plot [A] vs t → straight line (slope = −k). Half-life depends on initial concentration.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">First Order Integrated Rate Law</div>
+      <code class="fc-eq">k = (2.303/t) log ([A]₀/[A])</code>
+      <code class="fc-eq">t½ = 0.693/k</code>
+      <div class="fc-note">Plot ln[A] vs t → straight line (slope = −k). Half-life INDEPENDENT of [A]₀.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Arrhenius Equation</div>
+      <code class="fc-eq">k = A e^(−Ea/RT)</code>
+      <code class="fc-eq">log(k₂/k₁) = (Ea/2.303R) × (T₂−T₁)/(T₁T₂)</code>
+      <span class="unit-tag">Ea: J mol⁻¹</span>
+      <div class="fc-note">A = frequency factor. R = 8.314 J mol⁻¹ K⁻¹. Plot log k vs 1/T → slope = −Ea/2.303R.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Effect of Temperature</div>
+      <code class="fc-eq">rate doubles for every 10°C rise</code>
+      <div class="fc-note">Temperature coefficient ≈ 2. Catalyst lowers Ea without changing ΔH.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

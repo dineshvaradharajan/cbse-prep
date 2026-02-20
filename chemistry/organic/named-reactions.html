@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/concepts.css">
+<style>
+:root{
+  --subject-color:#16a34a;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#166534;
+}
+/* Conversion chain (top of page) */
+.conversion-box { background: var(--sand-100); border: 1px solid var(--sand-200); border-radius: 12px; padding: 1rem 1.25rem; margin: 1.5rem 0 }
+.conv-chain { display: flex; align-items: center; flex-wrap: wrap; gap: .3rem; font-size: .78rem; margin-bottom: .5rem }
+.conv-chain:last-child { margin-bottom: 0 }
+.conv-node { background: #fff; border: 1.5px solid var(--sand-300); border-radius: 6px; padding: .2rem .6rem; font-family: monospace; font-weight: 700; color: var(--ink); white-space: nowrap }
+.conv-arrow { color: var(--ink-3); font-size: .9rem }
+.conv-reagent { font-size: .68rem; color: var(--ink-3); background: var(--sand-100); border-radius: 4px; padding: .1rem .35rem; white-space: nowrap }
+/* Reaction section header */
+.rxn-section-header { margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 2px solid var(--subject-border) }
+.rxn-section-title { font-family: 'Newsreader', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink) }
+.rxn-count { font-size: .68rem; font-weight: 700; background: var(--subject-bg); border: 1px solid var(--subject-border); border-radius: 999px; padding: .15rem .55rem; color: var(--subject-color); margin-left: .6rem }
+/* Reaction card grid */
+.rxn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1.5rem }
+.rxn-card { background: #fff; border: 1px solid var(--sand-200); border-radius: 12px; padding: 1.1rem 1.25rem; border-left: 4px solid var(--subject-color) }
+.rxn-name { font-family: 'Newsreader', serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem }
+.rxn-equation { font-family: monospace; font-size: .8rem; color: #166534; background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: .4rem .75rem; margin: .4rem 0; line-height: 1.7; display: block }
+.rxn-condition { font-size: .7rem; font-weight: 700; color: #0891b2; background: #ecfeff; border: 1px solid #67e8f9; border-radius: 4px; padding: .15rem .5rem; display: inline-block; margin-bottom: .35rem }
+.rxn-when { font-size: .72rem; color: var(--ink-3); margin-bottom: .3rem }
+.rxn-when strong { color: var(--ink-2) }
+.rxn-note { font-size: .72rem; color: var(--ink-2); line-height: 1.65; border-top: 1px solid var(--sand-100); padding-top: .4rem; margin-top: .4rem }
+/* Memory tip */
+.memory-tip { background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 10px; padding: .85rem 1.1rem; margin-bottom: 1.25rem }
+.memory-tip strong { font-size: .72rem; font-weight: 800; color: #92400e; display: block; margin-bottom: .35rem; text-transform: uppercase; letter-spacing: .03em }
+.memory-tip p { font-size: .77rem; color: #78350f; line-height: 1.65 }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Named Reactions — Chemistry XII CBSE</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">← Back to Hub</a>
+
+<div class="hero">
+  <div class="badge">Organic Chemistry &middot; Class XII &middot; 2025-26</div>
+  <h1>Named Reactions</h1>
+  <p class="sub">30+ essential named reactions with reagents, equations, and CBSE exam patterns.</p>
+</div>
+
+<!-- CONVERSION CHAINS -->
+<div class="conversion-box">
+  <h3>🔗 Key Conversion Chains</h3>
+  <div class="conv-chain">
+    <span class="conv-node">CH₄</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">Cl₂/hν</span><span class="conv-arrow">→</span>
+    <span class="conv-node">CH₃Cl</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">NaOH(aq)</span><span class="conv-arrow">→</span>
+    <span class="conv-node">CH₃OH</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">PCC/K₂Cr₂O₇</span><span class="conv-arrow">→</span>
+    <span class="conv-node">HCHO</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">KMnO₄</span><span class="conv-arrow">→</span>
+    <span class="conv-node">HCOOH</span>
+  </div>
+  <div class="conv-chain">
+    <span class="conv-node">C₆H₆</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">Br₂/FeBr₃</span><span class="conv-arrow">→</span>
+    <span class="conv-node">C₆H₅Br</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">NH₃/CuBr</span><span class="conv-arrow">→</span>
+    <span class="conv-node">C₆H₅NH₂</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">NaNO₂/HCl, 0–5°C</span><span class="conv-arrow">→</span>
+    <span class="conv-node">C₆H₅N₂⁺Cl⁻</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">H₂O/H⁺</span><span class="conv-arrow">→</span>
+    <span class="conv-node">C₆H₅OH</span>
+  </div>
+  <div class="conv-chain">
+    <span class="conv-node">CH₃CH₂OH</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">K₂Cr₂O₇/H⁺</span><span class="conv-arrow">→</span>
+    <span class="conv-node">CH₃COOH</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">SOCl₂</span><span class="conv-arrow">→</span>
+    <span class="conv-node">CH₃COCl</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">NH₃</span><span class="conv-arrow">→</span>
+    <span class="conv-node">CH₃CONH₂</span>
+    <span class="conv-arrow">→</span><span class="conv-reagent">Br₂/NaOH</span><span class="conv-arrow">→</span>
+    <span class="conv-node">CH₃NH₂</span>
+  </div>
+</div>
+
+<!-- TAB NAV -->
+<div class="rxn-nav">
+  <div class="rxn-nav-inner">
+    <button class="tab active" onclick="showRxn('rxn-haloalkanes',this)">Haloalkanes &amp; Haloarenes</button>
+    <button class="tab" onclick="showRxn('rxn-alcohols',this)">Alcohols, Phenols &amp; Ethers</button>
+    <button class="tab" onclick="showRxn('rxn-carbonyl',this)">Aldehydes, Ketones &amp; Acids</button>
+    <button class="tab" onclick="showRxn('rxn-amines',this)">Amines</button>
+    <button class="tab" onclick="showRxn('rxn-diazonium',this)">Diazonium Salt Reactions</button>
+  </div>
+</div>
+
+<!-- HALOALKANES -->
+<div class="rxn-section active" id="rxn-haloalkanes">
+  <div class="rxn-section-header" style="border-bottom-color:#be185d">
+    <span class="rxn-section-title">🟣 Haloalkanes &amp; Haloarenes</span>
+    <span class="rxn-count">5 reactions</span>
+  </div>
+  <div class="memory-tip" style="background:#fdf2f8;border:1px solid #f9a8d4;color:#9d174d">
+    <strong>Memory tip</strong>
+    <strong>F</strong>inkelstein uses NaI/<strong>a</strong>cetone (NaCl insoluble → drives forward). <strong>S</strong>warts uses Ag<strong>F</strong>. <strong>W</strong>urtz doubles the chain (2 RX → R-R).
+  </div>
+  <div class="rxn-grid">
+    <div class="rxn-card" style="border-left-color:#be185d">
+      <div class="rxn-name">Finkelstein Reaction</div>
+      <div class="rxn-condition">NaI, dry acetone, reflux</div>
+      <div class="rxn-equation">R–Cl + NaI → R–I + NaCl↓</div>
+      <div class="rxn-note">💡 Driving force: NaCl is insoluble in acetone → precipitates out → equilibrium shifts forward. Converts RCl/RBr → RI.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "What is Finkelstein reaction? State the driving force." [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#be185d">
+      <div class="rxn-name">Swarts Reaction</div>
+      <div class="rxn-condition">AgF or CoF₂ or SbF₃</div>
+      <div class="rxn-equation">R–Cl + AgF → R–F + AgCl↓</div>
+      <div class="rxn-note">💡 Used to prepare alkyl fluorides (RF) which cannot be made directly from alkene + HF easily. AgCl precipitates → drives forward.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How are alkyl fluorides prepared?" [1–2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#be185d">
+      <div class="rxn-name">Wurtz Reaction</div>
+      <div class="rxn-condition">Na, dry ether</div>
+      <div class="rxn-equation">2R–X + 2Na → R–R + 2NaX</div>
+      <div class="rxn-note">💡 Doubles the carbon chain. Only useful for symmetrical alkanes (same R on both sides). Limitation: 2 different RX gives mixture of 3 products.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is ethane prepared from methyl iodide?" [1–2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#be185d">
+      <div class="rxn-name">Wurtz–Fittig Reaction</div>
+      <div class="rxn-condition">Na, dry ether</div>
+      <div class="rxn-equation">R–X + ArX + 2Na → R–Ar + 2NaX</div>
+      <div class="rxn-note">💡 Coupling of alkyl halide with aryl halide. Gives alkylbenzene. Example: CH₃Br + C₆H₅Br + 2Na → CH₃C₆H₅ (toluene) + 2NaBr.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "Distinguish Wurtz and Wurtz-Fittig reactions." [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#be185d">
+      <div class="rxn-name">Fittig Reaction</div>
+      <div class="rxn-condition">Na, dry ether</div>
+      <div class="rxn-equation">2ArX + 2Na → Ar–Ar + 2NaX</div>
+      <div class="rxn-note">💡 Coupling of two aryl halides → biphenyl type product. Example: 2C₆H₅Br + 2Na → C₆H₅–C₆H₅ + 2NaBr.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is biphenyl prepared?" [1 mark]</div>
+    </div>
+  </div>
+</div>
+
+<!-- ALCOHOLS PHENOLS ETHERS -->
+<div class="rxn-section" id="rxn-alcohols">
+  <div class="rxn-section-header" style="border-bottom-color:#2563eb">
+    <span class="rxn-section-title">🔵 Alcohols, Phenols &amp; Ethers</span>
+    <span class="rxn-count">5 reactions</span>
+  </div>
+  <div class="memory-tip" style="background:#eff6ff;border:1px solid #93c5fd;color:#1e40af">
+    <strong>Memory tip</strong>
+    <strong>K</strong>olbe uses CO₂ (needs pressure). <strong>R</strong>eimer-<strong>T</strong>iemann uses CHCl₃ (gives CHO). <strong>W</strong>illiamson makes ethers by SN2 (needs alkoxide + alkyl halide).
+  </div>
+  <div class="rxn-grid">
+    <div class="rxn-card" style="border-left-color:#2563eb">
+      <div class="rxn-name">Kolbe's Reaction</div>
+      <div class="rxn-condition">CO₂, 300°C, 5 atm → then H⁺</div>
+      <div class="rxn-equation">C₆H₅ONa + CO₂ → C₆H₅OH·COONa → salicylate
+(sodium phenoxide → sodium salicylate)</div>
+      <div class="rxn-note">💡 Phenol converted to sodium phenoxide, then carboxylated. Product is sodium salicylate (aspirin precursor). High pressure required.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is salicylic acid prepared from phenol?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#2563eb">
+      <div class="rxn-name">Reimer–Tiemann Reaction</div>
+      <div class="rxn-condition">CHCl₃, NaOH, then H₃O⁺</div>
+      <div class="rxn-equation">C₆H₅OH + CHCl₃ + 3NaOH → o-HO-C₆H₄-CHO
+(salicylaldehyde / o-hydroxybenzaldehyde)</div>
+      <div class="rxn-note">💡 Introduces −CHO group ortho to −OH. Mechanism: CHCl₃ + NaOH → dichlorocarbene (:CCl₂) which attacks ring. Mainly ortho product.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is salicylaldehyde prepared?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#2563eb">
+      <div class="rxn-name">Williamson's Ether Synthesis</div>
+      <div class="rxn-condition">Alkoxide + alkyl halide (SN2)</div>
+      <div class="rxn-equation">R–O⁻Na⁺ + R'–X → R–O–R' + NaX</div>
+      <div class="rxn-note">💡 Best method to make unsymmetrical ethers. SN2 mechanism → use primary alkyl halide with bulky alkoxide (tertiary alkyl halide gives elimination).</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is methyl ethyl ether prepared by Williamson's synthesis?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#2563eb">
+      <div class="rxn-name">Lucas Test</div>
+      <div class="rxn-condition">ZnCl₂ + conc. HCl (Lucas reagent)</div>
+      <div class="rxn-equation">3° R-OH → turbidity immediately
+2° R-OH → turbidity in ~5 min
+1° R-OH → no turbidity at RT</div>
+      <div class="rxn-note">💡 Turbidity = RCl (insoluble in reagent). 3° fastest via SN1. Distinguishes primary/secondary/tertiary alcohols.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How do you distinguish 1°, 2° and 3° alcohols chemically?" [3 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#2563eb">
+      <div class="rxn-name">Victor Meyer Test</div>
+      <div class="rxn-condition">P/I₂ → HNO₂ → KOH → NaOH</div>
+      <div class="rxn-equation">1° → red colour (nitroso compound)
+2° → blue colour
+3° → colourless</div>
+      <div class="rxn-note">💡 Converts alcohol → iodoalkane → nitroalkane → reaction with HNO₂. 1°: nitroso compound + NaOH → red. 2°: blue complex. 3°: no α-H → no colour.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How does Victor Meyer test distinguish 1°/2°/3° alcohols?" [3 marks]</div>
+    </div>
+  </div>
+</div>
+
+<!-- ALDEHYDES KETONES CARBOXYLIC ACIDS -->
+<div class="rxn-section" id="rxn-carbonyl">
+  <div class="rxn-section-header" style="border-bottom-color:#dc2626">
+    <span class="rxn-section-title">🔴 Aldehydes, Ketones &amp; Carboxylic Acids</span>
+    <span class="rxn-count">10 reactions</span>
+  </div>
+  <div class="memory-tip" style="background:#fef2f2;border:1px solid #fca5a5;color:#991b1b">
+    <strong>Memory tip</strong>
+    <strong>Aldol</strong> needs α-H + dilute NaOH. <strong>Cannizzaro</strong> = no α-H + conc. NaOH. <strong>Tollens</strong> = silver mirror (aldehydes only). <strong>Fehling</strong> = brick red (aliphatic aldehydes only). <strong>HVZ</strong> = α-bromination of acids.
+  </div>
+  <div class="rxn-grid">
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Aldol Condensation</div>
+      <div class="rxn-condition">Dilute NaOH (or dilute acid), warm</div>
+      <div class="rxn-equation">2CH₃CHO → CH₃CH(OH)CH₂CHO
+         ↓ (−H₂O, heat)
+    CH₃CH=CHCHO (crotonaldehyde)</div>
+      <div class="rxn-note">💡 Requires α-H. Step 1: nucleophilic addition → β-hydroxy carbonyl (aldol product). Step 2: dehydration → α,β-unsaturated carbonyl. Cross aldol possible (two different carbonyl compounds).</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "Give the mechanism of aldol condensation of acetaldehyde." [3–5 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Cannizzaro Reaction</div>
+      <div class="rxn-condition">Conc. NaOH</div>
+      <div class="rxn-equation">2HCHO + NaOH → CH₃OH + HCOONa
+2PhCHO + NaOH → PhCH₂OH + PhCOONa</div>
+      <div class="rxn-note">💡 ONLY for aldehydes with NO α-H (HCHO, PhCHO, (CH₃)₃CCHO). Disproportionation: one molecule oxidised (→ acid), one reduced (→ alcohol). Mechanism: hydride transfer.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "Distinguish Cannizzaro from Aldol. When does Cannizzaro occur?" [3–5 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Tollens' Test (Silver Mirror)</div>
+      <div class="rxn-condition">[Ag(NH₃)₂]⁺OH⁻ (Tollens' reagent), warm</div>
+      <div class="rxn-equation">RCHO + 2[Ag(NH₃)₂]⁺ + 2OH⁻ → RCOO⁻ + 2Ag↓ + 4NH₃ + H₂O</div>
+      <div class="rxn-note">💡 Silver mirror formed on glass. Positive for: all aldehydes (RCHO), formic acid (HCOOH), glucose. Negative for: ketones, benzaldehyde does give positive.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How do you distinguish aldehyde from ketone?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Fehling's Test</div>
+      <div class="rxn-condition">Fehling's solution (A + B), heat</div>
+      <div class="rxn-equation">RCHO + 2Cu²⁺ + 4OH⁻ → RCOO⁻ + Cu₂O↓(brick red) + 2H₂O</div>
+      <div class="rxn-note">💡 Brick-red ppt of Cu₂O. Positive for: aliphatic aldehydes, glucose, fructose. Negative for: aromatic aldehydes (benzaldehyde), ketones. More selective than Tollens.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "Why does benzaldehyde not give Fehling test?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Clemmensen Reduction</div>
+      <div class="rxn-condition">Zn(Hg) amalgam + conc. HCl, reflux</div>
+      <div class="rxn-equation">&gt;C=O + 4[H] → &gt;CH₂ + H₂O</div>
+      <div class="rxn-note">💡 Reduces carbonyl (C=O) to methylene (CH₂). Acid-sensitive compounds: use Wolff-Kishner instead. Used for: PhCOCH₃ → PhCH₂CH₃.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is toluene prepared from acetophenone?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Wolff–Kishner Reduction</div>
+      <div class="rxn-condition">H₂N–NH₂ (hydrazine), KOH, ethylene glycol, heat</div>
+      <div class="rxn-equation">&gt;C=O + H₂NNH₂ → &gt;C=NNH₂ + H₂O
+    → &gt;CH₂ + N₂</div>
+      <div class="rxn-note">💡 Complementary to Clemmensen. Used for base-stable, acid-sensitive substrates. Hydrazone intermediate decomposes to give N₂ gas (driving force).</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "Compare Clemmensen and Wolff-Kishner reductions." [3 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Hell–Volhard–Zelinsky (HVZ)</div>
+      <div class="rxn-condition">Br₂ + PCl₃ (or red P), then H₂O</div>
+      <div class="rxn-equation">RCOOH + Br₂ → RCH(Br)COOH + HBr
+(α-bromo carboxylic acid)</div>
+      <div class="rxn-note">💡 α-halogenation of carboxylic acids. Not possible directly with Br₂ alone; PCl₃ activates acid to acyl chloride first. Product: α-bromocarboxylic acid.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is α-bromopropionic acid prepared from propionic acid?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Rosenmund Reduction</div>
+      <div class="rxn-condition">H₂, Pd/BaSO₄ catalyst (poisoned Pd), xylene</div>
+      <div class="rxn-equation">RCOCl + H₂ → RCHO + HCl</div>
+      <div class="rxn-note">💡 Selective reduction of acyl chloride → aldehyde (stops before alcohol). BaSO₄ poisons Pd to prevent over-reduction. Quinoline-S further deactivates catalyst.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is benzaldehyde prepared from benzoyl chloride?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Stephen's Reduction</div>
+      <div class="rxn-condition">SnCl₂ + HCl, then H₂O</div>
+      <div class="rxn-equation">RCN + SnCl₂ + HCl → [RCH=NH] → RCHO</div>
+      <div class="rxn-note">💡 Nitrile (RCN) → aldehyde (RCHO). Mechanism via imine intermediate which hydrolyses to aldehyde. Useful for aromatic aldehydes from aromatic nitriles.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is benzaldehyde prepared from benzonitrile?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#dc2626">
+      <div class="rxn-name">Etard Reaction</div>
+      <div class="rxn-condition">CrO₂Cl₂ (chromyl chloride), CS₂</div>
+      <div class="rxn-equation">C₆H₅–CH₃ + 2CrO₂Cl₂ → [complex] → C₆H₅CHO</div>
+      <div class="rxn-note">💡 Selective oxidation of methyl group on benzene ring to aldehyde. Chromyl chloride is a specific reagent for this transformation.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is benzaldehyde prepared from toluene?" [2 marks]</div>
+    </div>
+  </div>
+</div>
+
+<!-- AMINES -->
+<div class="rxn-section" id="rxn-amines">
+  <div class="rxn-section-header" style="border-bottom-color:#9333ea">
+    <span class="rxn-section-title">🟣 Amines</span>
+    <span class="rxn-count">7 reactions</span>
+  </div>
+  <div class="memory-tip" style="background:#fdf4ff;border:1px solid #e9d5ff;color:#7e22ce">
+    <strong>Memory tip</strong>
+    <strong>G</strong>abriel makes only 1° amine (phthalimide route). <strong>H</strong>ofmann = lose 1 carbon (RCONH₂ → RNH₂). <strong>C</strong>arbylamine = smelly isocyanide = test for 1°. <strong>D</strong>iazotisation always 0–5°C.
+  </div>
+  <div class="rxn-grid">
+    <div class="rxn-card" style="border-left-color:#9333ea">
+      <div class="rxn-name">Gabriel Synthesis</div>
+      <div class="rxn-condition">KOH → then R-X → then H₂NNH₂ or acid hydrolysis</div>
+      <div class="rxn-equation">Phthalimide + KOH → potassium phthalimide
++ RX → N-alkylphthalimide
++ H₂NNH₂ → R–NH₂ + phthalhydrazide</div>
+      <div class="rxn-note">💡 Gives ONLY primary aliphatic amines (no 2° or 3°). Cannot be used for aromatic amines (ArX won't undergo SN2 with nitrogen nucleophile).</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is methylamine prepared by Gabriel synthesis?" [3–5 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#9333ea">
+      <div class="rxn-name">Hofmann Bromamide Degradation</div>
+      <div class="rxn-condition">Br₂ + NaOH (aqueous)</div>
+      <div class="rxn-equation">RCONH₂ + Br₂ + 4NaOH → R–NH₂ + Na₂CO₃ + 2NaBr + 2H₂O</div>
+      <div class="rxn-note">💡 Product has ONE LESS carbon than starting amide (R loses CO). Gives pure primary amine. Mechanism: N-bromoamide → isocyanate → amine.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is methylamine prepared from acetamide?" [3 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#9333ea">
+      <div class="rxn-name">Diazotisation</div>
+      <div class="rxn-condition">NaNO₂ + HCl, 0–5°C</div>
+      <div class="rxn-equation">ArNH₂ + NaNO₂ + 2HCl → ArN₂⁺Cl⁻ + NaCl + 2H₂O
+(diazonium salt)</div>
+      <div class="rxn-note">💡 Temperature CRITICAL (0–5°C): diazonium salts decompose above 5°C. Only primary aromatic amines. Diazonium salt is highly useful for synthesis.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "What is diazotisation? Give conditions." [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#9333ea">
+      <div class="rxn-name">Coupling Reaction (Azo Dye Formation)</div>
+      <div class="rxn-condition">Diazonium salt + activated aromatic compound, alkaline medium</div>
+      <div class="rxn-equation">ArN₂⁺ + C₆H₅OH → Ar–N=N–C₆H₄–OH + H⁺
+(orange-red azo dye)</div>
+      <div class="rxn-note">💡 Electrophilic substitution at para position of phenol/aniline. Always occurs in para position preferentially. Azo group (–N=N–) is chromophore (gives colour).</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is orange azo dye prepared?" [2–3 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#9333ea">
+      <div class="rxn-name">Carbylamine Reaction</div>
+      <div class="rxn-condition">CHCl₃ + KOH (alcoholic), heat</div>
+      <div class="rxn-equation">R–NH₂ + CHCl₃ + 3KOH → R–N≡C + 3KCl + 3H₂O
+(isocyanide — foul smell)</div>
+      <div class="rxn-note">💡 Confirmatory test for PRIMARY amines (both aliphatic and aromatic). 2° and 3° amines do NOT give this test. Mechanism: dichlorocarbene attacks amine.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How do you confirm presence of primary amine?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#9333ea">
+      <div class="rxn-name">Hinsberg's Test</div>
+      <div class="rxn-condition">C₆H₅SO₂Cl (benzenesulfonyl chloride)</div>
+      <div class="rxn-equation">1°: R-NH₂ → sulfonamide (soluble in NaOH)
+2°: R₂NH → sulfonamide (insoluble in NaOH)
+3°: R₃N → no reaction</div>
+      <div class="rxn-note">💡 1° product has N–H → acidic, dissolves in NaOH. 2° product has no N–H → insoluble ppt. 3° can't react (no N–H). Best test to distinguish 1°/2°/3° amines.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How does Hinsberg test distinguish 1°, 2°, 3° amines?" [3–5 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#9333ea">
+      <div class="rxn-name">Acetylation of Amines</div>
+      <div class="rxn-condition">Acetic anhydride or acetyl chloride</div>
+      <div class="rxn-equation">R–NH₂ + (CH₃CO)₂O → R–NHCOCH₃ + CH₃COOH</div>
+      <div class="rxn-note">💡 Protects amine group. Used in synthesis to reduce reactivity of amine (e.g., aniline → acetanilide before nitration to avoid over-reaction). Reversed by hydrolysis.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "Why is aniline acetylated before nitration?" [2 marks]</div>
+    </div>
+  </div>
+</div>
+
+<!-- CROSS-CHAPTER (Diazonium reactions) -->
+<div class="rxn-section" id="rxn-diazonium">
+  <div class="rxn-section-header" style="border-bottom-color:#5c5347">
+    <span class="rxn-section-title">⚗️ Diazonium Salt Reactions (Cross-Chapter)</span>
+    <span class="rxn-count">5 reactions</span>
+  </div>
+  <div class="memory-tip" style="background:var(--sand-100);border:1px solid var(--sand-300);color:var(--sand-700)">
+    <strong>Memory tip</strong>
+    <strong>S</strong>andmeyer uses Cu halide. <strong>G</strong>attermann uses Cu metal + acid (cheaper). <strong>B</strong>alz-<strong>S</strong>chiemann uses BF₄⁻ → gives ArF. All start from diazonium salt (ArN₂⁺).
+  </div>
+  <div class="rxn-grid">
+    <div class="rxn-card" style="border-left-color:#5c5347">
+      <div class="rxn-name">Sandmeyer Reaction</div>
+      <div class="rxn-condition">CuCl/CuBr/CuCN (cuprous halide)</div>
+      <div class="rxn-equation">ArN₂⁺Cl⁻ + CuCl → ArCl + N₂ + CuCl
+ArN₂⁺Cl⁻ + CuBr → ArBr + N₂
+ArN₂⁺Cl⁻ + CuCN → ArCN + N₂</div>
+      <div class="rxn-note">💡 Replaces N₂ group with halide or CN. Uses cuprous salt. Important for introducing Cl/Br/CN into benzene ring without using Friedel-Crafts (which has limitations).</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is chlorobenzene/bromobenzene prepared from benzene?" [3 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#5c5347">
+      <div class="rxn-name">Gattermann Reaction</div>
+      <div class="rxn-condition">Cu powder + HCl or HBr</div>
+      <div class="rxn-equation">ArN₂⁺Cl⁻ + HCl + Cu → ArCl + N₂ + CuCl</div>
+      <div class="rxn-note">💡 Similar to Sandmeyer but uses Cu metal instead of CuX. Less efficient but cheaper. Cu acts as reducing agent and catalyst.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "Distinguish Sandmeyer and Gattermann reactions." [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#5c5347">
+      <div class="rxn-name">Balz–Schiemann Reaction</div>
+      <div class="rxn-condition">HBF₄ → then heat</div>
+      <div class="rxn-equation">ArN₂⁺Cl⁻ + HBF₄ → ArN₂⁺BF₄⁻
+ArN₂⁺BF₄⁻ → ArF + N₂ + BF₃ (on heating)</div>
+      <div class="rxn-note">💡 Only way to introduce F into benzene ring via diazonium salt. Diazonium fluoroborate is stable solid; decomposes on heating to give aryl fluoride.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is fluorobenzene prepared from aniline?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#5c5347">
+      <div class="rxn-name">Replacement by OH (Hydrolysis)</div>
+      <div class="rxn-condition">H₂O, H⁺ (dilute H₂SO₄), warm</div>
+      <div class="rxn-equation">ArN₂⁺ + H₂O → ArOH + N₂ + H⁺</div>
+      <div class="rxn-note">💡 Converts aniline → phenol via diazonium salt. Better route than direct hydroxylation of benzene. Diazonium salt solution warmed with dilute acid.</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is phenol prepared from aniline?" [2 marks]</div>
+    </div>
+    <div class="rxn-card" style="border-left-color:#5c5347">
+      <div class="rxn-name">Replacement by H (Deamination)</div>
+      <div class="rxn-condition">H₃PO₂ (hypophosphorous acid)</div>
+      <div class="rxn-equation">ArN₂⁺Cl⁻ + H₃PO₂ + H₂O → ArH + N₂ + H₃PO₃ + HCl</div>
+      <div class="rxn-note">💡 Removes N₂ group and replaces with H. Useful for making compounds that cannot be obtained by direct substitution (e.g., 1,3,5-tribromobenzene from 2,4,6-tribromoaniline).</div>
+      <div class="rxn-when"><strong>Asked as:</strong> "How is 1,3,5-tribromobenzene prepared?" [3 marks]</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- container --><script src="../../js/tab-nav.js"></script>
+</body>
+</html>

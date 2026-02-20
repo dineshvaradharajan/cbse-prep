@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/chapter.css">
+<style>:root{
+  --subject-color:#4338ca;--subject-bg:#eef2ff;--subject-border:#a5b4fc;--subject-text:#3730a3;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE Physics XII — Chapters</title>
+</head>
+<body>
+<div class="container">
+  <a href="../index.html" class="back-link">← Back to Prep Hub</a>
+
+  <h1>Chapters</h1>
+  <p class="subtitle">Pick a chapter — learn concepts, then test with MCQs</p>
+
+  <!-- Chapter tabs — single row with overflow dropdown -->
+  <div class="chapter-bar">
+    <div class="chapter-tabs" id="chapterTabs">
+      <button class="tab active" data-tab="ch1" onclick="switchTopic('ch1')">1. Charges &amp; Fields</button>
+      <button class="tab sub-chapter" data-tab="dipole" onclick="switchTopic('dipole')">↳ Dipole</button>
+      <button class="tab" data-tab="ch2" onclick="switchTopic('ch2')">2. Potential &amp; Capacitance</button>
+      <button class="tab" data-tab="ch3" onclick="switchTopic('ch3')">3. Current Electricity</button>
+      <button class="tab" data-tab="ch4" onclick="switchTopic('ch4')">4. Moving Charges</button>
+      <button class="tab" data-tab="ch5" onclick="switchTopic('ch5')">5. Magnetism &amp; Matter</button>
+      <button class="tab" data-tab="ch6" onclick="switchTopic('ch6')">6. EM Induction</button>
+      <button class="tab" data-tab="ac" onclick="switchTopic('ac')">7. AC</button>
+      <button class="tab" data-tab="ch8" onclick="switchTopic('ch8')">8. EM Waves</button>
+      <button class="tab" data-tab="ch9" onclick="switchTopic('ch9')">9. Ray Optics</button>
+      <button class="tab" data-tab="ch10" onclick="switchTopic('ch10')">10. Wave Optics</button>
+      <button class="tab" data-tab="ch11" onclick="switchTopic('ch11')">11. Dual Nature</button>
+      <button class="tab" data-tab="ch12" onclick="switchTopic('ch12')">12. Atoms</button>
+      <button class="tab" data-tab="ch13" onclick="switchTopic('ch13')">13. Nuclei</button>
+      <button class="tab" data-tab="ch14" onclick="switchTopic('ch14')">14. Semiconductors</button>
+    </div>
+    <button class="more-btn" id="moreBtn" onclick="toggleMoreDropdown()">More ▾</button>
+    <div class="more-dropdown" id="moreDropdown"></div>
+  </div>
+
+  <!-- Sub-tabs: Concepts / Questions -->
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="switchView('concepts')">Concepts</button>
+    <button class="sub-tab" onclick="switchView('questions')">Questions</button>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CONCEPTS VIEW
+       ═══════════════════════════════════ -->
+  <div id="conceptsView" class="active">
+
+    <!-- TOC -->
+    <div class="concept-toc" id="conceptToc"></div>
+
+    <!-- Concept card rendered here -->
+    <div id="conceptCardArea"></div>
+
+    <!-- Nav -->
+    <div class="concept-nav">
+      <button class="btn btn-nav" id="cPrevBtn" onclick="conceptNav(-1)">← Previous</button>
+      <span id="cPageIndicator" style="font-size:0.85em;color:#78716c;font-weight:600"></span>
+      <button class="btn btn-nav" id="cNextBtn" onclick="conceptNav(1)">Next →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       QUESTIONS VIEW
+       ═══════════════════════════════════ -->
+  <div id="questionsView">
+    <div class="progress-strip" id="progressStrip">
+      <span class="progress-strip-label" id="progressLabel">0 / 50 answered</span>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+    </div>
+
+    <div class="q-nav" id="qNav"></div>
+
+    <div class="question-card" id="questionCard">
+      <div class="q-number" id="qNumber"></div>
+      <div class="q-text" id="qText"></div>
+      <div class="options" id="optionsContainer"></div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn btn-nav" id="prevBtn" onclick="navigate(-1)">← Previous</button>
+      <span id="pageIndicator" style="font-size:0.85em;color:#78716c;font-weight:600"></span>
+      <button class="btn btn-nav" id="nextBtn" onclick="navigate(1)">Next →</button>
+    </div>
+
+    <div class="score-card" id="scoreCard">
+      <div class="score-big" id="scoreBig"></div>
+      <div class="score-label" id="scoreLabel"></div>
+      <div class="score-msg" id="scoreMsg"></div>
+    </div>
+
+    <div class="bottom-bar">
+      <button class="btn btn-submit" id="submitBtn" onclick="submitTest()">Submit Answers</button>
+      <button class="btn btn-reset" id="resetBtn" onclick="resetTest()" style="display:none">Reset &amp; Try Again</button>
+    </div>
+  </div>
+</div>
+
+<!-- Data: Chapter 1 -->
+<script src="../data/ch1-charges-fields/concepts.js"></script>
+<script src="../data/ch1-charges-fields/questions.js"></script>
+<script src="../data/dipole/concepts.js"></script>
+<script src="../data/dipole/questions.js"></script>
+<!-- Data: Chapter 2 -->
+<script src="../data/ch2-potential-capacitance/concepts.js"></script>
+<script src="../data/ch2-potential-capacitance/questions.js"></script>
+<!-- Data: Chapter 3 -->
+<script src="../data/ch3-current-electricity/concepts.js"></script>
+<script src="../data/ch3-current-electricity/questions.js"></script>
+<!-- Data: Chapter 4 -->
+<script src="../data/ch4-moving-charges/concepts.js"></script>
+<script src="../data/ch4-moving-charges/questions.js"></script>
+<!-- Data: Chapter 5 -->
+<script src="../data/ch5-magnetism-matter/concepts.js"></script>
+<script src="../data/ch5-magnetism-matter/questions.js"></script>
+<!-- Data: Chapter 6 -->
+<script src="../data/ch6-electromagnetic-induction/concepts.js"></script>
+<script src="../data/ch6-electromagnetic-induction/questions.js"></script>
+<!-- Data: Chapter 7 -->
+<script src="../data/ac/concepts.js"></script>
+<script src="../data/ac/questions.js"></script>
+<!-- Data: Chapter 8 -->
+<script src="../data/ch8-em-waves/concepts.js"></script>
+<script src="../data/ch8-em-waves/questions.js"></script>
+<!-- Data: Chapter 9 -->
+<script src="../data/ch9-ray-optics/concepts.js"></script>
+<script src="../data/ch9-ray-optics/questions.js"></script>
+<!-- Data: Chapter 10 -->
+<script src="../data/ch10-wave-optics/concepts.js"></script>
+<script src="../data/ch10-wave-optics/questions.js"></script>
+<!-- Data: Chapter 11 -->
+<script src="../data/ch11-dual-nature/concepts.js"></script>
+<script src="../data/ch11-dual-nature/questions.js"></script>
+<!-- Data: Chapter 12 -->
+<script src="../data/ch12-atoms/concepts.js"></script>
+<script src="../data/ch12-atoms/questions.js"></script>
+<!-- Data: Chapter 13 -->
+<script src="../data/ch13-nuclei/concepts.js"></script>
+<script src="../data/ch13-nuclei/questions.js"></script>
+<!-- Data: Chapter 14 -->
+<script src="../data/ch14-semiconductors/concepts.js"></script>
+<script src="../data/ch14-semiconductors/questions.js"></script>
+<!-- Registry & Engine -->
+<script src="../data/registry.js"></script>
+<script src="../engine/question-paper-engine.js"></script>
+
+<!-- Overflow dropdown logic --><script src="../js/chapter-nav.js"></script>
+</body>
+</html>

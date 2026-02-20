@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/formulas.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Formula Reference — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+
+<div class="hero">
+  <div class="badge">Chemistry XII &middot; Physical, Inorganic &amp; Organic</div>
+  <h1>Chemistry Formula Reference</h1>
+  <p class="sub">Every equation, law, and key relationship — organised by chapter for quick revision.</p>
+</div>
+
+<div class="quick-ref">
+  <h3>⚡ Critical Formulas — Memorise These First</h3>
+  <div class="qr-grid">
+    <div class="qr-item"><span class="qr-label">Nernst Equation</span><span class="qr-val">E = E° − (0.0591/n) log Q</span></div>
+    <div class="qr-item"><span class="qr-label">First-Order k</span><span class="qr-val">k = (2.303/t) log([A]₀/[A])</span></div>
+    <div class="qr-item"><span class="qr-label">Arrhenius</span><span class="qr-val">k = Ae^(−Ea/RT)</span></div>
+    <div class="qr-item"><span class="qr-label">BP Elevation</span><span class="qr-val">ΔTb = Kb × m</span></div>
+    <div class="qr-item"><span class="qr-label">FP Depression</span><span class="qr-val">ΔTf = Kf × m</span></div>
+    <div class="qr-item"><span class="qr-label">Osmotic Pressure</span><span class="qr-val">π = CRT = (n/V)RT</span></div>
+    <div class="qr-item"><span class="qr-label">Faraday's 1st Law</span><span class="qr-val">m = (M/nF) × It</span></div>
+    <div class="qr-item"><span class="qr-label">Half-Life (1st order)</span><span class="qr-val">t½ = 0.693/k</span></div>
+  </div>
+</div>
+
+<nav class="chapter-nav">
+  <div class="chapter-nav-inner">
+    <a href="#sol">1. Solutions</a>
+    <a href="#elec">2. Electrochemistry</a>
+    <a href="#kin">3. Chemical Kinetics</a>
+    <a href="#dfblk">4. d &amp; f Block</a>
+    <a href="#coord">5. Coordination</a>
+    <a href="#halo">6. Haloalkanes</a>
+    <a href="#alc">7. Alcohols &amp; Phenols</a>
+    <a href="#carb">8. Aldehydes &amp; Ketones</a>
+    <a href="#amin">9. Amines</a>
+    <a href="#bio">10. Biomolecules</a>
+  </div>
+</nav>
+
+<div class="chapters">
+
+<!-- SOLUTIONS -->
+<div class="ch-section" id="sol">
+  <div class="ch-header" style="border-bottom-color:#0891b2">
+    <span class="ch-number">01</span>
+    <span class="ch-title">Solutions</span>
+    <span class="ch-marks">7 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Mole Fraction</div>
+      <code class="fc-eq">xA = nA / (nA + nB)</code>
+      <div class="fc-note">xA + xB = 1. Dimensionless. Used in Raoult's law.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Raoult's Law</div>
+      <code class="fc-eq">pA = xA × p°A   ;   pTotal = pA + pB</code>
+      <div class="fc-note">Valid for ideal solutions. p°A = vapour pressure of pure A.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Relative Lowering of Vapour Pressure</div>
+      <code class="fc-eq">ΔP/P° = (p°A − pA)/p°A = xB</code>
+      <div class="fc-note">xB = mole fraction of solute. ΔP/P° is a colligative property.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Elevation of Boiling Point</div>
+      <code class="fc-eq">ΔTb = Kb × m</code>
+      <span class="unit-tag">Kb: K·kg·mol⁻¹</span>
+      <div class="fc-note">Kb = ebullioscopic constant (water: 0.52). m = molality (mol/kg solvent).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Depression of Freezing Point</div>
+      <code class="fc-eq">ΔTf = Kf × m</code>
+      <span class="unit-tag">Kf: K·kg·mol⁻¹</span>
+      <div class="fc-note">Kf = cryoscopic constant (water: 1.86). Used to find molar mass.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Osmotic Pressure</div>
+      <code class="fc-eq">π = CRT = (n/V)RT</code>
+      <span class="unit-tag">π: atm or Pa</span>
+      <div class="fc-note">Van't Hoff equation. C = molarity (mol/L). R = 0.0821 L·atm/(mol·K).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">Molar Mass from Colligative Properties</div>
+      <code class="fc-eq">M = (Kb × w × 1000) / (ΔTb × W)</code>
+      <div class="fc-note">w = mass of solute (g), W = mass of solvent (g). Also works with Kf/ΔTf.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#0891b2">
+      <div class="fc-name">van't Hoff Factor</div>
+      <code class="fc-eq">i = observed colligative property / theoretical value</code>
+      <code class="fc-eq">i = 1 + (n−1)α   [dissociation]</code>
+      <code class="fc-eq">i = 1 − (1 − 1/n)α   [association]</code>
+      <div class="fc-note">n = particles formed; α = degree of dissociation/association. i &gt; 1 for dissociation, i &lt; 1 for association.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTROCHEMISTRY -->
+<div class="ch-section" id="elec">
+  <div class="ch-header" style="border-bottom-color:#16a34a">
+    <span class="ch-number">02</span>
+    <span class="ch-title">Electrochemistry</span>
+    <span class="ch-marks">9 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Standard Cell EMF</div>
+      <code class="fc-eq">E°cell = E°cathode − E°anode</code>
+      <div class="fc-note">Cathode = reduction (+ve electrode). Anode = oxidation (−ve electrode).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Nernst Equation</div>
+      <code class="fc-eq">E = E° − (RT/nF) ln Q</code>
+      <code class="fc-eq">E = E° − (0.0591/n) log Q   [at 25°C]</code>
+      <div class="fc-note">n = electrons transferred; F = 96500 C/mol; Q = reaction quotient.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Gibbs Energy &amp; EMF</div>
+      <code class="fc-eq">ΔG° = −nFE°cell</code>
+      <code class="fc-eq">log K = nE° / 0.0591</code>
+      <div class="fc-note">Spontaneous if E°cell &gt; 0 (ΔG° &lt; 0). K = equilibrium constant.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Molar Conductivity</div>
+      <code class="fc-eq">Λm = κ × 1000 / M</code>
+      <span class="unit-tag">S·cm²·mol⁻¹</span>
+      <div class="fc-note">κ = conductivity (S/cm); M = molarity (mol/L). Λm increases as dilution increases.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Kohlrausch's Law</div>
+      <code class="fc-eq">Λ°m = Σν₊λ°₊ + Σν₋λ°₋</code>
+      <code class="fc-eq">Λm = Λ°m − b√c   [strong electrolytes]</code>
+      <div class="fc-note">λ° = limiting molar conductivity of individual ions. Used to find Λ°m of weak electrolytes.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Faraday's First Law</div>
+      <code class="fc-eq">m = ZIt = (M / nF) × It</code>
+      <span class="unit-tag">m: grams</span>
+      <div class="fc-note">Z = electrochemical equivalent = M/(nF). I = current (A); t = time (s).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Faraday's Second Law</div>
+      <code class="fc-eq">m₁/m₂ = E₁/E₂</code>
+      <div class="fc-note">E = equivalent weight = M/n. Same charge deposits masses in ratio of equivalent weights.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#16a34a">
+      <div class="fc-name">Key Constants</div>
+      <code class="fc-eq">F = 96500 C mol⁻¹</code>
+      <code class="fc-eq">RT/F = 0.02569 V   [at 25°C]</code>
+      <div class="fc-note">1 Faraday = charge on 1 mole of electrons. 2.303RT/F = 0.0591 V at 298 K.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHEMICAL KINETICS -->
+<div class="ch-section" id="kin">
+  <div class="ch-header" style="border-bottom-color:#ea580c">
+    <span class="ch-number">03</span>
+    <span class="ch-title">Chemical Kinetics</span>
+    <span class="ch-marks">7 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Rate of Reaction</div>
+      <code class="fc-eq">r = −(1/a) d[A]/dt = +(1/b) d[B]/dt</code>
+      <div class="fc-note">For aA → bB. Rate is always positive. Units: mol L⁻¹ s⁻¹.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Rate Law</div>
+      <code class="fc-eq">r = k [A]^m [B]^n</code>
+      <div class="fc-note">m, n = orders (determined experimentally, not from stoichiometry). Overall order = m + n.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Units of Rate Constant k</div>
+      <code class="fc-eq">k: (mol L⁻¹)^(1−n) s⁻¹</code>
+      <div class="fc-note">Zero order: mol L⁻¹ s⁻¹. First order: s⁻¹. Second order: L mol⁻¹ s⁻¹.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Zero Order Integrated Rate Law</div>
+      <code class="fc-eq">[A] = [A]₀ − kt</code>
+      <code class="fc-eq">t½ = [A]₀ / 2k</code>
+      <div class="fc-note">Plot [A] vs t → straight line (slope = −k). Half-life depends on initial concentration.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">First Order Integrated Rate Law</div>
+      <code class="fc-eq">k = (2.303/t) log ([A]₀/[A])</code>
+      <code class="fc-eq">t½ = 0.693/k</code>
+      <div class="fc-note">Plot ln[A] vs t → straight line (slope = −k). Half-life INDEPENDENT of [A]₀.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Arrhenius Equation</div>
+      <code class="fc-eq">k = A e^(−Ea/RT)</code>
+      <code class="fc-eq">log(k₂/k₁) = (Ea/2.303R) × (T₂−T₁)/(T₁T₂)</code>
+      <span class="unit-tag">Ea: J mol⁻¹</span>
+      <div class="fc-note">A = frequency factor (pre-exponential factor). R = 8.314 J mol⁻¹ K⁻¹. Plot log k vs 1/T → slope = −Ea/2.303R.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#ea580c">
+      <div class="fc-name">Effect of Temperature (Rule of thumb)</div>
+      <code class="fc-eq">rate doubles for every 10°C rise</code>
+      <div class="fc-note">Temperature coefficient ≈ 2 (for many reactions). Catalyst lowers Ea without changing ΔH.</div>
+    </div>
+  </div>
+</div>
+
+<!-- d & f BLOCK -->
+<div class="ch-section" id="dfblk">
+  <div class="ch-header" style="border-bottom-color:#b45309">
+    <span class="ch-number">04</span>
+    <span class="ch-title">d &amp; f Block Elements</span>
+    <span class="ch-marks">7 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#b45309">
+      <div class="fc-name">d-block Configuration</div>
+      <code class="fc-eq">General: (n−1)d¹⁻¹⁰ ns⁰⁻²</code>
+      <div class="fc-note">Exceptions: Cr = [Ar] 3d⁵ 4s¹ ; Cu = [Ar] 3d¹⁰ 4s¹ (half/fully filled stability).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#b45309">
+      <div class="fc-name">KMnO₄ — Acidic Medium</div>
+      <code class="fc-eq">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</code>
+      <div class="fc-note">Gains 5e⁻ (Mn: +7 → +2). Pink/violet → colourless. E° = +1.51 V. Oxidises Fe²⁺, oxalic acid, SO₂.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#b45309">
+      <div class="fc-name">KMnO₄ — Neutral/Faintly Alkaline</div>
+      <code class="fc-eq">MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻</code>
+      <div class="fc-note">Gains 3e⁻ (Mn: +7 → +4). Brown/black precipitate of MnO₂ formed.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#b45309">
+      <div class="fc-name">K₂Cr₂O₇ — Acidic Medium</div>
+      <code class="fc-eq">Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O</code>
+      <div class="fc-note">Gains 6e⁻ (Cr: +6 → +3). Orange → green. E° = +1.33 V. Oxidises Fe²⁺, I⁻, H₂S.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#b45309">
+      <div class="fc-name">Chromate-Dichromate Equilibrium</div>
+      <code class="fc-eq">Cr₂O₇²⁻ + H₂O ⇌ 2CrO₄²⁻ + 2H⁺</code>
+      <div class="fc-note">Yellow (chromate, basic) ⇌ Orange (dichromate, acidic). Equilibrium shifts with pH.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#b45309">
+      <div class="fc-name">Lanthanoid Contraction</div>
+      <code class="fc-eq">Ionic radii: La³⁺ (106 pm) → Lu³⁺ (86 pm)</code>
+      <div class="fc-note">Steady decrease across lanthanoids (Ce to Lu) due to poor shielding by 4f electrons. Causes atomic radii of 5d elements ≈ 4d elements.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COORDINATION COMPOUNDS -->
+<div class="ch-section" id="coord">
+  <div class="ch-header" style="border-bottom-color:#7c3aed">
+    <span class="ch-number">05</span>
+    <span class="ch-title">Coordination Compounds</span>
+    <span class="ch-marks">7 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Magnetic Moment</div>
+      <code class="fc-eq">μ = √(n(n+2))  BM</code>
+      <div class="fc-note">n = number of unpaired electrons. 1 unpaired e⁻ → μ ≈ 1.73 BM; 5 unpaired → μ ≈ 5.92 BM.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Crystal Field Splitting (Octahedral)</div>
+      <code class="fc-eq">Δo = energy gap between eg and t2g</code>
+      <code class="fc-eq">CFSE = −0.4n(t2g) × Δo + 0.6n(eg) × Δo</code>
+      <div class="fc-note">t2g (lower) has 3 orbitals; eg (higher) has 2. Strong field → large Δo → low spin. Weak field → small Δo → high spin.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Octahedral vs Tetrahedral Δ</div>
+      <code class="fc-eq">Δt ≈ (4/9) Δo</code>
+      <div class="fc-note">Tetrahedral splitting is always smaller → most tetrahedral complexes are high-spin.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Spectrochemical Series (weak → strong)</div>
+      <code class="fc-eq">I⁻ &lt; Br⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; en &lt; CN⁻ &lt; CO</code>
+      <div class="fc-note">Strong field ligands (CN⁻, CO) → low spin, large Δo → coloured (d-d transition). Weak field → high spin.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">IUPAC Naming Rules</div>
+      <code class="fc-eq">[Ligands (alphabetical) Metal(ox.state)]^charge</code>
+      <div class="fc-note">Cation named before anion. Ligands: aqua, ammine, chlorido, cyano, oxido. Metal with −ate suffix if in anionic complex.</div>
+    </div>
+  </div>
+</div>
+
+<!-- HALOALKANES -->
+<div class="ch-section" id="halo">
+  <div class="ch-header" style="border-bottom-color:#be185d">
+    <span class="ch-number">06</span>
+    <span class="ch-title">Haloalkanes &amp; Haloarenes</span>
+    <span class="ch-marks">6 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#be185d">
+      <div class="fc-name">Reactivity Order (Nucleophilic Substitution)</div>
+      <code class="fc-eq">RI &gt; RBr &gt; RCl &gt; RF</code>
+      <div class="fc-note">C–I bond weakest → easiest to break. RF strongest bond → least reactive.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#be185d">
+      <div class="fc-name">SN2 Rate Law</div>
+      <code class="fc-eq">rate = k [RX][Nu⁻]</code>
+      <div class="fc-note">Bimolecular, one step, backside attack → Walden inversion (configuration inverts). Favoured: 1° RX, strong nucleophile, polar aprotic solvent.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#be185d">
+      <div class="fc-name">SN1 Rate Law</div>
+      <code class="fc-eq">rate = k [RX]</code>
+      <div class="fc-note">Unimolecular, 2-step via carbocation intermediate → racemisation. Favoured: 3° RX, weak nucleophile, polar protic solvent.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#be185d">
+      <div class="fc-name">Carbocation Stability</div>
+      <code class="fc-eq">3° &gt; 2° &gt; 1° &gt; CH₃⁺</code>
+      <div class="fc-note">Determines SN1 reactivity. Stability due to hyperconjugation and inductive effect of alkyl groups.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#be185d">
+      <div class="fc-name">Optical Rotation</div>
+      <code class="fc-eq">[α] = α / (l × c)</code>
+      <div class="fc-note">[α] = specific rotation; α = observed rotation; l = path length (dm); c = concentration (g/mL).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ALCOHOLS PHENOLS ETHERS -->
+<div class="ch-section" id="alc">
+  <div class="ch-header" style="border-bottom-color:#2563eb">
+    <span class="ch-number">07</span>
+    <span class="ch-title">Alcohols, Phenols &amp; Ethers</span>
+    <span class="ch-marks">6 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#2563eb">
+      <div class="fc-name">Acidity Order</div>
+      <code class="fc-eq">RCOOH &gt; PhOH &gt; H₂O &gt; ROH &gt; RH</code>
+      <div class="fc-note">Phenol more acidic than alcohol: phenoxide ion stabilised by resonance with benzene ring.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#2563eb">
+      <div class="fc-name">Lucas Test</div>
+      <code class="fc-eq">ZnCl₂ + conc. HCl (Lucas reagent)</code>
+      <code class="fc-eq">3° → immediate turbidity</code>
+      <code class="fc-eq">2° → turbidity in ~5 min</code>
+      <code class="fc-eq">1° → no turbidity (at RT)</code>
+      <div class="fc-note">Tests 1°/2°/3° alcohols. Turbidity = formation of insoluble alkyl chloride.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#2563eb">
+      <div class="fc-name">Victor Meyer Test</div>
+      <code class="fc-eq">1° → red (nitroso compound)</code>
+      <code class="fc-eq">2° → blue</code>
+      <code class="fc-eq">3° → colourless</code>
+      <div class="fc-note">Tests 1°/2°/3° alcohols. Converts to nitroalkane then reacts with HNO₂.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#2563eb">
+      <div class="fc-name">Esterification (Fischer)</div>
+      <code class="fc-eq">RCOOH + R'OH ⇌ RCOOR' + H₂O</code>
+      <div class="fc-note">Catalyst: conc. H₂SO₄. Reversible; use excess of one reactant or remove water to shift equilibrium forward.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ALDEHYDES KETONES CARBOXYLIC ACIDS -->
+<div class="ch-section" id="carb">
+  <div class="ch-header" style="border-bottom-color:#dc2626">
+    <span class="ch-number">08</span>
+    <span class="ch-title">Aldehydes, Ketones &amp; Carboxylic Acids</span>
+    <span class="ch-marks">8 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#dc2626">
+      <div class="fc-name">Nucleophilic Addition Reactivity</div>
+      <code class="fc-eq">HCHO &gt; RCHO &gt; RCOR'</code>
+      <div class="fc-note">Decreasing order due to: (1) +I effect of alkyl groups reduces electrophilicity of C=O, (2) steric hindrance.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#dc2626">
+      <div class="fc-name">Tollens' Test (Silver Mirror)</div>
+      <code class="fc-eq">RCHO + 2[Ag(NH₃)₂]⁺ + H₂O → RCOOH + 2Ag↓ + 4NH₃</code>
+      <div class="fc-note">Only aldehydes (not ketones). Formic acid (HCOOH) also gives silver mirror.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#dc2626">
+      <div class="fc-name">Fehling's Test</div>
+      <code class="fc-eq">RCHO + 2Cu²⁺ + 4OH⁻ → RCOO⁻ + Cu₂O↓ + 2H₂O</code>
+      <div class="fc-note">Brick-red precipitate Cu₂O. Only aliphatic aldehydes (not aromatic, not ketones). Fehling A: CuSO₄; Fehling B: NaOH + sodium potassium tartrate.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#dc2626">
+      <div class="fc-name">Aldol Condensation</div>
+      <code class="fc-eq">2CH₃CHO → CH₃CH(OH)CH₂CHO → CH₃CH=CHCHO</code>
+      <div class="fc-note">Catalyst: dilute NaOH. Requires α-H. β-hydroxy aldehyde dehydrates to α,β-unsaturated carbonyl (crotonaldehyde).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#dc2626">
+      <div class="fc-name">Cannizzaro Reaction</div>
+      <code class="fc-eq">2HCHO + NaOH(conc.) → CH₃OH + HCOONa</code>
+      <div class="fc-note">Disproportionation: one aldehyde oxidised, one reduced. Only for aldehydes WITHOUT α-H (e.g., HCHO, PhCHO). No aldol product.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#dc2626">
+      <div class="fc-name">Carboxylic Acid Acidity</div>
+      <code class="fc-eq">pKa: HCOOH (3.74) &lt; CH₃COOH (4.74)</code>
+      <code class="fc-eq">EWG on α-C → lower pKa (stronger acid)</code>
+      <div class="fc-note">CCl₃COOH &gt; CHCl₂COOH &gt; CH₂ClCOOH &gt; CH₃COOH. Carboxylic acids react with NaHCO₃ (give CO₂); phenols do NOT.</div>
+    </div>
+  </div>
+</div>
+
+<!-- AMINES -->
+<div class="ch-section" id="amin">
+  <div class="ch-header" style="border-bottom-color:#9333ea">
+    <span class="ch-number">09</span>
+    <span class="ch-title">Amines</span>
+    <span class="ch-marks">6 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#9333ea">
+      <div class="fc-name">Basicity Order (in water)</div>
+      <code class="fc-eq">2° aliphatic &gt; 1° aliphatic &gt; NH₃ &gt; aniline</code>
+      <code class="fc-eq">(C₂H₅)₂NH &gt; C₂H₅NH₂ &gt; (C₂H₅)₃N &gt; NH₃</code>
+      <div class="fc-note">In gas phase: 3° &gt; 2° &gt; 1°. In water: solvation makes 2° most basic. Aniline much weaker due to resonance delocalisation of lone pair.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#9333ea">
+      <div class="fc-name">pKb Values (approx.)</div>
+      <code class="fc-eq">Aniline: pKb ≈ 9.4</code>
+      <code class="fc-eq">Aliphatic amines: pKb ≈ 3–4</code>
+      <div class="fc-note">Lower pKb = stronger base. EWG on ring increases pKb (weaker base); EDG decreases pKb.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#9333ea">
+      <div class="fc-name">Hinsberg's Test</div>
+      <code class="fc-eq">1°: soluble ppt in NaOH</code>
+      <code class="fc-eq">2°: insoluble ppt</code>
+      <code class="fc-eq">3°: no reaction</code>
+      <div class="fc-note">Reagent: C₆H₅SO₂Cl (benzenesulfonyl chloride). 1° gives N-substituted sulfonamide with acidic N–H (soluble in NaOH).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#9333ea">
+      <div class="fc-name">Diazotisation</div>
+      <code class="fc-eq">ArNH₂ + NaNO₂ + HCl (0–5°C) → ArN₂⁺Cl⁻</code>
+      <div class="fc-note">Temperature CRITICAL: 0–5°C prevents decomposition of diazonium salt. Only for primary aromatic amines.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#9333ea">
+      <div class="fc-name">Carbylamine Test</div>
+      <code class="fc-eq">R-NH₂ + CHCl₃ + KOH → R-NC (isocyanide)</code>
+      <div class="fc-note">Isocyanide has offensive smell. Confirmatory test for PRIMARY amines only (1° aliphatic &amp; aromatic).</div>
+    </div>
+  </div>
+</div>
+
+<!-- BIOMOLECULES -->
+<div class="ch-section" id="bio">
+  <div class="ch-header" style="border-bottom-color:#15803d">
+    <span class="ch-number">10</span>
+    <span class="ch-title">Biomolecules</span>
+    <span class="ch-marks">7 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#15803d">
+      <div class="fc-name">Glucose Formula &amp; Structure</div>
+      <code class="fc-eq">C₆H₁₂O₆ (open chain: aldohexose)</code>
+      <code class="fc-eq">Cyclic: α-D-glucose (OH at C1 is axial) / β-D-glucose (OH equatorial)</code>
+      <div class="fc-note">Haworth projection: pyranose (6-membered ring). Mutarotation: interconversion of α and β forms.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#15803d">
+      <div class="fc-name">Reducing vs Non-Reducing Sugars</div>
+      <code class="fc-eq">Reducing: free −CHO or potential −CHO</code>
+      <code class="fc-eq">Non-reducing: sucrose (no free anomeric C)</code>
+      <div class="fc-note">Reducing sugars reduce Tollens/Fehling/Benedict. Maltose, lactose = reducing; sucrose = non-reducing.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#15803d">
+      <div class="fc-name">Sucrose Linkage</div>
+      <code class="fc-eq">α-D-glucose + β-D-fructose (1→2 glycosidic bond)</code>
+      <div class="fc-note">Both anomeric carbons involved → no free anomeric C → non-reducing. Hydrolysis (inversion of sucrose) → equimolar glucose + fructose.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#15803d">
+      <div class="fc-name">DNA vs RNA</div>
+      <code class="fc-eq">DNA: deoxyribose, ATGC, double helix, A–T (2H), G–C (3H)</code>
+      <code class="fc-eq">RNA: ribose, AUGC, single strand</code>
+      <div class="fc-note">DNA stores genetic info; RNA (mRNA/tRNA/rRNA) involved in protein synthesis. Antiparallel strands in DNA.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#15803d">
+      <div class="fc-name">Peptide Bond</div>
+      <code class="fc-eq">—CO—NH— (amide bond)</code>
+      <div class="fc-note">Formed by condensation between −COOH of one amino acid and −NH₂ of another, releasing H₂O. Hydrolysis breaks peptide bond.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#15803d">
+      <div class="fc-name">Protein Structure Levels</div>
+      <code class="fc-eq">1° → 2° (α-helix/β-sheet) → 3° (folding) → 4° (subunits)</code>
+      <div class="fc-note">Denaturation: loss of 2°/3°/4° structure (not 1°). Caused by heat, acid/base, heavy metals. Enzymes lose activity on denaturation.</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end chapters -->
+</div><!-- end container -->
+</body>
+</html>

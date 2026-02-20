@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/formulas.css">
+<style>:root{
+  --subject-color:#4338ca;--subject-bg:#eef2ff;--subject-border:#a5b4fc;--subject-text:#3730a3;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics XII — Formula Reference</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PAGE 1: ELECTROSTATICS + CURRENT ELECTRICITY + CAPACITORS     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page page-1">
+  <div class="corner-mark tl"></div>
+  <div class="corner-mark tr"></div>
+  <div class="corner-mark bl"></div>
+  <div class="corner-mark br"></div>
+
+  <div class="page-header">
+    <div class="page-title">Electrostatics &middot; Capacitors &middot; Current</div>
+    <div class="page-number">Page I &mdash; III</div>
+  </div>
+
+  <!-- ELECTROSTATICS -->
+  <div class="section s-electro">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Electrostatics</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="sub-label">Coulomb's Law &amp; Electric Field</div>
+        <div class="f-row">
+          <span class="f-label">Coulomb's Law</span>
+          <span class="f-eq">$F = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r^2}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Electric field</span>
+          <span class="f-eq">$E = \dfrac{F}{q}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Point charge</span>
+          <span class="f-eq">$E = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r^2}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Potential</span>
+          <span class="f-eq">$V = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Relation</span>
+          <span class="f-eq">$E = -\dfrac{dV}{dr}$</span>
+        </div>
+
+        <div class="sub-label">Electric Dipole</div>
+        <div class="f-row">
+          <span class="f-label">Dipole moment</span>
+          <span class="f-eq">$p = q(2a)$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Axial field</span>
+          <span class="f-eq">$E = \dfrac{1}{4\pi\varepsilon_0}\dfrac{2p}{r^3}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Equatorial field</span>
+          <span class="f-eq">$E = \dfrac{1}{4\pi\varepsilon_0}\dfrac{p}{r^3}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Torque</span>
+          <span class="f-eq">$\tau = pE\sin\theta$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Potential energy</span>
+          <span class="f-eq">$U = -pE\cos\theta$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAUSS LAW -->
+  <div class="section s-gauss">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Gauss's Law</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="f-row full">
+          <span class="f-label">Gauss's Law</span>
+          <span class="f-eq">$\displaystyle\oint \vec{E} \cdot d\vec{A} = \dfrac{q_{\text{enc}}}{\varepsilon_0}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Infinite line charge</span>
+          <span class="f-eq">$E = \dfrac{\lambda}{2\pi\varepsilon_0 r}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Infinite plane sheet</span>
+          <span class="f-eq">$E = \dfrac{\sigma}{2\varepsilon_0}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Inside conductor</span>
+          <span class="f-eq">$E = 0$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPACITORS -->
+  <div class="section s-cap">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Capacitors</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="f-row">
+          <span class="f-label">Capacitance</span>
+          <span class="f-eq">$C = \dfrac{Q}{V}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Parallel plate</span>
+          <span class="f-eq">$C = \dfrac{\varepsilon_0 A}{d}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">With dielectric</span>
+          <span class="f-eq">$C = \dfrac{K\varepsilon_0 A}{d}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Energy stored</span>
+          <span class="f-eq">$U = \tfrac{1}{2}CV^2 = \tfrac{1}{2}QV = \dfrac{Q^2}{2C}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Series</span>
+          <span class="f-eq">$\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Parallel</span>
+          <span class="f-eq">$C = C_1 + C_2$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENT ELECTRICITY -->
+  <div class="section s-current">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Current Electricity</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="f-row">
+          <span class="f-label">Current</span>
+          <span class="f-eq">$I = \dfrac{Q}{t}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Drift velocity</span>
+          <span class="f-eq">$I = nqAv_d$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Ohm's Law</span>
+          <span class="f-eq">$V = IR$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Resistance</span>
+          <span class="f-eq">$R = \rho\dfrac{l}{A}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Temp. dependence</span>
+          <span class="f-eq">$R = R_0(1 + \alpha\Delta T)$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Power</span>
+          <span class="f-eq">$P = VI = I^2R = \dfrac{V^2}{R}$</span>
+        </div>
+
+        <div class="sub-label">Kirchhoff's Laws &amp; Wheatstone Bridge</div>
+        <div class="f-row">
+          <span class="f-label">Junction rule</span>
+          <span class="f-eq">$\sum I = 0$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Loop rule</span>
+          <span class="f-eq">$\sum V = 0$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Wheatstone <em>(balanced)</em></span>
+          <span class="f-eq">$\dfrac{P}{Q} = \dfrac{R}{S}$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Physics XII &mdash; Formula Reference Sheet</span>
+    <span>1 / 3</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PAGE 2: MAGNETISM + EMI + AC                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page page-2">
+  <div class="corner-mark tl"></div>
+  <div class="corner-mark tr"></div>
+  <div class="corner-mark bl"></div>
+  <div class="corner-mark br"></div>
+
+  <div class="page-header">
+    <div class="page-title">Magnetism &middot; EMI &middot; Alternating Current</div>
+    <div class="page-number">Page II &mdash; III</div>
+  </div>
+
+  <!-- MAGNETIC FIELD -->
+  <div class="section s-magfield">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Magnetic Field</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="f-row full">
+          <span class="f-label">Biot&ndash;Savart Law</span>
+          <span class="f-eq">$dB = \dfrac{\mu_0}{4\pi}\dfrac{I\,dl\sin\theta}{r^2}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Long straight wire</span>
+          <span class="f-eq">$B = \dfrac{\mu_0 I}{2\pi r}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Circular loop <em>(center)</em></span>
+          <span class="f-eq">$B = \dfrac{\mu_0 I}{2R}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Solenoid</span>
+          <span class="f-eq">$B = \mu_0 n I$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORCE -->
+  <div class="section s-force">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Magnetic Force</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="f-row">
+          <span class="f-label">On moving charge</span>
+          <span class="f-eq">$F = qvB\sin\theta$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">On conductor</span>
+          <span class="f-eq">$F = BIL\sin\theta$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Circular motion radius</span>
+          <span class="f-eq">$r = \dfrac{mv}{qB}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Cyclotron frequency</span>
+          <span class="f-eq">$f = \dfrac{qB}{2\pi m}$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMI -->
+  <div class="section s-emi">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Electromagnetic Induction</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="f-row">
+          <span class="f-label">Magnetic flux</span>
+          <span class="f-eq">$\Phi = BA\cos\theta$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Faraday's Law</span>
+          <span class="f-eq">$\mathcal{E} = -\dfrac{d\Phi}{dt}$</span>
+        </div>
+        <div class="f-row full">
+          <span class="f-note">Lenz's Law &rarr; Induced EMF opposes the change in flux that causes it.</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Self inductance</span>
+          <span class="f-eq">$\mathcal{E} = -L\dfrac{dI}{dt}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Energy in inductor</span>
+          <span class="f-eq">$U = \dfrac{1}{2}LI^2$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALTERNATING CURRENT -->
+  <div class="section s-ac">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Alternating Current</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="sub-label">EMF &amp; RMS Values</div>
+        <div class="f-row">
+          <span class="f-label">AC EMF</span>
+          <span class="f-eq">$\mathcal{E} = \mathcal{E}_0 \sin\omega t$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Angular freq.</span>
+          <span class="f-eq">$\omega = 2\pi f$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">RMS current</span>
+          <span class="f-eq">$I_{\text{rms}} = \dfrac{I_0}{\sqrt{2}}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">RMS voltage</span>
+          <span class="f-eq">$V_{\text{rms}} = \dfrac{V_0}{\sqrt{2}}$</span>
+        </div>
+
+        <div class="sub-label">Reactance, Impedance &amp; Resonance</div>
+        <div class="f-row">
+          <span class="f-label">Inductive reactance</span>
+          <span class="f-eq">$X_L = \omega L$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Capacitive reactance</span>
+          <span class="f-eq">$X_C = \dfrac{1}{\omega C}$</span>
+        </div>
+        <div class="f-row full">
+          <span class="f-label">Impedance</span>
+          <span class="f-eq">$Z = \sqrt{R^2 + (X_L - X_C)^2}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Resonance condition</span>
+          <span class="f-eq">$X_L = X_C$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Resonant frequency</span>
+          <span class="f-eq">$f = \dfrac{1}{2\pi\sqrt{LC}}$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Physics XII &mdash; Formula Reference Sheet</span>
+    <span>2 / 3</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PAGE 3: OPTICS + WAVE OPTICS + MODERN PHYSICS + SEMICONDUCTOR -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page page-3">
+  <div class="corner-mark tl"></div>
+  <div class="corner-mark tr"></div>
+  <div class="corner-mark bl"></div>
+  <div class="corner-mark br"></div>
+
+  <div class="page-header">
+    <div class="page-title">Optics &middot; Modern Physics &middot; Semiconductors</div>
+    <div class="page-number">Page III &mdash; III</div>
+  </div>
+
+  <!-- RAY OPTICS -->
+  <div class="section s-ray">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Ray Optics</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="f-row">
+          <span class="f-label">Mirror formula</span>
+          <span class="f-eq">$\dfrac{1}{f} = \dfrac{1}{v} + \dfrac{1}{u}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Magnification</span>
+          <span class="f-eq">$m = \dfrac{v}{u}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Lens formula</span>
+          <span class="f-eq">$\dfrac{1}{f} = \dfrac{1}{v} - \dfrac{1}{u}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Lens maker's eq.</span>
+          <span class="f-eq">$\dfrac{1}{f} = (\mu - 1)\!\left(\dfrac{1}{R_1} - \dfrac{1}{R_2}\right)$</span>
+        </div>
+        <div class="sub-label">Special lens cases (|R₁| = |R₂| = R)</div>
+        <div class="f-row">
+          <span class="f-label">Biconvex / Equiconvex</span>
+          <span class="f-eq">$\dfrac{1}{f} = \dfrac{2(\mu-1)}{R}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Biconcave / Equiconcave</span>
+          <span class="f-eq">$\dfrac{1}{f} = \dfrac{-2(\mu-1)}{R}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Plano-convex</span>
+          <span class="f-eq">$\dfrac{1}{f} = \dfrac{\mu-1}{R}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Plano-concave</span>
+          <span class="f-eq">$\dfrac{1}{f} = \dfrac{-(\mu-1)}{R}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Power of lens</span>
+          <span class="f-eq">$P = \dfrac{1}{f}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">Combined power</span>
+          <span class="f-eq">$P = P_1 + P_2$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAVE OPTICS -->
+  <div class="section s-wave">
+    <div class="section-head">
+      <div class="section-dot"></div>
+      <div class="section-title">Wave Optics</div>
+    </div>
+    <div class="section-body">
+      <div class="formula-grid">
+        <div class="sub-label">Young's Double Slit Experiment</div>
+        <div class="f-row">
+          <span class="f-label">Fringe width</span>
+          <span class="f-eq">$\beta = \dfrac{\lambda D}{d}$</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label">n-th bright fringe</span>
+          <span class="f-eq">$y_n = n\beta$</span>
+        </div>
+        <div class="sub-label">Single Slit Diffraction</div>
+        <div class="f-row">
+          <span class="f-label">Minima condition</span>
+          <span class="f-eq">$a\sin\theta = n\lambda$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- PHOTOELECTRIC EFFECT -->
+    <div class="section s-photo">
+      <div class="section-head">
+        <div class="section-dot"></div>
+        <div class="section-title">Photoelectric Effect</div>
+      </div>
+      <div class="section-body">
+        <div class="formula-grid single-col">
+          <div class="f-row">
+            <span class="f-label">Einstein eq.</span>
+            <span class="f-eq">$h\nu = W_0 + KE_{\max}$</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">KE max</span>
+            <span class="f-eq">$KE_{\max} = \tfrac{1}{2}mv^2$</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">Stopping pot.</span>
+            <span class="f-eq">$eV_0 = KE_{\max}$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATOMS -->
+    <div class="section s-atom">
+      <div class="section-head">
+        <div class="section-dot"></div>
+        <div class="section-title">Bohr's Atomic Model</div>
+      </div>
+      <div class="section-body">
+        <div class="formula-grid single-col">
+          <div class="f-row">
+            <span class="f-label">Bohr radius</span>
+            <span class="f-eq">$r_n = \dfrac{n^2 h^2 \varepsilon_0}{\pi m e^2}$</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">Energy level</span>
+            <span class="f-eq">$E_n = -\dfrac{13.6}{n^2}\;\text{eV}$</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">Wavelength</span>
+            <span class="f-eq">$\dfrac{1}{\lambda} = R\!\left(\dfrac{1}{n_1^2} - \dfrac{1}{n_2^2}\right)$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-top: 1.5rem;">
+    <!-- NUCLEI -->
+    <div class="section s-nuclei">
+      <div class="section-head">
+        <div class="section-dot"></div>
+        <div class="section-title">Nuclei</div>
+      </div>
+      <div class="section-body">
+        <div class="formula-grid single-col">
+          <div class="f-row">
+            <span class="f-label">Binding energy</span>
+            <span class="f-eq">$BE = \Delta m \cdot c^2$</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">Radioactive decay</span>
+            <span class="f-eq">$N = N_0\, e^{-\lambda t}$</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">Half-life</span>
+            <span class="f-eq">$T_{1/2} = \dfrac{0.693}{\lambda}$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEMICONDUCTOR -->
+    <div class="section s-semi">
+      <div class="section-head">
+        <div class="section-dot"></div>
+        <div class="section-title">Semiconductor</div>
+      </div>
+      <div class="section-body">
+        <div class="formula-grid single-col">
+          <div class="f-row">
+            <span class="f-label">Diode current</span>
+            <span class="f-eq">$I = I_0\!\left(e^{V/\eta V_T} - 1\right)$</span>
+          </div>
+          <div class="f-row full">
+            <span class="f-note">Zener breakdown &rarr; Voltage regulation in reverse bias.</span>
+          </div>
+          <div class="sub-label">Logic Gates</div>
+          <div class="f-row">
+            <span class="f-label">AND</span>
+            <span class="f-note">Output 1 only if all inputs are 1</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">OR</span>
+            <span class="f-note">Output 1 if any input is 1</span>
+          </div>
+          <div class="f-row">
+            <span class="f-label">NOT</span>
+            <span class="f-note">Output is the complement of input</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Physics XII &mdash; Formula Reference Sheet</span>
+    <span>3 / 3</span>
+  </div>
+</div>
+
+</body>
+</html>

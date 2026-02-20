@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/mcq.css">
+<style>:root{
+  --subject-color:#0891b2;--subject-bg:#ecfeff;--subject-border:#67e8f9;--subject-text:#0e7490;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Chemistry Practice — CBSE XII</title>
+</head>
+<body>
+<div class="container">
+<a href="../../index.html" class="back-link">&#8592; Back to Home</a>
+<div class="hero">
+  <div class="badge">Physical Chemistry XII &middot; Chapter Practice</div>
+  <h1>Chapter Practice</h1>
+  <p class="sub">MCQ practice for Solutions, Electrochemistry &amp; Chemical Kinetics — click an option to check your answer.</p>
+</div>
+
+<nav class="ch-nav">
+  <div class="ch-nav-inner">
+    <button class="ch-btn active" onclick="showCh('soln',this)">Ch 1 — Solutions</button>
+    <button class="ch-btn" onclick="showCh('elec',this)">Ch 2 — Electrochemistry</button>
+    <button class="ch-btn" onclick="showCh('kin',this)">Ch 3 — Chemical Kinetics</button>
+  </div>
+</nav>
+
+<!-- CH1: SOLUTIONS -->
+<div id="soln" class="ch-panel active">
+  <div class="ch-heading">💧 Solutions <span class="ch-mark-badge" style="background:#0891b2">7 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="soln-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="soln-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('soln')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="soln">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">Which of the following is a colligative property?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Viscosity</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Refractive index</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Osmotic pressure</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Surface tension</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Osmotic pressure.</strong> Colligative properties depend only on the number of solute particles, not their nature. The four colligative properties are: relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, and osmotic pressure.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="soln">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">Molality is defined as:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Moles of solute per litre of solution</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Moles of solute per kg of solvent</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Moles of solute per kg of solution</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Grams of solute per litre of solution</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Molality (m) = moles of solute / mass of solvent in kg. Unlike molarity, molality does not change with temperature (since it uses mass, not volume). This makes it preferred for colligative property calculations.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="soln">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">An azeotropic mixture of HNO₃ (68%) and water boils at 393.5 K. This is a ______ deviation from Raoult's Law.</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Positive deviation — minimum boiling azeotrope</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Negative deviation — maximum boiling azeotrope</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Positive deviation — maximum boiling azeotrope</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Zero deviation — ideal solution</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> HNO₃–H₂O shows negative deviation (A–B interactions stronger than A–A and B–B) → lower vapour pressure → higher boiling point → maximum boiling azeotrope. Compare: ethanol–water shows positive deviation → minimum boiling azeotrope (bp 351.3K).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="soln">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">If Kb for water = 0.52 K kg mol⁻¹, the boiling point elevation for 0.5 molal glucose solution is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>0.26 K</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>0.52 K</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>1.04 K</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>0.13 K</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — 0.26 K.</strong> ΔTb = Kb × m = 0.52 × 0.5 = 0.26 K. Glucose is a non-electrolyte, so van't Hoff factor i = 1. No correction needed.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="soln">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">The van't Hoff factor i for MgCl₂ that is 80% dissociated is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>2.4</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>2.6</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>1.8</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>3.0</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — 2.6.</strong> MgCl₂ → Mg²⁺ + 2Cl⁻ (n = 3 ions). i = 1 + (n − 1)α = 1 + (3 − 1) × 0.8 = 1 + 1.6 = 2.6.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="soln">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Henry's law constant KH increases with temperature. This implies that solubility of a gas in liquid:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Increases with temperature</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Decreases with temperature</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Is unaffected by temperature</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>First increases then decreases</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Henry's law: p = KH × x (mole fraction). If KH increases at higher T, then for the same partial pressure, the mole fraction (solubility) must decrease. Gases become less soluble in liquids as temperature rises.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="soln">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">Which of the following is a non-ideal solution showing negative deviation from Raoult's Law?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Chloroform + acetone</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Acetone + ethanol</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Benzene + toluene</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Ethanol + cyclohexane</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — CHCl₃ + acetone.</strong> Chloroform and acetone form H-bonds with each other (A–B > A–A and B–B) → negative deviation. Benzene + toluene is nearly ideal. Acetone + ethanol and ethanol + cyclohexane show positive deviation.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="soln">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">Reverse osmosis is used in water purification. Which condition is applied?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Pressure less than osmotic pressure is applied on the solution side</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Pressure equal to osmotic pressure is applied on the solvent side</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Pressure greater than osmotic pressure is applied on the solution side</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>No pressure is needed; osmosis reverses spontaneously</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C.</strong> In reverse osmosis, external pressure greater than the osmotic pressure is applied on the solution side, forcing solvent molecules to pass through the semipermeable membrane from solution to pure solvent — i.e., opposite to normal osmosis.</div>
+  </div>
+</div>
+
+<!-- CH2: ELECTROCHEMISTRY -->
+<div id="elec" class="ch-panel">
+  <div class="ch-heading">⚡ Electrochemistry <span class="ch-mark-badge" style="background:#16a34a">9 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="elec-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="elec-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('elec')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="elec">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">E°cell for the Zn–Cu cell (E°(Cu²⁺/Cu) = +0.34V, E°(Zn²⁺/Zn) = −0.76V) is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>−1.10 V</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>+1.10 V</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>+0.42 V</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>−0.42 V</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — +1.10 V.</strong> E°cell = E°cathode − E°anode = (+0.34) − (−0.76) = +1.10 V. Zn is oxidised (anode), Cu²⁺ is reduced (cathode). A positive E°cell means the reaction is spontaneous.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="elec">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">During electrolysis of aqueous NaCl, the product at the cathode is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Cl₂ gas</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Sodium metal</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>H₂ gas</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>O₂ gas</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — H₂ gas.</strong> In aqueous NaCl, at cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻ (water is reduced in preference to Na⁺, as Na reduction requires very high potential). At anode: 2Cl⁻ → Cl₂ + 2e⁻.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="elec">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">96500 C of charge deposits 108 g of silver (M = 108 g/mol). To deposit 54 g, the required charge is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>96500 C</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>48250 C</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>193000 C</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>9650 C</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — 48250 C.</strong> By Faraday's first law: mass deposited ∝ charge. To deposit half the mass (54g instead of 108g), we need half the charge: 96500/2 = 48250 C. (Ag⁺ + e⁻ → Ag, so 1 Faraday deposits 1 mol = 108g.)</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="elec">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">Kohlrausch's law states that at infinite dilution:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>All electrolytes have the same molar conductivity</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Molar conductivity equals the sum of individual ionic conductivities</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Resistance of the solution becomes zero</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Weak electrolytes behave like strong electrolytes</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Kohlrausch's law: Λ°m = ν₊λ°₊ + ν₋λ°₋. At infinite dilution, ions are independent. This is used to calculate Λ°m for weak electrolytes indirectly, since they cannot be extrapolated to c = 0 from Λm vs √c graphs.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="elec">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">The Nernst equation for a cell at 298K is written as:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>E = E° + (0.0591/n) log Q</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>E = E° − (0.0591/n) log Q</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>E = E° × (0.0591/n) log Q</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>E = (0.0591/n) log Q</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> E = E° − (RT/nF)ln Q = E° − (0.0591/n) log Q at 298K. As the cell discharges, Q increases, so E decreases. At equilibrium, E = 0 and Q = K, giving log K = nE°/0.0591.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="elec">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Molar conductivity of weak electrolytes ______ with dilution:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Decreases</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Remains constant</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Increases sharply near infinite dilution</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>First increases, then decreases</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C.</strong> Weak electrolytes (like CH₃COOH) are partially dissociated. On dilution, degree of dissociation increases sharply, so molar conductivity increases steeply near infinite dilution. Strong electrolytes increase gradually (√c relationship).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="a" data-ch="elec">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">The unit of cell constant is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>cm⁻¹</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>S cm⁻¹</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>S cm² mol⁻¹</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Ω cm</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: A — cm⁻¹.</strong> Cell constant G* = l/A (distance between electrodes / area of cross-section). Conductance G = κ/G*, so G* = κ/G. Units: (S cm⁻¹)/(S) = cm⁻¹. It is a property of the cell geometry, not the solution.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="d" data-ch="elec">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">Which of the following correctly relates ΔG° to E°cell?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>ΔG° = nFE°cell</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>ΔG° = +nFE°cell</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>ΔG° = nF/E°cell</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>ΔG° = −nFE°cell</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: D.</strong> ΔG° = −nFE°cell. For a spontaneous reaction, E°cell > 0 and ΔG° < 0 (consistent). Also, ΔG° = −RT ln K, so E°cell = (RT/nF) ln K = (0.0591/n) log K at 298K.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="elec">
+    <div class="mcq-num">Q9</div>
+    <div class="mcq-q">In a fuel cell, H₂ and O₂ react to produce electricity. The product at the cathode is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>H₂ gas</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>O₂ gas</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Water (H₂O)</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Hydrogen peroxide</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — Water.</strong> In H₂–O₂ fuel cell: Anode: H₂ → 2H⁺ + 2e⁻. Cathode: O₂ + 4H⁺ + 4e⁻ → 2H₂O. Overall: 2H₂ + O₂ → 2H₂O. Fuel cells are highly efficient and produce no harmful by-products.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="elec">
+    <div class="mcq-num">Q10</div>
+    <div class="mcq-q">Which of the following has the highest molar conductance at infinite dilution (Λ°m)?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>NaCl</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>HCl</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>KCl</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>NaOH</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — HCl.</strong> H⁺ has exceptionally high ionic conductance (λ° = 350 S cm² mol⁻¹) due to the Grotthuss mechanism (proton hopping through water). OH⁻ is second highest. HCl has Λ°m ≈ 426 S cm² mol⁻¹, far higher than NaCl (126) or KCl (150).</div>
+  </div>
+</div>
+
+<!-- CH3: KINETICS -->
+<div id="kin" class="ch-panel">
+  <div class="ch-heading">⏱ Chemical Kinetics <span class="ch-mark-badge" style="background:#ea580c">7 marks</span></div>
+  <div class="score-bar">
+    <span class="score-label">Score</span>
+    <span class="score-val" id="kin-score">0 / 0</span>
+    <div class="score-progress"><div class="score-fill" id="kin-fill" style="width:0%"></div></div>
+    <button class="reset-btn" onclick="resetCh('kin')">Reset</button>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kin">
+    <div class="mcq-num">Q1</div>
+    <div class="mcq-q">For a first-order reaction, the half-life:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Increases with initial concentration</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Is independent of initial concentration</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Is inversely proportional to initial concentration</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Is directly proportional to initial concentration</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> For first order: t½ = 0.693/k. It depends only on k (rate constant), not on initial concentration. For zero order: t½ = [A]₀/2k (depends on [A]₀). For second order: t½ = 1/(k[A]₀) (inversely proportional).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kin">
+    <div class="mcq-num">Q2</div>
+    <div class="mcq-q">The unit of rate constant for a second-order reaction is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>s⁻¹</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>mol L⁻¹ s⁻¹</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>L mol⁻¹ s⁻¹</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>mol² L⁻² s⁻¹</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — L mol⁻¹ s⁻¹.</strong> Units of k = mol^(1-n) L^(n-1) s⁻¹, where n = order. For n=2: mol^(-1) L^1 s⁻¹ = L mol⁻¹ s⁻¹. For n=1: s⁻¹. For n=0: mol L⁻¹ s⁻¹.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kin">
+    <div class="mcq-num">Q3</div>
+    <div class="mcq-q">The slope of a log k vs 1/T graph (Arrhenius equation) is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>+Ea/R</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>−Ea/2.303R</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>+Ea/2.303R</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>−Ea/R</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — −Ea/2.303R.</strong> From Arrhenius: log k = log A − Ea/(2.303RT). This is y = c + mx form, where y = log k, x = 1/T, and slope = −Ea/2.303R. Since slope is negative, the graph slopes downward. Ea = −2.303R × slope.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kin">
+    <div class="mcq-num">Q4</div>
+    <div class="mcq-q">For a reaction A → B, doubling [A] doubles the rate. The order with respect to A is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Zero order</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Second order</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>First order</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Half order</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — First order.</strong> Rate = k[A]^n. If [A] doubles and rate doubles: 2 = 2^n, so n = 1. If rate quadrupled when [A] doubled: 4 = 2^n → n = 2. If rate is unchanged: n = 0 (zero order).</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kin">
+    <div class="mcq-num">Q5</div>
+    <div class="mcq-q">Activation energy of a reaction can be decreased by:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Increasing temperature</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Adding a catalyst</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Increasing concentration of reactants</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Increasing pressure</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B — Catalyst.</strong> A catalyst provides an alternative reaction pathway with lower activation energy. Increasing temperature increases the fraction of molecules having energy ≥ Ea, but does NOT decrease Ea itself. Concentration affects rate but not Ea.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="c" data-ch="kin">
+    <div class="mcq-num">Q6</div>
+    <div class="mcq-q">Which graph gives a straight line for a first-order reaction?</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>[A] vs t</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>1/[A] vs t</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>log[A] vs t</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>[A]² vs t</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: C — log[A] vs t.</strong> Integrated rate law for first order: log[A] = log[A]₀ − kt/2.303. This is linear (y = c − mx). For zero order: [A] vs t is linear. For second order: 1/[A] vs t is linear.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kin">
+    <div class="mcq-num">Q7</div>
+    <div class="mcq-q">For the reaction: 2N₂O₅ → 4NO₂ + O₂, if rate = −½ d[N₂O₅]/dt, then rate in terms of O₂ is:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>d[O₂]/4dt</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>d[O₂]/dt</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>2d[O₂]/dt</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>½ d[O₂]/dt</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> Rate = −(1/2)d[N₂O₅]/dt = +(1/4)d[NO₂]/dt = +d[O₂]/dt. From stoichiometry, for every 2 moles of N₂O₅ consumed, 1 mole of O₂ is produced. Rate = d[O₂]/dt.</div>
+  </div>
+
+  <div class="mcq-card" data-answer="b" data-ch="kin">
+    <div class="mcq-num">Q8</div>
+    <div class="mcq-q">The pre-exponential factor A in the Arrhenius equation represents:</div>
+    <div class="mcq-opts">
+      <button class="opt" data-opt="a" onclick="pick(this)"><span class="opt-letter">A</span>Activation energy</button>
+      <button class="opt" data-opt="b" onclick="pick(this)"><span class="opt-letter">B</span>Frequency of collisions with proper orientation</button>
+      <button class="opt" data-opt="c" onclick="pick(this)"><span class="opt-letter">C</span>Rate constant at 0 K</button>
+      <button class="opt" data-opt="d" onclick="pick(this)"><span class="opt-letter">D</span>Threshold energy</button>
+    </div>
+    <div class="mcq-exp"><strong>Correct: B.</strong> In k = A·e^(−Ea/RT), A is the frequency factor (or pre-exponential factor) that accounts for the frequency of collisions and the proper orientation of reactant molecules. It has the same units as k. At T → ∞, e^(−Ea/RT) → 1, so k → A.</div>
+  </div>
+</div>
+
+</div><!-- /container --><script src="../../js/mcq.js"></script>
+</body>
+</html>

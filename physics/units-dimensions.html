@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<style>
+  /* ── Layout ── */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    border-right: 1px solid var(--sand-200);
+    padding: 1.25rem 0;
+    scrollbar-width: thin;
+  }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--sand-300); border-radius: 2px; }
+
+  .nav-group { margin-bottom: 1.25rem; }
+  .nav-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    padding: 0 1rem;
+    margin-bottom: 0.35rem;
+  }
+  .nav-label.elec { color: #2563eb; }
+  .nav-label.mag  { color: #059669; }
+  .nav-label.opt  { color: #0f766e; }
+  .nav-label.mod  { color: #be185d; }
+  .nav-item {
+    display: block;
+    padding: 0.35rem 1rem;
+    font-size: 0.78rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    border-left: 2px solid transparent;
+  }
+  .nav-item:hover {
+    background: var(--sand-50);
+    color: var(--ink);
+    border-left-color: var(--sand-300);
+  }
+
+  /* ── Top bar ── */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: #fff;
+    border-bottom: 1px solid var(--sand-200);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  .top-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
+    flex: 1;
+  }
+  .top-title span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--ink-3);
+    margin-left: 0.4rem;
+  }
+  .print-btn {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 7px;
+    border: 1px solid var(--sand-300);
+    background: #fff;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .print-btn:hover { background: var(--sand-100); }
+
+  /* ── Main content ── */
+  main {
+    flex: 1;
+    padding: 1.25rem 2rem 3rem;
+    overflow-x: auto;
+    min-width: 0;
+  }
+
+  /* ── Filter bar ── */
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .hot-legend {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+  }
+  .hot-legend strong { color: var(--hot); }
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--ink-2);
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .toggle-label input { display: none; }
+  .toggle-track {
+    width: 36px; height: 20px;
+    background: var(--sand-300);
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .toggle-thumb {
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 16px; height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .toggle-label input:checked ~ .toggle-track { background: var(--sand-900); }
+  .toggle-label input:checked ~ .toggle-track .toggle-thumb { transform: translateX(16px); }
+
+  /* ── Domain divider ── */
+  .domain-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2rem 0 1rem;
+  }
+  .domain-divider::before, .domain-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--sand-200);
+  }
+  .domain-divider span {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 1.75rem; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid var(--sand-200);
+    border-bottom: none;
+  }
+  .domain-ref  { background: var(--sand-100); }
+  .domain-elec { background: #eff6ff; }
+  .domain-mag  { background: #ecfdf5; }
+  .domain-opt  { background: #f0fdfa; }
+  .domain-mod  { background: #fdf2f8; }
+  .section-tag {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .tag-ref  { background: var(--sand-200); color: var(--sand-700); }
+  .tag-elec { background: #bfdbfe; color: #1e40af; }
+  .tag-mag  { background: #a7f3d0; color: #065f46; }
+  .tag-opt  { background: #99f6e4; color: #134e4a; }
+  .tag-mod  { background: #f9a8d4; color: #9d174d; }
+  .section-title {
+    font-family: 'Newsreader', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── Tables ── */
+  .tbl-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--sand-200);
+    border-radius: 0 0 8px 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    min-width: 520px;
+  }
+  thead { background: var(--sand-50); }
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--sand-200);
+    white-space: nowrap;
+  }
+  td {
+    padding: 0.5rem 0.75rem;
+    color: var(--ink-2);
+    border-bottom: 1px solid var(--sand-100);
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--sand-50); }
+  .dim-less { color: var(--ink-3); font-style: italic; }
+
+  /* ── Hot rows (frequently asked) ── */
+  tbody tr.hot td:first-child::before {
+    content: '★ ';
+    color: var(--hot);
+    font-size: 0.75em;
+  }
+  tbody tr.hot { background: var(--hot-bg); }
+  tbody tr.hot td { color: var(--ink); }
+  .filter-mode tbody tr:not(.hot) { display: none; }
+
+  /* ── Prefix grid (two tables side by side) ── */
+  .prefix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--sand-200);
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+  }
+  .prefix-grid .tbl-wrap {
+    border: none;
+    border-radius: 0;
+    border-right: 1px solid var(--sand-200);
+  }
+  .prefix-grid .tbl-wrap:last-child { border-right: none; }
+
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .layout { display: block; }
+    main { padding: 1rem; }
+    .prefix-grid { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .sidebar, .top-bar, .filter-bar { display: none; }
+    .filter-mode tbody tr:not(.hot) { display: table-row; }
+    main { padding: 0; }
+    td, th { font-size: 10px; padding: 3px 6px; }
+  }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Units &amp; Dimensions — CBSE XII Physics</title>
+</head>
+<body class="filter-mode">
+
+<div class="top-bar">
+  <a href="../index.html" class="back-link">← Home</a>
+  <div class="top-title">Units &amp; Dimensions <span>CBSE XII Physics Cheat Sheet</span></div>
+  <button class="print-btn" onclick="window.print()">⎙ Print / PDF</button>
+</div>
+
+<div class="layout">
+
+<!-- ────────────────── SIDEBAR ────────────────── -->
+<nav class="sidebar">
+  <div class="nav-group">
+    <div class="nav-label">Reference</div>
+    <a href="#si-base" class="nav-item">SI Base Units</a>
+    <a href="#si-prefix" class="nav-item">SI Prefixes</a>
+    <a href="#constants" class="nav-item">Physical Constants</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label elec">Electricity</div>
+    <a href="#ch1" class="nav-item">Ch 1 — Electric Charges &amp; Fields</a>
+    <a href="#ch2" class="nav-item">Ch 2 — Electrostatics &amp; Capacitance</a>
+    <a href="#ch3" class="nav-item">Ch 3 — Current Electricity</a>
+    <a href="#ch4" class="nav-item">Ch 4 — Moving Charges &amp; Magnetism</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label mag">Magnetism</div>
+    <a href="#ch5" class="nav-item">Ch 5 — Magnetism &amp; Matter</a>
+    <a href="#ch6" class="nav-item">Ch 6 — EMI</a>
+    <a href="#ch7" class="nav-item">Ch 7 — Alternating Current</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label opt">Optics &amp; EM Waves</div>
+    <a href="#ch8" class="nav-item">Ch 8 — EM Waves</a>
+    <a href="#ch9" class="nav-item">Ch 9 — Ray Optics</a>
+    <a href="#ch10" class="nav-item">Ch 10 — Wave Optics</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label mod">Modern Physics</div>
+    <a href="#ch11" class="nav-item">Ch 11 — Dual Nature</a>
+    <a href="#ch12" class="nav-item">Ch 12 — Atoms</a>
+    <a href="#ch13" class="nav-item">Ch 13 — Nuclei</a>
+    <a href="#ch14" class="nav-item">Ch 14 — Semiconductors</a>
+  </div>
+</nav>
+
+<!-- ────────────────── MAIN ────────────────── -->
+<main>
+
+<div class="filter-bar">
+  <div class="hot-legend"><strong>★ Highlighted</strong> = frequently asked in CBSE board exams</div>
+  <label class="toggle-label" for="filterToggle">
+    Show all quantities
+    <input type="checkbox" id="filterToggle">
+    <span class="toggle-track"><span class="toggle-thumb"></span></span>
+  </label>
+</div>
+
+<!-- ══════════ REFERENCE ══════════ -->
+<div class="domain-divider"><span>Reference Tables</span></div>
+
+<!-- SI Base Units -->
+<section class="section" id="si-base">
+  <div class="section-header domain-ref">
+    <span class="section-tag tag-ref">Reference</span>
+    <span class="section-title">The 7 SI Base Units</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Base Quantity</th>
+          <th>Symbol</th>
+          <th>SI Unit</th>
+          <th>Unit Symbol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Length</td><td>l</td><td>metre</td><td>m</td></tr>
+        <tr><td>Mass</td><td>m</td><td>kilogram</td><td>kg</td></tr>
+        <tr><td>Time</td><td>t</td><td>second</td><td>s</td></tr>
+        <tr><td>Electric Current</td><td>I</td><td>ampere</td><td>A</td></tr>
+        <tr><td>Thermodynamic Temperature</td><td>T</td><td>kelvin</td><td>K</td></tr>
+        <tr><td>Amount of Substance</td><td>n</td><td>mole</td><td>mol</td></tr>
+        <tr><td>Luminous Intensity</td><td>I<sub>v</sub></td><td>candela</td><td>cd</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SI Prefixes -->
+<section class="section" id="si-prefix">
+  <div class="section-header domain-ref">
+    <span class="section-tag tag-ref">Reference</span>
+    <span class="section-title">SI Prefixes — yocto to yotta</span>
+  </div>
+  <div class="prefix-grid">
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Prefix</th><th>Symbol</th><th>Power of 10</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>yotta</td><td>Y</td><td>10<sup>24</sup></td></tr>
+          <tr><td>zetta</td><td>Z</td><td>10<sup>21</sup></td></tr>
+          <tr><td>exa</td><td>E</td><td>10<sup>18</sup></td></tr>
+          <tr><td>peta</td><td>P</td><td>10<sup>15</sup></td></tr>
+          <tr><td>tera</td><td>T</td><td>10<sup>12</sup></td></tr>
+          <tr><td>giga</td><td>G</td><td>10<sup>9</sup></td></tr>
+          <tr><td>mega</td><td>M</td><td>10<sup>6</sup></td></tr>
+          <tr><td>kilo</td><td>k</td><td>10<sup>3</sup></td></tr>
+          <tr><td>hecto</td><td>h</td><td>10<sup>2</sup></td></tr>
+          <tr><td>deca</td><td>da</td><td>10<sup>1</sup></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Prefix</th><th>Symbol</th><th>Power of 10</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>deci</td><td>d</td><td>10<sup>−1</sup></td></tr>
+          <tr><td>centi</td><td>c</td><td>10<sup>−2</sup></td></tr>
+          <tr><td>milli</td><td>m</td><td>10<sup>−3</sup></td></tr>
+          <tr><td>micro</td><td>μ</td><td>10<sup>−6</sup></td></tr>
+          <tr><td>nano</td><td>n</td><td>10<sup>−9</sup></td></tr>
+          <tr><td>pico</td><td>p</td><td>10<sup>−12</sup></td></tr>
+          <tr><td>femto</td><td>f</td><td>10<sup>−15</sup></td></tr>
+          <tr><td>atto</td><td>a</td><td>10<sup>−18</sup></td></tr>
+          <tr><td>zepto</td><td>z</td><td>10<sup>−21</sup></td></tr>
+          <tr><td>yocto</td><td>y</td><td>10<sup>−24</sup></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Physical Constants -->
+<section class="section" id="constants">
+  <div class="section-header domain-ref">
+    <span class="section-tag tag-ref">Reference</span>
+    <span class="section-title">Important Physical Constants</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Constant</th><th>Symbol</th><th>Value</th><th>Unit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Speed of light in vacuum</td><td>c</td><td>3.00 × 10<sup>8</sup></td><td>m s<sup>−1</sup></td></tr>
+        <tr><td>Planck's constant</td><td>h</td><td>6.626 × 10<sup>−34</sup></td><td>J s</td></tr>
+        <tr><td>Reduced Planck's constant</td><td>ℏ</td><td>1.055 × 10<sup>−34</sup></td><td>J s</td></tr>
+        <tr><td>Elementary charge (electron)</td><td>e</td><td>1.602 × 10<sup>−19</sup></td><td>C</td></tr>
+        <tr><td>Electron mass</td><td>m<sub>e</sub></td><td>9.109 × 10<sup>−31</sup></td><td>kg</td></tr>
+        <tr><td>Proton mass</td><td>m<sub>p</sub></td><td>1.673 × 10<sup>−27</sup></td><td>kg</td></tr>
+        <tr><td>Neutron mass</td><td>m<sub>n</sub></td><td>1.675 × 10<sup>−27</sup></td><td>kg</td></tr>
+        <tr><td>Boltzmann constant</td><td>k<sub>B</sub></td><td>1.381 × 10<sup>−23</sup></td><td>J K<sup>−1</sup></td></tr>
+        <tr><td>Avogadro's number</td><td>N<sub>A</sub></td><td>6.022 × 10<sup>23</sup></td><td>mol<sup>−1</sup></td></tr>
+        <tr><td>Permeability of free space</td><td>μ<sub>0</sub></td><td>4π × 10<sup>−7</sup> ≈ 1.257 × 10<sup>−6</sup></td><td>H m<sup>−1</sup></td></tr>
+        <tr><td>Permittivity of free space</td><td>ε<sub>0</sub></td><td>8.854 × 10<sup>−12</sup></td><td>F m<sup>−1</sup></td></tr>
+        <tr><td>Gravitational constant</td><td>G</td><td>6.674 × 10<sup>−11</sup></td><td>N m<sup>2</sup> kg<sup>−2</sup></td></tr>
+        <tr><td>Rydberg constant</td><td>R<sub>∞</sub></td><td>1.097 × 10<sup>7</sup></td><td>m<sup>−1</sup></td></tr>
+        <tr><td>Bohr radius</td><td>a<sub>0</sub></td><td>5.292 × 10<sup>−11</sup></td><td>m</td></tr>
+        <tr><td>1 Electron volt</td><td>1 eV</td><td>1.602 × 10<sup>−19</sup></td><td>J</td></tr>
+        <tr><td>1 Atomic mass unit</td><td>1 u</td><td>1.661 × 10<sup>−27</sup> (= 931.5 MeV/c<sup>2</sup>)</td><td>kg</td></tr>
+        <tr><td>1 Curie</td><td>1 Ci</td><td>3.7 × 10<sup>10</sup></td><td>Bq (disintegrations/s)</td></tr>
+        <tr><td>Nuclear radius constant</td><td>R<sub>0</sub></td><td>1.2 × 10<sup>−15</sup></td><td>m</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ ELECTRICITY ══════════ -->
+<div class="domain-divider"><span>Electricity — Ch 1 to 4</span></div>
+
+<!-- Ch 1 -->
+<section class="section" id="ch1">
+  <div class="section-header domain-elec">
+    <span class="section-tag tag-elec">Ch 1</span>
+    <span class="section-title">Electric Charges &amp; Fields</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Electric charge</td><td>q</td><td>coulomb</td><td>C</td><td>A T</td></tr>
+        <tr><td>Electric force</td><td>F</td><td>newton</td><td>N</td><td>M L T⁻²</td></tr>
+        <tr><td>Electric field intensity</td><td>E</td><td>newton per coulomb / volt per metre</td><td>N C⁻¹ or V m⁻¹</td><td>M L T⁻³ A⁻¹</td></tr>
+        <tr><td>Electric flux</td><td>Φ<sub>E</sub></td><td>newton metre² per coulomb</td><td>N m² C⁻¹</td><td>M L³ T⁻³ A⁻¹</td></tr>
+        <tr><td>Electric dipole moment</td><td>p</td><td>coulomb metre</td><td>C m</td><td>A T L</td></tr>
+        <tr><td>Linear charge density</td><td>λ</td><td>coulomb per metre</td><td>C m⁻¹</td><td>A T L⁻¹</td></tr>
+        <tr><td>Surface charge density</td><td>σ</td><td>coulomb per metre²</td><td>C m⁻²</td><td>A T L⁻²</td></tr>
+        <tr><td>Volume charge density</td><td>ρ</td><td>coulomb per metre³</td><td>C m⁻³</td><td>A T L⁻³</td></tr>
+        <tr><td>Permittivity of free space</td><td>ε<sub>0</sub></td><td>C² per N m² (= F m⁻¹)</td><td>C² N⁻¹ m⁻²</td><td>M⁻¹ L⁻³ T⁴ A²</td></tr>
+        <tr><td>Relative permittivity (dielectric constant)</td><td>ε<sub>r</sub> or K</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Coulomb's constant</td><td>k = 1/4πε<sub>0</sub></td><td>N m² C⁻²</td><td>N m² C⁻²</td><td>M L³ T⁻⁴ A⁻²</td></tr>
+        <tr><td>Torque on dipole</td><td>τ</td><td>newton metre</td><td>N m</td><td>M L² T⁻²</td></tr>
+        <tr><td>Distance / separation</td><td>r</td><td>metre</td><td>m</td><td>L</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 2 -->
+<section class="section" id="ch2">
+  <div class="section-header domain-elec">
+    <span class="section-tag tag-elec">Ch 2</span>
+    <span class="section-title">Electrostatic Potential &amp; Capacitance</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Electric potential</td><td>V</td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Potential difference</td><td>ΔV</td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Electrostatic potential energy</td><td>U</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Work done</td><td>W</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Capacitance</td><td>C</td><td>farad</td><td>F</td><td>M⁻¹ L⁻² T⁴ A²</td></tr>
+        <tr><td>Charge on capacitor</td><td>Q</td><td>coulomb</td><td>C</td><td>A T</td></tr>
+        <tr><td>Energy stored in capacitor</td><td>U</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Energy density (electric field)</td><td>u</td><td>joule per metre³</td><td>J m⁻³</td><td>M L⁻¹ T⁻²</td></tr>
+        <tr><td>Electric dipole moment</td><td>p</td><td>coulomb metre</td><td>C m</td><td>A T L</td></tr>
+        <tr><td>Polarisation</td><td>P</td><td>coulomb per metre²</td><td>C m⁻²</td><td>A T L⁻²</td></tr>
+        <tr><td>Electric susceptibility</td><td>χ<sub>e</sub></td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Permittivity of free space</td><td>ε<sub>0</sub></td><td>farad per metre</td><td>F m⁻¹</td><td>M⁻¹ L⁻³ T⁴ A²</td></tr>
+        <tr><td>Relative permittivity / dielectric constant</td><td>ε<sub>r</sub> or K</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Surface charge density</td><td>σ</td><td>coulomb per metre²</td><td>C m⁻²</td><td>A T L⁻²</td></tr>
+        <tr><td>Linear charge density</td><td>λ</td><td>coulomb per metre</td><td>C m⁻¹</td><td>A T L⁻¹</td></tr>
+        <tr><td>Volume charge density</td><td>ρ</td><td>coulomb per metre³</td><td>C m⁻³</td><td>A T L⁻³</td></tr>
+        <tr><td>Plate area (capacitor)</td><td>A</td><td>metre²</td><td>m²</td><td>L²</td></tr>
+        <tr><td>Plate separation</td><td>d</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Dielectric strength</td><td>E<sub>d</sub></td><td>volt per metre</td><td>V m⁻¹</td><td>M L T⁻³ A⁻¹</td></tr>
+        <tr><td>Equivalent capacitance</td><td>C<sub>eq</sub></td><td>farad</td><td>F</td><td>M⁻¹ L⁻² T⁴ A²</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 3 -->
+<section class="section" id="ch3">
+  <div class="section-header domain-elec">
+    <span class="section-tag tag-elec">Ch 3</span>
+    <span class="section-title">Current Electricity</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Electric current</td><td>I</td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Electric charge</td><td>Q</td><td>coulomb</td><td>C</td><td>A T</td></tr>
+        <tr><td>EMF / Electric potential</td><td>ε / V</td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Resistance</td><td>R</td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Resistivity (specific resistance)</td><td>ρ</td><td>ohm metre</td><td>Ω m</td><td>M L³ T⁻³ A⁻²</td></tr>
+        <tr><td>Conductance</td><td>G</td><td>siemens</td><td>S</td><td>M⁻¹ L⁻² T³ A²</td></tr>
+        <tr><td>Conductivity (specific conductance)</td><td>σ</td><td>siemens per metre</td><td>S m⁻¹</td><td>M⁻¹ L⁻³ T³ A²</td></tr>
+        <tr><td>Drift velocity</td><td>v<sub>d</sub></td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+        <tr><td>Current density</td><td>J</td><td>ampere per metre²</td><td>A m⁻²</td><td>A L⁻²</td></tr>
+        <tr><td>Mobility of charge carriers</td><td>μ</td><td>metre² per volt second</td><td>m² V⁻¹ s⁻¹</td><td>M⁻¹ T² A</td></tr>
+        <tr><td>Internal resistance</td><td>r</td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Temperature coefficient of resistance</td><td>α</td><td>per kelvin</td><td>K⁻¹</td><td>θ⁻¹</td></tr>
+        <tr><td>Electric power</td><td>P</td><td>watt</td><td>W</td><td>M L² T⁻³</td></tr>
+        <tr><td>Electrical energy</td><td>E</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Number density of charge carriers</td><td>n</td><td>per metre³</td><td>m⁻³</td><td>L⁻³</td></tr>
+        <tr><td>Relaxation time</td><td>τ</td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Terminal voltage</td><td>V<sub>T</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 4 -->
+<section class="section" id="ch4">
+  <div class="section-header domain-elec">
+    <span class="section-tag tag-elec">Ch 4</span>
+    <span class="section-title">Moving Charges &amp; Magnetism</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Magnetic flux density (magnetic field)</td><td>B</td><td>tesla</td><td>T</td><td>M T⁻² A⁻¹</td></tr>
+        <tr><td>Magnetic force on a charge</td><td>F</td><td>newton</td><td>N</td><td>M L T⁻²</td></tr>
+        <tr><td>Magnetic flux</td><td>Φ<sub>B</sub></td><td>weber</td><td>Wb</td><td>M L² T⁻² A⁻¹</td></tr>
+        <tr><td>Magnetic dipole moment</td><td>m</td><td>ampere metre²</td><td>A m²</td><td>A L²</td></tr>
+        <tr><td>Torque on magnetic dipole</td><td>τ</td><td>newton metre</td><td>N m</td><td>M L² T⁻²</td></tr>
+        <tr><td>Permeability of free space</td><td>μ<sub>0</sub></td><td>henry per metre</td><td>H m⁻¹</td><td>M L T⁻² A⁻²</td></tr>
+        <tr><td>Biot-Savart constant (μ<sub>0</sub>/4π)</td><td>k<sub>m</sub></td><td>henry per metre</td><td>H m⁻¹</td><td>M L T⁻² A⁻²</td></tr>
+        <tr><td>Radius of circular path (charged particle)</td><td>r</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Angular frequency (cyclotron)</td><td>ω</td><td>radian per second</td><td>rad s⁻¹</td><td>T⁻¹</td></tr>
+        <tr><td>Cyclotron frequency</td><td>f<sub>c</sub></td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Current sensitivity of galvanometer</td><td>S<sub>I</sub></td><td>radian per ampere</td><td>rad A⁻¹</td><td>M⁻¹ L⁻² T² A</td></tr>
+        <tr><td>Voltage sensitivity of galvanometer</td><td>S<sub>V</sub></td><td>radian per volt</td><td>rad V⁻¹</td><td>M⁻² L⁻⁴ T⁵ A²</td></tr>
+        <tr><td>Galvanometer resistance</td><td>G</td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Shunt resistance</td><td>S</td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Velocity of charged particle</td><td>v</td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+        <tr><td>Length of conductor</td><td>L</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Number of turns in coil</td><td>N</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Area of current loop</td><td>A</td><td>metre²</td><td>m²</td><td>L²</td></tr>
+        <tr><td>Solenoid turn density</td><td>n</td><td>per metre</td><td>m⁻¹</td><td>L⁻¹</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ MAGNETISM ══════════ -->
+<div class="domain-divider"><span>Magnetism — Ch 5 to 7</span></div>
+
+<!-- Ch 5 -->
+<section class="section" id="ch5">
+  <div class="section-header domain-mag">
+    <span class="section-tag tag-mag">Ch 5</span>
+    <span class="section-title">Magnetism &amp; Matter</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Magnetic field intensity (magnetising force)</td><td>H</td><td>ampere per metre</td><td>A m⁻¹</td><td>A L⁻¹</td></tr>
+        <tr><td>Magnetisation (intensity of magnetisation)</td><td>M</td><td>ampere per metre</td><td>A m⁻¹</td><td>A L⁻¹</td></tr>
+        <tr><td>Magnetic susceptibility</td><td>χ<sub>m</sub></td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Relative permeability</td><td>μ<sub>r</sub></td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Absolute permeability</td><td>μ</td><td>henry per metre</td><td>H m⁻¹</td><td>M L T⁻² A⁻²</td></tr>
+        <tr><td>Permeability of free space</td><td>μ<sub>0</sub></td><td>henry per metre</td><td>H m⁻¹</td><td>M L T⁻² A⁻²</td></tr>
+        <tr><td>Pole strength</td><td>m (or p)</td><td>ampere metre</td><td>A m</td><td>A L</td></tr>
+        <tr><td>Magnetic moment (bar magnet)</td><td>M</td><td>ampere metre²</td><td>A m²</td><td>A L²</td></tr>
+        <tr><td>Magnetic flux density</td><td>B</td><td>tesla</td><td>T</td><td>M T⁻² A⁻¹</td></tr>
+        <tr><td>Magnetic flux</td><td>Φ<sub>B</sub></td><td>weber</td><td>Wb</td><td>M L² T⁻² A⁻¹</td></tr>
+        <tr><td>Torque on magnetic dipole</td><td>τ</td><td>newton metre</td><td>N m</td><td>M L² T⁻²</td></tr>
+        <tr><td>Potential energy of magnetic dipole</td><td>U</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Curie temperature</td><td>T<sub>C</sub></td><td>kelvin</td><td>K</td><td>θ</td></tr>
+        <tr><td>Curie constant</td><td>C</td><td>kelvin</td><td>K</td><td>θ</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 6 -->
+<section class="section" id="ch6">
+  <div class="section-header domain-mag">
+    <span class="section-tag tag-mag">Ch 6</span>
+    <span class="section-title">Electromagnetic Induction</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Magnetic flux</td><td>Φ (or Φ<sub>B</sub>)</td><td>weber</td><td>Wb</td><td>M L² T⁻² A⁻¹</td></tr>
+        <tr><td>Rate of change of flux</td><td>dΦ/dt</td><td>weber per second</td><td>Wb s⁻¹</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Induced EMF</td><td>ε (or e)</td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Induced current</td><td>I</td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Induced charge</td><td>q</td><td>coulomb</td><td>C</td><td>A T</td></tr>
+        <tr><td>Self-inductance</td><td>L</td><td>henry</td><td>H</td><td>M L² T⁻² A⁻²</td></tr>
+        <tr><td>Mutual inductance</td><td>M</td><td>henry</td><td>H</td><td>M L² T⁻² A⁻²</td></tr>
+        <tr><td>Coefficient of coupling</td><td>k</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Motional EMF</td><td>ε = Blv</td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Energy stored in inductor</td><td>U = ½LI²</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Energy density in magnetic field</td><td>u<sub>B</sub></td><td>joule per metre³</td><td>J m⁻³</td><td>M L⁻¹ T⁻²</td></tr>
+        <tr><td>Velocity of conductor in field</td><td>v</td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 7 -->
+<section class="section" id="ch7">
+  <div class="section-header domain-mag">
+    <span class="section-tag tag-mag">Ch 7</span>
+    <span class="section-title">Alternating Current</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Peak (maximum) voltage</td><td>V<sub>0</sub> (or E<sub>0</sub>)</td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>RMS voltage</td><td>V<sub>rms</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Peak current</td><td>I<sub>0</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>RMS current</td><td>I<sub>rms</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Frequency</td><td>f</td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Angular frequency</td><td>ω</td><td>radian per second</td><td>rad s⁻¹</td><td>T⁻¹</td></tr>
+        <tr><td>Time period</td><td>T</td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Impedance</td><td>Z</td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Resistance</td><td>R</td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Inductive reactance</td><td>X<sub>L</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Capacitive reactance</td><td>X<sub>C</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Self-inductance</td><td>L</td><td>henry</td><td>H</td><td>M L² T⁻² A⁻²</td></tr>
+        <tr><td>Capacitance</td><td>C</td><td>farad</td><td>F</td><td>M⁻¹ L⁻² T⁴ A²</td></tr>
+        <tr><td>Phase difference</td><td>φ</td><td>radian</td><td>rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Power factor</td><td>cos φ</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Average (real) power</td><td>P<sub>avg</sub></td><td>watt</td><td>W</td><td>M L² T⁻³</td></tr>
+        <tr><td>Apparent power</td><td>P<sub>app</sub></td><td>volt-ampere</td><td>VA</td><td>M L² T⁻³</td></tr>
+        <tr><td>Reactive power</td><td>Q<sub>r</sub></td><td>volt-ampere reactive</td><td>VAR</td><td>M L² T⁻³</td></tr>
+        <tr><td>Resonant frequency</td><td>f<sub>0</sub> (or ω<sub>0</sub>)</td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Quality factor (Q-factor)</td><td>Q</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Bandwidth</td><td>Δf</td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Time constant (L-R circuit)</td><td>τ = L/R</td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Time constant (R-C circuit)</td><td>τ = RC</td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Turns ratio (transformer)</td><td>n = N<sub>2</sub>/N<sub>1</sub></td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Transformer efficiency</td><td>η</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Input / Output power</td><td>P<sub>in</sub>, P<sub>out</sub></td><td>watt</td><td>W</td><td>M L² T⁻³</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ OPTICS & EM WAVES ══════════ -->
+<div class="domain-divider"><span>Optics &amp; EM Waves — Ch 8 to 10</span></div>
+
+<!-- Ch 8 -->
+<section class="section" id="ch8">
+  <div class="section-header domain-opt">
+    <span class="section-tag tag-opt">Ch 8</span>
+    <span class="section-title">Electromagnetic Waves</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Speed of light (in vacuum)</td><td>c</td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+        <tr><td>Electric field (amplitude)</td><td>E<sub>0</sub></td><td>volt per metre</td><td>V m⁻¹</td><td>M L T⁻³ A⁻¹</td></tr>
+        <tr><td>Magnetic field (amplitude)</td><td>B<sub>0</sub></td><td>tesla</td><td>T</td><td>M T⁻² A⁻¹</td></tr>
+        <tr><td>Permittivity of free space</td><td>ε<sub>0</sub></td><td>farad per metre</td><td>F m⁻¹</td><td>M⁻¹ L⁻³ T⁴ A²</td></tr>
+        <tr><td>Permeability of free space</td><td>μ<sub>0</sub></td><td>henry per metre</td><td>H m⁻¹</td><td>M L T⁻² A⁻²</td></tr>
+        <tr><td>Frequency of EM wave</td><td>f (or ν)</td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Angular frequency</td><td>ω</td><td>radian per second</td><td>rad s⁻¹</td><td>T⁻¹</td></tr>
+        <tr><td>Wavelength</td><td>λ</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Wave number</td><td>k</td><td>per metre</td><td>m⁻¹</td><td>L⁻¹</td></tr>
+        <tr><td>Time period</td><td>T</td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Displacement current</td><td>I<sub>d</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Intensity of EM wave</td><td>I</td><td>watt per metre²</td><td>W m⁻²</td><td>M T⁻³</td></tr>
+        <tr><td>Poynting vector</td><td>S</td><td>watt per metre²</td><td>W m⁻²</td><td>M T⁻³</td></tr>
+        <tr><td>Radiation pressure</td><td>P<sub>rad</sub></td><td>pascal</td><td>Pa</td><td>M L⁻¹ T⁻²</td></tr>
+        <tr><td>Energy density of EM wave</td><td>u</td><td>joule per metre³</td><td>J m⁻³</td><td>M L⁻¹ T⁻²</td></tr>
+        <tr><td>Electric energy density</td><td>u<sub>E</sub></td><td>joule per metre³</td><td>J m⁻³</td><td>M L⁻¹ T⁻²</td></tr>
+        <tr><td>Magnetic energy density</td><td>u<sub>B</sub></td><td>joule per metre³</td><td>J m⁻³</td><td>M L⁻¹ T⁻²</td></tr>
+        <tr><td>Momentum of EM radiation</td><td>p</td><td>kilogram metre per second</td><td>kg m s⁻¹</td><td>M L T⁻¹</td></tr>
+        <tr><td>Impedance of free space</td><td>Z<sub>0</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 9 -->
+<section class="section" id="ch9">
+  <div class="section-header domain-opt">
+    <span class="section-tag tag-opt">Ch 9</span>
+    <span class="section-title">Ray Optics &amp; Optical Instruments</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Focal length</td><td>f</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Radius of curvature</td><td>R</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Object distance</td><td>u</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Image distance</td><td>v</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Power of lens / mirror</td><td>P</td><td>dioptre</td><td>D (= m⁻¹)</td><td>L⁻¹</td></tr>
+        <tr><td>Refractive index</td><td>n (or μ)</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Linear magnification</td><td>m</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Angular magnification / magnifying power</td><td>M</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Angle of incidence</td><td>i</td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Angle of refraction</td><td>r</td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Critical angle</td><td>θ<sub>c</sub></td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Angle of deviation</td><td>δ</td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Angle of prism</td><td>A</td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Angle of minimum deviation</td><td>D<sub>m</sub></td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Height of object</td><td>h</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Height of image</td><td>h′</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Least distance of distinct vision</td><td>D</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Aperture of lens / mirror</td><td>d</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Dispersive power</td><td>ω</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 10 -->
+<section class="section" id="ch10">
+  <div class="section-header domain-opt">
+    <span class="section-tag tag-opt">Ch 10</span>
+    <span class="section-title">Wave Optics</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Wavelength</td><td>λ</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Frequency</td><td>f (or ν)</td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Speed of light</td><td>c</td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+        <tr><td>Path difference</td><td>Δ (or δ)</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Fringe width</td><td>β</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Slit separation</td><td>d</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Distance to screen</td><td>D</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Amplitude of wave</td><td>a</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Intensity of wave</td><td>I</td><td>watt per metre²</td><td>W m⁻²</td><td>M T⁻³</td></tr>
+        <tr><td>Phase difference</td><td>φ</td><td>radian</td><td>rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Coherence length</td><td>L<sub>c</sub></td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Coherence time</td><td>t<sub>c</sub></td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Angular fringe width</td><td>θ</td><td>radian</td><td>rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Angle of diffraction</td><td>θ</td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Resolving power</td><td>R.P.</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Limit of resolution (angular)</td><td>dθ</td><td>radian</td><td>rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Limit of resolution (linear)</td><td>dx</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Brewster's angle / polarising angle</td><td>θ<sub>B</sub></td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Width of central maximum</td><td>2y</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Numerical aperture</td><td>N.A.</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Order of fringe / diffraction</td><td>n</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ MODERN PHYSICS ══════════ -->
+<div class="domain-divider"><span>Modern Physics — Ch 11 to 14</span></div>
+
+<!-- Ch 11 -->
+<section class="section" id="ch11">
+  <div class="section-header domain-mod">
+    <span class="section-tag tag-mod">Ch 11</span>
+    <span class="section-title">Dual Nature of Radiation &amp; Matter</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Work function</td><td>φ</td><td>joule (also in eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Stopping potential</td><td>V<sub>0</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Threshold frequency</td><td>ν<sub>0</sub></td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Incident frequency</td><td>ν</td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Threshold wavelength</td><td>λ<sub>0</sub></td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>de Broglie wavelength</td><td>λ</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Planck's constant</td><td>h</td><td>joule second</td><td>J s</td><td>M L² T⁻¹</td></tr>
+        <tr><td>Reduced Planck's constant</td><td>ℏ</td><td>joule second</td><td>J s</td><td>M L² T⁻¹</td></tr>
+        <tr><td>Photoelectric current</td><td>I</td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Saturation current</td><td>I<sub>sat</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Max kinetic energy of photoelectron</td><td>KE<sub>max</sub></td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Energy of photon</td><td>E</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Momentum of photon</td><td>p = h/λ</td><td>kilogram metre per second</td><td>kg m s⁻¹</td><td>M L T⁻¹</td></tr>
+        <tr><td>Momentum of electron (de Broglie)</td><td>p</td><td>kilogram metre per second</td><td>kg m s⁻¹</td><td>M L T⁻¹</td></tr>
+        <tr><td>Mass of electron</td><td>m<sub>e</sub></td><td>kilogram</td><td>kg</td><td>M</td></tr>
+        <tr><td>Charge of electron</td><td>e</td><td>coulomb</td><td>C</td><td>A T</td></tr>
+        <tr><td>Intensity of radiation</td><td>I</td><td>watt per metre²</td><td>W m⁻²</td><td>M T⁻³</td></tr>
+        <tr><td>Retarding potential</td><td>V<sub>r</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Accelerating voltage</td><td>V</td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Electron volt (energy unit)</td><td>eV</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 12 -->
+<section class="section" id="ch12">
+  <div class="section-header domain-mod">
+    <span class="section-tag tag-mod">Ch 12</span>
+    <span class="section-title">Atoms</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bohr radius (ground state)</td><td>a<sub>0</sub></td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Radius of nth orbit</td><td>r<sub>n</sub></td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Velocity of electron in nth orbit</td><td>v<sub>n</sub></td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+        <tr><td>Angular momentum of electron</td><td>L</td><td>kilogram metre² per second</td><td>kg m² s⁻¹</td><td>M L² T⁻¹</td></tr>
+        <tr><td>Orbital frequency of electron</td><td>ν<sub>n</sub></td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Kinetic energy of electron</td><td>KE</td><td>joule (or eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Potential energy of electron</td><td>PE</td><td>joule (or eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Total energy of electron in nth orbit</td><td>E<sub>n</sub></td><td>joule (or eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Ionisation energy</td><td>E<sub>ion</sub></td><td>joule (or eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Ionisation potential</td><td>V<sub>ion</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Excitation energy</td><td>E<sub>exc</sub></td><td>joule (or eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Energy of emitted photon</td><td>E = hν</td><td>joule</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Frequency of emitted radiation</td><td>ν</td><td>hertz</td><td>Hz</td><td>T⁻¹</td></tr>
+        <tr><td>Wavelength of emitted radiation</td><td>λ</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Wavenumber</td><td>ν̄</td><td>per metre</td><td>m⁻¹</td><td>L⁻¹</td></tr>
+        <tr><td>Rydberg constant</td><td>R<sub>H</sub></td><td>per metre</td><td>m⁻¹</td><td>L⁻¹</td></tr>
+        <tr><td>Atomic number</td><td>Z</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Principal quantum number</td><td>n</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Impact parameter</td><td>b</td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Angle of scattering</td><td>θ</td><td>degree / radian</td><td>° / rad</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Distance of closest approach</td><td>d</td><td>metre</td><td>m</td><td>L</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 13 -->
+<section class="section" id="ch13">
+  <div class="section-header domain-mod">
+    <span class="section-tag tag-mod">Ch 13</span>
+    <span class="section-title">Nuclei</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nuclear radius</td><td>R</td><td>metre (fermi = 10⁻¹⁵ m)</td><td>m</td><td>L</td></tr>
+        <tr><td>Nuclear radius constant</td><td>R<sub>0</sub></td><td>metre</td><td>m</td><td>L</td></tr>
+        <tr><td>Mass number</td><td>A</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Atomic number</td><td>Z</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Neutron number</td><td>N</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Atomic mass unit</td><td>u</td><td>kilogram</td><td>kg</td><td>M</td></tr>
+        <tr><td>Mass of proton</td><td>m<sub>p</sub></td><td>kilogram</td><td>kg</td><td>M</td></tr>
+        <tr><td>Mass of neutron</td><td>m<sub>n</sub></td><td>kilogram</td><td>kg</td><td>M</td></tr>
+        <tr><td>Mass defect</td><td>Δm</td><td>kilogram (or u)</td><td>kg</td><td>M</td></tr>
+        <tr><td>Binding energy</td><td>BE</td><td>joule (or MeV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Binding energy per nucleon</td><td>BE/A</td><td>joule per nucleon (or MeV/nucleon)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Nuclear density</td><td>ρ</td><td>kilogram per metre³</td><td>kg m⁻³</td><td>M L⁻³</td></tr>
+        <tr><td>Radioactive decay constant</td><td>λ</td><td>per second</td><td>s⁻¹</td><td>T⁻¹</td></tr>
+        <tr><td>Half-life</td><td>T<sub>½</sub></td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Mean life (average life)</td><td>τ</td><td>second</td><td>s</td><td>T</td></tr>
+        <tr><td>Activity</td><td>A</td><td>becquerel</td><td>Bq (= s⁻¹)</td><td>T⁻¹</td></tr>
+        <tr><td>Number of radioactive nuclei</td><td>N</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Q-value (energy released)</td><td>Q</td><td>joule (or MeV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Energy of alpha / beta / gamma</td><td>E<sub>α</sub>, E<sub>β</sub>, E<sub>γ</sub></td><td>joule (or MeV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Nuclear volume</td><td>V</td><td>metre³</td><td>m³</td><td>L³</td></tr>
+        <tr><td>Speed of light</td><td>c</td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Ch 14 -->
+<section class="section" id="ch14">
+  <div class="section-header domain-mod">
+    <span class="section-tag tag-mod">Ch 14</span>
+    <span class="section-title">Semiconductor Electronics</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th><th>Unit Symbol</th><th>Dimensions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Energy band gap</td><td>E<sub>g</sub></td><td>joule (or eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Fermi energy</td><td>E<sub>F</sub></td><td>joule (or eV)</td><td>J</td><td>M L² T⁻²</td></tr>
+        <tr><td>Electron concentration</td><td>n</td><td>per metre³</td><td>m⁻³</td><td>L⁻³</td></tr>
+        <tr><td>Hole concentration</td><td>p</td><td>per metre³</td><td>m⁻³</td><td>L⁻³</td></tr>
+        <tr><td>Intrinsic carrier concentration</td><td>n<sub>i</sub></td><td>per metre³</td><td>m⁻³</td><td>L⁻³</td></tr>
+        <tr><td>Donor concentration</td><td>N<sub>D</sub></td><td>per metre³</td><td>m⁻³</td><td>L⁻³</td></tr>
+        <tr><td>Acceptor concentration</td><td>N<sub>A</sub></td><td>per metre³</td><td>m⁻³</td><td>L⁻³</td></tr>
+        <tr><td>Drift velocity</td><td>v<sub>d</sub></td><td>metre per second</td><td>m s⁻¹</td><td>L T⁻¹</td></tr>
+        <tr><td>Mobility of electrons</td><td>μ<sub>e</sub></td><td>metre² per volt second</td><td>m² V⁻¹ s⁻¹</td><td>M⁻¹ T² A</td></tr>
+        <tr><td>Mobility of holes</td><td>μ<sub>h</sub></td><td>metre² per volt second</td><td>m² V⁻¹ s⁻¹</td><td>M⁻¹ T² A</td></tr>
+        <tr><td>Conductivity</td><td>σ</td><td>siemens per metre</td><td>S m⁻¹</td><td>M⁻¹ L⁻³ T³ A²</td></tr>
+        <tr><td>Resistivity</td><td>ρ</td><td>ohm metre</td><td>Ω m</td><td>M L³ T⁻³ A⁻²</td></tr>
+        <tr><td>Junction barrier potential (built-in)</td><td>V<sub>0</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Forward bias voltage</td><td>V<sub>F</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Reverse bias voltage</td><td>V<sub>R</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Knee voltage (threshold voltage)</td><td>V<sub>knee</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Zener breakdown voltage</td><td>V<sub>Z</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Diode forward current</td><td>I<sub>F</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Diode reverse saturation current</td><td>I<sub>0</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Static / DC resistance of diode</td><td>R<sub>DC</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Dynamic / AC resistance of diode</td><td>r<sub>d</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Base current</td><td>I<sub>B</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Collector current</td><td>I<sub>C</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Emitter current</td><td>I<sub>E</sub></td><td>ampere</td><td>A</td><td>A</td></tr>
+        <tr><td>Current gain (CB config) α</td><td>α</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Current gain (CE config) β</td><td>β</td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Input resistance (CE)</td><td>r<sub>i</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Output resistance (CE)</td><td>r<sub>o</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Transconductance</td><td>g<sub>m</sub></td><td>siemens</td><td>S (= A V⁻¹)</td><td>M⁻¹ L⁻² T³ A²</td></tr>
+        <tr><td>Voltage gain</td><td>A<sub>V</sub></td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Power gain</td><td>A<sub>P</sub></td><td>dimensionless</td><td>—</td><td class="dim-less">dimensionless</td></tr>
+        <tr><td>Collector-emitter voltage</td><td>V<sub>CE</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Base-emitter voltage</td><td>V<sub>BE</sub></td><td>volt</td><td>V</td><td>M L² T⁻³ A⁻¹</td></tr>
+        <tr><td>Load resistance</td><td>R<sub>L</sub></td><td>ohm</td><td>Ω</td><td>M L² T⁻³ A⁻²</td></tr>
+        <tr><td>Width of depletion region</td><td>W</td><td>metre</td><td>m</td><td>L</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</main>
+</div><!-- .layout -->
+
+<script>
+// Frequently asked quantities in CBSE board exams (dimensional analysis / unit questions)
+const HOT = [
+  // Electrostatics
+  "permittivity of free space",
+  "electric field intensity",
+  "electric flux",
+  "electric dipole moment",
+  "electric potential",
+  "capacitance",
+  "energy density",
+  "coulomb's constant",
+  // Current electricity
+  "resistance",
+  "resistivity",
+  "mobility",
+  "current density",
+  "conductivity",
+  "drift velocity",
+  // Magnetism
+  "permeability of free space",
+  "magnetic field",
+  "magnetic flux",
+  "magnetic dipole moment",
+  "pole strength",
+  "magnetisation",
+  // EMI / AC
+  "self-inductance",
+  "mutual inductance",
+  "impedance",
+  "inductive reactance",
+  "capacitive reactance",
+  "energy stored in inductor",
+  "energy density in magnetic field",
+  // EM Waves / Optics
+  "intensity of em wave",
+  "poynting vector",
+  "power of lens",
+  "refractive index",
+  "fringe width",
+  // Modern Physics
+  "planck's constant",
+  "reduced planck's constant",
+  "work function",
+  "de broglie wavelength",
+  "stopping potential",
+  "momentum of photon",
+  "angular momentum of electron",
+  "rydberg constant",
+  "binding energy",
+  "radioactive decay constant",
+  "activity",
+  "mass defect",
+  // Semiconductors
+  "transconductance",
+  "mobility of electrons",
+  "mobility of holes",
+  "current gain",
+];
+
+// Mark hot rows
+document.querySelectorAll('tbody tr').forEach(row => {
+  const cell = row.querySelector('td:first-child');
+  if (!cell) return;
+  const text = cell.textContent.trim().toLowerCase();
+  if (HOT.some(h => text.includes(h))) row.classList.add('hot');
+});
+
+// Toggle filter
+const toggle = document.getElementById('filterToggle');
+toggle.addEventListener('change', () => {
+  document.body.classList.toggle('filter-mode', !toggle.checked);
+});
+</script>
+
+</body>
+</html>

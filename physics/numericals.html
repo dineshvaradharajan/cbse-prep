@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<style>
+  /* ── Page header ── */
+  .page-header {
+    padding: 2.5rem 0 1.5rem;
+    border-bottom: 1px solid var(--sand-200);
+    margin-bottom: 1.5rem;
+  }
+  .page-header h1 {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .subtitle {
+    font-size: 0.85rem;
+    color: var(--ink-3);
+  }
+
+  /* ── Progress bar ── */
+  .progress-bar-container {
+    background: #fff;
+    border: 1px solid var(--sand-200);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink-3);
+    margin-bottom: 0.5rem;
+  }
+  .progress-track {
+    height: 6px;
+    background: var(--sand-200);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: #16a34a;
+    border-radius: 999px;
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+
+  /* ── Global controls ── */
+  .global-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+  }
+  .global-controls button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    border-radius: 7px;
+    border: 1.5px solid var(--sand-300);
+    background: #fff;
+    color: var(--ink-2);
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.15s;
+  }
+  .global-controls button:hover { background: var(--sand-100); border-color: var(--sand-400); }
+
+  /* ── Chapter section ── */
+  .chapter-section { margin-bottom: 2.5rem; }
+  .chapter-heading {
+    font-family: 'Newsreader', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .chapter-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-family: 'Lato', sans-serif;
+  }
+  .badge-electro { background: #dbeafe; color: #1e40af; }
+  .badge-current  { background: #a5f3fc; color: #0e7490; }
+  .badge-magnetic { background: #d1fae5; color: #065f46; }
+  .badge-emi      { background: #fed7aa; color: #c2410c; }
+  .badge-ac       { background: #fef3c7; color: #92400e; }
+  .badge-optics   { background: #ccfbf1; color: #115e59; }
+  .badge-wave     { background: #e0e7ff; color: #3730a3; }
+  .badge-dual     { background: #fce7f3; color: #9d174d; }
+  .badge-atom     { background: #dcfce7; color: #15803d; }
+
+  /* ── Problem card ── */
+  .problem-card {
+    background: #fff;
+    border: 1px solid var(--sand-200);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  .problem-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--sand-50);
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .problem-checkbox { padding-top: 0.1rem; flex-shrink: 0; }
+  .problem-checkbox input { width: 16px; height: 16px; cursor: pointer; accent-color: #16a34a; }
+  .problem-number {
+    font-size: 0.72rem;
+    font-weight: 900;
+    color: var(--ink-3);
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.04em;
+  }
+  .problem-question {
+    flex: 1;
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .problem-meta { flex-shrink: 0; }
+  .marks-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: #fce7f3;
+    color: #9d174d;
+    white-space: nowrap;
+  }
+
+  /* ── Toggle button ── */
+  .toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.65rem 1.25rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--sand-100);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink-3);
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toggle-btn:hover { background: var(--sand-50); color: var(--ink); }
+  .arrow {
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .toggle-btn.open .arrow { transform: rotate(90deg); }
+
+  /* ── Solution area ── */
+  .solution-area {
+    display: none;
+    padding: 1.25rem;
+    border-top: 1px solid var(--sand-100);
+  }
+  .solution-area.visible { display: block; }
+
+  /* ── Solution sections ── */
+  .solution-section { margin-bottom: 1rem; }
+  .solution-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── Given list ── */
+  .given-list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    font-size: 0.84rem;
+    color: var(--ink-2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  /* ── Formula box ── */
+  .formula-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
+    color: #1e40af;
+    overflow-x: auto;
+  }
+
+  /* ── Step ── */
+  .solution-content { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--sand-100);
+    font-size: 0.84rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+  }
+  .step:last-child { border-bottom: none; }
+
+  /* ── Answer box ── */
+  .answer-box {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
+    color: #15803d;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    line-height: 1.6;
+  }
+
+  /* ── Tip box ── */
+  .tip-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    font-size: 0.8rem;
+    color: #78350f;
+    margin-top: 0.6rem;
+    line-height: 1.6;
+  }
+
+  /* ── Problem card checked state ── */
+  .problem-card.completed { border-color: #86efac; }
+  .problem-card.completed .problem-header { background: #f0fdf4; }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics XII — 25 Must-Do Numericals</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <a href="../index.html" class="back-link">&larr; Back to Prep Hub</a>
+
+  <div class="page-header">
+    <h1>25 Must-Do Numericals</h1>
+    <div class="subtitle">CBSE Physics XII &mdash; Chapter-wise, with step-by-step solutions</div>
+  </div>
+
+  <!-- Progress tracker -->
+  <div class="progress-bar-container">
+    <div class="progress-label">
+      <span>Progress</span>
+      <span id="progress-count">0 / 25 completed</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Global controls -->
+  <div class="global-controls">
+    <button onclick="toggleAllSolutions(true)">Show All Solutions</button>
+    <button onclick="toggleAllSolutions(false)">Hide All Solutions</button>
+    <button onclick="resetProgress()">Reset Progress</button>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 1-2: Electrostatics -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-electro">Ch 1-2</span>
+      Electrostatics
+    </h2>
+
+    <!-- Problem 1 -->
+    <div class="problem-card" id="problem-1">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 1)"></div>
+        <span class="problem-number">Q1</span>
+        <div class="problem-question">
+          Three point charges $q_1 = +2\,\mu\text{C}$, $q_2 = -3\,\mu\text{C}$, and $q_3 = +4\,\mu\text{C}$ are placed along a straight line. $q_2$ is at the origin, $q_1$ is at $x = -10\,\text{cm}$, and $q_3$ is at $x = +20\,\text{cm}$. Find the net force on $q_2$.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$q_1 = +2 \times 10^{-6}\,\text{C}$, at $x = -0.10\,\text{m}$</li>
+            <li>$q_2 = -3 \times 10^{-6}\,\text{C}$, at origin</li>
+            <li>$q_3 = +4 \times 10^{-6}\,\text{C}$, at $x = +0.20\,\text{m}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$F = \frac{1}{4\pi\varepsilon_0}\,\frac{|q_a\,q_b|}{r^2}, \quad k = 9 \times 10^9\,\text{N m}^2\text{C}^{-2}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Force on $q_2$ due to $q_1$. Since $q_1 > 0$ and $q_2 < 0$, the force is attractive, directed toward $q_1$ (i.e., in the $-x$ direction).</div>
+            <div class="step">
+              $$F_{12} = k\,\frac{|q_1||q_2|}{r_{12}^2} = 9\times10^9 \times \frac{2\times10^{-6}\times3\times10^{-6}}{(0.10)^2}$$
+              $$= 9\times10^9 \times \frac{6\times10^{-12}}{0.01} = 5.4\,\text{N} \quad (\text{in } -x \text{ direction})$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Force on $q_2$ due to $q_3$. Since $q_3 > 0$ and $q_2 < 0$, the force is attractive, directed toward $q_3$ (i.e., in the $+x$ direction).</div>
+            <div class="step">
+              $$F_{32} = k\,\frac{|q_3||q_2|}{r_{32}^2} = 9\times10^9 \times \frac{4\times10^{-6}\times3\times10^{-6}}{(0.20)^2}$$
+              $$= 9\times10^9 \times \frac{12\times10^{-12}}{0.04} = 2.7\,\text{N} \quad (\text{in } +x \text{ direction})$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Net force on $q_2$:</div>
+            <div class="step">
+              $$F_{\text{net}} = F_{32} - F_{12} = 2.7 - 5.4 = -2.7\,\text{N}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$\vec{F}_{\text{net}} = 2.7\,\text{N}$ in the $-x$ direction (toward $q_1$)</div>
+        <div class="tip-box"><strong>Tip:</strong> Always draw a diagram showing force directions on the target charge. Be careful with signs &mdash; attractive forces pull toward the source charge, repulsive forces push away. Convert cm to m before substituting.</div>
+      </div>
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="problem-card" id="problem-2">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 2)"></div>
+        <span class="problem-number">Q2</span>
+        <div class="problem-question">
+          Two charges $q_1 = +5\,\mu\text{C}$ and $q_2 = -3\,\mu\text{C}$ are placed 20 cm apart. Find the electric potential at a point P that is 10 cm from $q_1$ and 15 cm from $q_2$, along the line joining them (between the charges). Also find the work done in bringing a charge $q_3 = +1\,\mu\text{C}$ from infinity to point P.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$q_1 = +5 \times 10^{-6}\,\text{C}$, $q_2 = -3 \times 10^{-6}\,\text{C}$</li>
+            <li>$r_1 = 0.10\,\text{m}$ (distance from $q_1$ to P)</li>
+            <li>$r_2 = 0.15\,\text{m}$ (distance from $q_2$ to P)</li>
+            <li>$q_3 = +1 \times 10^{-6}\,\text{C}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$V = \frac{1}{4\pi\varepsilon_0}\sum\frac{q_i}{r_i}, \qquad W = q_3 \cdot V_P$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Potential at P due to $q_1$:</div>
+            <div class="step">
+              $$V_1 = k\,\frac{q_1}{r_1} = 9\times10^9 \times \frac{5\times10^{-6}}{0.10} = 4.5 \times 10^5\,\text{V}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Potential at P due to $q_2$:</div>
+            <div class="step">
+              $$V_2 = k\,\frac{q_2}{r_2} = 9\times10^9 \times \frac{-3\times10^{-6}}{0.15} = -1.8 \times 10^5\,\text{V}$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Total potential at P:</div>
+            <div class="step">
+              $$V_P = V_1 + V_2 = 4.5\times10^5 - 1.8\times10^5 = 2.7 \times 10^5\,\text{V}$$
+            </div>
+            <div class="step"><strong>Step 4:</strong> Work done in bringing $q_3$ from infinity to P:</div>
+            <div class="step">
+              $$W = q_3 \cdot V_P = 1\times10^{-6} \times 2.7\times10^5 = 0.27\,\text{J}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$V_P = 2.7 \times 10^5\,\text{V}$, &ensp; $W = 0.27\,\text{J}$</div>
+        <div class="tip-box"><strong>Tip:</strong> Potential is a scalar &mdash; add algebraically with sign. Unlike force, you do NOT need to resolve directions. The sign of $q$ matters in the formula for V.</div>
+      </div>
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="problem-card" id="problem-3">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 3)"></div>
+        <span class="problem-number">Q3</span>
+        <div class="problem-question">
+          A parallel plate capacitor of capacitance $20\,\mu\text{F}$ is charged to a potential difference of $100\,\text{V}$. A dielectric slab of dielectric constant $K = 5$ is then inserted between the plates. Find the energy stored in the capacitor (a) if the battery remains connected, and (b) if the battery is disconnected before inserting the dielectric.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">5 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$C_0 = 20\,\mu\text{F} = 20 \times 10^{-6}\,\text{F}$</li>
+            <li>$V_0 = 100\,\text{V}$</li>
+            <li>$K = 5$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$U = \frac{1}{2}CV^2 = \frac{Q^2}{2C}, \quad C' = KC_0$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Initial energy:</strong></div>
+            <div class="step">
+              $$U_0 = \tfrac{1}{2}C_0 V_0^2 = \tfrac{1}{2}\times 20\times10^{-6}\times(100)^2 = 0.1\,\text{J}$$
+            </div>
+            <div class="step"><strong>New capacitance:</strong> $C' = KC_0 = 5 \times 20 = 100\,\mu\text{F}$</div>
+
+            <div class="step"><strong>(a) Battery connected</strong> &mdash; voltage stays at $V_0 = 100\,\text{V}$:</div>
+            <div class="step">
+              $$U_a = \tfrac{1}{2}C'V_0^2 = \tfrac{1}{2}\times100\times10^{-6}\times(100)^2 = 0.5\,\text{J}$$
+            </div>
+            <div class="step">Energy <em>increases</em> by factor $K$ (battery supplies extra charge).</div>
+
+            <div class="step"><strong>(b) Battery disconnected</strong> &mdash; charge stays at $Q_0 = C_0 V_0 = 2 \times 10^{-3}\,\text{C}$:</div>
+            <div class="step">
+              $$U_b = \frac{Q_0^2}{2C'} = \frac{(2\times10^{-3})^2}{2\times100\times10^{-6}} = \frac{4\times10^{-6}}{2\times10^{-4}} = 0.02\,\text{J}$$
+            </div>
+            <div class="step">Energy <em>decreases</em> by factor $K$ (energy used to pull dielectric in).</div>
+          </div>
+        </div>
+        <div class="answer-box">(a) $U = 0.5\,\text{J}$ &ensp; (b) $U = 0.02\,\text{J}$</div>
+        <div class="tip-box"><strong>Tip:</strong> The key distinction: battery connected keeps V constant (C changes, Q changes); battery disconnected keeps Q constant (C changes, V changes). Energy formula choice depends on which quantity is constant.</div>
+      </div>
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="problem-card" id="problem-4">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 4)"></div>
+        <span class="problem-number">Q4</span>
+        <div class="problem-question">
+          Three capacitors of capacitances $C_1 = 2\,\mu\text{F}$, $C_2 = 3\,\mu\text{F}$, and $C_3 = 6\,\mu\text{F}$ are connected such that $C_1$ and $C_2$ are in series, and their combination is in parallel with $C_3$. This arrangement is connected across a $12\,\text{V}$ battery. Find the equivalent capacitance, total charge, and charge on each capacitor.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$C_1 = 2\,\mu\text{F}$, $C_2 = 3\,\mu\text{F}$, $C_3 = 6\,\mu\text{F}$</li>
+            <li>$C_1$ and $C_2$ in series; combination in parallel with $C_3$</li>
+            <li>$V = 12\,\text{V}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\text{Series: } \frac{1}{C_s} = \frac{1}{C_1} + \frac{1}{C_2}, \qquad \text{Parallel: } C_{eq} = C_s + C_3$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Series combination of $C_1$ and $C_2$:</div>
+            <div class="step">
+              $$\frac{1}{C_s} = \frac{1}{2} + \frac{1}{3} = \frac{5}{6} \implies C_s = \frac{6}{5} = 1.2\,\mu\text{F}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Parallel combination with $C_3$:</div>
+            <div class="step">
+              $$C_{eq} = C_s + C_3 = 1.2 + 6 = 7.2\,\mu\text{F}$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Total charge from battery:</div>
+            <div class="step">
+              $$Q_{\text{total}} = C_{eq} \times V = 7.2\times10^{-6}\times12 = 86.4\,\mu\text{C}$$
+            </div>
+            <div class="step"><strong>Step 4:</strong> Charge on $C_3$ (parallel, so full voltage):</div>
+            <div class="step">
+              $$Q_3 = C_3 \times V = 6 \times 12 = 72\,\mu\text{C}$$
+            </div>
+            <div class="step"><strong>Step 5:</strong> Charge on $C_1$ and $C_2$ (series, same charge):</div>
+            <div class="step">
+              $$Q_1 = Q_2 = C_s \times V = 1.2 \times 12 = 14.4\,\mu\text{C}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$C_{eq} = 7.2\,\mu\text{F}$, &ensp; $Q_{\text{total}} = 86.4\,\mu\text{C}$, &ensp; $Q_1 = Q_2 = 14.4\,\mu\text{C}$, &ensp; $Q_3 = 72\,\mu\text{C}$</div>
+        <div class="tip-box"><strong>Tip:</strong> In series, charge is the same on each capacitor. In parallel, voltage is the same. Always identify which capacitors share charge vs. which share voltage before calculating.</div>
+      </div>
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="problem-card" id="problem-5">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 5)"></div>
+        <span class="problem-number">Q5</span>
+        <div class="problem-question">
+          An electric dipole with dipole moment $p = 4 \times 10^{-9}\,\text{C m}$ is placed along the $x$-axis. Find the electric field and potential at a point on the axis at a distance $r = 20\,\text{cm}$ from the centre of the dipole (far-field approximation, $r \gg 2a$).
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$p = 4 \times 10^{-9}\,\text{C m}$</li>
+            <li>$r = 0.20\,\text{m}$</li>
+            <li>Point is on the axial line</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$E_{\text{axial}} = \frac{1}{4\pi\varepsilon_0}\,\frac{2p}{r^3}, \qquad V_{\text{axial}} = \frac{1}{4\pi\varepsilon_0}\,\frac{p}{r^2}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Electric field on the axis:</div>
+            <div class="step">
+              $$E = \frac{1}{4\pi\varepsilon_0}\,\frac{2p}{r^3} = 9\times10^9 \times \frac{2\times4\times10^{-9}}{(0.20)^3}$$
+              $$= 9\times10^9 \times \frac{8\times10^{-9}}{8\times10^{-3}} = 9\times10^9 \times 10^{-6} = 9000\,\text{V/m}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Potential on the axis:</div>
+            <div class="step">
+              $$V = \frac{1}{4\pi\varepsilon_0}\,\frac{p}{r^2} = 9\times10^9 \times \frac{4\times10^{-9}}{(0.20)^2}$$
+              $$= 9\times10^9 \times \frac{4\times10^{-9}}{0.04} = 9\times10^9 \times 10^{-7} = 900\,\text{V}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$E_{\text{axial}} = 9000\,\text{V/m}$, &ensp; $V_{\text{axial}} = 900\,\text{V}$</div>
+        <div class="tip-box"><strong>Tip:</strong> For the equatorial point, $E_{\text{eq}} = \frac{kp}{r^3}$ (half of axial) and $V_{\text{eq}} = 0$. Remember: axial E is twice equatorial E; equatorial V is always zero. These formulas are valid only when $r \gg 2a$.</div>
+      </div>
+    </div>
+
+  </div><!-- end electrostatics -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 3: Current Electricity -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-current">Ch 3</span>
+      Current Electricity
+    </h2>
+
+    <!-- Problem 6 -->
+    <div class="problem-card" id="problem-6">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 6)"></div>
+        <span class="problem-number">Q6</span>
+        <div class="problem-question">
+          A copper wire of cross-sectional area $A = 1.0 \times 10^{-6}\,\text{m}^2$ carries a current of $1.5\,\text{A}$. If the number density of free electrons is $n = 8.5 \times 10^{28}\,\text{m}^{-3}$, calculate the drift velocity of electrons. Also find the current density.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">2 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$A = 1.0 \times 10^{-6}\,\text{m}^2$</li>
+            <li>$I = 1.5\,\text{A}$</li>
+            <li>$n = 8.5 \times 10^{28}\,\text{m}^{-3}$</li>
+            <li>$e = 1.6 \times 10^{-19}\,\text{C}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$I = neAv_d \implies v_d = \frac{I}{neA}, \qquad J = \frac{I}{A}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Drift velocity:</div>
+            <div class="step">
+              $$v_d = \frac{I}{neA} = \frac{1.5}{8.5\times10^{28}\times1.6\times10^{-19}\times1.0\times10^{-6}}$$
+              $$= \frac{1.5}{8.5\times1.6\times10^{3}} = \frac{1.5}{1.36\times10^{4}} = 1.1 \times 10^{-4}\,\text{m/s}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Current density:</div>
+            <div class="step">
+              $$J = \frac{I}{A} = \frac{1.5}{1.0\times10^{-6}} = 1.5 \times 10^{6}\,\text{A/m}^2$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$v_d = 1.1 \times 10^{-4}\,\text{m/s} \approx 0.11\,\text{mm/s}$, &ensp; $J = 1.5 \times 10^6\,\text{A/m}^2$</div>
+        <div class="tip-box"><strong>Tip:</strong> Drift velocity is extremely small (~0.1 mm/s). Don't confuse it with the speed of the electric signal (which is near the speed of light). Be careful with powers of 10 in the denominator.</div>
+      </div>
+    </div>
+
+    <!-- Problem 7 -->
+    <div class="problem-card" id="problem-7">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 7)"></div>
+        <span class="problem-number">Q7</span>
+        <div class="problem-question">
+          In a meter bridge experiment, the balance point is found at $39.5\,\text{cm}$ from end A when a known resistance of $12.5\,\Omega$ is in the right gap. Find the unknown resistance. If the known resistance is known to $\pm 0.1\,\Omega$ and the balance point to $\pm 0.5\,\text{cm}$, estimate the percentage error in the unknown resistance.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$l = 39.5\,\text{cm}$, so $100 - l = 60.5\,\text{cm}$</li>
+            <li>$S = 12.5\,\Omega$</li>
+            <li>$\Delta S = 0.1\,\Omega$, $\Delta l = 0.5\,\text{cm}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\frac{R}{S} = \frac{l}{100-l} \implies R = S\,\frac{l}{100-l}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Unknown resistance:</div>
+            <div class="step">
+              $$R = 12.5 \times \frac{39.5}{60.5} = 12.5 \times 0.6529 = 8.16\,\Omega$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Percentage error:</div>
+            <div class="step">
+              $$\frac{\Delta R}{R} = \frac{\Delta S}{S} + \frac{\Delta l}{l} + \frac{\Delta l}{100-l}$$
+              $$= \frac{0.1}{12.5} + \frac{0.5}{39.5} + \frac{0.5}{60.5}$$
+              $$= 0.008 + 0.01266 + 0.00826 = 0.02892$$
+            </div>
+            <div class="step">Percentage error $\approx 2.9\%$</div>
+          </div>
+        </div>
+        <div class="answer-box">$R = 8.16\,\Omega$, &ensp; Percentage error $\approx 2.9\%$</div>
+        <div class="tip-box"><strong>Tip:</strong> For error analysis, use the rule: if $R = S \cdot \frac{l}{100-l}$, take log and differentiate. The balance point should ideally be near the middle (50 cm) to minimise error. This is a frequently asked CBSE question.</div>
+      </div>
+    </div>
+
+    <!-- Problem 8 -->
+    <div class="problem-card" id="problem-8">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 8)"></div>
+        <span class="problem-number">Q8</span>
+        <div class="problem-question">
+          In a potentiometer experiment, the balance point for a cell of EMF $1.25\,\text{V}$ is at $35.0\,\text{cm}$. When the cell is shunted with an external resistance of $10\,\Omega$, the balance point shifts to $28.0\,\text{cm}$. Find the internal resistance of the cell.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$l_1 = 35.0\,\text{cm}$ (open circuit)</li>
+            <li>$l_2 = 28.0\,\text{cm}$ (with shunt $R = 10\,\Omega$)</li>
+            <li>$\varepsilon = 1.25\,\text{V}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$r = R\left(\frac{l_1 - l_2}{l_2}\right)$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step">
+              $$r = 10 \times \frac{35.0 - 28.0}{28.0} = 10 \times \frac{7.0}{28.0} = 10 \times 0.25 = 2.5\,\Omega$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$r = 2.5\,\Omega$</div>
+        <div class="tip-box"><strong>Tip:</strong> This formula works because $\frac{\varepsilon}{V} = \frac{l_1}{l_2}$ and $r = R\left(\frac{\varepsilon}{V} - 1\right)$. The EMF value ($1.25\,\text{V}$) is not needed in the final formula &mdash; it cancels out. This is a classic 3-mark CBSE numerical.</div>
+      </div>
+    </div>
+
+    <!-- Problem 9 -->
+    <div class="problem-card" id="problem-9">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 9)"></div>
+        <span class="problem-number">Q9</span>
+        <div class="problem-question">
+          A battery of EMF $12\,\text{V}$ and internal resistance $2\,\Omega$ is connected to an external resistance $R$. Find the value of $R$ for which the power dissipated in $R$ is maximum. What is this maximum power?
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$\varepsilon = 12\,\text{V}$</li>
+            <li>$r = 2\,\Omega$ (internal resistance)</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$P = I^2 R = \frac{\varepsilon^2 R}{(R+r)^2}, \qquad P_{\text{max}} \text{ when } R = r$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> For maximum power transfer, $R = r = 2\,\Omega$.</div>
+            <div class="step"><strong>Step 2:</strong> Current at maximum power:</div>
+            <div class="step">
+              $$I = \frac{\varepsilon}{R + r} = \frac{12}{2 + 2} = 3\,\text{A}$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Maximum power:</div>
+            <div class="step">
+              $$P_{\text{max}} = I^2 R = (3)^2 \times 2 = 18\,\text{W}$$
+            </div>
+            <div class="step">Alternatively: $P_{\text{max}} = \frac{\varepsilon^2}{4r} = \frac{144}{8} = 18\,\text{W}$</div>
+          </div>
+        </div>
+        <div class="answer-box">$R = 2\,\Omega$, &ensp; $P_{\text{max}} = 18\,\text{W}$</div>
+        <div class="tip-box"><strong>Tip:</strong> Maximum power transfer theorem: $R = r$. At this point, only 50% of total power is useful (rest is lost in internal resistance). The shortcut formula $P_{\text{max}} = \frac{\varepsilon^2}{4r}$ saves time.</div>
+      </div>
+    </div>
+
+  </div><!-- end current electricity -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 4: Moving Charges & Magnetism -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-magnetic">Ch 4</span>
+      Moving Charges &amp; Magnetism
+    </h2>
+
+    <!-- Problem 10 -->
+    <div class="problem-card" id="problem-10">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 10)"></div>
+        <span class="problem-number">Q10</span>
+        <div class="problem-question">
+          A proton ($m = 1.67 \times 10^{-27}\,\text{kg}$, $q = 1.6 \times 10^{-19}\,\text{C}$) enters a uniform magnetic field of $0.20\,\text{T}$ perpendicular to its velocity of $5 \times 10^{6}\,\text{m/s}$. Find the radius of the circular path and the time period of revolution.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$m = 1.67 \times 10^{-27}\,\text{kg}$</li>
+            <li>$q = 1.6 \times 10^{-19}\,\text{C}$</li>
+            <li>$B = 0.20\,\text{T}$</li>
+            <li>$v = 5 \times 10^{6}\,\text{m/s}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$r = \frac{mv}{qB}, \qquad T = \frac{2\pi m}{qB}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Radius of circular path:</div>
+            <div class="step">
+              $$r = \frac{mv}{qB} = \frac{1.67\times10^{-27}\times5\times10^{6}}{1.6\times10^{-19}\times0.20}$$
+              $$= \frac{8.35\times10^{-21}}{3.2\times10^{-20}} = 0.261\,\text{m} \approx 26.1\,\text{cm}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Time period:</div>
+            <div class="step">
+              $$T = \frac{2\pi m}{qB} = \frac{2\pi\times1.67\times10^{-27}}{1.6\times10^{-19}\times0.20}$$
+              $$= \frac{1.049\times10^{-26}}{3.2\times10^{-20}} = 3.28 \times 10^{-7}\,\text{s}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$r \approx 26.1\,\text{cm}$, &ensp; $T \approx 3.28 \times 10^{-7}\,\text{s}$</div>
+        <div class="tip-box"><strong>Tip:</strong> The time period is independent of velocity (and radius). This is the principle behind the cyclotron. If the particle enters at an angle $\theta$ to $\vec{B}$, use $v\sin\theta$ as the perpendicular component and the path becomes helical.</div>
+      </div>
+    </div>
+
+    <!-- Problem 11 -->
+    <div class="problem-card" id="problem-11">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 11)"></div>
+        <span class="problem-number">Q11</span>
+        <div class="problem-question">
+          Two long straight parallel wires, separated by $d = 10\,\text{cm}$, carry currents $I_1 = 5\,\text{A}$ and $I_2 = 8\,\text{A}$ in the same direction. Find the force per unit length between them and state whether it is attractive or repulsive.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">2 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$I_1 = 5\,\text{A}$, $I_2 = 8\,\text{A}$</li>
+            <li>$d = 0.10\,\text{m}$</li>
+            <li>Currents in the same direction</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\frac{F}{L} = \frac{\mu_0}{2\pi}\,\frac{I_1 I_2}{d}, \quad \mu_0 = 4\pi\times10^{-7}\,\text{T m/A}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step">
+              $$\frac{F}{L} = \frac{4\pi\times10^{-7}}{2\pi}\times\frac{5\times8}{0.10} = 2\times10^{-7}\times\frac{40}{0.10}$$
+              $$= 2\times10^{-7}\times400 = 8 \times 10^{-5}\,\text{N/m}$$
+            </div>
+            <div class="step">Since currents are in the same direction, the force is <strong>attractive</strong>.</div>
+          </div>
+        </div>
+        <div class="answer-box">$\frac{F}{L} = 8 \times 10^{-5}\,\text{N/m}$ (attractive)</div>
+        <div class="tip-box"><strong>Tip:</strong> Same direction = attractive, opposite direction = repulsive. This is the basis of the definition of the ampere. Remember: $\frac{\mu_0}{2\pi} = 2 \times 10^{-7}$ is a useful shortcut.</div>
+      </div>
+    </div>
+
+    <!-- Problem 12 -->
+    <div class="problem-card" id="problem-12">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 12)"></div>
+        <span class="problem-number">Q12</span>
+        <div class="problem-question">
+          A circular coil of 200 turns and radius $10\,\text{cm}$ carries a current of $5\,\text{A}$. Find the magnetic field at the centre of the coil.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">2 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$N = 200$, $R = 0.10\,\text{m}$, $I = 5\,\text{A}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$B = \frac{\mu_0 N I}{2R}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step">
+              $$B = \frac{4\pi\times10^{-7}\times200\times5}{2\times0.10}$$
+              $$= \frac{4\pi\times10^{-7}\times1000}{0.20} = \frac{4\pi\times10^{-4}}{0.20} = 2\pi\times10^{-3}$$
+              $$= 6.28 \times 10^{-3}\,\text{T} = 6.28\,\text{mT}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$B = 6.28 \times 10^{-3}\,\text{T} \approx 6.28\,\text{mT}$</div>
+        <div class="tip-box"><strong>Tip:</strong> Don't confuse the formula for a coil ($\frac{\mu_0 NI}{2R}$) with that for a solenoid ($\mu_0 nI$). For a point on the axis at distance $x$ from the centre, use $B = \frac{\mu_0 NIR^2}{2(R^2+x^2)^{3/2}}$.</div>
+      </div>
+    </div>
+
+  </div><!-- end moving charges -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 5-6: Magnetism & EMI -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-emi">Ch 5-6</span>
+      Magnetism &amp; Electromagnetic Induction
+    </h2>
+
+    <!-- Problem 13 -->
+    <div class="problem-card" id="problem-13">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 13)"></div>
+        <span class="problem-number">Q13</span>
+        <div class="problem-question">
+          A short bar magnet has a magnetic moment of $0.48\,\text{J T}^{-1}$. Find the magnetic field at a point (a) on the axial line at $20\,\text{cm}$ from the centre, and (b) on the equatorial line at $20\,\text{cm}$ from the centre.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$M = 0.48\,\text{J T}^{-1}$</li>
+            <li>$r = 0.20\,\text{m}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$B_{\text{axial}} = \frac{\mu_0}{4\pi}\,\frac{2M}{r^3}, \qquad B_{\text{equat}} = \frac{\mu_0}{4\pi}\,\frac{M}{r^3}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>(a) Axial:</strong></div>
+            <div class="step">
+              $$B_a = 10^{-7}\times\frac{2\times0.48}{(0.20)^3} = 10^{-7}\times\frac{0.96}{0.008} = 10^{-7}\times120 = 1.2\times10^{-5}\,\text{T}$$
+            </div>
+            <div class="step"><strong>(b) Equatorial:</strong></div>
+            <div class="step">
+              $$B_e = 10^{-7}\times\frac{0.48}{(0.20)^3} = 10^{-7}\times\frac{0.48}{0.008} = 10^{-7}\times60 = 6.0\times10^{-6}\,\text{T}$$
+            </div>
+            <div class="step">Note: $B_{\text{axial}} = 2 \times B_{\text{equat}}$, as expected.</div>
+          </div>
+        </div>
+        <div class="answer-box">$B_{\text{axial}} = 1.2 \times 10^{-5}\,\text{T}$, &ensp; $B_{\text{equat}} = 6.0 \times 10^{-6}\,\text{T}$</div>
+        <div class="tip-box"><strong>Tip:</strong> These formulas are identical to the electric dipole formulas (replace $\frac{1}{4\pi\varepsilon_0}$ with $\frac{\mu_0}{4\pi}$ and $p$ with $M$). The direction on the axial line is along $M$; on the equatorial line it is antiparallel to $M$.</div>
+      </div>
+    </div>
+
+    <!-- Problem 14 -->
+    <div class="problem-card" id="problem-14">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 14)"></div>
+        <span class="problem-number">Q14</span>
+        <div class="problem-question">
+          A rectangular coil of 100 turns, area $0.04\,\text{m}^2$, rotates at $50\,\text{rev/s}$ in a uniform magnetic field of $0.10\,\text{T}$. Find the maximum EMF induced. Also write the expression for instantaneous EMF as a function of time.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$N = 100$, $A = 0.04\,\text{m}^2$</li>
+            <li>$f = 50\,\text{rev/s}$, so $\omega = 2\pi f = 100\pi\,\text{rad/s}$</li>
+            <li>$B = 0.10\,\text{T}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\varepsilon = NBA\omega\sin(\omega t), \qquad \varepsilon_0 = NBA\omega$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Maximum EMF:</div>
+            <div class="step">
+              $$\varepsilon_0 = NBA\omega = 100\times0.10\times0.04\times100\pi$$
+              $$= 100\times0.004\times100\pi = 0.4\times100\pi = 40\pi \approx 125.7\,\text{V}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Instantaneous EMF:</div>
+            <div class="step">
+              $$\varepsilon(t) = 125.7\sin(100\pi t)\,\text{V}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$\varepsilon_0 = 40\pi \approx 125.7\,\text{V}$, &ensp; $\varepsilon(t) = 125.7\sin(100\pi\, t)$ V</div>
+        <div class="tip-box"><strong>Tip:</strong> The EMF is maximum when the plane of the coil is parallel to $\vec{B}$ (i.e., $\theta = 90^{\circ}$), not when it is perpendicular. Common error: confusing $f$ (rev/s) with $\omega$ (rad/s). Always convert: $\omega = 2\pi f$.</div>
+      </div>
+    </div>
+
+    <!-- Problem 15 -->
+    <div class="problem-card" id="problem-15">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 15)"></div>
+        <span class="problem-number">Q15</span>
+        <div class="problem-question">
+          A solenoid of length $50\,\text{cm}$, radius $2\,\text{cm}$, and 500 turns carries a current of $3\,\text{A}$. Calculate the self-inductance of the solenoid and the energy stored in it.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$l = 0.50\,\text{m}$, $r = 0.02\,\text{m}$</li>
+            <li>$N = 500$, $I = 3\,\text{A}$</li>
+            <li>$A = \pi r^2 = \pi\times(0.02)^2 = 1.2566\times10^{-3}\,\text{m}^2$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$L = \mu_0 \frac{N^2 A}{l}, \qquad U = \frac{1}{2}LI^2$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Self-inductance:</div>
+            <div class="step">
+              $$L = 4\pi\times10^{-7}\times\frac{(500)^2\times1.2566\times10^{-3}}{0.50}$$
+              $$= 4\pi\times10^{-7}\times\frac{250000\times1.2566\times10^{-3}}{0.50}$$
+              $$= 4\pi\times10^{-7}\times\frac{314.15}{0.50} = 4\pi\times10^{-7}\times628.3$$
+              $$= 7.90\times10^{-4}\,\text{H} \approx 0.79\,\text{mH}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Energy stored:</div>
+            <div class="step">
+              $$U = \frac{1}{2}\times7.90\times10^{-4}\times(3)^2 = \frac{1}{2}\times7.90\times10^{-4}\times9 = 3.56\times10^{-3}\,\text{J}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$L \approx 0.79\,\text{mH}$, &ensp; $U \approx 3.56 \times 10^{-3}\,\text{J}$</div>
+        <div class="tip-box"><strong>Tip:</strong> The formula uses $N^2$ (total turns squared), not $n^2$ (turns per unit length squared). If given $n$ instead of $N$, use $L = \mu_0 n^2 A l$ where $n = N/l$. Don't forget to compute the cross-sectional area $A = \pi r^2$.</div>
+      </div>
+    </div>
+
+  </div><!-- end magnetism & EMI -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 7: Alternating Current -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-ac">Ch 7</span>
+      Alternating Current
+    </h2>
+
+    <!-- Problem 16 -->
+    <div class="problem-card" id="problem-16">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 16)"></div>
+        <span class="problem-number">Q16</span>
+        <div class="problem-question">
+          A series LCR circuit has $L = 2\,\text{H}$, $C = 32\,\mu\text{F}$, and $R = 10\,\Omega$. It is connected to a $230\,\text{V}$, $50\,\text{Hz}$ AC source. Find the impedance, current, and phase angle. Is the circuit capacitive or inductive?
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">5 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$L = 2\,\text{H}$, $C = 32\times10^{-6}\,\text{F}$, $R = 10\,\Omega$</li>
+            <li>$V_{\text{rms}} = 230\,\text{V}$, $f = 50\,\text{Hz}$</li>
+            <li>$\omega = 2\pi f = 100\pi\,\text{rad/s}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$Z = \sqrt{R^2 + (X_L - X_C)^2}, \quad I = \frac{V}{Z}, \quad \tan\phi = \frac{X_L - X_C}{R}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Inductive reactance:</div>
+            <div class="step">
+              $$X_L = \omega L = 100\pi\times2 = 200\pi \approx 628.3\,\Omega$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Capacitive reactance:</div>
+            <div class="step">
+              $$X_C = \frac{1}{\omega C} = \frac{1}{100\pi\times32\times10^{-6}} = \frac{1}{3.2\pi\times10^{-3}} \approx 99.5\,\Omega$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Net reactance:</div>
+            <div class="step">
+              $$X_L - X_C = 628.3 - 99.5 = 528.8\,\Omega$$
+            </div>
+            <div class="step"><strong>Step 4:</strong> Impedance:</div>
+            <div class="step">
+              $$Z = \sqrt{(10)^2 + (528.8)^2} = \sqrt{100 + 279\,629} = \sqrt{279\,729} \approx 529.0\,\Omega$$
+            </div>
+            <div class="step"><strong>Step 5:</strong> Current:</div>
+            <div class="step">
+              $$I = \frac{V}{Z} = \frac{230}{529.0} \approx 0.435\,\text{A}$$
+            </div>
+            <div class="step"><strong>Step 6:</strong> Phase angle:</div>
+            <div class="step">
+              $$\tan\phi = \frac{528.8}{10} = 52.88 \implies \phi \approx 88.9^{\circ}$$
+            </div>
+            <div class="step">Since $X_L > X_C$, the circuit is <strong>inductive</strong>. Voltage leads current by $88.9^{\circ}$.</div>
+          </div>
+        </div>
+        <div class="answer-box">$Z \approx 529\,\Omega$, &ensp; $I \approx 0.435\,\text{A}$, &ensp; $\phi \approx 88.9^{\circ}$ (inductive)</div>
+        <div class="tip-box"><strong>Tip:</strong> If $X_L > X_C$: inductive (voltage leads). If $X_C > X_L$: capacitive (current leads). Remember the mnemonic "CIVIL" &mdash; in a Capacitor, I leads V; in an Inductor, V leads I.</div>
+      </div>
+    </div>
+
+    <!-- Problem 17 -->
+    <div class="problem-card" id="problem-17">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 17)"></div>
+        <span class="problem-number">Q17</span>
+        <div class="problem-question">
+          An LCR circuit has $L = 5.0\,\text{H}$, $C = 80\,\mu\text{F}$, and $R = 40\,\Omega$ connected to a $230\,\text{V}$ variable frequency AC source. Find the resonant frequency and the current at resonance. Also find the quality factor (Q-factor) of the circuit.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$L = 5.0\,\text{H}$, $C = 80\times10^{-6}\,\text{F}$, $R = 40\,\Omega$</li>
+            <li>$V_{\text{rms}} = 230\,\text{V}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$f_0 = \frac{1}{2\pi\sqrt{LC}}, \qquad Q = \frac{1}{R}\sqrt{\frac{L}{C}}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Resonant frequency:</div>
+            <div class="step">
+              $$\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{5.0\times80\times10^{-6}}} = \frac{1}{\sqrt{4\times10^{-4}}} = \frac{1}{0.02} = 50\,\text{rad/s}$$
+              $$f_0 = \frac{\omega_0}{2\pi} = \frac{50}{2\pi} = 7.96\,\text{Hz}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> At resonance, $Z = R$:</div>
+            <div class="step">
+              $$I_0 = \frac{V}{R} = \frac{230}{40} = 5.75\,\text{A}$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Quality factor:</div>
+            <div class="step">
+              $$Q = \frac{1}{R}\sqrt{\frac{L}{C}} = \frac{1}{40}\sqrt{\frac{5.0}{80\times10^{-6}}} = \frac{1}{40}\sqrt{62500} = \frac{250}{40} = 6.25$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$f_0 \approx 7.96\,\text{Hz}$, &ensp; $I_0 = 5.75\,\text{A}$, &ensp; $Q = 6.25$</div>
+        <div class="tip-box"><strong>Tip:</strong> At resonance: $X_L = X_C$, impedance $Z = R$ (minimum), current is maximum, and the phase angle is zero. A higher Q-factor means a sharper resonance peak and better selectivity.</div>
+      </div>
+    </div>
+
+    <!-- Problem 18 -->
+    <div class="problem-card" id="problem-18">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 18)"></div>
+        <span class="problem-number">Q18</span>
+        <div class="problem-question">
+          A step-up transformer converts $230\,\text{V}$ to $2300\,\text{V}$. The primary coil has $100$ turns and the primary current is $2\,\text{A}$. Find the number of turns in the secondary, the secondary current (assuming ideal transformer), and the efficiency if the actual secondary current is $0.18\,\text{A}$.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$V_p = 230\,\text{V}$, $V_s = 2300\,\text{V}$</li>
+            <li>$N_p = 100$, $I_p = 2\,\text{A}$</li>
+            <li>Actual $I_s = 0.18\,\text{A}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\frac{V_s}{V_p} = \frac{N_s}{N_p} = \frac{I_p}{I_s}, \qquad \eta = \frac{V_s I_s}{V_p I_p}\times100\%$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Turns ratio and $N_s$:</div>
+            <div class="step">
+              $$\frac{N_s}{N_p} = \frac{V_s}{V_p} = \frac{2300}{230} = 10 \implies N_s = 10\times100 = 1000$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Ideal secondary current:</div>
+            <div class="step">
+              $$I_s(\text{ideal}) = \frac{I_p}{10} = \frac{2}{10} = 0.2\,\text{A}$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Efficiency:</div>
+            <div class="step">
+              $$\eta = \frac{V_s I_s(\text{actual})}{V_p I_p}\times100 = \frac{2300\times0.18}{230\times2}\times100 = \frac{414}{460}\times100 = 90\%$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$N_s = 1000$, &ensp; $I_s(\text{ideal}) = 0.2\,\text{A}$, &ensp; $\eta = 90\%$</div>
+        <div class="tip-box"><strong>Tip:</strong> A transformer works only with AC (not DC). Efficiency is always $\leq 100\%$ due to copper losses ($I^2R$), eddy current losses, flux leakage, and hysteresis. For an ideal transformer, $\eta = 100\%$ and $P_p = P_s$.</div>
+      </div>
+    </div>
+
+  </div><!-- end AC -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 9: Ray Optics -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-optics">Ch 9</span>
+      Ray Optics
+    </h2>
+
+    <!-- Problem 19 -->
+    <div class="problem-card" id="problem-19">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 19)"></div>
+        <span class="problem-number">Q19</span>
+        <div class="problem-question">
+          An object is placed $30\,\text{cm}$ from a convex lens of focal length $20\,\text{cm}$. Find the position and nature of the image, and the magnification.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">2 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$u = -30\,\text{cm}$ (object on left, sign convention)</li>
+            <li>$f = +20\,\text{cm}$ (convex lens)</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\frac{1}{v} - \frac{1}{u} = \frac{1}{f}, \qquad m = \frac{v}{u}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Apply lens formula:</div>
+            <div class="step">
+              $$\frac{1}{v} = \frac{1}{f} + \frac{1}{u} = \frac{1}{20} + \frac{1}{(-30)} = \frac{1}{20} - \frac{1}{30}$$
+              $$= \frac{3-2}{60} = \frac{1}{60} \implies v = +60\,\text{cm}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Magnification:</div>
+            <div class="step">
+              $$m = \frac{v}{u} = \frac{60}{-30} = -2$$
+            </div>
+            <div class="step">$v > 0$: image is on the other side (real). $m = -2$: image is inverted and twice the size of the object.</div>
+          </div>
+        </div>
+        <div class="answer-box">$v = +60\,\text{cm}$ (real, inverted), &ensp; $m = -2$ (magnified)</div>
+        <div class="tip-box"><strong>Tip:</strong> Always use the New Cartesian Sign Convention consistently. For a convex lens: $f > 0$. Object distance $u$ is always negative. If you get $v > 0$, image is real; $v < 0$ means virtual.</div>
+      </div>
+    </div>
+
+    <!-- Problem 20 -->
+    <div class="problem-card" id="problem-20">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 20)"></div>
+        <span class="problem-number">Q20</span>
+        <div class="problem-question">
+          Two thin convex lenses of focal lengths $20\,\text{cm}$ and $-40\,\text{cm}$ are placed in contact. Find the equivalent focal length and the power of the combination. An object is placed $30\,\text{cm}$ from this combination. Find the image position.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$f_1 = +20\,\text{cm}$, $f_2 = -40\,\text{cm}$</li>
+            <li>$u = -30\,\text{cm}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\frac{1}{f_{eq}} = \frac{1}{f_1} + \frac{1}{f_2}, \qquad P = \frac{1}{f_{eq}(\text{in m})}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Equivalent focal length:</div>
+            <div class="step">
+              $$\frac{1}{f_{eq}} = \frac{1}{20} + \frac{1}{-40} = \frac{1}{20}-\frac{1}{40} = \frac{2-1}{40} = \frac{1}{40}$$
+              $$f_{eq} = +40\,\text{cm} = 0.40\,\text{m}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Power:</div>
+            <div class="step">
+              $$P = \frac{1}{0.40} = +2.5\,\text{D}$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Image position using lens formula with $f_{eq}$:</div>
+            <div class="step">
+              $$\frac{1}{v} = \frac{1}{f_{eq}} + \frac{1}{u} = \frac{1}{40} + \frac{1}{-30} = \frac{3-4}{120} = \frac{-1}{120}$$
+              $$v = -120\,\text{cm}$$
+            </div>
+            <div class="step">$v < 0$: image is virtual, erect, on the same side as the object.</div>
+          </div>
+        </div>
+        <div class="answer-box">$f_{eq} = 40\,\text{cm}$, &ensp; $P = +2.5\,\text{D}$, &ensp; $v = -120\,\text{cm}$ (virtual)</div>
+        <div class="tip-box"><strong>Tip:</strong> When lenses are in contact, powers add directly: $P = P_1 + P_2$. A positive equivalent power means the combination is converging. Always convert $f$ to metres when computing power in dioptres.</div>
+      </div>
+    </div>
+
+    <!-- Problem 21 -->
+    <div class="problem-card" id="problem-21">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 21)"></div>
+        <span class="problem-number">Q21</span>
+        <div class="problem-question">
+          A glass prism has a refractive index of $\mu = 1.5$ and the angle of the prism is $A = 60^{\circ}$. Find the angle of minimum deviation. Also find the angle of incidence at minimum deviation.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$\mu = 1.5$, $A = 60^{\circ}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\mu = \frac{\sin\left(\frac{A + D_m}{2}\right)}{\sin\left(\frac{A}{2}\right)}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Apply the prism formula:</div>
+            <div class="step">
+              $$1.5 = \frac{\sin\left(\frac{60+D_m}{2}\right)}{\sin 30^{\circ}} = \frac{\sin\left(\frac{60+D_m}{2}\right)}{0.5}$$
+            </div>
+            <div class="step">
+              $$\sin\left(\frac{60+D_m}{2}\right) = 1.5\times0.5 = 0.75$$
+            </div>
+            <div class="step">
+              $$\frac{60+D_m}{2} = \sin^{-1}(0.75) = 48.59^{\circ}$$
+            </div>
+            <div class="step">
+              $$60 + D_m = 97.18^{\circ} \implies D_m = 37.18^{\circ} \approx 37.2^{\circ}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> At minimum deviation, $i = \frac{A + D_m}{2} = \frac{60 + 37.2}{2} = 48.6^{\circ}$</div>
+          </div>
+        </div>
+        <div class="answer-box">$D_m \approx 37.2^{\circ}$, &ensp; $i \approx 48.6^{\circ}$</div>
+        <div class="tip-box"><strong>Tip:</strong> At minimum deviation, the ray passes symmetrically through the prism: $i = e$ and $r_1 = r_2 = A/2$. This is the condition used to derive the formula. Make sure your calculator is in degree mode.</div>
+      </div>
+    </div>
+
+  </div><!-- end ray optics -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 10: Wave Optics -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-wave">Ch 10</span>
+      Wave Optics
+    </h2>
+
+    <!-- Problem 22 -->
+    <div class="problem-card" id="problem-22">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 22)"></div>
+        <span class="problem-number">Q22</span>
+        <div class="problem-question">
+          In Young's double slit experiment, the slit separation is $d = 0.5\,\text{mm}$, the screen distance is $D = 1.2\,\text{m}$, and the wavelength of light used is $\lambda = 600\,\text{nm}$. Find the fringe width. If the entire setup is immersed in a liquid of refractive index $\mu = 1.5$, find the new fringe width.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$d = 0.5\,\text{mm} = 5\times10^{-4}\,\text{m}$</li>
+            <li>$D = 1.2\,\text{m}$</li>
+            <li>$\lambda = 600\,\text{nm} = 6\times10^{-7}\,\text{m}$</li>
+            <li>$\mu = 1.5$ (refractive index of liquid)</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\beta = \frac{\lambda D}{d}, \qquad \lambda' = \frac{\lambda}{\mu} \implies \beta' = \frac{\beta}{\mu}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Fringe width in air:</div>
+            <div class="step">
+              $$\beta = \frac{\lambda D}{d} = \frac{6\times10^{-7}\times1.2}{5\times10^{-4}} = \frac{7.2\times10^{-7}}{5\times10^{-4}} = 1.44\times10^{-3}\,\text{m} = 1.44\,\text{mm}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> In the liquid, $\lambda' = \frac{\lambda}{\mu} = \frac{600}{1.5} = 400\,\text{nm}$:</div>
+            <div class="step">
+              $$\beta' = \frac{\lambda' D}{d} = \frac{\beta}{\mu} = \frac{1.44}{1.5} = 0.96\,\text{mm}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$\beta = 1.44\,\text{mm}$, &ensp; $\beta' = 0.96\,\text{mm}$</div>
+        <div class="tip-box"><strong>Tip:</strong> Fringe width decreases in a denser medium. If only one slit is covered by a thin film, the central fringe shifts but the fringe width does not change. For the position of $n^{\text{th}}$ bright fringe: $y_n = \frac{n\lambda D}{d}$.</div>
+      </div>
+    </div>
+
+  </div><!-- end wave optics -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 11: Dual Nature of Radiation & Matter -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-dual">Ch 11</span>
+      Dual Nature of Radiation &amp; Matter
+    </h2>
+
+    <!-- Problem 23 -->
+    <div class="problem-card" id="problem-23">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 23)"></div>
+        <span class="problem-number">Q23</span>
+        <div class="problem-question">
+          Light of wavelength $400\,\text{nm}$ is incident on a metal surface with work function $W_0 = 2.0\,\text{eV}$. Find: (a) the threshold frequency, (b) the maximum kinetic energy of emitted photoelectrons, and (c) the stopping potential.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$\lambda = 400\,\text{nm} = 4\times10^{-7}\,\text{m}$</li>
+            <li>$W_0 = 2.0\,\text{eV} = 2.0\times1.6\times10^{-19} = 3.2\times10^{-19}\,\text{J}$</li>
+            <li>$h = 6.63\times10^{-34}\,\text{J s}$, $c = 3\times10^{8}\,\text{m/s}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$E = h\nu = \frac{hc}{\lambda}, \quad KE_{\max} = h\nu - W_0, \quad W_0 = h\nu_0, \quad eV_0 = KE_{\max}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>(a) Threshold frequency:</strong></div>
+            <div class="step">
+              $$\nu_0 = \frac{W_0}{h} = \frac{3.2\times10^{-19}}{6.63\times10^{-34}} = 4.83\times10^{14}\,\text{Hz}$$
+            </div>
+            <div class="step"><strong>(b) Energy of incident photon:</strong></div>
+            <div class="step">
+              $$E = \frac{hc}{\lambda} = \frac{6.63\times10^{-34}\times3\times10^{8}}{4\times10^{-7}} = \frac{1.989\times10^{-25}}{4\times10^{-7}} = 4.97\times10^{-19}\,\text{J}$$
+              $$= \frac{4.97\times10^{-19}}{1.6\times10^{-19}} = 3.1\,\text{eV}$$
+            </div>
+            <div class="step"><strong>Maximum KE:</strong></div>
+            <div class="step">
+              $$KE_{\max} = E - W_0 = 3.1 - 2.0 = 1.1\,\text{eV}$$
+            </div>
+            <div class="step"><strong>(c) Stopping potential:</strong></div>
+            <div class="step">
+              $$eV_0 = KE_{\max} \implies V_0 = \frac{KE_{\max}}{e} = 1.1\,\text{V}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$\nu_0 = 4.83 \times 10^{14}\,\text{Hz}$, &ensp; $KE_{\max} = 1.1\,\text{eV}$, &ensp; $V_0 = 1.1\,\text{V}$</div>
+        <div class="tip-box"><strong>Tip:</strong> The shortcut $E(\text{eV}) = \frac{1240}{\lambda(\text{nm})}$ saves a lot of time. For $\lambda = 400\,\text{nm}$: $E = 1240/400 = 3.1\,\text{eV}$. The stopping potential in volts is numerically equal to $KE_{\max}$ in eV.</div>
+      </div>
+    </div>
+
+  </div><!-- end dual nature -->
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- Ch 12-13: Atoms & Nuclei -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="chapter-section">
+    <h2 class="chapter-heading">
+      <span class="chapter-badge badge-atom">Ch 12-13</span>
+      Atoms &amp; Nuclei
+    </h2>
+
+    <!-- Problem 24 -->
+    <div class="problem-card" id="problem-24">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 24)"></div>
+        <span class="problem-number">Q24</span>
+        <div class="problem-question">
+          A hydrogen atom makes a transition from $n = 4$ to $n = 2$. Find the wavelength of the emitted photon. Which series does this line belong to? Also find the maximum wavelength in this series.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">3 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$n_i = 4$, $n_f = 2$</li>
+            <li>$R = 1.097 \times 10^7\,\text{m}^{-1}$ (Rydberg constant)</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\frac{1}{\lambda} = R\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Wavelength for $n = 4 \to 2$:</div>
+            <div class="step">
+              $$\frac{1}{\lambda} = 1.097\times10^7\left(\frac{1}{4} - \frac{1}{16}\right) = 1.097\times10^7\times\frac{3}{16}$$
+              $$= 1.097\times10^7\times0.1875 = 2.057\times10^6\,\text{m}^{-1}$$
+            </div>
+            <div class="step">
+              $$\lambda = \frac{1}{2.057\times10^6} = 4.86\times10^{-7}\,\text{m} = 486\,\text{nm}$$
+            </div>
+            <div class="step">This is the <strong>Balmer series</strong> ($n_f = 2$), visible region (blue-green line, $H_{\beta}$).</div>
+            <div class="step"><strong>Step 2:</strong> Maximum wavelength in Balmer series ($n = 3 \to 2$):</div>
+            <div class="step">
+              $$\frac{1}{\lambda_{\max}} = R\left(\frac{1}{4}-\frac{1}{9}\right) = 1.097\times10^7\times\frac{5}{36} = 1.524\times10^6$$
+              $$\lambda_{\max} = 656\,\text{nm}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$\lambda = 486\,\text{nm}$ (Balmer series, $H_\beta$), &ensp; $\lambda_{\max} = 656\,\text{nm}$ ($H_\alpha$)</div>
+        <div class="tip-box"><strong>Tip:</strong> Maximum wavelength = minimum energy transition (adjacent levels). Minimum wavelength = $n = \infty$ to $n_f$ (series limit). Know the series: Lyman ($n_f = 1$, UV), Balmer ($n_f = 2$, visible), Paschen ($n_f = 3$, IR).</div>
+      </div>
+    </div>
+
+    <!-- Problem 25 -->
+    <div class="problem-card" id="problem-25">
+      <div class="problem-header">
+        <div class="problem-checkbox"><input type="checkbox" onchange="updateProgress(this, 25)"></div>
+        <span class="problem-number">Q25</span>
+        <div class="problem-question">
+          Calculate the mass defect and the binding energy per nucleon of $^{56}_{26}\text{Fe}$. Given: mass of $^{56}_{26}\text{Fe}$ atom $= 55.9349\,\text{u}$, mass of proton $= 1.00783\,\text{u}$, mass of neutron $= 1.00867\,\text{u}$, and $1\,\text{u} = 931.5\,\text{MeV/c}^2$.
+        </div>
+        <div class="problem-meta">
+          <span class="marks-badge">5 Marks</span>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleSolution(this)"><span class="arrow">&#9654;</span> Solution</button>
+      <div class="solution-area">
+        <div class="solution-section">
+          <div class="solution-label">Given</div>
+          <ul class="given-list">
+            <li>$Z = 26$ (protons), $N = 56 - 26 = 30$ (neutrons)</li>
+            <li>$M(^{56}\text{Fe}) = 55.9349\,\text{u}$</li>
+            <li>$m_p = 1.00783\,\text{u}$, $m_n = 1.00867\,\text{u}$</li>
+          </ul>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Formula</div>
+          <div class="formula-box">
+            $$\Delta M = [Zm_p + Nm_n] - M_{\text{nucleus}}, \qquad BE = \Delta M \times 931.5\,\text{MeV}$$
+            $$\frac{BE}{A} = \frac{BE}{56}$$
+          </div>
+        </div>
+        <div class="solution-section">
+          <div class="solution-label">Solution</div>
+          <div class="solution-content">
+            <div class="step"><strong>Step 1:</strong> Expected mass of separated nucleons:</div>
+            <div class="step">
+              $$M_{\text{sep}} = 26\times1.00783 + 30\times1.00867$$
+              $$= 26.2036 + 30.2601 = 56.4637\,\text{u}$$
+            </div>
+            <div class="step"><strong>Step 2:</strong> Mass defect:</div>
+            <div class="step">
+              $$\Delta M = 56.4637 - 55.9349 = 0.5288\,\text{u}$$
+            </div>
+            <div class="step"><strong>Step 3:</strong> Total binding energy:</div>
+            <div class="step">
+              $$BE = 0.5288\times931.5 = 492.6\,\text{MeV}$$
+            </div>
+            <div class="step"><strong>Step 4:</strong> Binding energy per nucleon:</div>
+            <div class="step">
+              $$\frac{BE}{A} = \frac{492.6}{56} = 8.79\,\text{MeV/nucleon}$$
+            </div>
+          </div>
+        </div>
+        <div class="answer-box">$\Delta M = 0.5288\,\text{u}$, &ensp; $BE = 492.6\,\text{MeV}$, &ensp; $\frac{BE}{A} = 8.79\,\text{MeV/nucleon}$</div>
+        <div class="tip-box"><strong>Tip:</strong> $^{56}\text{Fe}$ has the highest BE/nucleon (~8.79 MeV) among all elements, making it the most stable nucleus. Use <em>atomic</em> masses (which include electron masses) consistently &mdash; the electron masses cancel out since $m_p$ given here is actually the hydrogen atom mass.</div>
+      </div>
+    </div>
+
+  </div><!-- end atoms & nuclei -->
+
+</div><!-- end container -->
+
+<script src="numericals.js"></script>
+</body>
+</html>
