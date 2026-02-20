@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/formulas.css">
-<style>:root{
-  --subject-color:#4338ca;--subject-bg:#eef2ff;--subject-border:#a5b4fc;--subject-text:#3730a3;
-}</style>
-<meta charset="UTF-8">
+<style>
+:root{--subject-color:#4338ca;--subject-bg:#eef2ff;--subject-border:#a5b4fc;--subject-text:#3730a3;}
+
+body{background:var(--sand-50)}
+.page-wrap{max-width:80%;margin:0 auto;padding:1.5rem 0 3rem}
+
+/* Page card — 2-col section grid */
+.page{background:#fff;border:1px solid var(--sand-200);border-radius:14px;padding:1.75rem 2rem;margin-bottom:2rem;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.04);display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;align-items:start}
+.page-header,.page-footer{grid-column:1/-1}
+
+/* Corner marks */
+.corner-mark{width:12px;height:12px;border-color:var(--sand-300);border-style:solid;position:absolute}
+.tl{top:10px;left:10px;border-width:2px 0 0 2px}.tr{top:10px;right:10px;border-width:2px 2px 0 0}
+.bl{bottom:10px;left:10px;border-width:0 0 2px 2px}.br{bottom:10px;right:10px;border-width:0 2px 2px 0}
+
+/* Page header & footer */
+.page-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:.85rem;border-bottom:2px solid var(--sand-200);margin-bottom:1.25rem}
+.page-title{font-family:'Newsreader',serif;font-size:1.1rem;font-weight:700;color:var(--ink)}
+.page-number{font-size:.65rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+.page-footer{display:flex;justify-content:space-between;font-size:.65rem;color:var(--ink-3);padding-top:.75rem;border-top:1px solid var(--sand-200);margin-top:1.25rem}
+
+/* Layout variants */
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.single-col{display:block}
+
+/* Section block */
+.section{border:1px solid var(--sand-200);border-radius:10px;overflow:hidden;margin-bottom:.85rem}
+.section-head{display:flex;align-items:center;gap:.5rem;padding:.45rem .9rem}
+.section-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.section-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.section-body{padding:.6rem .9rem}
+
+/* Formula rows */
+.formula-grid{display:flex;flex-direction:column;gap:0}
+.f-row{display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:baseline;padding:.3rem 0;border-bottom:1px solid var(--sand-100)}
+.f-row:last-child{border-bottom:none}
+.f-row.full{grid-template-columns:1fr;text-align:center}
+.f-label{font-size:.72rem;color:var(--ink-3);line-height:1.4}
+.f-eq{font-family:monospace;font-size:.8rem;color:#166534;background:#f0fdf4;border:1px solid #86efac;border-radius:4px;padding:.12rem .45rem;text-align:right;white-space:nowrap}
+.f-row.full .f-eq{text-align:center;font-size:.85rem;display:block;margin:0 auto}
+.f-note{font-size:.67rem;color:var(--ink-3);grid-column:1/-1;font-style:italic;padding-top:.15rem}
+.sub-label{font-size:.67rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;padding:.5rem 0 .2rem;border-bottom:1px dashed var(--sand-200);margin-bottom:.1rem}
+
+/* Section colours */
+.s-electro .section-head{background:#eff6ff}.s-electro .section-dot{background:#3b82f6}.s-electro .section-title{color:#1d4ed8}
+.s-gauss   .section-head{background:#eff6ff}.s-gauss   .section-dot{background:#60a5fa}.s-gauss   .section-title{color:#1e40af}
+.s-cap     .section-head{background:#eef2ff}.s-cap     .section-dot{background:#6366f1}.s-cap     .section-title{color:#4338ca}
+.s-current .section-head{background:#f0fdf4}.s-current .section-dot{background:#22c55e}.s-current .section-title{color:#15803d}
+.s-force   .section-head{background:#fff7ed}.s-force   .section-dot{background:#f97316}.s-force   .section-title{color:#c2410c}
+.s-magfield.section-head{background:#f0fdfa}.s-magfield.section-dot{background:#14b8a6}.s-magfield.section-title{color:#0f766e}
+.s-emi     .section-head{background:#fdf4ff}.s-emi     .section-dot{background:#a855f7}.s-emi     .section-title{color:#7e22ce}
+.s-ac      .section-head{background:#fdf2f8}.s-ac      .section-dot{background:#ec4899}.s-ac      .section-title{color:#9d174d}
+.s-ray     .section-head{background:#fff7ed}.s-ray     .section-dot{background:#f59e0b}.s-ray     .section-title{color:#92400e}
+.s-wave    .section-head{background:#f0fdf4}.s-wave    .section-dot{background:#10b981}.s-wave    .section-title{color:#065f46}
+.s-photo   .section-head{background:#fff1f2}.s-photo   .section-dot{background:#f43f5e}.s-photo   .section-title{color:#9f1239}
+.s-atom    .section-head{background:#fef9c3}.s-atom    .section-dot{background:#eab308}.s-atom    .section-title{color:#854d0e}
+.s-nuclei  .section-head{background:#fef2f2}.s-nuclei  .section-dot{background:#ef4444}.s-nuclei  .section-title{color:#991b1b}
+.s-semi    .section-head{background:#f0fdfa}.s-semi    .section-dot{background:#2dd4bf}.s-semi    .section-title{color:#0f766e}
+
+@media(max-width:640px){.page-wrap{max-width:100%;padding:1rem}.page{padding:1.25rem 1rem}.two-col{grid-template-columns:1fr}}
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Complete physics formula sheet for CBSE Class 12 — all chapters including Electrostatics, Current Electricity, Optics, Modern Physics.">
 <meta name="keywords" content="physics formulas class 12, CBSE XII physics formula sheet, NCERT physics formulas">
@@ -31,6 +89,8 @@
   });"></script>
 </head>
 <body>
+<div class="page-wrap">
+<a href="../index.html" class="back-link" style="display:block;margin-bottom:1.5rem">← Back to Hub</a>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <!-- PAGE 1: ELECTROSTATICS + CURRENT ELECTRICITY + CAPACITORS     -->
@@ -590,5 +650,6 @@
 
 
 <footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+</div><!-- /page-wrap -->
 </body>
 </html>
