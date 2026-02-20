@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/chapter.css">
-<style>:root{
-  --subject-color:#4338ca;--subject-bg:#eef2ff;--subject-border:#a5b4fc;--subject-text:#3730a3;
-}</style>
-<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mcq.css">
+<link rel="stylesheet" href="../css/concepts.css">
+<style>
+:root{--subject-color:#4338ca;--subject-bg:#eef2ff;--subject-border:#a5b4fc;--subject-text:#3730a3;}
+#conceptsView{display:none}#questionsView{display:none}
+#conceptsView.active{display:block}#questionsView.active{display:block}
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Chapter-wise Physics notes for CBSE Class 12 — concepts, must-read topics, exam tips and numerical patterns for all chapters.">
 <meta name="keywords" content="CBSE physics class 12, physics chapter notes, NCERT physics, board exam physics">
@@ -52,10 +56,10 @@
   </div>
 
   <!-- Sub-tabs: Concepts / Questions -->
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchView('concepts')">Concepts</button>
-    <button class="sub-tab" onclick="switchView('questions')">Questions</button>
-  </div>
+  <nav class="section-nav"><div class="section-nav-inner">
+    <button class="tab active" onclick="switchView('concepts')">Concepts</button>
+    <button class="tab" onclick="switchView('questions')">Questions</button>
+  </div></nav>
 
   <!-- ═══════════════════════════════════
        CONCEPTS VIEW
@@ -70,9 +74,9 @@
 
     <!-- Nav -->
     <div class="concept-nav">
-      <button class="btn btn-nav" id="cPrevBtn" onclick="conceptNav(-1)">← Previous</button>
+      <button class="tab" id="cPrevBtn" onclick="conceptNav(-1)">← Previous</button>
       <span id="cPageIndicator" style="font-size:0.85em;color:#78716c;font-weight:600"></span>
-      <button class="btn btn-nav" id="cNextBtn" onclick="conceptNav(1)">Next →</button>
+      <button class="tab" id="cNextBtn" onclick="conceptNav(1)">Next →</button>
     </div>
   </div>
 
@@ -80,23 +84,23 @@
        QUESTIONS VIEW
        ═══════════════════════════════════ -->
   <div id="questionsView">
-    <div class="progress-strip" id="progressStrip">
-      <span class="progress-strip-label" id="progressLabel">0 / 50 answered</span>
-      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+    <div class="score-bar" id="progressStrip">
+      <span class="score-label" id="progressLabel">0 / 50 answered</span>
+      <div class="score-progress"><div class="score-fill" id="progressFill"></div></div>
     </div>
 
     <div class="q-nav" id="qNav"></div>
 
-    <div class="question-card" id="questionCard">
-      <div class="q-number" id="qNumber"></div>
-      <div class="q-text" id="qText"></div>
-      <div class="options" id="optionsContainer"></div>
+    <div class="mcq-card" id="questionCard">
+      <div class="mcq-num" id="qNumber"></div>
+      <div class="mcq-q" id="qText"></div>
+      <div class="mcq-opts" id="optionsContainer"></div>
     </div>
 
     <div class="nav-buttons">
-      <button class="btn btn-nav" id="prevBtn" onclick="navigate(-1)">← Previous</button>
+      <button class="tab" id="prevBtn" onclick="navigate(-1)">← Previous</button>
       <span id="pageIndicator" style="font-size:0.85em;color:#78716c;font-weight:600"></span>
-      <button class="btn btn-nav" id="nextBtn" onclick="navigate(1)">Next →</button>
+      <button class="tab" id="nextBtn" onclick="navigate(1)">Next →</button>
     </div>
 
     <div class="score-card" id="scoreCard">
@@ -106,8 +110,8 @@
     </div>
 
     <div class="bottom-bar">
-      <button class="btn btn-submit" id="submitBtn" onclick="submitTest()">Submit Answers</button>
-      <button class="btn btn-reset" id="resetBtn" onclick="resetTest()" style="display:none">Reset &amp; Try Again</button>
+      <button class="tab active" id="submitBtn" onclick="submitTest()">Submit Answers</button>
+      <button class="tab" id="resetBtn" onclick="resetTest()" style="display:none">Reset &amp; Try Again</button>
     </div>
   </div>
 </div>

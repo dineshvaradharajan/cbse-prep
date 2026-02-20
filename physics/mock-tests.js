@@ -344,3 +344,4 @@ document.addEventListener('keydown', e => {
    BOOT
 ═══════════════════════════════════════════════ */
 buildSelectScreen();
+document.getElementById('screen-select').classList.add('active');

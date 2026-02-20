@@ -1,199 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/base.css">
-<style>
-  /* ── Chapter color variables ── */
-  :root {
-    --ch1:  #2563eb; --ch1-bg:  #eff6ff; --ch1-border:  #bfdbfe;
-    --ch2:  #7c3aed; --ch2-bg:  #f5f3ff; --ch2-border:  #ddd6fe;
-    --ch3:  #0891b2; --ch3-bg:  #ecfeff; --ch3-border:  #a5f3fc;
-    --ch4:  #059669; --ch4-bg:  #ecfdf5; --ch4-border:  #a7f3d0;
-    --ch5:  #dc2626; --ch5-bg:  #fef2f2; --ch5-border:  #fca5a5;
-    --ch6:  #ea580c; --ch6-bg:  #fff7ed; --ch6-border:  #fed7aa;
-    --ch7:  #d97706; --ch7-bg:  #fffbeb; --ch7-border:  #fde68a;
-    --ch9:  #0f766e; --ch9-bg:  #f0fdfa; --ch9-border:  #99f6e4;
-    --ch10: #4338ca; --ch10-bg: #eef2ff; --ch10-border: #c7d2fe;
-    --ch11: #be185d; --ch11-bg: #fdf2f8; --ch11-border: #f9a8d4;
-    --ch12: #b45309; --ch12-bg: #fffbeb; --ch12-border: #fcd34d;
-    --ch13: #15803d; --ch13-bg: #f0fdf4; --ch13-border: #86efac;
-    --ch14: #9333ea; --ch14-bg: #faf5ff; --ch14-border: #d8b4fe;
-  }
-
-  /* ── Hero ── */
-  .hero {
-    text-align: center;
-    padding: 2.5rem 1rem 2rem;
-    border-bottom: 1px solid var(--sand-200);
-    margin-bottom: 0;
-  }
-  .hero .badge {
-    display: inline-block;
-    background: var(--sand-100);
-    border: 1px solid var(--sand-200);
-    border-radius: 999px;
-    padding: 0.25rem 0.85rem;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin-bottom: 0.85rem;
-  }
-  .hero h1 {
-    font-family: 'Newsreader', serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-  .hero .sub {
-    font-size: 0.84rem;
-    color: var(--ink-3);
-    max-width: 540px;
-    margin: 0 auto 1.25rem;
-    line-height: 1.6;
-  }
-
-  /* ── Mode toggle ── */
-  .mode-toggle {
-    display: inline-flex;
-    gap: 0;
-    border: 1.5px solid var(--sand-300);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 0.5rem;
-  }
-  .mode-toggle button {
-    padding: 0.45rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    font-family: 'Lato', sans-serif;
-    background: #fff;
-    color: var(--ink-3);
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .mode-toggle button.active {
-    background: var(--sand-900);
-    color: #fff;
-  }
-  .mode-toggle button:not(.active):hover { background: var(--sand-100); }
-
-  /* ── Sticky chapter nav ── */
-  .chapter-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(253, 252, 250, 0.95);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--sand-200);
-    padding: 0.5rem 0;
-  }
-  .chapter-nav-inner {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-    display: flex;
-    gap: 0.4rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .chapter-nav-inner::-webkit-scrollbar { display: none; }
-  .chapter-nav-inner a {
-    display: inline-block;
-    padding: 0.3rem 0.7rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-    border-radius: 7px;
-    border: 1.5px solid transparent;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: all 0.15s;
-  }
-  .chapter-nav-inner a:hover { filter: brightness(0.92); }
-
-  /* ── Chapter section ── */
-  .chapter-section { padding: 2rem 0 1rem; }
-  .chapter-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--sand-200);
-  }
-  .chapter-num {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    font-weight: 900;
-    color: #fff;
-    flex-shrink: 0;
-  }
-  .chapter-title {
-    font-family: 'Newsreader', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  /* ── Diagram grid ── */
-  .diagram-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.25rem;
-  }
-
-  /* ── Diagram card ── */
-  .diagram-card {
-    background: #fff;
-    border: 1px solid var(--sand-200);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-  .diagram-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); }
-  .svg-wrap {
-    padding: 0.75rem;
-    background: var(--sand-50);
-    border-bottom: 1px solid var(--sand-200);
-  }
-  .svg-wrap svg {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .caption {
-    padding: 0.75rem 1rem;
-  }
-  .fig-num {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: 0.2rem;
-  }
-  .fig-title {
-    font-size: 0.84rem;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.4;
-  }
-
-  @media (max-width: 640px) {
-    .diagram-grid { grid-template-columns: 1fr; }
-    .chapter-nav-inner { max-width: 100%; }
-  }
-</style>
-<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/diagrams.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="All important physics diagrams for CBSE Class 12 — labeled figures for Optics, Magnetism, Circuits and Modern Physics.">
 <meta name="keywords" content="physics diagrams class 12, important physics figures CBSE, labeled physics diagrams">
@@ -2004,7 +1816,7 @@
   <text x="270" y="298" text-anchor="middle" fill="#44403c" font-size="10" font-style="italic">Wavefronts shown as dashed curves; rays are perpendicular to wavefronts</text>
 </svg>
 </div>
-<div class="view-3d" id="wavefront3d-wrap" style="position:relative;background:#0f0c1a;border-radius:0;padding:0!important">
+<div class="view-3d" id="wavefront3d-wrap">
   <canvas id="wavefront3d" class="canvas-3d" style="width:100%;display:block;cursor:grab;height:360px;"></canvas>
   <div style="position:absolute;top:14px;left:0;right:0;display:flex;justify-content:space-around;pointer-events:none;">
     <span style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:#c4b5fd;letter-spacing:.06em;text-transform:uppercase;">Spherical</span>
@@ -3367,7 +3179,6 @@ function make2DCanvas(wrap, w, h) {
   var hint = document.createElement('div');
   hint.className = 'anim-hint';
   hint.textContent = '● Animated';
-  wrap.style.position = 'relative';
   wrap.appendChild(hint);
   return c;
 }

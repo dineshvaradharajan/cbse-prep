@@ -52,16 +52,16 @@ function switchTopic(topic) {
 
 function switchView(view) {
   activeView = view;
-  document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section-nav .tab').forEach(t => t.classList.remove('active'));
   document.getElementById('conceptsView').classList.remove('active');
   document.getElementById('questionsView').classList.remove('active');
 
   if (view === 'concepts') {
-    document.querySelector('.sub-tab:first-child').classList.add('active');
+    document.querySelector('.section-nav .tab:first-child').classList.add('active');
     document.getElementById('conceptsView').classList.add('active');
     renderConcept();
   } else {
-    document.querySelector('.sub-tab:last-child').classList.add('active');
+    document.querySelector('.section-nav .tab:last-child').classList.add('active');
     document.getElementById('questionsView').classList.add('active');
     buildNav();
     renderQuestion();
@@ -79,12 +79,10 @@ function buildConceptToc() {
   toc.innerHTML = '';
   concepts.forEach((c, i) => {
     const btn = document.createElement('button');
-    btn.className = 'concept-toc-item';
+    btn.className = 'tab';
     if (state.readConcepts.has(c.id)) btn.classList.add('read');
     if (i === state.currentConcept) {
-      btn.style.background = '#2c2822';
-      btn.style.color = '#fff';
-      btn.style.borderColor = '#2c2822';
+      btn.classList.add('active');
     }
     btn.textContent = c.id;
     btn.onclick = () => { state.currentConcept = i; renderConcept(); };
@@ -102,11 +100,13 @@ function renderConcept() {
   localStorage.setItem(topicData[activeTopic].storageKey + '-concepts-read', JSON.stringify([...state.readConcepts]));
 
   document.getElementById('conceptCardArea').innerHTML = `
-    <div class="concept-card">
-      <span class="concept-num">${c.id}</span>
-      <span class="concept-level ${c.level}">${levelLabels[c.level]}</span>
-      <div class="concept-title">${c.title}</div>
-      <div class="concept-body">${c.body}</div>
+    <div class="concept-block">
+      <div class="cb-header">
+        <span class="cb-title">${c.title}</span>
+        <span class="cb-freq">${c.id}</span>
+        <span class="cb-years">${levelLabels[c.level]}</span>
+      </div>
+      <div class="cb-body">${c.body}</div>
     </div>
   `;
 
@@ -115,7 +115,8 @@ function renderConcept() {
   document.getElementById('cPageIndicator').textContent = `${state.currentConcept + 1} / ${concepts.length}`;
 
   buildConceptToc();
-  window.scrollTo({ top: document.querySelector('.sub-tabs').offsetTop - 20, behavior: 'smooth' });
+  const navEl = document.querySelector('.section-nav') || document.querySelector('.sub-tabs');
+  if (navEl) window.scrollTo({ top: navEl.offsetTop - 20, behavior: 'smooth' });
 }
 
 function conceptNav(dir) {
@@ -189,12 +190,12 @@ function renderQuestion() {
 
   q.options.forEach((opt, i) => {
     const div = document.createElement('div');
-    div.className = 'option';
+    div.className = 'opt';
 
     if (state.submitted) {
       const correctIdx = letters.indexOf(q.answer);
-      if (i === correctIdx) div.classList.add('correct-answer');
-      else if (state.selections[q.id] === i) div.classList.add('wrong-answer');
+      if (i === correctIdx) div.classList.add('correct');
+      else if (state.selections[q.id] === i) div.classList.add('wrong');
     } else if (state.selections[q.id] === i) {
       div.classList.add('selected');
     }
@@ -209,11 +210,11 @@ function renderQuestion() {
     }
 
     const letter = document.createElement('div');
-    letter.className = 'option-letter';
+    letter.className = 'opt-letter';
     letter.textContent = letters[i];
 
     const text = document.createElement('div');
-    text.className = 'option-text';
+    text.className = 'opt-text';
     text.innerHTML = opt;
 
     const icon = document.createElement('div');

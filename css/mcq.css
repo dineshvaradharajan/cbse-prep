@@ -194,3 +194,274 @@
   display: none;
 }
 .mcq-exp strong { color: var(--ink) }
+
+/* ─── Chapter engine states ─────────────────────────────────────────────── */
+.opt.selected { border-color: var(--subject-color, var(--sand-900)); background: var(--subject-bg, var(--sand-100)) }
+
+.score-card { display: none; text-align: center; margin: 1rem 0 }
+.score-card.show { display: block }
+.score-big { font-family: 'Newsreader', serif; font-size: 3rem; font-weight: 700; color: var(--ink) }
+.score-big.good { color: #16a34a }
+.score-big.ok   { color: #d97706 }
+.score-big.bad  { color: #dc2626 }
+
+.nav-buttons, .bottom-bar { display: flex; align-items: center; justify-content: space-between; margin: 1rem 0; gap: .75rem }
+.bottom-bar { justify-content: center }
+
+.q-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 1rem }
+
+.section-label { font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); width: 100%; margin-top: .5rem }
+
+.concept-toc { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem }
+.concept-nav { display: flex; align-items: center; justify-content: space-between; margin: 1rem 0 2rem }
+
+/* ─── Question navigation dots (shared) ─────────────────────────────────── */
+.q-dot {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 8px;
+  border: 1.5px solid var(--sand-300);
+  background: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all .15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+.q-dot.active   { background: var(--sand-900); color: #fff; border-color: var(--sand-900) }
+.q-dot.answered { background: #dbeafe; border-color: #93c5fd; color: #1d4ed8 }
+.q-dot.correct  { background: #dcfce7; border-color: #86efac; color: #15803d }
+.q-dot.wrong    { background: #fee2e2; border-color: #fca5a5; color: #991b1b }
+
+/* ─── Case Study Page ─────────────────────────────────────────────────────── */
+
+/* Top bar: score + progress + action buttons */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid var(--sand-200);
+  border-radius: 10px;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.score-display {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.score-display span { color: var(--ink); font-size: 1rem; font-family: 'Newsreader', serif }
+.progress-wrap { flex: 1; min-width: 120px }
+.progress-bar-bg {
+  height: 6px;
+  background: var(--sand-200);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: .2rem;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--subject-color, var(--sand-900));
+  border-radius: 999px;
+  transition: width .3s;
+  width: 0%;
+}
+.progress-label {
+  font-size: .65rem;
+  color: var(--ink-3);
+  font-weight: 600;
+}
+
+/* Action buttons */
+.btn {
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .4rem .9rem;
+  border-radius: 7px;
+  border: 1.5px solid;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.btn-test  { background: #fff; color: var(--ink-2); border-color: var(--sand-300) }
+.btn-test:hover { background: var(--sand-100) }
+.btn-test.active { background: var(--subject-color, var(--sand-900)); color: #fff; border-color: var(--subject-color, var(--sand-900)) }
+.btn-submit { background: #dc2626; color: #fff; border-color: #dc2626 }
+.btn-submit:hover { background: #b91c1c; border-color: #b91c1c }
+.btn-reset { background: var(--sand-100); color: var(--ink-3); border-color: var(--sand-200) }
+.btn-reset:hover { background: var(--sand-200); color: var(--ink) }
+
+/* Case study card */
+.case-study {
+  background: #fff;
+  border: 1px solid var(--sand-200);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.case-study-header {
+  background: var(--subject-bg, var(--sand-100));
+  border-bottom: 1px solid var(--subject-border, var(--sand-200));
+  padding: .85rem 1.5rem;
+}
+.case-number {
+  font-size: .65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--subject-color, var(--sand-700));
+  background: #fff;
+  border: 1px solid var(--subject-border, var(--sand-300));
+  border-radius: 999px;
+  padding: .2rem .65rem;
+}
+.case-study h2 {
+  font-family: 'Newsreader', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 1rem 1.5rem .5rem;
+}
+.passage {
+  padding: .5rem 1.5rem 1.25rem;
+  font-size: .85rem;
+  color: var(--ink-2);
+  line-height: 1.85;
+  border-bottom: 1px solid var(--sand-100);
+}
+
+/* Question block */
+.question-block {
+  padding: 1.1rem 1.5rem;
+  border-top: 1px solid var(--sand-100);
+}
+.q-label {
+  font-size: .68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--subject-color, var(--sand-700));
+  margin-bottom: .35rem;
+}
+.q-text {
+  font-size: .88rem;
+  color: var(--ink);
+  line-height: 1.55;
+  margin-bottom: .75rem;
+}
+
+/* Options list */
+.options {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  margin-bottom: .75rem;
+}
+.options li {
+  padding: .5rem .85rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--sand-200);
+  background: var(--sand-50);
+  font-size: .82rem;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all .15s;
+}
+.options li:hover { border-color: var(--sand-300); background: var(--sand-100); color: var(--ink) }
+.options li.selected { border-color: var(--subject-color, var(--sand-900)); background: var(--subject-bg, var(--sand-100)); color: var(--ink) }
+.options li.correct-answer { background: #f0fdf4; border-color: #86efac; color: #166534 }
+.options li.wrong-answer   { background: #fef2f2; border-color: #fca5a5; color: #991b1b }
+body.test-mode .show-answer-btn { display: none }
+
+/* Show answer button */
+.show-answer-btn {
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--ink-3);
+  background: var(--sand-100);
+  border: 1px solid var(--sand-200);
+  border-radius: 6px;
+  padding: .3rem .75rem;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  transition: all .15s;
+  margin-bottom: .5rem;
+}
+.show-answer-btn:hover { background: var(--sand-200); color: var(--ink) }
+
+/* Answer reveal box */
+.answer-box {
+  display: none;
+  background: var(--sand-50);
+  border: 1px solid var(--sand-200);
+  border-radius: 8px;
+  padding: .85rem 1rem;
+  font-size: .82rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+  margin-top: .25rem;
+}
+.answer-box.visible { display: block }
+.ans-label {
+  font-weight: 800;
+  color: var(--subject-color, var(--sand-900));
+  display: block;
+  margin-bottom: .3rem;
+}
+
+/* Results overlay */
+.results-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.results-overlay.visible { display: flex }
+.results-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+}
+.results-card h2 {
+  font-family: 'Newsreader', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .75rem;
+}
+.results-score {
+  font-family: 'Newsreader', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--subject-color, var(--sand-900));
+  margin-bottom: .5rem;
+}
+.results-card p {
+  font-size: .84rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.results-card .btn { margin: .25rem }

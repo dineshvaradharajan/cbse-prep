@@ -1,6 +1,6 @@
 function showCh(id, el) {
   document.querySelectorAll('.ch-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.chapter-bar .tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('[data-tab="' + id + '"]').forEach(t => t.classList.add('active'));
   layoutChapterTabs();
@@ -31,7 +31,7 @@ function layoutChapterTabs() {
     clone.className = 'tab' + (tabs[i].classList.contains('active') ? ' active' : '');
     clone.textContent = tabs[i].textContent;
     clone.dataset.tab = tabs[i].dataset.tab;
-    clone.onclick = () => { showCh(tabs[i].dataset.tab, clone); dropdown.classList.remove('open'); };
+    clone.onclick = () => { tabs[i].click(); dropdown.classList.remove('open'); };
     dropdown.appendChild(clone);
     if (tabs[i].classList.contains('active')) hasActiveInDropdown = true;
   }
