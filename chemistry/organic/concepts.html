@@ -47,6 +47,7 @@
     <button class="tab" onclick="showTab('patterns',this)">Concept Patterns</button>
     <button class="tab" onclick="showTab('strategy',this)">Strategy</button>
     <button class="tab" onclick="showTab('qanda',this)">Q&amp;A</button>
+    <button class="tab" onclick="showTab('iupac',this)">📝 IUPAC Naming</button>
   </div>
 </nav>
 
@@ -598,7 +599,266 @@
 
 </div><!-- /qanda -->
 
-</div><!-- /container -->
+<!-- IUPAC NAMING -->
+<div class="tab-section" id="iupac">
+  <h2 class="section-title">IUPAC Naming — Complete Reference</h2>
+
+  <div class="alert-box">
+    <h3>🎯 IUPAC naming carries 1–2 marks in almost every paper. Master the suffix/prefix table below and you'll never lose these marks.</h3>
+  </div>
+
+  <!-- STEP-BY-STEP RULES -->
+  <div class="topic-card" style="border-top-color:#2563eb; margin-bottom:1.5rem">
+    <div class="tc-header">
+      <div class="tc-title">📋 Steps for IUPAC Naming</div>
+    </div>
+    <ol style="margin-left:1.25rem; line-height:2.2; font-size:.85rem; color:#44403c">
+      <li><strong>Find the longest carbon chain</strong> containing the principal functional group → this is the <em>parent chain</em>.</li>
+      <li><strong>Number the chain</strong> so the principal functional group gets the <em>lowest locant</em>.</li>
+      <li><strong>Name substituents</strong> as prefixes (with locant numbers) in alphabetical order.</li>
+      <li><strong>Add the suffix</strong> of the principal functional group to the parent chain name.</li>
+      <li>If multiple same substituents: use di-, tri-, tetra- (these don't affect alphabetical order).</li>
+    </ol>
+  </div>
+
+  <!-- WORD ROOTS -->
+  <h3 style="font-family:'Newsreader',serif; font-size:1.15rem; font-weight:600; color:#1c1917; margin-bottom:.75rem; margin-top:1.5rem">Word Roots (Parent Chain Length)</h3>
+  <div style="overflow-x:auto; margin-bottom:1.5rem">
+    <table style="width:100%; border-collapse:collapse; font-size:.82rem; background:#fff; border:1px solid #e7e5e4; border-radius:10px; overflow:hidden">
+      <thead>
+        <tr style="background:#f5f5f4">
+          <th style="padding:.6rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">C atoms</th>
+          <th style="padding:.6rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Root</th>
+          <th style="padding:.6rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">C atoms</th>
+          <th style="padding:.6rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Root</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>1</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">Meth-</td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>6</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">Hex-</td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>2</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">Eth-</td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>7</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">Hept-</td></tr>
+        <tr><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>3</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">Prop-</td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>8</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">Oct-</td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>4</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">But-</td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4"><strong>9</strong></td><td style="padding:.5rem .8rem; border-bottom:1px solid #f5f5f4">Non-</td></tr>
+        <tr><td style="padding:.5rem .8rem"><strong>5</strong></td><td style="padding:.5rem .8rem">Pent-</td><td style="padding:.5rem .8rem"><strong>10</strong></td><td style="padding:.5rem .8rem">Dec-</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MAIN FUNCTIONAL GROUP TABLE -->
+  <h3 style="font-family:'Newsreader',serif; font-size:1.15rem; font-weight:600; color:#1c1917; margin-bottom:.75rem; margin-top:1.5rem">Functional Groups — Suffix &amp; Prefix</h3>
+  <p style="font-size:.8rem; color:#78716c; margin-bottom:.75rem">Ordered by <strong>decreasing priority</strong> (top = highest priority as principal group). The highest-priority group gets the <strong>suffix</strong>; all others become <strong>prefixes</strong>.</p>
+  <div style="overflow-x:auto; margin-bottom:1.5rem">
+    <table style="width:100%; border-collapse:collapse; font-size:.82rem; background:#fff; border:1px solid #e7e5e4; border-radius:10px; overflow:hidden">
+      <thead>
+        <tr style="background:#f5f5f4">
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Priority</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Functional Group</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Formula</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Suffix (as principal)</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Prefix (as substituent)</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fef2f2">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#dc2626">1</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Carboxylic acid</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–COOH</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-oic acid</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">carboxy-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃COOH → Ethanoic acid</td>
+        </tr>
+        <tr>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#dc2626">2</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Acid anhydride</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–CO–O–CO–</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-oic anhydride</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">—</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">(CH₃CO)₂O → Ethanoic anhydride</td>
+        </tr>
+        <tr style="background:#fafaf9">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#dc2626">3</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Ester</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–COOR</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-oate</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">alkoxycarbonyl-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃COOC₂H₅ → Ethyl ethanoate</td>
+        </tr>
+        <tr>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#dc2626">4</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Acid halide</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–COX</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-oyl halide</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">halocarbonyl-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃COCl → Ethanoyl chloride</td>
+        </tr>
+        <tr style="background:#fafaf9">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#dc2626">5</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Amide</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–CONH₂</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-amide</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">carbamoyl-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃CONH₂ → Ethanamide</td>
+        </tr>
+        <tr>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#ea580c">6</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Nitrile</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–C≡N</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-nitrile</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">cyano-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃CN → Ethanenitrile</td>
+        </tr>
+        <tr style="background:#fef9c3">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#ca8a04">7</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Aldehyde</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–CHO</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-al</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">oxo- / formyl-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃CHO → Ethanal</td>
+        </tr>
+        <tr>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#ca8a04">8</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Ketone</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">&gt;C=O</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-one</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">oxo-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃COCH₃ → Propan-2-one</td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#16a34a">9</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Alcohol</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–OH</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-ol</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">hydroxy-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃CH₂OH → Ethanol</td>
+        </tr>
+        <tr>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#16a34a">10</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Phenol</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">Ar–OH</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-ol</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">hydroxy-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">C₆H₅OH → Phenol</td>
+        </tr>
+        <tr style="background:#fafaf9">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#7c3aed">11</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Amine</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–NH₂</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-amine</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">amino-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃NH₂ → Methanamine</td>
+        </tr>
+        <tr>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#7c3aed">12</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Ether</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–O–</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><em>no suffix (named as alkoxy-)</em></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">alkoxy-</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃OCH₃ → Methoxymethane</td>
+        </tr>
+        <tr style="background:#eff6ff">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#2563eb">13</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Alkene (C=C)</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">&gt;C=C&lt;</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-ene</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">—</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₂=CH₂ → Ethene</td>
+        </tr>
+        <tr>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#2563eb">14</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Alkyne (C≡C)</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–C≡C–</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-yne</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">—</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH≡CH → Ethyne</td>
+        </tr>
+        <tr style="background:#fafaf9">
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:700; color:#64748b">15</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Alkane</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">C–C</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><strong>-ane</strong></td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">—</td>
+          <td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃CH₃ → Ethane</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SUBSTITUENT PREFIXES (always prefixes, never suffixes) -->
+  <h3 style="font-family:'Newsreader',serif; font-size:1.15rem; font-weight:600; color:#1c1917; margin-bottom:.75rem; margin-top:1.5rem">Substituents (Always Used as Prefix)</h3>
+  <div style="overflow-x:auto; margin-bottom:1.5rem">
+    <table style="width:100%; border-collapse:collapse; font-size:.82rem; background:#fff; border:1px solid #e7e5e4; border-radius:10px; overflow:hidden">
+      <thead>
+        <tr style="background:#f5f5f4">
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Substituent</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Formula</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Prefix</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Fluorine</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–F</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">fluoro-</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃F → Fluoromethane</td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Chlorine</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–Cl</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">chloro-</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃Cl → Chloromethane</td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Bromine</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–Br</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">bromo-</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃CH₂Br → Bromoethane</td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Iodine</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–I</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">iodo-</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">CH₃I → Iodomethane</td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Nitro</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–NO₂</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">nitro-</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">C₆H₅NO₂ → Nitrobenzene</td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Methyl</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–CH₃</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">methyl-</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">2-Methylpropane</td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Ethyl</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">–C₂H₅</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">ethyl-</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">3-Ethylpentane</td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; font-weight:600">Isopropyl</td><td style="padding:.55rem .8rem; font-family:monospace">–CH(CH₃)₂</td><td style="padding:.55rem .8rem">isopropyl- (1-methylethyl-)</td><td style="padding:.55rem .8rem">2-Methylpropane</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- COMMON COMPOUNDS — QUICK REFERENCE -->
+  <h3 style="font-family:'Newsreader',serif; font-size:1.15rem; font-weight:600; color:#1c1917; margin-bottom:.75rem; margin-top:1.5rem">Common Name → IUPAC Name (Exam Favourites)</h3>
+  <div style="overflow-x:auto; margin-bottom:1.5rem">
+    <table style="width:100%; border-collapse:collapse; font-size:.82rem; background:#fff; border:1px solid #e7e5e4; border-radius:10px; overflow:hidden">
+      <thead>
+        <tr style="background:#f5f5f4">
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Common Name</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Formula</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">IUPAC Name</th>
+          <th style="padding:.65rem .8rem; text-align:left; font-weight:700; color:#44403c; border-bottom:2px solid #e7e5e4">Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Formaldehyde</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">HCHO</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Methanal</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#fef9c3; padding:1px 6px; border-radius:4px; font-size:.75rem">Aldehyde</span></td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Acetaldehyde</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">CH₃CHO</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Ethanal</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#fef9c3; padding:1px 6px; border-radius:4px; font-size:.75rem">Aldehyde</span></td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Acetone</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">CH₃COCH₃</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Propan-2-one</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#fef9c3; padding:1px 6px; border-radius:4px; font-size:.75rem">Ketone</span></td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Acetic acid</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">CH₃COOH</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Ethanoic acid</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#fef2f2; padding:1px 6px; border-radius:4px; font-size:.75rem">Acid</span></td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Formic acid</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">HCOOH</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Methanoic acid</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#fef2f2; padding:1px 6px; border-radius:4px; font-size:.75rem">Acid</span></td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Chloroform</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">CHCl₃</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Trichloromethane</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#eff6ff; padding:1px 6px; border-radius:4px; font-size:.75rem">Haloalkane</span></td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Iodoform</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">CHI₃</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Triiodomethane</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#eff6ff; padding:1px 6px; border-radius:4px; font-size:.75rem">Haloalkane</span></td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Glycerol</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">C₃H₅(OH)₃</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Propane-1,2,3-triol</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#f0fdf4; padding:1px 6px; border-radius:4px; font-size:.75rem">Alcohol</span></td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Picric acid</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">C₆H₂(NO₂)₃OH</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">2,4,6-Trinitrophenol</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#f0fdf4; padding:1px 6px; border-radius:4px; font-size:.75rem">Phenol</span></td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Aniline</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">C₆H₅NH₂</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Benzenamine</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#f5f3ff; padding:1px 6px; border-radius:4px; font-size:.75rem">Amine</span></td></tr>
+        <tr><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Diethyl ether</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">C₂H₅OC₂H₅</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Ethoxyethane</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#fafaf9; padding:1px 6px; border-radius:4px; font-size:.75rem; border:1px solid #e7e5e4">Ether</span></td></tr>
+        <tr style="background:#fafaf9"><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4">Anisole</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-family:monospace">C₆H₅OCH₃</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4; font-weight:600">Methoxybenzene</td><td style="padding:.55rem .8rem; border-bottom:1px solid #f5f5f4"><span style="background:#fafaf9; padding:1px 6px; border-radius:4px; font-size:.75rem; border:1px solid #e7e5e4">Ether</span></td></tr>
+        <tr><td style="padding:.55rem .8rem">Acetonitrile</td><td style="padding:.55rem .8rem; font-family:monospace">CH₃CN</td><td style="padding:.55rem .8rem; font-weight:600">Ethanenitrile</td><td style="padding:.55rem .8rem"><span style="background:#fff7ed; padding:1px 6px; border-radius:4px; font-size:.75rem">Nitrile</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PRIORITY ORDER MNEMONIC -->
+  <div class="topic-card" style="border-top-color:#9333ea">
+    <div class="tc-header">
+      <div class="tc-title">🧠 Priority Order Mnemonic</div>
+    </div>
+    <p style="font-size:.85rem; color:#44403c; line-height:1.8; margin-top:.5rem">
+      <strong style="color:#1c1917">C</strong>arboxylic acid &gt;
+      <strong style="color:#1c1917">A</strong>nhydride &gt;
+      <strong style="color:#1c1917">E</strong>ster &gt;
+      <strong style="color:#1c1917">A</strong>cid halide &gt;
+      <strong style="color:#1c1917">A</strong>mide &gt;
+      <strong style="color:#1c1917">N</strong>itrile &gt;
+      <strong style="color:#1c1917">A</strong>ldehyde &gt;
+      <strong style="color:#1c1917">K</strong>etone &gt;
+      <strong style="color:#1c1917">A</strong>lcohol &gt;
+      <strong style="color:#1c1917">A</strong>mine
+    </p>
+    <p style="font-size:.85rem; color:#78716c; margin-top:.5rem">Remember: <strong style="color:#9333ea">"CAEAAN AKA A"</strong> — or simply: acids on top, amines at bottom, carbonyls in the middle.</p>
+  </div>
+
+</div><!-- /iupac -->
 <script src="../../js/tab-nav.js"></script>
 
 <footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
