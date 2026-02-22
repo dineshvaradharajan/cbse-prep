@@ -103,6 +103,17 @@
 }
 
 @media (max-width: 640px) {
-  .chapter-nav-inner { max-width: 100% }
+  .chapter-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(10px);
+    margin: 0 -.75rem;
+    padding: .5rem .75rem;
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .chapter-nav-inner { display: none !important; }
+  .chapter-nav .mobile-select { display: block; }
   .formula-grid { grid-template-columns: 1fr }
 }

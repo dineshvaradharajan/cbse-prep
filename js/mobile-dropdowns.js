@@ -38,6 +38,18 @@
     createSelect(chapterBar, tabs, (i) => tabs[i].click());
   }
 
+  // ── .chapter-nav (Formula pages) ──
+  const chapterNav = document.querySelector('.chapter-nav');
+  if (chapterNav) {
+    const links = Array.from(chapterNav.querySelectorAll('.chapter-nav-inner a'));
+    if (links.length > 0) {
+      createSelect(chapterNav, links, (i) => {
+        const href = links[i].getAttribute('href');
+        if (href) window.location.hash = href;
+      });
+    }
+  }
+
   // ── .section-nav (Concepts/Questions toggle in chapter pages) ──
   const sectionNav = document.querySelector('.section-nav');
   if (sectionNav) {
