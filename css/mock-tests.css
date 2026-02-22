@@ -515,7 +515,15 @@
   /* Replace nav dots with dropdown */
   .q-nav-bar .q-dot { display: none; }
   .q-nav-bar .nav-legend { display: none; }
-  .q-nav-bar { padding: .5rem .75rem; }
+  .q-nav-bar {
+    padding: .5rem .75rem;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--sand-200);
+  }
   .q-nav-bar .mobile-select { display: block; }
 
   /* Compact result */

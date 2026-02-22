@@ -281,6 +281,30 @@
 .cb-body .compare-table tr:last-child td { border-bottom: none; }
 .cb-body .compare-table tr:hover td { background: var(--sand-50); }
 
+/* Mobile sticky section nav & rxn nav */
+@media (max-width: 640px) {
+  .section-nav {
+    position: sticky;
+    top: 48px;  /* below sticky chapter-bar */
+    z-index: 90;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(10px);
+    margin: 0 -.75rem;
+    padding: .5rem .75rem;
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .rxn-nav {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(10px);
+    margin: 0 -.75rem;
+    padding: .5rem .75rem;
+    border-bottom: 1px solid var(--sand-200);
+  }
+}
+
 /* Subject tag colours — Physical */
 .tag-soln { background: #e0f2fe; color: #0369a1 }
 .tag-elec  { background: #dcfce7; color: #15803d }
