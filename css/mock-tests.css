@@ -492,4 +492,42 @@
   .options-grid { grid-template-columns: 1fr; }
   .test-grid { grid-template-columns: 1fr; }
   .result-stats { gap: 1rem; }
+
+  /* Compact page header */
+  .page-header {
+    padding: 1rem 0 .75rem;
+    margin-bottom: 1rem;
+  }
+  .page-header h1 { font-size: 1.1rem; }
+  .page-header p { font-size: .72rem; }
+
+  /* Compact test topbar */
+  .test-topbar { padding: .6rem 0 .5rem; gap: .5rem; margin-bottom: .5rem; }
+  .test-topbar-name { font-size: .85rem; }
+  .test-topbar-meta { font-size: .65rem; }
+  #timer-display { font-size: 1.1rem; }
+
+  /* Smaller question card */
+  .q-card { padding: 1rem; border-radius: 10px; }
+  .q-text { font-size: .85rem; margin-bottom: 1rem; }
+  .option-btn { padding: .6rem .75rem; font-size: .78rem; border-radius: 8px; }
+
+  /* Compact nav bar */
+  .q-nav-bar { padding: .5rem .75rem; }
+  .q-dot { min-width: 26px; height: 26px; font-size: .65rem; }
+
+  /* Compact result */
+  .result-hero { padding: 1.25rem 1rem; border-radius: 12px; }
+  .result-score-big { font-size: 2.5rem; }
+  .denom { font-size: 1.3rem; }
+  .result-pct { font-size: .95rem; }
+
+  /* Compact review */
+  .review-item { padding: .75rem 1rem; }
+  .review-q-text { font-size: .78rem; }
+  .review-expl { font-size: .72rem; }
+
+  /* Buttons */
+  .btn { font-size: .72rem; padding: .4rem .85rem; }
+  .test-start-btn { font-size: .75rem; padding: .5rem .85rem; }
 }

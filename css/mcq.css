@@ -465,3 +465,48 @@ body.test-mode .show-answer-btn { display: none }
   margin-bottom: 1.25rem;
 }
 .results-card .btn { margin: .25rem }
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Compact chapter nav */
+  .ch-nav-inner { max-width: 100%; padding: 0 .5rem; }
+  .ch-btn { padding: .3rem .65rem; font-size: .68rem; }
+
+  /* Compact chapter heading */
+  .ch-heading { font-size: 1rem; margin-bottom: .85rem; }
+
+  /* Compact score bar */
+  .score-bar { padding: .5rem .75rem; gap: .6rem; margin-bottom: 1rem; border-radius: 8px; }
+  .score-val { font-size: 1rem; }
+
+  /* Compact MCQ cards */
+  .mcq-card { padding: .85rem; border-radius: 10px; margin-bottom: .75rem; }
+  .mcq-q { font-size: .82rem; margin-bottom: .65rem; }
+  .opt { padding: .45rem .65rem; font-size: .75rem; border-radius: 7px; }
+  .mcq-exp { padding: .6rem .75rem; font-size: .72rem; }
+
+  /* Compact question dots */
+  .q-dot { min-width: 28px; height: 28px; font-size: .65rem; border-radius: 6px; }
+
+  /* Compact top bar (case study) */
+  .top-bar { padding: .5rem .75rem; gap: .5rem; margin-bottom: 1rem; border-radius: 8px; }
+  .score-display { font-size: .7rem; }
+  .score-display span { font-size: .85rem; }
+
+  /* Compact case study */
+  .case-study { border-radius: 10px; margin-bottom: 1.25rem; }
+  .case-study-header { padding: .6rem 1rem; }
+  .case-study h2 { font-size: .95rem; padding: .75rem 1rem .35rem; }
+  .passage { padding: .4rem 1rem 1rem; font-size: .78rem; }
+  .question-block { padding: .85rem 1rem; }
+  .q-text { font-size: .82rem; }
+  .options li { padding: .4rem .7rem; font-size: .75rem; border-radius: 7px; }
+
+  /* Results overlay */
+  .results-card { padding: 1.5rem; border-radius: 14px; }
+  .results-card h2 { font-size: 1.15rem; }
+  .results-score { font-size: 2rem; }
+
+  /* Buttons */
+  .btn { font-size: .7rem; padding: .35rem .75rem; }
+}

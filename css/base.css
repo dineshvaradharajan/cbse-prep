@@ -195,7 +195,70 @@ body::before {
 
 /* Responsive */
 @media (max-width: 640px) {
-  .container { max-width: 100%; width: 100% }
+  .container { max-width: 100%; width: 100%; padding: 0 .75rem }
+
+  /* Compact back button — pill style, touch-friendly */
+  .back-link {
+    font-size: .68rem;
+    margin-top: .75rem;
+    padding: .35rem .7rem;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 999px;
+    min-height: 36px;
+  }
+
+  /* Compact hero */
+  .hero {
+    padding: 1rem .5rem .75rem;
+  }
+  .hero .badge {
+    font-size: .6rem;
+    padding: .15rem .55rem;
+    margin-bottom: .4rem;
+  }
+  .hero h1 {
+    font-size: 1.1rem;
+  }
+  .hero .sub {
+    font-size: .72rem;
+    margin-top: .2rem;
+  }
+  .hero .stat-row, .hero .marks-row {
+    gap: 1rem;
+    margin-top: .75rem;
+  }
+  .hero .stat-item .num, .hero .marks-item .num {
+    font-size: 1.1rem;
+  }
+  .hero .stat-item .lbl, .hero .marks-item .lbl {
+    font-size: .58rem;
+  }
+
+  /* Compact bare page title */
+  .container > h1 {
+    font-size: 1.05rem;
+    margin-top: .75rem;
+    margin-bottom: .3rem;
+  }
+  .container > .subtitle {
+    font-size: .72rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Smaller tabs */
+  .tab {
+    font-size: .72em;
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  /* Compact footer */
+  .site-footer {
+    margin-top: 2rem;
+    padding: 1rem 0 1.5rem;
+    font-size: .65rem;
+  }
 }
 
 /* Site footer */
