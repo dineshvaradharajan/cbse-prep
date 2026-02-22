@@ -367,21 +367,41 @@
 
   /* ── Mobile ── */
   @media (max-width: 600px) {
-    .wrapper { padding: 2rem 1rem 3rem }
+    .wrapper { padding: 1.25rem .75rem 2rem }
+
+    .cards { gap: .6rem }
 
     .card {
-      grid-template-columns: 3.5rem 1fr;
-      gap: 1rem;
-      padding: 1.25rem;
+      grid-template-columns: 2.5rem 1fr;
+      gap: .65rem;
+      padding: .7rem .85rem;
+      border-radius: 10px;
     }
     .card-icon {
-      width: 3.5rem;
-      height: 3.5rem;
-      font-size: 1.3rem;
-      border-radius: 12px;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
     }
     .card-arrow { display: none }
-    .card-body h2 { font-size: 1.05rem }
+    .card-body h2 { font-size: .82rem; margin-bottom: 0 }
+    .card-body p { display: none }
+
+    .section-heading { font-size: .65rem; margin-top: .75rem; margin-bottom: .1rem }
+
+    /* Compact header */
+    header { margin-bottom: 1.5rem }
+    .badge { font-size: .55rem; padding: .2em .7em; margin-bottom: .6rem }
+    h1 { font-size: 1.3rem }
+    h1 span { font-size: .55em; margin-top: .15em }
+
+    /* Compact subject tabs */
+    .subject-tabs { margin-bottom: 1rem; gap: .35rem }
+    .subject-tab { font-size: .7rem; padding: .35rem .75rem }
+
+    /* Compact chem tabs */
+    .chem-tabs { gap: .25rem; margin-bottom: .75rem }
+    .chem-tab { font-size: .68rem; padding: .3rem .6rem }
   }
 </style>
 </head>
