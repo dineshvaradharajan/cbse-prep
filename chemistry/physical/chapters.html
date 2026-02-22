@@ -321,6 +321,63 @@
     </div>
   </div>
 
+  <!-- ── Molar Conductivity vs √C Graph ── -->
+  <div style="background:#fff;border:1px solid var(--sand-200);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem">
+    <h4 style="font-family:'Newsreader',serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">📈 Molar Conductivity (Λm) vs √C</h4>
+    <svg viewBox="0 0 420 260" style="width:100%;max-width:420px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+      <!-- Axes -->
+      <line x1="55" y1="20" x2="55" y2="220" stroke="#44403c" stroke-width="1.5"/>
+      <line x1="55" y1="220" x2="400" y2="220" stroke="#44403c" stroke-width="1.5"/>
+      <!-- Y-axis label -->
+      <text x="14" y="120" fill="#44403c" font-size="11" font-family="Lato,sans-serif" font-weight="700" transform="rotate(-90,14,120)" text-anchor="middle">Λm (S cm² mol⁻¹)</text>
+      <!-- X-axis label -->
+      <text x="225" y="248" fill="#44403c" font-size="11" font-family="Lato,sans-serif" font-weight="700" text-anchor="middle">√C</text>
+      <!-- Y-axis tick — Λ°m -->
+      <line x1="50" y1="40" x2="55" y2="40" stroke="#44403c" stroke-width="1"/>
+      <text x="47" y="44" fill="#78716c" font-size="9" font-family="Lato,sans-serif" text-anchor="end">Λ°m</text>
+      <!-- Grid lines -->
+      <line x1="55" y1="40" x2="400" y2="40" stroke="#eae6dd" stroke-width=".5" stroke-dasharray="4,3"/>
+      <line x1="55" y1="100" x2="400" y2="100" stroke="#eae6dd" stroke-width=".5" stroke-dasharray="4,3"/>
+      <line x1="55" y1="160" x2="400" y2="160" stroke="#eae6dd" stroke-width=".5" stroke-dasharray="4,3"/>
+
+      <!-- Strong electrolyte: KCl — gentle straight-line drop -->
+      <line x1="60" y1="45" x2="370" y2="80" stroke="#2563eb" stroke-width="2.5"/>
+      <!-- Extrapolation dashed -->
+      <line x1="60" y1="45" x2="55" y2="44" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <circle cx="60" cy="45" r="3" fill="#2563eb"/>
+      <text x="375" y="78" fill="#2563eb" font-size="10" font-weight="700" font-family="Lato,sans-serif">KCl</text>
+
+      <!-- Strong electrolyte: NaCl — slightly lower, parallel -->
+      <line x1="60" y1="58" x2="370" y2="93" stroke="#0891b2" stroke-width="2.5"/>
+      <line x1="60" y1="58" x2="55" y2="57" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <circle cx="60" cy="58" r="3" fill="#0891b2"/>
+      <text x="375" y="91" fill="#0891b2" font-size="10" font-weight="700" font-family="Lato,sans-serif">NaCl</text>
+
+      <!-- Weak electrolyte: CH₃COOH — steep curve from low, rises sharply near √C=0 -->
+      <path d="M60,70 Q80,72 120,120 Q180,165 250,185 Q320,196 370,200" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+      <!-- Can't extrapolate dashed line -->
+      <line x1="60" y1="70" x2="55" y2="68" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <circle cx="60" cy="70" r="3" fill="#dc2626"/>
+      <text x="375" y="200" fill="#dc2626" font-size="9.5" font-weight="700" font-family="Lato,sans-serif">CH₃COOH</text>
+
+      <!-- Annotation: extrapolation for strong -->
+      <path d="M120,30 L80,40" stroke="#2563eb" stroke-width="1" fill="none" marker-end="url(#arrowBlue)"/>
+      <text x="122" y="30" fill="#2563eb" font-size="8.5" font-family="Lato,sans-serif">Λ°m by extrapolation</text>
+
+      <!-- Annotation: can't extrapolate weak -->
+      <path d="M140,142 L100,110" stroke="#dc2626" stroke-width="1" fill="none" marker-end="url(#arrowRed)"/>
+      <text x="142" y="140" fill="#dc2626" font-size="8" font-family="Lato,sans-serif">Steep rise → can't extrapolate</text>
+      <text x="142" y="150" fill="#dc2626" font-size="8" font-family="Lato,sans-serif">→ use Kohlrausch's Law</text>
+
+      <!-- Arrow markers -->
+      <defs>
+        <marker id="arrowBlue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#2563eb" stroke-width="1"/></marker>
+        <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#dc2626" stroke-width="1"/></marker>
+      </defs>
+    </svg>
+    <p style="font-size:.72rem;color:var(--ink-3);text-align:center;margin-top:.5rem"><strong>Strong electrolytes</strong> (KCl, NaCl): linear decrease — Λ°m found by extrapolation. <strong>Weak electrolytes</strong> (CH₃COOH): steep rise near zero — Λ°m found via Kohlrausch's Law.</p>
+  </div>
+
   <div class="trick-box">
     <h4>🔢 Complete Nernst Numerical Walkthrough</h4>
     <p>Q: Calculate E_cell for Zn−Cu cell. [Zn²⁺] = 0.001M, [Cu²⁺] = 0.1M. E°(Zn²⁺/Zn) = −0.76V, E°(Cu²⁺/Cu) = +0.34V.</p>
@@ -635,6 +692,94 @@
       <tr><td><strong>Examples</strong></td><td>Decomposition of NH₃ on Pt surface; decomposition of HI on Au; enzyme-catalysed reactions at high substrate concentration</td><td>Radioactive decay; hydrolysis of alkyl halides in dilute alkali</td></tr>
     </tbody>
   </table>
+
+  <!-- ── Half-Life Graphs: Zero Order vs First Order ── -->
+  <div style="background:#fff;border:1px solid var(--sand-200);border-radius:12px;padding:1rem 1.25rem;margin:1rem 0 1.25rem">
+    <h4 style="font-family:'Newsreader',serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">📈 Half-Life: Zero Order vs First Order</h4>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+
+      <!-- Zero Order: [A] vs t -->
+      <div style="flex:1;min-width:180px">
+        <p style="font-size:.72rem;font-weight:700;color:#ea580c;text-align:center;margin-bottom:.35rem">Zero Order — [A] vs t</p>
+        <svg viewBox="0 0 220 170" style="width:100%;max-width:220px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+          <!-- Axes -->
+          <line x1="40" y1="10" x2="40" y2="140" stroke="#44403c" stroke-width="1.2"/>
+          <line x1="40" y1="140" x2="210" y2="140" stroke="#44403c" stroke-width="1.2"/>
+          <text x="12" y="80" fill="#44403c" font-size="9" font-family="Lato,sans-serif" font-weight="700" transform="rotate(-90,12,80)" text-anchor="middle">[A]</text>
+          <text x="125" y="158" fill="#44403c" font-size="9" font-family="Lato,sans-serif" font-weight="700" text-anchor="middle">Time (t)</text>
+
+          <!-- [A]₀ label -->
+          <text x="36" y="28" fill="#78716c" font-size="8" font-family="Lato,sans-serif" text-anchor="end">[A]₀</text>
+          <line x1="38" y1="25" x2="40" y2="25" stroke="#78716c" stroke-width="1"/>
+
+          <!-- Straight line: [A] = [A]₀ - kt -->
+          <line x1="43" y1="25" x2="190" y2="140" stroke="#ea580c" stroke-width="2.5"/>
+
+          <!-- t½ markers -->
+          <!-- First t½ at midpoint [A]₀/2 -->
+          <line x1="40" y1="82" x2="116" y2="82" stroke="#78716c" stroke-width=".7" stroke-dasharray="3,2"/>
+          <line x1="116" y1="82" x2="116" y2="140" stroke="#78716c" stroke-width=".7" stroke-dasharray="3,2"/>
+          <text x="36" y="86" fill="#78716c" font-size="7" font-family="Lato,sans-serif" text-anchor="end">[A]₀/2</text>
+          <text x="116" y="150" fill="#ea580c" font-size="7.5" font-family="Lato,sans-serif" font-weight="700" text-anchor="middle">t½</text>
+
+          <!-- Second t½ — [A]₀/4 -->
+          <line x1="40" y1="111" x2="153" y2="111" stroke="#78716c" stroke-width=".5" stroke-dasharray="2,2"/>
+          <line x1="153" y1="111" x2="153" y2="140" stroke="#78716c" stroke-width=".5" stroke-dasharray="2,2"/>
+
+          <!-- Brace showing t½ decreases -->
+          <line x1="43" y1="145" x2="116" y2="145" stroke="#ea580c" stroke-width="1"/>
+          <line x1="116" y1="145" x2="153" y2="145" stroke="#9333ea" stroke-width="1"/>
+          <text x="80" y="163" fill="#ea580c" font-size="6.5" font-family="Lato,sans-serif" text-anchor="middle">1st t½</text>
+          <text x="135" y="163" fill="#9333ea" font-size="6.5" font-family="Lato,sans-serif" text-anchor="middle">2nd t½</text>
+          <text x="155" y="163" fill="#9333ea" font-size="6" font-family="Lato,sans-serif">(shorter!)</text>
+
+          <!-- Slope label -->
+          <text x="130" y="65" fill="#ea580c" font-size="8" font-family="Lato,sans-serif" font-weight="700" transform="rotate(-38,130,65)">slope = −k</text>
+        </svg>
+        <p style="font-size:.65rem;color:var(--ink-3);text-align:center;margin-top:.3rem">Straight line. t½ = [A]₀/2k<br><strong>t½ decreases</strong> with each successive half-life</p>
+      </div>
+
+      <!-- First Order: [A] vs t -->
+      <div style="flex:1;min-width:180px">
+        <p style="font-size:.72rem;font-weight:700;color:#2563eb;text-align:center;margin-bottom:.35rem">First Order — [A] vs t</p>
+        <svg viewBox="0 0 220 170" style="width:100%;max-width:220px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+          <!-- Axes -->
+          <line x1="40" y1="10" x2="40" y2="140" stroke="#44403c" stroke-width="1.2"/>
+          <line x1="40" y1="140" x2="210" y2="140" stroke="#44403c" stroke-width="1.2"/>
+          <text x="12" y="80" fill="#44403c" font-size="9" font-family="Lato,sans-serif" font-weight="700" transform="rotate(-90,12,80)" text-anchor="middle">[A]</text>
+          <text x="125" y="158" fill="#44403c" font-size="9" font-family="Lato,sans-serif" font-weight="700" text-anchor="middle">Time (t)</text>
+
+          <!-- [A]₀ label -->
+          <text x="36" y="28" fill="#78716c" font-size="8" font-family="Lato,sans-serif" text-anchor="end">[A]₀</text>
+          <line x1="38" y1="25" x2="40" y2="25" stroke="#78716c" stroke-width="1"/>
+
+          <!-- Exponential decay curve -->
+          <path d="M43,25 Q60,35 80,60 Q100,85 125,105 Q155,122 190,132" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+
+          <!-- t½ markers — all equal width! -->
+          <!-- First t½: [A]₀ → [A]₀/2 -->
+          <line x1="40" y1="82" x2="95" y2="82" stroke="#78716c" stroke-width=".7" stroke-dasharray="3,2"/>
+          <line x1="95" y1="82" x2="95" y2="140" stroke="#78716c" stroke-width=".7" stroke-dasharray="3,2"/>
+          <text x="36" y="86" fill="#78716c" font-size="7" font-family="Lato,sans-serif" text-anchor="end">[A]₀/2</text>
+
+          <!-- Second t½: [A]₀/2 → [A]₀/4 -->
+          <line x1="40" y1="111" x2="150" y2="111" stroke="#78716c" stroke-width=".5" stroke-dasharray="2,2"/>
+          <line x1="150" y1="111" x2="150" y2="140" stroke="#78716c" stroke-width=".5" stroke-dasharray="2,2"/>
+          <text x="36" y="115" fill="#78716c" font-size="7" font-family="Lato,sans-serif" text-anchor="end">[A]₀/4</text>
+
+          <!-- Equal t½ brackets -->
+          <line x1="43" y1="145" x2="95" y2="145" stroke="#2563eb" stroke-width="1"/>
+          <line x1="95" y1="145" x2="150" y2="145" stroke="#2563eb" stroke-width="1"/>
+          <text x="69" y="163" fill="#2563eb" font-size="6.5" font-family="Lato,sans-serif" text-anchor="middle">1st t½</text>
+          <text x="122" y="163" fill="#2563eb" font-size="6.5" font-family="Lato,sans-serif" text-anchor="middle">2nd t½</text>
+
+          <!-- Equal sign -->
+          <text x="95" y="153" fill="#16a34a" font-size="8" font-family="Lato,sans-serif" font-weight="900" text-anchor="middle">=</text>
+        </svg>
+        <p style="font-size:.65rem;color:var(--ink-3);text-align:center;margin-top:.3rem">Exponential decay. t½ = 0.693/k<br><strong>t½ is constant</strong> (independent of [A]₀)</p>
+      </div>
+    </div>
+  </div>
 
   <!-- PSEUDO FIRST-ORDER -->
   <h3 style="font-family:'Newsreader',serif;font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .75rem">🔀 Pseudo First-Order Reactions</h3>
