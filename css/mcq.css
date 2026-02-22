@@ -468,9 +468,14 @@ body.test-mode .show-answer-btn { display: none }
 
 /* ─── Mobile ─────────────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Compact chapter nav */
-  .ch-nav-inner { max-width: 100%; padding: 0 .5rem; }
-  .ch-btn { padding: .3rem .65rem; font-size: .68rem; }
+  /* Replace chapter nav tabs with dropdown */
+  .ch-nav-inner { display: none; }
+  .ch-nav .mobile-select { display: block; margin: 0 auto; max-width: 95%; }
+  .ch-nav { padding: .4rem .5rem; }
+
+  /* Replace question dots with dropdown */
+  .q-nav .q-dot, .q-nav .section-label { display: none; }
+  .q-nav .mobile-select { display: block; }
 
   /* Compact chapter heading */
   .ch-heading { font-size: 1rem; margin-bottom: .85rem; }

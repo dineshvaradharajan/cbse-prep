@@ -512,9 +512,11 @@
   .q-text { font-size: .85rem; margin-bottom: 1rem; }
   .option-btn { padding: .6rem .75rem; font-size: .78rem; border-radius: 8px; }
 
-  /* Compact nav bar */
+  /* Replace nav dots with dropdown */
+  .q-nav-bar .q-dot { display: none; }
+  .q-nav-bar .nav-legend { display: none; }
   .q-nav-bar { padding: .5rem .75rem; }
-  .q-dot { min-width: 26px; height: 26px; font-size: .65rem; }
+  .q-nav-bar .mobile-select { display: block; }
 
   /* Compact result */
   .result-hero { padding: 1.25rem 1rem; border-radius: 12px; }

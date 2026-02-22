@@ -112,6 +112,10 @@ function buildQNav() {
     dot.onclick = () => { currentQ = i; renderQuestion(); };
     bar.insertBefore(dot, legend);
   });
+  // Build mobile dropdown
+  if (window.buildQDotDropdown) {
+    window.buildQDotDropdown(bar, activeTest.questions.length, currentQ, (i) => { currentQ = i; renderQuestion(); });
+  }
   updateQNav();
 }
 
@@ -131,6 +135,19 @@ function updateQNav() {
     }
     if (i === currentQ) dot.classList.add('active');
   });
+
+  // Sync mobile dropdown
+  if (window.updateQDotDropdown) {
+    const statuses = activeTest.questions.map((q, i) => {
+      if (submitted) {
+        const sel = selections[q.id];
+        if (!sel) return 'skipped';
+        return sel === q.answer ? 'correct' : 'wrong';
+      }
+      return selections[q.id] ? 'answered' : '';
+    });
+    window.updateQDotDropdown(document.getElementById('q-nav-bar'), currentQ, statuses);
+  }
 
   // progress bar
   const answered = Object.keys(selections).length;

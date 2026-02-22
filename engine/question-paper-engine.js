@@ -152,6 +152,10 @@ function buildNav() {
     dot.onclick = () => { getState().currentQuestion = i; renderQuestion(); };
     nav.appendChild(dot);
   });
+  // Build mobile dropdown
+  if (window.buildQDotDropdown) {
+    window.buildQDotDropdown(nav, questions.length, getState().currentQuestion, (i) => { getState().currentQuestion = i; renderQuestion(); });
+  }
   updateQNav();
 }
 
@@ -171,6 +175,18 @@ function updateQNav() {
       dot.classList.add('answered');
     }
   });
+  // Sync mobile dropdown
+  if (window.updateQDotDropdown) {
+    const statuses = questions.map((q, i) => {
+      if (state.submitted) {
+        const sel = state.selections[q.id];
+        if (sel === undefined) return '';
+        return letters[sel] === q.answer ? 'correct' : 'wrong';
+      }
+      return state.selections[q.id] !== undefined ? 'answered' : '';
+    });
+    window.updateQDotDropdown(document.getElementById('qNav'), state.currentQuestion, statuses);
+  }
 }
 
 function renderQuestion() {
