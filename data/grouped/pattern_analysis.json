@@ -1,0 +1,2761 @@
+{
+  "2_mark": {
+    "physical": {
+      "total_questions": 70,
+      "frequent_topics": [
+        {
+          "topic": "Rate Law / Order / Molecularity",
+          "frequency": 17,
+          "years_asked": [
+            2014,
+            2016,
+            2019,
+            2023,
+            2024,
+            2025
+          ],
+          "total_variations": 17,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "Write two differences between 'order of reaction' and 'molecularity of reaction'."
+            },
+            {
+              "year": 2014,
+              "question_preview": "Explain the following terms: (i) Rate constant (k) (ii) Half life period of reaction (t 1/2 )."
+            },
+            {
+              "year": 2016,
+              "question_preview": "For a reaction: 2NH3(g) --(Pt catalyst)--> N2(g) + 3H2(g); Rate = k; (i) Write the order and molecularity of this reaction. (ii) Write the unit of k."
+            },
+            {
+              "year": 2016,
+              "question_preview": "For a reaction: H2 + Cl2 --(hv)--> 2HCl; Rate = k; (i) Write the order and molecularity of this reaction. (ii) Write the unit of k."
+            },
+            {
+              "year": 2019,
+              "question_preview": "For a reaction, 2H2O2 --(I-/alkaline medium)--> 2H2O + O2, the proposed mechanism is: (1) H2O2 + I- -> H2O + IO- (slow), (2) H2O2 + IO- -> H2O + I- + O2 (fast). (i) Write rate law of the reaction. (ii"
+            }
+          ]
+        },
+        {
+          "topic": "Raoults Law / Vapour Pressure / Ideal Solutions",
+          "frequency": 10,
+          "years_asked": [
+            2014,
+            2015,
+            2016,
+            2017,
+            2019,
+            2020,
+            2023,
+            2025
+          ],
+          "total_variations": 9,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "Define an ideal solution and write one of its characteristics."
+            },
+            {
+              "year": 2014,
+              "question_preview": "State Raoult's law for the solution containing volatile components. What is the similarity between Raoult's law and Henry's law?"
+            },
+            {
+              "year": 2015,
+              "question_preview": "What is meant by positive deviations from Raoult's law? Give an example. What is the sign of &Delta; mix H for positive deviation? OR Define azeotropes. What type of azeotrope is formed by positive de"
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) Gas (A) is more soluble in water than Gas (B) at the same temperature. Which one of the two gases will have the higher value of KH (Henry's constant) and why? (ii) In non-ideal solution, what type"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Define the following terms: (i) Ideal solution (ii) Molarity (M)"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Solutions)",
+          "frequency": 7,
+          "years_asked": [
+            2014,
+            2019,
+            2024
+          ],
+          "total_variations": 7,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "Calculate the mass of compound (molar mass = 256 g mol 1 ) to be dissolved in 75 g of benzene to lower its freezing point by 0.48 K (K f = 5.12 K kg mol 1 )."
+            },
+            {
+              "year": 2019,
+              "question_preview": "Give reasons: (a) Cooking is faster in pressure cooker than in cooking pan. (b) Red Blood Cells (RBC) shrink when placed in saline water but swell in distilled water."
+            },
+            {
+              "year": 2019,
+              "question_preview": "Give reasons: (a) A decrease in temperature is observed on mixing ethanol and acetone. (b) Potassium chloride solution freezes at a lower temperature than water."
+            },
+            {
+              "year": 2019,
+              "question_preview": "Give reasons: (a) An increase in temperature is observed on mixing chloroform and acetone. (b) Aquatic animals are more comfortable in cold water than in warm water."
+            },
+            {
+              "year": 2024,
+              "question_preview": "18 g of a non-volatile solute is dissolved in 200 g of H2O freezes at 272.07 K. Calculate the molecular mass of solute. (Kf for water = 1.86 K kg mol^-1)"
+            }
+          ]
+        },
+        {
+          "topic": "Conductance / Kohlrausch Law",
+          "frequency": 6,
+          "years_asked": [
+            2013,
+            2014,
+            2017,
+            2024
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "The conductivity of 0.20 M solution of KCl at 298K is 0.025 S cm 1 . Calculate its molar conductivity."
+            },
+            {
+              "year": 2014,
+              "question_preview": "State the Kohlrausch law of independent migration of ions. Why does the conductivity of a solution decrease with dilution?"
+            },
+            {
+              "year": 2014,
+              "question_preview": "Define the following terms: (i) Fuel cell (ii) Limiting molar conductivity (&Lambda; 0 m )"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Calculate the degree of dissociation ( ) of acetic acid if its molar conductivity (&Lambda; m ) is 39.05 S cm 2 mol -1 . Given (H + ) = 349.6 S cm 2 mol -1 and (CH 3 COO - ) = 40.9 S cm 2 mol -1 ."
+            },
+            {
+              "year": 2024,
+              "question_preview": "Resistance of a conductivity cell filled with 0.2 mol L^-1 KCl solution is 200 ohm. If the resistance of the same cell when filled with 0.05 mol L^-1 KCl solution is 620, calculate the conductivity an"
+            }
+          ]
+        },
+        {
+          "topic": "Solid State / Crystal Structure / Defects",
+          "frequency": 4,
+          "years_asked": [
+            2014,
+            2017
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "An element with density 11.2 g cm 3 forms f.c.c. lattice with edge length 4 10 8 cm. Calculate the atomic mass of the element. (Given N A = 6.022 10 23 mol 1 )"
+            },
+            {
+              "year": 2014,
+              "question_preview": "Examine the given defective crystal: A + B A + B A + B O B A + B A + B A + O A + B A + B A + B Answer the following questions: (i) What type of stoichiometric defect is shown by this crystal? (ii) How"
+            },
+            {
+              "year": 2014,
+              "question_preview": "An element with density 2.8 g cm 3 forms a f.c.c. unit cell with edge length 4 10 8 cm. Calculate the molar mass of the element. (Given N A = 6.022 10 23 mol 1 )"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Calculate the number of unit cells in 8.1 g of aluminium if it crystallizes in a face-centred cubic (f.c.c.) structure. (Atomic mass of Al = 27 g mol -1 )"
+            }
+          ]
+        },
+        {
+          "topic": "Electrolysis / Faradays Laws",
+          "frequency": 4,
+          "years_asked": [
+            2023,
+            2024
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2023,
+              "question_preview": "(a) (i) What should be the signs (positive/negative) for E°cell and Delta G° for a spontaneous redox reaction occurring under standard conditions? (ii) State Faraday's first law of electrolysis."
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) Give reasons: (i) Mercury cell delivers a constant potential during its life time. (ii) In the experimental determination of electrolytic conductance, Direct Current (DC) is not used."
+            },
+            {
+              "year": 2024,
+              "question_preview": "State: (a) Kohlrausch law of independent migration of ions. (b) Faraday's first law of electrolysis."
+            },
+            {
+              "year": 2024,
+              "question_preview": "Define the following terms: (a) Faraday's second law of electrolysis (b) Corrosion"
+            }
+          ]
+        },
+        {
+          "topic": "Adsorption / Colloids / Emulsions",
+          "frequency": 3,
+          "years_asked": [
+            2013,
+            2020
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Write the dispersed phase and dispersion medium of the following colloidal systems: (i) Smoke (ii) Milk"
+            },
+            {
+              "year": 2013,
+              "question_preview": "Write the differences between physisorption and chemisorption with respect to the following: (i) Specificity (ii) Temperature dependence (iii) Reversibility (iv) Enthalpy change"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Define adsorption with an example. What is the role of adsorption in heterogeneous catalysis? OR Define Brownian movement. What is the cause of Brownian movement in colloidal particles? How is it resp"
+            }
+          ]
+        },
+        {
+          "topic": "Colligative Properties (Boiling/Freezing Point, Osmotic Pressure)",
+          "frequency": 3,
+          "years_asked": [
+            2017,
+            2020
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "Define the following terms: (i) Colligative properties (ii) Molality (m)"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Define the following terms: (i) Abnormal molar mass (ii) Van't Hoff factor (i)"
+            },
+            {
+              "year": 2020,
+              "question_preview": "What happens when (i) a pressure greater than osmotic pressure is applied on the solution side separated from solvent by a semipermeable membrane? (ii) acetone is added to pure ethanol?"
+            }
+          ]
+        },
+        {
+          "topic": "Electrochemical / Galvanic Cell",
+          "frequency": 3,
+          "years_asked": [
+            2017
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "Write the name of the cell which is generally used in hearing aids. Write the reactions taking place at the anode and the cathode of this cell."
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write the name of the cell which is generally used in transistors. Write the reactions taking place at the anode and the cathode of this cell."
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "(a) Why on dilution the molar conductivity (Lambda_m) of CH3COOH increases very fast, while that of CH3COONa increases gradually? (b) What happens if external potential applied becomes greater than E°"
+            }
+          ]
+        },
+        {
+          "topic": "Carbohydrates (Glucose, Sucrose, Starch)",
+          "frequency": 2,
+          "years_asked": [
+            2013,
+            2018
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "18 g of glucose, C 6 H 12 O 6 (Molar Mass = 180 g mol 1 ) is dissolved in 1 kg of water in a sauce pan. At what temperature will this solution boil? (K b for water = 0.52 K kg mol 1 , boiling point of"
+            },
+            {
+              "year": 2018,
+              "question_preview": "Calculate the freezing point of a solution containing 60 g of glucose (Molar mass = 180 g mol -1 ) in 250 g of water. (K f of water = 1.86 K kg mol -1 )"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Chemical Kinetics)",
+          "frequency": 2,
+          "years_asked": [
+            2014,
+            2018
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "For a chemical reaction R P, the variation in the concentration (R) vs. time (t) plot is given as a straight line with negative slope. (i) Predict the order of the reaction. (ii) What is the slope of "
+            },
+            {
+              "year": 2018,
+              "question_preview": "For the reaction 2N 2 O 5 (g) 4NO 2 (g) + O 2 (g), the rate of formation of NO 2 is 2.8 x 10 -3 M s -1 . Calculate the rate of disappearance of N 2 O 5 (g)."
+            }
+          ]
+        },
+        {
+          "topic": "Nernst Equation / EMF Calculation",
+          "frequency": 2,
+          "years_asked": [
+            2015,
+            2023
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "(a) Following reactions occur at cathode during electrolysis of aqueous silver chloride solution: Ag + (aq) + e Ag(s) E = +0.80 V H + (aq) + e &frac12;H 2 (g) E = 0.00 V On the basis of their standard"
+            },
+            {
+              "year": 2023,
+              "question_preview": "19 (OR): Calculate the emf of the following cell at 298 K: Fe(s) | Fe2+ (0.01M) || H+(1M) | H2(g) (1 bar), Pt(s) Given E°cell = 0.44 V."
+            }
+          ]
+        },
+        {
+          "topic": "Other (Electrochemistry)",
+          "frequency": 2,
+          "years_asked": [
+            2016,
+            2023
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "From the given cells: Lead storage cell, Mercury cell, Fuel cell and Dry cell. Answer the following: (i) Which cell is used in hearing aids? (ii) Which cell was used in Apollo Space Programme? (iii) W"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(b) Define fuel cell with an example. What advantages do the fuel cells have over primary and secondary batteries? (OR)"
+            }
+          ]
+        },
+        {
+          "topic": "Concentration Terms / Henrys Law",
+          "frequency": 2,
+          "years_asked": [
+            2019,
+            2020
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "State Henry's law and write its two applications."
+            },
+            {
+              "year": 2020,
+              "question_preview": "State Henry's law. Calculate the solubility of CO2 in water at 298K under 760 mm Hg. (KH for CO2 in water at 298 K is 1.25 x 10^6 mm Hg)"
+            }
+          ]
+        }
+      ]
+    },
+    "inorganic": {
+      "total_questions": 66,
+      "frequent_topics": [
+        {
+          "topic": "IUPAC Naming of Coordination Compounds",
+          "frequency": 21,
+          "years_asked": [
+            2014,
+            2015,
+            2016,
+            2017,
+            2019,
+            2020,
+            2023,
+            2025
+          ],
+          "total_variations": 20,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "Write the IUPAC name of the complex [Cr(NH 3 ) 4 Cl 2 ] + . What type of isomerism does it exhibit?"
+            },
+            {
+              "year": 2015,
+              "question_preview": "(i) Write down the IUPAC name of the following complex: [Cr(NH 3 ) 2 Cl 2 (en)]Cl (en = ethylenediamine) (ii) Write the formula for the following complex: Pentaamminenitrito-O-Cobalt(III)."
+            },
+            {
+              "year": 2016,
+              "question_preview": "When a co-ordination compound CrCl3.6NH3 is mixed with AgNO3, 2 moles of AgCl are precipitated per mole of the compound. Write (i) Structural formula of the complex. (ii) IUPAC name of the complex."
+            },
+            {
+              "year": 2016,
+              "question_preview": "When a co-ordination compound CoCl3.6NH3 is mixed with AgNO3, 3 moles of AgCl are precipitated per mole of the compound. Write (i) Structural formula of the complex. (ii) IUPAC name of the complex."
+            },
+            {
+              "year": 2017,
+              "question_preview": "Using IUPAC norms write formulae for the following: (a) Sodium dicyanidoaurate(I) (b) Tetraamminechioridonitrito-N-platinum(IV) sulphate"
+            }
+          ]
+        },
+        {
+          "topic": "Other (p-Block Elements)",
+          "frequency": 13,
+          "years_asked": [
+            2013,
+            2014,
+            2017,
+            2018
+          ],
+          "total_variations": 13,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "What happens when (i) PCl 5 is heated? (ii) H 3 PO 3 is heated? Write the reactions involved."
+            },
+            {
+              "year": 2014,
+              "question_preview": "Complete the following chemical equations: (i) Ca 3 P 2 + H 2 O (ii) Cu + H 2 SO 4 (conc.)"
+            },
+            {
+              "year": 2014,
+              "question_preview": "Arrange the following in order of property indicated against each set: (i) HF, HCl, HBr, HI: increasing bond dissociation enthalpy (ii) H 2 O, H 2 S, H 2 Se, H 2 Te: increasing acidic character."
+            },
+            {
+              "year": 2017,
+              "question_preview": "Complete the following reactions: (i) NH 3 + 3Cl 2 (excess) (ii) XeF 6 + 2H 2 O OR What happens when (i) (NH 4 ) 2 Cr 2 O 7 is heated? (ii) H 3 PO 3 is heated? Write the equation."
+            },
+            {
+              "year": 2017,
+              "question_preview": "Draw the structures of the following: (i) H 2 S 2 O 7 (ii) XeF 6"
+            }
+          ]
+        },
+        {
+          "topic": "Other (d&f Block)",
+          "frequency": 12,
+          "years_asked": [
+            2013,
+            2016,
+            2018,
+            2019,
+            2020,
+            2025
+          ],
+          "total_variations": 11,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "(a) Which metal in the first transition series (3d series) exhibits +1 oxidation state most frequently and why? (b) Which of the following cations are coloured in aqueous solutions and why? Sc 3+ , V "
+            },
+            {
+              "year": 2016,
+              "question_preview": "Write the structures of the following: (i) BrF3 (ii) XeF4. OR What happens when: (i) SO2 gas is passed through an aqueous solution of Fe3+ salt? (ii) XeF4 reacts with SbF5?"
+            },
+            {
+              "year": 2018,
+              "question_preview": "Complete and balance the following chemical equations: (a) Fe 2+ + MnO 4 - + H + (b) MnO 4 - + H 2 O + I -"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write the balanced chemical equations for the following process: (i) XeF2 undergoes hydrolysis. (ii) MnO2 is heated with concentrated HCl."
+            },
+            {
+              "year": 2019,
+              "question_preview": "Arrange the following in order of property indicated for each set: (i) H2O, H2S, H2Se, H2Te - increasing acidic character. (ii) HF, HCl, HBr, HI - decreasing bond enthalpy."
+            }
+          ]
+        },
+        {
+          "topic": "VBT / Hybridization / Magnetic Moment",
+          "frequency": 4,
+          "years_asked": [
+            2019,
+            2025
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "Out of [CoF6]3- and [Co(en)3]3+, which one complex is: (i) Paramagnetic, (ii) More stable, (iii) Inner orbital complex and (iv) High spin complex? (Atomic number of Co = 27)"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Out of [CoF6]3- and [Co(C2O4)3]3-, which one complex is: (i) Diamagnetic, (ii) More stable, (iii) Outer orbital complex and (iv) Low spin complex? (Atomic number of Co = 27)"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write the hybridization and magnetic character of the following complexes: (i) [Fe(H2O)6]2+ (ii) [Fe(CO)5]"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Explain [Co(NH3)6]3+ is an inner orbital complex whereas [Ni(NH3)6]2+ is an outer orbital complex. [At. No. Co = 27, Ni = 28]"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Coordination Compounds)",
+          "frequency": 4,
+          "years_asked": [
+            2019,
+            2020,
+            2023
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "Define the following terms with a suitable example: (a) Chelate complex (b) Ambidentate ligand"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Define with suitable example: (a) Polydentate ligand (b) Homoleptic complex"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Discuss the nature of bonding in metal carbonyls."
+            },
+            {
+              "year": 2023,
+              "question_preview": "(b) (i) What is a chelate complex? Give one example. (ii) What are heteroleptic complexes? Give one example. (OR)"
+            }
+          ]
+        },
+        {
+          "topic": "Solid State / Crystal Structure / Defects",
+          "frequency": 3,
+          "years_asked": [
+            2016,
+            2019
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "When chromite ore FeCr2O4 is fused with NaOH in presence of air, a yellow coloured compound (A) is obtained which on acidification with dilute sulphuric acid gives a compound (B). Compound (B) on reac"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Using valence bond theory, write the hybridization and magnetic character of [Fe(CN)6]4-. (Atomic no. of Fe = 26). (b) Write the electronic configuration of d6 on the basis of crystal field theory"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Although both [NiCl4]2- and [Ni(CO)4] have sp3 hybridisation yet [NiCl4]2- is paramagnetic and [Ni(CO)4] is diamagnetic. Give reason. (b) Write electronic configuration of d5 by crystal field theo"
+            }
+          ]
+        },
+        {
+          "topic": "Transition Metal Properties",
+          "frequency": 2,
+          "years_asked": [
+            2015,
+            2025
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "What are the transition elements? Write two characteristics of the transition elements."
+            },
+            {
+              "year": 2025,
+              "question_preview": "Examine the following observations: (a) Transition elements generally form coloured compounds. (b) Zinc is not regarded as a transition element."
+            }
+          ]
+        },
+        {
+          "topic": "Conversion / Preparation Reactions",
+          "frequency": 2,
+          "years_asked": [
+            2019,
+            2020
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "(a) Write two poisonous gases prepared from chlorine gas. (b) Why does Cu2+ solution give blue colour on reaction with ammonia?"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Write the principal of the following refining methods: (a) vapour phase refining (b) chromatography. OR Write chemical equations involved to obtain: (a) Cu from Cu2S (b) Ag from [Ag(CN)2]- complex"
+            }
+          ]
+        },
+        {
+          "topic": "SN1 vs SN2 Mechanisms",
+          "frequency": 2,
+          "years_asked": [
+            2025
+          ],
+          "total_variations": 1,
+          "sample_variations": [
+            {
+              "year": 2025,
+              "question_preview": "Complete and balance the following chemical equations: (a) 8MnO4- + 3S2O3^2- + H2O -> (b) Cr2O7^2- + 3 Sn2+ + 14H+ ->"
+            }
+          ]
+        }
+      ]
+    },
+    "organic": {
+      "total_questions": 70,
+      "frequent_topics": [
+        {
+          "topic": "Carbohydrates (Glucose, Sucrose, Starch)",
+          "frequency": 12,
+          "years_asked": [
+            2020,
+            2023,
+            2024,
+            2025
+          ],
+          "total_variations": 8,
+          "sample_variations": [
+            {
+              "year": 2020,
+              "question_preview": "Write the reactions showing the presence of following in the open structure of glucose: (i) a carbonyl group (ii) Straight chain with six carbon atoms"
+            },
+            {
+              "year": 2023,
+              "question_preview": "Give the reaction of glucose with hydrogen cyanide. Presence of which group is confirmed by this reaction?"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Write the reaction involved when D-glucose is treated with the following reagents: (a) HCN (b) Br2 water"
+            },
+            {
+              "year": 2025,
+              "question_preview": "What are the hydrolysis products of: (a) Sucrose (b) Lactose"
+            },
+            {
+              "year": 2024,
+              "question_preview": "Classify the following sugars into monosaccharides and disaccharides: Galactose, Glucose, Lactose and Maltose"
+            }
+          ]
+        },
+        {
+          "topic": "SN1 vs SN2 Mechanisms",
+          "frequency": 6,
+          "years_asked": [
+            2013,
+            2014,
+            2023,
+            2024
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Chlorobenzene is extremely less reactive towards a nucleophilic substitution reaction. Give two reasons for the same."
+            },
+            {
+              "year": 2014,
+              "question_preview": "(i) Which alkyl halide from the following pair is chiral and undergoes faster S N 2 reaction? (a) CH 3 CH 2 CH 2 Br (1-bromopropane) and (b) CH 3 CH(Br)CH 3 (2-bromopropane) (ii) Out of S N 1 and S N "
+            },
+            {
+              "year": 2023,
+              "question_preview": "Why haloarenes are not reactive towards nucleophilic substitution reaction? Give two reasons."
+            },
+            {
+              "year": 2024,
+              "question_preview": "(a) Which compound in the given pair would undergo SN2 reaction at a faster rate and why? CH3-CH2-I and CH3-CH2-Br (b) Arrange the following compounds in the increasing order of their boiling points: "
+            },
+            {
+              "year": 2024,
+              "question_preview": "Which of the following compounds will react more rapidly by SN2 reaction and why? (a) CH3C(CH3)2Br or CH3CH2CHCH3Br (b) Arrange the following compounds in the increasing order of their boiling points:"
+            }
+          ]
+        },
+        {
+          "topic": "Phenol Reactions / Acidity",
+          "frequency": 5,
+          "years_asked": [
+            2013,
+            2014,
+            2017,
+            2023,
+            2025
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "How will you convert: (i) Propene to Propan-2-ol? (ii) Phenol to 2, 4, 6-trinitrophenol?"
+            },
+            {
+              "year": 2014,
+              "question_preview": "Draw the structure of major monohalo product in each of the following reactions: (i) Phenol + SOCl 2 (ii) Cyclohexene + HBr [Peroxide]"
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) Arrange the following compounds in increasing order of their acid strength: p-cresol, p-nitrophenol, phenol. (b) Write the mechanism (using curved arrow notation) of the following reaction: CH 2 ="
+            },
+            {
+              "year": 2023,
+              "question_preview": "For the pair phenol and cyclohexanol, answer the following: (a) Why is phenol more acidic than cyclohexanol? (b) Give one chemical test to distinguish between the two."
+            },
+            {
+              "year": 2025,
+              "question_preview": "Give reasons for the following observations: (a) p-Chloronitrobenzene reacts with (aq)NaOH at 443 K to give p-nitrophenol whereas chlorobenzene reacts with the same reagent at 623 K and 300 atm. (b) M"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Aldehydes Ketones Carboxylic Acids)",
+          "frequency": 5,
+          "years_asked": [
+            2015,
+            2017,
+            2019
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "Name the reagents used in the following reactions: (i) CH 3 CO CH 3 CH 3 CH(OH) CH 3 (ii) C 6 H 5 CH 2 CH 3 C 6 H 5 COO K +"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write the reactions involved in the following: (i) Hell-Volhard-Zelinsky reaction (ii) Decarboxylation reaction"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write structures of main compounds A and B: (i) CH3CH2CN --(CH3MgBr/H3O+)--> A --(LiAlH4)--> B. (ii) Toluene --(i) CrO3/(CH3CO)2O, (ii) H3O+)--> A --(H2N-NH2)--> B."
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write structures of A and B: (a) CH3CH2OH --(PCC)--> A --(CH3OH/dry HCl(g))--> B. (b) C6H5COCH3 --(NaOI)--> A + B."
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "Predict the reagent for carrying out the following transformations: (a) Benzoyl chloride to Benzaldehyde (b) Ethanal to 3-hydroxy butanal (c) Ethanoic acid to 2-chloroethanoic acid"
+            }
+          ]
+        },
+        {
+          "topic": "Nucleophilic Addition / Aldol / Cannizzaro",
+          "frequency": 5,
+          "years_asked": [
+            2017,
+            2024,
+            2025
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "Write the reactions involved in the following reaction: (i) Clemmensen reduction (ii) Cannizzaro reaction"
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "Arrange the following in the increasing order of their property indicated: (a) Ethanal, Propanone, Propanal, Butanone (reactivity towards nucleophilic addition) (b) 4-Nitrobenzoic acid, benzoic acid, "
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "Explain the following reactions: (a) Wolff-Kishner reduction (b) Cannizzaro reaction"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Would you expect benzaldehyde to be more reactive or less reactive in nucleophilic addition reactions than propanal? Justify your answer."
+            },
+            {
+              "year": 2024,
+              "question_preview": "(a) Write the stepwise mechanism of nucleophilic addition the carbonyl compounds reactions. OR (b) How will you convert the following: (i) Toluene to benzoic acid. (ii) Ethanol to 3-Hydroxybutanal"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Haloalkanes)",
+          "frequency": 4,
+          "years_asked": [
+            2014,
+            2020
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "Write the mechanism of the following reaction: CH 3 CH 2 OH [HBr] CH 3 CH 2 Br + H 2 O"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Draw the structures of the following: (i) H2S2O8 (ii) XeF6"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Draw the structures of the following: (i) H2S2O7 (ii) BrF5"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Draw the structures of the following: (i) HClO4 (ii) XeOF4"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Biomolecules)",
+          "frequency": 4,
+          "years_asked": [
+            2020
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2020,
+              "question_preview": "How do antiseptics differ from disinfectants? Name a substance which can be used as a disinfectant as well as an antiseptic."
+            },
+            {
+              "year": 2020,
+              "question_preview": "Define the following terms with a suitable example in each: (i) Antibiotics (ii) Antiseptics"
+            }
+          ]
+        },
+        {
+          "topic": "p-Block Element Properties/Reactions",
+          "frequency": 3,
+          "years_asked": [
+            2016,
+            2019,
+            2025
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "Write the mechanism of the following reaction: 2CH3CH2OH --(Conc. H2SO4, 413K)--> CH3CH2-O-CH2-CH3."
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write structures of compounds A and B: (a) C6H5COOH --(PCl5)--> A --(H2/Pd-BaSO4)--> B. (b) CH3CN --(i) CH3MgBr, (ii) H3O+)--> A --(Zn(Hg)/conc. HCl)--> B."
+            },
+            {
+              "year": 2025,
+              "question_preview": "(a) In the following pair of halogen compounds, which compound undergoes SN1 reaction faster and why? 2-Chloro-2-methylpropane and 3-Chloropropane. (b) Arrange the following compounds in increasing or"
+            }
+          ]
+        },
+        {
+          "topic": "Amines Basicity / Properties",
+          "frequency": 3,
+          "years_asked": [
+            2016,
+            2020,
+            2023
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "Write the chemical equations involved in the following reactions: (i) Hoffmann-bromamide degradation reaction. (ii) Carbylamine reaction."
+            },
+            {
+              "year": 2020,
+              "question_preview": "Identify the monomers in the following polymers: (i) [-OCH2CH2-O-C(=O)-C6H4-C(=O)-]n (ii) Melamine-formaldehyde type polymer with triazine ring and NH-CH2 linkages"
+            },
+            {
+              "year": 2023,
+              "question_preview": "Give the reaction of heating glucose with hydroxylamine. Presence of which group is confirmed by this reaction?"
+            }
+          ]
+        },
+        {
+          "topic": "Named Organic Reactions",
+          "frequency": 3,
+          "years_asked": [
+            2017,
+            2023
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "Write the equations involved in the following reactions: (i) Wolff-Kishner reduction (ii) Etard reaction"
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "Explain the following reactions: (a) Clemmensen reaction (b) Stephen reaction"
+            },
+            {
+              "year": 2023,
+              "question_preview": "Write the chemical equation involved in the following: (a) Kolbe's reaction (b) Williamson synthesis"
+            }
+          ]
+        },
+        {
+          "topic": "Nucleic Acids (DNA/RNA)",
+          "frequency": 3,
+          "years_asked": [
+            2023
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2023,
+              "question_preview": "Write two differences between DNA and RNA."
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) What is the difference between a nucleoside and nucleotide? (b) What products would be formed when a nucleotide from DNA containing thymine is hydrolysed?"
+            },
+            {
+              "year": 2023,
+              "question_preview": "What are nucleic acids? Why two strands in DNA are not identical but are complementary?"
+            }
+          ]
+        },
+        {
+          "topic": "Conversion / Preparation Reactions",
+          "frequency": 2,
+          "years_asked": [
+            2018,
+            2023
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2018,
+              "question_preview": "How do you convert the following? (a) Ethanal to Propanone (b) Toluene to Benzoic acid OR Account for the following: (a) Aromatic carboxylic acids do not undergo Friedel-Crafts reaction. (b) pK a valu"
+            },
+            {
+              "year": 2023,
+              "question_preview": "Do the following conversions in not more than two steps: (a) CH3CN to CH3-C(=O)-CH3 (acetone) (b) Benzoic acid (C6H5COOH) to Benzene (C6H6)"
+            }
+          ]
+        },
+        {
+          "topic": "Polymers (Nylon, Bakelite, Buna)",
+          "frequency": 2,
+          "years_asked": [
+            2020
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2020,
+              "question_preview": "Identify the monomers in the following polymers: (i) [-O-CH2-CH2-O-C(=O)-C6H4-C(=O)-]n (ii) [-CH2-CH(CN)-]n"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Identify the monomers in the following polymers: (i) Bakelite-type polymer with phenol-OH and CH2 linkages (ii) Nylon-type polymer with NH-(CH2)6-NH-CO-(CH2)4-CO units"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Amines)",
+          "frequency": 2,
+          "years_asked": [
+            2023,
+            2025
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2023,
+              "question_preview": "(a) (i) Draw the zwitter ion structure for sulphanilic acid. (ii) How can the activating effect of -NH2 group in aniline be controlled?"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Identify A and B in each of the following reaction sequence: (a) CH3CH2Cl --NaCN--> A --H2/Ni--> B (b) C6H5NH2 --NaNO2/HCl, 0-5C--> A --C6H5NH2/H+--> B"
+            }
+          ]
+        },
+        {
+          "topic": "Sandmeyer / Diazonium Reactions",
+          "frequency": 2,
+          "years_asked": [
+            2023,
+            2024
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2023,
+              "question_preview": "24 (OR): (b) (i) Complete the reaction with the main product formed: Benzene diazonium chloride (N2+Cl-) + CH3CH2OH -> (ii) Convert Bromoethane to Propanamine."
+            },
+            {
+              "year": 2024,
+              "question_preview": "(a) Carry out the following conversions: (i) Nitrobenzene to Aniline (ii) Aniline to Phenol OR (b) (i) Write a chemical test to distinguish between Dimethyl amine and Ethanamine. (ii) Write the produc"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3_mark": {
+    "physical": {
+      "total_questions": 72,
+      "frequent_topics": [
+        {
+          "topic": "Rate Law / Order / Molecularity",
+          "frequency": 17,
+          "years_asked": [
+            2014,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2023,
+            2024,
+            2025
+          ],
+          "total_variations": 14,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "The following data were obtained during the first order thermal decomposition of SO 2 Cl 2 at a constant volume: SO 2 Cl 2 (g) SO 2 (g) + Cl 2 (g) Experiment 1: Time = 0, Total pressure = 0.4 atm Expe"
+            },
+            {
+              "year": 2016,
+              "question_preview": "The rate constant for the first order decomposition of H2O2 is given by the following equation: log k = 14.2 - (1.0 x 10^4)/T K; Calculate Ea for this reaction and rate constant k if its half-life per"
+            },
+            {
+              "year": 2016,
+              "question_preview": "For the first order thermal decomposition reaction: C2H5Cl(g) -> C2H4(g) + HCl(g). Time/sec: 0, 300. Total pressure/atm: 0.30, 0.50. Calculate the rate constant. (Given: log 2 = 0.3010, log 3 = 0.4771"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Following data are obtained for the reaction: N 2 O 5 2NO 2 + 1/2 O 2 t/s: 0, 300, 600 [N 2 O 5 ]/mol L -1 : 1.6 x 10 -2 , 0.8 x 10 -2 , 0.4 x 10 -2 (a) Show that it follows first order reaction. (b) "
+            },
+            {
+              "year": 2017,
+              "question_preview": "A first order reaction takes 20 minutes for 25% decomposition. Calculate the time when 75% of the reaction will be completed. (Given: log 2 = 0.3010, log 3 = 0.4771, log 4 = 0.6021)"
+            }
+          ]
+        },
+        {
+          "topic": "Adsorption / Colloids / Emulsions",
+          "frequency": 12,
+          "years_asked": [
+            2014,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020
+          ],
+          "total_variations": 12,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) In reference to Freundlich adsorption isotherm, write the expression for adsorption of gases on solids in the form of an equation. (b) Write an important characteristic of lyophilic sols. (c) Base"
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) Differentiate between adsorption and absorption. (ii) Out of MgCl2 and AlCl3, which one is more effective in causing coagulation of negatively charged sol and why? (iii) Out of sulphur sol and pro"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Define the following terms: (i) Lyophilic colloid (ii) Zeta potential (iii) Associated colloids."
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write one difference in each of the following: (i) Lyophobic sol and lyophilic sol (ii) Solution and Colloid (iii) Homogeneous catalysis and heterogeneous catalysis."
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write one difference between each of the following: (i) Multimolecular colloid and Macromolecular colloid (ii) Sol and Gel (iii) O/W emulsion and W/O emulsion"
+            }
+          ]
+        },
+        {
+          "topic": "Solid State / Crystal Structure / Defects",
+          "frequency": 7,
+          "years_asked": [
+            2015,
+            2016,
+            2017,
+            2018,
+            2019
+          ],
+          "total_variations": 7,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "An element with molar mass 27 g mol 1 forms a cubic unit cell with edge length 4.05 10 8 cm. If its density is 2.7 g cm 3 , what is the nature of the cubic unit cell?"
+            },
+            {
+              "year": 2016,
+              "question_preview": "An element crystallizes in a fcc lattice with cell edge of 250 pm. Calculate the density if 300 g of this element contains 2 x 10^24 atoms."
+            },
+            {
+              "year": 2016,
+              "question_preview": "An element crystallizes in a bcc lattice with cell edge of 500 pm. The density of the element is 7.5 g cm-3. How many atoms are present in 300 g of the element?"
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) Based on the nature of intermolecular forces, classify the following solids: Benzene, Silver. (b) AgCl shows Frenkel defect while NaCl does not. Give reason. (c) What type of semiconductor is form"
+            },
+            {
+              "year": 2018,
+              "question_preview": "An element 'X' (At. mass = 40 g mol -1 ) having f.c.c. structure, has unit cell edge length of 400 pm. Calculate the density of 'X' and the number of unit cells in 4 g of 'X'. (N A = 6.022 x 10 23 mol"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Electrochemistry)",
+          "frequency": 6,
+          "years_asked": [
+            2014,
+            2016,
+            2017,
+            2025
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) Calculate &Delta;G 0 for the reaction: Mg(s) + Cu 2+ (aq) Mg 2+ (aq) + Cu(s) Given: E 0 cell = 2.71 V, 1 F = 96500 C mol 1 (b) Name the type of cell that was used in Apollo space program for provi"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Calculate e.m.f. of the following cell at 298 K: 2Cr(s) + 3Fe2+(0.1M) -> 2Cr3+(0.01M) + 3Fe(s). Given: E°(Cr3+|Cr) = -0.74 V, E°(Fe2+|Fe) = -0.44 V."
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) The cell in which the following reaction occurs: 2Fe 3+ (aq) + 2I - (aq) 2Fe 2+ (aq) + I 2 (s) has E cell = 0.236 V at 298 K. Calculate standard Gibb's energy of the cell reaction. (Given: 1 F = 9"
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "(a) Calculate delta_r G° and log Kc for the following cell: Ni(s) + 2 Ag+(aq) -> Ni2+(aq) + 2 Ag(s). Given that E° cell = 1.05 V, 1 F = 96,500 C mol^-1 OR (b) Calculate the e.m.f. of the following cel"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Calculate delta_r G° and log Kc of the reaction: Fe2+(aq) + Ag+(aq) -> Fe3+(aq) + Ag(s). Given E°(Ag+/Ag) = 0.80 V, E°(Fe3+/Fe2+) = 0.77 V. [R = 8.314 J K-1 mol-1, F = 96500 C mol-1]"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Solutions)",
+          "frequency": 6,
+          "years_asked": [
+            2015,
+            2016,
+            2019,
+            2020,
+            2023
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "3.9 g of benzoic acid dissolved in 49 g of benzene shows a depression in freezing point of 1.62 K. Calculate the van't Hoff factor and predict the nature of solute (associated or dissociated). (Given:"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Calculate the boiling point of solution when 4 g of MgSO4 (M = 120 g/mol) was dissolved in 100 g of water, assuming MgSO4 undergoes complete ionization. (Kb for water = 0.52 K kg/mol)"
+            },
+            {
+              "year": 2019,
+              "question_preview": "A solution containing 1.9 g per 100 mL of KCl (M = 74.5) is isotonic with a solution containing 3 g per 100 mL of urea (M = 60). Calculate the degree of dissociation of KCl solution."
+            },
+            {
+              "year": 2020,
+              "question_preview": "A 0.01 m aqueous solution of AlCl3 freezes at -0.068°C. Calculate the percentage of dissociation. [Given: Kf for Water = 1.68 K kg mol-1]"
+            },
+            {
+              "year": 2020,
+              "question_preview": "The freezing point of a solution containing 5g of benzoic acid (M = 122 g mol-1) in 35g of benzene is depressed by 2.94 K. What is the percentage association of benzoic acid if it forms a dimer in sol"
+            }
+          ]
+        },
+        {
+          "topic": "Nernst Equation / EMF Calculation",
+          "frequency": 4,
+          "years_asked": [
+            2013,
+            2015,
+            2024
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Calculate the emf of the following cell at 298 K: Fe(s) | Fe 2+ (0.001 M) || H + (1M) | H 2 (g) (1 bar), Pt(s) (Given E cell = +0.44 V)"
+            },
+            {
+              "year": 2015,
+              "question_preview": "Calculate emf of the following cell at 25 C: Fe | Fe 2+ (0.001 M) || H + (0.01 M) | H 2 (g)(1 bar) | Pt(s) E (Fe 2+ |Fe) = 0.44 V, E (H + |H 2 ) = 0.00 V"
+            },
+            {
+              "year": 2024,
+              "question_preview": "Calculate the emf of the cell: Ni(s) + 2Ag+ (0.01 M) -> Ni2+ (0.1 M) + 2Ag(s) Given that E°cell = 1.05 V, log 10 = 1"
+            },
+            {
+              "year": 2024,
+              "question_preview": "Calculate emf of the following cell at 25°C: Sn/Sn2+ (0.001 M) || H+ (0.01 M) | H2(g)(1 bar) | Pt(s) Given: E°(Sn2+/Sn) = -0.14 V, E° H+/H2 = 0.00 V (log 10 = 1)"
+            }
+          ]
+        },
+        {
+          "topic": "Colligative Properties (Boiling/Freezing Point, Osmotic Pressure)",
+          "frequency": 3,
+          "years_asked": [
+            2013,
+            2018,
+            2025
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Determine the osmotic pressure of a solution prepared by dissolving 2.5 10 2 g of K 2 SO 4 in 2L of water at 25 C, assuming that it is completely dissociated. (R = 0.0821 L atm K 1 mol 1 , Molar mass "
+            },
+            {
+              "year": 2018,
+              "question_preview": "Give reasons for the following: (a) Measurement of osmotic pressure method is preferred for the determination of molar masses of macromolecules such as proteins and polymers. (b) Aquatic animals are m"
+            },
+            {
+              "year": 2025,
+              "question_preview": "A solution containing 15 g urea (molar mass = 60 g mol-1) per litre of solution in water has the same osmotic pressure (isotonic) as a solution of glucose (molar mass = 180 g mol-1) in water. Calculat"
+            }
+          ]
+        },
+        {
+          "topic": "Carbohydrates (Glucose, Sucrose, Starch)",
+          "frequency": 3,
+          "years_asked": [
+            2017,
+            2019,
+            2025
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "A 10% solution (by mass) of sucrose in water has freezing point of 269.15 K. Calculate the freezing point of 10% glucose in water, if freezing point of pure water is 273.15 K. Given: (Molar mass of su"
+            },
+            {
+              "year": 2019,
+              "question_preview": "A 4% solution w/w of sucrose (M = 342 g mol^-1) in water has a freezing point of 271.15K. Calculate the freezing point of 5% glucose (M = 180 g mol^-1) in water. (Given: Freezing point of pure water ="
+            },
+            {
+              "year": 2025,
+              "question_preview": "A solution of glucose (molar mass = 180 g mol-1) in water has a boiling point of 100.20 C. Calculate the freezing point of the same solution. Molal constants for water Kf and Kb are 1.86 K kg mol-1 an"
+            }
+          ]
+        },
+        {
+          "topic": "Electrochemical / Galvanic Cell",
+          "frequency": 2,
+          "years_asked": [
+            2017,
+            2020
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "(a) Calculate the mass of Ag deposited at cathode when a current of 2 amperes was passed through a solution of AgNO 3 for 15 minutes. (Given: Molar mass of Ag = 108 g mol -1 , 1 F = 96500 C mol -1 ) ("
+            },
+            {
+              "year": 2020,
+              "question_preview": "When a steady current of 2A was passed through two electrolytic cells A and B containing electrolytes ZnSO4 and CuSO4 connected in series, 2 g of Cu were deposited at the cathode of cell B. How long d"
+            }
+          ]
+        },
+        {
+          "topic": "Electrolysis / Faradays Laws",
+          "frequency": 2,
+          "years_asked": [
+            2025
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2025,
+              "question_preview": "(a) State the following: (i) Kohlrausch law of independent migration of ions and (ii) Faraday's first law of electrolysis. (b) Using E° values of X and Y given below, predict which is better for coati"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Give reasons: (a) Fuel cells are preferred for production of electrical energy than thermal plants. (b) Iron does not rust even if zinc coating is broken in a galvanised pipe. (c) In the experimental "
+            }
+          ]
+        },
+        {
+          "topic": "Concentration Terms / Henrys Law",
+          "frequency": 2,
+          "years_asked": [
+            2025
+          ],
+          "total_variations": 1,
+          "sample_variations": [
+            {
+              "year": 2025,
+              "question_preview": "Henry's law constant for CO2 in water is 1.67 x 10^8 Pa at 298 K. Calculate the number of moles of CO2 in 500 ml of soda water when packed under 2.53 x 10^5 Pa at the same temperature."
+            }
+          ]
+        },
+        {
+          "topic": "Conductance / Kohlrausch Law",
+          "frequency": 2,
+          "years_asked": [
+            2025
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2025,
+              "question_preview": "The electrical resistance of a column of 0.05 M NaOH solution of area 0.8 cm2 and length 40 cm is 5 x 10^3 ohm. Calculate its resistivity, conductivity and molar conductivity."
+            },
+            {
+              "year": 2025,
+              "question_preview": "Calculate molar conductivity (Lambda_m) for acetic acid and its degree of dissociation (alpha) if its molar conductivity is 48.1 ohm-1 cm2 mol-1. Given that Lambda_m(HCl) = 426 ohm-1 cm2 mol-1, Lambda"
+            }
+          ]
+        }
+      ]
+    },
+    "inorganic": {
+      "total_questions": 63,
+      "frequent_topics": [
+        {
+          "topic": "IUPAC Naming of Coordination Compounds",
+          "frequency": 11,
+          "years_asked": [
+            2013,
+            2014,
+            2017,
+            2018,
+            2019,
+            2024,
+            2025
+          ],
+          "total_variations": 9,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Write the IUPAC names of the following coordination compounds: (i) [Cr(NH 3 ) 3 Cl 3 ] (ii) K 3 [Fe(CN) 6 ] (iii) [CoBr 2 (en) 2 ] + , (en = ethylenediamine)"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(i) Write the IUPAC name of the complex [Cr(NH 3 ) 4 Cl 2 ]Cl. (ii) What type of isomerism is exhibited by the complex [Co(en) 3 ] 3+ ? (en = ethane-1,2-diamine) (iii) Why is [NiCl 4 ] 2 paramagnetic "
+            },
+            {
+              "year": 2017,
+              "question_preview": "(i) What type of isomerism is shown by the complex [Co(NH 3 ) 6 ][Cr(CN) 6 ]? (ii) Why a solution of [Ni(H 2 O) 6 ] 2+ is green while a solution of [Ni(CN) 4 ] 2- is colourless? (At. no. of Ni = 28) ("
+            },
+            {
+              "year": 2017,
+              "question_preview": "(i) What type of isomerism is shown by the complex [Co(en) 3 ]Cl 3 ? (ii) Write the hybridisation and magnetic character of [Co(C 2 O 4 ) 3 ] 3- . (At. no. of Co = 27) (iii) Write IUPAC name of the fo"
+            },
+            {
+              "year": 2018,
+              "question_preview": "(a) Write the formula of the following co-ordination compound: Iron(III) hexacyanoferrate(II) (b) What type of isomerism is exhibited by the complex [Co(NH 3 ) 5 Cl]SO 4 ? (c) Write the hybridisation "
+            }
+          ]
+        },
+        {
+          "topic": "Transition Metal Properties",
+          "frequency": 10,
+          "years_asked": [
+            2013,
+            2016,
+            2019
+          ],
+          "total_variations": 10,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "How would you account for the following? (i) Transition metals exhibit variable oxidation states. (ii) Zr(Z = 40) and Hf(Z = 72) have almost identical radii. (iii) Transition metals and their compound"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Give reasons: (i) Mn shows the highest oxidation state of +7 with oxygen but with fluorine it shows the highest oxidation state of +4. (ii) Transition metals show variable oxidation states. (iii) Acti"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Give the reasons for following: (i) Transition elements and their compounds act as catalysts. (ii) E° value for (Mn2+/Mn) is negative whereas for (Cu2+/Cu) is positive. (iii) Actinoids show irregulari"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Give reasons: (i) Transition metals form alloys. (ii) Mn2O3 is basic whereas Mn2O7 is acidic. (iii) Eu2+ is a strong reducing agent."
+            },
+            {
+              "year": 2019,
+              "question_preview": "Give reasons: (a) Transition metals form complex compounds. (b) E° values for (Zn2+/Zn) and (Mn2+/Mn) are more negative than expected. (c) Actinoids show wide range of oxidation states."
+            }
+          ]
+        },
+        {
+          "topic": "Other (d&f Block)",
+          "frequency": 8,
+          "years_asked": [
+            2013,
+            2016,
+            2018,
+            2019,
+            2020,
+            2025
+          ],
+          "total_variations": 8,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Complete the following chemical equations: (i) Cr 2 O 7 2 + 6Fe 2+ + 14H + (ii) 2CrO 4 2 + 2H + (iii) 2MnO 4 + 5C 2 O 4 2 + 16H +"
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) Name the method of refining of metals such as germanium. (ii) In the extraction of Al, impure Al2O3 is dissolved in conc. NaOH to form sodium aluminate and leaving impurities behind. What is the n"
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) Name the method of refining of nickel. (ii) What is the role of cryolite in the extraction of aluminium? (iii) What is the role of limestone in the extraction of iron from its oxides?"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Give reasons: (i) SO2 is reducing while TeO2 is an oxidizing agent. (ii) Nitrogen does not form pentahalide. (iii) ICl is more reactive than I2."
+            },
+            {
+              "year": 2018,
+              "question_preview": "Give reasons: (a) E value for Mn 3+ /Mn 2+ couple is much more positive than that for Fe 3+ /Fe 2+ . (b) Iron has higher enthalpy of atomization than that of copper. (c) Sc 3+ is colourless in aqueous"
+            }
+          ]
+        },
+        {
+          "topic": "Solid State / Crystal Structure / Defects",
+          "frequency": 6,
+          "years_asked": [
+            2015,
+            2023,
+            2024
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "(i) Draw the geometrical isomers of complex [Pt(NH 3 ) 2 Cl 2 ]. (ii) On the basis of crystal field theory, write the electronic configuration for d 4 ion if &Delta; 0 (iii) Write the hybridization an"
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "(a) (i) Write the IUPAC name of the following complex: K2[PdCl4] (ii) Using crystal field theory, write the electronic configuration of d5 ion, if Delta_0 > P. (iii) What are Homoleptic complexes? OR "
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "(a) (i) Write the IUPAC name of the following complex: [Pt(NH3)6]Cl4 (ii) On the basis of crystal field theory, write the electronic configuration of d4 ion, if Delta_0 < P. (iii) What are Heterolepti"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) On the basis of crystal field theory write the electronic configuration for d5 ion with a strong field ligand for which Delta_0 > P. (b) [Ni(CO)4] has tetrahedral geometry while [Ni(CN)4]2- has sq"
+            },
+            {
+              "year": 2024,
+              "question_preview": "(a) Draw the geometrical isomers of the given complex: [Pt(en)2Cl2]2+ (b) Write the electronic configuration for d4 ion if Delta_0 < P on the basis of crystal field theory. (c) What is meant by a unid"
+            }
+          ]
+        },
+        {
+          "topic": "Isomerism in Coordination Compounds",
+          "frequency": 6,
+          "years_asked": [
+            2016,
+            2017,
+            2023,
+            2024
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "(a) For the complex [Fe(CN)6]3-, write the hybridization, magnetic character and spin nature of the complex. (At. number: Fe = 26). (b) Draw one of the geometrical isomers of the complex [Pt(en)2Cl2]2"
+            },
+            {
+              "year": 2016,
+              "question_preview": "(a) For the complex [Fe(H2O)6]3+, write the hybridization, magnetic character and spin of the complex. (At. number: Fe = 26). (b) Draw one of the geometrical isomers of the complex [Pt(en)2Cl2]2+ whic"
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) What type of isomerism is shown by the complex [Co(NH 3 ) 5 (SCN)] 2+ ? (b) Why is [NiCl 4 ] 2- paramagnetic while [Ni(CN) 4 ] 2- is diamagnetic? (Atomic number of Ni = 28) (c) Why are low spin te"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) Draw the geometrical isomers of [Co(en)2Cl2]^2+. Which geometrical isomer of [Co(en)2Cl2]^2+ is not optically active and why? (b) Write the hybridisation and magnetic behaviour of [CoF6]^3-. [Give"
+            },
+            {
+              "year": 2024,
+              "question_preview": "(a) Draw the geometrical isomers of the given complex: [Co(en)2Cl2]+ (b) Write the electronic configuration of d4 ion if Delta_0 > P. (c) What is a didentate ligand? Give one example."
+            }
+          ]
+        },
+        {
+          "topic": "Other (General Principles of Metallurgy)",
+          "frequency": 5,
+          "years_asked": [
+            2017,
+            2018
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "(a) Write the principle of method used for the refining of germanium. (b) Out of PbS and PbCO 3 (ores of lead), which one is concentrated by froth flotation process? (c) What is significance of leachi"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write the principles of the following methods: (i) Vapour phase refining (ii) Zone refining (iii) Chromatography"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write the principle of the following: (a) Zone refining (b) Froth flotation process (c) Chromatography"
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) Write the principle of vapour phase refining. (b) Write the role of dilute NaCN in the extraction of silver. (c) What is the role of collectors in the froth flotation process? Give an example of a"
+            },
+            {
+              "year": 2018,
+              "question_preview": "Write the chemical reactions involved in the process of extraction of Gold. Explain the role of dilute NaCN and Zn in this process."
+            }
+          ]
+        },
+        {
+          "topic": "Lanthanoid/Actinoid Contraction",
+          "frequency": 4,
+          "years_asked": [
+            2015,
+            2025
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "(a) How would you account for the following: (i) Actinoid contraction is greater than lanthanoid contraction. (ii) Transition metals form coloured compounds. (b) Complete the following equation: 2MnO "
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "(a) Write any two consequences of Lanthanoid Contraction. (b) Name the element of 3d series which exhibits the largest number of oxidation states. Give reason."
+            },
+            {
+              "year": 2025,
+              "question_preview": "(a) Of the d4 species, Cr2+ is strongly reducing while Mn3+ is strongly oxidising. Why? (b) Write two consequences of lanthanoid contraction. (c) Which element of 3d series has lowest enthalpy of atom"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(a) E°(Mn2+/Mn) is -1.18 V. Why is this value highly negative in comparison to neighbouring d-block elements? (b) What is lanthanoid contraction? (c) Zn, Cd and Hg are soft metals. Why?"
+            }
+          ]
+        },
+        {
+          "topic": "Other (p-Block Elements)",
+          "frequency": 3,
+          "years_asked": [
+            2014,
+            2017
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) Draw the structures of the following molecules: (i) XeOF 4 (ii) H 3 SO 4 (should be H 2 SO 4 ) (b) Write the structural difference between white phosphorus and red phosphorus."
+            },
+            {
+              "year": 2014,
+              "question_preview": "Give reasons for the following: (i) (CH 3 ) 3 P = O exists but (CH 3 ) 3 N = O does not. (ii) Oxygen has less electron gain enthalpy with negative sign than sulphur. (iii) H 3 PO 2 is a stronger reduc"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Give reasons: (i) Thermal stability decreases from H 2 O to H 2 Te. (ii) Fluoride ion has higher hydration enthalpy than chloride ion. (iii) Nitrogen does not form pentahalide."
+            }
+          ]
+        },
+        {
+          "topic": "VBT / Hybridization / Magnetic Moment",
+          "frequency": 3,
+          "years_asked": [
+            2019,
+            2025
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "Give reasons: (a) Transition metals have high enthalpies of atomization. (b) Manganese has lower melting point even though it has higher number of unpaired electrons. (c) Ce4+ is a strong oxidizing ag"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Using valence bond theory, explain the hybridisation and magnetic character of the following: (a) [Co(NH3)6]3+ (b) [Ni(CO)4]. [At. no.: Co = 27, Ni = 28]"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(a) Using valence bond theory, explain the hybridisation and magnetic behaviour of the following: (i) [Co(NH3)6]Cl3 (ii) K2[NiCl4]. (At. no.: Co = 27, Ni = 28) (b) Write the electronic configuration o"
+            }
+          ]
+        },
+        {
+          "topic": "Conversion / Preparation Reactions",
+          "frequency": 2,
+          "years_asked": [
+            2019
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "(a) Name the method of refining which is (i) used to obtain semiconductor of high purity, (ii) used to obtain low boiling metal. (b) Write chemical reactions taking place in the extraction of copper f"
+            },
+            {
+              "year": 2019,
+              "question_preview": "How will you convert: (i) Impure nickel to pure nickel (ii) Zinc blende to zinc metal (iii) [Ag(CN)2]- to Ag"
+            }
+          ]
+        }
+      ]
+    },
+    "organic": {
+      "total_questions": 135,
+      "frequent_topics": [
+        {
+          "topic": "Amines Basicity / Properties",
+          "frequency": 16,
+          "years_asked": [
+            2014,
+            2016,
+            2017,
+            2019,
+            2020,
+            2023,
+            2025
+          ],
+          "total_variations": 13,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "How will you convert the following? (i) Nitrobenzene into aniline. (ii) Ethanoic acid into methanamine. (iii) Aniline into N-phenylethanamide. (Write the chemical equations involved.)"
+            },
+            {
+              "year": 2014,
+              "question_preview": "Account for the following: (i) Primary amines (R NH 2 ) have higher boiling point than tertiary amines (R 3 N). (ii) Aniline does not undergo Friedel-Crafts reaction. (iii) (CH 3 ) 2 NH is more basic "
+            },
+            {
+              "year": 2016,
+              "question_preview": "Give reasons for the following: (i) Aniline does not undergo Friedel-Crafts reaction. (ii) (CH3)2NH is more basic than (CH3)3N in an aqueous solution. (iii) Primary amines have higher boiling point th"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write the structures of the monomers used for getting the following polymers: (i) Dacron (ii) Melamine-formaldehyde polymer (iii) Buna-N"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(i) Is polypropylene {CH2-CH(CH3)}n a homopolymer or copolymer? Give reason. (ii) Write the monomers of melamine-formaldehyde polymer. (iii) What is the role of sulphur in vulcanization of rubber?"
+            }
+          ]
+        },
+        {
+          "topic": "IUPAC Naming of Coordination Compounds",
+          "frequency": 13,
+          "years_asked": [
+            2013,
+            2015,
+            2016,
+            2019,
+            2020,
+            2024
+          ],
+          "total_variations": 11,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Write the names and structures of the monomers of the following polymers: (i) Buna-S (ii) Neoprene (iii) Nylon-6,6"
+            },
+            {
+              "year": 2015,
+              "question_preview": "(i) Which one of the following is a disaccharide: Starch, Maltose, Fructose, Glucose? (ii) What is the difference between fibrous protein and globular protein? (iii) Write the name of vitamin whose de"
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) Write the name of two monosaccharides obtained on hydrolysis of lactose sugar. (ii) Why vitamin C cannot be stored in our body? (iii) What is the difference between a nucleoside and nucleotide?"
+            },
+            {
+              "year": 2019,
+              "question_preview": "An aromatic compound 'A' on heating with Br2 and KOH forms a compound 'B' of molecular formula C6H7N which on reacting with CHCl3 and alcoholic KOH produces a foul smelling compound 'C'. Write the str"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Write the name and structures of monomer(s) in the following polymers: (i) Nylon-6 (ii) PVC (iii) Neoprene"
+            }
+          ]
+        },
+        {
+          "topic": "Amino Acids / Proteins / Enzymes",
+          "frequency": 13,
+          "years_asked": [
+            2014,
+            2019,
+            2020,
+            2024,
+            2025
+          ],
+          "total_variations": 11,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "Define the following terms related to proteins: (i) Peptide linkage (ii) Primary structure (iii) Denaturation"
+            },
+            {
+              "year": 2014,
+              "question_preview": "Define the following terms: (i) Nucleotide (ii) Anomers (iii) Essential amino acids"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Differentiate between the following: (i) Amylose and Amylopectin (ii) Peptide linkage and glycosidic linkage (iii) Fibrous protein and globular protein"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Define the following with a suitable example in each: (i) Oligosaccharides (ii) Denaturation of protein (iii) Vitamins"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Define: (a) Invert sugar (b) Native protein (c) Nucleotide"
+            }
+          ]
+        },
+        {
+          "topic": "Carbohydrates (Glucose, Sucrose, Starch)",
+          "frequency": 11,
+          "years_asked": [
+            2014,
+            2016,
+            2018,
+            2019,
+            2020,
+            2025
+          ],
+          "total_variations": 11,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(i) Deficiency of which vitamin causes night-blindness? (ii) Name the base that is found in nucleotide of RNA only. (iii) Glucose on reaction with HI gives n-hexane. What does it suggest about the str"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(i) Deficiency of which vitamin causes rickets? (ii) Give an example for each of fibrous protein and globular protein. (iii) Write the product formed on reaction of D-Glucose with Br 2 water."
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) Write the structural difference between starch and cellulose. (ii) What type of linkage is present in nucleic acids? (iii) Give one example each for fibrous protein and globular protein."
+            },
+            {
+              "year": 2018,
+              "question_preview": "Define the following with an example of each: (a) Polysaccharides (b) Denatured protein (c) Essential amino acids OR (a) Write the product when D-glucose reacts with conc. HNO 3 . (b) Amino acids show"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write chemical reactions to show that open structure of D-glucose contains the following: (i) Straight chain (ii) Five alcohol groups (iii) Aldehyde as carbonyl group"
+            }
+          ]
+        },
+        {
+          "topic": "Polymers (Nylon, Bakelite, Buna)",
+          "frequency": 10,
+          "years_asked": [
+            2014,
+            2016,
+            2019
+          ],
+          "total_variations": 10,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "After the ban on plastic bags, students of a school decided to make the people aware of the harmful effects of plastic bags on the environment and Yamuna River. They organized a rally and distributed "
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) What is the role of t-butyl peroxide in the polymerization of ethene? (ii) Identify the monomers in the following polymer: -(-NH-(CH2)6-NH-CO-(CH2)4-CO-)n- (iii) Arrange the following polymers in "
+            },
+            {
+              "year": 2016,
+              "question_preview": "(i) What is the role of sulphur in the vulcanization of rubber? (ii) Identify the monomers in the following polymer: -(-O-CH2-CH2-O-CO-C6H4-CO-)n- (iii) Arrange the following polymers in the increasin"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write the structure of monomers used for getting the following polymers: (i) Nylon-6,6 (ii) Glyptal (iii) Buna-S"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(i) Why bithional is added in soap? (ii) Why magnesium hydroxide is a better antacid than sodium bicarbonate? (iii) Why soaps are biodegradable whereas detergents are non-biodegradable?"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Chemistry in Everyday Life)",
+          "frequency": 8,
+          "years_asked": [
+            2013,
+            2014,
+            2017,
+            2018
+          ],
+          "total_variations": 8,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "(a) Which one of the following is a food preservative? Equanil, Morphine, Sodium benzoate (b) Why is bithional added to soap? (c) Which class of drugs is used in sleeping pills?"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(i) Give two examples of macromolecules that are chosen as drug targets. (ii) What are antiseptics? Give an example. (iii) Why is use of aspartame limited to cold foods and soft drinks?"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(i) Name the sweetening agents used in the preparation of sweets for a diabetic patient. (ii) What are antibodies? Give an example. (iii) Give two examples of macromolecules that are chosen as drug ta"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Define the following: (i) Anionic detergents (ii) Broad spectrum antibiotics (iii) Antiseptic"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Define the following: (i) Cationic detergents (ii) Narrow spectrum antibiotics (iii) Disinfectants"
+            }
+          ]
+        },
+        {
+          "topic": "Phenol Reactions / Acidity",
+          "frequency": 8,
+          "years_asked": [
+            2015,
+            2020,
+            2023,
+            2024
+          ],
+          "total_variations": 7,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "How do you convert the following: (i) Phenol to anisole (ii) Propan-2-ol to 2-methylpropan-2-ol (iii) Aniline to phenol"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Give the structures of final products expected from the following reactions: (i) Hydroboration of propene followed by oxidation with H2O2 in alkaline medium. (ii) Dehydration of (CH3)3C-OH by heating "
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) (i) Why is the C-O bond length in phenols less than that in methanol? (ii) Arrange the following in order of increasing boiling point: Ethoxyethane, Butanal, Butanol, n-butane (iii) How can phenol"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) (i) Write the mechanism of the following reaction: 2CH3CH2OH --(H+/413K)--> CH3-CH2-O-CH2-CH3 + H2O (ii) Why ortho-nitrophenol is steam volatile while para-nitrophenol is not?"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(b) What happens when (OR) (i) Anisole is treated with CH3Cl anhydrous AlCl3? (ii) Phenol is oxidised with Na2Cr2O7/H+? (iii) (CH3)3C-OH is heated with Cu/573 K? Write chemical equation in support of "
+            }
+          ]
+        },
+        {
+          "topic": "Other (Biomolecules)",
+          "frequency": 7,
+          "years_asked": [
+            2014,
+            2019,
+            2025
+          ],
+          "total_variations": 7,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "Define the following terms: (i) Glycosidic linkage (ii) Invert sugar (iii) Oligo saccharides"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(i) What type of drug is used in sleeping pills? (ii) What type of detergents are used in toothpastes? (iii) Why the use of alitame as artificial sweetener is not recommended?"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Define the following terms with suitable example in each: (i) Broad-spectrum antibiotics (ii) Disinfectants (iii) Cationic detergents"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Define the following terms with a suitable example in each: (i) Antibiotics (ii) Artificial sweeteners (iii) Analgesics"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Pick odd one from: Equanil, Seconal, Bithional, Luminal on basis of medicinal properties. (b) What type of detergents are used in dish washing liquids? (c) Why is use of aspartame limited to cold "
+            }
+          ]
+        },
+        {
+          "topic": "Other (Amines)",
+          "frequency": 6,
+          "years_asked": [
+            2013,
+            2014,
+            2016,
+            2017
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "Give the structures of A, B and C in the following reactions: (i) C 6 H 5 N 2 + Cl [CuCN] A [H 2 O/H + , &Delta;] B [H 2 O/H + , &Delta;] C (ii) C 6 H 5 NO 2 [Sn+HCl] A [NaNO 2 +HCl] B [H 2 O/H + , &D"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Write the structures of A, B and C in the following: (a) C6H5-CONH2 --(Br2/aq.KOH)--> A --(NaNO2+HCl, 0-5°C)--> B --(KI)--> C. (b) CH3-Cl --(KCN)--> A --(LiAlH4)--> B --(CHCl3+alc.KOH)--> C."
+            },
+            {
+              "year": 2017,
+              "question_preview": "Give reasons: (i) Acetylation of aniline reduces its activation effect. (ii) CH 3 NH 2 is more basic than C 6 H 5 NH 2 . (iii) Although -NH 2 is o/p directing group, yet aniline on nitration gives a s"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write the structures of compounds A, B and C in the following reactions: (a) CH 3 -COOH --NH 3 /&Delta;-- A --Br 2 /KOH(aq)-- B --CHCl 3 + alc. KOH-- C (b) C 6 H 5 N 2 + BF 4 - --NaNO 2 /Cu, &Delta;--"
+            }
+          ]
+        },
+        {
+          "topic": "SN1 vs SN2 Mechanisms",
+          "frequency": 6,
+          "years_asked": [
+            2015,
+            2016,
+            2020,
+            2024,
+            2025
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "Give reasons: (a) n -Butyl bromide has higher boiling point than t -butyl bromide. (b) Racemic mixture is optically inactive. (c) The presence of nitro group ( NO 2 ) at o/p positions increases the re"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Give reasons: (i) C-Cl bond length in chlorobenzene is shorter than C-Cl bond length in CH3-Cl. (ii) The dipole moment of chlorobenzene is lower than that of cyclohexyl chloride. (iii) SN1 reactions a"
+            },
+            {
+              "year": 2020,
+              "question_preview": "Write the product(s) of the following reactions: (i) Cyclohex-2-enol + PCC -> (ii) Salicylic acid + (CH3CO)2O/CH3COOH -> (iii) Cyclohexanone + CH3MgBr followed by H3O+ -> OR (a) Write the mechanism of"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(a) Define the following: (i) Enantiomers (ii) Racemic mixture. (b) Why is chlorobenzene resistant to nucleophilic substitution reaction?"
+            },
+            {
+              "year": 2024,
+              "question_preview": "Account for the following: (a) Haloalkanes react with AgCN to form isocyanide as main product. (b) Allyl chloride shows high reactivity towards SN1 reaction. (c) Haloarenes are extremely less reactive"
+            }
+          ]
+        },
+        {
+          "topic": "Sandmeyer / Diazonium Reactions",
+          "frequency": 6,
+          "years_asked": [
+            2019,
+            2023,
+            2025
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "Write the structures of main products when benzene diazonium chloride reacts with: (i) CuCN (ii) CH3CH2OH (iii) KI"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write equations of the following reactions: (i) Acetylation of aniline (ii) Coupling reaction (iii) Carbylamine reaction"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Complete the reactions: (a) Benzonitrile + H2/Ni -> ? (b) 2-bromo-4-methyltoluene diazonium chloride + H3PO4 + H2O -> ? (c) Benzylamine + CHCl3 + Ethanolic KOH -> ?"
+            },
+            {
+              "year": 2019,
+              "question_preview": "How do you convert: (a) N-phenylethanamide to p-bromoaniline (b) Benzene diazonium chloride to nitrobenzene (c) Benzoic acid to aniline"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) Illustrate Sandmeyer's reaction with an equation. (b) Explain, why (CH3)2NH is more basic than (CH3)3N in aqueous solution."
+            }
+          ]
+        },
+        {
+          "topic": "Other (Alcohols Phenols Ethers)",
+          "frequency": 5,
+          "years_asked": [
+            2014,
+            2015,
+            2016,
+            2018
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) Write the mechanism of the following reaction: CH 3 CH 2 OH [HBr] CH 3 CH 2 Br + H 2 O (b) Write the equation involved in Reimer-Tiemann reaction."
+            },
+            {
+              "year": 2015,
+              "question_preview": "(a) Write the mechanism of the following reaction: 2CH 3 CH 2 OH [H + ] CH 3 CH 2 O CH 2 CH 3 (b) Write the equation involved in the acetylation of Salicylic acid."
+            },
+            {
+              "year": 2016,
+              "question_preview": "Write the main product(s) in each of the following reactions: (i) CH3-C(CH3)(CH3)-O-CH3 + HI -> ? (ii) CH3-CH=CH2 --(i) B2H6, (ii) H2O2/OH-)--> ? (iii) C6H5-OH --(i) aq.NaOH, (ii) CO2, H+)--> ?"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Write the final product(s) in each of the following reactions: (a) CH3-C(CH3)2-O-CH3 + HI -> ? (b) CH3-CH2-CH(OH)-CH3 --(Cu/573K)--> ? (c) C6H5-OH --(i) CHCl3+aq.NaOH, (ii) H+)--> ?"
+            },
+            {
+              "year": 2018,
+              "question_preview": "Write the structures of the main products in the following reactions: (i) Methyl 2-methylpropanoate (ester with OCH 3 ) + NaBH 4 (ii) Styrene + H 2 O --H + -- (iii) Phenetole (C 6 H 5 OC 2 H 5 ) + HI"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Aldehydes Ketones Carboxylic Acids)",
+          "frequency": 4,
+          "years_asked": [
+            2015,
+            2019,
+            2024
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "Predict the products of the following reactions: (i) CH 3 C(=O) CH 3 [(i) H 2 N NH 2 , (ii) KOH/Glycol, &Delta;] (ii) C 6 H 5 CO CH 3 [NaOH/I 2 ] ? + ? (iii) CH 3 COONa [NaOH/CaO, &Delta;] ?"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Complete the following reactions: (i) Benzaldehyde + NaCN/HCl -> ? (ii) (C6H5CH2)2Cd + 2CH3COCl -> ? (iii) 2-Methylpropanoic acid --(i) Br2/Red P, (ii) H2O)--> ?"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Write chemical equations for the following reactions: (i) Propanone is treated with dilute Ba(OH)2. (ii) Acetophenone is treated with Zn(Hg)/Conc. HCl. (iii) Benzoyl chloride is hydrogenated in presen"
+            },
+            {
+              "year": 2024,
+              "question_preview": "Draw the structures of major product(s) in each of the following reactions: (a) Cyclohexanone-4-CHO with [Ag(NH3)2]+OH- (b) CH3CH=C(CHO)(CH3)-C(=O)-CH3 with NaOI (c) Glyoxylic acid (CHO-COOH) with NaC"
+            }
+          ]
+        },
+        {
+          "topic": "Isomerism in Coordination Compounds",
+          "frequency": 4,
+          "years_asked": [
+            2018,
+            2019,
+            2023
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2018,
+              "question_preview": "(A), (B) and (C) are three non-cyclic functional isomers of a carbonyl compound with molecular formula C 4 H 8 O. Isomers (A) and (C) give positive Tollens' test whereas isomer (B) does not give Tolle"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(i) Out of (CH3)3C-Br and (CH3)3C-I, which one is more reactive towards SN1 and why? (ii) Write the product formed when p-nitrochlorobenzene is heated with aqueous NaOH at 443 K followed by acidificat"
+            },
+            {
+              "year": 2019,
+              "question_preview": "Among all isomers of C4H9Br, identify: (a) the optically active isomer. (b) the isomer highly reactive towards SN2. (c) two isomers giving same product on dehydrohalogenation with alcoholic KOH."
+            },
+            {
+              "year": 2023,
+              "question_preview": "Answer any three of the following: (a) Which isomer of C5H10 gives a single monochloro compound C5H9Cl in bright sunlight? (b) Arrange the following compounds in increasing order of reactivity towards"
+            }
+          ]
+        },
+        {
+          "topic": "Nucleophilic Addition / Aldol / Cannizzaro",
+          "frequency": 4,
+          "years_asked": [
+            2019,
+            2025
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "(a) Give reasons: (i) Benzoic acid is a stronger acid than acetic acid. (ii) Methanal is more reactive towards nucleophilic addition than ethanal. (b) Give simple chemical test to distinguish between "
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "(a) What happens when: (i) Propanone is treated with CH3MgBr and then hydrolysed? (ii) Ethanal is treated with excess ethanol and acid? (iii) Methanal undergoes Cannizzaro reaction? (b) Write the main"
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "(a) (i) Which acid of the following pair would you expect to be stronger? F-CH2-COOH or CH3-COOH (ii) Arrange the following compounds in increasing order of their boiling points: CH3CH2OH, CH3-CHO, CH"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A) Explain the following reactions and write chemical equation involved: (a) Wolff-Kishner reduction (b) Etard reaction (c) Cannizzaro reaction. OR (B) Write the structures of A, B and C in the follo"
+            }
+          ]
+        },
+        {
+          "topic": "p-Block Element Properties/Reactions",
+          "frequency": 3,
+          "years_asked": [
+            2014,
+            2018,
+            2023
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) Draw the structure of major monohalo products in each of the following reactions: (i) C 6 H 5 CH 2 OH [PCl 5 ] (ii) C 6 H 5 CH 2 CH=CH 2 + HBr (b) Which halogen compound in each of the following p"
+            },
+            {
+              "year": 2018,
+              "question_preview": "(a) Identify the chiral molecule in the following pair: cyclohexanol with OH and a branched alcohol with OH. (b) Write the structure of the product when chlorobenzene is treated with methyl chloride i"
+            },
+            {
+              "year": 2023,
+              "question_preview": "30 (OR): (b) (i) Give mechanism of the following reaction: 2CH3-CH2-OH --H2SO4/413K--> CH3CH2-O-CH2CH3 + H2O (ii) Illustrate hydroboration-oxidation reaction with an example."
+            }
+          ]
+        },
+        {
+          "topic": "Conversion / Preparation Reactions",
+          "frequency": 3,
+          "years_asked": [
+            2016,
+            2017,
+            2025
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "How do you convert: (i) Chlorobenzene to biphenyl, (ii) Propene to 1-iodopropane, (iii) 2-bromobutane to but-2-ene. OR Write the major product(s): (i) p-Nitroethylbenzene + Br2/UV light -> ? (ii) 2CH3"
+            },
+            {
+              "year": 2017,
+              "question_preview": "Write structures of compounds A, B and C in each of the following reaction: (i) C 6 H 5 Br --Mg/dry ether-- A --(a) CO 2 (g), (b) H 3 O + -- B --PCl 3 -- C (ii) CH 3 CN --(a) SnCl 2 /HCl, (b) H 3 O + "
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A) Draw the structure of the major monohalo product for each of the following reaction: (a) 1-Chloro-4-ethylbenzene + Br2, Heat -> ? (b) 1-Methylcyclohexene + HBr -> ? (c) HO-CH2-C6H3(OH) + HCl, Heat"
+            }
+          ]
+        },
+        {
+          "topic": "Elimination Reactions (Saytzeff)",
+          "frequency": 3,
+          "years_asked": [
+            2017,
+            2020
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "Following compounds are given to you: 2-Bromopentane, 2-Bromo-2-methylbutane, 1-Bromopentane (i) Write the compound which is most reactive towards S N 2 reaction. (ii) Write the compound which is opti"
+            },
+            {
+              "year": 2017,
+              "question_preview": "The following compounds are given to you: 2-Bromopentane, 2-Bromo-2-methylbutane, 1-Bromopentane (a) Write the compound which is most reactive towards S N 2 reaction. (b) Write the compound which is o"
+            },
+            {
+              "year": 2020,
+              "question_preview": "(i) Write the structure of major alkene formed by beta-elimination of 2,2,3-trimethyl-3-bromopentane with sodium ethoxide in ethanol. (ii) Which one of the compounds in the following pairs is chiral? "
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4_mark": {
+    "physical": {
+      "total_questions": 5,
+      "frequent_topics": []
+    },
+    "inorganic": {
+      "total_questions": 3,
+      "frequent_topics": []
+    },
+    "organic": {
+      "total_questions": 14,
+      "frequent_topics": [
+        {
+          "topic": "Other (Biomolecules)",
+          "frequency": 2,
+          "years_asked": [
+            2016
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "Due to hectic and busy schedule, Mr. Angad made his life full of tensions and anxiety. He started taking sleeping pills without consulting the doctor. Mr. Deepak advised him to stop and suggested yoga"
+            },
+            {
+              "year": 2016,
+              "question_preview": "Due to hectic schedule, Mr. Singh started taking junk food and eating irregularly. He felt severe chest pain. Mr. Khanna took him to doctor who diagnosed acidity. Mr. Khanna advised home food, yoga an"
+            }
+          ]
+        },
+        {
+          "topic": "Carbohydrates (Glucose, Sucrose, Starch)",
+          "frequency": 2,
+          "years_asked": [
+            2017,
+            2023
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "After watching a programme on TV about the presence of carcinogens (cancer causing agents) potassium bromate and potassium iodate in bread and other bakery products, Ritu a class XII student decided t"
+            },
+            {
+              "year": 2023,
+              "question_preview": "Q32 (c) OR: Define the following as related to carbohydrates: (i) Anomers (ii) Glycosidic linkage (OR)"
+            }
+          ]
+        },
+        {
+          "topic": "IUPAC Naming of Coordination Compounds",
+          "frequency": 2,
+          "years_asked": [
+            2023,
+            2025
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2023,
+              "question_preview": "The carbon-oxygen double bond is polarised in aldehydes and ketones due to higher electronegativity of oxygen relative to carbon. Therefore they undergo nucleophilic addition reactions with a number o"
+            },
+            {
+              "year": 2025,
+              "question_preview": "Phenols undergo electrophilic substitution reactions readily due to the strong activating effect of OH group attached to the benzene ring. Since, the OH group increases the electron density more to o-"
+            }
+          ]
+        },
+        {
+          "topic": "Amines Basicity / Properties",
+          "frequency": 2,
+          "years_asked": [
+            2023,
+            2025
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2023,
+              "question_preview": "Carbohydrates are optically active polyhydroxy aldehydes and ketones. They are also called saccharides. All those carbohydrates which reduce Fehling's solution and Tollen's reagent are referred to as "
+            },
+            {
+              "year": 2025,
+              "question_preview": "Amines have a lone pair of electrons on nitrogen atom due to which they behave as Lewis base. [Passage about basicity of amines]. Answer the following: (a) Arrange the following in the increasing orde"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5_mark": {
+    "physical": {
+      "total_questions": 29,
+      "frequent_topics": [
+        {
+          "topic": "Rate Law / Order / Molecularity",
+          "frequency": 6,
+          "years_asked": [
+            2013,
+            2015,
+            2020
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "(a) A reaction is second order in A and first order in B. (i) Write the differential rate equation. (ii) How is the rate affected on increasing the concentration of A three times? (iii) How is the rat"
+            },
+            {
+              "year": 2013,
+              "question_preview": "(a) For a first order reaction, show that time required for 99% completion is twice the time required for the completion of 90% of reaction. (b) Rate constant 'k' of a reaction varies with temperature"
+            },
+            {
+              "year": 2015,
+              "question_preview": "For the hydrolysis of methyl acetate in aqueous solution, the following results were obtained: t/s: 0, 30, 60 [CH 3 COOCH 3 ]/mol L 1 : 0.60, 0.30, 0.15 (i) Show that it follows pseudo first order rea"
+            },
+            {
+              "year": 2015,
+              "question_preview": "(a) For a reaction A + B P, the rate is given by Rate = k[A][B] 2 (i) How is the rate of reaction affected if the concentration of B is doubled? (ii) What is the overall order of reaction if A is pres"
+            },
+            {
+              "year": 2020,
+              "question_preview": "(a) A first order reaction is 25% complete in 40 minutes. Calculate the value of rate constant. In what time will the reaction be 80% completed? (b) Define order of reaction. Write the condition under"
+            }
+          ]
+        },
+        {
+          "topic": "Colligative Properties (Boiling/Freezing Point, Osmotic Pressure)",
+          "frequency": 6,
+          "years_asked": [
+            2014,
+            2016,
+            2017,
+            2023,
+            2024
+          ],
+          "total_variations": 6,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) Define the following terms: (i) Molarity (ii) Molal elevation constant (K b ) (b) A solution containing 15 g of urea (molar mass = 60 g mol 1 ) per litre of solution in water has the same osmotic "
+            },
+            {
+              "year": 2016,
+              "question_preview": "(a) Calculate the freezing point of solution when 1.9 g of MgCl2 (M = 95 g/mol) was dissolved in 50 g of water, assuming complete ionization. (Kf for water = 1.86 K kg/mol). (b)(i) Out of 1M glucose a"
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) A 10% solution (by mass) of sucrose in water has a freezing point of 269.15 K. Calculate the freezing point of 10% glucose in water if the freezing point of pure water is 273.15 K. Given: (Molar m"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) (i) Why is boiling point of 1M NaCl solution more than that of 1M glucose solution? (ii) A nonvolatile solute 'X' (molar mass = 50 g mol-1) when dissolved in 78g of benzene reduced its vapour pres"
+            },
+            {
+              "year": 2023,
+              "question_preview": "33 (OR): (b) (i) Why is the value of Van't Hoff factor for ethanoic acid in benzene close to 0.5? (ii) Determine the osmotic pressure of a solution prepared by dissolving 2.32 x 10-2g of K2SO4 in 2L o"
+            }
+          ]
+        },
+        {
+          "topic": "Nernst Equation / EMF Calculation",
+          "frequency": 5,
+          "years_asked": [
+            2014,
+            2019,
+            2025
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) State Faraday's first law of electrolysis. How much charge in terms of Faraday is required for the reduction of 1 mol of Cu 2+ to Cu. (b) Calculate emf of the following cell at 298 K: Mg(s) | Mg 2"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Conductivity of 0.001 mol/L acetic acid is 4.95x10^-5 S cm^-1. Calculate dissociation constant if Lambda_m^0 for acetic acid is 390.5 S cm^2 mol^-1. (b) Write Nernst equation for: 2Al(S) + 3Cu2+(a"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Represent cell for: 2Al(s) + 3Ni2+(0.1M) -> 2Al3+(0.01M) + 3Ni(s). Calculate emf if E°cell = 1.41V. (b) How does molar conductivity vary with concentration for strong and weak electrolytes? How to"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A)(a) Write the cell reaction and calculate the e.m.f. of the following cell at 298 K: Sn(s)|Sn2+(0.004M)||H+(0.02M)|H2(g)(1 Bar)|Pt(s). (Given: E°(Sn2+/Sn) = -0.14 V, E°(H+|H2(g),Pt) = 0.00V). (b) A"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A)(a) Calculate the standard Gibbs energy (delta_r G°) of the following reaction at 25 C: Au(s) + Ca2+(1M) -> Au3+(1M) + Ca(s). E°(Au3+/Au) = +1.5 V, E°(Ca2+/Ca) = -2.87 V. Predict whether the reacti"
+            }
+          ]
+        },
+        {
+          "topic": "Electrochemical / Galvanic Cell",
+          "frequency": 4,
+          "years_asked": [
+            2016,
+            2018,
+            2019
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "(a) Calculate E°cell for the following reaction at 298K: 2Al(s) + 3Cu2+(0.01M) -> 2Al3+(0.01M) + 3Cu(s). Given: E°cell = 1.98 V. (b) Using E° values of A and B, predict which is better for coating iro"
+            },
+            {
+              "year": 2018,
+              "question_preview": "(a) Write the cell reaction and calculate the e.m.f. of the following cell at 298 K: Sn(s) | Sn 2+ (0.004 M) || H + (0.020 M) | H 2 (g)(1 bar) | Pt(s) (Given: E Sn 2+ /Sn = -0.14 V) (b) Give reasons: "
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) A steady current of 2 amperes was passed through two electrolytic cells X and Y connected in series containing electrolytes FeSO4 and ZnSO4 until 2.8 g of Fe deposited at the cathode of cell X. Ho"
+            },
+            {
+              "year": "2022-II",
+              "question_preview": "Case-based passage on Electrochemistry: Oxidation-reduction reactions are commonly known as redox reactions. They involve transfer of electrons from one species to another. In a spontaneous reaction, "
+            }
+          ]
+        },
+        {
+          "topic": "Conductance / Kohlrausch Law",
+          "frequency": 2,
+          "years_asked": [
+            2014,
+            2023
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) Define the following terms: (i) Limiting molar conductivity (ii) Fuel cell (b) Resistance of a conductivity cell filled with 0.1 mol L 1 KCl solution is 100 &Omega;. If the resistance of the same "
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) Conductivity of 2 x 10^-3 M methanoic acid is 8 x 10^-5 S cm^-1. Calculate its molar conductivity and degree of dissociation if Lambda_m^0 for methanoic acid is 404 S cm^2 mol^-1."
+            }
+          ]
+        }
+      ]
+    },
+    "inorganic": {
+      "total_questions": 28,
+      "frequent_topics": [
+        {
+          "topic": "Lanthanoid/Actinoid Contraction",
+          "frequency": 9,
+          "years_asked": [
+            2014,
+            2017,
+            2020,
+            2023,
+            2024
+          ],
+          "total_variations": 9,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(i) Name the element of 3d transition series which shows maximum number of oxidation states. Why does it show so? (ii) Which transition metal of 3d series has positive E (M 2+ /M) value and why? (iii)"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(i) With reference to structural variability and chemical reactivity, write the difference between lanthanoids and actinoids. (ii) Name a member of the lanthanoid series which is well known to exhibit"
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) Account for the following: (i) Transition metals form large number of complex compounds. (ii) The lowest oxide of transition metal is basic whereas the highest oxide is amphoteric or acidic. (iii)"
+            },
+            {
+              "year": 2017,
+              "question_preview": "(a) Account for the following: (i) Transition metals show variable oxidation states. (ii) Zn, Cd and Hg are soft metals. (iii) E value for the Mn 3+ /Mn 2+ couple is highly positive (+1.57 V) as compa"
+            },
+            {
+              "year": 2020,
+              "question_preview": "(a) Give reasons: (i) Transition metals and their compounds show catalytic activities. (ii) Separation of a mixture of Lanthanoid elements is difficult. (iii) Zn, Cd and Hg are soft and have low melti"
+            }
+          ]
+        },
+        {
+          "topic": "Other (p-Block Elements)",
+          "frequency": 4,
+          "years_asked": [
+            2013,
+            2015,
+            2018
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "(a) Give reasons for the following: (i) Bond enthalpy of F 2 is lower than that of Cl 2 . (ii) PH 3 has lower boiling point than NH 3 . (b) Draw the structures of the following molecules: (i) BrF 3 (i"
+            },
+            {
+              "year": 2013,
+              "question_preview": "(a) Account for the following: (i) Helium is used in diving apparatus. (ii) Fluorine does not exhibit positive oxidation state. (iii) Oxygen shows catenation behaviour less than sulphur. (b) Draw the "
+            },
+            {
+              "year": 2015,
+              "question_preview": "(a) Account for the following: (i) Acidic character increases from HF to HI. (ii) There is large difference between the melting and boiling points of oxygen and sulphur. (iii) Nitrogen does not form p"
+            },
+            {
+              "year": 2018,
+              "question_preview": "(a) Give reasons: (i) H 3 PO 3 undergoes disproportionation reaction but H 3 PO 4 does not. (ii) When Cl 2 reacts with excess of F 2 , ClF 3 is formed and not FCl 3 . (iii) Dioxygen is a gas while sul"
+            }
+          ]
+        },
+        {
+          "topic": "p-Block Element Properties/Reactions",
+          "frequency": 4,
+          "years_asked": [
+            2015,
+            2016,
+            2019
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "(i) Which allotrope of phosphorus is more reactive and why? (ii) How the supersonic jet aeroplanes are responsible for the depletion of ozone layers? (iii) F 2 has lower bond dissociation enthalpy tha"
+            },
+            {
+              "year": 2016,
+              "question_preview": "(a) Account for the following: (i) Ozone is thermodynamically unstable. (ii) Solid PCl5 is ionic in nature. (iii) Fluorine forms only one oxoacid HOF. (b) Draw the structure of (i) BrF3 (ii) XeF4. OR "
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) (i) Write the disproportionation reaction of H3PO3. (ii) Draw the structure of XeF4. (b) Account for: (i) Although fluorine has less negative electron gain enthalpy yet F2 is a strong oxidizing ag"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Account for: (i) Tendency to show -3 oxidation state decreases from N to Bi in group 15. (ii) Acidic character increases from H2O to H2Te. (iii) F2 is more reactive than ClF3, whereas ClF3 is more"
+            }
+          ]
+        },
+        {
+          "topic": "Transition Metal Properties",
+          "frequency": 3,
+          "years_asked": [
+            2014,
+            2024
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) How do you prepare: (i) KMnO 4 from MnO 2 (ii) Na 2 Cr 2 O 7 from Na 2 CrO 4 (b) Account for the following: (i) Mn 2+ is more stable than Fe 2+ towards oxidation to +3 state. (ii) The enthalpy of "
+            },
+            {
+              "year": 2014,
+              "question_preview": "(a) Complete the following equations: (i) Cr 2 O 7 2 + 2OH (ii) MnO 4 + 4H + + 3e (b) Account for the following: (i) Zn is not considered as a transition element. (ii) Transition metals form a larger "
+            },
+            {
+              "year": 2024,
+              "question_preview": "Attempt any five of the following: (a) Ce(III) is easily oxidised to Ce(IV). Comment. (b) E°(Mn2+/Mn) is -1.18 V. Why is this value highly negative in comparison to neighbouring d block elements? (c) "
+            }
+          ]
+        },
+        {
+          "topic": "IUPAC Naming of Coordination Compounds",
+          "frequency": 3,
+          "years_asked": [
+            2019,
+            2025
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "(a) Give reasons: (i) Sulphur in vapour state shows paramagnetic behaviour. (ii) N-N bond is weaker than P-P bond. (iii) Ozone is thermodynamically less stable than oxygen. (b) Write the name of the g"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A) Answer the following: (a) Low spin tetrahedral complexes are not known. (b) Co2+ is easily oxidised to Co3+ in the presence of a strong ligand [At. No. of Co = 27]. (c) What type of isomerism is s"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A)(a) In the following complex ions, explain the type of hybridisation, shape and magnetic property: (a) [Fe(H2O)6]2+ (b) [NiCl4]2-. (At. Nos.: Fe = 26, Ni = 28) OR (B)(a) Write IUPAC names of the fo"
+            }
+          ]
+        },
+        {
+          "topic": "Other (d&f Block)",
+          "frequency": 2,
+          "years_asked": [
+            2016,
+            2019
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "(a) Account for: (i) Mn shows highest oxidation state +7 with oxygen but +4 with fluorine. (ii) Cr2+ is a strong reducing agent. (iii) Cu2+ salts are coloured while Zn2+ salts are white. (b) Complete:"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Give one example of anomalous reaction of fluorine. (b) Structural difference between white and red phosphorus? (c) What happens when XeF6 reacts with NaF? (d) Why is H2S a better reducing agent t"
+            }
+          ]
+        }
+      ]
+    },
+    "organic": {
+      "total_questions": 29,
+      "frequent_topics": [
+        {
+          "topic": "p-Block Element Properties/Reactions",
+          "frequency": 5,
+          "years_asked": [
+            2019,
+            2020,
+            2025
+          ],
+          "total_variations": 5,
+          "sample_variations": [
+            {
+              "year": 2019,
+              "question_preview": "(a) How do you convert the following? (i) Phenol to Anisole. (ii) Ethanol to Propan-2-ol. (b) Write mechanism for the following reaction: C2H5OH --(H2SO4/443K)--> CH2=CH2 + H2O. (c) Why Phenol undergo"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Give equations: (i) Phenol + conc. HNO3. (ii) Propene + B2H6 followed by H2O2/OH-. (iii) Sodium t-butoxide + CH3Cl. (b) Distinguish between butan-1-ol and butan-2-ol. (c) Arrange in increasing ord"
+            },
+            {
+              "year": 2020,
+              "question_preview": "(a) An organic compound (A) having molecular formula C4H8O gives orange red precipitate with 2,4-DNP reagent. It does not reduce Tollen's reagent but gives yellow precipitate of iodoform on heating wi"
+            },
+            {
+              "year": 2020,
+              "question_preview": "(a) Account for the following: (i) Tendency to show -2 oxidation state decreases from oxygen to tellurium. (ii) Acidic character increases from HF to HI. (iii) Moist SO2 gas acts as a reducing agent. "
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A) An organic compound 'A', molecular formula C2H6O oxidises with CrO3 to form a compound 'B'. Compound 'B' on warming with iodine and aqueous solution of NaOH gives a yellow precipitate of compound "
+            }
+          ]
+        },
+        {
+          "topic": "Phenol Reactions / Acidity",
+          "frequency": 4,
+          "years_asked": [
+            2013,
+            2014,
+            2019
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2013,
+              "question_preview": "(a) Although phenoxide ion has more number of resonating structures than carboxylate ion, Carboxylic acid is a stronger acid than phenol. Give two reasons. (b) How will you bring about the following c"
+            },
+            {
+              "year": 2013,
+              "question_preview": "(a) Complete the following reactions: (i) 2H C(=O) H [Conc. KOH] (ii) CH 3 COOH [Br 2 /P] (iii) C 6 H 5 CHO [HNO 3 /H 2 SO 4 , 273-283K] (b) Give simple chemical tests to distinguish between the follo"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(a) Write the products formed when CH 3 CHO reacts with the following reagents: (i) HCN (ii) H 2 N OH (iii) CH 3 CHO in the presence of dilute NaOH (b) Give simple chemical tests to distinguish betwee"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) Account for the following: (i) o-nitrophenol is more steam volatile than p-nitrophenol. (ii) t-butyl chloride on heating with sodium methoxide gives 2-methylpropene instead of t-butylmethylether. "
+            }
+          ]
+        },
+        {
+          "topic": "Nucleophilic Addition / Aldol / Cannizzaro",
+          "frequency": 4,
+          "years_asked": [
+            2014,
+            2020
+          ],
+          "total_variations": 4,
+          "sample_variations": [
+            {
+              "year": 2014,
+              "question_preview": "(a) Write the products of the following reactions: (i) Cyclohexanone + NH 2 OH (ii) 2C 6 H 5 CHO + Conc. NaOH (iii) CH 3 COOH [Cl 2 /P] (b) Write the chemical equations to illustrate the following nam"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(a) Account for the following: (i) CH 3 CHO is more reactive than CH 3 COCH 3 towards reaction with HCN. (ii) Carboxylic acid is a stronger acid than phenol. (b) Write the chemical equations to illust"
+            },
+            {
+              "year": 2014,
+              "question_preview": "(a) Account for the following: (i) Cl CH 2 COOH is a stronger acid than CH 3 COOH. (ii) Carboxylic acids do not give reactions of carbonyl group. (b) Write the chemical equations to illustrate the fol"
+            },
+            {
+              "year": 2020,
+              "question_preview": "(a) Write the products formed when benzaldehyde reacts with: (i) CH3CHO in presence of dilute NaOH (ii) H2N-NH-C6H5 (Phenyl hydrazine) (iii) Conc. NaOH (b) Distinguish between: (i) CH3-CH=CH-CO-CH3 an"
+            }
+          ]
+        },
+        {
+          "topic": "IUPAC Naming of Coordination Compounds",
+          "frequency": 3,
+          "years_asked": [
+            2017,
+            2024,
+            2025
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2017,
+              "question_preview": "(a) Write the product(s) in the following reactions: (i) Salicylic acid (2-hydroxybenzoic acid) + (CH 3 CO) 2 O --H + -- ? (ii) CH 3 -CH(CH 3 )-O-CH 2 -CH 3 --HI-- ? + ? (iii) CH 3 -CH=CH-CH 2 -OH --P"
+            },
+            {
+              "year": 2025,
+              "question_preview": "(A)(a) Give IUPAC name of CH3-CH=CH-CHO. (b) Give a simple chemical test to distinguish between propanal and propanone. (c) How will you convert the following: (i) Toluene to benzoic acid (ii) Ethanol"
+            },
+            {
+              "year": 2024,
+              "question_preview": "(a) An organic compound (A) with molecular formula C9H10O forms 2,4-DNP derivative, reduces Fehling solution and undergoes Cannizzaro reaction. On vigorous oxidation, it gives 1,2-benzene dicarboxylic"
+            }
+          ]
+        },
+        {
+          "topic": "Amines Basicity / Properties",
+          "frequency": 3,
+          "years_asked": [
+            2023,
+            2024
+          ],
+          "total_variations": 3,
+          "sample_variations": [
+            {
+              "year": 2023,
+              "question_preview": "(a) (i) Write the reaction involved in Cannizaro's reaction. (ii) Why are the boiling point of aldehydes and ketones lower than that of corresponding carboxylic acids? (iii) An organic compound 'A' wi"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(a) (I) Give reasons: (i) Aniline on nitration gives good amount of m-nitroaniline, though -NH2 group is o/p directing in electrophilic substitution reactions. (ii) (CH3)2NH is more basic than (CH3)3N"
+            },
+            {
+              "year": 2024,
+              "question_preview": "(a) An amide 'A' with molecular formula C7H7ON undergoes Hoffmann Bromamide degradation reaction to give amine 'B'. 'B' on treatment with nitrous acid at 273-278 K form 'C' and on treatment with chlor"
+            }
+          ]
+        },
+        {
+          "topic": "Other (Amines)",
+          "frequency": 2,
+          "years_asked": [
+            2015,
+            2023
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2015,
+              "question_preview": "An aromatic compound 'A' of molecular formula C 7 H 7 ON undergoes a series of reactions as shown below. Write the structures of A, B, C, D and E in the following reactions: (C 7 H 7 ON) A [Br 2 +KOH]"
+            },
+            {
+              "year": 2023,
+              "question_preview": "(b) (I) Write the structures of A, B and C in the following reactions: (i) C6H5N2+Cl- --(CuCN)--> A --(H2O/H+)--> B --(NH3/Delta)--> C (ii) C6H5NO2 --(Fe/HCl)--> A --(NaNO2+HCl/273K)--> B --(C2H5OH)--"
+            }
+          ]
+        },
+        {
+          "topic": "KMnO4 / K2Cr2O7 Reactions",
+          "frequency": 2,
+          "years_asked": [
+            2016,
+            2023
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2016,
+              "question_preview": "Write the structures of A, B, C, D and E in the following reactions: C6H6 --(CH3COCl/Anhyd.AlCl3)--> A --(Zn-Hg/Conc.HCl)--> B --(KMnO4-KOH,delta/H3O+)--> C. A --(NaOH)--> D + E. OR (a) Write the chem"
+            },
+            {
+              "year": 2023,
+              "question_preview": "34 (OR): (b) (i) Give a chemical test to distinguish between ethanol acid and ethanoic acid. (ii) Why is the alpha-hydrogens of aldehydes and ketones are acidic in nature? (iii) An organic compound 'A"
+            }
+          ]
+        },
+        {
+          "topic": "Sandmeyer / Diazonium Reactions",
+          "frequency": 2,
+          "years_asked": [
+            2018,
+            2019
+          ],
+          "total_variations": 2,
+          "sample_variations": [
+            {
+              "year": 2018,
+              "question_preview": "(a) Write the reactions involved in the following: (i) Hoffmann bromamide degradation reaction (ii) Diazotisation (iii) Gabriel phthalimide synthesis (b) Give reasons: (i) (CH 3 ) 2 NH is more basic t"
+            },
+            {
+              "year": 2019,
+              "question_preview": "(a) How can you obtain Phenol from (i) Cumene, (ii) Benzene sulphonic acid, (iii) Benzene diazonium chloride? (b) Write structure of major product from dinitration of 3-methylphenol. (c) Write reactio"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

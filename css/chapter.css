@@ -217,4 +217,16 @@
   .ch-banner  { padding: 1rem 1.25rem }
   .ch-title   { font-size: 1.3rem }
   .ch-marks-badge { font-size: 1.6rem }
+
+  /* Sticky chapter dropdown at top */
+  .chapter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(10px);
+    margin: 0 -.75rem;
+    padding: .5rem .75rem;
+    border-bottom: 1px solid var(--sand-200);
+  }
 }

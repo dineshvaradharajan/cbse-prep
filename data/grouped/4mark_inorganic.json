@@ -1,0 +1,41 @@
+[
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "D",
+    "qno": 29,
+    "type": "case-based",
+    "question": "The oxidation number of the central atom in a complex is defined as the charge it would carry if all the ligands are removed along with the electron pairs that are shared with the central atom. Similarly the charge on the complex is the sum of the charges of the constituent parts. Based on this information, answer:\n(a) Define ambidentate ligand with an example.\n(b) What type of isomerism is shown by [Co(NH3)5Cl]SO4 and [Co(NH3)5SO4]Cl?\n(c) Define chelate effect. How it affects the stability of complex?\nOR\n(c) Find the coordination number and oxidation state of chromium in Na3[Cr(C2O4)3].",
+    "options": null,
+    "answer": "(a) A ligand which has two different donor atoms and either of the two sites in the ligand can form coordinate bonds with the central atom is called an ambidentate ligand. Ex: -O-N=O (NO2- can bind through N or O)\n(b) Ionisation isomerism\n(c) When a ligand attaches to the metal ion in a manner that forms a ring, then a chelate is formed. A bidentate or polydentate ligand positioned such that when they coordinate with the central metal ion, a 5 or 6 membered ring is formed, the effect is known as the chelate effect. The complex resulting from chelation is much more thermodynamically stable.\nOR\n(c) Coordination no. = No. of ligands x denticity of ligand = 3 x 2 = 6. Since overall charge of the ligand + metal ion is +3, the oxidation no. of Cr is +3.",
+    "chapter": "Coordination Compounds",
+    "set": "Delhi Set-1 (56/5/1)",
+    "branch": "Inorganic"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "D",
+    "qno": 29,
+    "type": "case-based",
+    "question": "The nature of bonding, structure of the coordination explained to some extent by valence bond theory. The central metal atom/ion makes available a number of vacant orbitals equal to its coordination number. Based on this:\n(a) Predict whether [CoF6]3- is diamagnetic or paramagnetic and why [Atomic number: Co = 27]\n(b) What is the coordination number of Co in [Co(en)2Cl2]+?\n(c) (i) Write the IUPAC name of the given complex: [Pt(NH3)2Cl2]2+\n(ii) Explain (Co(NH3)6)3+ is an inner orbital or outer orbital complex.\nOR\n(c) Using valence bond theory, deduce the shape and hybridisation of [Ni(NH3)6]2+ (Atomic number of Ni = 28).",
+    "options": null,
+    "answer": "(a) [CoF6]3-: Co = 27, Co3+ = 1s2 2s2 2p6 3s2 3p6 3d6 4s0 4p0. Fluorido is a weak ligand so it will undergo high spin, sp3d2 hybridisation. It will be paramagnetic due to 4 unpaired electrons.\n(b) [Co(en)2Cl2]+: en = ethylenediamine, a bidentate ligand providing two lone pairs. Coordination number = 2 x 2 + 2 = 6.\n(c)(i) Diamminedichloridoplatinum(IV) ion.\n(ii) [Co(NH3)6]3+: Since NH3 is a borderline ligand it will form an outer orbital complex with sp3d2 hybridisation and is diamagnetic in nature.\nOR\n(c) [Ni(NH3)6]2+: Ni = 28, Ni2+ = 1s2 2s2 2p6 3s2 3p6 3d8. The coordination number is six, that means the compound is octahedral in shape. Since [Ni(NH3)6]2+ is an outer orbital complex it undergoes sp3d2 hybridisation. It is paramagnetic with 2 unpaired electrons.",
+    "chapter": "Coordination Compounds",
+    "set": "Delhi Set-3 (56/5/3)",
+    "branch": "Inorganic"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "D",
+    "qno": 29,
+    "type": "case-based",
+    "question": "The oxidation number of the central atom in a complex is defined as the charge it would carry if all the ligands are removed. Based on this:\n(a) What is the secondary valence of Co in [Co(NH3)4Cl2]+?\n(b) What type of isomerism is shown by the complex [Cr(H2O)6]Cl3 and [Cr(H2O)5Cl]Cl2.H2O?\n(c) Write the electronic configuration of d4 ion on the basis of crystal field theory when (i) Delta_0 < P (ii) Delta_0 > P\nOR\n(c) Find the oxidation state and coordination number of the central metal ion in [Co(H2O)(CN)(en)2]2+",
+    "options": null,
+    "answer": "(a) The secondary valency of Co in [Co(NH3)4Cl2]+ is 6, meaning it forms 6 bonds with surrounding ligands (4 NH3 and 2 Cl-).\n(b) Solvate isomerism (Hydrate isomerism). The two complexes differ by water/solvent molecules that are directly bonded to metal ion or present as free solvent molecules.\n(c)(i) If Delta_0 < P: electrons occupy higher energy orbitals first. Configuration becomes t2g^3 eg^1 (high spin).\n(ii) If Delta_0 > P: electrons occupy lower energy t2g orbitals first. Configuration becomes t2g^4 eg^0 (low spin).\nOR\n(c) The coordination number of cobalt is 6 and the oxidation state of cobalt (Co) in the complex is +3.",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-3 (56/4/3)",
+    "branch": "Inorganic"
+  }
+]

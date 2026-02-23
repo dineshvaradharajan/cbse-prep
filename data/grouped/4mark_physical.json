@@ -1,0 +1,67 @@
+[
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 32,
+    "type": "case-based",
+    "question": "Rahul set-up an experiment to find resistance of aqueous KCl solution for different concentrations at 298 K using a conductivity cell connected to a Wheatstone bridge. He fed the Wheatstone bridge with a.c. power in the audio frequency range 550 to 5000 cycles per second. Once the resistance was calculated from null point he also calculated the conductivity K and molar conductivity Lambda_m and recorded his readings in tabular form.\n\nS.No. | Conc. (M) | k S cm-1 | Lambda_m S cm2 mol-1\n1. | 1.00 | 111.3 x 10-3 | 111.3\n2. | 0.10 | 12.9 x 10-3 | 129.0\n3. | 0.01 | 1.41 x 10-3 | 141.0\n\nAnswer the following questions:\n(a) Why does conductivity decrease with dilution?\n(b) If Lambda_m° of KCl is 150.0 S cm2 mol-1, calculate the degree of dissociation of 0.01 M KCl.\n(c) If Rahul had used HCl instead of KCl then would you expect the Lambda_m values to be more or less than those per KCl for a given concentration. Justify.",
+    "options": null,
+    "answer": "(a) Conductivity decreases with dilution because it depends upon the number of ions present in the solution. When dilution increases number of available ions decreases. Hence, conductivity decreases.\n(b) alpha = Lambda_m / Lambda_m°\nLambda_m = 141.0 S cm2 mol-1\nLambda_m° = 150.0 S cm2 mol-1\nalpha = 141/150 = 0.94\n(c) Molar conductivity of HCl will be high because when it breaks down into ions, it produces HCl -> H+ + Cl-. Its H+ (cation) size is smaller than K+ ion. So for same concentration of HCl and KCl, HCl shows high molar conductivity.",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1",
+    "branch": "Physical"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 32,
+    "type": "case-based",
+    "question": "32 (OR) (c): Amit, a classmate of Rahul repeated the same experiment with CH3COOH solution instead of KCl solution. Give one point that would be similar and one that would be different in his observations as compared to Rahul.",
+    "options": null,
+    "answer": "(i) KCl is strong electrolyte and completely dissociate into their respective ion while CH3-COOH is weak electrolyte and do not completely dissociate.\n(ii) Number of ions produced after dissociation are equal: KCl -> K+ + Cl- and CH3-COOH -> CH3-COO- + H+. Similar point: Both produce same number of ions on dissociation. Different point: KCl is a strong electrolyte (fully dissociates) while CH3COOH is a weak electrolyte (partially dissociates), so Lambda_m values for CH3COOH will be lower.",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1",
+    "branch": "Physical"
+  },
+  {
+    "year": 2025,
+    "marks": 4,
+    "section": "D",
+    "qno": 29,
+    "type": "case-based",
+    "question": "The rate of a chemical reaction is expressed either in terms of decrease in the concentration of reactants or increase in the concentration of a product per unit time. Rate of the reaction depends upon the nature of reactants, concentration of reactants, temperature, presence of catalyst, surface area of the reactants and presence of light. Rate of reactions is directly related to the concentration of reactant. Rate law states that the rate of reaction depends upon the concentration terms on which the rate of reaction actually depends, as observed experimentally. The sum of powers of the concentration of the reactants in the Rate law expression is called order of reaction while the number of reacting species taking part in an elementary reaction which must collide simultaneously in order to bring about a chemical reaction is called molecularity of the reaction. Answer the following: (a)(i) What is a rate determining step? (ii) Define complex reaction. (b) What is the effect of temperature on the rate constant of a reaction? OR (b) Why is molecularity applicable only for elementary reactions whereas order is applicable for elementary as well as complex reactions? (c) The conversion of molecule X to Y follows second order kinetics. If concentration of X is increased 3 times, how will it affect the rate of formation of Y?",
+    "options": null,
+    "answer": "(a)(i) The rate determining step is the slowest step of a chemical reaction that determines the speed at which the overall reaction proceeds. (ii) When overall reaction does not occur in a single step, but occurs in multiple steps, such that order is not equal to the molecularity of the reaction. The mechanism of a complex reaction consists of more than one elementary step. (b) With increase in temperature, the rate of the reaction and the rate constant increases. OR (b) A complex reaction proceeds through several elementary reactions. The number of molecules involved in each elementary reaction may be different, i.e., the molecularity of each step may be different. Therefore, it is impossible to determine the molecularity of overall complex reaction. Order of a complex reaction is determined by the slowest step in its mechanism. (c) For second order, Rate = k[X]^2. When [X] is increased 3 times, Rate = k(3a)^2 = 9ka^2. Thus, the rate of formation of Y will become 9 times.",
+    "chapter": "Chemical Kinetics",
+    "set": "Delhi Set-1",
+    "branch": "Physical"
+  },
+  {
+    "year": 2025,
+    "marks": 4,
+    "section": "D",
+    "qno": 29,
+    "type": "case-based",
+    "question": "The spontaneous flow of the solvent through a semipermeable membrane from a pure solvent to a solution or from a dilute solution to a concentrated solution is called osmosis. [Passage about osmosis experiment with eggs]. Answer the following: (a) Define reverse osmosis. Name one SPM which can be used in the process of reverse osmosis. (b)(i) What do you expect to happen when red blood corpuscles (RBCs) are placed in 0.5% NaCl solution? OR (b)(ii) Which one of the following will have higher osmotic pressure in 1 M KCl or 1 M urea solution. Justify your answer. (c) Why osmotic pressure is a colligative property?",
+    "options": null,
+    "answer": "(a) Reverse Osmosis (RO) is a water purification process that uses a semi-permeable membrane to remove impurities. In reverse osmosis, water is forced through the membrane under pressure against the natural osmotic flow. One of the most common materials used for semi-permeable membranes is Thin Film Composite (TFC) membranes. (b)(i) RBCs placed in 0.5% NaCl solution will swell and may undergo haemolysis (bursting), as water moves into the cells due to osmosis. OR (b)(ii) 1 M KCl will have higher osmotic pressure. For KCl, i = 2 (it dissociates into K+ and Cl-). For urea, i = 1. Since pi = iCRT, osmotic pressure of KCl will be higher. (c) Osmotic pressure is a colligative property because it depends only on the number of solute particles in the solution, not on the nature or identity of the solute particles themselves.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-1",
+    "branch": "Physical"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "D",
+    "qno": 30,
+    "type": "case-based",
+    "question": "In a galvanic cell, chemical energy of a redox reaction is converted into electrical energy, whereas in an electrolytic cell the redox reaction occurs on passing electricity. Based on this:\n(a) What is the function of a salt bridge in a galvanic cell?\n(b) When does galvanic cell behave like an electrolytic cell?\n(c) Can copper sulphate solution be stored in a pot made of zinc? Explain with the help of the value of E° cell. (E° Cu2+/Cu = 0.34 V, E° Zn2+/Zn = -0.76 V)\nOR\n(c) How much charge in terms of Faraday is required for the following:\n(i) 1 mol of MnO4- to Mn2+\n(ii) 1 mol of H2O to O2",
+    "options": null,
+    "answer": "(a) It maintains the electrical neutrality and completes the circuit.\n(b) When the external opposite potential is applied greater than the voltage of the reaction, the reaction starts proceeding in reverse direction. At this point the cell becomes an electrolytic cell.\n(c) No, copper sulphate in zinc pot will have a spontaneous substitution reaction. CuSO4 + Zn -> Cu + ZnSO4. E°cell = E°cathode - E°anode = 0.34 - (-0.76) = 1.10 V. Since E°cell is positive, the reaction is spontaneous.\nOR\n(c)(i) MnO4-(+7) -> Mn2+. Change in oxidation number = 7-2 = 5. Faraday's required = 5F.\n(ii) H2O -> O2. Change in oxidation number = 2. Faraday's required = 2F.",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-3 (56/5/3)",
+    "branch": "Physical"
+  }
+]
