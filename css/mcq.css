@@ -411,7 +411,7 @@ body.test-mode .show-answer-btn { display: none }
   border: 1px solid var(--sand-200);
   border-radius: 8px;
   padding: .85rem 1rem;
-  font-size: .82rem;
+  font-size: .92rem;
   color: var(--ink-2);
   line-height: 1.7;
   margin-top: .25rem;
