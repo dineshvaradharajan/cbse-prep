@@ -528,14 +528,14 @@
   <div id="chemistry" class="subject-panel">
 
   <div class="chem-tabs">
-    <button class="chem-tab active" onclick="switchChem('physical',this)">Physical Chemistry</button>
+    <button class="chem-tab active" onclick="switchChem('all',this)">All</button>
+    <button class="chem-tab" onclick="switchChem('physical',this)">Physical Chemistry</button>
     <button class="chem-tab" onclick="switchChem('organic',this)">Organic Chemistry</button>
     <button class="chem-tab" onclick="switchChem('inorganic',this)">Inorganic Chemistry</button>
-    <button class="chem-tab" onclick="switchChem('all',this)">All</button>
   </div>
 
   <!-- Physical Chemistry -->
-  <div id="chem-physical" class="chem-panel active">
+  <div id="chem-physical" class="chem-panel">
   <div class="cards">
     <h3 class="section-heading">Learn</h3>
 
@@ -751,7 +751,7 @@
   </div>
 
   <!-- All Chemistry -->
-  <div id="chem-all" class="chem-panel">
+  <div id="chem-all" class="chem-panel active">
   <div class="cards">
     <h3 class="section-heading">Practice</h3>
 
