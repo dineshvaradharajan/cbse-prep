@@ -71,6 +71,25 @@ function guessDifficulty(q) {
   return 'easy';
 }
 
+// ── Strip leading option labels like "(A) ", "(a) ", "(i) " ──────
+function stripOptionLabel(opt) {
+  return opt.replace(/^\s*\([A-Da-d]\)\s*/, '')
+            .replace(/^\s*\([iv]+\)\s*/i, '');
+}
+
+// ── Clean question text (remove case-study preambles) ─────────────
+function cleanQuestionText(text) {
+  // If there's a case-based passage, extract only the actual question
+  const caseMatch = text.match(/(?:Case[- ]based\b.*?\.\s*)(.+)/is);
+  if (caseMatch) {
+    // Find the last sentence that ends with ? — that's the actual question
+    const parts = text.split(/\n+/);
+    const questionPart = parts.find(p => p.trim().endsWith('?'));
+    if (questionPart) return questionPart.trim();
+  }
+  return text;
+}
+
 // ── Main ──────────────────────────────────────────────────────────
 const files = fs.readdirSync(PYQ_DIR).filter(f => f.endsWith('.json'));
 let allMcqs = [];
@@ -92,8 +111,8 @@ for (const file of files) {
       chapter: q.chapter,
       branch,
       difficulty: guessDifficulty(q),
-      text: q.question,
-      options: q.options.slice(0, 4),
+      text: cleanQuestionText(q.question),
+      options: q.options.slice(0, 4).map(stripOptionLabel),
       answer: answerLetter,
       explanation: q.answer,
       year: q.year,
