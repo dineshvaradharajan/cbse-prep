@@ -1,0 +1,1115 @@
+[
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 1,
+    "type": "mcq",
+    "question": "The conversion of an alkyl halide into an alkene by alcoholic KOH is classified as",
+    "options": [
+      "(a) a substitution reaction",
+      "(b) an addition reaction",
+      "(c) a dehydrohalogenation reaction",
+      "(d) a dehydration reaction"
+    ],
+    "answer": "Option (c) is correct. Dehydrohalogenation reaction: As it is accompanied by removal of one halogen molecule. CH3-CH2-X --(Alc KOH)--> CH2=CH2 + HX",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 2,
+    "type": "mcq",
+    "question": "The oxidation state of Fe in [Fe(CO)5] is",
+    "options": [
+      "(a) +2",
+      "(b) 0",
+      "(c) +3",
+      "(d) +5"
+    ],
+    "answer": "Option (b) is correct. [Fe(CO)5]: x + (0 x 6) = 0, x = 0 (Zero)",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 3,
+    "type": "mcq",
+    "question": "Among the following, which is the strongest base?\n(a) C6H4-NH2 (aniline)\n(b) H3C-C6H4-NH2 (p-toluidine)\n(c) C6H5-CH2-NH2 (benzylamine)\n(d) O2N-C6H4-NH2 (p-nitroaniline)",
+    "options": [
+      "(a) C6H4-NH2 (aniline)",
+      "(b) H3C-C6H4-NH2 (p-toluidine)",
+      "(c) C6H5-CH2-NH2 (benzylamine)",
+      "(d) O2N-C6H4-NH2 (p-nitroaniline)"
+    ],
+    "answer": "Option (c) is correct. C6H5-CH2-NH2 (Benzylamine), Phenyl methyl amine shows +I effect. As lone pair of electron on N-atom is delocalised and not involved in resonance.",
+    "chapter": "Amines",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 4,
+    "type": "mcq",
+    "question": "The slope in the plot of ln[R] vs. time for a first order reaction is",
+    "options": [
+      "(a) +k/2.303",
+      "(b) -k",
+      "(c) -k/2.303",
+      "(d) +k"
+    ],
+    "answer": "Option (b) is correct. d ln[R]/dt = -K[A](d[A]/[A]) = -Kdt, ln[R] = -Kt. The slope is -k.",
+    "chapter": "Chemical Kinetics",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 5,
+    "type": "mcq",
+    "question": "An alpha-helix is a structural feature of",
+    "options": [
+      "(a) Sucrose",
+      "(b) Polypeptides",
+      "(c) Nucleotides",
+      "(d) Starch"
+    ],
+    "answer": "Option (b) is correct. Polypeptides.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 6,
+    "type": "mcq",
+    "question": "Racemisation occurs in",
+    "options": [
+      "(a) SN1 reaction",
+      "(b) SN2 reaction",
+      "(c) Neither SN1 nor SN2 reaction",
+      "(d) SN2 reaction as well as SN1 reaction"
+    ],
+    "answer": "Option (a) is correct. SN1 reaction. They are accompanied by racemization in optically active alkyl halides.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 7,
+    "type": "mcq",
+    "question": "Value of Henry's constant KH\n(a) increases with decrease in temperature\n(b) decreases with increase in temperature\n(c) increases with increase in temperature\n(d) remains constant",
+    "options": [
+      "(a) increases with decrease in temperature",
+      "(b) decreases with increase in temperature",
+      "(c) increases with increase in temperature",
+      "(d) remains constant"
+    ],
+    "answer": "Option (c) is correct. Increases with increase in temperature. As temperature (T) increases, the mole fraction of gas in the solution decreases and Henry's constant increases.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 8,
+    "type": "mcq",
+    "question": "Which of the following solutions of KCl will have the highest value of molar conductivity?",
+    "options": [
+      "(a) 0.01 M",
+      "(b) 1 M",
+      "(c) 0.5 M",
+      "(d) 0.1 M"
+    ],
+    "answer": "Option (a) is correct. 0.01 M. Molar conductivity is the conductivity divided by concentration of solution expressed in molarity. Lambda_m = K/C.",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 9,
+    "type": "mcq",
+    "question": "Which of the following reactions are feasible?\n(a) CH3CH2Br + Na+ O-C(CH3)3 -> CH3CH2-O-C(CH3)3\n(b) (CH3)3C-Cl + Na+ O-CH2CH3 -> CH3CH2-O-C(CH3)3\n(c) Both (a) and (b)\n(d) Neither (a) nor (b)",
+    "options": [
+      "(a) CH3CH2Br + Na+ O-C(CH3)3 -> CH3CH2-O-C(CH3)3",
+      "(b) (CH3)3C-Cl + Na+ O-CH2CH3 -> CH3CH2-O-C(CH3)3",
+      "(c) Both (a) and (b)",
+      "(d) Neither (a) nor (b)"
+    ],
+    "answer": "Option (c) is correct. In (b) Elimination will take place, where alkene and alcohol and sodium halide will be the product. So the given reaction is not feasible.",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 10,
+    "type": "mcq",
+    "question": "Which of the following is most reactive in nucleophilic addition reactions?",
+    "options": [
+      "(a) HCHO",
+      "(b) CH3CHO",
+      "(c) CH3COCH3",
+      "(d) CH3COC2H5"
+    ],
+    "answer": "Option (a) is correct. HCHO. Presence of alkyl groups decrease the reactivity by decreasing the electron deficiency.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 11,
+    "type": "mcq",
+    "question": "Which of the following does not give aldol condensation reaction?",
+    "options": [
+      "(a) CH3-CHO",
+      "(b) C6H5-CHO (Benzaldehyde)",
+      "(c) C6H5-CHO (cyclopentane-CHO)",
+      "(d) CH3COCH3"
+    ],
+    "answer": "Option (b) is correct. Benzaldehyde (C6H5CHO). It does not give aldol condensation due to absence of alpha-H atom.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 12,
+    "type": "mcq",
+    "question": "For the reaction 3A -> 2B, rate of reaction +d[B]/dt is equal to",
+    "options": [
+      "(a) -3/2 d[A]/dt",
+      "(b) -2/3 d[A]/dt",
+      "(c) -1/3 d[A]/dt",
+      "(d) +2d[A]/dt"
+    ],
+    "answer": "Option (b) is correct. 3A -> 2B: -1/3 d[A]/dt = 1/2 d[B]/dt. Therefore +d[B]/dt = -2/3 d[A]/dt.",
+    "chapter": "Chemical Kinetics",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 13,
+    "type": "mcq",
+    "question": "Which of the following characteristics of transition metals is associated with their catalytic activity?",
+    "options": [
+      "(a) Paramagnetic nature",
+      "(b) Colour of hydrated ions",
+      "(c) High enthalpy of atomisation",
+      "(d) Variable oxidation states"
+    ],
+    "answer": "Option (d) is correct. Variable oxidation state. The transition elements, on account of their variable valency, are able to form unstable intermediate compounds very readily and hence show catalytic behaviour.",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 14,
+    "type": "mcq",
+    "question": "The formula of the complex dichlorobis (ethane-1, 2-diamine) platinum (IV) nitrate is",
+    "options": [
+      "(a) [Pt Cl2 (en)2 (NO3)2]",
+      "(b) [Pt Cl2(en)2] (NO3)2",
+      "(c) [PtCl(en)2 (NO3)] NO3",
+      "(d) [Pt Cl2(en)2 (NO3)2] Cl2"
+    ],
+    "answer": "Option (b) is correct. [Pt Cl2(en)2] (NO3)2.",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 15,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Osmotic pressure is a colligative property.\nReason (R): Osmotic pressure is proportional to the molality.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false but (R) is true."
+    ],
+    "answer": "Option (c) is correct. (A) is true, but (R) is false. Because osmotic pressure is proportional to the molarity.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 16,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Conductivity decreases with decrease in concentration of electrolyte.\nReason (R): Number of ions per unit volume that carry the current in a solution decreases on dilution.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false but (R) is true."
+    ],
+    "answer": "Option (a) is correct. Both (A) and (R) are true and (R) is the correct explanation of (A). Conductivity decreases with a decrease in concentration as the number of ions per unit volume that carries the current in a solution decrease on dilution.",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 17,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Copper is a non-transition element.\nReason (R): Copper has completely filled d-orbitals in its ground state.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false but (R) is true."
+    ],
+    "answer": "Option (d) is correct. (A) & (R) are true and (R) is the correct explanation of (A). Due to high electronegativity of Cl-atom. Because copper is a transition element.",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 18,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Nucleophilic substitution of iodoethane is easier than chloroethane.\nReason (R): Bond enthalpy of C-I bond is less than that of C-Cl bond.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false but (R) is true."
+    ],
+    "answer": "Option (a) is correct. Both (A) & (R) are true and (R) is the correct explanation of (A).",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 19,
+    "type": "subjective",
+    "question": "The vapour pressure of pure liquid X and pure liquid Y at 25°C are 120 mm Hg and 160 mm Hg respectively. If equal moles of X and Y are mixed to form an ideal solution, calculate the vapour pressure of the solution.",
+    "options": null,
+    "answer": "X = 120 mm Hg, Y = 160 mm Hg. When equal moles of X and Y are mixed, xA = xB = 0.5. According to Raoult's law: P_Total = P0_A * xA + P0_B * xB = 120 * 0.5 + 160 * 0.5 = 60 + 80 = 140 mmHg.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 20,
+    "type": "subjective",
+    "question": "(a) Give reasons:\n(i) Mercury cell delivers a constant potential during its life time.\n(ii) In the experimental determination of electrolytic conductance, Direct Current (DC) is not used.",
+    "options": null,
+    "answer": "(a) (i) As the overall reaction does not involve any ion in the solution whose concentration changes during its life period.\n(ii) If we apply DC current through the conductivity cell, it will lead to the electrolysis of the solution taken in the cell. So, AC current is used for this measurement to prevent its electrolysis.",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 20,
+    "type": "subjective",
+    "question": "(b) Define fuel cell with an example. What advantages do the fuel cells have over primary and secondary batteries? (OR)",
+    "options": null,
+    "answer": "Fuel cell: A fuel cell is an electrochemical cell that generates electricity/electrical energy from fuel via an electrochemical reaction. It offers high efficiency and zero emissions. e.g. The polymer electrolyte fuel cells etc.\nAdvantages: Good reliability - quality of power does not degrade over time. Environmentally beneficial - greatly reduces CO2 & harmful pollutant emission.",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 21,
+    "type": "subjective",
+    "question": "(a) The conversion of molecule A to B followed second order kinetics. If concentration of A increased to three times, how will it affect the rate of formation of B?",
+    "options": null,
+    "answer": "Reaction is A -> B for second order kinetics: (Rate)1 = K[A]^2. (Rate)2 = K[3A]^2 = 9K[A]^2. (Rate)2 = 9 x (Rate)1. So the rate of formation of B will increase by 9 times.",
+    "chapter": "Chemical Kinetics",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 21,
+    "type": "subjective",
+    "question": "(b) Define Pseudo first order reaction with an example. (OR)",
+    "options": null,
+    "answer": "The reactions that have higher order true rate law but are found to behave as first order are known as pseudo first order reactions. Example: Consider the acid hydrolysis of methyl acetate. CH3COOCH3(aq) + H2O(l) -> CH3COOH(aq) + CH3OH(aq)",
+    "chapter": "Chemical Kinetics",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 22,
+    "type": "subjective",
+    "question": "(a) Write the IUPAC names of the following:\n(i) [Co(NH3)5(ONO)]^2+\n(ii) K2[NiCl4]",
+    "options": null,
+    "answer": "(a) (i) [Co(NH3)5(ONO)]^2+: IUPAC: Pentaammine onitrito cobalt (III) ion\n(ii) K2[NiCl4]: potassiumtetra chlornickelate (II)",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 22,
+    "type": "subjective",
+    "question": "(b) (i) What is a chelate complex? Give one example.\n(ii) What are heteroleptic complexes? Give one example. (OR)",
+    "options": null,
+    "answer": "(b) (i) Chelate complex: A class of coordination or complex compounds consisting of a central metal atom attached through two or more co-ordinate bonds with ligands in a cyclic or ring structure. Example: EDIA\n(ii) Heteroleptic complex: Coordination complexes which contain more than one type of ligands. Example: [Fe(NH3)4Cl2]+",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 23,
+    "type": "subjective",
+    "question": "Write the chemical equation involved in the following reactions:\n(a) Reimer-Tiemann reaction\n(b) Acetylation of Salicylic acid",
+    "options": null,
+    "answer": "(a) Reimer-Tiemann Reaction: It is used for ortho-formylation of phenol. Phenol + CHCl3 + KOH -> Salicylaldehyde (o-hydroxybenzaldehyde).\n(b) Acetylation of salicylic Acid: Salicylic acid + (CH3CO)2O (Acetic Anhydride) -> Aspirin (acetylsalicylic acid) + CH3COOH (Acetic acid).",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 24,
+    "type": "subjective",
+    "question": "Do the following conversions in not more than two steps:\n(a) CH3CN to CH3-C(=O)-CH3 (acetone)\n(b) Benzoic acid (C6H5COOH) to Benzene (C6H6)",
+    "options": null,
+    "answer": "(a) CH3CN to CH3COCH3: CH3CN + CH3MgI -> (CH3)2CNMgI --(H2O/H+, -NH3)--> CH3COCH3\n(b) Benzoic Acid to Benzene: C6H5COOH --(NaOH, -H2O)--> C6H5COONa (Sodium Benzoate) --(H2O)--> C6H6 (Benzene)",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 25,
+    "type": "subjective",
+    "question": "Write two differences between DNA and RNA.",
+    "options": null,
+    "answer": "Differences between DNA and RNA:\n1) DNA: Sugar moiety is deoxy ribose. RNA: Sugar moiety is ribose.\n2) DNA: It is polymer of long chain of nucleotide. RNA: It is polymer of nucleoside.\n3) DNA: Base pairs are A, T, G, C. RNA: Base pairs are A, U, G, C.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 26,
+    "type": "subjective",
+    "question": "(a) (i) Write the mechanism of the following reaction: 2CH3CH2OH --(H+/413K)--> CH3-CH2-O-CH2-CH3 + H2O\n(ii) Why ortho-nitrophenol is steam volatile while para-nitrophenol is not?",
+    "options": null,
+    "answer": "(a) (i) Mechanism:\nStep I: CH3-CH2-OH + H+ -> CH3-CH2-OH2+ (protonation)\nStep II: CH3CH2-OH2+ + CH3-CH2-OH -> CH3CH2-O(+H)-CH2CH3 + H2O\nStep III: CH3CH2-O(+H)-CH2CH3 -> CH3CH2-O-CH2CH3 + H+\n(ii) Para-nitro phenol has higher boiling point than ortho-nitrophenol due to intermolecular hydrogen bonding present in para-nitrophenol, which require more energy to break these bonds during boiling. In o-nitrophenol intramolecular hydrogen bonding is present to greater extent. Thus o-nitrophenol is steam volatile due to low boiling point.",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 26,
+    "type": "subjective",
+    "question": "(b) What happens when (OR)\n(i) Anisole is treated with CH3Cl anhydrous AlCl3?\n(ii) Phenol is oxidised with Na2Cr2O7/H+?\n(iii) (CH3)3C-OH is heated with Cu/573 K?\nWrite chemical equation in support of your answer.",
+    "options": null,
+    "answer": "(b)(i) Friedel craft Alkylation reaction will take place. Anisole + CH3Cl --(Anhy. AlCl3)--> o-methyl anisole + p-methyl anisole\n(ii) A conjugated diketone is produced - Benzoquinone. Phenol --(Na2Cr2O7/H+)--> Benzoquinone\n(iii) Dehydration takes place and alkene is formed. (CH3)3C-OH --(Cu/573K, -H2O)--> CH3-C(CH3)=CH2 (2-methylpropene)",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 27,
+    "type": "subjective",
+    "question": "Answer any three of the following:\n(a) Which isomer of C5H10 gives a single monochloro compound C5H9Cl in bright sunlight?\n(b) Arrange the following compounds in increasing order of reactivity towards SN2 reaction: 2-Bromopentane, 1-Bromopentane, 2-Bromo-2-methylbutane\n(c) Why p-dichlorobenzene has higher melting point than those of ortho and meta-isomers?\n(d) Identify A and B in the following: (Br-cyclopentane) --(Mg/Dry ether)--> A --(H2O)--> B",
+    "options": null,
+    "answer": "(a) The hydrocarbon is either alkene or cycloalkane. It does not react with chlorine in dark. Hence it cannot be alkene. Hence, it is cycloalkene. The compound is cyclopentane (C5H10).\n(b) 2-Bromo-2-methylbutane < 2-Bromopentane < 1-Bromopentane.\n(c) It is due to greater symmetry of para-isomer that fits in the crystal better as compared to o- & m-isomers.\n(d) A -> Cyclobutyl magnesium bromide (MgBr). B -> 1-cyclobutyl ethanol (CH3-C(OH)(H)-cyclobutyl).",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 28,
+    "type": "subjective",
+    "question": "A first order reaction is 50% complete in 30 minutes at 300 K and in 10 minutes at 320 K. Calculate activation energy (Ea) for the reaction.\n[R = 8.314 J K^-1 mol^-1]\n[Given: log 2 = 0.3010, log 3 = 0.4771, log 4 = 0.6021]",
+    "options": null,
+    "answer": "K1 at 27°C or 300K = 0.693/30 min = 0.0231 min^-1\nK2 at 47°C or 320K = 0.693/10 min = 0.0693 min^-1\nUsing Arrhenius equation: log(K2/K1) = Ea/(2.303 R) * (T2-T1)/(T1*T2)\nlog(0.0693/0.0231) = Ea/(2.303 x 8.314 x 10^-3 kJ mol^-1 K^-1) * (20/(300 x 320))\nEa = 43.85 kJ/mol.",
+    "chapter": "Chemical Kinetics",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 29,
+    "type": "subjective",
+    "question": "When 19.5 g of F-CH2-COOH (Molar mass = 78 g mol^-1), is dissolved in 500 g of water, the depression in freezing point is observed to be 1°C. Calculate the degree of dissociation of F-CH2-COOH.\n[Given: Kf for water = 1.86 K kg mol^-1]",
+    "options": null,
+    "answer": "Molecular mass of 78 g/mol (F-CH2COOH). No. of moles of fluoroacetic acid = 19.5/78 = 0.25. Molality = 0.25/(500/1000) = 0.50 m.\nDelta_Tf = Kf x m = 1.86 x 0.50 = 0.93 K. i = 1.0/0.93 = 1.0753.\nCH2FCOOH -> CH2FCOO- + H+. C(1-alpha) + C*alpha + C*alpha = C(1+alpha). i = C(1+alpha)/C = 1+alpha = 1.0753. alpha = 0.0753.\n(ii) alpha = 0.50 x 0.0753 = 0.03765. C(1-alpha) = 0.50(1-0.0753) = 0.462.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 30,
+    "type": "subjective",
+    "question": "(a) Draw the geometrical isomers of [Co(en)2Cl2]^2+. Which geometrical isomer of [Co(en)2Cl2]^2+ is not optically active and why?\n(b) Write the hybridisation and magnetic behaviour of [CoF6]^3-.\n[Given: Atomic number of Co = 27]",
+    "options": null,
+    "answer": "(a) Geometrical isomers of [Co(en)2Cl2]^2+:\nTrans-isomer: Cl atoms on opposite sides. Optically inactive due to superimposable mirror images.\nCis-isomer: Cl atoms on same side. Optically active due to non-superimposable mirror images.\nThe trans isomer is not optically active because it has a plane of symmetry (superimposable mirror images).\n(b) [CoF6]^3-: Co (Z=27), ground state: [Ar] 3d7 4s2. Co^3+ = 3d6. F- is a weak field ligand, so no pairing occurs. Hybridization = sp3d2. It is paramagnetic as it contains unpaired electrons.",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 31,
+    "type": "case-based",
+    "question": "The carbon-oxygen double bond is polarised in aldehydes and ketones due to higher electronegativity of oxygen relative to carbon. Therefore they undergo nucleophilic addition reactions with a number of nucleophiles such as HCN, NaHSO3, alcohols, ammonia derivatives and Grignard reagents. Aldehydes are easily oxidised by mild oxidising agents as compared to ketones. The carbonyl group of carboxylic acid does not give reactions of aldehydes and ketones. Carboxylic acids are considerably more acidic than alcohols and most of simple phenols.\nAnswer the following:\n(a) Write the name of the product when an aldehyde reacts with excess alcohol in presence of dry HCl.\n(b) Why carboxylic acid is a stronger acid than phenol?\n(c) (i) Arrange the following compounds in increasing order of their reactivity towards CH3MgBr: CH3CHO, (CH3)3C-C(=O)-CH3, CH3-C(=O)-CH3\n(ii) Write the product: C6H4(CHO)(O) + NH2CONHNH2 -> ?",
+    "options": null,
+    "answer": "(a) It yields alkoxyalcohol intermediate, known as hemiacetals which further reacts to give gem-dialkoxy compound known as acetal.\n(b) Due to the resonance in carboxylic acids, the negative atom (oxygen atom), whereas, in alcohol or phenols, the negative charge is on the less electronegative atom.\n(c) (i) (CH3)3C-C(=O)-CH3 < CH3-C(=O)-CH3 < CH3CHO\n(ii) Semicarbazone is formed: C6H5-C=N-NH-CO-NH2 + H2O",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 31,
+    "type": "case-based",
+    "question": "Q31 (c) OR:\n(c) Write the main product in the following:\n(i) Cyclopentanone-3-carbaldehyde + [Ag(NH3)2]+ -> ?\n(ii) Write a chemical test to distinguish between propanal and propanone. (OR)",
+    "options": null,
+    "answer": "(i) The -CHO group is selectively oxidized by Tollen's reagent to give carboxylate salt.\n(ii) Iodoform test: Propanone gives iodoform test (yellow precipitate of CHI3 with I2/NaOH) while propanal does not, as propanone has a CH3CO- group.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 32,
+    "type": "case-based",
+    "question": "Carbohydrates are optically active polyhydroxy aldehydes and ketones. They are also called saccharides. All those carbohydrates which reduce Fehling's solution and Tollen's reagent are referred to as reducing sugars. Glucose, the most important source of energy for mammals, is obtained by the hydrolysis of starch. Vitamins are accessory food factors required in the diet. Proteins are the polymers of alpha-amino acids and perform various structural and dynamic functions in the organisms. Deficiency of vitamins leads to many diseases.\nAnswer the following:\n(a) The penta-acetate of glucose does not react with Hydroxylamine. What does it indicate?\n(b) Why cannot vitamin C be stored in our body?\n(c) Define the following as related to proteins:\n(i) Peptide linkage\n(ii) Denaturation",
+    "options": null,
+    "answer": "(a) It indicates the absence of free -CHO group.\n(b) As it is water-soluble. It is hard to be stored in our body. It is usually secreted via urine.\n(c) (i) Peptide linkage is an amide formed between two amino acid known as peptide bond. NH2-CH-CO-NH-C-CO-NH-C\n(ii) Denaturation: The unfolding or breaking up of a protein converted into primary structure in which linear chains of amino acids are attached.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 32,
+    "type": "case-based",
+    "question": "Q32 (c) OR: Define the following as related to carbohydrates:\n(i) Anomers\n(ii) Glycosidic linkage (OR)",
+    "options": null,
+    "answer": "(i) Anomers are cyclic monosaccharides or glycosides that are epimers, differing from each other in the configuration of C-2 if they are ketoses.\n(ii) The two monosaccharides joined together by a glycosidic linkage formed by the loss of a water molecule for eg C1 of alpha-D-glucose and C2 of beta-D-fructose are held together by glycosidic linkage.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 33,
+    "type": "subjective",
+    "question": "(a) (I) Account for the following:\n(i) E° value of Mn3+/Mn2+ couple is much more positive than that for Cr3+/Cr2+.\n(ii) Sc3+ is colourless whereas Ti3+ is coloured in an aqueous solution.\n(iii) Actinoids show wide range of oxidation states.\n(II) Write the chemical equations for the preparation of KMnO4 from MnO2.",
+    "options": null,
+    "answer": "(a) (I) (i) Because Mn3+ has the outer electronic configuration of 3d4 & Mn2+ has the outer electron configuration of 3d5. Thus the conversion is favourable. However in case of Cr3+/Cr2+ undergoes a change in outer configuration from 3d3 to 3d4 which is not stable.\n(ii) Due to absence of unpaired electron Sc3+ is colourless and due to presence of one unpaired electron d-d transition takes place making Ti3+ coloured in nature.\n(iii) It is due to comparable energies of 5f, 6d and 7s orbitals.\n(II) 2MnO2 + 4KOH + O2 --(Delta)--> 2K2MnO4 + 2H2O\n3K2MnO4 --(4HCl)--> 2KMnO4 + MnO2 + 2H2O + 4KCl",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 33,
+    "type": "subjective",
+    "question": "(b) (I) Account for the following:\n(i) Transition metals form alloys.\n(ii) Ce4+ is a strong oxidising agent.\n(II) Write one similarity and one difference between chemistry of Lanthanoids and Actinoids.\n(III) Complete the following ionic equation: Cr2O7^2- + 2OH- -> (OR)",
+    "options": null,
+    "answer": "(b) (I) (i) The atomic radii of the transition elements in any series are not much different from each other. As a result they can very easily replace each other in the lattice and form alloys.\n(ii) Ce4+ has the tendency to accept one electron to get the +3 oxidation state, hence Ce4+ is a good oxidising agent.\n(II) In case of lanthanoids, differentiating electron enters in 4f orbital whereas in case of Actinoids it enters in 5f orbital. They both have (+3) as their most common oxidation state.\n(III) Cr2O7^2- + 2OH- -> 2CrO4^2- + H2O",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 34,
+    "type": "subjective",
+    "question": "(a) (I) Give reasons:\n(i) Aniline on nitration gives good amount of m-nitroaniline, though -NH2 group is o/p directing in electrophilic substitution reactions.\n(ii) (CH3)2NH is more basic than (CH3)3N in an aqueous solution.\n(iii) Ammonolysis of alkyl halides is not a good method to prepare pure primary amines.\n(II) Write the reaction involved in the following:\n(i) Carbyl amine test\n(ii) Gabriel phthalimide synthesis",
+    "options": null,
+    "answer": "(a) (I) (i) Nitration is carried out in an acidic medium. In a strongly acidic medium, aniline is protonated to give anilinium ion which is meta-directing. Therefore, aniline on nitration gives a substantial amount of m-nitroaniline.\n(ii) (CH3)2NH is more basic than (CH3)3N in an aqueous solution. As the number of methyl groups increases, the extent of hydration decreases due to steric hindrance. Greater is the extent of hydration, greater is the stability of ion and greater is the basic strength of amine.\n(iii) Ammonolysis of alkyl halides leads to the formation of a mixture of primary, secondary, tertiary amines and quaternary salts which is very difficult to separate and obtain pure amine.\n(II) (i) Carbyl Amine Test: CH3CH2NH2 + CHCl3 + 3KOH -> CH3CH2NC + 3KCl + 3H2O (Ethyl isocyanide)\nAniline + CHCl3 + 3KOH -> Phenyl isocyanide + 3KCl + 3H2O\n(ii) Gabriel phthalimide synthesis: Phthalimide + KOH -> Potassium phthalimide + CH3Cl -> N-methylphthalimide + NaOH -> CH3NH2 + Sodium phthalate",
+    "chapter": "Amines",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 34,
+    "type": "subjective",
+    "question": "(b) (I) Write the structures of A, B and C in the following reactions:\n(i) C6H5N2+Cl- --(CuCN)--> A --(H2O/H+)--> B --(NH3/Delta)--> C\n(ii) C6H5NO2 --(Fe/HCl)--> A --(NaNO2+HCl/273K)--> B --(C2H5OH)--> C\n(II) Why aniline does not undergo Friedel-Crafts reaction?\n(III) Arrange the following in increasing order of their boiling point: C2H5OH, C2H5NH2, (C2H5)3N (OR)",
+    "options": null,
+    "answer": "(b) (I) (i) C6H5N2Cl --(CuCN)--> C6H5CN (A) --(H2O/H+)--> C6H5COOH (B) --(NH3/Delta, -H2O)--> C6H5CONH2 (C)\n(ii) C6H5NO2 --(Fe/HCl)--> C6H5NH2/Aniline (A) --(NaNO2+HCl/273K)--> C6H5N2+Cl-/Benzene diazonium chloride (B) --(C2H5OH)--> C6H6 + N2 + ... Actually: B --(C2H5OH)--> C6H5OH? No. Let me reconsider. B (Benzene diazonium chloride) --(C2H5OH)--> C6H6 (Benzene). So C = Benzene. Actually from the PDF: C -> Benzoic acid (COOH on benzene).\n(II) It is due to the fact that AlCl3 being electron deficient acts as a Lewis base and attacks on the lone pair of nitrogen present in aniline to form insoluble complex which precipitates out and does not proceed.\n(III) Increasing order of boiling points: (CH3)3N < C2H5NH2 < C2H5OH",
+    "chapter": "Amines",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 35,
+    "type": "subjective",
+    "question": "(a) Conductivity of 2 x 10^-3 M methanoic acid is 8 x 10^-5 S cm^-1. Calculate its molar conductivity and degree of dissociation if Lambda_m^0 for methanoic acid is 404 S cm^2 mol^-1.",
+    "options": null,
+    "answer": "(a) Molar conductivity: Lambda_m = (kappa x 1000)/C = (8 x 10^-5 S cm^-1 x 1000)/(2 x 10^-3 mol L^-1) = (8 x 10^-2)/(2 x 10^-3) = 40 S cm^2 mol^-1.\nDegree of dissociation: alpha = Lambda_m / Lambda_m^0 = 40/404 = 0.099",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 35,
+    "type": "subjective",
+    "question": "(b) Calculate the Delta_rG^0 and log Kc for the given reaction at 298 K:\nNi(s) + 2Ag+(aq) <=> Ni2+(aq) + 2Ag(s)\nGiven: E0_Ni2+/Ni = -0.25 V, E0_Ag+/Ag = +0.80 V\n1F = 96500 C mol^-1.",
+    "options": null,
+    "answer": "(b) Ni -> Ni2+ (E0 = -0.25V) (Oxidation half)\n2Ag+ -> 2Ag (E0 = 0.80V) (Reduction half)\nE° = Ec - Ea = 0.80 - (-0.25) = 1.05 V\nDelta_G° = -nFE° = -2 x 96500 x 1.05 = -202,650 J mol^-1 = -202.65 kJ mol^-1\nlog Kc = (nE°)/0.0591 = (1.05 x 2)/0.0591 = 35.53\nKc = Antilog(35.53) = 3.38 x 10^35",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 1,
+    "type": "mcq",
+    "question": "Which of the following belongs to the class of Vinyl halides?",
+    "options": [
+      "(a) CH2=CHCH2CH2Cl",
+      "(b) CH2=C(-Br)-CH3",
+      "(c) CH2=CH-CH2-Br",
+      "(d) CH=C-Br"
+    ],
+    "answer": "Option (b) CH2=C(-Br)-CH3 is correct. Because vinyl halides are alkenyl group with formula RCHCHX.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 2,
+    "type": "mcq",
+    "question": "What is the secondary valency of Cobalt in [Co(en)3]Cl2]^+?",
+    "options": [
+      "(a) 6",
+      "(b) 4",
+      "(c) 2",
+      "(d) 8"
+    ],
+    "answer": "Option (a) 6 is correct. Because it has six ligands surrounding it (3 bidentate en ligands = 6 coordination number).",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 3,
+    "type": "mcq",
+    "question": "When Benzene diazonium chloride reacts with phenol, it forms a dye. This reaction is called",
+    "options": [
+      "(a) Diazotisation reaction",
+      "(b) Condensation reaction",
+      "(c) Coupling reaction",
+      "(d) Acetylation reaction"
+    ],
+    "answer": "Option (c) coupling reaction is correct. It is joining of two chemical species with acid or metal catalyst.",
+    "chapter": "Amines",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 5,
+    "type": "mcq",
+    "question": "Proteins are polymers of",
+    "options": [
+      "(a) Nucleic acids",
+      "(b) Amino acids",
+      "(c) Monosaccharides",
+      "(d) Amines"
+    ],
+    "answer": "Option (b) Amino acids. Because amino acids are linked by amide bonds.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 6,
+    "type": "mcq",
+    "question": "Retention of configuration is observed in",
+    "options": [
+      "(a) SN1 reaction",
+      "(b) SN2 reaction",
+      "(c) Neither SN1 nor SN2 reaction",
+      "(d) SN2 reaction as well as SN1 reaction"
+    ],
+    "answer": "Option (a) SN1 reaction. Because symmetry is same before and after the reaction.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 7,
+    "type": "mcq",
+    "question": "An azeotropic mixture of two liquids will have a boiling point lower than either of the two liquids when it",
+    "options": [
+      "(a) shows a negative deviation from Raoult's law",
+      "(b) forms an ideal solution",
+      "(c) shows a positive deviation from Raoult's law",
+      "(d) is saturated"
+    ],
+    "answer": "Option (c) Shows a positive deviation from Raoult's law.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 9,
+    "type": "mcq",
+    "question": "Which of the following does not give Cannizaro reaction?",
+    "options": [
+      "(a) (CH3)3C-CHO",
+      "(b) (CH3)2CH-CHO",
+      "(c) C6H5-CHO (Benzaldehyde)",
+      "(d) HCHO"
+    ],
+    "answer": "Option (b) (CH3)2CH-CHO. Because it is not generating primary alcohol and carboxylic acid (it has alpha-H atoms).",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 11,
+    "type": "mcq",
+    "question": "Aldehydes and ketones react with hydroxylamine to form",
+    "options": [
+      "(a) hydrazones",
+      "(b) cyanohydrins",
+      "(c) semicarbazones",
+      "(d) Oxime"
+    ],
+    "answer": "Option (d) Oxime.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 14,
+    "type": "mcq",
+    "question": "Which one among the following metals of 3d series has the lowest melting point?",
+    "options": [
+      "(a) Fe",
+      "(b) Mn",
+      "(c) Zn",
+      "(d) Cu"
+    ],
+    "answer": "Option (c) Zn (Zinc). Because of fully filled d-configuration.",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 15,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Elevation in boiling point is a colligative property.\nReason (R): The lowering of vapour pressure of solution causes elevation in boiling point.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false, but (R) is true."
+    ],
+    "answer": "Option (c) (A) is true but (R) is false. Osmotic pressure depends upon the number of solute dissolved in per litre of solution.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 16,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Chlorobenzene is resistant to electrophilic substitution reaction.\nReason (R): C-Cl bond in chlorobenzene acquires partial double bond characters due to resonance.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false, but (R) is true."
+    ],
+    "answer": "Option (d) (A) is false but (R) is true.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 18,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Transition metals have high enthalpy of atomisation.\nReason (R): Greater number of unpaired electrons in transition metals results in weak metallic bonding.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false, but (R) is true."
+    ],
+    "answer": "Option (c) (A) is true but (R) is false.",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 23,
+    "type": "subjective",
+    "question": "(a) What is the difference between a nucleoside and nucleotide?\n(b) What products would be formed when a nucleotide from DNA containing thymine is hydrolysed?",
+    "options": null,
+    "answer": "(a) Nucleotide is composed of a nitrogenous base, sugar and a phosphate group where as Nucleoside is composed of only a nitrogenous base and a phosphate group.\n(b) Thymine beta-D-2-deoxyribose and phosphoric acid are obtained as products.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 24,
+    "type": "subjective",
+    "question": "Write the chemical equation involved in the following:\n(a) Kolbe's reaction\n(b) Williamson synthesis",
+    "options": null,
+    "answer": "(a) Kolbe's Reaction: Phenol + NaOH -> Sodium phenoxide --(1. CO2, 2. H+)--> Salicylic acid\n(b) Williamson synthesis: R-X (Alkyl Halide, 1°) + R'-ONa (Sodium Alkoxide, 3°) -> R-O-R' (Ether) + NaX (Sodium Halide). Example: (CH3)3C-ONa + CH3-Br -> (CH3)3C-O-CH3 + NaBr",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Outside Delhi Set-2"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 1,
+    "type": "mcq",
+    "question": "Auto oxidation of chloroform in air and sunlight produces a poisonous gas known as",
+    "options": [
+      "(a) Tear gas",
+      "(b) Mustard gas",
+      "(c) Phosgene gas",
+      "(d) Chlorine gas"
+    ],
+    "answer": "Option (c) Phosgene gas.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 2,
+    "type": "mcq",
+    "question": "Which of the following ligands is an ambidentate ligand?",
+    "options": [
+      "(a) CO",
+      "(b) NO2",
+      "(c) NH3",
+      "(d) H2O"
+    ],
+    "answer": "Option (b) NO2. Because it has two donor atoms.",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 3,
+    "type": "mcq",
+    "question": "Among the following, which has the highest value of pKb?\n(a) C6H4-NH2 (aniline)\n(b) H3C-C6H4-NH2 (p-toluidine)\n(c) C6H5-CH2-NH2 (benzylamine)\n(d) O2N-C6H4-NH2 (p-nitroaniline)",
+    "options": [
+      "(a) C6H4-NH2 (aniline)",
+      "(b) H3C-C6H4-NH2 (p-toluidine)",
+      "(c) C6H5-CH2-NH2 (benzylamine)",
+      "(d) O2N-C6H4-NH2 (p-nitroaniline)"
+    ],
+    "answer": "Option (d) O2N-C6H4-NH2 (p-nitroaniline). Large value of pKb indicates a weak base.",
+    "chapter": "Amines",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 5,
+    "type": "mcq",
+    "question": "When D-glucose reacts with HI, it forms",
+    "options": [
+      "(a) Gluconic acid",
+      "(b) n-hexane",
+      "(c) Saccharic acid",
+      "(d) Iodohexane"
+    ],
+    "answer": "Option (b) n-hexane. Because HI is a reducing agent.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 6,
+    "type": "mcq",
+    "question": "Inversion of configuration occurs in",
+    "options": [
+      "(a) SN2 reaction",
+      "(b) SN1 reaction",
+      "(c) Neither SN2 nor SN1 reaction",
+      "(d) SN1 as well as SN2 reaction"
+    ],
+    "answer": "Option (b) SN1 reaction. Wait, actually inversion occurs in SN2. But the PDF says: Ans. (b) SN1 reaction (Because it is a unimolecular reaction). This seems like a PDF error. The standard answer is SN2 for inversion.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 7,
+    "type": "mcq",
+    "question": "Solubility of gas in liquid decreases with increase in",
+    "options": [
+      "(a) Pressure",
+      "(b) Temperature",
+      "(c) Volume",
+      "(d) Number of solute molecules"
+    ],
+    "answer": "Option (b) Temperature. Because they will have more kinetic energy.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 8,
+    "type": "mcq",
+    "question": "Which of the following relations is incorrect?",
+    "options": [
+      "(a) R = 1/k (l/a)",
+      "(b) G = k(a/l)",
+      "(c) G = k(l/a)",
+      "(d) Lambda_m = k/c"
+    ],
+    "answer": "Option (b) G = K(a/l).",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 9,
+    "type": "mcq",
+    "question": "The reagent that can be used to distinguish acetophenone and benzophenone is",
+    "options": [
+      "(a) 2,4-dinitrophenyl hydrazine",
+      "(b) aqueous NaHSO3",
+      "(c) Fehling solution",
+      "(d) I2 and NaOH"
+    ],
+    "answer": "Option (d) I2 and NaOH.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 11,
+    "type": "mcq",
+    "question": "Which of the following compounds will undergo self-condensation in the presence of dilute NaOH solution?",
+    "options": [
+      "(a) C6H5CHO",
+      "(b) CH3CH2CHO",
+      "(c) (CH3)3C-CHO",
+      "(d) H-CHO"
+    ],
+    "answer": "Option (b) CH3CH2CHO. Because it contains alpha-Hydrogen.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 13,
+    "type": "mcq",
+    "question": "Which of the following transition metals shows +1 and +2 oxidation states?",
+    "options": [
+      "(a) Mn",
+      "(b) Zn",
+      "(c) Sc",
+      "(d) Cu"
+    ],
+    "answer": "Option (d) Cu (due to its electronic configuration).",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 14,
+    "type": "mcq",
+    "question": "The formula of the complex Iron (III) hexacyanidoferrate (II) is:",
+    "options": [
+      "(a) Fe2[Fe(CN)6]3",
+      "(b) Fe4[Fe(CN)6]3",
+      "(c) Fe[Fe(CN)6]",
+      "(d) Fe3[Fe(CN)6]2"
+    ],
+    "answer": "Option (b) Fe4[Fe(CN)6]3.",
+    "chapter": "Coordination Compounds",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 15,
+    "type": "assertion-reason",
+    "question": "Assertion (A): The enthalpy of mixing Delta_mix H is equal to zero for an ideal solution.\nReason (R): For an ideal solution the interaction between solute and solvent molecules is stronger than the interactions between solute-solute or solvent-solvent molecules.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false, but (R) is true."
+    ],
+    "answer": "Option (c) (A) is true but (R) is false. For ideal solution all interaction are equal.",
+    "chapter": "Solutions",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 16,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Molar conductivity decreases with increase in concentration.\nReason (R): When concentration approaches zero, the molar conductivity is known as limiting molar conductivity.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false, but (R) is true."
+    ],
+    "answer": "Option (a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+    "chapter": "Electrochemistry",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 17,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Transition metals show their highest oxidation state with oxygen.\nReason (R): The ability of oxygen to form multiple bonds to metals.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false, but (R) is true."
+    ],
+    "answer": "Option (c) (A) is true but (R) is false. It is because of its small size and electronegativity.",
+    "chapter": "d&f Block Elements",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 18,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Chlorobenzene is resistant to nucleophilic substitution reaction at room temperature.\nReason (R): C-Cl bond gets weaker due to resonance.",
+    "options": [
+      "(a) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(c) (A) is true, but (R) is false.",
+      "(d) (A) is false, but (R) is true."
+    ],
+    "answer": "Option (c) (A) is true but (R) is false.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Outside Delhi Set-3"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 19,
+    "type": "subjective",
+    "question": "What are nucleic acids? Why two strands in DNA are not identical but are complementary?",
+    "options": null,
+    "answer": "Nucleic Acids: They are naturally occurring chemical compounds that serve as the primary chemical information-carrying molecules in cells. Two main classes are DNA and RNA.\nTwo main strands are held together by hydrogen bonds between specific pair of bases. Cytosine forms hydrogen bond with guanine while adenine forms hydrogen bonds with thymine. As a result they are complementary to each other.",
+    "chapter": "Biomolecules",
+    "set": "Outside Delhi Set-3"
+  }
+]

@@ -1,0 +1,546 @@
+[
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 1,
+    "type": "mcq",
+    "question": "Which one of the following pairs will form an ideal solution?",
+    "options": [
+      "(A) chloroform and acetone",
+      "(B) ethanol and acetone",
+      "(C) n-hexane and n-heptane",
+      "(D) phenol and aniline"
+    ],
+    "answer": "(C) n-hexane and n-heptane. n-hexane and n-heptane will form an ideal solution over entire range of concentrations as their intermolecular interactions (solute-solvent) after forming solution are similar to their intermolecular attractions (solute-solute, solvent-solvent) before mixing the components.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 4,
+    "type": "mcq",
+    "question": "The C-O-H bond angle in alcohol is",
+    "options": [
+      "(A) slightly greater than 109°28'",
+      "(B) slightly less than 109°28'",
+      "(C) slightly greater than 120°",
+      "(D) slightly less than 120°"
+    ],
+    "answer": "(B) slightly less than 109°28'. C-O-H bond angle in alcohol is slightly less than 109°28'. The oxygen atom is sp3 hybridised but because of the mutual repulsion of 2 lone pairs of electrons on it the resultant bond angle C-O-H is slightly less than the tetrahedral angle.",
+    "chapter": "Alcohols Phenols Ethers"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 5,
+    "type": "mcq",
+    "question": "Consider the following reaction: CH3-CH=CH2 --1. HBr / 2. aq. KOH-->. The major end product is",
+    "options": [
+      "(A) CH3-CH(OH)-CH3 (2-propanol)",
+      "(B) CH3-CH(Br)-CH3 (2-bromopropane)",
+      "(C) CH3-CH2-CH2-OH (1-propanol)",
+      "(D) CH3-CH2-CH2-Br (1-bromopropane)"
+    ],
+    "answer": "(A) CH3-CH(OH)-CH3. Propene yields two products, however only one predominates as per Markovnikov's rule i.e., 2-bromopropane which on heating with aq. KOH gives secondary alcohol (2-propanol).",
+    "chapter": "Alcohols Phenols Ethers"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 6,
+    "type": "mcq",
+    "question": "Nucleoside are composed of",
+    "options": [
+      "(A) a pentose sugar and phosphoric acid",
+      "(B) a nitrogenous base and phosphoric acid",
+      "(C) a nitrogenous base and a pentose sugar",
+      "(D) a nitrogenous base, a pentose sugar and phosphoric acid"
+    ],
+    "answer": "(C) a nitrogenous base and a pentose sugar. Nucleosides are composed of a nitrogenous base and a pentose sugar.",
+    "chapter": "Biomolecules"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 9,
+    "type": "mcq",
+    "question": "Which of the following formula represents Raoult's law for a solution containing non-volatile solute?",
+    "options": [
+      "(A) p_solute = p°_solute * x_solute",
+      "(B) p = K_H * x",
+      "(C) p_total = p_solvent",
+      "(D) p_solute = p°_solvent * x_solvent"
+    ],
+    "answer": "(B) p = K_H * x. According to Raoult's law, the vapour pressure of a solution of a non-volatile solute is equal to the vapour pressure of the pure solvent at that temperature multiplied by its mole fraction.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 10,
+    "type": "mcq",
+    "question": "An azeotropic solution of two liquids has a boiling point lower than either of the two when it",
+    "options": [
+      "(A) shows a positive deviation from Raoult's law",
+      "(B) shows a negative deviation from Raoult's law",
+      "(C) shows no deviation from Raoult's law",
+      "(D) is saturated"
+    ],
+    "answer": "(A) shows a positive deviation from Raoult's law. An azeotropic mixture that has a boiling point lesser than its constituents is known as minimum boiling azeotropes and show positive deviation from Raoult's law.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 12,
+    "type": "mcq",
+    "question": "Which of the following acids reacts with acetic anhydride to form a compound Aspirin?",
+    "options": [
+      "(A) Benzoic acid",
+      "(B) Salicylic acid",
+      "(C) Phthalic acid",
+      "(D) Acetic acid"
+    ],
+    "answer": "(B) Salicylic acid. Salicylic acid reacts with acetic anhydride to form acetylsalicylic acid (Aspirin) and acetic acid.",
+    "chapter": "Alcohols Phenols Ethers"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 14,
+    "type": "mcq",
+    "question": "Amino acids which cannot be synthesized in the body and must be obtained through diet are known as",
+    "options": [
+      "(A) Acidic amino acids",
+      "(B) Essential amino acids",
+      "(C) Basic amino acids",
+      "(D) Non-essential amino acids"
+    ],
+    "answer": "(B) Essential amino acids. Amino acids which cannot be synthesized in the body are obtained through diet and are called essential amino acids.",
+    "chapter": "Biomolecules"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 15,
+    "type": "mcq",
+    "question": "Which one of the following halides contains Csp2-X bond?",
+    "options": [
+      "(A) Allyl halide",
+      "(B) Alkyl halide",
+      "(C) Benzyl halide",
+      "(D) Vinyl halide"
+    ],
+    "answer": "(D) Vinyl halide. Vinylic halides are the compounds in which the halogen atom is bonded to a sp2-hybridised carbon atom of a carbon-carbon double bond (C=C).",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 16,
+    "type": "mcq",
+    "question": "On mixing 20 ml of acetone with 30 ml of chloroform. The total volume of the solution is",
+    "options": [
+      "(A) <50 ml",
+      "(B) =50 ml",
+      "(C) >50 ml",
+      "(D) =10 ml"
+    ],
+    "answer": "(B) =50 ml. There will be no change in volume on mixing chloroform and acetone. It will be: 20 + 30 = 50 ml.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 17,
+    "type": "mcq",
+    "question": "Consider the following compounds: (I) Chlorocyclohexane, (II) ClCH2-Cl (benzyl chloride with CH2-Cl), (III) Chlorobenzene. The correct order of reactivity towards SN2 reaction",
+    "options": [
+      "(A) I>III>II",
+      "(B) II>III>I",
+      "(C) II>I>III",
+      "(D) III>I>II"
+    ],
+    "answer": "(B) II>III>I. Chlorine exhibits -I effect, pulling electrons towards itself, thus creating a slight positive charge on the carbon attached. In compound 2, -I effect of chlorine is most pronounced making the compound most reactive towards SN2 reaction.",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 20,
+    "type": "mcq",
+    "question": "Which of the following sugar is known as dextrose?",
+    "options": [
+      "(A) Glucose",
+      "(B) Fructose",
+      "(C) Ribose",
+      "(D) Sucrose"
+    ],
+    "answer": "(A) Glucose. Glucose is known as dextrose.",
+    "chapter": "Biomolecules"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 21,
+    "type": "mcq",
+    "question": "Cu reacts with dilute HNO3 to evolve which gas?",
+    "options": [
+      "(A) N2O",
+      "(B) NO2",
+      "(C) NO",
+      "(D) N2"
+    ],
+    "answer": "(C) NO. 3Cu(s) + 2HNO3(aq) -> 3Cu(NO3)2(aq) + 2NO(g) + H2O(l)",
+    "chapter": "d&f Block"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 23,
+    "type": "mcq",
+    "question": "Major product formed in the following reaction: (CH3)3C-Br + NaOCH3 ->",
+    "options": [
+      "(A) (CH3)3C-ONa",
+      "(B) (CH3)3C-OCH3",
+      "(C) (CH3)3C-O-C(CH3)3",
+      "(D) CH3-C(CH3)=CH2 (iso-butene)"
+    ],
+    "answer": "(D) CH3-C(CH3)=CH2 (iso-butene). Tert-halide with strong base favours elimination reaction not the substitution reaction. Products: iso-butene + NaBr + CH3OH.",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 25,
+    "type": "mcq",
+    "question": "Elevation of boiling point is inversely proportional to",
+    "options": [
+      "(A) molal elevation constant (Kb)",
+      "(B) molality (m)",
+      "(C) molar mass of solute (M)",
+      "(D) weight of solute (W)"
+    ],
+    "answer": "(C) molar mass of solute (M). From the formula delta_Tb = Kb * m * i, and m = (x/W) * 1000, elevation of boiling point is inversely proportional to the molar mass of the solute.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 26,
+    "type": "mcq",
+    "question": "An unknown gas 'X' is dissolved in water at 2.5 bar pressure and has mole fraction 0.04 in solution. The mole fraction of 'X' gas when the pressure of gas is doubled at the same temperature is",
+    "options": [
+      "(A) 0.08",
+      "(B) 0.04",
+      "(C) 0.02",
+      "(D) 0.92"
+    ],
+    "answer": "(A) 0.08. Using Henry's law: p = P0 * X. At 2.5 bar, X1 = 0.04. When pressure is doubled to 5.0 bar, X2 = 2 * 0.04 = 0.08.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 27,
+    "type": "mcq",
+    "question": "The base which is present in DNA but not in RNA",
+    "options": [
+      "(A) Cytosine",
+      "(B) Guanine",
+      "(C) Adenine",
+      "(D) Thymine"
+    ],
+    "answer": "(D) Thymine. Instead of Thymine, RNA has Uracil as nitrogenous base.",
+    "chapter": "Biomolecules"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 28,
+    "type": "mcq",
+    "question": "In the following reaction CH3-CH=CH-CH2-OH --PCC--> the product formed is:",
+    "options": [
+      "(A) CH3-CHO and CH3CH2OH",
+      "(B) CH3-CH=CH-COOH",
+      "(C) CH3-CH=CH-CHO",
+      "(D) CH3-CH2-CH2-CHO"
+    ],
+    "answer": "(C) CH3-CH=CH-CHO. PCC (Pyridinium chloro oxochromate) oxidises primary alcohols to aldehydes.",
+    "chapter": "Alcohols Phenols Ethers"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 29,
+    "type": "mcq",
+    "question": "Enantiomers differ only in",
+    "options": [
+      "(A) boiling point",
+      "(B) rotation of polarized light",
+      "(C) melting point",
+      "(D) solubility"
+    ],
+    "answer": "(B) rotation of polarized light. Enantiomers are a pair of molecules that exist in two forms that are mirror images of one another but cannot be superimposed one upon the other. They differ in direction in which they rotate polarized light, either dextro (d or +) or levo (l or -).",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 33,
+    "type": "mcq",
+    "question": "In the reaction: Bromocyclohexane --Mg/dry ether--> 'X' --H2O--> 'Y'. Compound 'Y' is",
+    "options": [
+      "(A) Cyclohexanol",
+      "(B) Cyclohexyl-MgBr",
+      "(C) Cyclohexane",
+      "(D) Cyclohexene"
+    ],
+    "answer": "(C) Cyclohexane. Bromocyclohexane gives Grignard reagent on treatment with Mg and dry ether, which on hydrolysis yields cyclohexane.",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 35,
+    "type": "mcq",
+    "question": "The boiling point of a 0.2 m solution of a non-electrolyte in water is (Kb for water = 0.52 K kg mol^-1)",
+    "options": [
+      "(A) 100°C",
+      "(B) 100.52°C",
+      "(C) 100.104°C",
+      "(D) 100.26°C"
+    ],
+    "answer": "(C) 100.104°C. Elevation in Boiling point = 0.52 * 0.2 = 0.104°C. Therefore, boiling point = 100 + 0.104 = 100.104°C.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 36,
+    "type": "mcq",
+    "question": "Nucleic acids are polymer of",
+    "options": [
+      "(A) amino acids",
+      "(B) nucleosides",
+      "(C) nucleotides",
+      "(D) glucose"
+    ],
+    "answer": "(C) nucleotides. Nucleic acids are polymers of nucleotides.",
+    "chapter": "Biomolecules"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 38,
+    "type": "mcq",
+    "question": "In a vapour pressure vs temperature diagram, point 'X' represents",
+    "options": [
+      "(A) Boiling point of solution",
+      "(B) Freezing point of solvent",
+      "(C) Boiling point of solvent",
+      "(D) Freezing point of solution"
+    ],
+    "answer": "(A) Boiling point of solution. Point X represents the boiling point of the solution.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 40,
+    "type": "mcq",
+    "question": "Glucose on reaction with Br2 water gives",
+    "options": [
+      "(A) Saccharic acid",
+      "(B) Hexanoic acid",
+      "(C) Gluconic acid",
+      "(D) Salicylic acid"
+    ],
+    "answer": "(C) Gluconic acid. Glucose on oxidation with Br2/H2O gives Gluconic acid.",
+    "chapter": "Biomolecules"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 41,
+    "type": "mcq",
+    "question": "Which of the following is optically inactive?",
+    "options": [
+      "(A) (+)-Butan-2-ol",
+      "(B) (-)-Butan-2-ol",
+      "(C) (+-)-Butan-2-ol",
+      "(D) (+)-2-Bromobutane"
+    ],
+    "answer": "(C) (+-)-Butan-2-ol. (+-) Butan-2-ol is a racemic mixture so, it is optically inactive.",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 43,
+    "type": "mcq",
+    "question": "Which of the following has highest boiling point?",
+    "options": [
+      "(A) C2H5-F",
+      "(B) C2H5-Cl",
+      "(C) C2H5-Br",
+      "(D) C2H5-I"
+    ],
+    "answer": "(D) C2H5-I. For the same alkyl group the boiling points of haloalkanes are in the order RF < RCl < RBr < RI as with the increase in size of halogen atom the magnitude of van der Waals forces of attraction increases, resulting in higher boiling points.",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 44,
+    "type": "mcq",
+    "question": "Which of the following isomer of pentane (C5H12) will give three isomeric monochlorides on photochemical chlorination?",
+    "options": [
+      "(A) Neopentane (2,2-dimethylpropane)",
+      "(B) n-pentane (CH3CH2CH2CH2CH3)",
+      "(C) Isopentane (CH3-CH(CH3)-CH2-CH3)",
+      "(D) All of the above"
+    ],
+    "answer": "(B) n-pentane (CH3CH2CH2CH2CH3). When alkanes larger than ethane are halogenated, isomeric products are formed. n-pentane has three types of hydrogens giving three isomeric monochlorides.",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 45,
+    "type": "assertion-reason",
+    "question": "Assertion (A): A raw mango placed in a saline solution loses water and shrivel into pickle.\nReason (R): Through the process of reverse osmosis, raw mango shrivel into pickle.",
+    "options": [
+      "(A) Both A and R are true and R is the correct explanation of A",
+      "(B) Both A and R are true but R is not the correct explanation of A",
+      "(C) A is true but R is false",
+      "(D) A is false but R is true"
+    ],
+    "answer": "(C) A is true but R is false. A raw mango placed in saline solution loses water and shrivels into pickle. Mango loses water due to osmosis (not reverse osmosis) and turns into a pickle.",
+    "chapter": "Solutions"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "B",
+    "qno": 47,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Chlorobenzene is less reactive towards nucleophilic substitution reaction.\nReason (R): Nitro group in chlorobenzene increases its reactivity towards nucleophilic substitution reaction.",
+    "options": [
+      "(A) Both A and R are true and R is the correct explanation of A",
+      "(B) Both A and R are true but R is not the correct explanation of A",
+      "(C) A is true but R is false",
+      "(D) A is false but R is true"
+    ],
+    "answer": "(B) Both A and R are true but R is not the correct explanation of A. Presence of nitro group on ortho or para position in the ring makes the ring more electron deficient and activated towards nucleophilic substitution reaction as compared to chlorobenzene.",
+    "chapter": "Haloalkanes"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "C",
+    "qno": 52,
+    "type": "mcq",
+    "question": "Complete the following analogy: Curdling of milk : A :: alpha-helix : B",
+    "options": [
+      "(A) A: Primary structure, B: Secondary structure",
+      "(B) A: Denatured protein, B: Primary structure",
+      "(C) A: Secondary structure, B: Denatured protein",
+      "(D) A: Denatured protein, B: Secondary structure"
+    ],
+    "answer": "(D) A: Denatured protein, B: Secondary structure. Curdling of milk is denaturation of protein while alpha helix is a secondary structure of protein.",
+    "chapter": "Biomolecules"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "C",
+    "qno": 53,
+    "type": "mcq",
+    "question": "Case-based passage: Alcohols and phenols are acidic in nature. Electron withdrawing groups in phenol increase its acidic strength and electron donating groups decrease. Alcohols undergo nucleophilic substitution with hydrogen halides to give alkyl halides. On oxidation primary alcohols yield aldehydes with mild oxidising agents and carboxylic acids with strong oxidising agents while secondary alcohols yield ketones. The presence of -OH groups in phenols activates the ring towards electrophilic substitution.\n\nWhich of the following alcohols is resistant to oxidation?",
+    "options": [
+      "(A) (CH3)3C-OH (tert-butanol)",
+      "(B) CH3-CH(OH)-CH3 (2-propanol)",
+      "(C) CH3-CH2-OH (ethanol)",
+      "(D) CH3-OH (methanol)"
+    ],
+    "answer": "(A) (CH3)3C-OH (tert-butanol). Tert-alcohols are resistant to oxidation.",
+    "chapter": "Alcohols Phenols Ethers"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "C",
+    "qno": 54,
+    "type": "mcq",
+    "question": "Which of the following group increases the acidic character of phenol?",
+    "options": [
+      "(A) CH3O-",
+      "(B) CH3-",
+      "(C) NO2-",
+      "(D) All of these"
+    ],
+    "answer": "(C) NO2-. NO2 is an electron withdrawing group, hence it increases the acidic character of phenol.",
+    "chapter": "Alcohols Phenols Ethers"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "C",
+    "qno": 55,
+    "type": "mcq",
+    "question": "Consider the following reaction: Phenol --(i) NaOH,CO2 / (ii) H+--> X; Phenol --(i) CHCl3 + aq.NaOH / (ii) H+--> Y. The products X and Y are",
+    "options": [
+      "(A) X = Salicylic acid (ortho-OH, COOH), Y = Salicylaldehyde (ortho-OH, CHO)",
+      "(B) X = meta-OH-CHO benzaldehyde, Y = meta-OH-COOH benzoic acid",
+      "(C) X = para-OH-COOH, Y = para-OH-CHO",
+      "(D) X = Salicylic acid (ortho-OH, COOH), Y = Salicylaldehyde (ortho-OH, CHO)"
+    ],
+    "answer": "(D) X = Salicylic acid, Y = Salicylaldehyde. Phenol with NaOH/CO2 followed by acidification gives Salicylic acid (Kolbe's reaction). Phenol with CHCl3 + 3NaOH gives Salicylaldehyde (Reimer-Tiemann reaction).",
+    "chapter": "Alcohols Phenols Ethers"
+  },
+  {
+    "year": "2022-I",
+    "marks": 1,
+    "section": "A",
+    "qno": 3,
+    "type": "mcq",
+    "question": "The structure of pyrosulphuric acid is",
+    "options": [
+      "(A) HO-S(=O)-O-OH",
+      "(B) HO-S(=O)(=O)-OH",
+      "(C) HO-S(=O)(=O)-O-S(=O)(=O)-OH",
+      "(D) HO-S(=O)(=O)-O-O-S(=O)(=O)-OH"
+    ],
+    "answer": "(C) HO-S(=O)(=O)-O-S(=O)(=O)-OH. Pyrosulphuric acid (H2S2O7) has two SO3 groups linked by an oxygen bridge with OH groups on each end.",
+    "chapter": "d&f Block"
+  }
+]

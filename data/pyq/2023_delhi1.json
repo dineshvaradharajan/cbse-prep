@@ -1,0 +1,596 @@
+[
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 1,
+    "type": "mcq",
+    "question": "Which of the following molecules has a chiral centre correctly labelled with an asterisk (*)?",
+    "options": [
+      "(a) CH3C*HBrCH3",
+      "(b) CH3C*HClCH2Br",
+      "(c) HOCHC*H(OH)CH2OH",
+      "(d) CH3C*Br2CH3"
+    ],
+    "answer": "Option (b) is correct. Explanation: Chiral molecules images are non-superimposable to each other.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 2,
+    "type": "mcq",
+    "question": "Which of the following alcohols will not undergo oxidation?",
+    "options": [
+      "(a) Butanol",
+      "(b) Butan-2-ol",
+      "(c) 2-Methylbutan-2-ol",
+      "(d) 3-Methylbuta-2-ol"
+    ],
+    "answer": "Option (c) is correct. Explanation: Because it is a tertiary alcohol and tertiary alcohol do not undergo oxidation, it undergoes dehydration and makes alkene.",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 3,
+    "type": "mcq",
+    "question": "A voltaic cell is made by connecting two half cells represented by half equations below:\nSn2+(aq) + 2e- -> Sn(s) E° = -0.14 V\nFe3+(aq) + e- -> Fe2+(aq) E° = +0.77 V\nWhich statement is correct about this voltaic cell?",
+    "options": [
+      "(a) Fe2+ is oxidised and the voltage of the cell is -0.91 V",
+      "(b) Sn is oxidised and the voltage of the cell is 0.91 V",
+      "(c) Fe2+ is oxidised and the voltage of the cell is 0.91 V",
+      "(d) Sn is oxidised and the voltage of the cell is 0.63 V"
+    ],
+    "answer": "Option (b) is correct. Explanation: Sn is oxidized as it is having -ve value of electrode potential. E° = Ec - Ea = 0.77 - (-0.14) = 0.91 V",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 4,
+    "type": "mcq",
+    "question": "Four half reactions I to IV are shown below:\nI. 2Cl- -> Cl2 + 2e-\nII. 4OH- -> O2 + 2H2O + 2e-\nIII. Na+ + e- -> Na\nIV. 2H+ + 2e- -> H2\nWhich two of these reactions are most likely to occur when concentrated brine is electrolysed?",
+    "options": [
+      "(a) I and III",
+      "(b) I and IV",
+      "(c) II and III",
+      "(d) II and IV"
+    ],
+    "answer": "Option (b) is correct. Explanation: (1) At anode 2Cl- -> Cl2 + 2e-. (2) At cathode Na+ + e- -> Na, E° = -2.71 V; 2H+ + 2e- -> H2, E° = 0V. Those have high E° value, that reaction will take place.",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 5,
+    "type": "mcq",
+    "question": "Which property of transition metals enables them to behave as catalysts?",
+    "options": [
+      "(a) High melting point",
+      "(b) High ionisation enthalpy",
+      "(c) Alloy formation",
+      "(d) Variable oxidation states"
+    ],
+    "answer": "Option (d) is correct. Explanation: Because of variable oxidation state they have tendency to form bonds with many elements.",
+    "chapter": "d&f Block Elements",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 6,
+    "type": "mcq",
+    "question": "In the two tetrahedral structures of dichromate ion",
+    "options": [
+      "(a) 4 Cr-O bonds are equivalent in length.",
+      "(b) 6 Cr-O bonds are equivalent in length.",
+      "(c) All Cr-O bonds are equivalent in length.",
+      "(d) All Cr-O bonds are non-equivalent."
+    ],
+    "answer": "Option (a) is correct. Explanation: 4 Cr-O bonds are equal in length in [Cr2O7]2-.",
+    "chapter": "d&f Block Elements",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 7,
+    "type": "mcq",
+    "question": "1 mole of liquid A and 2 moles of liquid B make a solution having a total vapour pressure 40 torr. The vapour pressure of pure A and pure B are 45 torr and 30 torr respectively. The above solution",
+    "options": [
+      "(a) is an ideal solution",
+      "(b) shows positive deviation",
+      "(c) shows negative deviation",
+      "(d) is a maximum boiling azeotrope"
+    ],
+    "answer": "Option (c) is correct. Explanation: Shows negative deviation because A-B forces of attraction are higher than A-A and B-B components.",
+    "chapter": "Solutions",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 8,
+    "type": "mcq",
+    "question": "Which of the following would not be a good choice for reducing nitrobenzene to aniline?",
+    "options": [
+      "(a) LiAlH4",
+      "(b) H2/Ni",
+      "(c) Fe and HCl",
+      "(d) Sn and HCl"
+    ],
+    "answer": "Option (a) is correct. Explanation: Nitrobenzene gives azo product when react with LiAlH4. Nitrobenzene react with highly reactive metal and conc. HCl to give Aniline.",
+    "chapter": "Amines",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 9,
+    "type": "mcq",
+    "question": "If molality of a dilute solution is doubled, the value of the molal elevation constant (Kb) will be",
+    "options": [
+      "(a) halved",
+      "(b) doubled",
+      "(c) tripled",
+      "(d) unchanged"
+    ],
+    "answer": "Option (d) is correct. Explanation: Kb is molal elevation constant, when molality is double, it remains unchanged.",
+    "chapter": "Solutions",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 10,
+    "type": "mcq",
+    "question": "Hydrolysis of sucrose is called",
+    "options": [
+      "(a) inversion",
+      "(b) hydration",
+      "(c) esterification",
+      "(d) saponification"
+    ],
+    "answer": "Option (a) is correct. Explanation: Hydrolysis of sucrose (sugarcane) is called inversion. On undergoing hydrolysis it gives equimolar amount of glucose and fructose.",
+    "chapter": "Biomolecules",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 11,
+    "type": "mcq",
+    "question": "Which one of the following has lowest pKa value?",
+    "options": [
+      "(a) CH3-COOH",
+      "(b) O2N-CH2-COOH",
+      "(c) Cl-CH2-COOH",
+      "(d) HCOOH"
+    ],
+    "answer": "Option (b) is correct. Explanation: O2N-CH2-COOH having less value of pKa because its acidic strength is very high.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 12,
+    "type": "mcq",
+    "question": "Which of the following cell was used in Apollo space programme?",
+    "options": [
+      "(a) Mercury cell",
+      "(b) Daniel cell",
+      "(c) H2-O2 Fuel cell",
+      "(d) Dry cell"
+    ],
+    "answer": "Option (c) is correct. Explanation: H2-O2 fuel cell is used in apollo space programme to provide electricity power.",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 13,
+    "type": "mcq",
+    "question": "The following experimental rate data were obtained for a reaction carried out at 25°C:\nA(g) + B(g) -> C(g) + D(g)\nInitial [A(g)]/mol dm-3 | Initial [B(g)]/mol dm-3 | Initial rate/mol dm-3 s-1\n3.0 x 10-2 | 2.0 x 10-2 | 1.89 x 10-4\n3.0 x 10-2 | 4.0 x 10-2 | 1.89 x 10-4\n6.0 x 10-2 | 4.0 x 10-2 | 7.56 x 10-4\nWhat are the orders with respect to A(g) and B(g)?",
+    "options": [
+      "(a) Order w.r.t A: Zero, Order w.r.t B: Second",
+      "(b) Order w.r.t A: First, Order w.r.t B: Zero",
+      "(c) Order w.r.t A: Second, Order w.r.t B: Zero",
+      "(d) Order w.r.t A: Second, Order w.r.t B: First"
+    ],
+    "answer": "Option (c) is correct. When [B] is doubled (keeping [A] constant), rate remains same, so order w.r.t B is zero. When [A] is doubled (keeping [B] constant), rate becomes 4 times, so order w.r.t A is second.",
+    "chapter": "Chemical Kinetics",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 14,
+    "type": "mcq",
+    "question": "The magnetic moment of [NiCl4]2- [Atomic number: Ni = 28]",
+    "options": [
+      "(a) 1.82 BM",
+      "(b) 2.82 BM",
+      "(c) 4.42 BM",
+      "(d) 5.46 BM"
+    ],
+    "answer": "Option (b) is correct. Explanation: Ni2+ = 28, 3d8 4s0, no. of unpaired electron = 2. mu = sqrt(n(n+2)) = sqrt(2(2+2)) = sqrt(8) = 2.82 BM",
+    "chapter": "Coordination Compounds",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 15,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Proteins are polymers of alpha-amino acids connected by a peptide bond.\nReason (R): A tetrapeptide contains 4 amino acids linked by 4 peptide bonds.",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A.",
+      "(b) Both A and R are true, but R is not the correct explanation of A.",
+      "(c) A is true, but R is false.",
+      "(d) A is false, but R is true."
+    ],
+    "answer": "Option (c) is correct. Explanation: Assertion is true but reason is false because in tetrapeptide, four amino acid and three peptide bonds are present.",
+    "chapter": "Biomolecules",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 16,
+    "type": "assertion-reason",
+    "question": "Assertion (A): For a zero order reaction the unit of rate constant and rate of reaction are the same.\nReason (R): Rate of reaction for zero order reaction is independent of concentration of reactant.",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A.",
+      "(b) Both A and R are true, but R is not the correct explanation of A.",
+      "(c) A is true, but R is false.",
+      "(d) A is false, but R is true."
+    ],
+    "answer": "Option (a) is correct. Explanation: Assertion & Reason both are correct.",
+    "chapter": "Chemical Kinetics",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 17,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Acetic acid but not formic acid can be halogenated in presence of red P and Cl2.\nReason (R): Acetic acid is a weaker acid than formic acid.",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A.",
+      "(b) Both A and R are true, but R is not the correct explanation of A.",
+      "(c) A is true, but R is false.",
+      "(d) A is false, but R is true."
+    ],
+    "answer": "Option (a) is correct. Explanation: Because acetic acid have hydrogen atoms which can be replaced by halogen. But formic acid do not have.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 1,
+    "section": "A",
+    "qno": 18,
+    "type": "assertion-reason",
+    "question": "Assertion (A): Trans [Cr Cl2(ox)2]3- shows optical isomerism.\nReason (R): Optical isomerism is common in octahedral complexes involving bidentate ligands.",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A.",
+      "(b) Both A and R are true, but R is not the correct explanation of A.",
+      "(c) A is true, but R is false.",
+      "(d) A is false, but R is true."
+    ],
+    "answer": "Option (a) is correct. Explanation: Trans [Cr(Cl2)CoX2]3- is optically inactive because of super-impossible mirror image.",
+    "chapter": "Coordination Compounds",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 19,
+    "type": "subjective",
+    "question": "(a) (i) What should be the signs (positive/negative) for E°cell and Delta G° for a spontaneous redox reaction occurring under standard conditions?\n(ii) State Faraday's first law of electrolysis.",
+    "options": null,
+    "answer": "(a) (i) For a spontaneous reaction: Delta G° = -ve, E°cell = +ve.\n(ii) Faraday's first law of electrolysis: The amount of chemical reaction which occur at any electrode during electrolysis by a current is proportional to the quantity of electricity passed through the electrolyte (solution).",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 19,
+    "type": "subjective",
+    "question": "19 (OR): Calculate the emf of the following cell at 298 K:\nFe(s) | Fe2+ (0.01M) || H+(1M) | H2(g) (1 bar), Pt(s)\nGiven E°cell = 0.44 V.",
+    "options": null,
+    "answer": "According to the equation: Fe(s) + 2H+(aq) -> Fe2+(aq) + H2(g)\nBy applying Nernst Equation:\nEcell = E°cell - (0.0591/n) log([Fe2+]/[H+]2)\n= 0.44 - (0.0591/2) log(0.001/(1))\n= 0.44 - 0.0295 log 10-3\n= 0.44 - 0.0295(-3 log 10)\n= 0.44 + 0.089\nEcell = 0.53 V",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 20,
+    "type": "subjective",
+    "question": "What happens to the rate constant k and activation energy Ea as the temperature of a chemical reaction is increased? Justify.",
+    "options": null,
+    "answer": "Rate constant increases with the increase in temperature because rate of the reaction increases. The rate of the reaction becomes doubled after every ten degree rise in temperature. The activation energy also increases with increase in temperature because kinetic energy of the molecules increases their colliding frequency will be very high and activation energy increases.",
+    "chapter": "Chemical Kinetics",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 21,
+    "type": "subjective",
+    "question": "(a) Which of the following species cannot act as a ligand? Give reason.\nOH-, NH4+, CH3, NH3, H2O\n(b) The complex [Co(NH3)5(NO2)] Cl2 is red in colour. Give IUPAC name of its linkage isomer.",
+    "options": null,
+    "answer": "(a) NH4+ (Ammonium ion) can not act as ligand. Ligand donate electron to central atom or they can have lone pair of electron to donate and form bond between ligand and central atom. But NH4+ do not have lone pair of electron to donate.\n(b) Complex [Co(NH3)5(NO2)]Cl2 is Red colour when it is present in hydrated form. It absorb moisture and turn into Red colour. It is showing linkage isomerism: [Co(NH3)5(NO2)]Cl2 (Pentaamine N-nitro cobalt(III) Chloride) ⇌ [Co(NH3)5(ONO)]Cl2 (Pentaamine o-nitro cobalt(III) Chloride)",
+    "chapter": "Coordination Compounds",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 22,
+    "type": "subjective",
+    "question": "Why is boiling point of o-dichlorobenzene higher than p-dichlorobenzene but melting point of para isomer is higher than ortho isomer?",
+    "options": null,
+    "answer": "Melting point of p-Chlorobenzene is higher than o-Chlorobenzene because of its closed packed structure which have high intramolecular forces of attraction. That's why high amount of temperature is required to break down the bonds while boiling point of o-chlorobenzene is high because of high dipole interaction present at ortho-position. There is great dipole-dipole forces of attraction between carbon and chlorine atom which results into high boiling point as compared to p-chlorobenzene which have zero dipole moment.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 23,
+    "type": "subjective",
+    "question": "For the pair phenol and cyclohexanol, answer the following:\n(a) Why is phenol more acidic than cyclohexanol?\n(b) Give one chemical test to distinguish between the two.",
+    "options": null,
+    "answer": "(a) Cyclohexanol is less acidic as compared to phenol because phenol is an aromatic compound while cyclohexanol is cyclic ring structure containing hydroxyl ion (-OH group). In phenol benzene ring is having double bond and shows sp2 hybridization. Because of more s-character it is more acidic.\n(b) When phenol react with Ferric Chloride, it gives violet colour but cyclohexanol remains colourless when react with FeCl3.",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 24,
+    "type": "subjective",
+    "question": "(a) (i) Draw the zwitter ion structure for sulphanilic acid.\n(ii) How can the activating effect of -NH2 group in aniline be controlled?",
+    "options": null,
+    "answer": "(a) (i) Sulphanilic acid zwitter ion: The -NH2 group gets protonated to -NH3+ and the -SO3H group loses a proton to become -SO3-.\n(ii) The activating effect of -NH2 group can be reduced by Friedel-Craft (Alkylation & Acetylation) process because nitrogen of aniline acquires positive charge and hence acts as a strong deactivating group.",
+    "chapter": "Amines",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 24,
+    "type": "subjective",
+    "question": "24 (OR): (b) (i) Complete the reaction with the main product formed:\nBenzene diazonium chloride (N2+Cl-) + CH3CH2OH ->\n(ii) Convert Bromoethane to Propanamine.",
+    "options": null,
+    "answer": "(i) Benzene diazonium chloride + CH3CH2OH -> Benzene + N2 + CH3CHO + HCl\n(ii) CH3-CH2-Br --Sn/KCN--> CH3-CH2-CN --Na/C2H5OH/2[H]--> CH3-CH2-CH2-NH2 (Propanamine)",
+    "chapter": "Amines",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 2,
+    "section": "B",
+    "qno": 25,
+    "type": "subjective",
+    "question": "Give the reaction of glucose with hydrogen cyanide. Presence of which group is confirmed by this reaction?",
+    "options": null,
+    "answer": "Glucose (CHO-(CHOH)4-CH2OH) + HCN -> Glucocyanohydrin (CH(OH)(CN)-(CHOH)4-CH2OH). The cyano group is present in this reaction, confirming the presence of the aldehyde (-CHO) group in glucose.",
+    "chapter": "Biomolecules",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 26,
+    "type": "subjective",
+    "question": "(a) For the reaction 2N2O5(g) -> 4NO2(g) + O2(g) at 318 K, calculate the rate of reaction if rate of disappearance of N2O5(g) is 1.4 x 10-3 m s-1.\n(b) For a first order reaction derive the relationship t99% = 2t90%.",
+    "options": null,
+    "answer": "(a) -1/2 d[N2O5]/dt = +1/4 d[NO2]/dt = +d[O2]/dt\nRate = 2 x (1/4) x 1.4 x 10-3 = 0.7 x 10-3 ms-1\n(b) For a first order reaction: t = (2.303/K) log(a/(a-x))\nt99% = (2.303/K) log(100/1) = (2.303/K) log 100 = (2.303 x 2)/K = 4.606/K\nt90% = (2.303/K) log(a/(a-x)) = (2.303/K) log 10 = 2.303/K\nt99%/t90% = (4.606/K)/(2.303/K) = 2\nTherefore t99% = 2 t90%",
+    "chapter": "Chemical Kinetics",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 27,
+    "type": "subjective",
+    "question": "(a) On the basis of crystal field theory write the electronic configuration for d5 ion with a strong field ligand for which Delta_0 > P.\n(b) [Ni(CO)4] has tetrahedral geometry while [Ni(CN)4]2- has square planar yet both exhibit diamagnetism. Explain. [Atomic number: Ni = 28]",
+    "options": null,
+    "answer": "(a) The magnitude difference in energy between the two sets of d-orbital i.e. t2g and eg. Electronic configuration of d5 if Delta_0 > P is t2g5 eg0. Because in a strong field ligand pairing of electrons takes place, e.g. [Ni(CN)4]2-. CN is a strong field ligand.\n(b) Ni = 28, 3d8 4s2. Ni2+ = 3d8 4s0.\n[Ni(CN)4] is a strong field ligand: dsp2 hybridization showing square planar geometry. All electrons are paired so it is diamagnetic in nature.\n[Ni(CO)4]: Ni = 28, 3d8 4s2. Ni valency is zero. sp3 hybridization showing tetrahedral geometry. All electrons are paired so it is diamagnetic in nature.",
+    "chapter": "Coordination Compounds",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 28,
+    "type": "subjective",
+    "question": "(a) Illustrate Sandmeyer's reaction with an equation.\n(b) Explain, why (CH3)2NH is more basic than (CH3)3N in aqueous solution.",
+    "options": null,
+    "answer": "(a) Sandmeyer's Reaction: Aniline (C6H5NH2) --NaNO2+HX/273-278K--> Benzene diazonium halide (C6H5N2+X-) --Cu2X2--> Aryl halide (C6H5X) + N2 [X = Cl, Br]\n(b) The order of basicity is (CH3)2-NH > (CH3)3-N because alkyl group is small, there is no steric hindrance to H-bonding. So, nature of alkyl group is responsible for basicity of 2° amine. Secondly, there is inductive effect which is important for salvation effect.",
+    "chapter": "Amines",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 29,
+    "type": "subjective",
+    "question": "Give reasons for any 3 of the following observations:\n(a) Penta-acetate of glucose does not react with hydroxylamine.\n(b) Amino acids behave like salts.\n(c) Water soluble vitamins must be taken regularly in diet.\n(d) The two strands in DNA are complimentary to each other.",
+    "options": null,
+    "answer": "(a) Because hydroxyl amine reacts with the aldehyde group to form oxime. In penta-acetate of glucose, the aldehyde group is acetylated (protected), so it does not react with hydroxylamine.\n(b) In a solution, amino acids exist as Zwitter ions: H3N+-CH(R)-COO-. Because of (+) and (-) charge they exist as solids and form salts.\n(c) Water soluble vitamins can not retain in body for longer time. If someone takes high diet of vitamin B and C they would not be as harmful as they dissolve in water and excrete outside of body.\n(d) Two DNA strands are complementary because they are connected with each other through base pair C,G,T by hydrogen bonding and run parallel to each other (5'->3' and 3'->5').",
+    "chapter": "Biomolecules",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 30,
+    "type": "subjective",
+    "question": "(a) (i) Why is the C-O bond length in phenols less than that in methanol?\n(ii) Arrange the following in order of increasing boiling point: Ethoxyethane, Butanal, Butanol, n-butane\n(iii) How can phenol be prepared from anisole? Give reaction.",
+    "options": null,
+    "answer": "(a) (i) C-O bond length in phenol is less than methanol because of presence of benzene ring which is aromatic and consisting of double bond. The lone pair present in oxygen is shared with partial conjugation effect while in methanol the lone pair of oxygen shared with normal carbon atom.\n(ii) n-Butane < Ethoxyethane < Butanal < Butanol (increasing boiling point)\n(iii) Anisole (C6H5OCH3) + HI -> Phenol (C6H5OH) + CH3I",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 3,
+    "section": "C",
+    "qno": 30,
+    "type": "subjective",
+    "question": "30 (OR): (b) (i) Give mechanism of the following reaction: 2CH3-CH2-OH --H2SO4/413K--> CH3CH2-O-CH2CH3 + H2O\n(ii) Illustrate hydroboration-oxidation reaction with an example.",
+    "options": null,
+    "answer": "(b) (i) CH3-CH2-OH --H2SO4--> CH3-CH2-O- + H+\nCH3-CH2-O- + CH3-CH2+ -> CH3-CH2-O-CH2-CH3 + H2O\n(ii) Hydroboration: 3CH3-CH2=CH2 + BH3 -> (CH3-CH2-CH2)3-B\nOxidation: (CH3-CH2-CH2)3-B + 3H2O2 -> 3CH3-CH2-CH2-OH + B(OH)3 (Propanol)",
+    "chapter": "Alcohols Phenols and Ethers",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 31,
+    "type": "case-based",
+    "question": "Nucleophilic Substitution\nNucleophilic Substitution reaction of haloalkane can be conducted according to both SN1 and SN2 mechanisms. SN1 is a two step reaction while SN2 is a single step reaction. For any haloalkane which mechanism is followed depends on factors such as structure of haloalkane, properties of leaving group, nucleophilic reagent and solvent.\nInfluences of solvent polarity: In SN1 reaction, the polarity of the system increases from the reactant to the transition state, because a polar solvent has a greater effect on the transition state than the reactant, thereby reducing activation energy and accelerating the reaction. In SN2 reaction, the polarity of the system generally does not change from the reactant to the transition state and only charge dispersion occurs. At this time, polar solvent has a great stabilizing effect on Nu than the transition state, thereby increasing activation energy and slow down the reaction rate.\n\nAnswer the following questions:\n(a) Why racemisation occurs in SN1?\n(b) Why is ethanol less polar than water?\n(c) Which one of the following in each pair is more reactive towards SN2 reaction?\n(i) CH3-CH2-I or CH3CH2-Cl\n(ii) Chlorocyclohexane or (Chloromethyl)cyclohexane",
+    "options": null,
+    "answer": "(a) In SN1 mechanism, there is intermediate carbocation formed. Due to which racemization of the product takes place or D and L form formed.\n(b) In ethanol alkyl chain is present which is responsible for non-polar nature. Water has high value of dipole moment than ethanol. That's why water is more polar than ethanol.\n(c) (i) CH3-CH2-I will react faster than CH3-CH2-Cl because I is bigger in size and more polarized atom. Its bond dissociation enthalpy is less so it easily reacts with other substances.\n(ii) (Chloromethyl)cyclohexane is more reactive compared to chlorocyclohexane because in chlorocyclohexane bond length is less and it is closely attached with cyclohexane while 1-methyl-1-chlorocyclohexane is less stable, one extra methyl group is attached which makes it more reactive towards SN1 mechanism.",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 31,
+    "type": "case-based",
+    "question": "31 (OR) (c): Arrange the following in the increasing order of their reactivity towards SN1 reactions:\n(i) 2-Bromo-2-methylbutane, 1-Bromopentane, 2-Bromopentane\n(ii) 1-Bromo-3-methylbutane, 2-Bromo-2-methylbutane, 2-Bromo-3-methylbutane",
+    "options": null,
+    "answer": "(i) 2-Bromo-2-methylbutane > 2-Bromopentane > 1-Bromopentane\n(ii) 1-Bromo-3-methylbutane > 2-Bromo-3-methylbutane > 2-Bromo-2-methylbutane",
+    "chapter": "Haloalkanes and Haloarenes",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 32,
+    "type": "case-based",
+    "question": "Rahul set-up an experiment to find resistance of aqueous KCl solution for different concentrations at 298 K using a conductivity cell connected to a Wheatstone bridge. He fed the Wheatstone bridge with a.c. power in the audio frequency range 550 to 5000 cycles per second. Once the resistance was calculated from null point he also calculated the conductivity K and molar conductivity Lambda_m and recorded his readings in tabular form.\n\nS.No. | Conc. (M) | k S cm-1 | Lambda_m S cm2 mol-1\n1. | 1.00 | 111.3 x 10-3 | 111.3\n2. | 0.10 | 12.9 x 10-3 | 129.0\n3. | 0.01 | 1.41 x 10-3 | 141.0\n\nAnswer the following questions:\n(a) Why does conductivity decrease with dilution?\n(b) If Lambda_m° of KCl is 150.0 S cm2 mol-1, calculate the degree of dissociation of 0.01 M KCl.\n(c) If Rahul had used HCl instead of KCl then would you expect the Lambda_m values to be more or less than those per KCl for a given concentration. Justify.",
+    "options": null,
+    "answer": "(a) Conductivity decreases with dilution because it depends upon the number of ions present in the solution. When dilution increases number of available ions decreases. Hence, conductivity decreases.\n(b) alpha = Lambda_m / Lambda_m°\nLambda_m = 141.0 S cm2 mol-1\nLambda_m° = 150.0 S cm2 mol-1\nalpha = 141/150 = 0.94\n(c) Molar conductivity of HCl will be high because when it breaks down into ions, it produces HCl -> H+ + Cl-. Its H+ (cation) size is smaller than K+ ion. So for same concentration of HCl and KCl, HCl shows high molar conductivity.",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 4,
+    "section": "D",
+    "qno": 32,
+    "type": "case-based",
+    "question": "32 (OR) (c): Amit, a classmate of Rahul repeated the same experiment with CH3COOH solution instead of KCl solution. Give one point that would be similar and one that would be different in his observations as compared to Rahul.",
+    "options": null,
+    "answer": "(i) KCl is strong electrolyte and completely dissociate into their respective ion while CH3-COOH is weak electrolyte and do not completely dissociate.\n(ii) Number of ions produced after dissociation are equal: KCl -> K+ + Cl- and CH3-COOH -> CH3-COO- + H+. Similar point: Both produce same number of ions on dissociation. Different point: KCl is a strong electrolyte (fully dissociates) while CH3COOH is a weak electrolyte (partially dissociates), so Lambda_m values for CH3COOH will be lower.",
+    "chapter": "Electrochemistry",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 33,
+    "type": "subjective",
+    "question": "(a) (i) Why is boiling point of 1M NaCl solution more than that of 1M glucose solution?\n(ii) A nonvolatile solute 'X' (molar mass = 50 g mol-1) when dissolved in 78g of benzene reduced its vapour pressure to 90%. Calculate the mass of X dissolved in the solution.\n(iii) Calculate the boiling point elevation for a solution prepared by adding 10g of MgCl2 to 200g of water assuming MgCl2 is completely dissociated. (Kb for Water = 0.512 K kg mol-1, Molar mass MgCl2 = 95g mol-1)",
+    "options": null,
+    "answer": "(a) (i) NaCl is having ionic bonding between sodium and chloride which is strong bonding while glucose having covalent bonding which is weak in nature. NaCl will require high temperature to boil while glucose needs low temperature to dissociate its bonding. NaCl dissociates into 2 ions (Na+ and Cl-) giving van't Hoff factor i=2, while glucose does not dissociate (i=1).\n(ii) (P°-Ps)/P° = n/N = (w x M)/(m x w_solvent)\n(100-90)/90 = (w x 78)/(50 x 78)\n10/90 = w/50\nw = (10 x 50)/90 = 5.55 grams\n(iii) Tb = i x Kb x m (MgCl2 = 3 ions, i = 3)\nTb = (3 x 0.512 x 10)/(95 x 0.2) = 5.36/19 = 0.80\nSo elevation in boiling point = 273 + 0.80 = 273.80 K",
+    "chapter": "Solutions",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 33,
+    "type": "subjective",
+    "question": "33 (OR): (b) (i) Why is the value of Van't Hoff factor for ethanoic acid in benzene close to 0.5?\n(ii) Determine the osmotic pressure of a solution prepared by dissolving 2.32 x 10-2g of K2SO4 in 2L of solution at 25°C, assuming that K2SO4 is completely dissociated. (R = 0.082 L atm K-1 mol-1, Molar mass K2SO4 = 174g mol-1)\n(iii) When 25.6g of sulphur was dissolved in 1000g of benzene, the freezing point lowered by 0.512 K. Calculate the formula of sulphur (Sx). (Kf for benzene = 5.12 K kg mol-1, Atomic mass of Sulphur = 32g mol-1)",
+    "options": null,
+    "answer": "(b) (i) Van't Hoff factor is used in determination of colligative property. It is also called Abnormal colligative property. i = actual no. of particles / theoretical number of particles. It is considered that degree of dissociation of ethanoic acid in benzene is 1. 2CH3-COOH -> (CH3-COOH)2. So, i = 1/2 = 0.5\n(ii) K2SO4 -> 2K+ + SO4^2-, ions produced = 3, i = 3\npi = iCRT = 3 x (0.0232/174) x 0.0821 x 298 = 0.851/174 = 0.00489 = 4.89 x 10-3 atm\n(iii) Delta Tf = (Kf x m x 1000)/(MB x WA) where MB = Sx\n0.512 = (5.12 x 25.6 x 1000)/(Sx x 1000)\nSx = (5.12 x 25.6)/0.512 = 256\nx = 256/32 = 8\nSo the formula of sulphur is S8.",
+    "chapter": "Solutions",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 34,
+    "type": "subjective",
+    "question": "(a) (i) Write the reaction involved in Cannizaro's reaction.\n(ii) Why are the boiling point of aldehydes and ketones lower than that of corresponding carboxylic acids?\n(iii) An organic compound 'A' with molecular formula C5H8O2 is reduced to n-pentane with hydrazone followed by heating with NaOH and Glycol. 'A' forms a dioxime with hydroxylamine and gives a positive Iodoform and Tollen's test. Identify 'A' and give its reaction for Iodoform and Tollen's test.",
+    "options": null,
+    "answer": "(a) (i) Cannizaro Reaction: 2C6H5CHO + Conc. NaOH -> C6H5COONa + C6H5CH2OH (one molecule oxidized to salt, one reduced to alcohol)\n(ii) Boiling points of aldehyde and ketones are less than carboxylic acid because carboxylic acid have hydrogen bonding and associated molecules bonding which increases the boiling point of carboxylic acids.\n(iii) Compound A is CH3-CO-CH2-CH2-CHO (4-oxopentanal). It is reduced to n-pentane (CH3-CH2-CH2-CH2-CH3) with Zn(Hg)/NH2-NH2. It forms dioxime with NH2OH. Iodoform test: CH3CO- group gives positive iodoform test with I2/NaOH. Tollen's test: -CHO group gives positive Tollen's test.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 34,
+    "type": "subjective",
+    "question": "34 (OR): (b) (i) Give a chemical test to distinguish between ethanol acid and ethanoic acid.\n(ii) Why is the alpha-hydrogens of aldehydes and ketones are acidic in nature?\n(iii) An organic compound 'A' with molecular formula C4H8O2 undergoes acid hydrolysis to form two compounds 'B' and 'C'. Oxidation of 'C' with acidified potassium permanganate also produces 'B'. Sodium salt of 'B' on heating with soda lime gives methane.\n(1) Identify 'A', 'B' and 'C'.\n(2) Out of 'B' and 'C', which will have higher boiling point? Give reason.",
+    "options": null,
+    "answer": "(b) (i) Sodium bicarbonate (NaHCO3) is used to distinguish ethanol and ethanoic acid. Ethanoic acid gives brisk Red fumes with sodium bicarbonate. Ethanol do not react with sodium bicarbonate.\n(ii) alpha-Hydrogen is always attached with oxygen which is highly electronegative and having lone pair of electrons. Alpha hydrogen atom when donates electron it acts as an acid.\n(iii) A: CH3-COOC2H5 (ethyl methanoate/ethyl acetate)\nCH3-COOC2H5 + H2O/H+ -> CH3-COOH (B) + C2H5-OH (C)\nC2H5-OH + [O] --KMnO4--> CH3-COOH (B)\nCH3-COONa --Delta/CaO+NaOH--> CH4 + Na2CO3\nA = CH3-COOC2H5 (ethyl ethanoate), B = CH3-COOH (ethanoic acid), C = C2H5-OH (ethanol)\n(2) Ethanoic acid will have higher boiling point because it contains associate molecules which participate in hydrogen bonding. H-bonding is strong bonding which requires high temperature to boil.",
+    "chapter": "Aldehydes Ketones and Carboxylic Acids",
+    "set": "Delhi Set-1"
+  },
+  {
+    "year": 2023,
+    "marks": 5,
+    "section": "E",
+    "qno": 35,
+    "type": "subjective",
+    "question": "(a) Why is chemistry of actinoids complicated as compared to lanthanoids?\n(b) Complete the following reaction and justify that it is a disproportionation reaction:\n3 MnO4^2- + 4H+ -> _____ + _____ + 2 H2O.\n(c) The given graph shows the trends in melting points of transition metals (Ti, Cr, Mn, Mo, W shown on graph with atomic number on x-axis and M.P./10^3 K on y-axis). Explain the reason why Cr has highest melting point and manganese (Mn) a lower melting point.",
+    "options": null,
+    "answer": "(a) Actinoids are present below the series of lanthanoid. They are radioactive in nature. To study them is more complicated as compared to lanthanoid. Second, they have variable oxidation state.\n(b) 3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O. It is disproportionation reaction because oxidation take place in acidic medium and oxidation numbers are: MnO4^2- = 6, MnO4- = 7, MnO2 = 4.\n(c) Cr = 24 [Ar] 3d5 4s1. Mn = 25 [Ar] 3d5 4s2. Cr has maximum number of unpaired electrons in d-orbital. So it can have maximum pairing and form bond. Number of unpaired electrons are six in Cr. But Mn has five unpaired electrons in d-orbital which is less than Cr. That's why boiling point of Cr is maximum in transition metal. Mn is half filled which have extra stability and less tendency to form bonds.",
+    "chapter": "d&f Block Elements",
+    "set": "Delhi Set-1"
+  }
+]
