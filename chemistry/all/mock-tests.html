@@ -32,6 +32,16 @@
 .rxn-shaft {
   font-size:1.4em;line-height:1;letter-spacing:-.05em;
 }
+.chem-table {
+  border-collapse:collapse;margin:.75em 0;font-size:.88em;width:100%;
+}
+.chem-table th,.chem-table td {
+  border:1px solid var(--sand-300,#d8d1c4);padding:.4em .7em;text-align:center;
+}
+.chem-table th {
+  background:var(--sand-100,#f7f5f0);font-weight:700;font-size:.85em;
+}
+.chem-table td { font-variant-numeric:tabular-nums; }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Chemistry MCQ mock tests for CBSE Class 12 — 5 timed tests with 16 MCQs each covering Physical, Organic and Inorganic Chemistry.">
@@ -178,10 +188,66 @@ function chemFormat(s) {
     return elem + '<sup>' + sign + '</sup>';
   });
 
-  // 5. Unit superscripts: cm2, cm-2, mol-1 (after common unit words)
-  s = s.replace(/(cm|mol|dm)(\-?\d+)/g, function(match, unit, exp) {
+  // 5. Unit superscripts: cm2, cm-2, mol-1, s-1, dm-3 (after common unit words)
+  s = s.replace(/\b(cm|mol|dm|atm)(\-?\d+)/g, function(match, unit, exp) {
     return unit + '<sup>' + exp + '</sup>';
   });
+  // s-1 separately (only when preceded by space/digit to avoid false positives)
+  s = s.replace(/([\s\d])s(\-\d+)/g, function(match, pre, exp) {
+    return pre + 's<sup>' + exp + '</sup>';
+  });
+
+  // 6. Scientific notation: 10-2, 10-4 etc. (× 10^n)
+  s = s.replace(/\b10(\-?\d+)/g, function(match, exp) {
+    return '10<sup>' + exp + '</sup>';
+  });
+
+  // 7. State symbols as subscripts: A(g), B(aq), C(l), D(s)
+  s = s.replace(/([A-Z][a-z]?)\((g|aq|l|s)\)/g, function(match, elem, state) {
+    return elem + '<sub>(' + state + ')</sub>';
+  });
+
+  // 8. Pipe-separated table data → HTML table
+  if (s.indexOf('|') !== -1) {
+    var lines = s.split('\n');
+    var tableLines = [];
+    var beforeTable = [];
+    var afterTable = [];
+    var inTable = false;
+    for (var i = 0; i < lines.length; i++) {
+      if (lines[i].indexOf('|') !== -1) {
+        inTable = true;
+        tableLines.push(lines[i]);
+      } else if (inTable) {
+        afterTable.push(lines[i]);
+      } else {
+        beforeTable.push(lines[i]);
+      }
+    }
+    if (tableLines.length > 1) {
+      var table = '<table class="chem-table"><thead><tr>';
+      var headerCells = tableLines[0].split('|').map(function(c) { return c.trim(); });
+      headerCells.forEach(function(c) { table += '<th>' + c + '</th>'; });
+      table += '</tr></thead><tbody>';
+      for (var j = 1; j < tableLines.length; j++) {
+        table += '<tr>';
+        tableLines[j].split('|').map(function(c) { return c.trim(); }).forEach(function(c) {
+          table += '<td>' + c + '</td>';
+        });
+        table += '</tr>';
+      }
+      table += '</tbody></table>';
+      s = beforeTable.join('<br>') + (beforeTable.length ? '<br>' : '') + table + (afterTable.length ? '<br>' : '') + afterTable.join('<br>');
+    } else {
+      s = s.replace(/\n/g, '<br>');
+    }
+  } else {
+    // 9. Newlines to <br>
+    s = s.replace(/\n/g, '<br>');
+  }
+
+  // 10. Multiplication sign: " x " in scientific notation context
+  s = s.replace(/(\d)\s+x\s+(10<sup>)/g, '$1 × $2');
 
   return s;
 }
