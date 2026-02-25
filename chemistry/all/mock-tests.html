@@ -117,6 +117,60 @@
 <script src="../../js/mobile-dropdowns.js"></script>
 <script>
 /* ═══════════════════════════════════════════════
+   CHEMISTRY TEXT FORMATTER
+   Converts plain-text chemical notation to HTML
+   with proper <sub> and <sup> tags.
+═══════════════════════════════════════════════ */
+function chemFormat(s) {
+  if (!s) return s;
+
+  // Non-metal elements whose digits are formula subscripts (not charges)
+  var SUB_ELEMS = /^(H|C|N|O|S|P|F|B|I|Si|Se|Cl|Br|Al|Li)$/;
+
+  // 1. Caret superscripts: ^2-, ^-1, ^+, ^-2 etc.
+  s = s.replace(/\^([+-]?\d*[+-]?)/g, '<sup>$1</sup>');
+
+  // 2. Charges after closing bracket: ]2+, ]3-, ]+, ]-
+  s = s.replace(/\](\d*[+-])/g, ']<sup>$1</sup>');
+
+  // 3. Element/paren + digit(s) + optional charge sign
+  //    For non-metals: digit = subscript, trailing +/- = separate superscript
+  //    For metals: digit+sign = superscript charge
+  //    For ) prefix: digit = subscript always
+  s = s.replace(/([A-Z][a-z]?|\))(\d+)([+-])?(?=[^a-zA-Z\d]|[A-Z\(\)\[]|$)/g, function(match, elem, num, sign, offset, str) {
+    // If sign is followed by a letter/paren, it's a bond dash (CH3-CH), not a charge
+    // Bond dash: sign followed by a letter (CH3-CH), not by ( or space
+    var isBondDash = sign && (offset + match.length) < str.length && /[A-Za-z]/.test(str[offset + match.length]);
+    if (isBondDash) {
+      var p = (elem === ')' || SUB_ELEMS.test(elem)) ? elem : elem;
+      return p + '<sub>' + num + '</sub>' + sign;
+    }
+    if (elem === ')' || SUB_ELEMS.test(elem)) {
+      var out = elem + '<sub>' + num + '</sub>';
+      if (sign) out += '<sup>' + sign + '</sup>';
+      return out;
+    } else {
+      if (sign) return elem + '<sup>' + num + sign + '</sup>';
+      return elem + '<sub>' + num + '</sub>';
+    }
+  });
+
+  // 4. Lone charge after element with no digit: H+, e-
+  s = s.replace(/([A-Za-z])([+-])(?=[^a-zA-Z\d]|$)/g, function(match, elem, sign) {
+    // Avoid matching inside words or HTML tags
+    if (/<$/.test(match) || /^[a-z]{2}/.test(elem + sign)) return match;
+    return elem + '<sup>' + sign + '</sup>';
+  });
+
+  // 5. Unit superscripts: cm2, cm-2, mol-1 (after common unit words)
+  s = s.replace(/(cm|mol|dm)(\-?\d+)/g, function(match, unit, exp) {
+    return unit + '<sup>' + exp + '</sup>';
+  });
+
+  return s;
+}
+
+/* ═══════════════════════════════════════════════
    STATE
 ═══════════════════════════════════════════════ */
 let activeTest = null;
@@ -289,7 +343,7 @@ function renderQuestion() {
     q.difficulty === 'easy' ? '#f0fdf4' : q.difficulty === 'medium' ? '#fefce8' : '#fef2f2';
   document.getElementById('q-diff-tag').style.color =
     q.difficulty === 'easy' ? '#166534' : q.difficulty === 'medium' ? '#854d0e' : '#991b1b';
-  document.getElementById('q-text').innerHTML = q.text;
+  document.getElementById('q-text').innerHTML = chemFormat(q.text);
   document.getElementById('q-counter').textContent = `${currentQ + 1} / ${activeTest.questions.length}`;
 
   const grid = document.getElementById('options-grid');
@@ -309,7 +363,7 @@ function renderQuestion() {
       btn.onclick = () => selectAnswer(letter);
     }
 
-    btn.innerHTML = `<span class="opt-letter">${letter}</span><span>${opt}</span>`;
+    btn.innerHTML = `<span class="opt-letter">${letter}</span><span>${chemFormat(opt)}</span>`;
     grid.appendChild(btn);
   });
 
@@ -320,7 +374,7 @@ function renderQuestion() {
     explBox.style.display = 'block';
     explBox.className = 'explanation-box' + (isCorrect ? '' : ' wrong');
     document.getElementById('expl-label').textContent = isCorrect ? 'Correct!' : `Incorrect \u2014 Answer: ${q.answer}`;
-    document.getElementById('expl-text').innerHTML = q.explanation;
+    document.getElementById('expl-text').innerHTML = chemFormat(q.explanation);
   } else {
     explBox.style.display = 'none';
   }
@@ -430,8 +484,8 @@ function buildReview() {
     const item = document.createElement('div');
     item.className = `review-item ${cls}`;
 
-    const yourText = sel ? `Your answer: ${sel} \u2014 ${q.options[LETTERS.indexOf(sel)]}` : 'Not attempted';
-    const correctText = `Correct: ${q.answer} \u2014 ${q.options[LETTERS.indexOf(q.answer)]}`;
+    const yourText = sel ? `Your answer: ${sel} \u2014 ${chemFormat(q.options[LETTERS.indexOf(sel)])}` : 'Not attempted';
+    const correctText = `Correct: ${q.answer} \u2014 ${chemFormat(q.options[LETTERS.indexOf(q.answer)])}`;
 
     const diffColor = q.difficulty === 'easy' ? '#166534' : q.difficulty === 'medium' ? '#854d0e' : '#991b1b';
     const diffBg = q.difficulty === 'easy' ? '#f0fdf4' : q.difficulty === 'medium' ? '#fefce8' : '#fef2f2';
@@ -439,13 +493,13 @@ function buildReview() {
     item.innerHTML = `
       <div class="review-header">
         <div class="review-num">${i + 1}</div>
-        <div class="review-q-text">${q.text}</div>
+        <div class="review-q-text">${chemFormat(q.text)}</div>
       </div>
       <div class="review-answers">
         <span class="review-your">${yourText}</span>
         ${!isCorrect ? `<span class="review-correct-tag">${correctText}</span>` : ''}
       </div>
-      <div class="review-expl">${q.explanation}</div>
+      <div class="review-expl">${chemFormat(q.explanation)}</div>
       <div style="display:flex;gap:.35rem;flex-wrap:wrap">
         <span class="review-chapter">${q.chapter}</span>
         <span class="review-branch ${q.branch}">${q.branch}</span>
