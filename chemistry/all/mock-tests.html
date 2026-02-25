@@ -21,6 +21,17 @@
 .review-branch.Physical  { background:#eff6ff;color:#1d4ed8 }
 .review-branch.Organic   { background:#f0fdf4;color:#166534 }
 .review-branch.Inorganic { background:#fef2f2;color:#991b1b }
+.rxn-arrow {
+  display:inline-flex;flex-direction:column;align-items:center;
+  margin:0 .3em;vertical-align:middle;position:relative;
+}
+.rxn-reagent {
+  font-size:.72em;color:var(--ink-2,#44403c);white-space:nowrap;
+  line-height:1.1;margin-bottom:-.1em;
+}
+.rxn-shaft {
+  font-size:1.4em;line-height:1;letter-spacing:-.05em;
+}
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Chemistry MCQ mock tests for CBSE Class 12 — 5 timed tests with 16 MCQs each covering Physical, Organic and Inorganic Chemistry.">
@@ -127,6 +138,14 @@ function chemFormat(s) {
   // Non-metal elements whose digits are formula subscripts (not charges)
   var SUB_ELEMS = /^(H|C|N|O|S|P|F|B|I|Si|Se|Cl|Br|Al|Li)$/;
 
+  // 0. Reaction arrows — must run FIRST before other rules mangle the dashes
+  //    --reagent--> becomes a styled arrow with reagent above
+  s = s.replace(/--([^>]+?)-->/g, function(match, reagent) {
+    return '<span class="rxn-arrow"><span class="rxn-reagent">' + reagent.trim() + '</span><span class="rxn-shaft">\u2192</span></span>';
+  });
+  //    Simple -> becomes →
+  s = s.replace(/->/g, ' \u2192 ');
+
   // 1. Caret superscripts: ^2-, ^-1, ^+, ^-2 etc.
   s = s.replace(/\^([+-]?\d*[+-]?)/g, '<sup>$1</sup>');
 
@@ -138,12 +157,10 @@ function chemFormat(s) {
   //    For metals: digit+sign = superscript charge
   //    For ) prefix: digit = subscript always
   s = s.replace(/([A-Z][a-z]?|\))(\d+)([+-])?(?=[^a-zA-Z\d]|[A-Z\(\)\[]|$)/g, function(match, elem, num, sign, offset, str) {
-    // If sign is followed by a letter/paren, it's a bond dash (CH3-CH), not a charge
     // Bond dash: sign followed by a letter (CH3-CH), not by ( or space
     var isBondDash = sign && (offset + match.length) < str.length && /[A-Za-z]/.test(str[offset + match.length]);
     if (isBondDash) {
-      var p = (elem === ')' || SUB_ELEMS.test(elem)) ? elem : elem;
-      return p + '<sub>' + num + '</sub>' + sign;
+      return elem + '<sub>' + num + '</sub>' + sign;
     }
     if (elem === ')' || SUB_ELEMS.test(elem)) {
       var out = elem + '<sub>' + num + '</sub>';
@@ -157,7 +174,6 @@ function chemFormat(s) {
 
   // 4. Lone charge after element with no digit: H+, e-
   s = s.replace(/([A-Za-z])([+-])(?=[^a-zA-Z\d]|$)/g, function(match, elem, sign) {
-    // Avoid matching inside words or HTML tags
     if (/<$/.test(match) || /^[a-z]{2}/.test(elem + sign)) return match;
     return elem + '<sup>' + sign + '</sup>';
   });
