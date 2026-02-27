@@ -893,5 +893,271 @@
     "chapter": "d&f Block",
     "set": "Outside Delhi Set-3",
     "branch": "Inorganic"
+  },
+  {
+    "type": "mcq",
+    "chapter": "d&f Block Elements",
+    "year": 2024,
+    "marks": 1,
+    "question": "Transition metals are known to make interstitial compounds. Formation of interstitial compounds makes the transition metal ______.",
+    "options": [
+      "more hard",
+      "more soft",
+      "more ductile",
+      "more metallic"
+    ],
+    "answer": "(A) more hard. Interstitial compounds are formed when small atoms (H, C, N, B) occupy the voids in the crystal lattice of transition metals, making them harder but retaining metallic conductivity."
+  },
+  {
+    "type": "mcq",
+    "chapter": "d&f Block Elements",
+    "year": 2024,
+    "marks": 1,
+    "question": "Assertion (A): Zr and Hf are of almost similar atomic radii.<br>Reason (R): This is due to Lanthanoid contraction.",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(A) is true, but (R) is false.",
+      "(A) is false, but (R) is true."
+    ],
+    "answer": "(A) Both (A) and (R) are true and (R) is the correct explanation of (A). Due to lanthanoid contraction, the expected increase in atomic radius from 4d to 5d series is offset, making Zr (160 pm) and Hf (159 pm) nearly identical in size."
+  },
+  {
+    "type": "mcq",
+    "chapter": "d&f Block Elements",
+    "year": 2024,
+    "marks": 1,
+    "question": "From the elements of 3d series given below, which element shows the maximum number of oxidation states?",
+    "options": [
+      "Scandium",
+      "Manganese",
+      "Chromium",
+      "Titanium"
+    ],
+    "answer": "(B) Manganese. Mn shows oxidation states from +2 to +7 (the maximum in the 3d series) because it has the maximum number of unpaired electrons (5) in its 3d subshell."
+  },
+  {
+    "type": "mcq",
+    "chapter": "d&f Block Elements",
+    "year": 2024,
+    "marks": 1,
+    "question": "The general electronic configuration of d-block elements is ______.",
+    "options": [
+      "(n − 1)d<sup>1–10</sup> ns<sup>1–2</sup>",
+      "(n − 1)d<sup>10</sup> ns<sup>1–2</sup>",
+      "(n − 1)d<sup>10</sup> ns<sup>2–3</sup>",
+      "(n − 1)d<sup>0</sup> ns<sup>1–2</sup>"
+    ],
+    "answer": "(A) (n − 1)d<sup>1–10</sup> ns<sup>1–2</sup>. The d-block elements are characterised by the filling of d-orbitals in the penultimate shell, with 1 to 10 electrons, while the outermost shell contains 1 or 2 s-electrons."
+  },
+  {
+    "type": "mcq",
+    "chapter": "d&f Block Elements",
+    "year": 2023,
+    "marks": 1,
+    "question": "Which property of transition metals enables them to behave as catalysts?",
+    "options": [
+      "High melting point",
+      "High ionisation enthalpy",
+      "Alloy formation",
+      "Variable oxidation states"
+    ],
+    "answer": "(D) Variable oxidation states. Transition metals can adopt multiple oxidation states, allowing them to form unstable intermediates with reactants, which lowers the activation energy."
+  },
+  {
+    "type": "mcq",
+    "chapter": "d&f Block Elements",
+    "year": 2023,
+    "marks": 1,
+    "question": "In the two tetrahedral structures of dichromate ion (Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup>), Cr–O bonds ______.",
+    "options": [
+      "All are equivalent in length",
+      "6 Cr–O bonds are equivalent in length",
+      "All are non-equivalent",
+      "4 Cr–O bonds are equivalent in length"
+    ],
+    "answer": "(B) 6 Cr–O bonds are equivalent in length. In Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup>, each Cr is tetrahedrally coordinated. There are 6 equivalent terminal Cr–O bonds and 2 Cr–O bonds to the bridging oxygen."
+  },
+  {
+    "type": "mcq",
+    "chapter": "Coordination Compounds",
+    "year": 2023,
+    "marks": 1,
+    "question": "The magnetic moment of [NiCl<sub>4</sub>]<sup>2−</sup> is ______. [Atomic number: Ni = 28]",
+    "options": [
+      "1.82 BM",
+      "2.82 BM",
+      "4.42 BM",
+      "5.46 BM"
+    ],
+    "answer": "(B) 2.82 BM. Ni<sup>2+</sup> has 3d<sup>8</sup> configuration. Cl<sup>−</sup> is a weak field ligand, so no pairing occurs in the tetrahedral complex, leaving 2 unpaired electrons. μ = √(n(n+2)) = √8 = 2.82 BM."
+  },
+  {
+    "type": "mcq",
+    "chapter": "Coordination Compounds",
+    "year": 2023,
+    "marks": 1,
+    "question": "Assertion (A): Trans [CrCl<sub>2</sub>(ox)<sub>2</sub>]<sup>3−</sup> shows optical isomerism.<br>Reason (R): Optical isomerism is common in octahedral complexes involving bidentate ligands.",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(A) is true, but (R) is false.",
+      "(A) is false, but (R) is true."
+    ],
+    "answer": "(D) (A) is false, but (R) is true. The trans isomer of [CrCl<sub>2</sub>(ox)<sub>2</sub>]<sup>3−</sup> has a plane of symmetry and is achiral. Only the cis isomer shows optical isomerism."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "Which of the following has the largest bond angle?",
+    "options": [
+      "NH<sub>3</sub>",
+      "H<sub>2</sub>O",
+      "PH<sub>3</sub>",
+      "NH<sub>4</sub><sup>+</sup>"
+    ],
+    "answer": "(D) NH<sub>4</sub><sup>+</sup>. In NH<sub>4</sub><sup>+</sup>, all four electron pairs around nitrogen are bonding pairs (no lone pairs), giving a perfect tetrahedral geometry with a bond angle of 109°28'."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "Which of the following elements does not show an oxidation state higher than +2?",
+    "options": [
+      "Oxygen",
+      "Sulphur",
+      "Selenium",
+      "Tellurium"
+    ],
+    "answer": "(A) Oxygen. Oxygen lacks vacant d-orbitals in its valence shell, so it cannot expand its octet. The other Group 16 elements (S, Se, Te) can show +4 and +6 states due to available d-orbitals."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "The correct order of acid strength of hydrogen halides is:",
+    "options": [
+      "HF < HCl < HBr < HI",
+      "HI < HBr < HCl < HF",
+      "HBr < HI < HCl < HF",
+      "HF < HBr < HI < HCl"
+    ],
+    "answer": "(A) HF < HCl < HBr < HI. Acid strength increases down the group because the H–X bond dissociation enthalpy decreases as the size of the halide increases."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "Which of the following is an incorrect statement about concentrated H<sub>2</sub>SO<sub>4</sub>?",
+    "options": [
+      "It acts as a dehydrating agent.",
+      "It acts as an oxidising agent.",
+      "K<sub>a2</sub> > K<sub>a1</sub>",
+      "It forms two series of salts."
+    ],
+    "answer": "(C) K<sub>a2</sub> > K<sub>a1</sub>. This is incorrect because K<sub>a1</sub> is much greater than K<sub>a2</sub> for H<sub>2</sub>SO<sub>4</sub>. The second dissociation is much weaker."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "Fluorine does not exhibit variable oxidation states due to:",
+    "options": [
+      "Non-availability of d-orbitals in valence shell",
+      "Low bond dissociation enthalpy",
+      "High electronegativity",
+      "Small size"
+    ],
+    "answer": "(A) Non-availability of d-orbitals in valence shell. Fluorine has the electronic configuration 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>5</sup>. Since n = 2, there are no d-orbitals available."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "The formation of O<sub>2</sub><sup>+</sup>[PtF<sub>6</sub>]<sup>−</sup> led to the discovery of noble gas compounds because:",
+    "options": [
+      "O<sub>2</sub> and Xe have similar electronegativities",
+      "O<sub>2</sub> and Xe have similar sizes",
+      "O<sub>2</sub> and Xe have comparable ionization enthalpies",
+      "O<sub>2</sub> and Xe have similar electron affinities"
+    ],
+    "answer": "(C) O<sub>2</sub> and Xe have comparable ionization enthalpies. Neil Bartlett noticed that the first ionization enthalpy of O<sub>2</sub> (1175 kJ/mol) is very close to that of Xe (1170 kJ/mol)."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "On heating ammonium dichromate, the gas released is:",
+    "options": [
+      "NO<sub>2</sub>",
+      "N<sub>2</sub>O",
+      "NO",
+      "N<sub>2</sub>"
+    ],
+    "answer": "(D) N<sub>2</sub>. The decomposition: (NH<sub>4</sub>)<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> → N<sub>2</sub> + 4H<sub>2</sub>O + Cr<sub>2</sub>O<sub>3</sub>."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "SO<sub>2</sub> behaves similar to which of the following with respect to its reaction with water and alkalis?",
+    "options": [
+      "NO<sub>2</sub>",
+      "CO<sub>2</sub>",
+      "NH<sub>3</sub>",
+      "N<sub>2</sub>O"
+    ],
+    "answer": "(B) CO<sub>2</sub>. Both SO<sub>2</sub> and CO<sub>2</sub> are acidic oxides. They dissolve in water to form acids and react with alkalis to form salts."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "The structure of XeF<sub>6</sub> is:",
+    "options": [
+      "Distorted octahedral",
+      "Regular octahedral",
+      "Square pyramidal",
+      "Square planar"
+    ],
+    "answer": "(A) Distorted octahedral. XeF<sub>6</sub> has sp<sup>3</sup>d<sup>3</sup> hybridisation with 6 bonding pairs and 1 lone pair around Xe. The lone pair distorts the regular octahedral geometry."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "Which of the following oxoacids of sulphur contains a peroxide linkage (O–O bond)?",
+    "options": [
+      "H<sub>2</sub>SO<sub>4</sub>",
+      "H<sub>2</sub>S<sub>2</sub>O<sub>7</sub>",
+      "H<sub>2</sub>SO<sub>3</sub>",
+      "H<sub>2</sub>S<sub>2</sub>O<sub>8</sub>"
+    ],
+    "answer": "(D) H<sub>2</sub>S<sub>2</sub>O<sub>8</sub> (peroxodisulphuric acid / Marshall's acid). It is the only sulphur oxoacid in the options that contains a peroxide (–O–O–) linkage."
+  },
+  {
+    "type": "mcq",
+    "chapter": "p-Block Elements",
+    "year": 2021,
+    "marks": 1,
+    "question": "Which of the following reactions of halogens with water is incorrect?",
+    "options": [
+      "2F<sub>2</sub> + 2H<sub>2</sub>O → 4H<sup>+</sup> + 4F<sup>−</sup> + O<sub>2</sub>",
+      "2I<sub>2</sub> + 2H<sub>2</sub>O → 4H<sup>+</sup> + 4I<sup>−</sup> + O<sub>2</sub>",
+      "Cl<sub>2</sub> + H<sub>2</sub>O → HCl + HOCl",
+      "Br<sub>2</sub> + H<sub>2</sub>O → HBr + HOBr"
+    ],
+    "answer": "(B) 2I<sub>2</sub> + 2H<sub>2</sub>O → 4H<sup>+</sup> + 4I<sup>−</sup> + O<sub>2</sub>. This reaction is incorrect because iodine is not a strong enough oxidising agent to oxidise water."
   }
 ]

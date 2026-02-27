@@ -68,6 +68,35 @@
 /* Mobile select */
 .qb-tabs .mobile-select{display:none;margin:0 auto;max-width:95%;font-family:"Lato",sans-serif;font-size:.8rem;font-weight:700;padding:.4rem .75rem;border:1.5px solid var(--sand-300);border-radius:8px;background:#fff;color:var(--ink);cursor:pointer}
 
+/* Weightage table */
+.weightage-table-wrap{margin-bottom:1.5rem}
+.weightage-title{font-family:"Newsreader",serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:.6rem}
+.weightage-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.weightage-table{width:100%;border-collapse:collapse;font-family:"Lato",sans-serif;font-size:.78rem}
+.weightage-table th{background:var(--subject-bg);color:var(--subject-text);font-weight:700;padding:.45rem .6rem;text-align:center;border:1px solid var(--subject-border);font-size:.68rem;letter-spacing:.03em;text-transform:uppercase}
+.weightage-table th:first-child{text-align:left}
+.weightage-table td{padding:.4rem .6rem;text-align:center;border:1px solid var(--sand-200);color:var(--ink-2)}
+.wt-chapter{text-align:left;font-weight:500;color:var(--ink);font-family:"Newsreader",serif;font-size:.82rem}
+.wt-total{font-weight:700;color:var(--subject-color)}
+.wt-grand{background:var(--subject-bg)}
+.wt-grand td{font-weight:700;color:var(--subject-text);border-color:var(--subject-border)}
+
+/* Most Asked section */
+.ma-section{margin-bottom:1.5rem}
+.ma-section-title{font-family:"Newsreader",serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.6rem;padding-bottom:.35rem;border-bottom:1.5px solid var(--sand-200)}
+.ma-section-stars{color:var(--subject-color);font-size:.8rem;margin-left:.3rem}
+.ma-topic-card{background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:.85rem 1rem;margin-bottom:.6rem;transition:box-shadow .2s}
+.ma-topic-card:hover{box-shadow:0 3px 12px rgba(0,0,0,.05)}
+.ma-topic-header{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.4rem}
+.ma-topic-name{font-family:"Newsreader",serif;font-size:.92rem;font-weight:600;color:var(--ink)}
+.ma-freq-badge{font-size:.62rem;font-weight:700;color:#fff;background:var(--subject-color);border-radius:999px;padding:.15rem .55rem;white-space:nowrap}
+.ma-years{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem}
+.ma-year-pill{font-size:.6rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.1rem .4rem}
+.ma-samples{border-top:1px solid var(--sand-100);padding-top:.45rem}
+.ma-sample{font-family:"Source Serif 4",Georgia,serif;font-size:.8rem;color:var(--ink-2);line-height:1.55;padding:.3rem 0;border-bottom:1px dotted var(--sand-100)}
+.ma-sample:last-child{border-bottom:none}
+.ma-sample-year{font-family:"Lato",sans-serif;font-size:.62rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border-radius:3px;padding:.05rem .3rem;margin-right:.3rem}
+
 @media(max-width:640px){
   .qb-tabs-inner{display:none}
   .qb-tabs .mobile-select{display:block}
@@ -79,6 +108,11 @@
   .qb-badge{font-size:.6rem;padding:.1rem .45rem}
   .qb-diagram{padding:.5rem}
   .qb-diagram svg{width:100%}
+  .weightage-table{font-size:.7rem}
+  .weightage-table th,.weightage-table td{padding:.3rem .4rem}
+  .wt-chapter{font-size:.75rem}
+  .ma-topic-name{font-size:.84rem}
+  .ma-sample{font-size:.75rem}
 }
 </style>
 <title>Inorganic Chemistry PYQ Question Bank &mdash; CBSE XII</title>
@@ -94,20 +128,570 @@
 
 <nav class="qb-tabs">
   <div class="qb-tabs-inner">
-    <button class="qb-tab active" onclick="showTab(0,this)">2 Marks (66)</button>
-    <button class="qb-tab" onclick="showTab(1,this)">3 Marks (63)</button>
-    <button class="qb-tab" onclick="showTab(2,this)">4 Marks (3)</button>
-    <button class="qb-tab" onclick="showTab(3,this)">5 Marks (28)</button>
+    <button class="qb-tab active" onclick="showTab(0,this)">Most Asked</button>
+    <button class="qb-tab" onclick="showTab(1,this)">2 Marks (66)</button>
+    <button class="qb-tab" onclick="showTab(2,this)">3 Marks (63)</button>
+    <button class="qb-tab" onclick="showTab(3,this)">4 Marks (3)</button>
+    <button class="qb-tab" onclick="showTab(4,this)">5 Marks (28)</button>
   </div>
   <select class="mobile-select" onchange="showTab(this.value,this)">
-    <option value="0">2 Marks (66)</option>
-    <option value="1">3 Marks (63)</option>
-    <option value="2">4 Marks (3)</option>
-    <option value="3">5 Marks (28)</option>
+    <option value="0">Most Asked</option>
+    <option value="1">2 Marks (66)</option>
+    <option value="2">3 Marks (63)</option>
+    <option value="3">4 Marks (3)</option>
+    <option value="4">5 Marks (28)</option>
   </select>
 </nav>
 
-<div id="panel-0" class="qb-panel active"><div class="qb-chapter-section">
+<div id="panel-0" class="qb-panel active"><div class="weightage-table-wrap">
+<h3 class="weightage-title">Chapter-wise Question Distribution</h3>
+<div class="weightage-scroll"><table class="weightage-table">
+<thead><tr><th>Chapter</th><th>2M</th><th>3M</th><th>4M</th><th>5M</th><th>Total</th></tr></thead>
+<tbody><tr><td class="wt-chapter">d&f Block</td><td>20</td><td>29</td><td>&ndash;</td><td>20</td><td class="wt-total">69</td></tr><tr><td class="wt-chapter">Coordination Compounds</td><td>31</td><td>24</td><td>3</td><td>3</td><td class="wt-total">61</td></tr><tr><td class="wt-chapter">p-Block Elements</td><td>13</td><td>4</td><td>&ndash;</td><td>5</td><td class="wt-total">22</td></tr><tr><td class="wt-chapter">General Principles of Metallurgy</td><td>&ndash;</td><td>5</td><td>&ndash;</td><td>&ndash;</td><td class="wt-total">5</td></tr><tr><td class="wt-chapter">General Principles of Isolation of Elements</td><td>2</td><td>1</td><td>&ndash;</td><td>&ndash;</td><td class="wt-total">3</td></tr><tr class="wt-grand"><td>Total</td><td>66</td><td>63</td><td>3</td><td>28</td><td class="wt-total">160</td></tr></tbody></table></div></div><div class="ma-section">
+<h3 class="ma-section-title">3 Mark Questions <span class="ma-section-stars">&#9733;</span></h3><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">IUPAC Naming of Coordination Compounds</span>
+<span class="ma-freq-badge">Asked 11 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2013</span><span class="ma-year-pill">2014</span><span class="ma-year-pill">2017</span><span class="ma-year-pill">2018</span><span class="ma-year-pill">2019</span><span class="ma-year-pill">2024</span><span class="ma-year-pill">2025</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2013 &middot; 3 marks</span></div>
+<div class="qb-question">Write the IUPAC names of the following coordination compounds:<div class="qb-subpart">(i) [Cr(NH<sub>3</sub>)<sub>3</sub>Cl<sub>3</sub>]</div><div class="qb-subpart">(ii) K<sub>3</sub>[Fe(CN)<sub>6</sub>]</div><div class="qb-subpart">(iii) [CoBr<sub>2</sub>(en)<sub>2</sub>]<sup>+</sup>, (en = ethylenediamine)</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Triamminetrichloridochromium(III)<div class="qb-subpart">(ii) Potassium hexacyanoferrate(III)</div><div class="qb-subpart">(iii) Dibromobis(ethylenediamine)cobalt(III) ion</div></div>
+</div><div class="ma-sample"><span class="ma-sample-year">2014</span> (i) Write the IUPAC name of the complex [Cr(NH 3 ) 4 Cl 2 ]Cl. (ii) What type of isomerism is exhibited by the complex [Co(en) 3 ] 3+ ? (en = ethane-1,2-diamine) (iii) Why is [NiCl...</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2017 &middot; 3 marks</span></div>
+<div class="qb-question">(i) What type of isomerism is shown by the complex [Co(NH<sub>3</sub>)<sub>6</sub>][Cr(CN)<sub>6</sub>]?<div class="qb-subpart">(ii) Why a solution of [Ni(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> is green while a solution of [Ni(CN)<sub>4</sub>]<sup>2-</sup> is colourless? (At. no. of Ni = 28)</div><div class="qb-subpart">(iii) Write IUPAC name of the following complex: [Co(NH<sub>3</sub>)<sub>5</sub>(CO<sub>3</sub>)]Cl.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Co-ordination isomerism.<div class="qb-subpart">(ii) In [Ni(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>, H<sub>2</sub>O is a weak field ligand. There are unpaired electrons in Ni<sup>2+</sup>. The d electrons can be excited to higher energy level (d-d transition), so it is coloured. In [Ni(CN)<sub>4</sub>]<sup>2-</sup>, CN<sup>-</sup> is a strong ligand, electrons are all paired, d-d transition not possible, hence colourless.</div><div class="qb-subpart">(iii) Pentaamminecarbonatocobalt(III) chloride.</div></div>
+</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Transition Metal Properties</span>
+<span class="ma-freq-badge">Asked 10 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2013</span><span class="ma-year-pill">2016</span><span class="ma-year-pill">2019</span></div><div class="ma-samples"><div class="ma-sample"><span class="ma-sample-year">2013</span> How would you account for the following? (i) Transition metals exhibit variable oxidation states. (ii) Zr(Z = 40) and Hf(Z = 72) have almost identical radii. (iii) Transition metal...</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2016 &middot; 3 marks</span></div>
+<div class="qb-question">Give reasons:<div class="qb-subpart">(i) Mn shows the highest oxidation state of +7 with oxygen but with fluorine it shows the highest oxidation state of +4.</div><div class="qb-subpart">(ii) Transition metals show variable oxidation states.</div><div class="qb-subpart">(iii) Actinoids show irregularities in their electronic configurations.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Oxygen can form multiple bonds (p-pi - d-pi) with Mn enabling Mn2O7. Fluorine has no d-orbitals and cannot form multiple bonds, so maximum oxidation state with F is +4 (MnF4).<div class="qb-subpart">(ii) Due to comparable energies of ns and (n-1)d orbitals, electrons of both can participate in bonding, giving variable oxidation states.</div><div class="qb-subpart">(iii) Due to comparable energies of 5f, 6d, and 7s orbitals, electrons can rearrange for more stable configurations (f0, f7, f14 stability).</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2019 &middot; 3 marks</span></div>
+<div class="qb-question">Give the reasons for following:<div class="qb-subpart">(i) Transition elements and their compounds act as catalysts.</div><div class="qb-subpart">(ii) E° value for (Mn2+/Mn) is negative whereas for (Cu2+/Cu) is positive.</div><div class="qb-subpart">(iii) Actinoids show irregularities in their electronic configuration.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Due to variable oxidation state and ability to form complexes/provide surface for adsorption.<div class="qb-subpart">(ii) Mn2+ is stable due to exactly half filled 3d5 configuration. Due to high Delta_a H and low Delta_hyd H for Cu, E° is positive.</div><div class="qb-subpart">(iii) Due to comparable energies of 5f, 6d and 7s orbitals.</div></div>
+</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Other (d&f Block)</span>
+<span class="ma-freq-badge">Asked 8 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2013</span><span class="ma-year-pill">2016</span><span class="ma-year-pill">2018</span><span class="ma-year-pill">2019</span><span class="ma-year-pill">2020</span><span class="ma-year-pill">2025</span></div><div class="ma-samples"><div class="ma-sample"><span class="ma-sample-year">2013</span> Complete the following chemical equations: (i) Cr 2 O 7 2 + 6Fe 2+ + 14H + (ii) 2CrO 4 2 + 2H + (iii) 2MnO 4 + 5C 2 O 4 2 + 16H +</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2016 &middot; 3 marks</span></div>
+<div class="qb-question">(i) Name the method of refining of metals such as germanium.<div class="qb-subpart">(ii) In the extraction of Al, impure Al2O3 is dissolved in conc. NaOH to form sodium aluminate and leaving impurities behind. What is the name of this process?</div><div class="qb-subpart">(iii) What is the role of coke in the extraction of iron from its oxides?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Zone refining is used for refining of germanium.<div class="qb-subpart">(ii) The process is called Baeyer's process (or leaching).</div><div class="qb-subpart">(iii) Coke acts as a reducing agent: Fe2O3 + 3CO -> 2Fe + 3CO2. Coke first converts to CO which then reduces iron oxide.</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2016 &middot; 3 marks</span></div>
+<div class="qb-question">(i) Name the method of refining of nickel.<div class="qb-subpart">(ii) What is the role of cryolite in the extraction of aluminium?</div><div class="qb-subpart">(iii) What is the role of limestone in the extraction of iron from its oxides?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Mond process (vapour phase refining): Ni + 4CO -> Ni(CO)4 -> Ni + 4CO.<div class="qb-subpart">(ii) Cryolite (Na3AlF6) lowers the melting point of alumina from ~2050°C to ~950°C and increases conductivity of electrolyte.</div><div class="qb-subpart">(iii) Limestone (CaCO3) acts as a flux; it decomposes to CaO which combines with SiO2 (gangue) to form slag CaSiO3.</div></div>
+</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Solid State / Crystal Structure / Defects</span>
+<span class="ma-freq-badge">Asked 6 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2015</span><span class="ma-year-pill">2023</span><span class="ma-year-pill">2024</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2015 &middot; 3 marks</span></div>
+<div class="qb-question">(i) Draw the geometrical isomers of complex [Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>].<div class="qb-subpart">(ii) On the basis of crystal field theory, write the electronic configuration for d<sup>4</sup> ion if &Delta;<sub>0</sub> < P.</div><div class="qb-subpart">(iii) Write the hybridization and magnetic behaviour of the complex [Ni(CO)<sub>4</sub>].</div><br>(At.no. of Ni = 28)</div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Cis-isomer: Both NH<sub>3</sub> on same side, both Cl on same side. Trans-isomer: NH<sub>3</sub> on opposite sides, Cl on opposite sides.<div class="qb-subpart">(ii) For d<sup>4</sup> ion with &Delta;<sub>0</sub> < P (weak field/high spin): t<sub>2g</sub><sup>3</sup> e<sub>g</sub><sup>1</sup></div><div class="qb-subpart">(iii) [Ni(CO)<sub>4</sub>]: sp<sup>3</sup> hybridization, diamagnetic (CO is strong field ligand causing pairing, no unpaired electrons).</div><div class="qb-diagram"><svg viewBox="0 0 320 160" width="300" height="150">
+<text x="80" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#b91c1c">cis isomer</text>
+<rect x="30" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="80" y="80" text-anchor="middle" font-size="13" font-weight="bold">Pt</text>
+<text x="80" y="33" text-anchor="middle" font-size="11" fill="#2563eb">NH&#8323;</text>
+<text x="25" y="80" text-anchor="end" font-size="11" fill="#2563eb">NH&#8323;</text>
+<text x="135" y="80" text-anchor="start" font-size="11" fill="#dc2626">Cl</text>
+<text x="80" y="133" text-anchor="middle" font-size="11" fill="#dc2626">Cl</text>
+<text x="240" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#059669">trans isomer</text>
+<rect x="190" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="240" y="80" text-anchor="middle" font-size="13" font-weight="bold">Pt</text>
+<text x="240" y="33" text-anchor="middle" font-size="11" fill="#2563eb">NH&#8323;</text>
+<text x="185" y="80" text-anchor="end" font-size="11" fill="#dc2626">Cl</text>
+<text x="295" y="80" text-anchor="start" font-size="11" fill="#dc2626">Cl</text>
+<text x="240" y="133" text-anchor="middle" font-size="11" fill="#2563eb">NH&#8323;</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2022-II &middot; 3 marks</span></div>
+<div class="qb-question">(a)<div class="qb-subpart">(i) Write the IUPAC name of the following complex: K2[PdCl4] (ii) Using crystal field theory, write the electronic configuration of d5 ion, if Delta_0 > P. (iii) What are Homoleptic complexes?</div><br>OR<br>(b)<div class="qb-subpart">(i) Why chelate complexes are more stable than complexes with unidentate ligands? (ii) What is 'spectrochemical series'? What is the difference between a weak field ligand and a strong field ligand?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) IUPAC name of K2[PdCl4] is Potassium tetrachloropalladate(II).</div><div class="qb-subpart">(ii) If Delta_0 > P, the electronic configuration of d5 ion will be t2g<sup>5</sup> eg<sup>0</sup> as it is associated with strong field and low spin situation. Thus, no electron will enter into eg orbital.</div><div class="qb-subpart">(iii) The complex compounds in which all the ligand which are connected with central atom are same or identical are called homoleptic complexes. For example: [Ni(CO)4], [Co(NH3)6]<sup>3+</sup>.</div><br>OR<br>(b)<div class="qb-subpart">(i) Chelate complexes are more stable than unidentate ligand because chelate ligand forms a ring with the central metal ion and are held by strong force of attraction and are less likely to dissociate.</div><div class="qb-subpart">(ii) A series in which ligands are arranged in the order of increasing magnitude of crystal field splitting energy (CFSE), is called spectrochemical series. I- < Br- < Cl- < SCN- < F- < OH- < C2O4<sup>2-</sup> < H2O < NCS- < EDTA<sup>4-</sup> < NH3 < en < CN- < CO. Weak field ligands have CFSE less than pairing energy; strong field ligands have CFSE greater than pairing energy.</div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2022-II &middot; 3 marks</span></div>
+<div class="qb-question">(a)<div class="qb-subpart">(i) Write the IUPAC name of the following complex: K2[PdCl4] (ii) Using crystal field theory, write the electronic configuration of d5 ion, if Delta_0 > P. (iii) What are Homoleptic complexes?</div><br>OR<br>(b)<div class="qb-subpart">(i) Why chelate complexes are more stable than complexes with unidentate ligands? (ii) What is 'spectrochemical series'? What is the difference between a weak field ligand and a strong field ligand?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) IUPAC name of K2[PdCl4] is Potassium tetrachloropalladate(II).</div><div class="qb-subpart">(ii) If Delta_0 > P, the electronic configuration of d5 ion will be t2g<sup>5</sup> eg<sup>0</sup> as it is associated with strong field and low spin situation. Thus, no electron will enter into eg orbital.</div><div class="qb-subpart">(iii) The complex compounds in which all the ligand which are connected with central atom are same or identical are called homoleptic complexes. For example: [Ni(CO)4], [Co(NH3)6]<sup>3+</sup>.</div><br>OR<br>(b)<div class="qb-subpart">(i) Chelate complexes are more stable than unidentate ligand because chelate ligand forms a ring with the central metal ion and are held by strong force of attraction and are less likely to dissociate.</div><div class="qb-subpart">(ii) A series in which ligands are arranged in the order of increasing magnitude of crystal field splitting energy (CFSE), is called spectrochemical series. I- < Br- < Cl- < SCN- < F- < OH- < C2O4<sup>2-</sup> < H2O < NCS- < EDTA<sup>4-</sup> < NH3 < en < CN- < CO. Weak field ligands have CFSE less than pairing energy; strong field ligands have CFSE greater than pairing energy.</div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
+</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Isomerism in Coordination Compounds</span>
+<span class="ma-freq-badge">Asked 6 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2016</span><span class="ma-year-pill">2017</span><span class="ma-year-pill">2023</span><span class="ma-year-pill">2024</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2016 &middot; 3 marks</span></div>
+<div class="qb-question">(a) For the complex [Fe(CN)6]3-, write the hybridization, magnetic character and spin nature of the complex. (At. number: Fe = 26).<div class="qb-mainpart">(b) Draw one of the geometrical isomers of the complex [Pt(en)2Cl2]2+ which is optically active.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) Fe3+ has [Ar]3d5. CN- is a strong field ligand causing pairing. Hybridization: d2sp3 (inner orbital complex, octahedral). Magnetic character: Paramagnetic (1 unpaired electron). Spin nature: Low spin complex.<div class="qb-mainpart">(b) The cis form of [Pt(en)2Cl2]2+ is optically active as it is non-superimposable on its mirror image.</div><div class="qb-diagram"><svg viewBox="0 0 320 190" width="300" height="175">
+<text x="80" y="15" text-anchor="middle" font-size="10" font-weight="bold" fill="#b91c1c">cis (optically active)</text>
+<rect x="25" y="25" width="110" height="110" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="80" y="85" text-anchor="middle" font-size="13" font-weight="bold">M</text>
+<text x="80" y="33" text-anchor="middle" font-size="10" fill="#2563eb">en</text>
+<text x="20" y="55" text-anchor="end" font-size="10" fill="#2563eb">en</text>
+<text x="140" y="55" text-anchor="start" font-size="10" fill="#2563eb">en</text>
+<text x="20" y="115" text-anchor="end" font-size="10" fill="#dc2626">Cl</text>
+<text x="140" y="115" text-anchor="start" font-size="10" fill="#dc2626">Cl</text>
+<text x="80" y="142" text-anchor="middle" font-size="10" fill="#2563eb">en</text>
+<text x="240" y="15" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">trans (not optically active)</text>
+<rect x="185" y="25" width="110" height="110" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="240" y="85" text-anchor="middle" font-size="13" font-weight="bold">M</text>
+<text x="240" y="33" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+<text x="180" y="55" text-anchor="end" font-size="10" fill="#2563eb">en</text>
+<text x="300" y="55" text-anchor="start" font-size="10" fill="#2563eb">en</text>
+<text x="180" y="115" text-anchor="end" font-size="10" fill="#2563eb">en</text>
+<text x="300" y="115" text-anchor="start" font-size="10" fill="#2563eb">en</text>
+<text x="240" y="142" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+<text x="160" y="175" text-anchor="middle" font-size="9" fill="#888">Trans has plane of symmetry</text>
+</svg></div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2016 &middot; 3 marks</span></div>
+<div class="qb-question">(a) For the complex [Fe(H2O)6]3+, write the hybridization, magnetic character and spin of the complex. (At. number: Fe = 26).<div class="qb-mainpart">(b) Draw one of the geometrical isomers of the complex [Pt(en)2Cl2]2+ which is optically inactive.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) Fe3+: [Ar]3d5. H2O is weak field ligand (no pairing). Hybridization: sp3d2 (outer orbital, octahedral). Magnetic character: Paramagnetic (5 unpaired electrons, mu = sqrt(35) = 5.92 BM). Spin: High spin complex.<div class="qb-mainpart">(b) The trans form of [Pt(en)2Cl2]2+ is optically inactive as it has a plane of symmetry.</div><div class="qb-diagram"><svg viewBox="0 0 320 190" width="300" height="175">
+<text x="80" y="15" text-anchor="middle" font-size="10" font-weight="bold" fill="#b91c1c">cis (optically active)</text>
+<rect x="25" y="25" width="110" height="110" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="80" y="85" text-anchor="middle" font-size="13" font-weight="bold">M</text>
+<text x="80" y="33" text-anchor="middle" font-size="10" fill="#2563eb">en</text>
+<text x="20" y="55" text-anchor="end" font-size="10" fill="#2563eb">en</text>
+<text x="140" y="55" text-anchor="start" font-size="10" fill="#2563eb">en</text>
+<text x="20" y="115" text-anchor="end" font-size="10" fill="#dc2626">Cl</text>
+<text x="140" y="115" text-anchor="start" font-size="10" fill="#dc2626">Cl</text>
+<text x="80" y="142" text-anchor="middle" font-size="10" fill="#2563eb">en</text>
+<text x="240" y="15" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">trans (not optically active)</text>
+<rect x="185" y="25" width="110" height="110" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="240" y="85" text-anchor="middle" font-size="13" font-weight="bold">M</text>
+<text x="240" y="33" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+<text x="180" y="55" text-anchor="end" font-size="10" fill="#2563eb">en</text>
+<text x="300" y="55" text-anchor="start" font-size="10" fill="#2563eb">en</text>
+<text x="180" y="115" text-anchor="end" font-size="10" fill="#2563eb">en</text>
+<text x="300" y="115" text-anchor="start" font-size="10" fill="#2563eb">en</text>
+<text x="240" y="142" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+<text x="160" y="175" text-anchor="middle" font-size="9" fill="#888">Trans has plane of symmetry</text>
+</svg></div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2017 &middot; 3 marks</span></div>
+<div class="qb-question">(a) What type of isomerism is shown by the complex [Co(NH<sub>3</sub>)<sub>5</sub>(SCN)]<sup>2+</sup>?<div class="qb-mainpart">(b) Why is [NiCl<sub>4</sub>]<sup>2-</sup> paramagnetic while [Ni(CN)<sub>4</sub>]<sup>2-</sup> is diamagnetic? (Atomic number of Ni = 28)</div><div class="qb-mainpart">(c) Why are low spin tetrahedral complexes rarely observed?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) Linkage isomerism (SCN<sup>-</sup> can bind through S or N).<div class="qb-mainpart">(b) [NiCl<sub>4</sub>]<sup>2-</sup>: Cl<sup>-</sup> is weak field ligand, sp<sup>3</sup> hybridization, 2 unpaired electrons (paramagnetic). [Ni(CN)<sub>4</sub>]<sup>2-</sup>: CN<sup>-</sup> is strong field ligand, dsp<sup>2</sup> hybridization, no unpaired electrons (diamagnetic).</div><div class="qb-mainpart">(c) Because of very low CFSE (Crystal Field Splitting Energy) in tetrahedral complexes which is not able to pair up the electrons.</div></div>
+</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Other (General Principles of Metallurgy)</span>
+<span class="ma-freq-badge">Asked 5 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2017</span><span class="ma-year-pill">2018</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2017 &middot; 3 marks</span></div>
+<div class="qb-question">(a) Write the principle of method used for the refining of germanium.<div class="qb-mainpart">(b) Out of PbS and PbCO<sub>3</sub> (ores of lead), which one is concentrated by froth flotation process?</div><div class="qb-mainpart">(c) What is significance of leaching in the extraction of aluminium?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) Zone refining: Based on the principle that impurities are more soluble in the melt than in the solid state.<div class="qb-mainpart">(b) PbS (sulphide ore is concentrated by froth flotation).</div><div class="qb-mainpart">(c) Leaching is used to concentrate bauxite ore (Al<sub>2</sub>O<sub>3</sub>) by removing impurities like SiO<sub>2</sub>, Fe<sub>2</sub>O<sub>3</sub>, TiO<sub>2</sub> using Bayer's process with NaOH.</div></div>
+</div><div class="ma-sample"><span class="ma-sample-year">2017</span> Write the principles of the following methods: (i) Vapour phase refining (ii) Zone refining (iii) Chromatography</div><div class="ma-sample"><span class="ma-sample-year">2017</span> Write the principle of the following: (a) Zone refining (b) Froth flotation process (c) Chromatography</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Lanthanoid/Actinoid Contraction</span>
+<span class="ma-freq-badge">Asked 4 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2015</span><span class="ma-year-pill">2025</span></div><div class="ma-samples"><div class="ma-sample"><span class="ma-sample-year">2015</span> (a) How would you account for the following: (i) Actinoid contraction is greater than lanthanoid contraction. (ii) Transition metals form coloured compounds. (b) Complete the follo...</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2022-II &middot; 3 marks</span></div>
+<div class="qb-question">(a) Write any two consequences of Lanthanoid Contraction.<div class="qb-mainpart">(b) Name the element of 3d series which exhibits the largest number of oxidation states. Give reason.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) Two consequences of lanthanide contraction: (i) Due to close similarity in electronic configuration and ionic radii, the lanthanides have identical chemical properties which makes their separation difficult. (ii) Due to lanthanide contraction, the size of Ln3+ ions decrease regularly with increase in atomic number. According to Fajan's rule, decrease in size of Ln3+ ions increase the covalent character and decrease the basic character between Ln3+ and OH- ion in Ln(OH)3. Order of size: La3+ > Ce3+ > ... > Lu3+.<div class="qb-mainpart">(b) The element which shows largest number of oxidation states in 3d series is Manganese (Mn). It shows oxidation states +2, +3, +4, +5, +6 and +7. It is because it contains the maximum number of unpaired electrons in the outermost shell, i.e., 3d5 4s2.</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2025 &middot; 3 marks</span></div>
+<div class="qb-question">(a) Of the d4 species, Cr2+ is strongly reducing while Mn3+ is strongly oxidising. Why?<div class="qb-mainpart">(b) Write two consequences of lanthanoid contraction.</div><div class="qb-mainpart">(c) Which element of 3d series has lowest enthalpy of atomisation and why?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) Cr2+ is a strong reducing agent, it has 3d4 electronic configuration. Hence, it loses electron to form 3d3 configuration, which has half filled t2g and is more stable. But in case of Mn3+, the electronic configuration 3d4 gains electron to become 3d5 (Mn2+). It attains extra stability due to 3d5 electronic configuration. Hence it is a strong oxidising agent. (b)(1) It causes the radii of the members of the third transition series to be very similar to those of the corresponding members of the second series. (2) The basic strength decreases from La(OH)3 to Lu(OH)3.<div class="qb-mainpart">(c) In 3d elements, d-orbitals are involved in metallic bonding but not in case of zinc. Hence it shows lowest enthalpy of atomisation.</div></div>
+</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Other (p-Block Elements)</span>
+<span class="ma-freq-badge">Asked 3 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2014</span><span class="ma-year-pill">2017</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2014 &middot; 3 marks</span></div>
+<div class="qb-question">(a) Draw the structures of the following molecules:<div class="qb-subpart">(i) XeOF<sub>4</sub></div><div class="qb-subpart">(ii) H<sub>3</sub>SO<sub>4</sub> (should be H<sub>2</sub>SO<sub>4</sub>)</div><div class="qb-mainpart">(b) Write the structural difference between white phosphorus and red phosphorus.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) XeOF<sub>4</sub>: Square pyramidal structure with one O at apex.</div><div class="qb-subpart">(ii) H<sub>2</sub>SO<sub>4</sub>: Tetrahedral structure around S with 2 OH groups and 2 =O.</div><div class="qb-mainpart">(b) White phosphorus exists as discrete P<sub>4</sub> tetrahedral molecules. Red phosphorus has a polymeric chain structure where P<sub>4</sub> units are linked together.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
+<text x="100" y="115" text-anchor="middle" font-size="14" font-weight="bold">Xe</text>
+<line x1="100" y1="100" x2="100" y2="40" stroke="#333" stroke-width="2"/>
+<line x1="97" y1="100" x2="97" y2="40" stroke="#333" stroke-width="2"/>
+<text x="100" y="30" text-anchor="middle" font-size="12">O</text>
+<line x1="85" y1="110" x2="25" y2="110" stroke="#333" stroke-width="2"/>
+<text x="15" y="115" text-anchor="middle" font-size="12">F</text>
+<line x1="115" y1="110" x2="175" y2="110" stroke="#333" stroke-width="2"/>
+<text x="185" y="115" text-anchor="middle" font-size="12">F</text>
+<line x1="100" y1="125" x2="60" y2="175" stroke="#333" stroke-width="2"/>
+<text x="50" y="185" text-anchor="middle" font-size="12">F</text>
+<line x1="100" y1="125" x2="140" y2="175" stroke="#333" stroke-width="2"/>
+<text x="150" y="185" text-anchor="middle" font-size="12">F</text>
+<text x="100" y="215" text-anchor="middle" font-size="10" fill="#888">Square pyramidal (sp&#179;d&#178;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Sulphuric acid (H&#8322;SO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">S</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="105" x2="113" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="90" x2="40" y2="90" stroke="#333" stroke-width="2"/>
+<text x="25" y="95" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="90" x2="180" y2="90" stroke="#333" stroke-width="2"/>
+<text x="195" y="95" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div></div>
+</div><div class="ma-sample"><span class="ma-sample-year">2014</span> Give reasons for the following: (i) (CH 3 ) 3 P = O exists but (CH 3 ) 3 N = O does not. (ii) Oxygen has less electron gain enthalpy with negative sign than sulphur. (iii) H 3 PO 2...</div><div class="ma-sample"><span class="ma-sample-year">2017</span> Give reasons: (i) Thermal stability decreases from H 2 O to H 2 Te. (ii) Fluoride ion has higher hydration enthalpy than chloride ion. (iii) Nitrogen does not form pentahalide.</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">VBT / Hybridization / Magnetic Moment</span>
+<span class="ma-freq-badge">Asked 3 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2019</span><span class="ma-year-pill">2025</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2019 &middot; 3 marks</span></div>
+<div class="qb-question">Give reasons:<div class="qb-mainpart">(a) Transition metals have high enthalpies of atomization.</div><div class="qb-mainpart">(b) Manganese has lower melting point even though it has higher number of unpaired electrons.</div><div class="qb-mainpart">(c) Ce4+ is a strong oxidizing agent.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) Due to strong interatomic interactions/strong metallic bonding.<div class="qb-mainpart">(b) Due to stable 3d5 configuration, interatomic interaction is poor between unpaired electrons.</div><div class="qb-mainpart">(c) Ce is more stable in +3 oxidation state; Ce4+ readily gains electron to achieve +3.</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2025 &middot; 3 marks</span></div>
+<div class="qb-question">Using valence bond theory, explain the hybridisation and magnetic character of the following:<div class="qb-mainpart">(a) [Co(NH3)6]3+</div><div class="qb-mainpart">(b) [Ni(CO)4]. [At. no.: Co = 27, Ni = 28]</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) [Co(NH3)6]3+: Co3+ has [Ar]3d6 configuration. In the presence of ammonia (strong field ligand), electrons in 3d level get paired up leaving two of the 3d orbitals for hybridisation. Hence, d2sp3 hybridisation. The complex is diamagnetic as there are no unpaired electrons.<div class="qb-mainpart">(b) [Ni(CO)4]: The oxidation state of Ni is 0. The valence shell electronic configuration is 3d8 4s2, but all 10 electrons are pushed into 3d orbital due to the strong field CO ligands, forming sp3 hybridisation. The complex is tetrahedral and diamagnetic.</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2025 &middot; 3 marks</span></div>
+<div class="qb-question">(a) Using valence bond theory, explain the hybridisation and magnetic behaviour of the following:<div class="qb-subpart">(i) [Co(NH3)6]Cl3</div><div class="qb-subpart">(ii) K2[NiCl4]. (At. no.: Co = 27, Ni = 28)</div><div class="qb-mainpart">(b) Write the electronic configuration of d5 ion when delta_o > P.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) [Co(NH3)6]Cl3: Co3+ has [Ar]3d6 configuration. NH3 is strong field ligand. Electrons in 3d get paired up. d2sp3 hybridisation (inner orbital octahedral complex). Diamagnetic due to absence of unpaired electrons.</div><div class="qb-subpart">(ii) K2[NiCl4]: Ni2+ has [Ar]3d8 4s0 configuration. Cl- is a weak field ligand. sp3 hybridisation with tetrahedral geometry. Paramagnetic due to two unpaired electrons.</div><div class="qb-mainpart">(b) When CFSE (delta_o) is more than pairing energy, it indicates a low spin complex. The electron will pair in lower energy level before filling in higher energy level. Electronic configuration will be t2g<sup>5</sup> eg<sup>0</sup>.</div></div>
+</div></div></div></div><div class="ma-section">
+<h3 class="ma-section-title">5 Mark Questions <span class="ma-section-stars">&#9733;&#9733;&#9733;</span></h3><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Lanthanoid/Actinoid Contraction</span>
+<span class="ma-freq-badge">Asked 9 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2014</span><span class="ma-year-pill">2017</span><span class="ma-year-pill">2020</span><span class="ma-year-pill">2023</span><span class="ma-year-pill">2024</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2014 &middot; 5 marks</span></div>
+<div class="qb-question">(i) Name the element of 3d transition series which shows maximum number of oxidation states. Why does it show so?<div class="qb-subpart">(ii) Which transition metal of 3d series has positive E&deg;(M<sup>2+</sup>/M) value and why?</div><div class="qb-subpart">(iii) Out of Cr<sup>3+</sup> and Mn<sup>3+</sup>, which is a stronger oxidizing agent and why?</div><div class="qb-subpart">(iv) Name a member of the Lanthanoid series which is well known to exhibit +2 oxidation state.</div><div class="qb-subpart">(v) Complete the following equation: MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr;</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) Manganese ([Ar] 3d<sup>5</sup> 4s<sup>2</sup>) shows maximum number of oxidation states as its atoms have five unpaired electrons in 3d orbitals. It shows all the oxidation states from +2 to +7.<div class="qb-subpart">(ii) Cu has positive E&deg;(M<sup>2+</sup>/M) value because the sum of enthalpies of sublimation and ionization is not balanced by hydration enthalpy.</div><div class="qb-subpart">(iii) Mn<sup>3+</sup> is stronger oxidizing agent as the charge from Mn<sup>3+</sup> to Mn<sup>2+</sup> results in half filled d<sup>5</sup> configuration which has extra stability.</div><div class="qb-subpart">(iv) Europium (Eu<sup>2+</sup>) is formed by losing the two 5s electrons and its electronic configuration becomes [Xe]4f<sup>7</sup> which is quite stable configuration.</div><div class="qb-subpart">(v) MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr; Mn<sup>2+</sup> + 4H<sub>2</sub>O</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2014 &middot; 5 marks</span></div>
+<div class="qb-question">(i) With reference to structural variability and chemical reactivity, write the difference between lanthanoids and actinoids.<div class="qb-subpart">(ii) Name a member of the lanthanoid series which is well known to exhibit +4 oxidation state.</div><div class="qb-subpart">(iii) Complete the following equation: MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr;</div><div class="qb-subpart">(iv) Out of Mn<sup>3+</sup> and Cr<sup>3+</sup>, which is more paramagnetic and why? (Mn = 25, Cr = 24)</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i)(a) Actinoids are radioactive; lanthanoids are not.<div class="qb-mainpart">(b) Ionisation enthalpies of early actinoids are lower. Actinoids show oxidation states from +3 to +7; lanthanoids show +3 (most common) up to +4.</div><div class="qb-mainpart">(c) Actinoids are more reactive and have more complex magnetic properties.</div><div class="qb-subpart">(ii) Cerium (Ce) is known to exhibit +4 oxidation state.</div><div class="qb-subpart">(iii) MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr; Mn<sup>2+</sup> + 4H<sub>2</sub>O</div><div class="qb-subpart">(iv) Mn<sup>2+</sup> is more paramagnetic because it has more number of unpaired electrons (5) than Cr<sup>3+</sup> (3).</div></div>
+</div><div class="ma-sample"><span class="ma-sample-year">2017</span> (a) Account for the following: (i) Transition metals form large number of complex compounds. (ii) The lowest oxide of transition metal is basic whereas the highest oxide is amphote...</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Other (p-Block Elements)</span>
+<span class="ma-freq-badge">Asked 4 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2013</span><span class="ma-year-pill">2015</span><span class="ma-year-pill">2018</span></div><div class="ma-samples"><div class="ma-sample"><span class="ma-sample-year">2013</span> (a) Give reasons for the following: (i) Bond enthalpy of F 2 is lower than that of Cl 2 . (ii) PH 3 has lower boiling point than NH 3 . (b) Draw the structures of the following mol...</div><div class="ma-sample"><span class="ma-sample-year">2013</span> (a) Account for the following: (i) Helium is used in diving apparatus. (ii) Fluorine does not exhibit positive oxidation state. (iii) Oxygen shows catenation behaviour less than su...</div><div class="ma-sample"><span class="ma-sample-year">2015</span> (a) Account for the following: (i) Acidic character increases from HF to HI. (ii) There is large difference between the melting and boiling points of oxygen and sulphur. (iii) Nitr...</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">p-Block Element Properties/Reactions</span>
+<span class="ma-freq-badge">Asked 4 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2015</span><span class="ma-year-pill">2016</span><span class="ma-year-pill">2019</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2015 &middot; 5 marks</span></div>
+<div class="qb-question">(i) Which allotrope of phosphorus is more reactive and why?<div class="qb-subpart">(ii) How the supersonic jet aeroplanes are responsible for the depletion of ozone layers?</div><div class="qb-subpart">(iii) F<sub>2</sub> has lower bond dissociation enthalpy than Cl<sub>2</sub>. Why?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) White phosphorus is more reactive because it is a discrete P<sub>4</sub> tetrahedron with angular strain (60&deg; bond angle). It is unstable and highly reactive.<div class="qb-subpart">(ii) Supersonic jet aeroplanes release NO (nitric oxide) in the stratosphere which acts as a catalyst for ozone decomposition: NO + O<sub>3</sub> &rarr; NO<sub>2</sub> + O<sub>2</sub>; NO<sub>2</sub> + O &rarr; NO + O<sub>2</sub></div><div class="qb-subpart">(iii) F<sub>2</sub> has lower bond dissociation enthalpy than Cl<sub>2</sub> because F atoms are very small, leading to high lone pair-lone pair repulsion between the two F atoms, weakening the F&ndash;F bond.</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2016 &middot; 5 marks</span></div>
+<div class="qb-question">(a) Account for the following:<div class="qb-subpart">(i) Ozone is thermodynamically unstable.</div><div class="qb-subpart">(ii) Solid PCl5 is ionic in nature.</div><div class="qb-subpart">(iii) Fluorine forms only one oxoacid HOF.</div><div class="qb-mainpart">(b) Draw the structure of</div><div class="qb-subpart">(i) BrF3</div><div class="qb-subpart">(ii) XeF4.</div><br>OR<div class="qb-subpart">(i) Compare the oxidising action of F2 and Cl2 by considering bond dissociation enthalpy, electron gain enthalpy and hydration enthalpy.</div><div class="qb-subpart">(ii) Write conditions to maximize yield of H2SO4 by contact process.</div><div class="qb-subpart">(iii) Arrange in increasing order:</div><div class="qb-mainpart">(a) H3PO3, H3PO4, H3PO2 (Reducing character).</div><div class="qb-mainpart">(b) NH3, PH3, AsH3, SbH3, BiH3 (Base strength).</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Ozone decomposes to oxygen as delta-G is negative for decomposition.</div><div class="qb-subpart">(ii) Solid PCl5 exists as [PCl4]+[PCl6]- (tetrahedral cation and octahedral anion).</div><div class="qb-subpart">(iii) Due to high electronegativity and small size of fluorine. (b)</div><div class="qb-subpart">(i) BrF3: T-shaped (sp3d, 2 lone pairs).</div><div class="qb-subpart">(ii) XeF4: Square planar (sp3d2, 2 lone pairs).</div><br>OR<div class="qb-subpart">(i) F2 is stronger oxidizing agent due to low bond dissociation enthalpy and very high hydration enthalpy of F-.</div><div class="qb-subpart">(ii) Low temperature (~720 K), high pressure, V2O5 catalyst, excess O2. (iii)(a) H3PO4 < H3PO3 < H3PO2.</div><div class="qb-mainpart">(b) BiH3 < SbH3 < AsH3 < PH3 < NH3.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
+<text x="100" y="105" text-anchor="middle" font-size="14" font-weight="bold">Xe</text>
+<line x1="100" y1="90" x2="100" y2="30" stroke="#333" stroke-width="2"/>
+<text x="100" y="22" text-anchor="middle" font-size="12">F</text>
+<line x1="100" y1="115" x2="100" y2="175" stroke="#333" stroke-width="2"/>
+<text x="100" y="190" text-anchor="middle" font-size="12">F</text>
+<line x1="85" y1="100" x2="25" y2="100" stroke="#333" stroke-width="2"/>
+<text x="15" y="105" text-anchor="middle" font-size="12">F</text>
+<line x1="115" y1="100" x2="175" y2="100" stroke="#333" stroke-width="2"/>
+<text x="185" y="105" text-anchor="middle" font-size="12">F</text>
+<text x="60" y="55" text-anchor="middle" font-size="10" fill="#666">lp</text>
+<text x="140" y="55" text-anchor="middle" font-size="10" fill="#666">lp</text>
+<text x="100" y="210" text-anchor="middle" font-size="10" fill="#888">Square planar (sp&#179;d&#178;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 200 200" width="180" height="180">
+<text x="100" y="105" text-anchor="middle" font-size="14" font-weight="bold">Br</text>
+<line x1="100" y1="90" x2="100" y2="30" stroke="#333" stroke-width="2"/>
+<text x="100" y="22" text-anchor="middle" font-size="12">F</text>
+<line x1="85" y1="110" x2="30" y2="150" stroke="#333" stroke-width="2"/>
+<text x="20" y="160" text-anchor="middle" font-size="12">F</text>
+<line x1="115" y1="110" x2="170" y2="150" stroke="#333" stroke-width="2"/>
+<text x="180" y="160" text-anchor="middle" font-size="12">F</text>
+<text x="55" y="75" font-size="9" fill="#666" text-anchor="middle">lp</text>
+<text x="145" y="75" font-size="9" fill="#666" text-anchor="middle">lp</text>
+<text x="100" y="195" text-anchor="middle" font-size="10" fill="#888">T-shaped (sp&#179;d)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 200 180" width="180" height="160">
+<text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="100" y1="80" x2="100" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="103" y1="80" x2="103" y2="35" stroke="#333" stroke-width="2"/>
+<text x="100" y="25" text-anchor="middle" font-size="12">O</text>
+<line x1="85" y1="105" x2="30" y2="140" stroke="#333" stroke-width="2"/>
+<text x="18" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="115" y1="100" x2="170" y2="100" stroke="#333" stroke-width="2"/>
+<text x="185" y="105" text-anchor="middle" font-size="12">H</text>
+<line x1="100" y1="108" x2="100" y2="155" stroke="#333" stroke-width="2"/>
+<text x="100" y="168" text-anchor="middle" font-size="12">H</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Sulphuric acid (H&#8322;SO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">S</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="105" x2="113" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="90" x2="40" y2="90" stroke="#333" stroke-width="2"/>
+<text x="25" y="95" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="90" x2="180" y2="90" stroke="#333" stroke-width="2"/>
+<text x="195" y="95" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphoric acid (H&#8323;PO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphorous acid (H&#8323;PO&#8323;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="150" stroke="#333" stroke-width="2"/>
+<text x="110" y="163" text-anchor="middle" font-size="12">H</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Pyramidal (sp&#179;) &bull; Dibasic acid</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 240" width="200" height="220">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">PCl&#8325; (Trigonal bipyramidal)</text>
+<text x="110" y="120" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="105" x2="110" y2="40" stroke="#333" stroke-width="2"/>
+<text x="110" y="32" text-anchor="middle" font-size="12">Cl</text><text x="130" y="38" font-size="7" fill="#666">axial</text>
+<line x1="110" y1="130" x2="110" y2="200" stroke="#333" stroke-width="2"/>
+<text x="110" y="215" text-anchor="middle" font-size="12">Cl</text><text x="130" y="210" font-size="7" fill="#666">axial</text>
+<line x1="95" y1="115" x2="25" y2="100" stroke="#333" stroke-width="2"/>
+<text x="15" y="100" text-anchor="middle" font-size="12">Cl</text>
+<line x1="125" y1="108" x2="185" y2="80" stroke="#333" stroke-width="2"/>
+<text x="195" y="78" text-anchor="middle" font-size="12">Cl</text>
+<line x1="125" y1="122" x2="185" y2="145" stroke="#333" stroke-width="2"/>
+<text x="195" y="148" text-anchor="middle" font-size="12">Cl</text>
+<text x="180" y="115" font-size="7" fill="#666">equatorial</text>
+<text x="110" y="235" text-anchor="middle" font-size="9" fill="#888">sp&#179;d hybridisation</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
+</svg></div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2019 &middot; 5 marks</span></div>
+<div class="qb-question">(a)<div class="qb-subpart">(i) Write the disproportionation reaction of H3PO3.</div><div class="qb-subpart">(ii) Draw the structure of XeF4.</div><div class="qb-mainpart">(b) Account for:</div><div class="qb-subpart">(i) Although fluorine has less negative electron gain enthalpy yet F2 is a strong oxidizing agent.</div><div class="qb-subpart">(ii) Acidic character decreases from N2O3 to Bi2O3 in group 15.</div><div class="qb-mainpart">(c) Write a chemical reaction to test sulphur dioxide gas.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) 4H3PO3 -> 3H3PO4 + PH3.</div><div class="qb-subpart">(ii) XeF4 has square planar geometry. (b)</div><div class="qb-subpart">(i) F2 is strong oxidizing agent due to low F-F bond dissociation energy, high hydration enthalpy of F-.</div><div class="qb-subpart">(ii) Metallic character increases down group 15; N2O3 is acidic (non-metallic) while Bi2O3 is basic (metallic).</div><div class="qb-mainpart">(c) SO2 turns acidified K2Cr2O7 from orange to green: K2Cr2O7 + 3SO2 + H2SO4 -> K2SO4 + Cr2(SO4)3 + H2O.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
+<text x="100" y="105" text-anchor="middle" font-size="14" font-weight="bold">Xe</text>
+<line x1="100" y1="90" x2="100" y2="30" stroke="#333" stroke-width="2"/>
+<text x="100" y="22" text-anchor="middle" font-size="12">F</text>
+<line x1="100" y1="115" x2="100" y2="175" stroke="#333" stroke-width="2"/>
+<text x="100" y="190" text-anchor="middle" font-size="12">F</text>
+<line x1="85" y1="100" x2="25" y2="100" stroke="#333" stroke-width="2"/>
+<text x="15" y="105" text-anchor="middle" font-size="12">F</text>
+<line x1="115" y1="100" x2="175" y2="100" stroke="#333" stroke-width="2"/>
+<text x="185" y="105" text-anchor="middle" font-size="12">F</text>
+<text x="60" y="55" text-anchor="middle" font-size="10" fill="#666">lp</text>
+<text x="140" y="55" text-anchor="middle" font-size="10" fill="#666">lp</text>
+<text x="100" y="210" text-anchor="middle" font-size="10" fill="#888">Square planar (sp&#179;d&#178;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphorous acid (H&#8323;PO&#8323;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="150" stroke="#333" stroke-width="2"/>
+<text x="110" y="163" text-anchor="middle" font-size="12">H</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Pyramidal (sp&#179;) &bull; Dibasic acid</text>
+</svg></div></div>
+</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">Transition Metal Properties</span>
+<span class="ma-freq-badge">Asked 3 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2014</span><span class="ma-year-pill">2024</span></div><div class="ma-samples"><div class="ma-sample"><span class="ma-sample-year">2014</span> (a) How do you prepare: (i) KMnO 4 from MnO 2 (ii) Na 2 Cr 2 O 7 from Na 2 CrO 4 (b) Account for the following: (i) Mn 2+ is more stable than Fe 2+ towards oxidation to +3 state. (...</div><div class="ma-sample"><span class="ma-sample-year">2014</span> (a) Complete the following equations: (i) Cr 2 O 7 2 + 2OH (ii) MnO 4 + 4H + + 3e (b) Account for the following: (i) Zn is not considered as a transition element. (ii) Transition m...</div><div class="ma-sample"><span class="ma-sample-year">2024</span> Attempt any five of the following: (a) Ce(III) is easily oxidised to Ce(IV). Comment. (b) E°(Mn2+/Mn) is -1.18 V. Why is this value highly negative in comparison to neighbouring d ...</div></div></div><div class="ma-topic-card">
+<div class="ma-topic-header">
+<span class="ma-topic-name">IUPAC Naming of Coordination Compounds</span>
+<span class="ma-freq-badge">Asked 3 times</span>
+</div>
+<div class="ma-years"><span class="ma-year-pill">2019</span><span class="ma-year-pill">2025</span></div><div class="ma-samples"><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2019 &middot; 5 marks</span></div>
+<div class="qb-question">(a) Give reasons:<div class="qb-subpart">(i) Sulphur in vapour state shows paramagnetic behaviour.</div><div class="qb-subpart">(ii) N-N bond is weaker than P-P bond.</div><div class="qb-subpart">(iii) Ozone is thermodynamically less stable than oxygen.</div><div class="qb-mainpart">(b) Write the name of the gas released when Cu is added to</div><div class="qb-subpart">(i) Dilute HNO3</div><div class="qb-subpart">(ii) Conc. HNO3.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) S2 molecules in vapour state have two unpaired electrons in antibonding molecular orbitals.</div><div class="qb-subpart">(ii) N-N single bond is weaker due to high interelectronic repulsion of lone pairs on small nitrogen atoms.</div><div class="qb-subpart">(iii) Ozone has higher energy and tendency to decompose to more stable O2. (b)</div><div class="qb-subpart">(i) Dilute HNO3: NO (nitric oxide).</div><div class="qb-subpart">(ii) Conc. HNO3: NO2 (nitrogen dioxide).</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2025 &middot; 5 marks</span></div>
+<div class="qb-question">(A) Answer the following:<div class="qb-mainpart">(a) Low spin tetrahedral complexes are not known.</div><div class="qb-mainpart">(b) Co2+ is easily oxidised to Co3+ in the presence of a strong ligand [At. No. of Co = 27].</div><div class="qb-mainpart">(c) What type of isomerism is shown by the complex [Co(NH3)6][Cr(CN)6]?</div><div class="qb-mainpart">(d) Why a solution of [Ni(H2O)6]2+ is green while a solutions of [Ni(CN)4]2- is colourless. (At. No. of Ni = 28)</div><div class="qb-mainpart">(e) Write the IUPAC name of the following complex: [Co(NH3)5(CO3)]Cl.</div><div class="qb-or-divider">OR (B)(a) What is meant by 'Chelate effect'? Give an example.</div><div class="qb-mainpart">(b) Write the hybridisation and magnetic behaviour of [Fe(CN)6]4-. (Atomic number: Fe = 26)</div><div class="qb-mainpart">(c) If PtCl2.2NH3 does not react with AgNO3, what will be its formula?</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(A)(a) A tetrahedral complex has sp3 hybridisation. During crystal field splitting, the splitting energy of d orbitals is much lower than that of the pairing energy, and thus the electrons jump to the higher energy level d-orbitals rather than pairing, resulting in high-spin complexes being formed.<div class="qb-mainpart">(b) Co2+ can be oxidised to Co3+ in the presence of strong field ligands. Strong field ligands create a strong ligand field that stabilizes the higher oxidation state of the metal ion, making the +3 oxidation state more favourable.</div><div class="qb-mainpart">(c) Coordination isomerism - both positive and negative ions of a salt are complex ions and the two isomers differ in the distribution of ligands between the cation and anion.</div><div class="qb-mainpart">(d) In both complexes, Ni is in +2 oxidation state with 3d8 configuration. In the presence of weak field water ligands, two unpaired electrons do not pair up. The [Ni(H2O)6]2+ has two unpaired electrons which result in green colour due to d-d transition. In presence of strong field cyanide ligand, the unpaired electrons in 3d orbital pair up. Due to absence of unpaired electrons, no d-d transitions are possible and [Ni(CN)4]2- is colourless.</div><div class="qb-mainpart">(e) Pentaamminecarbonatocobalt(III)chloride.</div><div class="qb-or-divider">OR (B)(a) When a ligand uses its two or more donor atoms simultaneously a ring-like structure is formed. The formation of such ring-like structures is called a chelate effect. Compounds having chelate rings are more stable.</div><div class="qb-mainpart">(b) The hybridisation is d2sp3 and it forms an inner orbital complex. Since there are no unpaired electrons, the complex is diamagnetic.</div><div class="qb-mainpart">(c) [Pt(NH3)2Cl2] - since it does not react with AgNO3, the chloride ions are inside the coordination sphere.</div></div>
+</div><div class="qb-card">
+<div class="qb-meta"><span class="qb-badge">2025 &middot; 5 marks</span></div>
+<div class="qb-question">(A)(a) In the following complex ions, explain the type of hybridisation, shape and magnetic property:<div class="qb-mainpart">(a) [Fe(H2O)6]2+</div><div class="qb-mainpart">(b) [NiCl4]2-. (At. Nos.: Fe = 26, Ni = 28) OR (B)(a) Write IUPAC names of the following:</div><div class="qb-subpart">(i) [Co(H2O)(CN)(en)2]2+</div><div class="qb-subpart">(ii) [PtCl4]2-</div><div class="qb-subpart">(iii) [Cr(NH3)4Cl(ONO)]+.</div><div class="qb-mainpart">(b) What is spectrochemical series? Write the difference between a strong field ligand and a weak field ligand.</div></div>
+
+<button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer-box"><span class="ans-label">Answer</span>(A)(a) [Fe(H2O)6]2+: Fe2+ has [Ar]3d6 configuration. H2O is a weak field ligand, so no pairing occurs. Hybridisation is sp3d2, shape is octahedral, and the complex is paramagnetic with 4 unpaired electrons.<div class="qb-mainpart">(b) [NiCl4]2-: Ni2+ has [Ar]3d8 configuration. Cl- is a weak field ligand. Hybridisation is sp3, shape is tetrahedral, and the complex is paramagnetic with 2 unpaired electrons.</div><div class="qb-or-divider">OR (B)(a)</div><div class="qb-subpart">(i) Aquacyanobis(ethylenediamine)cobalt(III) ion.</div><div class="qb-subpart">(ii) Tetrachloridoplatinate(II) ion.</div><div class="qb-subpart">(iii) Tetraamminechloridodonitrito-(o) chromium(III) ion.</div><div class="qb-mainpart">(b) The spectrochemical series is the arrangement of ligands in increasing order of their crystal field splitting energy. Weak field ligands: I- < Br- < SCN- < Cl- < S2- < F- < OH- < C2O4<sup>2-</sup> < H2O. Strong field ligands: NCS- < edta4- < NH3 < en < CN- < CO. Strong field ligands cause high crystal field splitting and often lead to low-spin complexes. Weak field ligands cause low crystal field splitting and often lead to high-spin complexes.</div><div class="qb-diagram"><svg viewBox="0 0 320 160" width="300" height="150">
+<text x="80" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#b91c1c">cis isomer</text>
+<rect x="30" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="80" y="80" text-anchor="middle" font-size="13" font-weight="bold">Cr</text>
+<text x="80" y="33" text-anchor="middle" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="25" y="60" text-anchor="end" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="135" y="60" text-anchor="start" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="25" y="105" text-anchor="end" font-size="10" fill="#dc2626">Cl</text>
+<text x="135" y="105" text-anchor="start" font-size="10" fill="#dc2626">Cl</text>
+<text x="80" y="133" text-anchor="middle" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="240" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#059669">trans isomer</text>
+<rect x="190" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="240" y="80" text-anchor="middle" font-size="13" font-weight="bold">Cr</text>
+<text x="240" y="33" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+<text x="185" y="60" text-anchor="end" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="295" y="60" text-anchor="start" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="185" y="105" text-anchor="end" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="295" y="105" text-anchor="start" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="240" y="133" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
+</div></div></div></div></div>
+<div id="panel-1" class="qb-panel"><div class="qb-chapter-section">
 <button class="qb-chapter-toggle open" onclick="toggleChapter(this)">
 <span class="qb-chapter-name">Coordination Compounds</span>
 <span class="qb-chapter-count">31 questions</span>
@@ -259,7 +843,25 @@
 <div class="qb-question">(a) Using valence bond theory, write the hybridization and magnetic character of [Fe(CN)6]4-. (Atomic no. of Fe = 26).<div class="qb-mainpart">(b) Write the electronic configuration of d6 on the basis of crystal field theory when:</div><div class="qb-subpart">(i) Delta_0 < P and</div><div class="qb-subpart">(ii) Delta_0 > P.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a) d2sp3 hybridization, Diamagnetic. CN- is strong field ligand causing pairing. (b)<div class="qb-subpart">(i) Delta_0 < P: t2g4 eg2 (high spin). (ii) Delta_0 > P: t2g6 eg0 (low spin).</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) d2sp3 hybridization, Diamagnetic. CN- is strong field ligand causing pairing. (b)<div class="qb-subpart">(i) Delta_0 < P: t2g4 eg2 (high spin).</div><div class="qb-subpart">(ii) Delta_0 > P: t2g6 eg0 (low spin).</div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2019 &middot; 2 marks</span></div>
 <div class="qb-question">Define with suitable example:<div class="qb-mainpart">(a) Polydentate ligand</div><div class="qb-mainpart">(b) Homoleptic complex</div></div>
@@ -277,7 +879,44 @@
 <div class="qb-question">(a) Although both [NiCl4]2- and [Ni(CO)4] have sp3 hybridisation yet [NiCl4]2- is paramagnetic and [Ni(CO)4] is diamagnetic. Give reason.<div class="qb-mainpart">(b) Write electronic configuration of d5 by crystal field theory when:</div><div class="qb-subpart">(i) Delta_0 < P and</div><div class="qb-subpart">(ii) Delta_0 > P.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a) In [NiCl4]2-, Ni is +2, Cl- is weak field (no pairing, 2 unpaired electrons, paramagnetic). In [Ni(CO)4], Ni is 0, CO is strong field (forced pairing, no unpaired electrons, diamagnetic). (b)<div class="qb-subpart">(i) t2g3 eg2 (high spin). (ii) t2g5 eg0 (low spin).</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) In [NiCl4]2-, Ni is +2, Cl- is weak field (no pairing, 2 unpaired electrons, paramagnetic). In [Ni(CO)4], Ni is 0, CO is strong field (forced pairing, no unpaired electrons, diamagnetic). (b)<div class="qb-subpart">(i) t2g3 eg2 (high spin).</div><div class="qb-subpart">(ii) t2g5 eg0 (low spin).</div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2020 &middot; 2 marks</span></div>
 <div class="qb-question">(a) Write the IUPAC name and hybridisation of the complex [Fe(CN)6]3-. (Given: Atomic number of Fe = 26)<div class="qb-mainpart">(b) What is the difference between an ambidentate ligand and a chelating ligand?</div></div>
@@ -379,7 +1018,40 @@
 <div class="qb-question">When chromite ore FeCr2O4 is fused with NaOH in presence of air, a yellow coloured compound<div class="qb-mainpart">(A) is obtained which on acidification with dilute sulphuric acid gives a compound (B). Compound</div><div class="qb-mainpart">(B) on reaction with KCl forms an orange coloured crystalline compound (C).</div><div class="qb-subpart">(i) Write the formulae of the compounds (A),</div><div class="qb-mainpart">(B) and (C).</div><div class="qb-subpart">(ii) Write one use of compound (C).</div><div class="qb-or-divider">OR Complete the following chemical equations:</div><div class="qb-subpart">(i) MnO4- + 3S2O3<sup>2-</sup> + H2O -> ?</div><div class="qb-subpart">(ii) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -> ?</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(i) A = Na2CrO4 (sodium chromate, yellow), B = Na2Cr2O7 (sodium dichromate), C = K2Cr2O7 (potassium dichromate, orange).<div class="qb-subpart">(ii) K2Cr2O7 is used as a strong oxidizing agent / as a primary standard in volumetric analysis.</div><br>OR<div class="qb-subpart">(i) 8MnO4- + 3S2O3<sup>2-</sup> + H2O -> 8MnO2 + 6SO4<sup>2-</sup> + 2OH-</div><div class="qb-subpart">(ii) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -> 2Cr3+ + 3Sn4+ + 7H2O.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(i) A = Na2CrO4 (sodium chromate, yellow), B = Na2Cr2O7 (sodium dichromate), C = K2Cr2O7 (potassium dichromate, orange).<div class="qb-subpart">(ii) K2Cr2O7 is used as a strong oxidizing agent / as a primary standard in volumetric analysis.</div><br>OR<div class="qb-subpart">(i) 8MnO4- + 3S2O3<sup>2-</sup> + H2O -> 8MnO2 + 6SO4<sup>2-</sup> + 2OH-</div><div class="qb-subpart">(ii) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -> 2Cr3+ + 3Sn4+ + 7H2O.</div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Sulphuric acid (H&#8322;SO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">S</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="105" x2="113" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="90" x2="40" y2="90" stroke="#333" stroke-width="2"/>
+<text x="25" y="95" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="90" x2="180" y2="90" stroke="#333" stroke-width="2"/>
+<text x="195" y="95" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2016 &middot; 2 marks</span></div>
 <div class="qb-question">Write the structures of the following:<div class="qb-subpart">(i) BrF3</div><div class="qb-subpart">(ii) XeF4.</div><div class="qb-or-divider">OR What happens when:</div><div class="qb-subpart">(i) SO2 gas is passed through an aqueous solution of Fe3+ salt?</div><div class="qb-subpart">(ii) XeF4 reacts with SbF5?</div></div>
@@ -487,7 +1159,26 @@
 <div class="qb-question">Complete and balance the following chemical equations:<div class="qb-mainpart">(a) 8MnO4- + 3S2O3<sup>2-</sup> + H2O -></div><div class="qb-mainpart">(b) Cr2O7<sup>2-</sup> + 3 Sn2+ + 14H+ -></div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a) 8MnO4-(aq) + 3S2O3<sup>2-</sup>(aq) + H2O(l) -> 8MnO2(s) + 6SO4<sup>2-</sup>(aq) + 2OH-(aq).<div class="qb-mainpart">(b) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -> 2Cr3+ + 3Sn4+ + 7H2O.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) 8MnO4-(aq) + 3S2O3<sup>2-</sup>(aq) + H2O(l) -> 8MnO2(s) + 6SO4<sup>2-</sup>(aq) + 2OH-(aq).<div class="qb-mainpart">(b) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -> 2Cr3+ + 3Sn4+ + 7H2O.</div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2025 &middot; 2 marks</span></div>
 <div class="qb-question">Examine the following observations:<div class="qb-mainpart">(a) Transition elements generally form coloured compounds.</div><div class="qb-mainpart">(b) Zinc is not regarded as a transition element.</div></div>
@@ -505,7 +1196,26 @@
 <div class="qb-question">Complete and balance the following chemical equations:<div class="qb-mainpart">(a) 8MnO4- + 3S2O3<sup>2-</sup> + H2O -></div><div class="qb-mainpart">(b) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -></div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a) 8MnO4- + 3S2O3<sup>2-</sup> + H2O -> 8MnO2 + 6SO4<sup>2-</sup> + 2OH-.<div class="qb-mainpart">(b) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -> 3Sn4+ + 2Cr3+ + 7H2O.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) 8MnO4- + 3S2O3<sup>2-</sup> + H2O -> 8MnO2 + 6SO4<sup>2-</sup> + 2OH-.<div class="qb-mainpart">(b) Cr2O7<sup>2-</sup> + 3Sn2+ + 14H+ -> 3Sn4+ + 2Cr3+ + 7H2O.</div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
+</svg></div></div>
 </div></div></div><div class="qb-chapter-section">
 <button class="qb-chapter-toggle open" onclick="toggleChapter(this)">
 <span class="qb-chapter-name">p-Block Elements</span>
@@ -769,7 +1479,7 @@
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="answer-box"><span class="ans-label">Answer</span>(a) PH<sub>3</sub> (lowest boiling point, no H-bonding unlike NH<sub>3</sub>)<div class="qb-mainpart">(b) NH<sub>3</sub> (highest electronegativity of N, strongest electron donor)</div><div class="qb-mainpart">(c) NH<sub>3</sub> (107&deg;, least lone pair-bond pair repulsion)</div><div class="qb-mainpart">(d) BiH<sub>3</sub> (weakest bond, easiest to donate electrons)</div></div>
 </div></div></div></div>
-<div id="panel-1" class="qb-panel"><div class="qb-chapter-section">
+<div id="panel-2" class="qb-panel"><div class="qb-chapter-section">
 <button class="qb-chapter-toggle open" onclick="toggleChapter(this)">
 <span class="qb-chapter-name">Coordination Compounds</span>
 <span class="qb-chapter-count">24 questions</span>
@@ -807,6 +1517,24 @@
 <text x="185" y="80" text-anchor="end" font-size="11" fill="#dc2626">Cl</text>
 <text x="295" y="80" text-anchor="start" font-size="11" fill="#dc2626">Cl</text>
 <text x="240" y="133" text-anchor="middle" font-size="11" fill="#2563eb">NH&#8323;</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2016 &middot; 3 marks</span></div>
@@ -889,13 +1617,64 @@
 <div class="qb-question">(a)<div class="qb-subpart">(i) Write the IUPAC name of the following complex: K2[PdCl4] (ii) Using crystal field theory, write the electronic configuration of d5 ion, if Delta_0 > P. (iii) What are Homoleptic complexes?</div><br>OR<br>(b)<div class="qb-subpart">(i) Why chelate complexes are more stable than complexes with unidentate ligands? (ii) What is 'spectrochemical series'? What is the difference between a weak field ligand and a strong field ligand?</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) IUPAC name of K2[PdCl4] is Potassium tetrachloropalladate(II).</div><div class="qb-subpart">(ii) If Delta_0 > P, the electronic configuration of d5 ion will be t2g<sup>5</sup> eg<sup>0</sup> as it is associated with strong field and low spin situation. Thus, no electron will enter into eg orbital.</div><div class="qb-subpart">(iii) The complex compounds in which all the ligand which are connected with central atom are same or identical are called homoleptic complexes. For example: [Ni(CO)4], [Co(NH3)6]<sup>3+</sup>.</div><br>OR<br>(b)<div class="qb-subpart">(i) Chelate complexes are more stable than unidentate ligand because chelate ligand forms a ring with the central metal ion and are held by strong force of attraction and are less likely to dissociate.</div><div class="qb-subpart">(ii) A series in which ligands are arranged in the order of increasing magnitude of crystal field splitting energy (CFSE), is called spectrochemical series. I- < Br- < Cl- < SCN- < F- < OH- < C2O4<sup>2-</sup> < H2O < NCS- < EDTA<sup>4-</sup> < NH3 < en < CN- < CO. Weak field ligands have CFSE less than pairing energy; strong field ligands have CFSE greater than pairing energy.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) IUPAC name of K2[PdCl4] is Potassium tetrachloropalladate(II).</div><div class="qb-subpart">(ii) If Delta_0 > P, the electronic configuration of d5 ion will be t2g<sup>5</sup> eg<sup>0</sup> as it is associated with strong field and low spin situation. Thus, no electron will enter into eg orbital.</div><div class="qb-subpart">(iii) The complex compounds in which all the ligand which are connected with central atom are same or identical are called homoleptic complexes. For example: [Ni(CO)4], [Co(NH3)6]<sup>3+</sup>.</div><br>OR<br>(b)<div class="qb-subpart">(i) Chelate complexes are more stable than unidentate ligand because chelate ligand forms a ring with the central metal ion and are held by strong force of attraction and are less likely to dissociate.</div><div class="qb-subpart">(ii) A series in which ligands are arranged in the order of increasing magnitude of crystal field splitting energy (CFSE), is called spectrochemical series. I- < Br- < Cl- < SCN- < F- < OH- < C2O4<sup>2-</sup> < H2O < NCS- < EDTA<sup>4-</sup> < NH3 < en < CN- < CO. Weak field ligands have CFSE less than pairing energy; strong field ligands have CFSE greater than pairing energy.</div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2022-II &middot; 3 marks</span></div>
 <div class="qb-question">(a)<div class="qb-subpart">(i) Write the IUPAC name of the following complex: [Pt(NH3)6]Cl4 (ii) On the basis of crystal field theory, write the electronic configuration of d4 ion, if Delta_0 < P. (iii) What are Heteroleptic complexes?</div><br>OR<br>(b)<div class="qb-subpart">(i) Using IUPAC norms write the formulas for: (a) Pentaamminenitrito-N-Cobalt(III) (b) Tetrahydroxidozincate(II) (ii) What is crystal field splitting energy?</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) The IUPAC name of [Pt(NH3)6]Cl4 is Hexaammineplatinum(IV) chloride.</div><div class="qb-subpart">(ii) If Delta_0 < P, the electronic configuration of d4 ion will be t2g<sup>3</sup> eg<sup>1</sup> as it is associated with weak field and high spin situation. The fourth electron will enter into eg orbital.</div><div class="qb-subpart">(iii) The complexes in which central atom or metal ion is surrounded by more than one type of ligands are called heteroleptic complexes. For example: [Co(NH3)4Cl2]+.</div><br>OR<br>(b)<div class="qb-subpart">(i) (a) Pentaamminenitrito-N-Cobalt(III) is [Co(NO2)(NH3)5]<sup>2+</sup>. (b) Tetrahydroxidozincate(II) is [Zn(OH)4]<sup>2-</sup>.</div><div class="qb-subpart">(ii) The difference of energy between the two sets of degenerated orbitals (t2g and eg) after crystal field splitting is known as crystal field splitting energy. It is denoted by Delta_o.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) The IUPAC name of [Pt(NH3)6]Cl4 is Hexaammineplatinum(IV) chloride.</div><div class="qb-subpart">(ii) If Delta_0 < P, the electronic configuration of d4 ion will be t2g<sup>3</sup> eg<sup>1</sup> as it is associated with weak field and high spin situation. The fourth electron will enter into eg orbital.</div><div class="qb-subpart">(iii) The complexes in which central atom or metal ion is surrounded by more than one type of ligands are called heteroleptic complexes. For example: [Co(NH3)4Cl2]+.</div><br>OR<br>(b)<div class="qb-subpart">(i) (a) Pentaamminenitrito-N-Cobalt(III) is [Co(NO2)(NH3)5]<sup>2+</sup>. (b) Tetrahydroxidozincate(II) is [Zn(OH)4]<sup>2-</sup>.</div><div class="qb-subpart">(ii) The difference of energy between the two sets of degenerated orbitals (t2g and eg) after crystal field splitting is known as crystal field splitting energy. It is denoted by Delta_o.</div><div class="qb-diagram"><svg viewBox="0 0 320 160" width="300" height="150">
+<text x="80" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#b91c1c">cis isomer</text>
+<rect x="30" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="80" y="80" text-anchor="middle" font-size="13" font-weight="bold">Pt</text>
+<text x="80" y="33" text-anchor="middle" font-size="11" fill="#2563eb">NH&#8323;</text>
+<text x="25" y="80" text-anchor="end" font-size="11" fill="#2563eb">NH&#8323;</text>
+<text x="135" y="80" text-anchor="start" font-size="11" fill="#dc2626">Cl</text>
+<text x="80" y="133" text-anchor="middle" font-size="11" fill="#dc2626">Cl</text>
+<text x="240" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#059669">trans isomer</text>
+<rect x="190" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="240" y="80" text-anchor="middle" font-size="13" font-weight="bold">Pt</text>
+<text x="240" y="33" text-anchor="middle" font-size="11" fill="#2563eb">NH&#8323;</text>
+<text x="185" y="80" text-anchor="end" font-size="11" fill="#dc2626">Cl</text>
+<text x="295" y="80" text-anchor="start" font-size="11" fill="#dc2626">Cl</text>
+<text x="240" y="133" text-anchor="middle" font-size="11" fill="#2563eb">NH&#8323;</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2022-II &middot; 3 marks</span></div>
 <div class="qb-question">(a) Using Valence Bond theory, predict the hybridization and magnetic character of following: [CoF6]<sup>3-</sup> [Atomic number of Co = 27]<div class="qb-mainpart">(b) Write IUPAC name of the following complex: [CoBr2(en)2]+</div><div class="qb-mainpart">(c) How many ions are produced from the complex [Co(NH3)6]Cl2 in solution?</div></div>
@@ -907,13 +1686,49 @@
 <div class="qb-question">(a) On the basis of crystal field theory write the electronic configuration for d5 ion with a strong field ligand for which Delta_0 > P.<div class="qb-mainpart">(b) [Ni(CO)4] has tetrahedral geometry while [Ni(CN)4]2- has square planar yet both exhibit diamagnetism. Explain. [Atomic number: Ni = 28]</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a) The magnitude difference in energy between the two sets of d-orbital i.e. t2g and eg. Electronic configuration of d5 if Delta_0 > P is t2g5 eg0. Because in a strong field ligand pairing of electrons takes place, e.g. [Ni(CN)4]2-. CN is a strong field ligand.<div class="qb-mainpart">(b) Ni = 28, 3d8 4s2. Ni2+ = 3d8 4s0.</div><br>[Ni(CN)4] is a strong field ligand: dsp2 hybridization showing square planar geometry. All electrons are paired so it is diamagnetic in nature.<br>[Ni(CO)4]: Ni = 28, 3d8 4s2. Ni valency is zero. sp3 hybridization showing tetrahedral geometry. All electrons are paired so it is diamagnetic in nature.</div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) The magnitude difference in energy between the two sets of d-orbital i.e. t2g and eg. Electronic configuration of d5 if Delta_0 > P is t2g5 eg0. Because in a strong field ligand pairing of electrons takes place, e.g. [Ni(CN)4]2-. CN is a strong field ligand.<div class="qb-mainpart">(b) Ni = 28, 3d8 4s2. Ni2+ = 3d8 4s0.</div><br>[Ni(CN)4] is a strong field ligand: dsp2 hybridization showing square planar geometry. All electrons are paired so it is diamagnetic in nature.<br>[Ni(CO)4]: Ni = 28, 3d8 4s2. Ni valency is zero. sp3 hybridization showing tetrahedral geometry. All electrons are paired so it is diamagnetic in nature.<div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2023 &middot; 3 marks</span></div>
 <div class="qb-question">(a) On the basis of crystal field theory write the electronic configuration for d5 ion with a weak ligand for which delta 0 < P.<div class="qb-mainpart">(b) Explain [Fe(CN)6]3- is an inner orbital complex whereas [FeF6]3- is an outer orbital complex. [Atomic number: Fe = 26]</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a) For d5 ion with weak ligand where delta_0 < P, the configuration is t2g<sup>3</sup> eg<sup>2</sup>. Because it follows weak field ligand phenomena - when weak field ligands are present in a structure, pairing of electrons does not take place.<div class="qb-mainpart">(b) [Fe(CN)6]3-: CN is a strong field ligand. Fe = 26, [Ar] 3d6 4s2. Fe3+ = 3d5. Hybridization = d2sp3. Inner d-complex. If strong field ligand is available then delta_0 > P = t2g<sup>5</sup> eg<sup>0</sup>.</div><br>[FeF6]3-: In [Fe(F6)]3-, Fe = [Ar] 3d6 4s2. Fe3+ = 3d5. Hybridization = sp3d2. Outer d-complex. With a weak field ligand delta_0 < P, so there is no pairing of electrons in 3d orbitals.</div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) For d5 ion with weak ligand where delta_0 < P, the configuration is t2g<sup>3</sup> eg<sup>2</sup>. Because it follows weak field ligand phenomena - when weak field ligands are present in a structure, pairing of electrons does not take place.<div class="qb-mainpart">(b) [Fe(CN)6]3-: CN is a strong field ligand. Fe = 26, [Ar] 3d6 4s2. Fe3+ = 3d5. Hybridization = d2sp3. Inner d-complex. If strong field ligand is available then delta_0 > P = t2g<sup>5</sup> eg<sup>0</sup>.</div><br>[FeF6]3-: In [Fe(F6)]3-, Fe = [Ar] 3d6 4s2. Fe3+ = 3d5. Hybridization = sp3d2. Outer d-complex. With a weak field ligand delta_0 < P, so there is no pairing of electrons in 3d orbitals.<div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2023 &middot; 3 marks</span></div>
 <div class="qb-question">(b) A solution of [Ni(H2O)6]2+ is green but a solution of [Ni(CO)4] is colourless. Explain. [Atomic number: Ni = 28]</div>
@@ -945,6 +1760,25 @@
 <text x="300" y="115" text-anchor="start" font-size="10" fill="#2563eb">en</text>
 <text x="240" y="142" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
 <text x="160" y="175" text-anchor="middle" font-size="9" fill="#888">Trans has plane of symmetry</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2025 &middot; 3 marks</span></div>
@@ -963,7 +1797,7 @@
 <div class="qb-question">(a) Using valence bond theory, explain the hybridisation and magnetic behaviour of the following:<div class="qb-subpart">(i) [Co(NH3)6]Cl3</div><div class="qb-subpart">(ii) K2[NiCl4]. (At. no.: Co = 27, Ni = 28)</div><div class="qb-mainpart">(b) Write the electronic configuration of d5 ion when delta_o > P.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) [Co(NH3)6]Cl3: Co3+ has [Ar]3d6 configuration. NH3 is strong field ligand. Electrons in 3d get paired up. d2sp3 hybridisation (inner orbital octahedral complex). Diamagnetic due to absence of unpaired electrons. (ii) K2[NiCl4]: Ni2+ has [Ar]3d8 4s0 configuration. Cl- is a weak field ligand. sp3 hybridisation with tetrahedral geometry. Paramagnetic due to two unpaired electrons. (b) When CFSE (delta_o) is more than pairing energy, it indicates a low spin complex. The electron will pair in lower energy level before filling in higher energy level. Electronic configuration will be t2g<sup>5</sup> eg<sup>0</sup>.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) [Co(NH3)6]Cl3: Co3+ has [Ar]3d6 configuration. NH3 is strong field ligand. Electrons in 3d get paired up. d2sp3 hybridisation (inner orbital octahedral complex). Diamagnetic due to absence of unpaired electrons.</div><div class="qb-subpart">(ii) K2[NiCl4]: Ni2+ has [Ar]3d8 4s0 configuration. Cl- is a weak field ligand. sp3 hybridisation with tetrahedral geometry. Paramagnetic due to two unpaired electrons.</div><div class="qb-mainpart">(b) When CFSE (delta_o) is more than pairing energy, it indicates a low spin complex. The electron will pair in lower energy level before filling in higher energy level. Electronic configuration will be t2g<sup>5</sup> eg<sup>0</sup>.</div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2024 &middot; 3 marks</span></div>
 <div class="qb-question">Write the IUPAC names of the following coordination compounds (any three):<div class="qb-mainpart">(a) [Co(NH3)4Cl(NO2)]Cl</div><div class="qb-mainpart">(b) [Ni(NH3)6]Cl2</div><div class="qb-mainpart">(c) K3[Cr(C2O4)3]</div><div class="qb-mainpart">(d) [Co(en)2Br2]+</div></div>
@@ -1001,6 +1835,24 @@
 <text x="300" y="115" text-anchor="start" font-size="10" fill="#2563eb">en</text>
 <text x="240" y="142" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
 <text x="160" y="175" text-anchor="middle" font-size="9" fill="#888">Trans has plane of symmetry</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2024 &middot; 3 marks</span></div>
@@ -1156,7 +2008,7 @@
 <div class="qb-question">(a) Name the method of refining which is<div class="qb-subpart">(i) used to obtain semiconductor of high purity,</div><div class="qb-subpart">(ii) used to obtain low boiling metal.</div><div class="qb-mainpart">(b) Write chemical reactions taking place in the extraction of copper from Cu2S.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Zone refining. (ii) Distillation. (b) 2Cu2S + 3O2 -> 2Cu2O + 2SO2. Cu2S + 2Cu2O -> 6Cu + SO2.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Zone refining.</div><div class="qb-subpart">(ii) Distillation.</div><div class="qb-mainpart">(b) 2Cu2S + 3O2 -> 2Cu2O + 2SO2. Cu2S + 2Cu2O -> 6Cu + SO2.</div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2019 &middot; 3 marks</span></div>
 <div class="qb-question">Give the reasons for following:<div class="qb-subpart">(i) Transition elements and their compounds act as catalysts.</div><div class="qb-subpart">(ii) E° value for (Mn2+/Mn) is negative whereas for (Cu2+/Cu) is positive.</div><div class="qb-subpart">(iii) Actinoids show irregularities in their electronic configuration.</div></div>
@@ -1302,6 +2154,20 @@
 <line x1="100" y1="125" x2="140" y2="175" stroke="#333" stroke-width="2"/>
 <text x="150" y="185" text-anchor="middle" font-size="12">F</text>
 <text x="100" y="215" text-anchor="middle" font-size="10" fill="#888">Square pyramidal (sp&#179;d&#178;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Sulphuric acid (H&#8322;SO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">S</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="105" x2="113" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="90" x2="40" y2="90" stroke="#333" stroke-width="2"/>
+<text x="25" y="95" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="90" x2="180" y2="90" stroke="#333" stroke-width="2"/>
+<text x="195" y="95" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2014 &middot; 3 marks</span></div>
@@ -1322,7 +2188,7 @@
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="answer-box"><span class="ans-label">Answer</span>(i) As size of central atom increases from O to Te, bond length increases and bond strength decreases, hence thermal stability decreases.<div class="qb-subpart">(ii) Due to small size and high charge density of fluoride ion compared to chloride ion.</div><div class="qb-subpart">(iii) Nitrogen does not have d-orbitals to expand its octet, so maximum covalency is 4.</div></div>
 </div></div></div></div>
-<div id="panel-2" class="qb-panel"><div class="qb-chapter-section">
+<div id="panel-3" class="qb-panel"><div class="qb-chapter-section">
 <button class="qb-chapter-toggle open" onclick="toggleChapter(this)">
 <span class="qb-chapter-name">Coordination Compounds</span>
 <span class="qb-chapter-count">3 questions</span>
@@ -1374,15 +2240,52 @@
 <text x="300" y="115" text-anchor="start" font-size="10" fill="#2563eb">en</text>
 <text x="240" y="142" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
 <text x="160" y="175" text-anchor="middle" font-size="9" fill="#888">Trans has plane of symmetry</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2024 &middot; 4 marks</span></div>
 <div class="qb-question">The oxidation number of the central atom in a complex is defined as the charge it would carry if all the ligands are removed. Based on this:<div class="qb-mainpart">(a) What is the secondary valence of Co in [Co(NH3)4Cl2]+?</div><div class="qb-mainpart">(b) What type of isomerism is shown by the complex [Cr(H2O)6]Cl3 and [Cr(H2O)5Cl]Cl2.H2O?</div><div class="qb-mainpart">(c) Write the electronic configuration of d4 ion on the basis of crystal field theory when (i) Delta_0 < P (ii) Delta_0 > P</div><br>OR<div class="qb-mainpart">(c) Find the oxidation state and coordination number of the central metal ion in [Co(H2O)(CN)(en)2]2+</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a) The secondary valency of Co in [Co(NH3)4Cl2]+ is 6, meaning it forms 6 bonds with surrounding ligands (4 NH3 and 2 Cl-).<div class="qb-mainpart">(b) Solvate isomerism (Hydrate isomerism). The two complexes differ by water/solvent molecules that are directly bonded to metal ion or present as free solvent molecules.</div><br>(c)<div class="qb-subpart">(i) If Delta_0 < P: electrons occupy higher energy orbitals first. Configuration becomes t2g<sup>3</sup> eg<sup>1</sup> (high spin).</div><div class="qb-subpart">(ii) If Delta_0 > P: electrons occupy lower energy t2g orbitals first. Configuration becomes t2g<sup>4</sup> eg<sup>0</sup> (low spin).</div><br>OR<div class="qb-mainpart">(c) The coordination number of cobalt is 6 and the oxidation state of cobalt (Co) in the complex is +3.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a) The secondary valency of Co in [Co(NH3)4Cl2]+ is 6, meaning it forms 6 bonds with surrounding ligands (4 NH3 and 2 Cl-).<div class="qb-mainpart">(b) Solvate isomerism (Hydrate isomerism). The two complexes differ by water/solvent molecules that are directly bonded to metal ion or present as free solvent molecules.</div><br>(c)<div class="qb-subpart">(i) If Delta_0 < P: electrons occupy higher energy orbitals first. Configuration becomes t2g<sup>3</sup> eg<sup>1</sup> (high spin).</div><div class="qb-subpart">(ii) If Delta_0 > P: electrons occupy lower energy t2g orbitals first. Configuration becomes t2g<sup>4</sup> eg<sup>0</sup> (low spin).</div><br>OR<div class="qb-mainpart">(c) The coordination number of cobalt is 6 and the oxidation state of cobalt (Co) in the complex is +3.</div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
 </div></div></div></div>
-<div id="panel-3" class="qb-panel"><div class="qb-chapter-section">
+<div id="panel-4" class="qb-panel"><div class="qb-chapter-section">
 <button class="qb-chapter-toggle open" onclick="toggleChapter(this)">
 <span class="qb-chapter-name">Coordination Compounds</span>
 <span class="qb-chapter-count">3 questions</span>
@@ -1399,7 +2302,7 @@
 <div class="qb-question">(A) For the complex [Fe(en)2Cl2] Cl, identify:<div class="qb-mainpart">(a) the oxidation number of iron.</div><div class="qb-mainpart">(b) the hybridisation and the shape of the complex.</div><div class="qb-mainpart">(c) the magnetic behaviour of the complex</div><div class="qb-mainpart">(d) whether there is an optical isomer of the complex? If so draw its structure.</div><div class="qb-mainpart">(e) IUPAC name of the complex. (At. no. of Fe = 26) OR (B)(a) Using IUPAC norms write the names of the following:</div><div class="qb-subpart">(i) [Co(NH3)4 Cl(NO2)]Cl</div><div class="qb-subpart">(ii) K3[Fe(CN)6]</div><div class="qb-subpart">(iii) [Cr(C2O4)3]3-.</div><div class="qb-mainpart">(b) What is crystal field splitting energy? Why low spin tetrahedral complexes are not formed?</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(A)(a) Oxidation number of iron: x + 0 + 2(-1) + (-1) = 0, so x = +3. (b) The complex has two bidentate ligands and two monodentate ligands. Hybridisation is d2sp3 and shape is octahedral. (c) Fe3+ has d5 configuration with 1 unpaired electron in d-orbital, so the complex is paramagnetic. (d) The cis-isomer of [Fe(en)2Cl2]Cl shows optical isomerism because it has non-superimposable mirror images. The trans-isomer does not show optical isomerism as it lacks chirality. (e) Dichloridobis(ethane-1,2-diamine)iron(III)chloride. OR (B)(a)<div class="qb-subpart">(i) Tetraamminechloridonitrito-N-cobalt(III) chloride. (ii) Potassiumhexacyanoferrate(III). (iii) Trisoxalatochromate(III)ion. (b) Crystal field splitting energy refers to the energy difference between the split d-orbitals of a transition metal ion when it is surrounded by ligands in a coordination complex. Low spin tetrahedral complexes are not formed because in a tetrahedral field, the splitting energy (delta_t) is smaller than in an octahedral field. The energy difference between the higher and lower sets of orbitals is too small to favour pairing of electrons.</div><div class="qb-diagram"><svg viewBox="0 0 320 190" width="300" height="175">
+<div class="answer-box"><span class="ans-label">Answer</span>(A)(a) Oxidation number of iron: x + 0 + 2(-1) + (-1) = 0, so x = +3.<div class="qb-mainpart">(b) The complex has two bidentate ligands and two monodentate ligands. Hybridisation is d2sp3 and shape is octahedral.</div><div class="qb-mainpart">(c) Fe3+ has d5 configuration with 1 unpaired electron in d-orbital, so the complex is paramagnetic.</div><div class="qb-mainpart">(d) The cis-isomer of [Fe(en)2Cl2]Cl shows optical isomerism because it has non-superimposable mirror images. The trans-isomer does not show optical isomerism as it lacks chirality.</div><div class="qb-mainpart">(e) Dichloridobis(ethane-1,2-diamine)iron(III)chloride.</div><div class="qb-or-divider">OR (B)(a)</div><div class="qb-subpart">(i) Tetraamminechloridonitrito-N-cobalt(III) chloride.</div><div class="qb-subpart">(ii) Potassiumhexacyanoferrate(III).</div><div class="qb-subpart">(iii) Trisoxalatochromate(III)ion.</div><div class="qb-mainpart">(b) Crystal field splitting energy refers to the energy difference between the split d-orbitals of a transition metal ion when it is surrounded by ligands in a coordination complex. Low spin tetrahedral complexes are not formed because in a tetrahedral field, the splitting energy (delta_t) is smaller than in an octahedral field. The energy difference between the higher and lower sets of orbitals is too small to favour pairing of electrons.</div><div class="qb-diagram"><svg viewBox="0 0 320 190" width="300" height="175">
 <text x="80" y="15" text-anchor="middle" font-size="10" font-weight="bold" fill="#b91c1c">cis (optically active)</text>
 <rect x="25" y="25" width="110" height="110" rx="5" fill="none" stroke="#333" stroke-width="2"/>
 <text x="80" y="85" text-anchor="middle" font-size="13" font-weight="bold">M</text>
@@ -1419,13 +2322,68 @@
 <text x="300" y="115" text-anchor="start" font-size="10" fill="#2563eb">en</text>
 <text x="240" y="142" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
 <text x="160" y="175" text-anchor="middle" font-size="9" fill="#888">Trans has plane of symmetry</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2025 &middot; 5 marks</span></div>
 <div class="qb-question">(A)(a) In the following complex ions, explain the type of hybridisation, shape and magnetic property:<div class="qb-mainpart">(a) [Fe(H2O)6]2+</div><div class="qb-mainpart">(b) [NiCl4]2-. (At. Nos.: Fe = 26, Ni = 28) OR (B)(a) Write IUPAC names of the following:</div><div class="qb-subpart">(i) [Co(H2O)(CN)(en)2]2+</div><div class="qb-subpart">(ii) [PtCl4]2-</div><div class="qb-subpart">(iii) [Cr(NH3)4Cl(ONO)]+.</div><div class="qb-mainpart">(b) What is spectrochemical series? Write the difference between a strong field ligand and a weak field ligand.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(A)(a) [Fe(H2O)6]2+: Fe2+ has [Ar]3d6 configuration. H2O is a weak field ligand, so no pairing occurs. Hybridisation is sp3d2, shape is octahedral, and the complex is paramagnetic with 4 unpaired electrons. (b) [NiCl4]2-: Ni2+ has [Ar]3d8 configuration. Cl- is a weak field ligand. Hybridisation is sp3, shape is tetrahedral, and the complex is paramagnetic with 2 unpaired electrons. OR (B)(a)<div class="qb-subpart">(i) Aquacyanobis(ethylenediamine)cobalt(III) ion. (ii) Tetrachloridoplatinate(II) ion. (iii) Tetraamminechloridodonitrito-(o) chromium(III) ion. (b) The spectrochemical series is the arrangement of ligands in increasing order of their crystal field splitting energy. Weak field ligands: I- < Br- < SCN- < Cl- < S2- < F- < OH- < C2O4<sup>2-</sup> < H2O. Strong field ligands: NCS- < edta4- < NH3 < en < CN- < CO. Strong field ligands cause high crystal field splitting and often lead to low-spin complexes. Weak field ligands cause low crystal field splitting and often lead to high-spin complexes.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(A)(a) [Fe(H2O)6]2+: Fe2+ has [Ar]3d6 configuration. H2O is a weak field ligand, so no pairing occurs. Hybridisation is sp3d2, shape is octahedral, and the complex is paramagnetic with 4 unpaired electrons.<div class="qb-mainpart">(b) [NiCl4]2-: Ni2+ has [Ar]3d8 configuration. Cl- is a weak field ligand. Hybridisation is sp3, shape is tetrahedral, and the complex is paramagnetic with 2 unpaired electrons.</div><div class="qb-or-divider">OR (B)(a)</div><div class="qb-subpart">(i) Aquacyanobis(ethylenediamine)cobalt(III) ion.</div><div class="qb-subpart">(ii) Tetrachloridoplatinate(II) ion.</div><div class="qb-subpart">(iii) Tetraamminechloridodonitrito-(o) chromium(III) ion.</div><div class="qb-mainpart">(b) The spectrochemical series is the arrangement of ligands in increasing order of their crystal field splitting energy. Weak field ligands: I- < Br- < SCN- < Cl- < S2- < F- < OH- < C2O4<sup>2-</sup> < H2O. Strong field ligands: NCS- < edta4- < NH3 < en < CN- < CO. Strong field ligands cause high crystal field splitting and often lead to low-spin complexes. Weak field ligands cause low crystal field splitting and often lead to high-spin complexes.</div><div class="qb-diagram"><svg viewBox="0 0 320 160" width="300" height="150">
+<text x="80" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#b91c1c">cis isomer</text>
+<rect x="30" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="80" y="80" text-anchor="middle" font-size="13" font-weight="bold">Cr</text>
+<text x="80" y="33" text-anchor="middle" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="25" y="60" text-anchor="end" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="135" y="60" text-anchor="start" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="25" y="105" text-anchor="end" font-size="10" fill="#dc2626">Cl</text>
+<text x="135" y="105" text-anchor="start" font-size="10" fill="#dc2626">Cl</text>
+<text x="80" y="133" text-anchor="middle" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="240" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#059669">trans isomer</text>
+<rect x="190" y="25" width="100" height="100" rx="5" fill="none" stroke="#333" stroke-width="2"/>
+<text x="240" y="80" text-anchor="middle" font-size="13" font-weight="bold">Cr</text>
+<text x="240" y="33" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+<text x="185" y="60" text-anchor="end" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="295" y="60" text-anchor="start" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="185" y="105" text-anchor="end" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="295" y="105" text-anchor="start" font-size="10" fill="#2563eb">NH&#8323;</text>
+<text x="240" y="133" text-anchor="middle" font-size="10" fill="#dc2626">Cl</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 320 200" width="300" height="190">
+<text x="160" y="15" text-anchor="middle" font-size="10" fill="#888">Crystal Field Splitting (Octahedral)</text>
+<line x1="30" y1="100" x2="120" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="75" y="95" text-anchor="middle" font-size="8" fill="#64748b">Free ion</text>
+<text x="75" y="115" text-anchor="middle" font-size="8" fill="#64748b">d orbitals</text>
+<line x1="200" y1="55" x2="290" y2="55" stroke="#ef4444" stroke-width="2"/>
+<text x="245" y="50" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="bold">e&#7523; (d&#7825;&#178;, d&#7521;&#178;&#8331;&#7528;&#178;)</text>
+<line x1="200" y1="140" x2="290" y2="140" stroke="#3b82f6" stroke-width="2"/>
+<text x="245" y="158" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="bold">t&#8322;&#7523; (d&#7521;&#7528;, d&#7528;&#7825;, d&#7521;&#7825;)</text>
+<line x1="120" y1="100" x2="200" y2="55" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<line x1="120" y1="100" x2="200" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+<text x="175" y="90" text-anchor="middle" font-size="14" fill="#333">&#916;&#8320;</text>
+<line x1="170" y1="60" x2="170" y2="135" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="63" x2="170" y2="55" stroke="#333" stroke-width="1"/>
+<line x1="167" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<line x1="173" y1="132" x2="170" y2="140" stroke="#333" stroke-width="1"/>
+<text x="160" y="185" text-anchor="middle" font-size="8" fill="#333">&#916;&#8320; &gt; P &#8594; low spin (strong field) &bull; &#916;&#8320; &lt; P &#8594; high spin (weak field)</text>
+</svg></div></div>
 </div></div></div><div class="qb-chapter-section">
 <button class="qb-chapter-toggle open" onclick="toggleChapter(this)">
 <span class="qb-chapter-name">d&f Block</span>
@@ -1461,7 +2419,7 @@
 <div class="qb-question">(a) Account for the following:<div class="qb-subpart">(i) Ozone is thermodynamically unstable.</div><div class="qb-subpart">(ii) Solid PCl5 is ionic in nature.</div><div class="qb-subpart">(iii) Fluorine forms only one oxoacid HOF.</div><div class="qb-mainpart">(b) Draw the structure of</div><div class="qb-subpart">(i) BrF3</div><div class="qb-subpart">(ii) XeF4.</div><br>OR<div class="qb-subpart">(i) Compare the oxidising action of F2 and Cl2 by considering bond dissociation enthalpy, electron gain enthalpy and hydration enthalpy.</div><div class="qb-subpart">(ii) Write conditions to maximize yield of H2SO4 by contact process.</div><div class="qb-subpart">(iii) Arrange in increasing order:</div><div class="qb-mainpart">(a) H3PO3, H3PO4, H3PO2 (Reducing character).</div><div class="qb-mainpart">(b) NH3, PH3, AsH3, SbH3, BiH3 (Base strength).</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Ozone decomposes to oxygen as delta-G is negative for decomposition. (ii) Solid PCl5 exists as [PCl4]+[PCl6]- (tetrahedral cation and octahedral anion). (iii) Due to high electronegativity and small size of fluorine. (b)</div><div class="qb-subpart">(i) BrF3: T-shaped (sp3d, 2 lone pairs). (ii) XeF4: Square planar (sp3d2, 2 lone pairs). OR (i) F2 is stronger oxidizing agent due to low bond dissociation enthalpy and very high hydration enthalpy of F-. (ii) Low temperature (~720 K), high pressure, V2O5 catalyst, excess O2. (iii)(a) H3PO4 < H3PO3 < H3PO2. (b) BiH3 < SbH3 < AsH3 < PH3 < NH3.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Ozone decomposes to oxygen as delta-G is negative for decomposition.</div><div class="qb-subpart">(ii) Solid PCl5 exists as [PCl4]+[PCl6]- (tetrahedral cation and octahedral anion).</div><div class="qb-subpart">(iii) Due to high electronegativity and small size of fluorine. (b)</div><div class="qb-subpart">(i) BrF3: T-shaped (sp3d, 2 lone pairs).</div><div class="qb-subpart">(ii) XeF4: Square planar (sp3d2, 2 lone pairs).</div><br>OR<div class="qb-subpart">(i) F2 is stronger oxidizing agent due to low bond dissociation enthalpy and very high hydration enthalpy of F-.</div><div class="qb-subpart">(ii) Low temperature (~720 K), high pressure, V2O5 catalyst, excess O2. (iii)(a) H3PO4 < H3PO3 < H3PO2.</div><div class="qb-mainpart">(b) BiH3 < SbH3 < AsH3 < PH3 < NH3.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
 <text x="100" y="105" text-anchor="middle" font-size="14" font-weight="bold">Xe</text>
 <line x1="100" y1="90" x2="100" y2="30" stroke="#333" stroke-width="2"/>
 <text x="100" y="22" text-anchor="middle" font-size="12">F</text>
@@ -1496,13 +2454,87 @@
 <text x="185" y="105" text-anchor="middle" font-size="12">H</text>
 <line x1="100" y1="108" x2="100" y2="155" stroke="#333" stroke-width="2"/>
 <text x="100" y="168" text-anchor="middle" font-size="12">H</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Sulphuric acid (H&#8322;SO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">S</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="105" x2="113" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="90" x2="40" y2="90" stroke="#333" stroke-width="2"/>
+<text x="25" y="95" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="90" x2="180" y2="90" stroke="#333" stroke-width="2"/>
+<text x="195" y="95" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphoric acid (H&#8323;PO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphorous acid (H&#8323;PO&#8323;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="150" stroke="#333" stroke-width="2"/>
+<text x="110" y="163" text-anchor="middle" font-size="12">H</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Pyramidal (sp&#179;) &bull; Dibasic acid</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 240" width="200" height="220">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">PCl&#8325; (Trigonal bipyramidal)</text>
+<text x="110" y="120" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="105" x2="110" y2="40" stroke="#333" stroke-width="2"/>
+<text x="110" y="32" text-anchor="middle" font-size="12">Cl</text><text x="130" y="38" font-size="7" fill="#666">axial</text>
+<line x1="110" y1="130" x2="110" y2="200" stroke="#333" stroke-width="2"/>
+<text x="110" y="215" text-anchor="middle" font-size="12">Cl</text><text x="130" y="210" font-size="7" fill="#666">axial</text>
+<line x1="95" y1="115" x2="25" y2="100" stroke="#333" stroke-width="2"/>
+<text x="15" y="100" text-anchor="middle" font-size="12">Cl</text>
+<line x1="125" y1="108" x2="185" y2="80" stroke="#333" stroke-width="2"/>
+<text x="195" y="78" text-anchor="middle" font-size="12">Cl</text>
+<line x1="125" y1="122" x2="185" y2="145" stroke="#333" stroke-width="2"/>
+<text x="195" y="148" text-anchor="middle" font-size="12">Cl</text>
+<text x="180" y="115" font-size="7" fill="#666">equatorial</text>
+<text x="110" y="235" text-anchor="middle" font-size="9" fill="#888">sp&#179;d hybridisation</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 420 150" width="400" height="140">
+<text x="210" y="15" text-anchor="middle" font-size="10" fill="#888">S&#7448;2 Mechanism (Bimolecular Nucleophilic Substitution)</text>
+<text x="55" y="55" text-anchor="middle" font-size="11" fill="#059669">Nu&#8315;</text>
+<text x="90" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="140" y="55" text-anchor="middle" font-size="11">R&#8211;X</text>
+<text x="195" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="225" y="55" text-anchor="middle" font-size="9" fill="#666">[Nu&#8943;R&#8943;X]&#8225;</text>
+<text x="280" y="55" text-anchor="middle" font-size="11">&#8594;</text>
+<text x="330" y="55" text-anchor="middle" font-size="11">Nu&#8211;R</text>
+<text x="365" y="55" text-anchor="middle" font-size="11">+</text>
+<text x="390" y="55" text-anchor="middle" font-size="11" fill="#3b82f6">X&#8315;</text>
+<text x="225" y="72" text-anchor="middle" font-size="8" fill="#dc2626">transition state</text>
+<text x="55" y="72" text-anchor="middle" font-size="8" fill="#059669">backside attack</text>
+<rect x="40" y="82" width="340" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+<text x="210" y="100" text-anchor="middle" font-size="8" font-weight="bold" fill="#92400e">Key Features:</text>
+<text x="120" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Rate = k[R&#8211;X][Nu&#8315;]</text>
+<text x="120" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Single concerted step</text>
+<text x="300" y="118" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Walden inversion (stereochemistry)</text>
+<text x="300" y="130" text-anchor="middle" font-size="7.5" fill="#333">&#8226; Favoured by 1&#176; &gt; 2&#176; &gt; 3&#176; &bull; Polar aprotic solvents</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2016 &middot; 5 marks</span></div>
-<div class="qb-question">(a) Account for:<div class="qb-subpart">(i) Mn shows highest oxidation state +7 with oxygen but +4 with fluorine.</div><div class="qb-subpart">(ii) Cr2+ is a strong reducing agent.</div><div class="qb-subpart">(iii) Cu2+ salts are coloured while Zn2+ salts are white.</div><div class="qb-mainpart">(b) Complete:</div><div class="qb-subpart">(i) 2MnO2 + 4KOH + O2 -> ?</div><div class="qb-subpart">(ii) Cr2O7<sup>2-</sup> + 14H+ + 6I- -> ? OR The elements of 3d-transition series: Sc Ti V Cr Mn Fe Co Ni Cu Zn. Answer:</div><div class="qb-subpart">(i) Which shows maximum oxidation states? Why?</div><div class="qb-subpart">(ii) Which has highest m.p.?</div><div class="qb-subpart">(iii) Which shows only +3 oxidation state?</div><div class="qb-subpart">(iv) Which is strong oxidizing agent in +3 state and why?</div></div>
+<div class="qb-question">(a) Account for:<div class="qb-subpart">(i) Mn shows highest oxidation state +7 with oxygen but +4 with fluorine.</div><div class="qb-subpart">(ii) Cr2+ is a strong reducing agent.</div><div class="qb-subpart">(iii) Cu2+ salts are coloured while Zn2+ salts are white.</div><div class="qb-mainpart">(b) Complete:</div><div class="qb-subpart">(i) 2MnO2 + 4KOH + O2 -> ?</div><div class="qb-subpart">(ii) Cr2O7<sup>2-</sup> + 14H+ + 6I- -> ?</div><div class="qb-or-divider">OR The elements of 3d-transition series: Sc Ti V Cr Mn Fe Co Ni Cu Zn. Answer:</div><div class="qb-subpart">(i) Which shows maximum oxidation states? Why?</div><div class="qb-subpart">(ii) Which has highest m.p.?</div><div class="qb-subpart">(iii) Which shows only +3 oxidation state?</div><div class="qb-subpart">(iv) Which is strong oxidizing agent in +3 state and why?</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Oxygen forms multiple bonds (p-pi-d-pi) with Mn; fluorine cannot. (ii) Cr2+ -> Cr3+ gives stable d3/t2g3 configuration; more negative electrode potential. (iii) Cu2+ (3d9) has unpaired electrons for d-d transitions giving colour; Zn2+ (3d10) has no unpaired electrons, hence white. (b)</div><div class="qb-subpart">(i) 2K2MnO4 + 2H2O. (ii) 2Cr3+ + 3I2 + 7H2O. OR (i) Mn - maximum unpaired electrons, can achieve half-filled/completely-filled configurations. (ii) Cr - maximum unpaired electrons (6), strongest metallic bonds. (iii) Sc - too few electrons, loses one 3d + two 4s electrons. (iv) Co - highest E value for M3+/M2+ redox couple.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Oxygen forms multiple bonds (p-pi-d-pi) with Mn; fluorine cannot.</div><div class="qb-subpart">(ii) Cr2+ -> Cr3+ gives stable d3/t2g3 configuration; more negative electrode potential.</div><div class="qb-subpart">(iii) Cu2+ (3d9) has unpaired electrons for d-d transitions giving colour; Zn2+ (3d10) has no unpaired electrons, hence white. (b)</div><div class="qb-subpart">(i) 2K2MnO4 + 2H2O.</div><div class="qb-subpart">(ii) 2Cr3+ + 3I2 + 7H2O.</div><br>OR<div class="qb-subpart">(i) Mn - maximum unpaired electrons, can achieve half-filled/completely-filled configurations.</div><div class="qb-subpart">(ii) Cr - maximum unpaired electrons (6), strongest metallic bonds.</div><div class="qb-subpart">(iii) Sc - too few electrons, loses one 3d + two 4s electrons.</div><div class="qb-subpart">(iv) Co - highest E value for M3+/M2+ redox couple.</div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2017 &middot; 5 marks</span></div>
 <div class="qb-question">(a) Account for the following:<div class="qb-subpart">(i) Transition metals form large number of complex compounds.</div><div class="qb-subpart">(ii) The lowest oxide of transition metal is basic whereas the highest oxide is amphoteric or acidic.</div><div class="qb-subpart">(iii) E&deg; value for the Mn<sup>3+</sup>/Mn<sup>2+</sup> couple is highly positive (+1.57 V) as compared to Cr<sup>3+</sup>/Cr<sup>2+</sup>.</div><div class="qb-mainpart">(b) Write one similarity and one difference between the chemistry of lanthanoid and actinoid elements.</div><br>OR<br>(a)<div class="qb-subpart">(i) How is the variability in oxidation states of transition metals different from that of the p-block elements?</div><div class="qb-subpart">(ii) Out of Cu<sup>+</sup> and Cu<sup>2+</sup>, which ion is unstable in aqueous solution and why?</div><div class="qb-subpart">(iii) Orange colour of Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> ion changes to yellow when treated with an alkali. Why?</div><div class="qb-mainpart">(b) Chemistry of actinoids is complicated as compared to lanthanoids. Give two reasons.</div></div>
@@ -1520,13 +2552,13 @@
 <div class="qb-question">(a) Give reasons:<div class="qb-subpart">(i) Sulphur in vapour state shows paramagnetic behaviour.</div><div class="qb-subpart">(ii) N-N bond is weaker than P-P bond.</div><div class="qb-subpart">(iii) Ozone is thermodynamically less stable than oxygen.</div><div class="qb-mainpart">(b) Write the name of the gas released when Cu is added to</div><div class="qb-subpart">(i) Dilute HNO3</div><div class="qb-subpart">(ii) Conc. HNO3.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) S2 molecules in vapour state have two unpaired electrons in antibonding molecular orbitals. (ii) N-N single bond is weaker due to high interelectronic repulsion of lone pairs on small nitrogen atoms. (iii) Ozone has higher energy and tendency to decompose to more stable O2. (b)</div><div class="qb-subpart">(i) Dilute HNO3: NO (nitric oxide). (ii) Conc. HNO3: NO2 (nitrogen dioxide).</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) S2 molecules in vapour state have two unpaired electrons in antibonding molecular orbitals.</div><div class="qb-subpart">(ii) N-N single bond is weaker due to high interelectronic repulsion of lone pairs on small nitrogen atoms.</div><div class="qb-subpart">(iii) Ozone has higher energy and tendency to decompose to more stable O2. (b)</div><div class="qb-subpart">(i) Dilute HNO3: NO (nitric oxide).</div><div class="qb-subpart">(ii) Conc. HNO3: NO2 (nitrogen dioxide).</div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2019 &middot; 5 marks</span></div>
-<div class="qb-question">(a)<div class="qb-subpart">(i) Write the disproportionation reaction of H3PO3. (ii) Draw the structure of XeF4. (b) Account for: (i) Although fluorine has less negative electron gain enthalpy yet F2 is a strong oxidizing agent. (ii) Acidic character decreases from N2O3 to Bi2O3 in group 15. (c) Write a chemical reaction to test sulphur dioxide gas.</div></div>
+<div class="qb-question">(a)<div class="qb-subpart">(i) Write the disproportionation reaction of H3PO3.</div><div class="qb-subpart">(ii) Draw the structure of XeF4.</div><div class="qb-mainpart">(b) Account for:</div><div class="qb-subpart">(i) Although fluorine has less negative electron gain enthalpy yet F2 is a strong oxidizing agent.</div><div class="qb-subpart">(ii) Acidic character decreases from N2O3 to Bi2O3 in group 15.</div><div class="qb-mainpart">(c) Write a chemical reaction to test sulphur dioxide gas.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) 4H3PO3 -> 3H3PO4 + PH3. (ii) XeF4 has square planar geometry. (b)</div><div class="qb-subpart">(i) F2 is strong oxidizing agent due to low F-F bond dissociation energy, high hydration enthalpy of F-. (ii) Metallic character increases down group 15; N2O3 is acidic (non-metallic) while Bi2O3 is basic (metallic). (c) SO2 turns acidified K2Cr2O7 from orange to green: K2Cr2O7 + 3SO2 + H2SO4 -> K2SO4 + Cr2(SO4)3 + H2O.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) 4H3PO3 -> 3H3PO4 + PH3.</div><div class="qb-subpart">(ii) XeF4 has square planar geometry. (b)</div><div class="qb-subpart">(i) F2 is strong oxidizing agent due to low F-F bond dissociation energy, high hydration enthalpy of F-.</div><div class="qb-subpart">(ii) Metallic character increases down group 15; N2O3 is acidic (non-metallic) while Bi2O3 is basic (metallic).</div><div class="qb-mainpart">(c) SO2 turns acidified K2Cr2O7 from orange to green: K2Cr2O7 + 3SO2 + H2SO4 -> K2SO4 + Cr2(SO4)3 + H2O.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
 <text x="100" y="105" text-anchor="middle" font-size="14" font-weight="bold">Xe</text>
 <line x1="100" y1="90" x2="100" y2="30" stroke="#333" stroke-width="2"/>
 <text x="100" y="22" text-anchor="middle" font-size="12">F</text>
@@ -1539,13 +2571,26 @@
 <text x="60" y="55" text-anchor="middle" font-size="10" fill="#666">lp</text>
 <text x="140" y="55" text-anchor="middle" font-size="10" fill="#666">lp</text>
 <text x="100" y="210" text-anchor="middle" font-size="10" fill="#888">Square planar (sp&#179;d&#178;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphorous acid (H&#8323;PO&#8323;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="150" stroke="#333" stroke-width="2"/>
+<text x="110" y="163" text-anchor="middle" font-size="12">H</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Pyramidal (sp&#179;) &bull; Dibasic acid</text>
 </svg></div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2019 &middot; 5 marks</span></div>
 <div class="qb-question">(a) Account for:<div class="qb-subpart">(i) Tendency to show -3 oxidation state decreases from N to Bi in group 15.</div><div class="qb-subpart">(ii) Acidic character increases from H2O to H2Te.</div><div class="qb-subpart">(iii) F2 is more reactive than ClF3, whereas ClF3 is more reactive than Cl2.</div><div class="qb-mainpart">(b) Draw structure of</div><div class="qb-subpart">(i) XeF2,</div><div class="qb-subpart">(ii) H4P2O7.</div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Size increases and ionization enthalpy decreases down group, reducing tendency to gain 3 electrons. (ii) As size of central atom increases, H-X bond weakens, easier to break. (iii) F2 has weak F-F bond; ClF3 has more reactive Cl-F bonds than Cl-Cl. (b)</div><div class="qb-subpart">(i) XeF2: Linear geometry (sp3d, 3 lone pairs). (ii) H4P2O7: Two PO4 tetrahedra sharing one oxygen.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Size increases and ionization enthalpy decreases down group, reducing tendency to gain 3 electrons.</div><div class="qb-subpart">(ii) As size of central atom increases, H-X bond weakens, easier to break.</div><div class="qb-subpart">(iii) F2 has weak F-F bond; ClF3 has more reactive Cl-F bonds than Cl-Cl. (b)</div><div class="qb-subpart">(i) XeF2: Linear geometry (sp3d, 3 lone pairs).</div><div class="qb-subpart">(ii) H4P2O7: Two PO4 tetrahedra sharing one oxygen.</div><div class="qb-diagram"><svg viewBox="0 0 200 220" width="180" height="200">
 <text x="100" y="105" text-anchor="middle" font-size="14" font-weight="bold">Xe</text>
 <line x1="100" y1="90" x2="100" y2="30" stroke="#333" stroke-width="2"/>
 <text x="100" y="22" text-anchor="middle" font-size="12">F</text>
@@ -1608,7 +2653,7 @@
 <div class="qb-question">(a) Give reasons:<div class="qb-subpart">(i) Transition metals and their compounds show catalytic activities.</div><div class="qb-subpart">(ii) Separation of a mixture of Lanthanoid elements is difficult.</div><div class="qb-subpart">(iii) Zn, Cd and Hg are soft and have low melting point.</div><div class="qb-mainpart">(b) Write the preparation of the following:</div><div class="qb-subpart">(i) Na2Cr2O7 from Na2CrO4</div><div class="qb-subpart">(ii) K2MnO4 from MnO2.</div><br>OR<div class="qb-mainpart">(a) Account for the following:</div><div class="qb-subpart">(i) Ti3+ is coloured whereas Sc3+ is colourless in aqueous solution.</div><div class="qb-subpart">(ii) Cr2+ is a strong reducing agent.</div><div class="qb-mainpart">(b) Write two similarities between chemistry of lanthanoids and actinoids.</div><div class="qb-mainpart">(c) Complete the ionic equation: 3MnO4(2-) + 4H+ -></div></div>
 
 <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Catalytic activities of transition metals is due to ability to adopt variable oxidation states and to form complexes, providing large surface area for reactants. (ii) Separation of lanthanoid elements is difficult because all have almost similar physical and chemical properties due to lanthanoid contraction. (iii) Zn, Cd and Mg are soft and have low melting point because no d-orbitals are available for metallic bond formation and bonds are very weak. (b)</div><div class="qb-subpart">(i) 2Na2CrO4 + H2SO4 -> Na2Cr2O7 + Na2SO4 + H2O. (ii) 2MnO2 + 4KOH + O2 -> 2K2MnO4 + 2H2O. OR (a)</div><div class="qb-subpart">(i) Ti3+ has incomplete d (3d1) orbital whereas Sc3+ has empty (3d0) d-orbital. (ii) Cr2+ ion can lose electron to form Cr3+, so acts as strong reducing agent. (b) Both show +3 oxidation state; Both are strong reducing agents. (c) 3MnO4(2-) + 4H+ -> 2MnO4- + MnO2 + 2H2O.</div></div>
+<div class="answer-box"><span class="ans-label">Answer</span>(a)<div class="qb-subpart">(i) Catalytic activities of transition metals is due to ability to adopt variable oxidation states and to form complexes, providing large surface area for reactants.</div><div class="qb-subpart">(ii) Separation of lanthanoid elements is difficult because all have almost similar physical and chemical properties due to lanthanoid contraction.</div><div class="qb-subpart">(iii) Zn, Cd and Mg are soft and have low melting point because no d-orbitals are available for metallic bond formation and bonds are very weak. (b)</div><div class="qb-subpart">(i) 2Na2CrO4 + H2SO4 -> Na2Cr2O7 + Na2SO4 + H2O.</div><div class="qb-subpart">(ii) 2MnO2 + 4KOH + O2 -> 2K2MnO4 + 2H2O.</div><div class="qb-or-divider">OR (a)</div><div class="qb-subpart">(i) Ti3+ has incomplete d (3d1) orbital whereas Sc3+ has empty (3d0) d-orbital.</div><div class="qb-subpart">(ii) Cr2+ ion can lose electron to form Cr3+, so acts as strong reducing agent.</div><div class="qb-mainpart">(b) Both show +3 oxidation state; Both are strong reducing agents.</div><div class="qb-mainpart">(c) 3MnO4(2-) + 4H+ -> 2MnO4- + MnO2 + 2H2O.</div></div>
 </div><div class="qb-card">
 <div class="qb-meta"><span class="qb-badge">2023 &middot; 5 marks</span></div>
 <div class="qb-question">(a) Why is chemistry of actinoids complicated as compared to lanthanoids?<div class="qb-mainpart">(b) Complete the following reaction and justify that it is a disproportionation reaction:</div><br>3 MnO4<sup>2-</sup> + 4H+ -> _____ + _____ + 2 H2O.<div class="qb-mainpart">(c) The given graph shows the trends in melting points of transition metals (Ti, Cr, Mn, Mo, W shown on graph with atomic number on x-axis and M.P./10<sup>3</sup> K on y-axis). Explain the reason why Cr has highest melting point and manganese (Mn) a lower melting point.</div></div>
@@ -1804,6 +2849,46 @@
 <line x1="125" y1="168" x2="155" y2="168" stroke="#333" stroke-width="2"/>
 <text x="165" y="173" text-anchor="middle" font-size="12">H</text>
 <text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Pyramidal</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Sulphuric acid (H&#8322;SO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">S</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="105" x2="113" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="90" x2="40" y2="90" stroke="#333" stroke-width="2"/>
+<text x="25" y="95" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="90" x2="180" y2="90" stroke="#333" stroke-width="2"/>
+<text x="195" y="95" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphoric acid (H&#8323;PO&#8324;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="155" stroke="#333" stroke-width="2"/>
+<text x="110" y="168" text-anchor="middle" font-size="12">OH</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Tetrahedral (sp&#179;)</text>
+</svg></div><div class="qb-diagram"><svg viewBox="0 0 220 200" width="200" height="180">
+<text x="110" y="15" text-anchor="middle" font-size="10" fill="#888">Phosphorous acid (H&#8323;PO&#8323;)</text>
+<text x="110" y="95" text-anchor="middle" font-size="14" font-weight="bold">P</text>
+<line x1="110" y1="80" x2="110" y2="35" stroke="#333" stroke-width="2"/>
+<line x1="113" y1="80" x2="113" y2="35" stroke="#333" stroke-width="2"/>
+<text x="110" y="28" text-anchor="middle" font-size="12">O</text>
+<line x1="95" y1="100" x2="35" y2="140" stroke="#333" stroke-width="2"/>
+<text x="22" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="125" y1="100" x2="185" y2="140" stroke="#333" stroke-width="2"/>
+<text x="198" y="150" text-anchor="middle" font-size="12">OH</text>
+<line x1="110" y1="105" x2="110" y2="150" stroke="#333" stroke-width="2"/>
+<text x="110" y="163" text-anchor="middle" font-size="12">H</text>
+<text x="110" y="190" text-anchor="middle" font-size="9" fill="#888">Pyramidal (sp&#179;) &bull; Dibasic acid</text>
 </svg></div></div>
 </div></div></div></div>
 

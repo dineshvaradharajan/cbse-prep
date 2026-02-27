@@ -1,8 +1,8 @@
 /* Chemistry MCQ Mock Tests — All Branches (auto-generated)
-   5 tests × 16 MCQs each
+   8 tests × 16 MCQs each
    Physical + Organic + Inorganic mixed
    1 mark per correct answer | No negative marking | Duration: 30 minutes
-   Generated: 2026-02-25
+   Generated: 2026-02-27
 */
 
 const ALL_CHEM_MOCK_TESTS = [
@@ -1248,6 +1248,753 @@ const ALL_CHEM_MOCK_TESTS = [
         ],
         "answer": "D",
         "explanation": "(d) A wrong, R correct."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Mock Test 6",
+    "subtitle": "Physical (5) · Organic (6) · Inorganic (5)",
+    "icon": "⑥",
+    "duration": 1800,
+    "questions": [
+      {
+        "id": 601,
+        "chapter": "Coordination Compounds",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "The magnetic moment of [NiCl<sub>4</sub>]<sup>2−</sup> is ______. [Atomic number: Ni = 28]",
+        "options": [
+          "1.82 BM",
+          "2.82 BM",
+          "4.42 BM",
+          "5.46 BM"
+        ],
+        "answer": "B",
+        "explanation": "(B) 2.82 BM. Ni<sup>2+</sup> has 3d<sup>8</sup> configuration. Cl<sup>−</sup> is a weak field ligand, so no pairing occurs in the tetrahedral complex, leaving 2 unpaired electrons. μ = √(n(n+2)) = √8 = 2.82 BM."
+      },
+      {
+        "id": 602,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "easy",
+        "text": "The boiling point of a 0.2 m solution of a non-electrolyte in water is (Kb for water = 0.52 K kg mol^-1)",
+        "options": [
+          "100°C",
+          "100.52°C",
+          "100.104°C",
+          "100.26°C"
+        ],
+        "answer": "C",
+        "explanation": "(C) 100.104°C. Elevation in Boiling point = 0.52 * 0.2 = 0.104°C. Therefore, boiling point = 100 + 0.104 = 100.104°C."
+      },
+      {
+        "id": 603,
+        "chapter": "Biomolecules",
+        "branch": "Organic",
+        "difficulty": "easy",
+        "text": "Glucose on reaction with Br2 water gives",
+        "options": [
+          "Saccharic acid",
+          "Hexanoic acid",
+          "Gluconic acid",
+          "Salicylic acid"
+        ],
+        "answer": "C",
+        "explanation": "(C) Gluconic acid. Glucose on oxidation with Br2/H2O gives Gluconic acid."
+      },
+      {
+        "id": 604,
+        "chapter": "d&f Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "Transition metals are known to make interstitial compounds. Formation of interstitial compounds makes the transition metal ______.",
+        "options": [
+          "more hard",
+          "more soft",
+          "more ductile",
+          "more metallic"
+        ],
+        "answer": "A",
+        "explanation": "(A) more hard. Interstitial compounds are formed when small atoms (H, C, N, B) occupy the voids in the crystal lattice of transition metals, making them harder but retaining metallic conductivity."
+      },
+      {
+        "id": 605,
+        "chapter": "Amines",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "The best reagent for converting propanamide into propanamine is",
+        "options": [
+          "excess H2",
+          "Br2 in aqueous NaOH",
+          "iodine in the presence of red phosphorus",
+          "LiAlH4 in ether"
+        ],
+        "answer": "D",
+        "explanation": "Option (D) is correct. LiAlH4 in ether acts as a good reducing agent and reduces amide to primary amines."
+      },
+      {
+        "id": 606,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "Van't Hoff factor for Na2SO4.10H2O solution, assuming complete ionization is",
+        "options": [
+          "1",
+          "3",
+          "13",
+          "2"
+        ],
+        "answer": "B",
+        "explanation": "B) 3. Na2SO4.10H2O dissociates as: 2 Na+ + 1 SO4^2- + 10 H2O. Since water is a non-electrolyte, it does not ionize and does not contribute to the Van't Hoff factor value."
+      },
+      {
+        "id": 607,
+        "chapter": "Electrochemistry",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "Which of the following cell is used in hearing aids?",
+        "options": [
+          "Mercury cell",
+          "H2-O2 fuel cell",
+          "Dry cell",
+          "Ni-Cd cell"
+        ],
+        "answer": "A",
+        "explanation": "A) Mercury cell. Mercury cells are used in hearing aids due to their low self-discharge rate, stable and constant voltage output, long shelf life and small size."
+      },
+      {
+        "id": 608,
+        "chapter": "Alcohols Phenols Ethers",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Visha took 4 test-tubes namely A, B, C & D containing CH3CH=CH2, CH3CH2CH=CH2, CH3CH=CH-CH3 and (CH3)2C=CH2 respectively and tried to convert them into tertbutylalcohol. She carried out acid catalysed hydration reaction on every alkene. Out of the four test-tubes, the one which will give desired result is",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "D",
+        "explanation": "D) (CH3)2C=CH2. The substituted alkene on acidic hydrolysis produces a tertiary alcohol according to Markownikoff's addition."
+      },
+      {
+        "id": 609,
+        "chapter": "Biomolecules",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Proteins are polymers of",
+        "options": [
+          "Nucleic acids",
+          "Amino acids",
+          "Monosaccharides",
+          "Amines"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) Amino acids. Because amino acids are linked by amide bonds."
+      },
+      {
+        "id": 610,
+        "chapter": "p-Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "easy",
+        "text": "Which of the following elements does not show an oxidation state higher than +2?",
+        "options": [
+          "Oxygen",
+          "Sulphur",
+          "Selenium",
+          "Tellurium"
+        ],
+        "answer": "A",
+        "explanation": "(A) Oxygen. Oxygen lacks vacant d-orbitals in its valence shell, so it cannot expand its octet. The other Group 16 elements (S, Se, Te) can show +4 and +6 states due to available d-orbitals."
+      },
+      {
+        "id": 611,
+        "chapter": "Electrochemistry",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "A voltaic cell is made by connecting two half cells represented by half equations below:\nSn2+(aq) + 2e- -> Sn(s) E° = -0.14 V\nFe3+(aq) + e- -> Fe2+(aq) E° = +0.77 V\nWhich statement is correct about this voltaic cell?",
+        "options": [
+          "Fe2+ is oxidised and the voltage of the cell is -0.91 V",
+          "Sn is oxidised and the voltage of the cell is 0.91 V",
+          "Fe2+ is oxidised and the voltage of the cell is 0.91 V",
+          "Sn is oxidised and the voltage of the cell is 0.63 V"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) is correct. Explanation: Sn is oxidized as it is having -ve value of electrode potential. E° = Ec - Ea = 0.77 - (-0.14) = 0.91 V"
+      },
+      {
+        "id": 612,
+        "chapter": "p-Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "easy",
+        "text": "The formation of O<sub>2</sub><sup>+</sup>[PtF<sub>6</sub>]<sup>−</sup> led to the discovery of noble gas compounds because:",
+        "options": [
+          "O<sub>2</sub> and Xe have similar electronegativities",
+          "O<sub>2</sub> and Xe have similar sizes",
+          "O<sub>2</sub> and Xe have comparable ionization enthalpies",
+          "O<sub>2</sub> and Xe have similar electron affinities"
+        ],
+        "answer": "C",
+        "explanation": "(C) O<sub>2</sub> and Xe have comparable ionization enthalpies. Neil Bartlett noticed that the first ionization enthalpy of O<sub>2</sub> (1175 kJ/mol) is very close to that of Xe (1170 kJ/mol)."
+      },
+      {
+        "id": 613,
+        "chapter": "Aldehydes Ketones and Carboxylic Acids",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Which of the following does not give aldol condensation reaction?",
+        "options": [
+          "CH3-CHO",
+          "C6H5-CHO (Benzaldehyde)",
+          "C6H5-CHO (cyclopentane-CHO)",
+          "CH3COCH3"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) is correct. Benzaldehyde (C6H5CHO). It does not give aldol condensation due to absence of alpha-H atom."
+      },
+      {
+        "id": 614,
+        "chapter": "Amines",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Identify the primary amine from the given options:",
+        "options": [
+          "(C2H5)3N",
+          "(C2H6)2NH",
+          "C2H5NH2",
+          "(CH3)3N"
+        ],
+        "answer": "C",
+        "explanation": "C) C2H5NH2. Primary amines are formed by the substitution of 1 hydrogen atom in ammonia by alkyl group. In C2H5NH2 one hydrogen is substituted with alkyl group so it is primary amine."
+      },
+      {
+        "id": 615,
+        "chapter": "d&f Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "From the elements of 3d series given below, which element shows the maximum number of oxidation states?",
+        "options": [
+          "Scandium",
+          "Manganese",
+          "Chromium",
+          "Titanium"
+        ],
+        "answer": "B",
+        "explanation": "(B) Manganese. Mn shows oxidation states from +2 to +7 (the maximum in the 3d series) because it has the maximum number of unpaired electrons (5) in its 3d subshell."
+      },
+      {
+        "id": 616,
+        "chapter": "Chemical Kinetics",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "The correct mathematical expression of Arrhenius equation is",
+        "options": [
+          "k = -Ae^(Ea/RT)",
+          "k = e^(Ea/RT)",
+          "k = Ae^(-Ea/RT)",
+          "k = -Ae^(-Ea/RT)"
+        ],
+        "answer": "C",
+        "explanation": "C) k = Ae^(-Ea/RT)"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Mock Test 7",
+    "subtitle": "Physical (5) · Organic (6) · Inorganic (5)",
+    "icon": "⑦",
+    "duration": 1800,
+    "questions": [
+      {
+        "id": 701,
+        "chapter": "p-Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "easy",
+        "text": "Which of the following has the largest bond angle?",
+        "options": [
+          "NH<sub>3</sub>",
+          "H<sub>2</sub>O",
+          "PH<sub>3</sub>",
+          "NH<sub>4</sub><sup>+</sup>"
+        ],
+        "answer": "D",
+        "explanation": "(D) NH<sub>4</sub><sup>+</sup>. In NH<sub>4</sub><sup>+</sup>, all four electron pairs around nitrogen are bonding pairs (no lone pairs), giving a perfect tetrahedral geometry with a bond angle of 109°28'."
+      },
+      {
+        "id": 702,
+        "chapter": "Aldehydes Ketones and Carboxylic Acids",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Aldehydes and ketones react with hydroxylamine to form",
+        "options": [
+          "hydrazones",
+          "cyanohydrins",
+          "semicarbazones",
+          "Oxime"
+        ],
+        "answer": "D",
+        "explanation": "Option (d) Oxime."
+      },
+      {
+        "id": 703,
+        "chapter": "Coordination Compounds",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "The oxidation state of Fe in [Fe(CO)5] is",
+        "options": [
+          "+2",
+          "0",
+          "+3",
+          "+5"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) is correct. [Fe(CO)5]: x + (0 x 6) = 0, x = 0 (Zero)"
+      },
+      {
+        "id": 704,
+        "chapter": "Aldehydes Ketones and Carboxylic Acids",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Which one of the following has lowest pKa value?",
+        "options": [
+          "CH3-COOH",
+          "O2N-CH2-COOH",
+          "Cl-CH2-COOH",
+          "HCOOH"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) is correct. Explanation: O2N-CH2-COOH having less value of pKa because its acidic strength is very high."
+      },
+      {
+        "id": 705,
+        "chapter": "p-Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "easy",
+        "text": "Which of the following is an incorrect statement about concentrated H<sub>2</sub>SO<sub>4</sub>?",
+        "options": [
+          "It acts as a dehydrating agent.",
+          "It acts as an oxidising agent.",
+          "K<sub>a2</sub> > K<sub>a1</sub>",
+          "It forms two series of salts."
+        ],
+        "answer": "C",
+        "explanation": "(C) K<sub>a2</sub> > K<sub>a1</sub>. This is incorrect because K<sub>a1</sub> is much greater than K<sub>a2</sub> for H<sub>2</sub>SO<sub>4</sub>. The second dissociation is much weaker."
+      },
+      {
+        "id": 706,
+        "chapter": "Aldehydes Ketones and Carboxylic Acids",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Which of the following is most reactive in nucleophilic addition reactions?",
+        "options": [
+          "HCHO",
+          "CH3CHO",
+          "CH3COCH3",
+          "CH3COC2H5"
+        ],
+        "answer": "A",
+        "explanation": "Option (a) is correct. HCHO. Presence of alkyl groups decrease the reactivity by decreasing the electron deficiency."
+      },
+      {
+        "id": 707,
+        "chapter": "d&f Block",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "The general electronic configuration of d-block elements is",
+        "options": [
+          "(n-1) d^(1-10) ns^(1-2)",
+          "(n-1) d^10 ns^(1-2)",
+          "(n-1) d^10 ns^(2-3)",
+          "(n-1) d^n ns^(1-2)"
+        ],
+        "answer": "A",
+        "explanation": "A) (n-1) d^(1-10) ns^(1-2). In d-block elements, the electrons are filled in the penultimate or second last shell."
+      },
+      {
+        "id": 708,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "Isotonic solutions have the same",
+        "options": [
+          "density",
+          "refractive index",
+          "osmotic pressure",
+          "volume"
+        ],
+        "answer": "C",
+        "explanation": "C) osmotic pressure"
+      },
+      {
+        "id": 709,
+        "chapter": "Chemical Kinetics",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "The slope in the plot of ln[R] vs. time for a first order reaction is",
+        "options": [
+          "+k/2.303",
+          "-k",
+          "-k/2.303",
+          "+k"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) is correct. d ln[R]/dt = -K[A](d[A]/[A]) = -Kdt, ln[R] = -Kt. The slope is -k."
+      },
+      {
+        "id": 710,
+        "chapter": "Chemical Kinetics",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "For the reaction 3A -> 2B, rate of reaction +d[B]/dt is equal to",
+        "options": [
+          "-3/2 d[A]/dt",
+          "-2/3 d[A]/dt",
+          "-1/3 d[A]/dt",
+          "+2d[A]/dt"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) is correct. 3A -> 2B: -1/3 d[A]/dt = 1/2 d[B]/dt. Therefore +d[B]/dt = -2/3 d[A]/dt."
+      },
+      {
+        "id": 711,
+        "chapter": "p-Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "easy",
+        "text": "Which of the following oxoacids of sulphur contains a peroxide linkage (O–O bond)?",
+        "options": [
+          "H<sub>2</sub>SO<sub>4</sub>",
+          "H<sub>2</sub>S<sub>2</sub>O<sub>7</sub>",
+          "H<sub>2</sub>SO<sub>3</sub>",
+          "H<sub>2</sub>S<sub>2</sub>O<sub>8</sub>"
+        ],
+        "answer": "D",
+        "explanation": "(D) H<sub>2</sub>S<sub>2</sub>O<sub>8</sub> (peroxodisulphuric acid / Marshall's acid). It is the only sulphur oxoacid in the options that contains a peroxide (–O–O–) linkage."
+      },
+      {
+        "id": 712,
+        "chapter": "Biomolecules",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Hydrolysis of sucrose is called",
+        "options": [
+          "inversion",
+          "hydration",
+          "esterification",
+          "saponification"
+        ],
+        "answer": "A",
+        "explanation": "Option (a) is correct. Explanation: Hydrolysis of sucrose (sugarcane) is called inversion. On undergoing hydrolysis it gives equimolar amount of glucose and fructose."
+      },
+      {
+        "id": 713,
+        "chapter": "Alcohols Phenols Ethers",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Which is the correct order of acid strength from the following?",
+        "options": [
+          "C6H5OH > H2O > ROH",
+          "C6H5OH > ROH > H2O",
+          "ROH > C6H5OH > H2O",
+          "H2O > C6H5OH > ROH"
+        ],
+        "answer": "A",
+        "explanation": "Option (A) is correct. C6H5OH > H2O > ROH. Phenol forms a more stable phenoxide ion and is appreciably acidic. ROH is the least acidic, as its conjugate base RO- is unstable than OH- which is formed by H2O, because of positive inductive effect of alkyl group."
+      },
+      {
+        "id": 714,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "easy",
+        "text": "Assertion (A): Elevation in boiling point is a colligative property. Reason (R): Elevation in boiling point is directly proportional to molality.",
+        "options": [
+          "Both correct, R explains A",
+          "Both correct, R does not explain A",
+          "A correct, R wrong",
+          "A wrong, R correct"
+        ],
+        "answer": "A",
+        "explanation": "(a)"
+      },
+      {
+        "id": 715,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "In case of association, abnormal molar mass of solute will",
+        "options": [
+          "increase",
+          "decrease",
+          "remain same",
+          "first increase and then decrease"
+        ],
+        "answer": "A",
+        "explanation": "Option (A) is correct. Association results in the formation of bigger molecules that are held together by intermolecular hydrogen bond and behave like a single particle. Consequently, the experimentally determined molar mass increases."
+      },
+      {
+        "id": 716,
+        "chapter": "Aldehydes Ketones Carboxylic Acids",
+        "branch": "Organic",
+        "difficulty": "easy",
+        "text": "Assertion: Benzoic acid no Friedel-Crafts. Reason: COOH is activating.",
+        "options": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "answer": "C",
+        "explanation": "(c) A correct, R wrong."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Mock Test 8",
+    "subtitle": "Physical (5) · Organic (6) · Inorganic (5)",
+    "icon": "⑧",
+    "duration": 1800,
+    "questions": [
+      {
+        "id": 801,
+        "chapter": "Aldehydes Ketones Carboxylic Acids",
+        "branch": "Organic",
+        "difficulty": "easy",
+        "text": "Assertion: Benzaldehyde less reactive than ethanal to nucleophilic addition. Reason: Ethanal more sterically hindered.",
+        "options": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "answer": "B",
+        "explanation": "(b) A correct, R wrong."
+      },
+      {
+        "id": 802,
+        "chapter": "Coordination Compounds",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "Assertion (A): Trans [CrCl<sub>2</sub>(ox)<sub>2</sub>]<sup>3−</sup> shows optical isomerism.<br>Reason (R): Optical isomerism is common in octahedral complexes involving bidentate ligands.",
+        "options": [
+          "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+          "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+          "is true, but (R) is false.",
+          "is false, but (R) is true."
+        ],
+        "answer": "D",
+        "explanation": "(D) (A) is false, but (R) is true. The trans isomer of [CrCl<sub>2</sub>(ox)<sub>2</sub>]<sup>3−</sup> has a plane of symmetry and is achiral. Only the cis isomer shows optical isomerism."
+      },
+      {
+        "id": 803,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "easy",
+        "text": "Which of the following formula represents Raoult's law for a solution containing non-volatile solute?",
+        "options": [
+          "p_solute = p°_solute * x_solute",
+          "p = K_H * x",
+          "p_total = p_solvent",
+          "p_solute = p°_solvent * x_solvent"
+        ],
+        "answer": "B",
+        "explanation": "(B) p = K_H * x. According to Raoult's law, the vapour pressure of a solution of a non-volatile solute is equal to the vapour pressure of the pure solvent at that temperature multiplied by its mole fraction."
+      },
+      {
+        "id": 804,
+        "chapter": "Alcohols Phenols Ethers",
+        "branch": "Organic",
+        "difficulty": "easy",
+        "text": "Consider the following reaction: CH3-CH=CH2 --1. HBr / 2. aq. KOH-->. The major end product is",
+        "options": [
+          "CH3-CH(OH)-CH3 (2-propanol)",
+          "CH3-CH(Br)-CH3 (2-bromopropane)",
+          "CH3-CH2-CH2-OH (1-propanol)",
+          "CH3-CH2-CH2-Br (1-bromopropane)"
+        ],
+        "answer": "A",
+        "explanation": "(A) CH3-CH(OH)-CH3. Propene yields two products, however only one predominates as per Markovnikov's rule i.e., 2-bromopropane which on heating with aq. KOH gives secondary alcohol (2-propanol)."
+      },
+      {
+        "id": 805,
+        "chapter": "d&f Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "The general electronic configuration of d-block elements is ______.",
+        "options": [
+          "(n − 1)d<sup>1–10</sup> ns<sup>1–2</sup>",
+          "(n − 1)d<sup>10</sup> ns<sup>1–2</sup>",
+          "(n − 1)d<sup>10</sup> ns<sup>2–3</sup>",
+          "(n − 1)d<sup>0</sup> ns<sup>1–2</sup>"
+        ],
+        "answer": "A",
+        "explanation": "(A) (n − 1)d<sup>1–10</sup> ns<sup>1–2</sup>. The d-block elements are characterised by the filling of d-orbitals in the penultimate shell, with 1 to 10 electrons, while the outermost shell contains 1 or 2 s-electrons."
+      },
+      {
+        "id": 806,
+        "chapter": "Biomolecules",
+        "branch": "Organic",
+        "difficulty": "easy",
+        "text": "Which of the following sugar is known as dextrose?",
+        "options": [
+          "Glucose",
+          "Fructose",
+          "Ribose",
+          "Sucrose"
+        ],
+        "answer": "A",
+        "explanation": "(A) Glucose. Glucose is known as dextrose."
+      },
+      {
+        "id": 807,
+        "chapter": "Haloalkanes and Haloarenes",
+        "branch": "Organic",
+        "difficulty": "medium",
+        "text": "Which of the following belongs to the class of Vinyl halides?",
+        "options": [
+          "CH2=CHCH2CH2Cl",
+          "CH2=C(-Br)-CH3",
+          "CH2=CH-CH2-Br",
+          "CH=C-Br"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) CH2=C(-Br)-CH3 is correct. Because vinyl halides are alkenyl group with formula RCHCHX."
+      },
+      {
+        "id": 808,
+        "chapter": "p-Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "easy",
+        "text": "The correct order of acid strength of hydrogen halides is:",
+        "options": [
+          "HF < HCl < HBr < HI",
+          "HI < HBr < HCl < HF",
+          "HBr < HI < HCl < HF",
+          "HF < HBr < HI < HCl"
+        ],
+        "answer": "A",
+        "explanation": "(A) HF < HCl < HBr < HI. Acid strength increases down the group because the H–X bond dissociation enthalpy decreases as the size of the halide increases."
+      },
+      {
+        "id": 809,
+        "chapter": "d&f Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "Assertion (A): Zr and Hf are of almost similar atomic radii.<br>Reason (R): This is due to Lanthanoid contraction.",
+        "options": [
+          "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+          "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+          "is true, but (R) is false.",
+          "is false, but (R) is true."
+        ],
+        "answer": "A",
+        "explanation": "(A) Both (A) and (R) are true and (R) is the correct explanation of (A). Due to lanthanoid contraction, the expected increase in atomic radius from 4d to 5d series is offset, making Zr (160 pm) and Hf (159 pm) nearly identical in size."
+      },
+      {
+        "id": 810,
+        "chapter": "Chemical Kinetics",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "In effective collisions the colliding molecules must have",
+        "options": [
+          "Proper orientation only",
+          "A certain minimum amount of activation energy",
+          "Threshold energy only",
+          "Threshold energy and proper orientation both"
+        ],
+        "answer": "D",
+        "explanation": "D) Threshold energy and proper orientation both."
+      },
+      {
+        "id": 811,
+        "chapter": "d&f Block Elements",
+        "branch": "Inorganic",
+        "difficulty": "medium",
+        "text": "In the two tetrahedral structures of dichromate ion (Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup>), Cr–O bonds ______.",
+        "options": [
+          "All are equivalent in length",
+          "6 Cr–O bonds are equivalent in length",
+          "All are non-equivalent",
+          "4 Cr–O bonds are equivalent in length"
+        ],
+        "answer": "B",
+        "explanation": "(B) 6 Cr–O bonds are equivalent in length. In Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup>, each Cr is tetrahedrally coordinated. There are 6 equivalent terminal Cr–O bonds and 2 Cr–O bonds to the bridging oxygen."
+      },
+      {
+        "id": 812,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "Van't Hoff factor for KCl solution assuming the complete dissociation is",
+        "options": [
+          "1",
+          "2",
+          "0.5",
+          "1.5"
+        ],
+        "answer": "B",
+        "explanation": "B) 2. KCl -> K+ + Cl-. Initial moles = 1; final moles = 2. Van't Hoff Factor = 2/1 = 2."
+      },
+      {
+        "id": 813,
+        "chapter": "Solutions",
+        "branch": "Physical",
+        "difficulty": "easy",
+        "text": "Assertion: 0.1M KCl > osmotic pressure than 0.1M glucose. Reason: KCl dissociates.",
+        "options": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "answer": "A",
+        "explanation": "(a)"
+      },
+      {
+        "id": 814,
+        "chapter": "Biomolecules",
+        "branch": "Organic",
+        "difficulty": "easy",
+        "text": "Complete the following analogy: Curdling of milk : A :: alpha-helix : B",
+        "options": [
+          "A: Primary structure, B: Secondary structure",
+          "A: Denatured protein, B: Primary structure",
+          "A: Secondary structure, B: Denatured protein",
+          "A: Denatured protein, B: Secondary structure"
+        ],
+        "answer": "D",
+        "explanation": "(D) A: Denatured protein, B: Secondary structure. Curdling of milk is denaturation of protein while alpha helix is a secondary structure of protein."
+      },
+      {
+        "id": 815,
+        "chapter": "Electrochemistry",
+        "branch": "Physical",
+        "difficulty": "medium",
+        "text": "Consider the following standard electrode potential values:\nSn2+(aq) + 2e- -> Sn(s) E0 = -0.14 V\nFe3+(aq) + e- -> Fe2+(aq) E0 = +0.77 V\nWhat is the cell reaction and potential for the spontaneous reaction that occurs?",
+        "options": [
+          "2 Fe2+(aq) + Sn2+(aq) -> 2 Fe3+(aq) + Sn(s) E0 = -0.91 V",
+          "2 Fe3+(aq) + Sn(s) -> 2 Fe2+(aq) + Sn2+(aq) E0 = +0.94 V",
+          "2Fe2+(aq) + Sn2+(aq) -> 2 Fe3+(aq) + Sn(s) E0 = +0.91 V",
+          "2 Fe3+(aq) + Sn(s) -> 2 Fe2+(aq) + Sn2+(aq) E0 = +1.68 V"
+        ],
+        "answer": "B",
+        "explanation": "Option (b) is correct.\nE0 = Ec - Ea = 0.77 - (-0.14) = +0.91 V. The spontaneous reaction has positive E0. Fe3+ is reduced and Sn is oxidized. Note: The correct cell potential should be +0.91V; option (b) states +0.94V which appears to be a printing variation."
+      },
+      {
+        "id": 816,
+        "chapter": "Alcohols Phenols Ethers",
+        "branch": "Organic",
+        "difficulty": "easy",
+        "text": "Assertion: o/p-nitrophenols separated by steam distillation. Reason: ortho has intermolecular H-bonding.",
+        "options": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "answer": "C",
+        "explanation": "(c) A correct, R wrong."
       }
     ]
   }

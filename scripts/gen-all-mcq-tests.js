@@ -53,6 +53,10 @@ function parseAnswerLetter(answerText, options) {
   const m = s.match(/(?:Option\s*)?\(([A-Da-d])\)/i);
   if (m) return m[1].toUpperCase();
 
+  // Match patterns like "A)", "B)" at start of answer
+  const m2 = s.match(/^([A-Da-d])\)/);
+  if (m2) return m2[1].toUpperCase();
+
   // Match patterns like "(i) increase" → map to A
   const romanMatch = s.match(/^\(([iv]+)\)/i);
   if (romanMatch) {
@@ -135,7 +139,7 @@ function shuffle(arr) {
 }
 
 // ── Distribute into 5 tests of 16 ────────────────────────────────
-const NUM_TESTS = 5;
+const NUM_TESTS = 8;
 const Q_PER_TEST = 16;
 
 // Group by branch and shuffle each group
