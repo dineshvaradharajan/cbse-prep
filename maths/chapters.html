@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/chapter.css">
+<style>:root{
+  --subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;
+  --c1:#7c3aed;--c2:#a855f7;--c3:#6d28d9;
+}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapter notes for Mathematics — all 13 chapters covering Relations, Calculus, Algebra, Vectors, Probability for CBSE Class 12 board exam.">
+<meta name="keywords" content="maths class 12, CBSE XII mathematics, calculus integration derivatives probability">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Mathematics Chapter Notes | CBSE Class 12">
+<meta property="og:description" content="Chapter notes for Mathematics — 13 chapters with formulas, theorems, tips and exercise overviews for CBSE Class 12.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/maths/chapters.html">
+<title>Mathematics Chapter Notes | CBSE Class 12</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+
+<h1>Mathematics Chapters</h1>
+<p class="subtitle">Chapter summaries, key formulas, important theorems, exam tips and exercise overviews for all 13 chapters — 952 NCERT questions covered.</p>
+
+<div class="chapter-bar">
+  <div class="chapter-tabs" id="chapterTabs">
+    <button class="tab active" data-tab="relations-and-functions" onclick="showCh('relations-and-functions',this)">1. Relations and Functions</button>
+    <button class="tab" data-tab="inverse-trigonometric-functions" onclick="showCh('inverse-trigonometric-functions',this)">2. Inverse Trigonometric Functions</button>
+    <button class="tab" data-tab="matrices" onclick="showCh('matrices',this)">3. Matrices</button>
+    <button class="tab" data-tab="determinants" onclick="showCh('determinants',this)">4. Determinants</button>
+    <button class="tab" data-tab="continuity-and-differentiability" onclick="showCh('continuity-and-differentiability',this)">5. Continuity and Differentiability</button>
+    <button class="tab" data-tab="application-of-derivatives" onclick="showCh('application-of-derivatives',this)">6. Application of Derivatives</button>
+    <button class="tab" data-tab="integrals" onclick="showCh('integrals',this)">7. Integrals</button>
+    <button class="tab" data-tab="application-of-integrals" onclick="showCh('application-of-integrals',this)">8. Application of Integrals</button>
+    <button class="tab" data-tab="differential-equations" onclick="showCh('differential-equations',this)">9. Differential Equations</button>
+    <button class="tab" data-tab="vector-algebra" onclick="showCh('vector-algebra',this)">10. Vector Algebra</button>
+    <button class="tab" data-tab="three-dimensional-geometry" onclick="showCh('three-dimensional-geometry',this)">11. Three Dimensional Geometry</button>
+    <button class="tab" data-tab="linear-programming" onclick="showCh('linear-programming',this)">12. Linear Programming</button>
+    <button class="tab" data-tab="probability" onclick="showCh('probability',this)">13. Probability</button>
+  </div>
+  <button class="more-btn" id="moreBtn" onclick="toggleMoreDropdown()">More ▾</button>
+  <div class="more-dropdown" id="moreDropdown"></div>
+</div>
+
+
+<!-- ══════════════════════════════ RELATIONS AND FUNCTIONS ══════════════════════════════ -->
+<div class="ch-section active" id="relations-and-functions">
+
+  <div class="ch-banner" style="background:#f5f3ff;color:#3b0764">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 1</div>
+      <div class="ch-title">Relations and Functions</div>
+      <div class="ch-sub">Types of Relations · Types of Functions · Composition of Functions and Invertible Function</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">3<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>A relation R from A to B is a subset of A x B</li>
+      <li>If (a, b) ∈ R, we write a R b</li>
+      <li>Functions are special kind of relations</li>
+      <li>A relation ∈ a set A is a subset of A x A</li>
+      <li>Empty relation: R = φ; Universal relation: R = A x A</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Relation</strong></td><td>A relation R from a set A to a set B is an arbitrary subset of A x B. If (a, b) ∈ R, we say that a is related to b under the relation R, written as a R b.</td></tr>
+      <tr><td><strong>Empty Relation</strong></td><td>A relation R ∈ a set A is called empty relation, if no element of A is related to any element of A, i.e., R = φ ⊂ A x A.</td></tr>
+      <tr><td><strong>Universal Relation</strong></td><td>A relation R ∈ a set A is called universal relation, if each element of A is related to every element of A, i.e., R = A x A.</td></tr>
+      <tr><td><strong>Trivial Relations</strong></td><td>Both the empty relation and the universal relation are sometimes called trivial relations.</td></tr>
+      <tr><td><strong>Reflexive Relation</strong></td><td>A relation R ∈ a set A is called reflexive, if (a, a) ∈ R, for every a ∈ A.</td></tr>
+      <tr><td><strong>Symmetric Relation</strong></td><td>A relation R ∈ a set A is called symmetric, if (a1, a2) ∈ R implies that (a2, a1) ∈ R, for all a1, a2 ∈ A.</td></tr>
+      <tr><td><strong>Transitive Relation</strong></td><td>A relation R ∈ a set A is called transitive, if (a1, a2) ∈ R and (a2, a3) ∈ R implies that (a1, a3) ∈ R, for all a1, a2, a3 ∈ A.</td></tr>
+      <tr><td><strong>Equivalence Relation</strong></td><td>A relation R ∈ a set A is said to be an equivalence relation if R is reflexive, symmetric and transitive.</td></tr>
+      <tr><td><strong>Equivalence Class</strong></td><td>Given an equivalence relation R ∈ a set X, the equivalence class [a] containing a ∈ X is the subset of X containing all elements b related to a. The equivalence classes form a partition of X into mutually disjoint subsets.</td></tr>
+      <tr><td><strong>One-one (Injective) Function</strong></td><td>A function f: X → Y is defined to be one-one (or injective), if the images of distinct elements of X under f are distinct, i.e., for every x1, x2 ∈ X, f(x1) = f(x2) implies x1 = x2. Otherwise, f is called many-one.</td></tr>
+      <tr><td><strong>Onto (Surjective) Function</strong></td><td>A function f: X → Y is said to be onto (or surjective), if every element of Y is the image of some element of X under f, i.e., for every y ∈ Y, there exists an element x ∈ X such that f(x) = y.</td></tr>
+      <tr><td><strong>Bijective Function</strong></td><td>A function f: X → Y is said to be one-one and onto (or bijective), if f is both one-one and onto.</td></tr>
+      <tr><td><strong>Composition of Functions</strong></td><td>Let f: A → B and g: B → C be two functions. Then the composition of f and g, denoted by gof, is defined as the function gof: A → C given by gof(x) = g(f(x)), for all x ∈ A.</td></tr>
+      <tr><td><strong>Invertible Function</strong></td><td>A function f: X → Y is defined to be invertible, if there exists a function g: Y → X such that gof = I_X and fog = I_Y. The function g is called the inverse of f and is denoted by f⁻¹.</td></tr>
+      <tr><td><strong>Identity Function</strong></td><td>The identity function I_X: X → X is defined as I_X(x) = x for all x ∈ X.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Empty Relation</span>
+            <code class="fl-eq">R = φ ⊂ A x A</code>
+            <span class="fl-note">No element is related to any element</span>
+          </li>
+          <li>
+            <span class="fl-name">Universal Relation</span>
+            <code class="fl-eq">R = A x A</code>
+            <span class="fl-note">Every element is related to every element</span>
+          </li>
+          <li>
+            <span class="fl-name">One-one test</span>
+            <code class="fl-eq">f(x1) = f(x2) ⇒ x1 = x2, for all x1, x2 ∈ X</code>
+            <span class="fl-note">Equivalent to: x1 ≠ x2 ⇒ f(x1) ≠ f(x2)</span>
+          </li>
+          <li>
+            <span class="fl-name">Onto condition</span>
+            <code class="fl-eq">For every y ∈ Y, there exists x ∈ X such that f(x) = y</code>
+            <span class="fl-note">Equivalently, f is onto if and only if Range of f = Y (codomain)</span>
+          </li>
+          <li>
+            <span class="fl-name">Composition of functions</span>
+            <code class="fl-eq">gof(x) = g(f(x)), for all x ∈ A</code>
+            <span class="fl-note">If f: A → B and g: B → C, then gof: A → C</span>
+          </li>
+          <li>
+            <span class="fl-name">Inverse function condition</span>
+            <code class="fl-eq">gof = I_X and fog = I_Y</code>
+            <span class="fl-note">f is invertible ⟺ f is one-one and onto (bijective)</span>
+          </li>
+          <li>
+            <span class="fl-name">Inverse verification</span>
+            <code class="fl-eq">f⁻¹(y) = x ⟺ f(x) = y</code>
+            <span class="fl-note">f⁻¹ o f = I_X and f o f⁻¹ = I_Y</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>Equivalence Classes Partition Theorem:</strong> Given an arbitrary equivalence relation R ∈ an arbitrary set X, R divides X into mutually disjoint subsets Aᵢ called partitions or subdivisions of X satisfying: (i) all elements of Aᵢ are related to each other, for all i, (ii) no element of Aᵢ is related to any element of Aⱼ, i ≠ j, (iii) union of Aⱼ = X and Aᵢ intersect Aⱼ = φ, i ≠ j. The subsets Aᵢ are called equivalence classes.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Finite Set Bijection Property:</strong> For an arbitrary finite set X, a one-one function f: X → X is necessarily onto and an onto map f: X → X is necessarily one-one. This is a characteristic difference between a finite and an infinite set.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Invertibility and Bijectivity:</strong> A function f is invertible if and only if f is one-one and onto (bijective). If f is invertible, then f must be one-one and onto, and conversely, if f is one-one and onto, then f must be invertible.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Reflexive: (a, a) ∈ R for all a ∈ A</li>
+      <li>Symmetric: (a, b) ∈ R implies (b, a) ∈ R</li>
+      <li>Transitive: (a, b) ∈ R and (b, c) ∈ R implies (a, c) ∈ R</li>
+      <li>Equivalence relation must be reflexive, symmetric and transitive</li>
+      <li>An equivalence relation partitions a set into disjoint equivalence classes</li>
+      <li>If R1 and R2 are equivalence relations ∈ a set A, then R1 intersect R2 is also an equivalence relation</li>
+      <li>f is one-one (injective) if distinct elements have distinct images</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>35 total questions</strong> across 3 exercises</li>
+      <li>24 long-answer questions (proofs, show-that, derivations)</li>
+      <li>5 short-answer questions</li>
+      <li>6 multiple-choice questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ INVERSE TRIGONOMETRIC FUNCTIONS ══════════════════════════════ -->
+<div class="ch-section" id="inverse-trigonometric-functions">
+
+  <div class="ch-banner" style="background:#ede9fe;color:#4c1d95">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 2</div>
+      <div class="ch-title">Inverse Trigonometric Functions</div>
+      <div class="ch-sub">Basic Concepts · Properties of Inverse Trigonometric Functions</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">3<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>If f : X → Y such that f(x) = y is one-one and onto, then we can define a unique function g : Y → X such that g(y) = x, where x ∈ X and y = f(x), y ∈ Y</li>
+      <li>The function g is called the inverse of f and is denoted by f⁻¹</li>
+      <li>Domain of g = Range of f, and Range of g = Domain of f</li>
+      <li>g⁻¹ = (f⁻¹)⁻¹ = f</li>
+      <li>(f⁻¹ ∘ f)(x) = f⁻¹(f(x)) = f⁻¹(y) = x</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Principal Value Branch</strong></td><td>The branch of an inverse trigonometric function with a specific restricted range that is conventionally chosen as the standard. For sin⁻¹, the principal value branch has range [−π/2, π/2].</td></tr>
+      <tr><td><strong>Principal Value</strong></td><td>The value of an inverse trigonometric function which lies ∈ the range of the principal branch is called the principal value of that inverse trigonometric function.</td></tr>
+      <tr><td><strong>sin⁻¹ (arc sine function)</strong></td><td>The inverse of sine function with domain [−1, 1] and range [−π/2, π/2]. If sin y = x, then y = sin⁻¹ x.</td></tr>
+      <tr><td><strong>cos⁻¹ (arc cosine function)</strong></td><td>The inverse of cosine function with domain [−1, 1] and range [0, π]. If cos y = x, then y = cos⁻¹ x.</td></tr>
+      <tr><td><strong>cosec⁻¹ (arc cosecant function)</strong></td><td>The inverse of cosecant function with domain R − (−1, 1) and range [−π/2, π/2] − {0}.</td></tr>
+      <tr><td><strong>sec⁻¹ (arc secant function)</strong></td><td>The inverse of secant function with domain R − (−1, 1) and range [0, π] − {π/2}.</td></tr>
+      <tr><td><strong>tan⁻¹ (arc tangent function)</strong></td><td>The inverse of tangent function with domain R and range (−π/2, π/2).</td></tr>
+      <tr><td><strong>cot⁻¹ (arc cotangent function)</strong></td><td>The inverse of cotangent function with domain R and range (0, π).</td></tr>
+      <tr><td></td><td>The domains and ranges (principal value branches) of inverse trigonometric functions are: sin⁻¹: [−1, 1] → [−π/2, π/2] ┃ cos⁻¹: [−1, 1] → [0, π] ┃ cosec⁻¹: R − (−1, 1) → [−π/2, π/2] − {0} ┃ sec⁻¹: R − (−1, 1) → [0, π] − {π/2} ┃ tan⁻¹: R → (−π/2, π/2) ┃ cot⁻¹: R → (0, π)</td></tr>
+      <tr><td></td><td>sin⁻¹ x should not be confused with (sin x)⁻¹. In fact (sin x)⁻¹ = 1/sin x, and similarly for other trigonometric functions</td></tr>
+      <tr><td><strong>The value of an inverse trigonometric function which lies in the range of its principal value branch</strong></td><td>called the principal value of that inverse trigonometric function</td></tr>
+      <tr><td></td><td>For suitable values of domain: y = sin⁻¹ x implies x = sin y</td></tr>
+      <tr><td></td><td>For suitable values of domain: sin(sin⁻¹ x) = x</td></tr>
+      <tr><td></td><td>For suitable values of domain: sin⁻¹(sin x) = x</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Domain and Range of sin⁻¹</span>
+            <code class="fl-eq">sin⁻¹ : [−1, 1] → [−π/2, π/2]</code>
+            <span class="fl-note">Principal value branch</span>
+          </li>
+          <li>
+            <span class="fl-name">Domain and Range of cos⁻¹</span>
+            <code class="fl-eq">cos⁻¹ : [−1, 1] → [0, π]</code>
+            <span class="fl-note">Principal value branch</span>
+          </li>
+          <li>
+            <span class="fl-name">Domain and Range of cosec⁻¹</span>
+            <code class="fl-eq">cosec⁻¹ : R − (−1, 1) → [−π/2, π/2] − {0}</code>
+            <span class="fl-note">Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1</span>
+          </li>
+          <li>
+            <span class="fl-name">Domain and Range of sec⁻¹</span>
+            <code class="fl-eq">sec⁻¹ : R − (−1, 1) → [0, π] − {π/2}</code>
+            <span class="fl-note">Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1</span>
+          </li>
+          <li>
+            <span class="fl-name">Domain and Range of tan⁻¹</span>
+            <code class="fl-eq">tan⁻¹ : R → (−π/2, π/2)</code>
+            <span class="fl-note">Principal value branch</span>
+          </li>
+          <li>
+            <span class="fl-name">Domain and Range of cot⁻¹</span>
+            <code class="fl-eq">cot⁻¹ : R → (0, π)</code>
+            <span class="fl-note">Principal value branch</span>
+          </li>
+          <li>
+            <span class="fl-name">Sine inverse-forward composition</span>
+            <code class="fl-eq">sin(sin⁻¹ x) = x, for x ∈ [−1, 1]</code>
+            <span class="fl-note">Composition of function with its inverse</span>
+          </li>
+          <li>
+            <span class="fl-name">Sine forward-inverse composition</span>
+            <code class="fl-eq">sin⁻¹(sin x) = x, for x ∈ [−π/2, π/2]</code>
+            <span class="fl-note">Composition of inverse with function</span>
+          </li>
+          <li>
+            <span class="fl-name">Cancellation property (sin)</span>
+            <code class="fl-eq">sin(sin⁻¹ x) = x, x ∈ [−1, 1] and sin⁻¹(sin x) = x, x ∈ [−π/2, π/2]</code>
+            <span class="fl-note">Similar results hold for other trigonometric functions for suitable values of domain</span>
+          </li>
+          <li>
+            <span class="fl-name">Double angle formula for sin⁻¹</span>
+            <code class="fl-eq">sin⁻¹(2x√(1 − x²)) = 2 sin⁻¹ x, −1/√2 ≤ x ≤ 1/√2</code>
+            <span class="fl-note">Derived by substituting x = sin θ</span>
+          </li>
+          <li>
+            <span class="fl-name">Double angle formula for cos⁻¹</span>
+            <code class="fl-eq">sin⁻¹(2x√(1 − x²)) = 2 cos⁻¹ x, 1/√2 ≤ x ≤ 1</code>
+            <span class="fl-note">Derived by substituting x = cos θ</span>
+          </li>
+          <li>
+            <span class="fl-name">Simplification of cot⁻¹(1/√(x² − 1))</span>
+            <code class="fl-eq">cot⁻¹(1/√(x² − 1)) = sec⁻¹ x, x &gt; 1</code>
+            <span class="fl-note">Derived by substituting x = sec θ</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>(f ∘ f⁻¹)(y) = f(f⁻¹(y)) = f(x) = y</li>
+      <li>sin⁻¹ x should not be confused with (sin x)⁻¹. In fact (sin x)⁻¹ = 1/sin x, and similarly for other trigonometric functions</li>
+      <li>Whenever no branch of an inverse trigonometric function is mentioned, we mean the principal value branch of that function</li>
+      <li>The graph of y = sin⁻¹ x can be obtained from the graph of y = sin x by interchanging x and y axes</li>
+      <li>The graph of an inverse function is a mirror image (reflection) of the corresponding graph of the original function along the line y = x</li>
+      <li>Sine function restricted to [−π/2, π/2] is one-one and onto with range [−1, 1]</li>
+      <li>Cosine function restricted to [0, π] is one-one and onto with range [−1, 1]</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>43 total questions</strong> across 3 exercises</li>
+      <li>16 long-answer questions (proofs, show-that, derivations)</li>
+      <li>20 short-answer questions</li>
+      <li>7 multiple-choice questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ MATRICES ══════════════════════════════ -->
+<div class="ch-section" id="matrices">
+
+  <div class="ch-banner" style="background:#e8e0ff;color:#5b21b6">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 3</div>
+      <div class="ch-title">Matrices</div>
+      <div class="ch-sub">Matrix · Types of Matrices · Operations on Matrices · Transpose of a Matrix · Symmetric and Skew Symmetric Matrices · Invertible Matrices</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Matrices simplify work compared to straightforward methods</li>
+      <li>Matrices represent coefficients ∈ systems of linear equations</li>
+      <li>Matrix notation is used ∈ electronic spreadsheet programs</li>
+      <li>We follow the notation A = [aᵢⱼ]ₘ ₓ ₙ to indicate that A is a matrix of order m x n</li>
+      <li>We consider only matrices whose elements are real numbers or functions taking real values</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Matrix</strong></td><td>An ordered rectangular array of numbers or functions. The numbers or functions are called the elements or the entries of the matrix.</td></tr>
+      <tr><td><strong>Order of a matrix</strong></td><td>A matrix having m rows and n columns is called a matrix of order m x n (read as an m by n matrix). The number of elements ∈ an m x n matrix is mn.</td></tr>
+      <tr><td><strong>Element a_ij</strong></td><td>An element lying ∈ the i-th row and j-th column of a matrix. Also called the (i, j)-th element of the matrix.</td></tr>
+      <tr><td><strong>Column matrix</strong></td><td>A matrix is said to be a column matrix if it has only one column. In general, A = [aᵢⱼ]ₘ ₓ ₁ is a column matrix of order m x 1.</td></tr>
+      <tr><td><strong>Row matrix</strong></td><td>A matrix is said to be a row matrix if it has only one row. In general, B = [bᵢⱼ]₁ ₓ ₙ is a row matrix of order 1 x n.</td></tr>
+      <tr><td><strong>Square matrix</strong></td><td>A matrix ∈ which the number of rows is equal to the number of columns. An m x n matrix is a square matrix if m = n, and is known as a square matrix of order n.</td></tr>
+      <tr><td><strong>Diagonal elements</strong></td><td>If A = [aᵢⱼ] is a square matrix of order n, then elements a₁₁, a₂₂, ..., aₙₙ are said to constitute the diagonal of the matrix A.</td></tr>
+      <tr><td><strong>Diagonal matrix</strong></td><td>A square matrix B = [bᵢⱼ]ₘ ₓ ₘ is said to be a diagonal matrix if all its non-diagonal elements are zero, that is bᵢⱼ = 0 when i ≠ j.</td></tr>
+      <tr><td><strong>Scalar matrix</strong></td><td>A diagonal matrix is said to be a scalar matrix if its diagonal elements are equal, that is B = [bᵢⱼ]ₙ ₓ ₙ is a scalar matrix if bᵢⱼ = 0 when i ≠ j, and bᵢⱼ = k when i = j, for some constant k.</td></tr>
+      <tr><td><strong>Identity matrix</strong></td><td>A square matrix ∈ which elements ∈ the diagonal are all 1 and rest are all zero is called an identity matrix. The square matrix A = [aᵢⱼ]ₙ ₓ ₙ is an identity matrix if aᵢⱼ = 1 when i = j, and aᵢⱼ = 0 when i ≠ j. Denoted by Iₙ or simply I.</td></tr>
+      <tr><td><strong>Zero matrix</strong></td><td>A matrix is said to be zero matrix or null matrix if all its elements are zero. Denoted by O. Its order will be clear from the context.</td></tr>
+      <tr><td><strong>Equality of matrices</strong></td><td>Two matrices A = [aᵢⱼ] and B = [bᵢⱼ] are said to be equal if (i) they are of the same order, and (ii) each element of A is equal to the corresponding element of B, that is aᵢⱼ = bᵢⱼ for all i and j. Written as A = B.</td></tr>
+      <tr><td><strong>Addition of matrices</strong></td><td>If A = [aᵢⱼ] and B = [bᵢⱼ] are two matrices of the same order m x n, then their ∑ A + B is defined as a matrix C = [cᵢⱼ]ₘ ₓ ₙ, where cᵢⱼ = aᵢⱼ + bᵢⱼ for all possible values of i and j.</td></tr>
+      <tr><td><strong>Scalar multiplication</strong></td><td>If A = [aᵢⱼ]ₘ ₓ ₙ is a matrix and k is a scalar, then kA is another matrix obtained by multiplying each element of A by the scalar k. In other words, kA = k[aᵢⱼ]ₘ ₓ ₙ = [k(aᵢⱼ)]ₘ ₓ ₙ.</td></tr>
+      <tr><td><strong>Negative of a matrix</strong></td><td>The negative of a matrix is denoted by -A. We define -A = (-1)A.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">General m x n matrix</span>
+            <code class="fl-eq">A = [aᵢⱼ]ₘ ₓ ₙ, 1 ≤ i ≤ m, 1 ≤ j ≤ n, i, j ∈ N</code>
+            <span class="fl-note">The i-th row consists of elements aᵢ₁, aᵢ₂, ..., aᵢₙ and the j-th column consists of elements a₁ⱼ, a₂ⱼ, ..., aₘⱼ</span>
+          </li>
+          <li>
+            <span class="fl-name">Matrix addition</span>
+            <code class="fl-eq">If A = [aᵢⱼ] and B = [bᵢⱼ] are m x n matrices, then A + B = [aᵢⱼ + bᵢⱼ]ₘ ₓ ₙ</code>
+            <span class="fl-note">Both matrices must be of the same order</span>
+          </li>
+          <li>
+            <span class="fl-name">Scalar multiplication</span>
+            <code class="fl-eq">kA = [k · aᵢⱼ]ₘ ₓ ₙ</code>
+            <span class="fl-note">The (i,j)-th element of kA is k · aᵢⱼ</span>
+          </li>
+          <li>
+            <span class="fl-name">Matrix multiplication element</span>
+            <code class="fl-eq">cᵢₖ = aᵢ₁*b₁ₖ + aᵢ₂*b₂ₖ + ... + aᵢₙ*bₙₖ = sumⱼ=₁^{n} aᵢⱼ · bⱼₖ</code>
+            <span class="fl-note">Number of columns of A must equal number of rows of B</span>
+          </li>
+          <li>
+            <span class="fl-name">Commutative law of addition</span>
+            <code class="fl-eq">A + B = B + A</code>
+            <span class="fl-note">For matrices of the same order</span>
+          </li>
+          <li>
+            <span class="fl-name">Associative law of addition</span>
+            <code class="fl-eq">(A + B) + C = A + (B + C)</code>
+            <span class="fl-note">For matrices of the same order</span>
+          </li>
+          <li>
+            <span class="fl-name">Additive identity</span>
+            <code class="fl-eq">A + O = O + A = A</code>
+            <span class="fl-note">O is the zero matrix of the same order as A</span>
+          </li>
+          <li>
+            <span class="fl-name">Additive inverse</span>
+            <code class="fl-eq">A + (-A) = (-A) + A = O</code>
+            <span class="fl-note">-A = [-aᵢⱼ]ₘ ₓ ₙ</span>
+          </li>
+          <li>
+            <span class="fl-name">Scalar distributive over matrix addition</span>
+            <code class="fl-eq">k(A + B) = kA + kB</code>
+            <span class="fl-note">A, B are matrices of same order, k is a scalar</span>
+          </li>
+          <li>
+            <span class="fl-name">Scalar sum distributive</span>
+            <code class="fl-eq">(k + l)A = kA + lA</code>
+            <span class="fl-note">k and l are scalars</span>
+          </li>
+          <li>
+            <span class="fl-name">Associative law of multiplication</span>
+            <code class="fl-eq">(AB)C = A(BC)</code>
+            <span class="fl-note">Whenever both sides of the equality are defined</span>
+          </li>
+          <li>
+            <span class="fl-name">Distributive law (left)</span>
+            <code class="fl-eq">A(B + C) = AB + AC</code>
+            <span class="fl-note">Whenever both sides are defined</span>
+          </li>
+          <li>
+            <span class="fl-name">Distributive law (right)</span>
+            <code class="fl-eq">(A + B)C = AC + BC</code>
+            <span class="fl-note">Whenever both sides are defined</span>
+          </li>
+          <li>
+            <span class="fl-name">Multiplicative identity</span>
+            <code class="fl-eq">IA = AI = A</code>
+            <span class="fl-note">I is the identity matrix of appropriate order</span>
+          </li>
+          <li>
+            <span class="fl-name">Transpose of transpose</span>
+            <code class="fl-eq">(A')' = A</code>
+            <span class="fl-note">Taking transpose twice gives back the original matrix</span>
+          </li>
+          <li>
+            <span class="fl-name">Transpose of scalar multiple</span>
+            <code class="fl-eq">(kA)' = kA'</code>
+            <span class="fl-note">Where k is any constant</span>
+          </li>
+          <li>
+            <span class="fl-name">Transpose of sum</span>
+            <code class="fl-eq">(A + B)' = A' + B'</code>
+            <span class="fl-note">For matrices A and B of suitable orders</span>
+          </li>
+          <li>
+            <span class="fl-name">Transpose of product</span>
+            <code class="fl-eq">(AB)' = B'A'</code>
+            <span class="fl-note">The order reverses when taking transpose of a product</span>
+          </li>
+          <li>
+            <span class="fl-name">Symmetric part of a matrix</span>
+            <code class="fl-eq">(1/2)(A + A') is a symmetric matrix</code>
+            <span class="fl-note">For any square matrix A with real number entries</span>
+          </li>
+          <li>
+            <span class="fl-name">Skew symmetric part of a matrix</span>
+            <code class="fl-eq">(1/2)(A - A') is a skew symmetric matrix</code>
+            <span class="fl-note">For any square matrix A with real number entries</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 1:</strong> For any square matrix A with real number entries, A + A' is a symmetric matrix and A - A' is a skew symmetric matrix.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 2:</strong> Any square matrix can be expressed as the ∑ of a symmetric and a skew symmetric matrix. Specifically, A = (1/2)(A + A') + (1/2)(A - A').</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 3 (Uniqueness of inverse):</strong> Inverse of a square matrix, if it exists, is unique.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 4 (Inverse of a product):</strong> If A and B are invertible matrices of the same order, then (AB)⁻¹ = B⁻¹ A⁻¹.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Matrices can represent vertices of geometric figures ∈ a plane</li>
+      <li>A scalar matrix is an identity matrix when k = 1</li>
+      <li>Every identity matrix is a scalar matrix, but not every scalar matrix is an identity matrix</li>
+      <li>For equality of matrices, both order and all corresponding elements must match</li>
+      <li>A + B is defined only when A and B are of the same order</li>
+      <li>Addition of matrices is a binary operation on the set of matrices of the same order</li>
+      <li>Matrix multiplication is NOT commutative ∈ general: AB ≠ BA</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>56 total questions</strong> across 5 exercises</li>
+      <li>20 long-answer questions (proofs, show-that, derivations)</li>
+      <li>25 short-answer questions</li>
+      <li>11 multiple-choice questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ DETERMINANTS ══════════════════════════════ -->
+<div class="ch-section" id="determinants">
+
+  <div class="ch-banner" style="background:#f5f3ff;color:#3b0764">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 4</div>
+      <div class="ch-title">Determinants</div>
+      <div class="ch-sub">Determinant · Area of a Triangle · Minors and Cofactors · Adjoint and Inverse of a Matrix · Applications of Determinants and Matrices</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Determinants have wide applications ∈ Engineering, Science, Economics, Social Science, etc.</li>
+      <li>In this chapter, determinants up to order three with real entries only are studied</li>
+      <li>Topics covered: properties of determinants, minors, cofactors, applications ∈ finding area of triangle, adjoint and inverse of a square matrix, consistency and inconsistency of systems, solution using inverse of a matrix</li>
+      <li>For matrix A, |A| is read as determinant of A and not modulus of A</li>
+      <li>Only square matrices have determinants</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Minor</strong></td><td>Minor of an element aᵢⱼ of a determinant is the determinant obtained by deleting its ith row and jth column ∈ which element aᵢⱼ lies. Minor of element aᵢⱼ is denoted by Mᵢⱼ.</td></tr>
+      <tr><td><strong>Cofactor</strong></td><td>Cofactor of an element aᵢⱼ, denoted by Aᵢⱼ, is defined by Aᵢⱼ = (-1)<sup>i+j</sup> · Mᵢⱼ, where Mᵢⱼ is the minor of aᵢⱼ.</td></tr>
+      <tr><td><strong>Adjoint of a matrix</strong></td><td>The adjoint of a square matrix A = [aᵢⱼ]_(n x n) is defined as the transpose of the matrix [Aᵢⱼ]_(n x n), where Aᵢⱼ is the cofactor of element aᵢⱼ. It is denoted by adj A.</td></tr>
+      <tr><td><strong>Singular matrix</strong></td><td>A square matrix A is said to be singular if |A| = 0.</td></tr>
+      <tr><td><strong>Non-singular matrix</strong></td><td>A square matrix A is said to be non-singular if |A| ≠ 0.</td></tr>
+      <tr><td><strong>Consistent system</strong></td><td>A system of equations is said to be consistent if its solution (one or more) exists.</td></tr>
+      <tr><td><strong>Inconsistent system</strong></td><td>A system of equations is said to be inconsistent if its solution does not exist.</td></tr>
+      <tr><td></td><td>Determinant of a matrix A = [a₁₁] of order 1: |a₁₁| = a₁₁</td></tr>
+      <tr><td></td><td>Determinant of a 2x2 matrix A = [a11 a12 ┃ a21 a22]: |A| = a11·a22 - a12·a21</td></tr>
+      <tr><td></td><td>Determinant of a 3x3 matrix (expanding along R1): |A| = a1|b2 c2 ┃ b3 c3| - b1|a2 c2 ┃ a3 c3| + c1|a2 b2 ┃ a3 b3|</td></tr>
+      <tr><td></td><td>For any square matrix A, the |A| satisfies certain properties</td></tr>
+      <tr><td></td><td>Area of triangle with vertices (x1,y1), (x2,y2), (x3,y3): Δ = (1/2)|x1 y1 1 ┃ x2 y2 1 ┃ x3 y3 1|</td></tr>
+      <tr><td><strong>Minor of element a_ij</strong></td><td>the determinant obtained by deleting ith row and jth column, denoted Mᵢⱼ</td></tr>
+      <tr><td></td><td>Cofactor of aᵢⱼ: Aᵢⱼ = (-1)<sup>i+j</sup> · Mᵢⱼ</td></tr>
+      <tr><td></td><td>Value of determinant = ∑ of product of elements of a row (or column) with corresponding cofactors. E.g., |A| = a11·A11 + a12·A12 + a13·A13</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <code class="fl-eq">Area of triangle Δ = (1/2)|x1  y1  1 ┃ x2  y2  1 ┃ x3  y3  1|</code>
+          </li>
+          <li>
+            <code class="fl-eq">Since area is positive, Δ = (1/2)|determinant value|</code>
+          </li>
+          <li>
+            <code class="fl-eq">If three points are collinear, then |x1  y1  1 ┃ x2  y2  1 ┃ x3  y3  1| = 0</code>
+          </li>
+          <li>
+            <code class="fl-eq">Mᵢⱼ = minor of aᵢⱼ = determinant obtained by deleting row i and column j</code>
+          </li>
+          <li>
+            <code class="fl-eq">Aᵢⱼ = (-1)<sup>i+j</sup> · Mᵢⱼ (cofactor of aᵢⱼ)</code>
+          </li>
+          <li>
+            <code class="fl-eq">Minor of an element of a determinant of order n (n ≥ 2) is a determinant of order n-1</code>
+          </li>
+          <li>
+            <code class="fl-eq">Δ = aᵢ₁*Aᵢ₁ + aᵢ₂*Aᵢ₂ + aᵢ₃*Aᵢ₃ (expansion along ith row)</code>
+          </li>
+          <li>
+            <code class="fl-eq">Δ = a₁ⱼ*A₁ⱼ + a₂ⱼ*A₂ⱼ + a₃ⱼ*A₃ⱼ (expansion along jth column)</code>
+          </li>
+          <li>
+            <code class="fl-eq">If elements of one row are multiplied with cofactors of another row: aᵢ₁*Aⱼ₁ + aᵢ₂*Aⱼ₂ + aᵢ₃*Aⱼ₃ = 0, for i ≠ j</code>
+          </li>
+          <li>
+            <code class="fl-eq">For A = [a11 a12 a13 ┃ a21 a22 a23 ┃ a31 a32 a33], adj A = Transpose of [A11 A12 A13 ┃ A21 A22 A23 ┃ A31 A32 A33] = [A11 A21 A31 ┃ A12 A22 A32 ┃ A13 A23 A33]</code>
+          </li>
+          <li>
+            <code class="fl-eq">For 2x2 matrix A = [a11 a12 ┃ a21 a22], adj A = [a22 -a12 ┃ -a21 a11] (interchange diagonal elements, change sign of off-diagonal elements)</code>
+          </li>
+          <li>
+            <code class="fl-eq">A(adj A) = (adj A)A = |A|*I</code>
+          </li>
+          <li>
+            <code class="fl-eq">|adj(A)| = |A|<sup>n-1</sup>, where n is the order of the square matrix</code>
+          </li>
+          <li>
+            <code class="fl-eq">A⁻¹ = (1/|A|) · adj(A), provided |A| ≠ 0</code>
+          </li>
+          <li>
+            <code class="fl-eq">|AB| = |A| · |B|, where A and B are square matrices of same order</code>
+          </li>
+          <li>
+            <code class="fl-eq">If AB = BA = I, then B is called the inverse of A, i.e., B = A⁻¹</code>
+          </li>
+          <li>
+            <code class="fl-eq">Also A⁻¹ = B or B⁻¹ = A, and (A⁻¹)⁻¹ = A</code>
+          </li>
+          <li>
+            <code class="fl-eq">For system: a1·x + b1·y + c1·z = d1, a2·x + b2·y + c2·z = d2, a3·x + b3·y + c3·z = d3: Matrix form AX = B where A = [a1 b1 c1 ┃ a2 b2 c2 ┃ a3 b3 c3], X = [x ┃ y ┃ z], B = [d1 ┃ d2 ┃ d3]</code>
+          </li>
+          <li>
+            <code class="fl-eq">If |A| ≠ 0, unique solution exists: X = A⁻¹*B (Matrix Method)</code>
+          </li>
+          <li>
+            <code class="fl-eq">If |A| = 0 and (adj A)B ≠ O, system is inconsistent (no solution)</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 1:</strong> If A be any given square matrix of order n, then A(adj A) = (adj A)A = |A|*I, where I is the identity matrix of order n.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 2:</strong> If A and B are nonsingular matrices of the same order, then AB and BA are also nonsingular matrices of the same order.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 3:</strong> The determinant of the product of matrices is equal to product of their respective determinants, that is, |AB| = |A| · |B|, where A and B are square matrices of the same order.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 4:</strong> A square matrix A is invertible if and only if A is nonsingular matrix.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Always take absolute value since area is a positive quantity</li>
+      <li>If area is given, use both positive and negative values of the determinant</li>
+      <li>Collinearity condition: area = 0 implies three points are collinear</li>
+      <li>Δ = ∑ of product of elements of any row (or column) with their corresponding cofactors</li>
+      <li>If elements of a row (or column) are multiplied with cofactors of any other row (or column), the ∑ is zero</li>
+      <li>For example, a11·A21 + a12·A22 + a13·A23 = 0 (R1 elements with R2 cofactors gives zero since it creates a determinant with two identical rows)</li>
+      <li>A(adj A) = (adj A)A = |A|I</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>61 total questions</strong> across 6 exercises</li>
+      <li>7 multiple-choice questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ CONTINUITY AND DIFFERENTIABILITY ══════════════════════════════ -->
+<div class="ch-section" id="continuity-and-differentiability">
+
+  <div class="ch-banner" style="background:#ede9fe;color:#4c1d95">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 5</div>
+      <div class="ch-title">Continuity and Differentiability</div>
+      <div class="ch-sub">Continuity · Algebra of Continuous Functions · Differentiability · Derivatives of Composite Functions (Chain Rule) · Derivatives of Implicit Functions · Derivatives of Inverse Trigonometric Functions · Exponential and Logarithmic Functions · Logarithmic Differentiation · Derivatives of Functions in Parametric Forms · Second Order Derivative · Mean Value Theorem</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">8<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Previously learnt to differentiate polynomial and trigonometric functions</li>
+      <li>This chapter connects continuity and differentiability</li>
+      <li>Powerful techniques of differentiation are developed</li>
+      <li>f is continuous at x = c if: (1) f(c) is defined, (2) lim(x-&gt;c) f(x) exists, (3) lim(x-&gt;c) f(x) = f(c)</li>
+      <li>If f is not continuous at c, then c is called a point of discontinuity of f</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Continuity at a point</strong></td><td>Suppose f is a real function on a subset of the real numbers and let c be a point ∈ the domain of f. Then f is continuous at c if lim(x-&gt;c) f(x) = f(c)</td></tr>
+      <tr><td><strong>Continuous function</strong></td><td>A real function f is said to be continuous if it is continuous at every point ∈ the domain of f</td></tr>
+      <tr><td><strong>Derivative of f at c</strong></td><td>The derivative of f at c is defined by lim(h-&gt;0) [f(c+h) - f(c)]/h, provided this limit exists. Denoted by f'(c) or (d/dx)(f(x))|_c</td></tr>
+      <tr><td><strong>Derivative function</strong></td><td>f'(x) = lim(h-&gt;0) [f(x+h) - f(x)]/h, wherever the limit exists. Also denoted by f'(x) or (d/dx)(f(x)) or dy/dx or y'</td></tr>
+      <tr><td><strong>Differentiable in an interval</strong></td><td>A function is differentiable ∈ [a, b] if it is differentiable at every point of [a, b]. At endpoints, we use left/right hand derivatives respectively. Differentiable ∈ (a, b) means differentiable at every point of (a, b)</td></tr>
+      <tr><td><strong>Explicit function</strong></td><td>When y = f(x) expresses y directly ∈ terms of x</td></tr>
+      <tr><td><strong>Implicit function</strong></td><td>When the relationship between x and y is given by an equation like x + sin(xy) - y = 0, where y cannot easily be expressed as a function of x</td></tr>
+      <tr><td><strong>Exponential function</strong></td><td>The exponential function with positive base b &gt; 1 is the function y = f(x) = bˣ</td></tr>
+      <tr><td><strong>Logarithmic function</strong></td><td>Let b &gt; 1 be a real number. Then we say logarithm of a to base b is x if bˣ = a. Written as log_b a = x if bˣ = a</td></tr>
+      <tr><td><strong>Second order derivative</strong></td><td>If y = f(x), then dy/dx = f'(x). If f'(x) is differentiable, then d/dx(dy/dx) = d²y/dx² is the second order derivative. Denoted by f''(x), D²y, y'', or y₂</td></tr>
+      <tr><td><strong>A real valued function</strong></td><td>continuous at a point ∈ its domain if the limit of the function at that point equals the value of the function at that point. A function is continuous if it is continuous on the whole of its domain.</td></tr>
+      <tr><td><strong>Sum, difference, product and quotient of continuous functions are continuous. i.e., if f and g are continuous functions, then (f +/- g)(x) = f(x) +/- g(x)</strong></td><td>continuous, (f . g)(x) = f(x) . g(x) is continuous, (f/g)(x) = f(x)/g(x) (wherever g(x) ≠ 0) is continuous.</td></tr>
+      <tr><td><strong>Every differentiable function</strong></td><td>continuous, but the converse is not true.</td></tr>
+      <tr><td><strong>Chain rule</strong></td><td>the rule to differentiate composites of functions. If f = v o u, t = u(x) and if both dt/dx and dv/dt exist, then df/dx = (dv/dt)(dt/dx).</td></tr>
+      <tr><td></td><td>Following are some of the standard derivatives (in appropriate domains): d/dx(sin⁻¹ x) = 1/√(1 - x²), d/dx(cos⁻¹ x) = -1/√(1 - x²), d/dx(tan⁻¹ x) = 1/(1 + x²).</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Sum/Difference Rule</span>
+            <code class="fl-eq">(u +/- v)' = u' +/- v'</code>
+          </li>
+          <li>
+            <span class="fl-name">Product Rule (Leibnitz Rule)</span>
+            <code class="fl-eq">(uv)' = u'v + uv'</code>
+          </li>
+          <li>
+            <span class="fl-name">Quotient Rule</span>
+            <code class="fl-eq">(u/v)' = (u'v - uv')/v², where v ≠ 0</code>
+          </li>
+          <li>
+            <span class="fl-name">Chain Rule (two functions)</span>
+            <code class="fl-eq">If f = v o u, t = u(x), then df/dx = (dv/dt) . (dt/dx)</code>
+          </li>
+          <li>
+            <span class="fl-name">Chain Rule (three functions)</span>
+            <code class="fl-eq">If f = (w o u) o v, t = v(x), s = u(t), then df/dx = (dw/ds) . (ds/dt) . (dt/dx)</code>
+          </li>
+          <li>
+            <span class="fl-name">Derivative of sin^(-1) x</span>
+            <code class="fl-eq">d/dx(sin⁻¹ x) = 1/√(1 - x²)</code>
+          </li>
+          <li>
+            <span class="fl-name">Derivative of cos^(-1) x</span>
+            <code class="fl-eq">d/dx(cos⁻¹ x) = -1/√(1 - x²)</code>
+          </li>
+          <li>
+            <span class="fl-name">Derivative of tan^(-1) x</span>
+            <code class="fl-eq">d/dx(tan⁻¹ x) = 1/(1 + x²)</code>
+          </li>
+          <li>
+            <span class="fl-name">Derivative of e^x</span>
+            <code class="fl-eq">d/dx(eˣ) = eˣ</code>
+          </li>
+          <li>
+            <span class="fl-name">Derivative of log x (natural log)</span>
+            <code class="fl-eq">d/dx(log x) = 1/x</code>
+          </li>
+          <li>
+            <span class="fl-name">Derivative of a^x</span>
+            <code class="fl-eq">d/dx(aˣ) = aˣ log a</code>
+          </li>
+          <li>
+            <span class="fl-name">Change of base formula</span>
+            <code class="fl-eq">logₐ p = (log_b p)/(log_b a)</code>
+          </li>
+          <li>
+            <span class="fl-name">Log of product</span>
+            <code class="fl-eq">log_b(pq) = log_b p + log_b q</code>
+          </li>
+          <li>
+            <span class="fl-name">Log of power</span>
+            <code class="fl-eq">log_b(pⁿ) = n log_b p</code>
+          </li>
+          <li>
+            <span class="fl-name">Log of quotient</span>
+            <code class="fl-eq">log_b(x/y) = log_b x - log_b y</code>
+          </li>
+          <li>
+            <span class="fl-name">Logarithmic differentiation formula</span>
+            <code class="fl-eq">For y = [u(x)]<sup>v(x</sup>): log y = v(x) . log[u(x)], then (1/y)(dy/dx) = v(x) . (1/u(x)) . u'(x) + v'(x) . log[u(x)], so dy/dx = y[v(x) . u'(x)/u(x) + v'(x) . log(u(x))]</code>
+          </li>
+          <li>
+            <span class="fl-name">Parametric differentiation</span>
+            <code class="fl-eq">dy/dx = (dy/dt)/(dx/dt) = g'(t)/f'(t), provided f'(t) ≠ 0</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 1:</strong> Suppose f and g be two real functions continuous at a real number c. Then: (1) f + g is continuous at x = c, (2) f - g is continuous at x = c, (3) f . g is continuous at x = c, (4) f/g is continuous at x = c (provided g(c) ≠ 0)</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 2 (Composition):</strong> Suppose f and g are real valued functions such that (f o g) is defined at c. If g is continuous at c and if f is continuous at g(c), then (f o g) is continuous at c</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 3:</strong> If a function f is differentiable at a point c, then it is also continuous at that point.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Corollary 1:</strong> Every differentiable function is continuous. The converse is NOT true: f(x) = |x| is continuous at x = 0 but not differentiable at x = 0.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 4 (Chain Rule):</strong> Let f be a real valued function which is a composite of two functions u and v; i.e., f = v o u. Suppose t = u(x) and if both dt/dx and dv/dt exist, then df/dx = (dv/dt) . (dt/dx)</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 5*:</strong> (1) The derivative of eˣ w.r.t. x is eˣ; i.e., d/dx(eˣ) = eˣ. (2) The derivative of log x w.r.t. x is 1/x; i.e., d/dx(log x) = 1/x. (*Please see supplementary material on Page 222)</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Rolle's Theorem:</strong> If f: [a, b] → R is continuous on [a, b], differentiable on (a, b), and f(a) = f(b), then there exists some c ∈ (a, b) such that f'(c) = 0</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Mean Value Theorem (Lagrange's MVT):</strong> If f: [a, b] → R is continuous on [a, b] and differentiable on (a, b), then there exists some c ∈ (a, b) such that f'(c) = [f(b) - f(a)]/(b - a)</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Every constant function f(x) = k is continuous at every real number</li>
+      <li>The identity function f(x) = x is continuous at every real number</li>
+      <li>Every polynomial function is continuous</li>
+      <li>f(x) = |x| is a continuous function</li>
+      <li>f(x) = 1/x is continuous at every point of its domain (x ≠ 0)</li>
+      <li>The greatest integer function f(x) = [x] is discontinuous at every integer</li>
+      <li>If f(x) = λ for some real number λ, then (λ . g)(x) = λ . g(x) is also continuous</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>137 total questions</strong> across 8 exercises</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ APPLICATION OF DERIVATIVES ══════════════════════════════ -->
+<div class="ch-section" id="application-of-derivatives">
+
+  <div class="ch-banner" style="background:#e8e0ff;color:#5b21b6">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 6</div>
+      <div class="ch-title">Application of Derivatives</div>
+      <div class="ch-sub">Rate of Change of Quantities · Increasing and Decreasing Functions · Maxima and Minima · Maximum and Minimum Values of a Function in a Closed Interval</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">8<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Chapter 5 covered finding derivatives; this chapter covers applications of those derivatives</li>
+      <li>Applications include: (i) rate of change, (ii) tangent and normal equations, (iii) turning points for maxima/minima, (iv) increasing/decreasing intervals, (v) approximations</li>
+      <li>dy/dx is positive if y increases as x increases</li>
+      <li>dy/dx is negative if y decreases as x increases</li>
+      <li>The rate of change of y with respect to x can be calculated using the rates of change of y and x both with respect to t (Chain Rule)</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rate of Change</strong></td><td>If y = f(x), then dy/dx (or f'(x)) represents the rate of change of y with respect to x, and (dy/dx) at x=x₀ represents the rate of change of y with respect to x at x = x₀.</td></tr>
+      <tr><td><strong>Marginal Cost</strong></td><td>The instantaneous rate of change of total cost with respect to output. If C(x) is the total cost for x units, then Marginal Cost (MC) = dC/dx.</td></tr>
+      <tr><td><strong>Marginal Revenue</strong></td><td>The rate of change of total revenue with respect to the number of units sold. If R(x) is total revenue for x units, then Marginal Revenue (MR) = dR/dx.</td></tr>
+      <tr><td><strong>Increasing function</strong></td><td>A function f is increasing on interval I if x₁ &lt; x₂ ∈ I implies f(x₁) ≤ f(x₂) for all x₁, x₂ ∈ I.</td></tr>
+      <tr><td><strong>Decreasing function</strong></td><td>A function f is decreasing on interval I if x₁ &lt; x₂ ∈ I implies f(x₁) ≥ f(x₂) for all x₁, x₂ ∈ I.</td></tr>
+      <tr><td><strong>Constant function</strong></td><td>A function f is constant on interval I if f(x) = c for all x ∈ I, where c is a constant.</td></tr>
+      <tr><td><strong>Strictly increasing function</strong></td><td>A function f is strictly increasing on interval I if x₁ &lt; x₂ ∈ I implies f(x₁) &lt; f(x₂) for all x₁, x₂ ∈ I.</td></tr>
+      <tr><td><strong>Strictly decreasing function</strong></td><td>A function f is strictly decreasing on interval I if x₁ &lt; x₂ ∈ I implies f(x₁) &gt; f(x₂) for all x₁, x₂ ∈ I.</td></tr>
+      <tr><td><strong>Increasing/Decreasing at a point</strong></td><td>Let x₀ be a point ∈ the domain of f. Then f is said to be increasing (decreasing) at x₀ if there exists an open interval I containing x₀ such that f is increasing (decreasing) ∈ I.</td></tr>
+      <tr><td><strong>Maximum value</strong></td><td>f is said to have a maximum value ∈ interval I if there exists a point c ∈ I such that f(c) &gt; f(x) for all x ∈ I. The number f(c) is called the maximum value and c is called the point of maximum value.</td></tr>
+      <tr><td><strong>Minimum value</strong></td><td>f is said to have a minimum value ∈ interval I if there exists a point c ∈ I such that f(c) &lt; f(x) for all x ∈ I. The number f(c) is called the minimum value and c is called the point of minimum value.</td></tr>
+      <tr><td><strong>Extreme value</strong></td><td>f is said to have an extreme value ∈ I if there exists a point c ∈ I such that f(c) is either a maximum or minimum value of f ∈ I. The number f(c) is called an extreme value and c is called an extreme point.</td></tr>
+      <tr><td><strong>Local maxima</strong></td><td>c is a point of local maxima if there is an h &gt; 0 such that f(c) ≥ f(x) for all x ∈ (c-h, c+h), x ≠ c. The value f(c) is called the local maximum value.</td></tr>
+      <tr><td><strong>Local minima</strong></td><td>c is a point of local minima if there is an h &gt; 0 such that f(c) ≤ f(x) for all x ∈ (c-h, c+h). The value f(c) is called the local minimum value.</td></tr>
+      <tr><td><strong>Critical point</strong></td><td>A point c ∈ the domain of a function f at which either f'(c) = 0 or f is not differentiable is called a critical point of f.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Rate of change using Chain Rule</span>
+            <code class="fl-eq">dy/dx = (dy/dt) / (dx/dt), if dx/dt ≠ 0</code>
+          </li>
+          <li>
+            <span class="fl-name">Rate of change of area of circle</span>
+            <code class="fl-eq">dA/dr = 2*π*r</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>First Derivative Test for Increasing/Decreasing:</strong> Let f be continuous on [a, b] and differentiable on (a, b). Then: (a) f is increasing ∈ [a,b] if f'(x) ≥ 0 for each x ∈ (a,b) ┃ (b) f is decreasing ∈ [a,b] if f'(x) ≤ 0 for each x ∈ (a,b) ┃ (c) f is a constant function ∈ [a,b] if f'(x) = 0 for each x ∈ (a,b).</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Necessary condition for local extrema:</strong> Let f be a function defined on an open interval I. Suppose c is ∈ I. If f has a local maxima or a local minima at x = c, then either f'(c) = 0 or f is not differentiable at c.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>First Derivative Test:</strong> Let f be a function defined on an open interval I. Let f be continuous at a critical point c ∈ I. Then: (i) If f'(x) changes sign from positive to negative as x increases through c (f'(x) &gt; 0 to left, f'(x) &lt; 0 to right), then c is a point of local maxima. (ii) If f'(x) changes sign from negative to positive as x increases through c (f'(x) &lt; 0 to left, f'(x) &gt; 0 to right), then c is a point of local minima. (iii) If f'(x) does not change sign as x increases through c, then c is neither a point of local maxima nor local minima (point of inflection).</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Second Derivative Test:</strong> Let f be a function defined on an interval I and c ∈ I. Let f be twice differentiable at c. Then: (i) x = c is a point of local maxima if f'(c) = 0 and f''(c) &lt; 0. The value f(c) is local maximum value. (ii) x = c is a point of local minima if f'(c) = 0 and f''(c) &gt; 0. The value f(c) is local minimum value. (iii) The test fails if f'(c) = 0 and f''(c) = 0. In this case, go back to the first derivative test.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Existence of absolute extrema on closed interval:</strong> Let f be a continuous function on an interval I = [a, b]. Then f has the absolute maximum value and f attains it at least once ∈ I. Also, f has the absolute minimum value and attains it at least once ∈ I.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Condition for absolute extrema at interior points:</strong> Let f be a differentiable function on a closed interval I and let c be any interior point of I. Then: (i) f'(c) = 0 if f attains its absolute maximum value at c. (ii) f'(c) = 0 if f attains its absolute minimum value at c.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>For a cube with side x: V = x³, S = 6x²; if dV/dt = 9 cm³/s and x = 10 cm, then dS/dt = 3.6 cm²/s</li>
+      <li>For a circle with radius r: A = π*r²; dA/dt = 2*π*r*(dr/dt)</li>
+      <li>If f'(x) &gt; 0 for x ∈ an interval (excluding endpoints) and f is continuous, then f is increasing</li>
+      <li>If f'(x) &lt; 0 for x ∈ an interval (excluding endpoints) and f is continuous, then f is decreasing</li>
+      <li>To find intervals: set f'(x) = 0, find critical points, test sign of f'(x) ∈ each interval</li>
+      <li>f(x) = x³ - 3x² + 4x is increasing on R since f'(x) = 3(x-1)² + 1 &gt; 0 always</li>
+      <li>cos x is decreasing ∈ (0, π) and increasing ∈ (π, 2*π)</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>82 total questions</strong> across 4 exercises</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ INTEGRALS ══════════════════════════════ -->
+<div class="ch-section" id="integrals">
+
+  <div class="ch-banner" style="background:#f5f3ff;color:#3b0764">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 7</div>
+      <div class="ch-title">Integrals</div>
+      <div class="ch-sub">Integration as an Inverse Process of Differentiation · Methods of Integration · Integrals of Some Particular Functions · Integration by Partial Fractions · Integration by Parts · Definite Integral · Fundamental Theorem of Calculus · Evaluation of Definite Integrals by Substitution · Some Properties of Definite Integrals</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">8<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Integration is the inverse process of differentiation.</li>
+      <li>Integral calculus was developed to solve problems of finding functions from derivatives and finding areas under curves.</li>
+      <li>d/dx[∫ f(x) dx] = f(x) and ∫ f'(x) dx = f(x) + C: differentiation and integration are inverses of each other.</li>
+      <li>Two indefinite integrals with the same derivative lead to the same family of curves and so they are equivalent.</li>
+      <li>∫ [f(x) + g(x)] dx = ∫ f(x) dx + ∫ g(x) dx (Property III)</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Anti derivative (Primitive)</strong></td><td>A function F is called an anti derivative of f if F'(x) = f(x) for all x ∈ the domain.</td></tr>
+      <tr><td><strong>Indefinite Integral</strong></td><td>The symbol ∫ f(x) dx represents the entire class of anti derivatives, read as the indefinite ∫ of f with respect to x.</td></tr>
+      <tr><td><strong>Integrand</strong></td><td>f(x) ∈ the expression ∫ f(x) dx.</td></tr>
+      <tr><td><strong>Variable of integration</strong></td><td>x ∈ the expression ∫ f(x) dx.</td></tr>
+      <tr><td><strong>Constant of Integration</strong></td><td>Any real number C, considered as a constant function, that appears ∈ the general anti derivative F(x) + C.</td></tr>
+      <tr><td><strong>Proper rational function</strong></td><td>P(x)/Q(x) where degree of P(x) is less than degree of Q(x).</td></tr>
+      <tr><td><strong>Improper rational function</strong></td><td>P(x)/Q(x) where degree of P(x) is greater than or equal to degree of Q(x).</td></tr>
+      <tr><td><strong>Definite Integral</strong></td><td>If f has an anti derivative F on [a, b], then ∫ from a to b of f(x) dx = F(b) - F(a).</td></tr>
+      <tr><td><strong>Lower limit</strong></td><td>The value a ∈ ∫ from a to b of f(x) dx.</td></tr>
+      <tr><td><strong>Upper limit</strong></td><td>The value b ∈ ∫ from a to b of f(x) dx.</td></tr>
+      <tr><td><strong>Area function</strong></td><td>A(x) = ∫ from a to x of f(x) dx, representing the area under the curve from a to x.</td></tr>
+      <tr><td><strong>Integration</strong></td><td>the inverse process of differentiation. Let (d/dx)F(x) = f(x). Then ∫ f(x) dx = F(x) + C. These are called indefinite integrals or general integrals. C is called constant of integration. All these integrals differ by a constant.</td></tr>
+      <tr><td></td><td>Some properties of indefinite integrals: (1) ∫ [f(x) + g(x)] dx = ∫ f(x) dx + ∫ g(x) dx. (2) For any real number k, ∫ k f(x) dx = k ∫ f(x) dx. More generally, ∫ [k1 f1(x) + k2 f2(x) + ... + kn fn(x)] dx = k1 ∫ f1(x) dx + ... + kn ∫ fn(x) dx.</td></tr>
+      <tr><td></td><td>Some standard integrals: (i) ∫ xⁿ dx = x<sup>n+1</sup>/(n+1) + C, n ≠ -1. (ii) ∫ cos x dx = sin x + C. (iii) ∫ sin x dx = -cos x + C. (iv) ∫ sec² x dx = tan x + C. (v) ∫ cosec² x dx = -cot x + C. (vi) ∫ sec x tan x dx = sec x + C. (vii) ∫ cosec x cot x dx = -cosec x + C. (viii) ∫ dx/√(1-x²) = sin⁻¹ x + C. (ix) ∫ dx/√(1-x²) = -cos⁻¹ x + C. (x) ∫ dx/(1+x²) = tan⁻¹ x + C. (xi) ∫ dx/(1+x²) = -cot⁻¹ x + C. (xii) ∫ eˣ dx = eˣ + C. (xiii) ∫ aˣ dx = aˣ/log a + C. (xiv) ∫ (1/x) dx = log |x| + C.</td></tr>
+      <tr><td></td><td>Integration by partial fractions: P(x)/Q(x) where P, Q are polynomials and Q(x) ≠ 0. If degree of P ≥ degree of Q, divide to get T(x) + P1(x)/Q(x). Decompose into partial fractions of five standard types based on the nature of factors ∈ denominator.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Power Rule</span>
+            <code class="fl-eq">∫ xⁿ dx = x<sup>n+1</sup>/(n+1) + C, n ≠ -1</code>
+            <span class="fl-note">Particularly, ∫ dx = x + C</span>
+          </li>
+          <li>
+            <span class="fl-name">Cosine integral</span>
+            <code class="fl-eq">∫ cos x dx = sin x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Sine integral</span>
+            <code class="fl-eq">∫ sin x dx = -cos x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Secant squared integral</span>
+            <code class="fl-eq">∫ sec² x dx = tan x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Cosecant squared integral</span>
+            <code class="fl-eq">∫ cosec² x dx = -cot x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Secant-tangent integral</span>
+            <code class="fl-eq">∫ sec x tan x dx = sec x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Cosecant-cotangent integral</span>
+            <code class="fl-eq">∫ cosec x cot x dx = -cosec x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Inverse sine integral</span>
+            <code class="fl-eq">∫ dx/√(1 - x²) = sin⁻¹ x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Negative inverse cosine integral</span>
+            <code class="fl-eq">∫ dx/√(1 - x²) = -cos⁻¹ x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Inverse tangent integral</span>
+            <code class="fl-eq">∫ dx/(1 + x²) = tan⁻¹ x + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Exponential integral</span>
+            <code class="fl-eq">∫ eˣ dx = eˣ + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Logarithmic integral</span>
+            <code class="fl-eq">∫ (1/x) dx = log |x| + C</code>
+          </li>
+          <li>
+            <span class="fl-name">General exponential integral</span>
+            <code class="fl-eq">∫ aˣ dx = aˣ / log a + C</code>
+          </li>
+          <li>
+            <code class="fl-eq">∫ dx/(x² - a²) = (1/2a) log |(x-a)/(x+a)| + C</code>
+          </li>
+          <li>
+            <code class="fl-eq">∫ dx/(a² - x²) = (1/2a) log |(a+x)/(a-x)| + C</code>
+          </li>
+          <li>
+            <code class="fl-eq">∫ dx/(x² + a²) = (1/a) tan⁻¹(x/a) + C</code>
+          </li>
+          <li>
+            <code class="fl-eq">∫ dx/√(x² - a²) = log |x + √(x² - a²)| + C</code>
+          </li>
+          <li>
+            <code class="fl-eq">∫ dx/√(a² - x²) = sin⁻¹(x/a) + C</code>
+          </li>
+          <li>
+            <code class="fl-eq">∫ dx/√(x² + a²) = log |x + √(x² + a²)| + C</code>
+          </li>
+          <li>
+            <span class="fl-name">Distinct linear factors</span>
+            <code class="fl-eq"></code>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>First Fundamental Theorem of Integral Calculus:</strong> Let f be a continuous function on the closed interval [a, b] and let A(x) be the area function. Then A'(x) = f(x), for all x ∈ [a, b].</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Second Fundamental Theorem of Integral Calculus:</strong> Let f be continuous function defined on the closed interval [a, b] and F be an anti derivative of f. Then ∫ from a to b of f(x) dx = [F(x)] from a to b = F(b) - F(a).</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>For any real number k, ∫ k f(x) dx = k ∫ f(x) dx (Property IV)</li>
+      <li>∫ [k1·f1(x) + k2·f2(x) + ... + kn·fn(x)] dx = k1*∫ f1(x) dx + k2*∫ f2(x) dx + ... + kn*∫ fn(x) dx (Property V: generalization)</li>
+      <li>(7) To find ∫ dx/(ax² + bx + c), write ax²+bx+c = a[(x+b/2a)² + (c/a - b²/4a²)] and reduce to standard form.</li>
+      <li>(8) To find ∫ dx/√(ax² + bx + c), proceed similarly as ∈ (7).</li>
+      <li>(9) To find ∫ (px+q)/(ax²+bx+c) dx, express px+q = A d/dx(ax²+bx+c) + B = A(2ax+b) + B, then solve for A, B.</li>
+      <li>(10) To find ∫ (px+q)/√(ax²+bx+c) dx, proceed as ∈ (9) and reduce to standard forms.</li>
+      <li>To find constants A, B, C, equate numerators after multiplying both sides by the denominator, then compare coefficients or substitute suitable values of x.</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>261 total questions</strong> across 11 exercises</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ APPLICATION OF INTEGRALS ══════════════════════════════ -->
+<div class="ch-section" id="application-of-integrals">
+
+  <div class="ch-banner" style="background:#ede9fe;color:#4c1d95">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 8</div>
+      <div class="ch-title">Application of Integrals</div>
+      <div class="ch-sub">Area under Simple Curves</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Application of definite integrals to find area under curves is a specific use of integration as the limit of a ∑.</li>
+      <li>We also find the area bounded by the above said curves.</li>
+      <li>If the curve lies below the x-axis, the definite ∫ gives a negative value; take the absolute value for the area.</li>
+      <li>If the curve crosses the x-axis, split the ∫ at the crossing points and take absolute values of the negative parts.</li>
+      <li>The choice between vertical strips (integrating with respect to x) and horizontal strips (integrating with respect to y) depends on the curve and which is more convenient.</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Elementary area (vertical strip)</strong></td><td>dA = y dx = f(x) dx, a thin vertical strip of height y and width dx under the curve y = f(x).</td></tr>
+      <tr><td><strong>Elementary area (horizontal strip)</strong></td><td>dA = x dy = g(y) dy, a thin horizontal strip of width x and height dy beside the curve x = g(y).</td></tr>
+      <tr><td><strong>The area of the region bounded by the curve y = f(x), x-axis and the lines x = a and x = b (b &gt; a)</strong></td><td>given by the formula: Area = ∫ from a to b of y dx = ∫ from a to b of f(x) dx.</td></tr>
+      <tr><td><strong>The area of the region bounded by the curve x = phi(y), y-axis and the lines y = c, y = d</strong></td><td>given by the formula: Area = ∫ from c to d of x dy = ∫ from c to d of φ(y) dy.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Area using vertical strips</span>
+            <code class="fl-eq">A = ∫ from a to b of y dx = ∫ from a to b of f(x) dx</code>
+            <span class="fl-note">Area bounded by curve y = f(x), x-axis, and lines x = a, x = b</span>
+          </li>
+          <li>
+            <span class="fl-name">Area using horizontal strips</span>
+            <code class="fl-eq">A = ∫ from c to d of x dy = ∫ from c to d of g(y) dy</code>
+            <span class="fl-note">Area bounded by curve x = g(y), y-axis, and lines y = c, y = d</span>
+          </li>
+          <li>
+            <span class="fl-name">Area when curve is below x-axis</span>
+            <code class="fl-eq">A = |∫ from a to b of f(x) dx|</code>
+            <span class="fl-note">If f(x) &lt; 0 from x = a to x = b, the area is the absolute value of the ∫.</span>
+          </li>
+          <li>
+            <span class="fl-name">Area when curve crosses x-axis</span>
+            <code class="fl-eq">A = |A1| + A2</code>
+            <span class="fl-note">When part of the curve is above and part below x-axis, take absolute value of negative area and add to positive area.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>9 total questions</strong> across 2 exercises</li>
+      <li>4 multiple-choice questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ DIFFERENTIAL EQUATIONS ══════════════════════════════ -->
+<div class="ch-section" id="differential-equations">
+
+  <div class="ch-banner" style="background:#e8e0ff;color:#5b21b6">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 9</div>
+      <div class="ch-title">Differential Equations</div>
+      <div class="ch-sub">Basic Concepts · Order of a Differential Equation · Degree of a Differential Equation · General and Particular Solutions of a Differential Equation · Methods of Solving First Order, First Degree Differential Equations · Differential Equations with Variables Separable · Homogeneous Differential Equations · Linear Differential Equations</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>An equation involving derivative(s) of the dependent variable with respect to independent variable(s) is called a differential equation.</li>
+      <li>x(dy/dx) + y = 0 is a differential equation because it involves a derivative of y with respect to x.</li>
+      <li>An ordinary differential equation involves derivatives with respect to only one independent variable.</li>
+      <li>2(d²y/dx²) + (dy/dx)³ = 0 is an ordinary differential equation.</li>
+      <li>Partial differential equations involve derivatives with respect to more than one independent variable (not covered ∈ this chapter).</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Order of a Differential Equation</strong></td><td>The order of the highest order derivative of the dependent variable with respect to the independent variable involved ∈ the given differential equation.</td></tr>
+      <tr><td><strong>Degree of a Differential Equation</strong></td><td>When a differential equation is a polynomial equation ∈ derivatives, the degree is the highest power (positive ∫ index) of the highest order derivative involved ∈ the given differential equation.</td></tr>
+      <tr><td><strong>General Solution</strong></td><td>The solution which contains arbitrary constants is called the general solution (primitive) of the differential equation. It contains as many arbitrary constants as the order of the equation.</td></tr>
+      <tr><td><strong>Particular Solution</strong></td><td>The solution free from arbitrary constants, i.e., the solution obtained from the general solution by giving particular values to the arbitrary constants, is called a particular solution of the differential equation.</td></tr>
+      <tr><td><strong>Variable Separable Method</strong></td><td>A method of solving first order differential equations where dy/dx = F(x,y) can be written as dy/dx = g(x)·h(y), allowing separation of variables so that all terms involving y are on one side and all terms involving x are on the other side.</td></tr>
+      <tr><td><strong>Homogeneous Function</strong></td><td>A function F(x, y) is said to be a homogeneous function of degree n if F(λx, λy) = λⁿF(x, y) for any nonzero constant λ.</td></tr>
+      <tr><td><strong>Homogeneous Differential Equation</strong></td><td>A differential equation of the form dy/dx = F(x, y) is said to be homogeneous if F(x, y) is a homogeneous function of degree zero.</td></tr>
+      <tr><td><strong>First Order Linear Differential Equation</strong></td><td>A differential equation of the form dy/dx + Py = Q, where P and Q are constants or functions of x only.</td></tr>
+      <tr><td><strong>Integrating Factor (I.F.)</strong></td><td>The function g(x) = e<sup>∫P dx</sup> which when multiplied to both sides of the linear differential equation dy/dx + Py = Q, makes the LHS the derivative of y·e<sup>∫P dx</sup>. It is denoted as I.F.</td></tr>
+      <tr><td><strong>An equation involving derivatives of the dependent variable with respect to independent variable (variables)</strong></td><td>known as a differential equation.</td></tr>
+      <tr><td><strong>Order of a differential equation</strong></td><td>the order of the highest order derivative occurring ∈ the differential equation.</td></tr>
+      <tr><td><strong>Degree of a differential equation</strong></td><td>defined if it is a polynomial equation ∈ its derivatives.</td></tr>
+      <tr><td><strong>Degree (when defined) of a differential equation</strong></td><td>the highest power (positive integer only) of the highest order derivative ∈ it.</td></tr>
+      <tr><td><strong>A function which satisfies the given differential equation</strong></td><td>called its solution. The solution which contains as many arbitrary constants as the order of the differential equation is called a general solution and the solution free from arbitrary constants is called particular solution.</td></tr>
+      <tr><td><strong>Variable separable method</strong></td><td>used to solve such an equation ∈ which variables can be separated completely, i.e. terms containing y should remain with dy and terms containing x should remain with dx.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Variable Separable Form</span>
+            <code class="fl-eq">dy/dx = h(y) · g(x)</code>
+            <span class="fl-note">Standard form for variable separable equations</span>
+          </li>
+          <li>
+            <span class="fl-name">Separated Form</span>
+            <code class="fl-eq">(1/h(y)) dy = g(x) dx</code>
+            <span class="fl-note">After separating the variables</span>
+          </li>
+          <li>
+            <span class="fl-name">General Solution</span>
+            <code class="fl-eq">∫(1/h(y)) dy = ∫g(x) dx + C</code>
+            <span class="fl-note">Integrate both sides to get the solution; H(y) = G(x) + C</span>
+          </li>
+          <li>
+            <span class="fl-name">Substitution for dy/dx form</span>
+            <code class="fl-eq">y = vx, so dy/dx = v + x(dv/dx)</code>
+            <span class="fl-note">Used when dy/dx = g(y/x)</span>
+          </li>
+          <li>
+            <span class="fl-name">Substitution for dx/dy form</span>
+            <code class="fl-eq">x = vy, so dx/dy = v + y(dv/dy)</code>
+            <span class="fl-note">Used when dx/dy = h(x/y)</span>
+          </li>
+          <li>
+            <span class="fl-name">Reduced form</span>
+            <code class="fl-eq">x(dv/dx) = g(v) - v, then dv/(g(v) - v) = dx/x</code>
+            <span class="fl-note">After substitution, separate variables ∈ v and x</span>
+          </li>
+          <li>
+            <span class="fl-name">General Solution</span>
+            <code class="fl-eq">∫dv/(g(v) - v) = ∫(1/x)dx + C</code>
+            <span class="fl-note">Integrate and replace v by y/x to get the solution</span>
+          </li>
+          <li>
+            <span class="fl-name">Standard Form (Type 1)</span>
+            <code class="fl-eq">dy/dx + Py = Q</code>
+            <span class="fl-note">P, Q are constants or functions of x only</span>
+          </li>
+          <li>
+            <span class="fl-name">Integrating Factor (Type 1)</span>
+            <code class="fl-eq">I.F. = e<sup>∫P dx</sup></code>
+            <span class="fl-note">Integrating factor for dy/dx + Py = Q</span>
+          </li>
+          <li>
+            <span class="fl-name">General Solution (Type 1)</span>
+            <code class="fl-eq">y · (I.F.) = ∫(Q × I.F.) dx + C</code>
+            <span class="fl-note">y · e<sup>∫P dx</sup> = ∫(Q · e<sup>∫P dx</sup>) dx + C</span>
+          </li>
+          <li>
+            <span class="fl-name">Standard Form (Type 2)</span>
+            <code class="fl-eq">dx/dy + P₁x = Q₁</code>
+            <span class="fl-note">P₁, Q₁ are constants or functions of y only</span>
+          </li>
+          <li>
+            <span class="fl-name">Integrating Factor (Type 2)</span>
+            <code class="fl-eq">I.F. = e<sup>∫P₁ dy</sup></code>
+            <span class="fl-note">Integrating factor for dx/dy + P₁x = Q₁</span>
+          </li>
+          <li>
+            <span class="fl-name">General Solution (Type 2)</span>
+            <code class="fl-eq">x · (I.F.) = ∫(Q₁ × I.F.) dy + C</code>
+            <span class="fl-note">x · e<sup>∫P₁ dy</sup> = ∫(Q₁ · e<sup>∫P₁ dy</sup>) dy + C</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Notation: dy/dx = y', d²y/dx² = y'', d³y/dx³ = y'''</li>
+      <li>For higher order derivatives: yₙ denotes dⁿy/dxⁿ (nth order derivative)</li>
+      <li>dy/dx = eˣ has order 1 (highest derivative is first order)</li>
+      <li>d²y/dx² + y = 0 has order 2 (highest derivative is second order)</li>
+      <li>(d³y/dx³) + x²(d²y/dx²)³ = 0 has order 3 (highest derivative is third order)</li>
+      <li>Order is always a positive integer.</li>
+      <li>d³y/dx³ + 2(d²y/dx²)² - dy/dx + y = 0: order 3, degree 1 (polynomial ∈ y''', y'', y'; highest power of y''' is 1)</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>98 total questions</strong> across 6 exercises</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ VECTOR ALGEBRA ══════════════════════════════ -->
+<div class="ch-section" id="vector-algebra">
+
+  <div class="ch-banner" style="background:#f5f3ff;color:#3b0764">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 10</div>
+      <div class="ch-title">Vector Algebra</div>
+      <div class="ch-sub">Some Basic Concepts · Types of Vectors · Addition of Vectors · Multiplication of a Vector by a Scalar · Product of Two Vectors</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Scalars are real numbers representing magnitude only</li>
+      <li>Vectors have both magnitude and direction</li>
+      <li>This chapter covers basic concepts, operations on vectors, and their algebraic and geometric properties</li>
+      <li>Since the length is never negative, the notation |a| &lt; 0 has no meaning</li>
+      <li>l² + m² + n² = 1 but a² + b² + c² ≠ 1 ∈ general</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Vector</strong></td><td>A quantity that has magnitude as well as direction is called a vector. A directed line segment is a vector.</td></tr>
+      <tr><td><strong>Position Vector</strong></td><td>The vector OP having O (origin) as initial point and P as terminal point is called the position vector of point P with respect to origin O.</td></tr>
+      <tr><td><strong>Direction Cosines</strong></td><td>The cosine values of the direction angles α, β, γ that a vector makes with the positive x, y, z axes, denoted by l, m, n respectively.</td></tr>
+      <tr><td><strong>Direction Ratios</strong></td><td>Numbers proportional to the direction cosines of a vector, denoted as a, b, c.</td></tr>
+      <tr><td><strong>Zero Vector</strong></td><td>A vector whose initial and terminal points coincide, denoted as 0⃗. It has zero magnitude and cannot be assigned a definite direction (or may be regarded as having any direction). Vectors AA, BB represent the zero vector.</td></tr>
+      <tr><td><strong>Unit Vector</strong></td><td>A vector whose magnitude is unity (1 unit). The unit vector ∈ the direction of a given vector a is denoted by â.</td></tr>
+      <tr><td><strong>Coinitial Vectors</strong></td><td>Two or more vectors having the same initial point are called coinitial vectors.</td></tr>
+      <tr><td><strong>Collinear Vectors</strong></td><td>Two or more vectors are said to be collinear if they are parallel to the same line, irrespective of their magnitudes and directions.</td></tr>
+      <tr><td><strong>Equal Vectors</strong></td><td>Two vectors a and b are said to be equal if they have the same magnitude and direction regardless of the positions of their initial points, written as a = b.</td></tr>
+      <tr><td><strong>Negative of a Vector</strong></td><td>A vector whose magnitude is the same as that of a given vector but direction is opposite to that of it. Vector BA is negative of vector AB, written as BA = -AB.</td></tr>
+      <tr><td><strong>Free Vectors</strong></td><td>Vectors that may be subject to parallel displacement without changing magnitude and direction. Throughout this chapter, we deal with free vectors only.</td></tr>
+      <tr><td><strong>Triangle Law of Vector Addition</strong></td><td>If two vectors a and b are positioned so that the initial point of one coincides with the terminal point of the other, then the ∑ (resultant) a + b is represented by the third side of the triangle formed. In triangle ABC: AC = AB + BC.</td></tr>
+      <tr><td><strong>Parallelogram Law of Vector Addition</strong></td><td>If two vectors a and b are represented by the two adjacent sides of a parallelogram ∈ magnitude and direction, then their ∑ a + b is represented ∈ magnitude and direction by the diagonal of the parallelogram through their common point.</td></tr>
+      <tr><td><strong>Scalar Multiplication</strong></td><td>The product of vector a by scalar λ, denoted λ*a, is a vector collinear to a. The vector λ*a has direction same (or opposite) to a according as λ is positive (or negative). Its magnitude is |λ| times the magnitude of a: |λ*a| = |λ||a|.</td></tr>
+      <tr><td><strong>Component Form</strong></td><td>Any vector r = xî + yĵ + zk̂ is said to be ∈ component form. Here x, y, z are scalar components and xî, yĵ, zk̂ are vector components along the respective axes. Also called rectangular components.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Magnitude of position vector</span>
+            <code class="fl-eq">|OP| = √(x² + y² + z²)</code>
+          </li>
+          <li>
+            <span class="fl-name">Direction cosines</span>
+            <code class="fl-eq">cos(α) = x/r, cos(β) = y/r, cos(γ) = z/r where r = |rvₑc|</code>
+          </li>
+          <li>
+            <span class="fl-name">Direction cosine identity</span>
+            <code class="fl-eq">l² + m² + n² = 1</code>
+          </li>
+          <li>
+            <span class="fl-name">Triangle law</span>
+            <code class="fl-eq">AC = AB + BC</code>
+          </li>
+          <li>
+            <span class="fl-name">Vector difference</span>
+            <code class="fl-eq">a - b = AB + BC' where BC' = -BC</code>
+          </li>
+          <li>
+            <span class="fl-name">Sides of triangle sum to zero</span>
+            <code class="fl-eq">AB + BC + CA = AA = 0⃗</code>
+          </li>
+          <li>
+            <span class="fl-name">Scalar multiplication magnitude</span>
+            <code class="fl-eq">|λ · a| = |λ| · |a|</code>
+          </li>
+          <li>
+            <span class="fl-name">Negative of a vector</span>
+            <code class="fl-eq">a + (-a) = (-a) + a = 0⃗</code>
+          </li>
+          <li>
+            <span class="fl-name">Unit vector</span>
+            <code class="fl-eq">â = (1/|a|) · a, provided a ≠ 0⃗</code>
+          </li>
+          <li>
+            <span class="fl-name">For any scalar k</span>
+            <code class="fl-eq">k · 0⃗ = 0⃗</code>
+          </li>
+          <li>
+            <span class="fl-name">Position vector in component form</span>
+            <code class="fl-eq">OP (or r) = xî + yĵ + zk̂</code>
+          </li>
+          <li>
+            <span class="fl-name">Magnitude from components</span>
+            <code class="fl-eq">|r| = |xî + yĵ + zk̂| = √(x² + y² + z²)</code>
+          </li>
+          <li>
+            <span class="fl-name">Sum of vectors in component form</span>
+            <code class="fl-eq">a + b = (a1+b1)î + (a2+b2)ĵ + (a3+b3)k̂</code>
+          </li>
+          <li>
+            <span class="fl-name">Difference of vectors in component form</span>
+            <code class="fl-eq">a - b = (a1-b1)î + (a2-b2)ĵ + (a3-b3)k̂</code>
+          </li>
+          <li>
+            <span class="fl-name">Equality of vectors</span>
+            <code class="fl-eq">a = b if and only if a1 = b1, a2 = b2, a3 = b3</code>
+          </li>
+          <li>
+            <span class="fl-name">Scalar multiplication in component form</span>
+            <code class="fl-eq">λ*a = (λ*a1)î + (λ*a2)ĵ + (λ*a3)k̂</code>
+          </li>
+          <li>
+            <span class="fl-name">Distributive law 1</span>
+            <code class="fl-eq">k·a + m·a = (k + m)*a</code>
+          </li>
+          <li>
+            <span class="fl-name">Distributive law 2</span>
+            <code class="fl-eq">k(m·a) = (km)*a</code>
+          </li>
+          <li>
+            <span class="fl-name">Distributive law 3</span>
+            <code class="fl-eq">k(a + b) = k·a + k·b</code>
+          </li>
+          <li>
+            <span class="fl-name">Collinearity condition</span>
+            <code class="fl-eq">a and b are collinear ⟺ b = λ*a for some nonzero scalar λ, i.e., b1/a1 = b2/a2 = b3/a3 = λ</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>Commutative Property of Vector Addition:</strong> For any two vectors a and b: a + b = b + a</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Associative Property of Vector Addition:</strong> For any three vectors a, b, c: (a + b) + c = a + (b + c)</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Cauchy-Schwarz Inequality:</strong> For any two vectors a and b: |a . b| ≤ |a||b|</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Triangle Inequality:</strong> For any two vectors a and b: |a + b| ≤ |a| + |b|</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Collinearity from Triangle Inequality:</strong> If |a + b| = |a| + |b|, then |AC| = |AB| + |BC|, showing that A, B, C are collinear.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Coordinates of point P(x,y,z) can be expressed as (lr, mr, nr)</li>
+      <li>Zero vector has zero magnitude and indeterminate direction</li>
+      <li>Unit vector â has |â| = 1</li>
+      <li>Coinitial vectors share the same starting point</li>
+      <li>Collinear vectors are parallel to the same line</li>
+      <li>Equal vectors have same magnitude AND same direction</li>
+      <li>Negative vector has same magnitude but opposite direction</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>73 total questions</strong> across 5 exercises</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ THREE DIMENSIONAL GEOMETRY ══════════════════════════════ -->
+<div class="ch-section" id="three-dimensional-geometry">
+
+  <div class="ch-banner" style="background:#ede9fe;color:#4c1d95">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 11</div>
+      <div class="ch-title">Three Dimensional Geometry</div>
+      <div class="ch-sub">Direction Cosines and Direction Ratios of a Line · Equation of a Line in Space · Angle between Two Lines · Shortest Distance between Two Lines</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>In Class XI, Analytical Geometry ∈ two dimensions and introduction to three dimensional geometry used Cartesian methods only</li>
+      <li>This chapter uses vector algebra for 3D geometry</li>
+      <li>For any line, if a, b, c are direction ratios, then ka, kb, kc (k ≠ 0) are also direction ratios</li>
+      <li>Any two sets of direction ratios of a line are proportional</li>
+      <li>There are infinitely many sets of direction ratios for any line</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Direction cosines</strong></td><td>If a directed line L passes through the origin making angles α, β, γ with x, y, z axes respectively, then cos(α), cos(β), cos(γ) are called direction cosines, denoted by l, m, n</td></tr>
+      <tr><td><strong>Direction ratios</strong></td><td>Any three numbers a, b, c which are proportional to the direction cosines l, m, n of a line. If l, m, n are direction cosines, then a = λ*l, b = λ*m, c = λ*n for any nonzero λ ∈ R</td></tr>
+      <tr><td><strong>Skew lines</strong></td><td>Lines ∈ space which are neither intersecting nor parallel. Such pair of lines are non coplanar.</td></tr>
+      <tr><td><strong>Shortest distance between two lines</strong></td><td>The join of a point ∈ one line with one point on the other line so that the length of the segment so obtained is the smallest.</td></tr>
+      <tr><td></td><td>Direction cosines of a line are the cosines of the angles made by the line with the positive directions of the coordinate axes.</td></tr>
+      <tr><td></td><td>If l, m, n are the direction cosines of a line, then l² + m² + n² = 1.</td></tr>
+      <tr><td></td><td>Direction cosines of a line joining two points P(x1,y1,z1) and Q(x2,y2,z2) are (x2-x1)/PQ, (y2-y1)/PQ, (z2-z1)/PQ where PQ = √((x2-x1)² + (y2-y1)² + (z2-z1)²).</td></tr>
+      <tr><td></td><td>Direction ratios of a line are the numbers which are proportional to the direction cosines of a line.</td></tr>
+      <tr><td></td><td>If l, m, n are the direction cosines and a, b, c are the direction ratios of a line then l = a/√(a²+b²+c²), m = b/√(a²+b²+c²), n = c/√(a²+b²+c²).</td></tr>
+      <tr><td></td><td>Skew lines are lines ∈ space which are neither parallel nor intersecting. They lie ∈ different planes.</td></tr>
+      <tr><td><strong>Angle between skew lines</strong></td><td>the angle between two intersecting lines drawn from any point (preferably through the origin) parallel to each of the skew lines.</td></tr>
+      <tr><td><strong>If l1, m1, n1 and l2, m2, n2 are the direction cosines of two lines and theta</strong></td><td>the acute angle between them, then cos(θ) = |l1·l2 + m1·m2 + n1·n2|.</td></tr>
+      <tr><td><strong>If a1, b1, c1 and a2, b2, c2 are the direction ratios of two lines and theta</strong></td><td>the acute angle between them, then cos(θ) = |a1·a2 + b1·b2 + c1·c2| / (√(a1²+b1²+c1²) · √(a2²+b2²+c2²)).</td></tr>
+      <tr><td><strong>Vector equation of a line through a point with position vector a and parallel to vector b</strong></td><td>r = a + λ*b.</td></tr>
+      <tr><td><strong>Equation of a line through point (x1,y1,z1) having direction cosines l, m, n</strong></td><td>(x-x1)/l = (y-y1)/m = (z-z1)/n.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Direction cosines identity</span>
+            <code class="fl-eq">l² + m² + n² = 1</code>
+            <span class="fl-note">Sum of squares of direction cosines equals 1</span>
+          </li>
+          <li>
+            <span class="fl-name">Relation between direction ratios and direction cosines</span>
+            <code class="fl-eq">l/a = m/b = n/c = k, where k = +/- 1/√(a² + b² + c²)</code>
+            <span class="fl-note">Connecting direction ratios (a,b,c) to direction cosines (l,m,n)</span>
+          </li>
+          <li>
+            <span class="fl-name">Direction cosines from direction ratios</span>
+            <code class="fl-eq">l = +/- a/√(a²+b²+c²), m = +/- b/√(a²+b²+c²), n = +/- c/√(a²+b²+c²)</code>
+            <span class="fl-note">Direction cosines computed from direction ratios</span>
+          </li>
+          <li>
+            <span class="fl-name">Direction cosines of line joining two points</span>
+            <code class="fl-eq">l = (x2-x1)/PQ, m = (y2-y1)/PQ, n = (z2-z1)/PQ where PQ = √((x2-x1)² + (y2-y1)² + (z2-z1)²)</code>
+            <span class="fl-note">Direction cosines of line segment joining P(x1,y1,z1) and Q(x2,y2,z2)</span>
+          </li>
+          <li>
+            <span class="fl-name">Direction ratios of line joining two points</span>
+            <code class="fl-eq">x2-x1, y2-y1, z2-z1 (or x1-x2, y1-y2, z1-z2)</code>
+            <span class="fl-note">Direction ratios of line segment from P(x1,y1,z1) to Q(x2,y2,z2)</span>
+          </li>
+          <li>
+            <span class="fl-name">Vector equation of a line (point + direction)</span>
+            <code class="fl-eq">r = a + λ*b</code>
+            <span class="fl-note">Line through point with position vector a, parallel to vector b. λ is a real parameter.</span>
+          </li>
+          <li>
+            <span class="fl-name">Cartesian equation of a line (point + direction ratios)</span>
+            <code class="fl-eq">(x - x1)/a = (y - y1)/b = (z - z1)/c</code>
+            <span class="fl-note">Line through (x1,y1,z1) with direction ratios a, b, c</span>
+          </li>
+          <li>
+            <span class="fl-name">Cartesian equation using direction cosines</span>
+            <code class="fl-eq">(x - x1)/l = (y - y1)/m = (z - z1)/n</code>
+            <span class="fl-note">Line through (x1,y1,z1) with direction cosines l, m, n</span>
+          </li>
+          <li>
+            <span class="fl-name">Parametric equations of a line</span>
+            <code class="fl-eq">x = x1 + λ*a, y = y1 + λ*b, z = z1 + λ*c</code>
+            <span class="fl-note">Parametric form of line through (x1,y1,z1) with direction ratios a, b, c</span>
+          </li>
+          <li>
+            <span class="fl-name">Vector equation of a line through two points</span>
+            <code class="fl-eq">r = a + λ*(b - a)</code>
+            <span class="fl-note">Line through two points with position vectors a and b</span>
+          </li>
+          <li>
+            <span class="fl-name">Angle between two lines (direction ratios)</span>
+            <code class="fl-eq">cos(θ) = |a1·a2 + b1·b2 + c1·c2| / (√(a1²+b1²+c1²) · √(a2²+b2²+c2²))</code>
+            <span class="fl-note">Angle between lines with direction ratios (a1,b1,c1) and (a2,b2,c2)</span>
+          </li>
+          <li>
+            <span class="fl-name">Angle between two lines (direction cosines)</span>
+            <code class="fl-eq">cos(θ) = |l1·l2 + m1·m2 + n1·n2|</code>
+            <span class="fl-note">Angle between lines with direction cosines (l1,m1,n1) and (l2,m2,n2), since l²+m²+n²=1</span>
+          </li>
+          <li>
+            <span class="fl-name">sin(theta) using direction ratios</span>
+            <code class="fl-eq">sin(θ) = √((a1·b2-a2·b1)² + (b1·c2-b2·c1)² + (c1·a2-c2·a1)²) / (√(a1²+b1²+c1²) · √(a2²+b2²+c2²))</code>
+            <span class="fl-note">Sine of angle between two lines</span>
+          </li>
+          <li>
+            <span class="fl-name">sin(theta) using direction cosines</span>
+            <code class="fl-eq">sin(θ) = √((l1·m2-l2·m1)² + (m1·n2-m2·n1)² + (n1·l2-n2·l1)²)</code>
+            <span class="fl-note">Sine of angle between two lines using direction cosines</span>
+          </li>
+          <li>
+            <span class="fl-name">Angle between lines in vector form</span>
+            <code class="fl-eq">cos(θ) = |b1 . b2| / (|b1| · |b2|)</code>
+            <span class="fl-note">For lines r = a1 + λ*b1 and r = a2 + μ*b2</span>
+          </li>
+          <li>
+            <span class="fl-name">Condition for perpendicular lines (direction ratios)</span>
+            <code class="fl-eq">a1·a2 + b1·b2 + c1·c2 = 0</code>
+            <span class="fl-note">Two lines are perpendicular when θ = 90 deg</span>
+          </li>
+          <li>
+            <span class="fl-name">Condition for parallel lines (direction ratios)</span>
+            <code class="fl-eq">a1/a2 = b1/b2 = c1/c2</code>
+            <span class="fl-note">Two lines are parallel when θ = 0</span>
+          </li>
+          <li>
+            <span class="fl-name">Shortest distance between skew lines (vector form)</span>
+            <code class="fl-eq">d = |(b1 x b2) . (a2 - a1)| / |b1 x b2|</code>
+            <span class="fl-note">For lines r = a1 + λ*b1 and r = a2 + μ*b2</span>
+          </li>
+          <li>
+            <span class="fl-name">Shortest distance between skew lines (Cartesian form)</span>
+            <code class="fl-eq">d = |determinant of [[x2-x1, y2-y1, z2-z1], [a1, b1, c1], [a2, b2, c2]]| / √((b1·c2-b2·c1)² + (c1·a2-c2·a1)² + (a1·b2-a2·b1)²)</code>
+            <span class="fl-note">For lines (x-x1)/a1 = (y-y1)/b1 = (z-z1)/c1 and (x-x2)/a2 = (y-y2)/b2 = (z-z2)/c2</span>
+          </li>
+          <li>
+            <span class="fl-name">Distance between parallel lines</span>
+            <code class="fl-eq">d = |b x (a2 - a1)| / |b|</code>
+            <span class="fl-note">For parallel lines r = a1 + λ*b and r = a2 + μ*b</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Two parallel lines have the same set of direction cosines</li>
+      <li>Direction cosines of x-axis: 1, 0, 0; y-axis: 0, 1, 0; z-axis: 0, 0, 1</li>
+      <li>If b = a*î + b*ĵ + c·k̂, then a, b, c are direction ratios of the line and conversely</li>
+      <li>b should not be confused with |b|</li>
+      <li>Derivation of Cartesian form from vector form: eliminate λ from parametric equations</li>
+      <li>If lines do not pass through origin, take parallel lines through origin to find angle</li>
+      <li>The angle θ is always taken as the acute angle between the lines</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>25 total questions</strong> across 3 exercises</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ LINEAR PROGRAMMING ══════════════════════════════ -->
+<div class="ch-section" id="linear-programming">
+
+  <div class="ch-banner" style="background:#e8e0ff;color:#5b21b6">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 12</div>
+      <div class="ch-title">Linear Programming</div>
+      <div class="ch-sub">Linear Programming Problem and its Mathematical Formulation · Mathematical Formulation of the Problem · Graphical Method of Solving Linear Programming Problems · Corner Point Method</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>In earlier classes, systems of linear equations and linear inequalities ∈ two variables were studied</li>
+      <li>Many applications ∈ mathematics involve systems of inequalities/equations</li>
+      <li>This chapter applies systems of linear inequalities/equations to solve real life problems</li>
+      <li>Example: A furniture dealer wanting to maximise profit from buying tables and chairs with investment and storage constraints</li>
+      <li>If the feasible region is unbounded, then a maximum or a minimum value of the objective function may not exist. However, if it exists, it must occur at a corner point of R (by Theorem 1).</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Optimisation Problems</strong></td><td>Problems which seek to maximise (or minimise) profit (or cost) form a general class of problems called optimisation problems. An optimisation problem may involve finding maximum profit, minimum cost, or minimum use of resources etc.</td></tr>
+      <tr><td><strong>Linear Programming Problem</strong></td><td>A special but very important class of optimisation problems is linear programming problem. Linear programming problems are of much interest because of their wide applicability ∈ industry, commerce, management science etc.</td></tr>
+      <tr><td><strong>Linear Programming Problem (LPP)</strong></td><td>A Linear Programming Problem is one that is concerned with finding the optimal value (maximum or minimum value) of a linear function (called objective function) of several variables (say x and y), subject to the conditions that the variables are non-negative and satisfy a set of linear inequalities (called linear constraints). The term 'linear' implies that all the mathematical relations used ∈ the problem are linear relations while the term 'programming' refers to the method of determining a particular programme or plan of action.</td></tr>
+      <tr><td><strong>Objective Function</strong></td><td>A linear function Z = ax + by, where a, b are constants, which has to be maximised or minimised is called a linear objective function. Variables x and y are called decision variables.</td></tr>
+      <tr><td><strong>Constraints</strong></td><td>The linear inequalities or equations or restrictions on the variables of a linear programming problem are called constraints. The conditions x ≥ 0, y ≥ 0 are called non-negative restrictions.</td></tr>
+      <tr><td><strong>Optimisation Problem</strong></td><td>A problem which seeks to maximise or minimise a linear function (say of two variables x and y) subject to certain constraints as determined by a set of linear inequalities is called an optimisation problem. Linear programming problems are special type of optimisation problems.</td></tr>
+      <tr><td><strong>Feasible Region</strong></td><td>The common region determined by all the constraints including non-negative constraints x ≥ 0, y ≥ 0 of a linear programming problem is called the feasible region (or solution region) for the problem. The region other than feasible region is called an infeasible region.</td></tr>
+      <tr><td><strong>Feasible Solutions</strong></td><td>Points within and on the boundary of the feasible region represent feasible solutions of the constraints. Every point within and on the boundary of the feasible region represents a feasible solution to the problem.</td></tr>
+      <tr><td><strong>Infeasible Solution</strong></td><td>Any point outside the feasible region is called an infeasible solution.</td></tr>
+      <tr><td><strong>Optimal (Feasible) Solution</strong></td><td>Any point ∈ the feasible region that gives the optimal value (maximum or minimum) of the objective function is called an optimal solution.</td></tr>
+      <tr><td><strong>Bounded Feasible Region</strong></td><td>A feasible region of a system of linear inequalities is said to be bounded if it can be enclosed within a circle.</td></tr>
+      <tr><td><strong>Unbounded Feasible Region</strong></td><td>A feasible region is called unbounded if it cannot be enclosed within a circle, meaning the feasible region does extend indefinitely ∈ any direction.</td></tr>
+      <tr><td><strong>Corner Point</strong></td><td>A corner point of a feasible region is a point ∈ the region which is the intersection of two boundary lines.</td></tr>
+      <tr><td><strong>Decision Variables</strong></td><td>The variables x and y ∈ the objective function Z = ax + by are called decision variables. They are sometimes also simply called variables and are non-negative.</td></tr>
+      <tr><td><strong>A linear programming problem</strong></td><td>one that is concerned with finding the optimal value (maximum or minimum) of a linear function of several variables (called objective function) subject to the conditions that the variables are non-negative and satisfy a set of linear inequalities (called linear constraints). Variables are sometimes called decision variables and are non-negative.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">General Objective Function</span>
+            <code class="fl-eq">Z = ax + by</code>
+            <span class="fl-note">where a and b are constants, x and y are decision variables, and Z is to be maximised or minimised</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 1 (Fundamental Theorem of Linear Programming):</strong> Let R be the feasible region (convex polygon) for a linear programming problem and let Z = ax + by be the objective function. When Z has an optimal value (maximum or minimum), where the variables x and y are subject to constraints described by linear inequalities, this optimal value must occur at a corner point (vertex) of the feasible region.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem 2:</strong> Let R be the feasible region for a linear programming problem, and let Z = ax + by be the objective function. If R is bounded, then the objective function Z has both a maximum and a minimum value on R and each of these occurs at a corner point (vertex) of R.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>The feasible region is always a convex region.</li>
+      <li>The maximum (or minimum) solution of the objective function occurs at the vertex (corner) of the feasible region.</li>
+      <li>If two corner points produce the same maximum (or minimum) value of the objective function, then every point on the line segment joining these points will also give the same maximum (or minimum) value.</li>
+      <li>A problem may have multiple optimal solutions when two corner points give the same optimal value.</li>
+      <li>If there is no point satisfying all the constraints simultaneously, the problem has no feasible region and hence no feasible solution.</li>
+      <li>Step 1: Identify the decision variables (e.g., number of tables x and chairs y)</li>
+      <li>Step 2: Write non-negative constraints (x ≥ 0, y ≥ 0)</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>10 total questions</strong> across 1 exercise</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ PROBABILITY ══════════════════════════════ -->
+<div class="ch-section" id="probability">
+
+  <div class="ch-banner" style="background:#f5f3ff;color:#3b0764">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 13</div>
+      <div class="ch-title">Probability</div>
+      <div class="ch-sub">Conditional Probability · Properties of Conditional Probability · Multiplication Theorem on Probability · Independent Events · Bayes' Theorem · Random Variables and Probability Distribution · Bernoulli Trials and Binomial Distribution</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#6d28d9">8<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>In earlier classes, probability was studied as a measure of uncertainty of events ∈ a random experiment</li>
+      <li>The axiomatic theory and the classical theory of probability are equivalent for equally likely outcomes</li>
+      <li>Throughout this chapter, experiments have equally likely outcomes unless stated otherwise</li>
+      <li>When event F is known to have occurred, the sample space reduces from S to F</li>
+      <li>The elements of F favourable to event E are the common elements of E and F, i.e., E ∩ F</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Conditional Probability</strong></td><td>If E and F are two events associated with the same sample space of a random experiment, the conditional probability of the event E given that F has occurred, i.e., P(E|F) is given by P(E|F) = P(E intersection F) / P(F), provided P(F) ≠ 0.</td></tr>
+      <tr><td><strong>Independent Events (Definition 2)</strong></td><td>Two events E and F are said to be independent if P(F|E) = P(F) provided P(E) ≠ 0, and P(E|F) = P(E) provided P(F) ≠ 0. Thus, we need P(E) ≠ 0 and P(F) ≠ 0.</td></tr>
+      <tr><td><strong>Independent Events (Definition 3)</strong></td><td>Let E and F be two events associated with the same random experiment, then E and F are said to be independent if P(E ∩ F) = P(E) . P(F).</td></tr>
+      <tr><td><strong>Mutually Independent Events (three events)</strong></td><td>Three events A, B and C are said to be mutually independent if: P(A ∩ B) = P(A) P(B), P(A ∩ C) = P(A) P(C), P(B ∩ C) = P(B) P(C), and P(A ∩ B n C) = P(A) P(B) P(C). All four conditions must hold.</td></tr>
+      <tr><td><strong>Partition of a Sample Space</strong></td><td>A set of events E₁, E₂, ..., Eₙ is said to represent a partition of the sample space S if: (a) Eᵢ n Eⱼ = φ for i ≠ j (pairwise disjoint), (b) E₁ u E₂ u ... u Eₙ = S (exhaustive), and (c) P(Eᵢ) &gt; 0 for all i = 1, 2, ..., n (nonzero probabilities).</td></tr>
+      <tr><td><strong>Hypotheses</strong></td><td>When Bayes' theorem is applied, the events E₁, E₂, ..., Eₙ are called hypotheses.</td></tr>
+      <tr><td><strong>Prior Probability</strong></td><td>The probability P(Eᵢ) is called the priori probability of the hypothesis Eᵢ.</td></tr>
+      <tr><td><strong>Posterior Probability</strong></td><td>The conditional probability P(Eᵢ|A) is called the a posteriori probability of the hypothesis Eᵢ. It gives the probability of a particular 'cause' Eᵢ given that event A has occurred.</td></tr>
+      <tr><td><strong>Random Variable</strong></td><td>A random variable is a real valued function whose domain is the sample space of a random experiment. It assigns a real number to each outcome of the experiment.</td></tr>
+      <tr><td><strong>Probability Distribution</strong></td><td>The system of values of a random variable X together with the corresponding probabilities is called the probability distribution of X: X takes values x₁, x₂, ..., xₙ with probabilities p₁, p₂, ..., pₙ where pᵢ ≥ 0 and ∑ of all pᵢ = 1.</td></tr>
+      <tr><td><strong>Mean (Expected Value)</strong></td><td>The mean or expectation of a random variable X is defined as E(X) = μ = sumᵢ=₁^{n} xᵢ pᵢ, where xᵢ are the values of X and pᵢ are the corresponding probabilities.</td></tr>
+      <tr><td><strong>Variance</strong></td><td>The variance of a random variable X is defined as Var(X) = σ² = E(X²) - [E(X)]² = ∑ xᵢ² pᵢ - (∑ xᵢ pᵢ)².</td></tr>
+      <tr><td><strong>Standard Deviation</strong></td><td>The standard deviation of a random variable X is σ = √(Var(X)).</td></tr>
+      <tr><td><strong>Bernoulli Trials</strong></td><td>Trials of a random experiment are called Bernoulli trials if: (i) there are a finite number of trials, (ii) the trials are independent of each other, (iii) each trial has exactly two outcomes: success or failure, and (iv) the probability of success (p) remains the same ∈ each trial.</td></tr>
+      <tr><td><strong>Binomial Distribution</strong></td><td>A random variable X taking values 0, 1, 2, ..., n is said to have a binomial distribution with parameters n and p if its probability distribution is given by P(X = r) = nCr pʳ q<sup>n-r</sup>, where q = 1 - p and r = 0, 1, 2, ..., n.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Conditional Probability</span>
+            <code class="fl-eq">P(E|F) = P(E ∩ F) / P(F), provided P(F) ≠ 0</code>
+            <span class="fl-note">Also written as P(E|F) = n(E ∩ F) / n(F) for equally likely outcomes</span>
+          </li>
+          <li>
+            <span class="fl-name">Property 1: P(S|F)</span>
+            <code class="fl-eq">P(S|F) = P(F|F) = 1</code>
+            <span class="fl-note">The conditional probability of the sample space S given F is 1</span>
+          </li>
+          <li>
+            <span class="fl-name">Property 2: Addition rule for conditional probability</span>
+            <code class="fl-eq">P((A ∪ B)|F) = P(A|F) + P(B|F) - P((A ∩ B)|F)</code>
+            <span class="fl-note">For disjoint events A and B: P((A ∪ B)|F) = P(A|F) + P(B|F)</span>
+          </li>
+          <li>
+            <span class="fl-name">Property 3: Complement rule</span>
+            <code class="fl-eq">P(E'|F) = 1 - P(E|F)</code>
+            <span class="fl-note">Follows from P(S|F) = 1 and E, E' being disjoint with E ∪ E' = S</span>
+          </li>
+          <li>
+            <span class="fl-name">Multiplication Rule (two events)</span>
+            <code class="fl-eq">P(E ∩ F) = P(E) . P(F|E) = P(F) . P(E|F)</code>
+            <span class="fl-note">Provided P(E) ≠ 0 and P(F) ≠ 0</span>
+          </li>
+          <li>
+            <span class="fl-name">Multiplication Rule (three events)</span>
+            <code class="fl-eq">P(E ∩ F n G) = P(E) . P(F|E) . P(G|(E ∩ F)) = P(E) . P(F|E) . P(G|EF)</code>
+            <span class="fl-note">Can be extended to four or more events similarly</span>
+          </li>
+          <li>
+            <span class="fl-name">Test for Independence</span>
+            <code class="fl-eq">P(E ∩ F) = P(E) . P(F)</code>
+            <span class="fl-note">If this holds, E and F are independent events</span>
+          </li>
+          <li>
+            <span class="fl-name">Probability of at least one of two independent events</span>
+            <code class="fl-eq">P(A ∪ B) = 1 - P(A') P(B')</code>
+            <span class="fl-note">For independent events A and B</span>
+          </li>
+          <li>
+            <span class="fl-name">Theorem of Total Probability</span>
+            <code class="fl-eq">P(A) = sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ) = P(E₁) P(A|E₁) + P(E₂) P(A|E₂) + ... + P(Eₙ) P(A|Eₙ)</code>
+            <span class="fl-note">Where {E₁, E₂, ..., Eₙ} is a partition of S and each Eᵢ has nonzero probability</span>
+          </li>
+          <li>
+            <span class="fl-name">Bayes' Theorem</span>
+            <code class="fl-eq">P(Eᵢ|A) = P(Eᵢ) P(A|Eᵢ) / sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ)</code>
+            <span class="fl-note">For any i = 1, 2, ..., n. Also called the formula for the probability of 'causes'.</span>
+          </li>
+          <li>
+            <span class="fl-name">Mean (Expected Value)</span>
+            <code class="fl-eq">E(X) = μ = sumᵢ=₁^{n} xᵢ pᵢ</code>
+            <span class="fl-note">xᵢ are values of X and pᵢ are corresponding probabilities</span>
+          </li>
+          <li>
+            <span class="fl-name">Variance</span>
+            <code class="fl-eq">Var(X) = E(X²) - [E(X)]² = ∑ xᵢ² pᵢ - (∑ xᵢ pᵢ)²</code>
+            <span class="fl-note">Also written as σ²</span>
+          </li>
+          <li>
+            <span class="fl-name">Standard Deviation</span>
+            <code class="fl-eq">σ = √(Var(X))</code>
+            <span class="fl-note">Non-negative square root of the variance</span>
+          </li>
+          <li>
+            <span class="fl-name">Binomial Probability</span>
+            <code class="fl-eq">P(X = r) = nCr pʳ q<sup>n-r</sup>, where q = 1 - p</code>
+            <span class="fl-note">r = 0, 1, 2, ..., n. Here n = number of trials, p = probability of success, q = probability of failure</span>
+          </li>
+          <li>
+            <span class="fl-name">Mean of Binomial Distribution</span>
+            <code class="fl-eq">E(X) = np</code>
+            <span class="fl-note">n = number of trials, p = probability of success</span>
+          </li>
+          <li>
+            <span class="fl-name">Variance of Binomial Distribution</span>
+            <code class="fl-eq">Var(X) = npq = np(1-p)</code>
+            <span class="fl-note">Always less than or equal to the mean np since q ≤ 1</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-body">
+        <ul class="tip-list">
+          <li><span class="tip-icon">📌</span><div><strong>Multiplication Theorem of Probability:</strong> For any two events E and F: P(E ∩ F) = P(E) . P(F|E) = P(F) . P(E|F), provided P(E) ≠ 0 and P(F) ≠ 0.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Independence of Complements:</strong> If E and F are independent events, then (a) E and F' are independent, (b) E' and F are independent, (c) E' and F' are independent.</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Theorem of Total Probability:</strong> Let {E₁, E₂, ..., Eₙ} be a partition of the sample space S, and suppose that each of E₁, E₂, ..., Eₙ has nonzero probability of occurrence. Let A be any event associated with S, then P(A) = P(E₁) P(A|E₁) + P(E₂) P(A|E₂) + ... + P(Eₙ) P(A|Eₙ) = sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ).</div></li>
+          <li><span class="tip-icon">📌</span><div><strong>Bayes' Theorem:</strong> If E₁, E₂, ..., Eₙ are n non-empty events which constitute a partition of sample space S, i.e., E₁, E₂, ..., Eₙ are pairwise disjoint and E₁ u E₂ u ... u Eₙ = S, and A is any event of nonzero probability, then P(Eᵢ|A) = P(Eᵢ) P(A|Eᵢ) / sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ), for any i = 1, 2, 3, ..., n.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Conditional probability is valid only when P(F) ≠ 0, i.e., F ≠ φ</li>
+      <li>0 ≤ P(E|F) ≤ 1</li>
+      <li>P(S|F) = P(F|F) = 1</li>
+      <li>For disjoint events A and B: P((A ∪ B)|F) = P(A|F) + P(B|F)</li>
+      <li>P(E'|F) = 1 - P(E|F)</li>
+      <li>E ∩ F (also written as EF) denotes the simultaneous occurrence of events E and F</li>
+      <li>P(E ∩ F) = P(E) . P(F|E) where P(F|E) is the conditional probability of F given E</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#7c3aed">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>62 total questions</strong> across 4 exercises</li>
+      <li>23 long-answer questions (proofs, show-that, derivations)</li>
+      <li>30 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+
+</div><!-- /container --><script src="../js/chapter-nav.js"></script><script src="../js/mobile-dropdowns.js"></script>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+</body>
+</html>

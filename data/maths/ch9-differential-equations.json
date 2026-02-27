@@ -1,0 +1,936 @@
+{
+  "chapter": 9,
+  "title": "Differential Equations",
+  "quote": "He who seeks for methods without having a definite problem in mind seeks for the most part in vain. - D. HILBERT",
+  "sections": [
+    {
+      "id": "9.1",
+      "title": "Introduction",
+      "concepts": [
+        "A differential equation is an equation involving derivatives of the dependent variable with respect to independent variable(s).",
+        "For a given function g, find a function f such that dy/dx = g(x), where y = f(x). An equation of this form is known as a differential equation.",
+        "Differential equations arise in Physics, Chemistry, Biology, Anthropology, Geology, Economics etc.",
+        "In this chapter: basic concepts, general and particular solutions, formation of differential equations, methods to solve first order first degree differential equations, and applications."
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "An equation involving derivative(s) of the dependent variable with respect to independent variable(s) is called a differential equation.",
+        "x(dy/dx) + y = 0 is a differential equation because it involves a derivative of y with respect to x.",
+        "An ordinary differential equation involves derivatives with respect to only one independent variable.",
+        "2(d²y/dx²) + (dy/dx)³ = 0 is an ordinary differential equation.",
+        "Partial differential equations involve derivatives with respect to more than one independent variable (not covered in this chapter)."
+      ]
+    },
+    {
+      "id": "9.2",
+      "title": "Basic Concepts",
+      "concepts": [
+        "Equations like x² - 3x + 3 = 0, sin x + cos x = 0, x + y = 7 involve independent and/or dependent variables only.",
+        "Equation x(dy/dx) + y = 0 involves variables as well as derivative - this is a differential equation."
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Notation: dy/dx = y', d²y/dx² = y'', d³y/dx³ = y'''",
+        "For higher order derivatives: yₙ denotes dⁿy/dxⁿ (nth order derivative)"
+      ]
+    },
+    {
+      "id": "9.2.1",
+      "title": "Order of a Differential Equation",
+      "concepts": [
+        "Order of a differential equation is defined as the order of the highest order derivative of the dependent variable with respect to the independent variable involved in the given differential equation."
+      ],
+      "definitions": [
+        {
+          "term": "Order of a Differential Equation",
+          "definition": "The order of the highest order derivative of the dependent variable with respect to the independent variable involved in the given differential equation."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "dy/dx = eˣ has order 1 (highest derivative is first order)",
+        "d²y/dx² + y = 0 has order 2 (highest derivative is second order)",
+        "(d³y/dx³) + x²(d²y/dx²)³ = 0 has order 3 (highest derivative is third order)",
+        "Order is always a positive integer."
+      ]
+    },
+    {
+      "id": "9.2.2",
+      "title": "Degree of a Differential Equation",
+      "concepts": [
+        "The differential equation must be a polynomial equation in its derivatives (y', y'', y''' etc.) for degree to be defined.",
+        "Degree is the highest power (positive integral index) of the highest order derivative in the differential equation."
+      ],
+      "definitions": [
+        {
+          "term": "Degree of a Differential Equation",
+          "definition": "When a differential equation is a polynomial equation in derivatives, the degree is the highest power (positive integral index) of the highest order derivative involved in the given differential equation."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "d³y/dx³ + 2(d²y/dx²)² - dy/dx + y = 0: order 3, degree 1 (polynomial in y''', y'', y'; highest power of y''' is 1)",
+        "(dy/dx)² + (dy/dx) - sin²y = 0: order 1, degree 2 (polynomial in y'; highest power of y' is 2)",
+        "dy/dx + sin(dy/dx) = 0: order 1, degree NOT DEFINED (not a polynomial equation in y' due to sin(dy/dx))",
+        "Order and degree (if defined) are always positive integers.",
+        "Degree is not defined when the differential equation is not a polynomial equation in its derivatives."
+      ]
+    },
+    {
+      "id": "9.3",
+      "title": "General and Particular Solutions of a Differential Equation",
+      "concepts": [
+        "Solution of a differential equation is a function φ that satisfies the equation when substituted for the dependent variable.",
+        "The curve y = φ(x) is called the solution curve (integral curve) of the differential equation.",
+        "General solution (primitive) contains arbitrary constants.",
+        "Particular solution is obtained from general solution by giving particular values to the arbitrary constants."
+      ],
+      "definitions": [
+        {
+          "term": "General Solution",
+          "definition": "The solution which contains arbitrary constants is called the general solution (primitive) of the differential equation. It contains as many arbitrary constants as the order of the equation."
+        },
+        {
+          "term": "Particular Solution",
+          "definition": "The solution free from arbitrary constants, i.e., the solution obtained from the general solution by giving particular values to the arbitrary constants, is called a particular solution of the differential equation."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "y = a sin(x + b) is the general solution of d²y/dx² + y = 0 (contains two arbitrary constants a, b).",
+        "y = 2 sin(x + π/4) is a particular solution of d²y/dx² + y = 0 (specific values a=2, b=π/4).",
+        "The number of arbitrary constants in the general solution equals the order of the differential equation.",
+        "A particular solution has zero arbitrary constants.",
+        "Verification: substitute the function and its derivatives into the equation; if LHS = RHS, it is a solution."
+      ]
+    },
+    {
+      "id": "9.4",
+      "title": "Methods of Solving First Order, First Degree Differential Equations",
+      "concepts": [
+        "Three methods discussed: (1) Variable separable, (2) Homogeneous equations, (3) Linear differential equations."
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": []
+    },
+    {
+      "id": "9.4.1",
+      "title": "Differential Equations with Variables Separable",
+      "concepts": [
+        "A first order-first degree differential equation is of the form dy/dx = F(x, y).",
+        "If F(x, y) can be expressed as a product g(x)·h(y), where g(x) is a function of x and h(y) is a function of y, then the equation is of variable separable type.",
+        "The equation becomes: dy/dx = h(y)·g(x).",
+        "If h(y) ≠ 0, separating variables: (1/h(y)) dy = g(x) dx.",
+        "Integrating both sides: ∫(1/h(y)) dy = ∫g(x) dx gives H(y) = G(x) + C."
+      ],
+      "definitions": [
+        {
+          "term": "Variable Separable Method",
+          "definition": "A method of solving first order differential equations where dy/dx = F(x,y) can be written as dy/dx = g(x)·h(y), allowing separation of variables so that all terms involving y are on one side and all terms involving x are on the other side."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Variable Separable Form",
+          "formula": "dy/dx = h(y) · g(x)",
+          "description": "Standard form for variable separable equations"
+        },
+        {
+          "name": "Separated Form",
+          "formula": "(1/h(y)) dy = g(x) dx",
+          "description": "After separating the variables"
+        },
+        {
+          "name": "General Solution",
+          "formula": "∫(1/h(y)) dy = ∫g(x) dx + C",
+          "description": "Integrate both sides to get the solution; H(y) = G(x) + C"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Step 1: Express dy/dx as a product of a function of x and a function of y.",
+        "Step 2: Separate variables - put all y terms with dy on one side and all x terms with dx on the other.",
+        "Step 3: Integrate both sides.",
+        "Step 4: Apply initial conditions (if given) to find particular solution.",
+        "Example: dy/dx = (x+1)/(2-y), (y≠2). Separating: (2-y)dy = (x+1)dx. Solution: x² + y² + 2x - 4y + C = 0.",
+        "Example: dy/dx = (1+y²)/(1+x²). Separating: dy/(1+y²) = dx/(1+x²). Solution: tan⁻¹y = tan⁻¹x + C."
+      ]
+    },
+    {
+      "id": "9.4.2",
+      "title": "Homogeneous Differential Equations",
+      "concepts": [
+        "A function F(x, y) is said to be a homogeneous function of degree n if F(λx, λy) = λⁿF(x, y) for any nonzero constant λ.",
+        "A homogeneous function F(x, y) of degree n can be written as F(x, y) = xⁿg(y/x) or yⁿh(x/y).",
+        "A differential equation dy/dx = F(x, y) is said to be homogeneous if F(x, y) is a homogeneous function of degree zero.",
+        "To solve: substitute y = vx (where v is a function of x), then dy/dx = v + x(dv/dx).",
+        "This reduces the equation to variable separable form in v and x."
+      ],
+      "definitions": [
+        {
+          "term": "Homogeneous Function",
+          "definition": "A function F(x, y) is said to be a homogeneous function of degree n if F(λx, λy) = λⁿF(x, y) for any nonzero constant λ."
+        },
+        {
+          "term": "Homogeneous Differential Equation",
+          "definition": "A differential equation of the form dy/dx = F(x, y) is said to be homogeneous if F(x, y) is a homogeneous function of degree zero."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Substitution for dy/dx form",
+          "formula": "y = vx, so dy/dx = v + x(dv/dx)",
+          "description": "Used when dy/dx = g(y/x)"
+        },
+        {
+          "name": "Substitution for dx/dy form",
+          "formula": "x = vy, so dx/dy = v + y(dv/dy)",
+          "description": "Used when dx/dy = h(x/y)"
+        },
+        {
+          "name": "Reduced form",
+          "formula": "x(dv/dx) = g(v) - v, then dv/(g(v) - v) = dx/x",
+          "description": "After substitution, separate variables in v and x"
+        },
+        {
+          "name": "General Solution",
+          "formula": "∫dv/(g(v) - v) = ∫(1/x)dx + C",
+          "description": "Integrate and replace v by y/x to get the solution"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "F₁(x,y) = y² + 2xy is homogeneous of degree 2 (F₁(λx,λy) = λ²F₁).",
+        "F₂(x,y) = 2x - 3y is homogeneous of degree 1 (F₂(λx,λy) = λF₂).",
+        "F₃(x,y) = cos(y/x) is homogeneous of degree 0 (F₃(λx,λy) = λ⁰F₃).",
+        "F₄(x,y) = sin x + cos y is NOT a homogeneous function.",
+        "If the equation is in the form dx/dy = F(x,y) where F is homogeneous of degree zero, substitute x = vy.",
+        "After substitution and integration, always replace v back by y/x (or x/y).",
+        "Example: (x-y)dy/dx = x + 2y. Let y = vx. Solution: log|(x² + xy + y²)| = 2√3 tan⁻¹((x+2y)/(√3·x)) + C."
+      ]
+    },
+    {
+      "id": "9.4.3",
+      "title": "Linear Differential Equations",
+      "concepts": [
+        "A first order linear differential equation has the form dy/dx + Py = Q, where P and Q are constants or functions of x only.",
+        "Another form: dx/dy + P₁x = Q₁, where P₁ and Q₁ are constants or functions of y only.",
+        "Solved using an Integrating Factor (I.F.).",
+        "The I.F. is chosen so that multiplying the equation by I.F. makes the LHS an exact derivative."
+      ],
+      "definitions": [
+        {
+          "term": "First Order Linear Differential Equation",
+          "definition": "A differential equation of the form dy/dx + Py = Q, where P and Q are constants or functions of x only."
+        },
+        {
+          "term": "Integrating Factor (I.F.)",
+          "definition": "The function g(x) = e^(∫P dx) which when multiplied to both sides of the linear differential equation dy/dx + Py = Q, makes the LHS the derivative of y·e^(∫P dx). It is denoted as I.F."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Standard Form (Type 1)",
+          "formula": "dy/dx + Py = Q",
+          "description": "P, Q are constants or functions of x only"
+        },
+        {
+          "name": "Integrating Factor (Type 1)",
+          "formula": "I.F. = e^(∫P dx)",
+          "description": "Integrating factor for dy/dx + Py = Q"
+        },
+        {
+          "name": "General Solution (Type 1)",
+          "formula": "y · (I.F.) = ∫(Q × I.F.) dx + C",
+          "description": "y · e^(∫P dx) = ∫(Q · e^(∫P dx)) dx + C"
+        },
+        {
+          "name": "Standard Form (Type 2)",
+          "formula": "dx/dy + P₁x = Q₁",
+          "description": "P₁, Q₁ are constants or functions of y only"
+        },
+        {
+          "name": "Integrating Factor (Type 2)",
+          "formula": "I.F. = e^(∫P₁ dy)",
+          "description": "Integrating factor for dx/dy + P₁x = Q₁"
+        },
+        {
+          "name": "General Solution (Type 2)",
+          "formula": "x · (I.F.) = ∫(Q₁ × I.F.) dy + C",
+          "description": "x · e^(∫P₁ dy) = ∫(Q₁ · e^(∫P₁ dy)) dy + C"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Steps to solve dy/dx + Py = Q: (i) Write in standard form, (ii) Find I.F. = e^(∫P dx), (iii) Solution: y·(I.F.) = ∫(Q × I.F.)dx + C.",
+        "Steps to solve dx/dy + P₁x = Q₁: (i) Write in standard form, (ii) Find I.F. = e^(∫P₁ dy), (iii) Solution: x·(I.F.) = ∫(Q₁ × I.F.)dy + C.",
+        "Examples of linear DEs: dy/dx + y = sin x; dy/dx + (1/x)y = eˣ; dy/dx + (y/(x log x)) = 1/x.",
+        "Examples of Type 2: dx/dy + x = cos y; dx/dy + (-2x/y) = y²e⁻ʸ.",
+        "Example: dy/dx - y = cos x. P = -1, Q = cos x. I.F. = e⁻ˣ. Solution: y = (sin x - cos x)/2 + Ceˣ.",
+        "Example: x(dy/dx) + 2y = x². Rewrite: dy/dx + (2/x)y = x. P = 2/x, Q = x. I.F. = x². Solution: y = x²/4 + Cx⁻².",
+        "Example: y dx - (x + 2y²) dy = 0. Rewrite: dx/dy - x/y = 2y. P₁ = -1/y, Q₁ = 2y. I.F. = 1/y. Solution: x = 2y² + Cy.",
+        "Example: (tan⁻¹y - x) dy = (1 + y²) dx. Rewrite: dx/dy + x/(1+y²) = tan⁻¹y/(1+y²). I.F. = e^(tan⁻¹y). Solution: x = (tan⁻¹y - 1) + Ce^(-tan⁻¹y)."
+      ]
+    }
+  ],
+  "summary": [
+    "An equation involving derivatives of the dependent variable with respect to independent variable (variables) is known as a differential equation.",
+    "Order of a differential equation is the order of the highest order derivative occurring in the differential equation.",
+    "Degree of a differential equation is defined if it is a polynomial equation in its derivatives.",
+    "Degree (when defined) of a differential equation is the highest power (positive integer only) of the highest order derivative in it.",
+    "A function which satisfies the given differential equation is called its solution. The solution which contains as many arbitrary constants as the order of the differential equation is called a general solution and the solution free from arbitrary constants is called particular solution.",
+    "Variable separable method is used to solve such an equation in which variables can be separated completely, i.e. terms containing y should remain with dy and terms containing x should remain with dx.",
+    "A differential equation which can be expressed in the form dy/dx = f(x, y) or dx/dy = g(x, y) where f(x, y) and g(x, y) are homogeneous functions of degree zero is called a homogeneous differential equation.",
+    "A differential equation of the form dy/dx + Py = Q, where P and Q are constants or functions of x only is called a first order linear differential equation."
+  ],
+  "exercises": [
+    {
+      "id": "9.1",
+      "title": "Exercise 9.1",
+      "description": "Determine order and degree (if defined) of differential equations.",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "d⁴y/dx⁴ + sin(y''') = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 2,
+          "question": "y' + 5y = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 3,
+          "question": "(ds/dt)⁴ + 3s(d²s/dt²) = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 4,
+          "question": "(d²y/dx²)² + cos(dy/dx) = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 5,
+          "question": "d²y/dx² = cos 3x + sin 3x",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 6,
+          "question": "(y''')² + (y'')³ + (y')⁴ + y⁵ = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 7,
+          "question": "y''' + 2y'' + y' = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 8,
+          "question": "y' + y = eˣ",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 9,
+          "question": "y'' + (y')² + 2y = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 10,
+          "question": "y'' + 2y' + sin y = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree (if defined)"
+        },
+        {
+          "qno": 11,
+          "question": "The degree of the differential equation (d²y/dx²)³ + (dy/dx)² + sin(dy/dx) + 1 = 0 is",
+          "type": "MCQ",
+          "options": ["(A) 3", "(B) 2", "(C) 1", "(D) not defined"],
+          "answer": "(D) not defined"
+        },
+        {
+          "qno": 12,
+          "question": "The order of the differential equation 2x²(d²y/dx²) - 3(dy/dx) + y = 0 is",
+          "type": "MCQ",
+          "options": ["(A) 2", "(B) 1", "(C) 0", "(D) not defined"],
+          "answer": "(A) 2"
+        }
+      ]
+    },
+    {
+      "id": "9.2",
+      "title": "Exercise 9.2",
+      "description": "Verify that the given functions (explicit or implicit) is a solution of the corresponding differential equation.",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "y = eˣ + 1 : y'' - y' = 0",
+          "type": "verification"
+        },
+        {
+          "qno": 2,
+          "question": "y = x² + 2x + C : y' - 2x - 2 = 0",
+          "type": "verification"
+        },
+        {
+          "qno": 3,
+          "question": "y = cos x + C : y' + sin x = 0",
+          "type": "verification"
+        },
+        {
+          "qno": 4,
+          "question": "y = √(1 + x²) : y' = xy/(1 + x²)",
+          "type": "verification"
+        },
+        {
+          "qno": 5,
+          "question": "y = Ax : xy' = y (x ≠ 0)",
+          "type": "verification"
+        },
+        {
+          "qno": 6,
+          "question": "y = x sin x : xy' = y + x√(x² - y²) (x ≠ 0 and x > y or x < -y)",
+          "type": "verification"
+        },
+        {
+          "qno": 7,
+          "question": "xy = log y + C : y' = y²/(1 - xy) (xy ≠ 1)",
+          "type": "verification"
+        },
+        {
+          "qno": 8,
+          "question": "y - cos y = x : (y sin y + cos y + x) y' = y",
+          "type": "verification"
+        },
+        {
+          "qno": 9,
+          "question": "x + y = tan⁻¹y : y² y' + y' + 1 = 0",
+          "type": "verification"
+        },
+        {
+          "qno": 10,
+          "question": "y = √(a² - x²), x ∈ (-a, a) : x + y(dy/dx) = 0 (y ≠ 0)",
+          "type": "verification"
+        },
+        {
+          "qno": 11,
+          "question": "The number of arbitrary constants in the general solution of a differential equation of fourth order are:",
+          "type": "MCQ",
+          "options": ["(A) 0", "(B) 2", "(C) 3", "(D) 4"],
+          "answer": "(D) 4"
+        },
+        {
+          "qno": 12,
+          "question": "The number of arbitrary constants in the particular solution of a differential equation of third order are:",
+          "type": "MCQ",
+          "options": ["(A) 3", "(B) 2", "(C) 1", "(D) 0"],
+          "answer": "(D) 0"
+        }
+      ]
+    },
+    {
+      "id": "9.3",
+      "title": "Exercise 9.3",
+      "description": "Variable separable method - find general/particular solutions.",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "dy/dx = (1 - cos x)/(1 + cos x)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 2,
+          "question": "dy/dx = √(4 - y²) (-2 < y < 2)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 3,
+          "question": "dy/dx + y = 1 (y ≠ 1)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 4,
+          "question": "sec² x tan y dx + sec² y tan x dy = 0",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 5,
+          "question": "(eˣ + e⁻ˣ) dy - (eˣ - e⁻ˣ) dx = 0",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 6,
+          "question": "dy/dx = (1 + x²)(1 + y²)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 7,
+          "question": "y log y dx - x dy = 0",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 8,
+          "question": "x⁵(dy/dx) = -y⁵",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 9,
+          "question": "dy/dx = sin⁻¹ x",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 10,
+          "question": "eˣ tan y dx + (1 - eˣ) sec² y dy = 0",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 11,
+          "question": "(x³ + x² + x + 1)(dy/dx) = 2x² + x; y = 1 when x = 0",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 12,
+          "question": "x(x² - 1)(dy/dx) = 1; y = 0 when x = 2",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 13,
+          "question": "cos(dy/dx) = a (a ∈ R); y = 1 when x = 0",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 14,
+          "question": "dy/dx = y tan x; y = 1 when x = 0",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 15,
+          "question": "Find the equation of a curve passing through the point (0, 0) and whose differential equation is y' = eˣ sin x.",
+          "type": "short_answer",
+          "task": "Find equation of curve"
+        },
+        {
+          "qno": 16,
+          "question": "For the differential equation xy(dy/dx) = (x + 2)(y + 2), find the solution curve passing through the point (1, -1).",
+          "type": "short_answer",
+          "task": "Find solution curve"
+        },
+        {
+          "qno": 17,
+          "question": "Find the equation of a curve passing through the point (0, -2) given that at any point (x, y) on the curve, the product of the slope of its tangent and y coordinate of the point is equal to the x coordinate of the point.",
+          "type": "short_answer",
+          "task": "Find equation of curve"
+        },
+        {
+          "qno": 18,
+          "question": "At any point (x, y) of a curve, the slope of the tangent is twice the slope of the line segment joining the point of contact to the point (-4, -3). Find the equation of the curve given that it passes through (-2, 1).",
+          "type": "short_answer",
+          "task": "Find equation of curve"
+        },
+        {
+          "qno": 19,
+          "question": "The volume of spherical balloon being inflated changes at a constant rate. If initially its radius is 3 units and after 3 seconds it is 6 units. Find the radius of balloon after t seconds.",
+          "type": "short_answer",
+          "task": "Find radius as function of time"
+        },
+        {
+          "qno": 20,
+          "question": "In a bank, principal increases continuously at the rate of r% per year. Find the value of r if Rs 100 double itself in 10 years (log_e 2 = 0.6931).",
+          "type": "short_answer",
+          "task": "Find the rate r"
+        },
+        {
+          "qno": 21,
+          "question": "In a bank, principal increases continuously at the rate of 5% per year. An amount of Rs 1000 is deposited with this bank, how much will it worth after 10 years (e^0.5 = 1.648).",
+          "type": "short_answer",
+          "task": "Find amount after 10 years"
+        },
+        {
+          "qno": 22,
+          "question": "In a culture, the bacteria count is 1,00,000. The number is increased by 10% in 2 hours. In how many hours will the count reach 2,00,000, if the rate of growth of bacteria is proportional to the number present?",
+          "type": "short_answer",
+          "task": "Find time for bacteria count to reach 2,00,000"
+        },
+        {
+          "qno": 23,
+          "question": "The general solution of the differential equation dy/dx = e^(x+y) is",
+          "type": "MCQ",
+          "options": ["(A) eˣ + e⁻ʸ = C", "(B) eˣ + eʸ = C", "(C) e⁻ˣ + eʸ = C", "(D) e⁻ˣ + e⁻ʸ = C"],
+          "answer": "(A) eˣ + e⁻ʸ = C"
+        }
+      ]
+    },
+    {
+      "id": "9.4",
+      "title": "Exercise 9.4",
+      "description": "Homogeneous differential equations - show homogeneity and solve.",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "(x² + xy) dy = (x² + y²) dx",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 2,
+          "question": "y' = (x + y)/x",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 3,
+          "question": "(x - y) dy - (x + y) dx = 0",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 4,
+          "question": "(x² - y²) dx + 2xy dy = 0",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 5,
+          "question": "x²(dy/dx) = x² - 2y² + xy",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 6,
+          "question": "x dy - y dx = √(x² + y²) dx",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 7,
+          "question": "{x cos(y/x) + y sin(y/x)} y dx = {y sin(y/x) - x cos(y/x)} x dy",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 8,
+          "question": "x(dy/dx) - y + x sin(y/x) = 0",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 9,
+          "question": "y dx + x log(y/x) dy - 2x dy = 0",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 10,
+          "question": "(1 + e^(x/y)) dx + e^(x/y)(1 - x/y) dy = 0",
+          "type": "short_answer",
+          "task": "Show that the differential equation is homogeneous and solve it"
+        },
+        {
+          "qno": 11,
+          "question": "(x + y) dy + (x - y) dx = 0; y = 1 when x = 1",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 12,
+          "question": "x² dy + (xy + y²) dx = 0; y = 1 when x = 1",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 13,
+          "question": "[x sin²(y/x) - y] dx + x dy = 0; y = π/4 when x = 1",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 14,
+          "question": "dy/dx - y/x + cosec(y/x) = 0; y = 0 when x = 1",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 15,
+          "question": "2xy + y² - 2x²(dy/dx) = 0; y = 2 when x = 1",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 16,
+          "question": "A homogeneous differential equation of the form dx/dy = h(x/y) can be solved by making the substitution.",
+          "type": "MCQ",
+          "options": ["(A) y = vx", "(B) v = yx", "(C) x = vy", "(D) x = v"],
+          "answer": "(C) x = vy"
+        },
+        {
+          "qno": 17,
+          "question": "Which of the following is a homogeneous differential equation?",
+          "type": "MCQ",
+          "options": [
+            "(A) (4x + 6y + 5) dy - (3y + 2x + 4) dx = 0",
+            "(B) (xy) dx - (x³ + y³) dy = 0",
+            "(C) (x³ + 2y²) dx + 2xy dy = 0",
+            "(D) y² dx + (x² - xy - y²) dy = 0"
+          ],
+          "answer": "(D) y² dx + (x² - xy - y²) dy = 0"
+        }
+      ]
+    },
+    {
+      "id": "9.5",
+      "title": "Exercise 9.5",
+      "description": "Linear differential equations - find general/particular solutions.",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "dy/dx + 2y = sin x",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 2,
+          "question": "dy/dx + 3y = e⁻²ˣ",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 3,
+          "question": "dy/dx + y/x = x²",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 4,
+          "question": "dy/dx + (sec x) y = tan x (0 ≤ x < π/2)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 5,
+          "question": "cos²x (dy/dx) + y = tan x (0 ≤ x < π/2)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 6,
+          "question": "x(dy/dx) + 2y = x² log x",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 7,
+          "question": "x log x (dy/dx) + y = (2/x) log x",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 8,
+          "question": "(1 + x²) dy + 2xy dx = cot x dx (x ≠ 0)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 9,
+          "question": "x(dy/dx) + y - x + xy cot x = 0 (x ≠ 0)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 10,
+          "question": "(x + y)(dy/dx) = 1",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 11,
+          "question": "y dx + (x - y²) dy = 0",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 12,
+          "question": "(x + 3y²)(dy/dx) = y (y > 0)",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 13,
+          "question": "dy/dx + 2y tan x = sin x; y = 0 when x = π/3",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 14,
+          "question": "(1 + x²)(dy/dx) + 2xy = 1/(1 + x²); y = 0 when x = 1",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 15,
+          "question": "dy/dx - 3y cot x = sin 2x; y = 2 when x = π/2",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 16,
+          "question": "Find the equation of a curve passing through the origin given that the slope of the tangent to the curve at any point (x, y) is equal to the sum of the coordinates of the point.",
+          "type": "short_answer",
+          "task": "Find equation of curve"
+        },
+        {
+          "qno": 17,
+          "question": "Find the equation of a curve passing through the point (0, 2) given that the sum of the coordinates of any point on the curve exceeds the magnitude of the slope of the tangent to the curve at that point by 5.",
+          "type": "short_answer",
+          "task": "Find equation of curve"
+        },
+        {
+          "qno": 18,
+          "question": "The Integrating Factor of the differential equation x(dy/dx) - y = 2x² is",
+          "type": "MCQ",
+          "options": ["(A) e⁻ˣ", "(B) e⁻ʸ", "(C) 1/x", "(D) x"],
+          "answer": "(C) 1/x"
+        },
+        {
+          "qno": 19,
+          "question": "The Integrating Factor of the differential equation (1 - y²)(dx/dy) + yx = ay (-1 < y < 1) is",
+          "type": "MCQ",
+          "options": ["(A) 1/(y² - 1)", "(B) 1/√(y² - 1)", "(C) 1/(1 - y²)", "(D) 1/√(1 - y²)"],
+          "answer": "(D) 1/√(1 - y²)"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 9",
+      "description": "Mixed problems covering all methods from the chapter.",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "For each of the differential equations given below, indicate its order and degree (if defined):\n(i) d²y/dx² + 5x(dy/dx)² - 6y = log x\n(ii) (dy/dx)³ - 4(dy/dx)² + 7y = sin x\n(iii) d⁴y/dx⁴ - sin(d³y/dx³) = 0",
+          "type": "short_answer",
+          "task": "Determine order and degree"
+        },
+        {
+          "qno": 2,
+          "question": "For each of the exercises given below, verify that the given function (implicit or explicit) is a solution of the corresponding differential equation:\n(i) xy = a eˣ + b e⁻ˣ + x² : x(d²y/dx²) + 2(dy/dx) - xy + x² - 2 = 0\n(ii) y = eˣ(a cos x + b sin x) : d²y/dx² - 2(dy/dx) + 2y = 0\n(iii) y = x sin 3x : d²y/dx² + 9y - 6 cos 3x = 0\n(iv) x² = 2y² log y : (x² + y²)(dy/dx) - xy = 0",
+          "type": "verification"
+        },
+        {
+          "qno": 3,
+          "question": "Prove that x² - y² = c(x² + y²)² is the general solution of differential equation (x³ - 3xy²) dx = (y³ - 3x²y) dy, where c is a parameter.",
+          "type": "proof"
+        },
+        {
+          "qno": 4,
+          "question": "Find the general solution of the differential equation dy/dx + √((1 - y²)/(1 - x²)) = 0.",
+          "type": "short_answer",
+          "task": "Find the general solution"
+        },
+        {
+          "qno": 5,
+          "question": "Show that the general solution of the differential equation dy/dx + (y² + y + 1)/(x² + x + 1) = 0 is given by (x + y + 1) = A(1 - x - y - 2xy), where A is parameter.",
+          "type": "proof"
+        },
+        {
+          "qno": 6,
+          "question": "Find the equation of the curve passing through the point (0, π/4) whose differential equation is sin x cos y dx + cos x sin y dy = 0.",
+          "type": "short_answer",
+          "task": "Find equation of curve"
+        },
+        {
+          "qno": 7,
+          "question": "Find the particular solution of the differential equation (1 + e²ˣ) dy + (1 + y²) eˣ dx = 0, given that y = 1 when x = 0.",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 8,
+          "question": "Solve the differential equation y e^(x/y) dx = (x e^(x/y) + y²) dy (y ≠ 0).",
+          "type": "short_answer",
+          "task": "Solve the differential equation"
+        },
+        {
+          "qno": 9,
+          "question": "Find a particular solution of the differential equation (x - y)(dx + dy) = dx - dy, given that y = -1, when x = 0. (Hint: put x - y = t)",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 10,
+          "question": "Solve the differential equation [e^(-2√x)/√x - y/√x](dx/dy) = 1 (x ≠ 0).",
+          "type": "short_answer",
+          "task": "Solve the differential equation"
+        },
+        {
+          "qno": 11,
+          "question": "Find a particular solution of the differential equation dy/dx + y cot x = 4x cosec x (x ≠ 0), given that y = 0 when x = π/2.",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 12,
+          "question": "Find a particular solution of the differential equation (x + 1)(dy/dx) = 2e⁻ʸ - 1, given that y = 0 when x = 0.",
+          "type": "short_answer",
+          "task": "Find the particular solution"
+        },
+        {
+          "qno": 13,
+          "question": "The general solution of the differential equation (y dx - x dy)/y = 0 is",
+          "type": "MCQ",
+          "options": ["(A) xy = C", "(B) x = Cy²", "(C) y = Cx", "(D) y = Cx²"],
+          "answer": "(C) y = Cx"
+        },
+        {
+          "qno": 14,
+          "question": "The general solution of a differential equation of the type dx/dy + P₁x = Q₁ is",
+          "type": "MCQ",
+          "options": [
+            "(A) y e^(∫P₁ dy) = ∫(Q₁ e^(∫P₁ dy)) dy + C",
+            "(B) y · e^(∫P₁ dx) = ∫(Q₁ e^(∫P₁ dx)) dx + C",
+            "(C) x e^(∫P₁ dy) = ∫(Q₁ e^(∫P₁ dy)) dy + C",
+            "(D) x e^(∫P₁ dx) = ∫(Q₁ e^(∫P₁ dx)) dx + C"
+          ],
+          "answer": "(C) x e^(∫P₁ dy) = ∫(Q₁ e^(∫P₁ dy)) dy + C"
+        },
+        {
+          "qno": 15,
+          "question": "The general solution of the differential equation eˣ dy + (y eˣ + 2x) dx = 0 is",
+          "type": "MCQ",
+          "options": ["(A) x eʸ + x² = C", "(B) x eʸ + y² = C", "(C) y eˣ + x² = C", "(D) y eʸ + x² = C"],
+          "answer": "(C) y eˣ + x² = C"
+        }
+      ]
+    }
+  ]
+}

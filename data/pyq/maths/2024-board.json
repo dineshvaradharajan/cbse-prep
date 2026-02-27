@@ -1,0 +1,1114 @@
+[
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 1,
+    "type": "mcq",
+    "question": "If A is a square matrix such that A^2 - 3A + I = O, then A^(-1) is equal to xA + yI. The value of x + y is",
+    "options": [
+      "(a) -2",
+      "(b) 2",
+      "(c) -4",
+      "(d) 4"
+    ],
+    "answer": "(B) A^2-3A+I=O. Multiply by A^(-1): A-3I+A^(-1)=O, so A^(-1)=3I-A=(-1)A+3I. x=-1, y=3, x+y=2.",
+    "chapter": "Matrices",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 2,
+    "type": "mcq",
+    "question": "If A is a 2x2 matrix such that |A| = 2, then the value of |4A^(-1)| is",
+    "options": [
+      "(a) 4",
+      "(b) 8",
+      "(c) 16",
+      "(d) 2"
+    ],
+    "answer": "(B) |4A^(-1)| = 4^2 * |A^(-1)| = 16 * (1/|A|) = 16/2 = 8.",
+    "chapter": "Determinants",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 3,
+    "type": "mcq",
+    "question": "If A is a 3x3 matrix and |adj A| = 64, then |A| is",
+    "options": [
+      "(a) 8",
+      "(b) ±8",
+      "(c) -8",
+      "(d) 64"
+    ],
+    "answer": "(B) |adj A| = |A|^(n-1) = |A|^2 = 64, so |A| = ±8.",
+    "chapter": "Determinants",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 4,
+    "type": "mcq",
+    "question": "If A = [3 4; 5 2] and 2A + B is a null matrix, then B is equal to",
+    "options": [
+      "(a) [-6 -8; -10 -4]",
+      "(b) [6 8; 10 4]",
+      "(c) [-6 8; 10 -4]",
+      "(d) [6 -8; -10 4]"
+    ],
+    "answer": "(A) B = -2A = -2[3 4;5 2] = [-6 -8;-10 -4].",
+    "chapter": "Matrices",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 5,
+    "type": "mcq",
+    "question": "If d/dx(f(x)) = log x, then f(x) equals",
+    "options": [
+      "(a) x(log x - 1) + C",
+      "(b) x(log x + 1) + C",
+      "(c) 1/x + C",
+      "(d) x log x + C"
+    ],
+    "answer": "(A) f(x) = integral(log x dx) = x log x - x + C = x(log x - 1) + C.",
+    "chapter": "Integrals",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 6,
+    "type": "mcq",
+    "question": "The value of integral from 0 to pi/6 of sec^2(x - pi/6) dx is",
+    "options": [
+      "(a) 1/sqrt(3)",
+      "(b) sqrt(3)",
+      "(c) 1",
+      "(d) 0"
+    ],
+    "answer": "(A) Let u=x-pi/6. Integral = [tan u] from -pi/6 to 0 = 0-(-1/sqrt(3)) = 1/sqrt(3).",
+    "chapter": "Integrals",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 7,
+    "type": "mcq",
+    "question": "The differential equation d^2y/dx^2 + (dy/dx)^3 = sin y has order and degree. The sum of order and degree is",
+    "options": [
+      "(a) 3",
+      "(b) 4",
+      "(c) 5",
+      "(d) not defined"
+    ],
+    "answer": "(A) Order=2 (highest derivative is d2y/dx2), degree=1 (power of highest order derivative). Sum=3.",
+    "chapter": "Differential Equations",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 8,
+    "type": "mcq",
+    "question": "The value of p for which the vectors 2i + pj + k and -4i - 6j + 26k are perpendicular to each other is",
+    "options": [
+      "(a) 3",
+      "(b) -3",
+      "(c) 17/3",
+      "(d) -17/3"
+    ],
+    "answer": "(A) Dot product = -8-6p+26 = 0 => 18-6p=0 => p=3.",
+    "chapter": "Vector Algebra",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 9,
+    "type": "mcq",
+    "question": "The value of (i_hat x j_hat).j_hat + (j_hat x i_hat).k_hat is",
+    "options": [
+      "(a) 0",
+      "(b) 1",
+      "(c) -1",
+      "(d) 2"
+    ],
+    "answer": "(C) i x j = k, so k.j = 0. j x i = -k, so (-k).k = -1. Total = -1.",
+    "chapter": "Vector Algebra",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 10,
+    "type": "mcq",
+    "question": "If a_vec + b_vec = i_hat and a_vec = 2i_hat - 2j_hat + 2k_hat, then |b_vec| is",
+    "options": [
+      "(a) 3",
+      "(b) sqrt(3)",
+      "(c) 9",
+      "(d) 1/3"
+    ],
+    "answer": "(A) b = i-(2i-2j+2k) = -i+2j-2k. |b| = sqrt(1+4+4) = 3.",
+    "chapter": "Vector Algebra",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 11,
+    "type": "mcq",
+    "question": "The direction cosines of the line (x - 1)/2 = (1 - y)/3 = (2z - 1)/12 are",
+    "options": [
+      "(a) 2/13, -3/13, 12/13",
+      "(b) 2/13, 3/13, 12/13",
+      "(c) 2/sqrt(157), -3/sqrt(157), 6/sqrt(157)",
+      "(d) 2/sqrt(49), -3/sqrt(49), 6/sqrt(49)"
+    ],
+    "answer": "(D) Direction ratios (2,-3,6), magnitude=7. DCs: 2/7, -3/7, 6/7 = 2/sqrt(49), -3/sqrt(49), 6/sqrt(49).",
+    "chapter": "Three Dimensional Geometry",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 12,
+    "type": "mcq",
+    "question": "If P(A/B) = 0.3, P(A) = 0.4 and P(B) = 0.8, then P(B/A) is",
+    "options": [
+      "(a) 0.6",
+      "(b) 0.3",
+      "(c) 0.06",
+      "(d) 0.4"
+    ],
+    "answer": "(A) P(A∩B)=P(A|B)*P(B)=0.24. P(B|A)=0.24/0.4=0.6.",
+    "chapter": "Probability",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 13,
+    "type": "mcq",
+    "question": "The value of k for which f(x) = {3x + 5, if x >= 2; kx^2, if x < 2} is continuous at x = 2 is",
+    "options": [
+      "(a) 11/4",
+      "(b) 4/11",
+      "(c) 11/2",
+      "(d) 2/11"
+    ],
+    "answer": "(A) For continuity at x=2: k(4) = 3(2)+5 = 11, so k = 11/4.",
+    "chapter": "Continuity and Differentiability",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 14,
+    "type": "mcq",
+    "question": "If A = [0 1; -1 0] and (3I + 4A)(3I - 4A) = x^2 I, then the value of x is",
+    "options": [
+      "(a) sqrt(5)",
+      "(b) 5",
+      "(c) 25",
+      "(d) ±5"
+    ],
+    "answer": "(D) A^2=-I. (3I+4A)(3I-4A)=9I-16A^2=9I+16I=25I. So x^2=25, x=±5.",
+    "chapter": "Matrices",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 15,
+    "type": "mcq",
+    "question": "The general solution of the differential equation x dy - (1 + x^2) dx = dx is",
+    "options": [
+      "(a) y = x + x^3/3 + C",
+      "(b) y = log x + x^2/2 + C",
+      "(c) y = log x + x^2 + C",
+      "(d) y = x + x^2/2 + C"
+    ],
+    "answer": "(B) x dy = (1+x^2)dx => dy/dx = 1/x + x. Integrating: y = log x + x^2/2 + C.",
+    "chapter": "Differential Equations",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 16,
+    "type": "mcq",
+    "question": "If f(x) = a(x - cos x) is strictly decreasing in R, then 'a' belongs to",
+    "options": [
+      "(a) {0}",
+      "(b) (0, infinity)",
+      "(c) (-infinity, 0)",
+      "(d) (-infinity, infinity)"
+    ],
+    "answer": "(C) f'(x)=a(1+sinx). Since 1+sinx>=0, for f'(x)<0 we need a<0. So a in (-inf,0).",
+    "chapter": "Application of Derivatives",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 17,
+    "type": "mcq",
+    "question": "The corner points of the feasible region of an LPP are (2, 72), (15, 20) and (40, 15). If z = 18x + 9y is the objective function, then",
+    "options": [
+      "(a) z is maximum at (2, 72)",
+      "(b) z is maximum at (15, 20)",
+      "(c) z is maximum at (40, 15)",
+      "(d) z is maximum at (2, 72) and (15, 20)"
+    ],
+    "answer": "(C) z at (2,72)=684, (15,20)=450, (40,15)=855. Maximum at (40,15).",
+    "chapter": "Linear Programming",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 18,
+    "type": "mcq",
+    "question": "The constraints of an LPP are x - y >= 0, 2y <= x + 2, x >= 3, y <= 4, y >= 0. The number of corner points of the feasible region is",
+    "options": [
+      "(a) 3",
+      "(b) 4",
+      "(c) 5",
+      "(d) 6"
+    ],
+    "answer": "(A) Corner points are (3,0), (3,2.5), and (6,4). The feasible region has 3 corner points.",
+    "chapter": "Linear Programming",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 19,
+    "type": "mcq",
+    "question": "Assertion (A): The range of the function f(x) = 2 sin^(-1)(x) + 3pi/2, where x in [-1, 1] is [pi/2, 5pi/2].\nReason (R): The principal value branch of sin^(-1)(x) has range [0, pi].",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A",
+      "(b) Both A and R are true but R is not the correct explanation of A",
+      "(c) A is true but R is false",
+      "(d) A is false but R is true"
+    ],
+    "answer": "(C) A is true: 2[-pi/2,pi/2]+3pi/2=[pi/2,5pi/2]. R is false: sin^(-1) range is [-pi/2,pi/2] not [0,pi].",
+    "chapter": "Inverse Trigonometric Functions",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 20,
+    "type": "mcq",
+    "question": "Assertion (A): The equation of the line through the points (1, 2, 3) and (3, -1, 3) is (x - 1)/2 = (y - 2)/-3 = (z - 3)/0.\nReason (R): The equation of a line passing through points (x1, y1, z1) and (x2, y2, z2) is (x - x1)/(x2 - x1) = (y - y1)/(y2 - y1) = (z - z1)/(z2 - z1).",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A",
+      "(b) Both A and R are true but R is not the correct explanation of A",
+      "(c) A is true but R is false",
+      "(d) A is false but R is true"
+    ],
+    "answer": "(A) Direction ratios (2,-3,0) give the stated equation. Both A and R are true, R explains A.",
+    "chapter": "Three Dimensional Geometry",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 21,
+    "type": "subjective",
+    "question": "A function f(x) = 2x is defined from f : A -> B where A = {1, 2, 3, 4} and f is one-one and onto. Find the set B.\n\nOR\n\nEvaluate: sin^(-1)(sin(3pi/4)) + cos^(-1)(cos(3pi/4)) + tan^(-1)(1)",
+    "options": null,
+    "answer": null,
+    "chapter": "Relations and Functions",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 22,
+    "type": "subjective",
+    "question": "Find all vectors of magnitude 3sqrt(3) which are collinear to the vector i_hat + j_hat + k_hat.",
+    "options": null,
+    "answer": null,
+    "chapter": "Vector Algebra",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 23,
+    "type": "subjective",
+    "question": "The position vectors of points A, B and C are a_vec, b_vec and c_vec respectively. If AC = (5/4)AB, express c_vec in terms of a_vec and b_vec.\n\nOR\n\nCheck whether the lines given by equations x = 2lambda + 2, y = 7lambda + 1, z = -3lambda - 3 and x = -mu - 2, y = 2mu + 8, z = 4mu + 5 are perpendicular to each other or not.",
+    "options": null,
+    "answer": null,
+    "chapter": "Vector Algebra",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 24,
+    "type": "subjective",
+    "question": "If y = (x + sqrt(x^2 - 1))^2, show that (x^2 - 1)(dy/dx)^2 = 4y^2.",
+    "options": null,
+    "answer": null,
+    "chapter": "Continuity and Differentiability",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 25,
+    "type": "subjective",
+    "question": "Show that f(x) = (16 sin x)/(4 + cos x) - x is strictly decreasing in (pi/2, pi).",
+    "options": null,
+    "answer": null,
+    "chapter": "Application of Derivatives",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 26,
+    "type": "subjective",
+    "question": "Evaluate: integral from 0 to pi/2 of [log(sin x) - log(2 cos x)] dx.",
+    "options": null,
+    "answer": null,
+    "chapter": "Integrals",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 27,
+    "type": "subjective",
+    "question": "Find: integral 1/(sqrt(x)(sqrt(x) + 1)(sqrt(x) + 2)) dx.",
+    "options": null,
+    "answer": null,
+    "chapter": "Integrals",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 28,
+    "type": "subjective",
+    "question": "Solve the differential equation: dy/dx + sec^2(x) . y = tan x . sec^2(x), given that y(0) = 0.\n\nOR\n\nSolve the differential equation: x dy - y dx - sqrt(x^2 + y^2) dx = 0.",
+    "options": null,
+    "answer": null,
+    "chapter": "Differential Equations",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 29,
+    "type": "subjective",
+    "question": "Solve the following Linear Programming Problem graphically:\nMaximise z = 6x + 3y, subject to the constraints:\n4x + y >= 80, 3x + 2y <= 150, x + 5y >= 115, x >= 0, y >= 0.",
+    "options": null,
+    "answer": null,
+    "chapter": "Linear Programming",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 30,
+    "type": "subjective",
+    "question": "A random variable X has the following probability distribution:\nX:     1    2    3\nP(X):  k/2  k/3  k/6\nFind the value of k. Also find P(1 <= X < 3) and E(X).\n\nOR\n\nIf A and B are two independent events such that P(A intersection B') = 1/4 and P(A' intersection B) = 1/6, then find P(A) and P(B).",
+    "options": null,
+    "answer": null,
+    "chapter": "Probability",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 31,
+    "type": "subjective",
+    "question": "Evaluate: integral from 0 to pi/2 of e^x sin x dx.\n\nOR\n\nFind: integral 1/(cos(x - a) cos(x - b)) dx.",
+    "options": null,
+    "answer": null,
+    "chapter": "Integrals",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 32,
+    "type": "subjective",
+    "question": "Find the inverse of the matrix A and use it to solve the system of equations: x - y + z = 4, x - 2y - 2z = 9, 2x + y + 3z = 1.\n\nOR\n\nIf A = [1 2 0; -2 -1 -2; 0 -1 1], find A^(-1). Using A^(-1), solve the system of equations: x - 2y = 10, 2x - y - z = 8, -2y + z = 7.",
+    "options": null,
+    "answer": null,
+    "chapter": "Determinants",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 33,
+    "type": "subjective",
+    "question": "Draw a rough sketch of the curve y = 2 + |x + 1| and find the area bounded by the curve, the lines x = -4, x = 3 and y = 0.",
+    "options": null,
+    "answer": null,
+    "chapter": "Application of Integrals",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 34,
+    "type": "subjective",
+    "question": "Solve the differential equation: x^2 y dx - (x^3 + y^3) dy = 0.\n\nOR\n\nSolve the differential equation: (1 + x^2) dy/dx + 2xy - 4x^2 = 0, given that y(0) = 0.",
+    "options": null,
+    "answer": null,
+    "chapter": "Differential Equations",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 35,
+    "type": "subjective",
+    "question": "The polished side of a mirror is along the line x/1 = (1 - y)/-2 = (2z - 4)/6. A point P(1, 6, 3) is placed in front of the mirror. Find the image of the point P in the mirror line and the distance of the image from the point P.",
+    "options": null,
+    "answer": null,
+    "chapter": "Three Dimensional Geometry",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "E",
+    "qno": 36,
+    "type": "case_study",
+    "question": "A stationery shop owner sells pens, notepads and erasers. Neha, Rani and Sam are three customers who buy these items. Neha buys some pens, notepads and erasers. Rani and Sam also buy pens, notepads and erasers in different quantities. The purchases can be represented as a matrix equation AX = B, where A is the matrix of quantities, X is the price matrix and B is the total cost matrix.\n\nBased on the above information, answer the following questions:\n(i) Find |A|.\n(ii) Find A^(-1), if it exists.\n(iii)(a) Find X (the prices of pen, notepad and eraser).\nOR\n(iii)(b) Find A^2 - 8I.",
+    "options": null,
+    "answer": null,
+    "chapter": "Determinants",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "E",
+    "qno": 37,
+    "type": "case_study",
+    "question": "A ladder of length h is placed against a wall such that its foot is at a distance y from the wall and it reaches a height x on the wall. The area of the triangle formed by the ladder, the wall and the ground is A.\n\nBased on the above information, answer the following questions:\n(i) Express the area A in terms of x and y.\n(ii) Find the rate of growth of area with respect to x (dA/dx).\n(iii)(a) Find the critical point of A and show that A is maximum at that point. Find the maximum area.\nOR\n(iii)(b) If the foot of the ladder is 5 m away from the wall and the foot is being pulled away at the rate of 2 m/s, find the rate at which the height on the wall is decreasing when the foot is 3 m away from the wall.",
+    "options": null,
+    "answer": null,
+    "chapter": "Application of Derivatives",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "E",
+    "qno": 38,
+    "type": "case_study",
+    "question": "An electronic shop sells three brands of smartphones - A, B and C. Brand A constitutes 25% of total sales, Brand B constitutes 35% and Brand C constitutes 40%. The defect rates are: 5% for Brand A, 4% for Brand B, and 2% for Brand C.\n\nBased on the above information, answer the following questions:\n(i) Find the probability that a randomly selected smartphone is defective, i.e., P(defective).\n(ii) If a smartphone is found to be defective, find the probability that it is of Brand B, i.e., P(B|defective).\n(iii) If a smartphone is found to be defective, find the probability that it is not of Brand C.",
+    "options": null,
+    "answer": null,
+    "chapter": "Probability",
+    "set": "65/1/1"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 1,
+    "type": "mcq",
+    "question": "A function f : R+ -> R defined by f(x) = 4x + 3 is",
+    "options": [
+      "(a) one-one but not onto",
+      "(b) onto but not one-one",
+      "(c) both one-one and onto",
+      "(d) neither one-one nor onto"
+    ],
+    "answer": "(A) f is injective (one-one). Range is (3,inf), not all of R, so not onto.",
+    "chapter": "Relations and Functions",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 2,
+    "type": "mcq",
+    "question": "A matrix has 36 elements. The number of possible orders it can have is",
+    "options": [
+      "(a) 4",
+      "(b) 6",
+      "(c) 8",
+      "(d) 9"
+    ],
+    "answer": "(D) 36 = 1x36, 2x18, 3x12, 4x9, 6x6, 9x4, 12x3, 18x2, 36x1. Nine possible orders.",
+    "chapter": "Matrices",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 3,
+    "type": "mcq",
+    "question": "Let f(x) = {x^2 + 3, if x != 0; 1, if x = 0}. Which of the following statements is true?",
+    "options": [
+      "(a) f is continuous at x = 0",
+      "(b) f is not continuous at x = 0 as f(0) is not defined",
+      "(c) f is not continuous at x = 0 as lim(x->0) f(x) != f(0)",
+      "(d) f is not continuous at x = 0 as lim(x->0) f(x) does not exist"
+    ],
+    "answer": "(C) lim(x->0)(x^2+3)=3, but f(0)=1. Since lim != f(0), f is not continuous at x=0.",
+    "chapter": "Continuity and Differentiability",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 4,
+    "type": "mcq",
+    "question": "A function f(x) is continuous on [a, b] and differentiable on (a, b). The function f(x) is strictly increasing if",
+    "options": [
+      "(a) f'(x) > 0 for all x in (a, b)",
+      "(b) f'(x) < 0 for all x in (a, b)",
+      "(c) f'(x) = 0 for all x in (a, b)",
+      "(d) f'(x) >= 0 for all x in (a, b)"
+    ],
+    "answer": "(A) A function is strictly increasing if f'(x) > 0 for all x in the interval.",
+    "chapter": "Application of Derivatives",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 5,
+    "type": "mcq",
+    "question": "If [x + y  2; 5  xy] = [6  2; 5  8], then the value of (24/x + 24/y) is",
+    "options": [
+      "(a) 7",
+      "(b) 8",
+      "(c) 15",
+      "(d) 18"
+    ],
+    "answer": "(D) x+y=6, xy=8. 24/x+24/y = 24(x+y)/(xy) = 24*6/8 = 18.",
+    "chapter": "Matrices",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 6,
+    "type": "mcq",
+    "question": "The value of integral from a to b of f(x) dx equals",
+    "options": [
+      "(a) integral from a to b of f(a + b - x) dx",
+      "(b) integral from a to b of f(a - x) dx",
+      "(c) integral from a to b of f(b - x) dx",
+      "(d) integral from a to b of f(x - a - b) dx"
+    ],
+    "answer": "(A) Standard property: substituting x=a+b-t gives integral_a^b f(a+b-x)dx.",
+    "chapter": "Integrals",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 7,
+    "type": "mcq",
+    "question": "Two unit vectors a_hat and b_hat are such that sin(theta) = 3/5, where theta is the angle between them. The value of a_hat . b_hat is",
+    "options": [
+      "(a) 3/5",
+      "(b) 4/5",
+      "(c) -4/5",
+      "(d) ±4/5"
+    ],
+    "answer": "(D) sin(theta)=3/5, cos(theta)=±4/5. a_hat.b_hat = cos(theta) = ±4/5.",
+    "chapter": "Vector Algebra",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 8,
+    "type": "mcq",
+    "question": "The integrating factor of the differential equation (1 - x^2) dy/dx + xy = ax is",
+    "options": [
+      "(a) sqrt(1 - x^2)",
+      "(b) 1/sqrt(1 - x^2)",
+      "(c) 1/(1 - x^2)",
+      "(d) (1 - x^2)"
+    ],
+    "answer": "(B) IF = e^(integral x/(1-x^2) dx) = e^(-1/2 ln|1-x^2|) = 1/sqrt(1-x^2).",
+    "chapter": "Differential Equations",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 9,
+    "type": "mcq",
+    "question": "If the direction cosines of a line are sqrt(3)k, sqrt(3)k, sqrt(3)k, then the value of k is",
+    "options": [
+      "(a) ±1",
+      "(b) ±1/3",
+      "(c) ±1/sqrt(3)",
+      "(d) ±sqrt(3)"
+    ],
+    "answer": "(B) l^2+m^2+n^2=1: 3(3k^2)=9k^2=1, k=±1/3.",
+    "chapter": "Three Dimensional Geometry",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 10,
+    "type": "mcq",
+    "question": "A linear programming problem deals with the optimization of",
+    "options": [
+      "(a) a linear objective function only",
+      "(b) a linear objective function subject to linear constraints",
+      "(c) a nonlinear objective function",
+      "(d) a linear objective function subject to nonlinear constraints"
+    ],
+    "answer": "(B) By definition, LPP optimizes a linear objective function subject to linear constraints.",
+    "chapter": "Linear Programming",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 11,
+    "type": "mcq",
+    "question": "If P(A|B) = P(A'|B), then which of the following statements is true?",
+    "options": [
+      "(a) P(A) = P(A')",
+      "(b) P(A intersection B) = P(A' intersection B)",
+      "(c) P(A) = 2P(B)",
+      "(d) P(A intersection B) = 1/2"
+    ],
+    "answer": "(B) P(A|B)=P(A'|B) => P(A∩B)/P(B)=P(A'∩B)/P(B) => P(A∩B)=P(A'∩B).",
+    "chapter": "Probability",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 12,
+    "type": "mcq",
+    "question": "The value of |x+1  x-1; x^2+x+1  x^2-x+1| is",
+    "options": [
+      "(a) 2",
+      "(b) -2",
+      "(c) 2x",
+      "(d) -2x"
+    ],
+    "answer": "(A) (x+1)(x^2-x+1)=x^3+1, (x-1)(x^2+x+1)=x^3-1. Determinant = 2.",
+    "chapter": "Determinants",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 13,
+    "type": "mcq",
+    "question": "The derivative of sin(x^2) with respect to x at x = sqrt(pi) is",
+    "options": [
+      "(a) 2sqrt(pi)",
+      "(b) -2sqrt(pi)",
+      "(c) 2sqrt(pi) cos(pi)",
+      "(d) -2sqrt(pi)"
+    ],
+    "answer": "(B) d/dx[sin(x^2)] = 2x cos(x^2). At x=sqrt(pi): 2sqrt(pi)cos(pi) = -2sqrt(pi).",
+    "chapter": "Continuity and Differentiability",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 14,
+    "type": "mcq",
+    "question": "The order and degree of the differential equation [1 + (dy/dx)^2]^3 = (d^2y/dx^2)^2 are respectively",
+    "options": [
+      "(a) 2 and 3",
+      "(b) 2 and 2",
+      "(c) 3 and 2",
+      "(d) 2 and 1"
+    ],
+    "answer": "(B) Order=2, degree=2. The highest order derivative d2y/dx2 appears with power 2.",
+    "chapter": "Differential Equations",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 15,
+    "type": "mcq",
+    "question": "The vector with terminal point A(2, -3, 5) and initial point B(3, -4, 7) is",
+    "options": [
+      "(a) i_hat - j_hat + 2k_hat",
+      "(b) -i_hat + j_hat - 2k_hat",
+      "(c) i_hat + j_hat - 2k_hat",
+      "(d) -i_hat - j_hat + 2k_hat"
+    ],
+    "answer": "(B) BA = A-B = (2-3,-3+4,5-7) = (-1,1,-2) = -i+j-2k.",
+    "chapter": "Vector Algebra",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 16,
+    "type": "mcq",
+    "question": "The distance of the point P(a, b, c) from the y-axis is",
+    "options": [
+      "(a) b",
+      "(b) |b|",
+      "(c) sqrt(a^2 + c^2)",
+      "(d) sqrt(a^2 + b^2 + c^2)"
+    ],
+    "answer": "(C) Distance of (a,b,c) from y-axis = sqrt(a^2+c^2).",
+    "chapter": "Three Dimensional Geometry",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 17,
+    "type": "mcq",
+    "question": "The number of corner points of the feasible region determined by the constraints x >= 0, y >= 0, x + y >= 4 is",
+    "options": [
+      "(a) 0",
+      "(b) 1",
+      "(c) 2",
+      "(d) 3"
+    ],
+    "answer": "(C) Feasible region: x>=0, y>=0, x+y>=4. Corner points are (4,0) and (0,4). Two corners.",
+    "chapter": "Linear Programming",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 18,
+    "type": "mcq",
+    "question": "If A and B are non-zero square matrices of the same order such that (A + B)^2 = A^2 + B^2, then",
+    "options": [
+      "(a) AB = O",
+      "(b) AB = -BA",
+      "(c) AB = BA",
+      "(d) AB + BA = O"
+    ],
+    "answer": "(D) (A+B)^2=A^2+AB+BA+B^2=A^2+B^2 implies AB+BA=O.",
+    "chapter": "Matrices",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 19,
+    "type": "mcq",
+    "question": "Assertion (A): For the matrix A = [1  cos(theta)  1; -cos(theta)  1  cos(theta); -1  -cos(theta)  1], the value of |A| lies in [2, 4].\nReason (R): cos(theta) lies in [-1, 1] for all values of theta.",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A",
+      "(b) Both A and R are true but R is not the correct explanation of A",
+      "(c) A is true but R is false",
+      "(d) A is false but R is true"
+    ],
+    "answer": "(A) |A|=2+2cos^2(t). Since cos(t) in [-1,1], cos^2(t) in [0,1], so |A| in [2,4]. Both A,R true, R explains A.",
+    "chapter": "Determinants",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 1,
+    "section": "A",
+    "qno": 20,
+    "type": "mcq",
+    "question": "Assertion (A): A line in space cannot be drawn perpendicular to x, y and z axes simultaneously.\nReason (R): For any line in space, the sum cos^2(alpha) + cos^2(beta) + cos^2(gamma) = 1, where alpha, beta, gamma are the direction angles of the line.",
+    "options": [
+      "(a) Both A and R are true and R is the correct explanation of A",
+      "(b) Both A and R are true but R is not the correct explanation of A",
+      "(c) A is true but R is false",
+      "(d) A is false but R is true"
+    ],
+    "answer": "(A) If perpendicular to all axes, cos^2 sum = 0 != 1, contradiction. Both A,R true, R explains A.",
+    "chapter": "Three Dimensional Geometry",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 21,
+    "type": "subjective",
+    "question": "Check if the function f(x) = x^2|x| is differentiable at x = 0.\n\nOR\n\nIf y = sqrt(tan(sqrt(x))), prove that sqrt(x) dy/dx = (1 + y^4)/(4y).",
+    "options": null,
+    "answer": null,
+    "chapter": "Continuity and Differentiability",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 22,
+    "type": "subjective",
+    "question": "Show that the function f(x) = 4x^3 - 18x^2 + 27x - 7 has neither a point of local maxima nor a point of local minima.",
+    "options": null,
+    "answer": null,
+    "chapter": "Application of Derivatives",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 23,
+    "type": "subjective",
+    "question": "Find: integral x sqrt(1 + 2x) dx.\n\nOR\n\nEvaluate: integral from 0 to pi^2/4 of sin(sqrt(x))/sqrt(x) dx.",
+    "options": null,
+    "answer": null,
+    "chapter": "Integrals",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 24,
+    "type": "subjective",
+    "question": "If a_vec and b_vec are two non-zero vectors such that (a_vec + b_vec) is perpendicular to a_vec and (2a_vec + b_vec) is perpendicular to b_vec, then prove that |b_vec| = sqrt(2)|a_vec|.",
+    "options": null,
+    "answer": null,
+    "chapter": "Vector Algebra",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 2,
+    "section": "B",
+    "qno": 25,
+    "type": "subjective",
+    "question": "ABCD is a parallelogram with AB = 2i_hat - 4j_hat + 5k_hat and DB = 3i_hat - 6j_hat + 2k_hat. Find AD and the area of parallelogram ABCD.",
+    "options": null,
+    "answer": null,
+    "chapter": "Vector Algebra",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 26,
+    "type": "subjective",
+    "question": "A relation R is defined on the set A = {1, 2, 3, 4, 5} as R = {(x, y) : |x^2 - y^2| < 8}. Check whether R is reflexive, symmetric and transitive.\n\nOR\n\nA function f : R -> R is defined as f(x) = ax + b, where a, b are real numbers. If f(1) = 1 and f(2) = 3, find f(x). Also check whether f is one-one and onto.",
+    "options": null,
+    "answer": null,
+    "chapter": "Relations and Functions",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 27,
+    "type": "subjective",
+    "question": "If sqrt(1 - x^2) + sqrt(1 - y^2) = a(x - y), prove that dy/dx = sqrt(1 - y^2)/sqrt(1 - x^2).\n\nOR\n\nIf y = (tan x)^x, find dy/dx.",
+    "options": null,
+    "answer": null,
+    "chapter": "Continuity and Differentiability",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 28,
+    "type": "subjective",
+    "question": "Find: integral x^2/((x^2 + 4)(x^2 + 9)) dx.\n\nOR\n\nEvaluate: integral from 1 to 3 of (|x - 1| + |x - 2| + |x - 3|) dx.",
+    "options": null,
+    "answer": null,
+    "chapter": "Integrals",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 29,
+    "type": "subjective",
+    "question": "Find the particular solution of the differential equation x^2 dy/dx - xy = x^2 cos^2(y/(2x)), given that y = pi/2 when x = 1.",
+    "options": null,
+    "answer": null,
+    "chapter": "Differential Equations",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 30,
+    "type": "subjective",
+    "question": "Solve the following Linear Programming Problem graphically:\nMaximise z = 500x + 300y, subject to the constraints:\nx + y <= 200, x >= 20, y - 4x >= 0, x >= 0, y >= 0.",
+    "options": null,
+    "answer": null,
+    "chapter": "Linear Programming",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 3,
+    "section": "C",
+    "qno": 31,
+    "type": "subjective",
+    "question": "E and F are two independent events such that P(E') = 0.6 and P(E union F) = 0.6. Find P(F) and P(E' union F').",
+    "options": null,
+    "answer": null,
+    "chapter": "Probability",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 32,
+    "type": "subjective",
+    "question": "Find: integral (x^2 + 1)/((x - 1)^2(x + 3)) dx.\n\nOR\n\nEvaluate: integral from 0 to pi/2 of x/(sin x + cos x) dx.",
+    "options": null,
+    "answer": null,
+    "chapter": "Integrals",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 33,
+    "type": "subjective",
+    "question": "Draw a rough sketch of the curve y = 2 + |x + 1| and find the area bounded by the curve, the lines x = -4, x = 3 and y = 0.",
+    "options": null,
+    "answer": null,
+    "chapter": "Application of Integrals",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 34,
+    "type": "subjective",
+    "question": "Solve the differential equation: x^2 y dx - (x^3 + y^3) dy = 0.\n\nOR\n\nSolve the differential equation: (1 + x^2) dy/dx + 2xy - 4x^2 = 0, given that y(0) = 0.",
+    "options": null,
+    "answer": null,
+    "chapter": "Differential Equations",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 5,
+    "section": "D",
+    "qno": 35,
+    "type": "subjective",
+    "question": "The polished side of a mirror is along the line x/1 = (1 - y)/-2 = (2z - 4)/6. A point P(1, 6, 3) is placed in front of the mirror. Find the image of the point P in the mirror line and the distance of the image from the point P.",
+    "options": null,
+    "answer": null,
+    "chapter": "Three Dimensional Geometry",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "E",
+    "qno": 36,
+    "type": "case_study",
+    "question": "In a school, a debate competition is being organised. There are 4 students S = {S1, S2, S3, S4} participating and 3 judges J = {J1, J2, J3}. A relation R from S to J is defined as R = {(x, y) : student x is judged by judge y}.\n\nBased on the above information, answer the following questions:\n(i) How many relations are possible from S to J?\n(ii) A function f from S to J is defined as f = {(S1, J1), (S2, J2), (S3, J2), (S4, J3)}. Check whether f is a bijective function or not. Justify your answer.\n(iii)(a) How many one-one functions are possible from S to J? Justify your answer.\nOR\n(iii)(b) Let R1 be a relation in set S defined as R1 = {(S1, S2), (S2, S4)}. What minimum number of ordered pairs need to be added to R1 so that it becomes reflexive but not symmetric? Write those ordered pairs.",
+    "options": null,
+    "answer": null,
+    "chapter": "Relations and Functions",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "E",
+    "qno": 37,
+    "type": "case_study",
+    "question": "Three car manufacturers Amber, Bonzi and Comet dominate the car market with market shares of 60%, 30% and 10% respectively. Of their output, 20%, 10% and 5% respectively are electric cars.\n\nBased on the above information, answer the following questions:\n(i) Find the probability that a randomly selected car is electric, i.e., P(electric).\n(ii) If a car selected at random is found to be electric, find the probability that it was manufactured by Comet, i.e., P(Comet|electric).\n(iii) If a car selected at random is found to be electric, find the probability that it was manufactured by Amber or Bonzi, i.e., P(Amber or Bonzi|electric).",
+    "options": null,
+    "answer": null,
+    "chapter": "Probability",
+    "set": "65/1/1-11"
+  },
+  {
+    "year": 2024,
+    "marks": 4,
+    "section": "E",
+    "qno": 38,
+    "type": "case_study",
+    "question": "The function describing the intensity of a street light is given by f(x) = e^x sin x, where x is in [0, pi].\n\nBased on the above information, answer the following questions:\n(i) Find the intervals on which f(x) is strictly increasing on [0, pi].\n(ii) Find the intervals on which f(x) is strictly decreasing on [0, pi].\n(iii) Find the critical points of f(x) on [0, pi] and verify them.",
+    "options": null,
+    "answer": null,
+    "chapter": "Application of Derivatives",
+    "set": "65/1/1-11"
+  }
+]

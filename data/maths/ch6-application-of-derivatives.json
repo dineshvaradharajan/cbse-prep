@@ -1,0 +1,713 @@
+{
+  "chapter": 6,
+  "title": "Application of Derivatives",
+  "quote": "With the Calculus as a key, Mathematics can be successfully applied to the explanation of the course of Nature. -- WHITEHEAD",
+  "sections": [
+    {
+      "id": "6.1",
+      "title": "Introduction",
+      "concepts": [
+        "Derivative of composite functions, inverse trigonometric functions, implicit functions, exponential functions and logarithmic functions",
+        "Applications of derivatives in engineering, science, social science and other fields",
+        "Using derivatives to determine rate of change of quantities",
+        "Finding equations of tangent and normal to a curve at a point",
+        "Finding turning points on graphs to locate local maxima and minima",
+        "Finding intervals where a function is increasing or decreasing",
+        "Using derivatives to find approximate values of quantities"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Chapter 5 covered finding derivatives; this chapter covers applications of those derivatives",
+        "Applications include: (i) rate of change, (ii) tangent and normal equations, (iii) turning points for maxima/minima, (iv) increasing/decreasing intervals, (v) approximations"
+      ]
+    },
+    {
+      "id": "6.2",
+      "title": "Rate of Change of Quantities",
+      "concepts": [
+        "Rate of change of distance with respect to time: ds/dt",
+        "Rate of change of y with respect to x when y = f(x): dy/dx or f'(x)",
+        "Rate of change at a specific point x = x_0: (dy/dx) evaluated at x=x_0, or f'(x_0)",
+        "Using Chain Rule when two variables vary with respect to a third variable",
+        "Marginal cost: instantaneous rate of change of total cost with respect to output",
+        "Marginal revenue: rate of change of total revenue with respect to number of items sold"
+      ],
+      "definitions": [
+        {
+          "term": "Rate of Change",
+          "definition": "If y = f(x), then dy/dx (or f'(x)) represents the rate of change of y with respect to x, and (dy/dx) at x=x_0 represents the rate of change of y with respect to x at x = x_0."
+        },
+        {
+          "term": "Marginal Cost",
+          "definition": "The instantaneous rate of change of total cost with respect to output. If C(x) is the total cost for x units, then Marginal Cost (MC) = dC/dx."
+        },
+        {
+          "term": "Marginal Revenue",
+          "definition": "The rate of change of total revenue with respect to the number of units sold. If R(x) is total revenue for x units, then Marginal Revenue (MR) = dR/dx."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Rate of change using Chain Rule",
+          "formula": "dy/dx = (dy/dt) / (dx/dt), if dx/dt != 0",
+          "condition": "When x = f(t) and y = g(t), both varying with respect to t"
+        },
+        {
+          "name": "Rate of change of area of circle",
+          "formula": "dA/dr = 2*pi*r",
+          "context": "A = pi*r^2"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "dy/dx is positive if y increases as x increases",
+        "dy/dx is negative if y decreases as x increases",
+        "The rate of change of y with respect to x can be calculated using the rates of change of y and x both with respect to t (Chain Rule)",
+        "For a cube with side x: V = x^3, S = 6x^2; if dV/dt = 9 cm^3/s and x = 10 cm, then dS/dt = 3.6 cm^2/s",
+        "For a circle with radius r: A = pi*r^2; dA/dt = 2*pi*r*(dr/dt)"
+      ]
+    },
+    {
+      "id": "6.3",
+      "title": "Increasing and Decreasing Functions",
+      "concepts": [
+        "Increasing functions on an interval",
+        "Decreasing functions on an interval",
+        "Strictly increasing and strictly decreasing functions",
+        "Constant functions on an interval",
+        "Using the first derivative to determine increasing/decreasing nature",
+        "Finding intervals of increase and decrease by analyzing sign of f'(x)"
+      ],
+      "definitions": [
+        {
+          "term": "Increasing function",
+          "definition": "A function f is increasing on interval I if x_1 < x_2 in I implies f(x_1) <= f(x_2) for all x_1, x_2 in I.",
+          "id": "Definition 1(i)"
+        },
+        {
+          "term": "Decreasing function",
+          "definition": "A function f is decreasing on interval I if x_1 < x_2 in I implies f(x_1) >= f(x_2) for all x_1, x_2 in I.",
+          "id": "Definition 1(ii)"
+        },
+        {
+          "term": "Constant function",
+          "definition": "A function f is constant on interval I if f(x) = c for all x in I, where c is a constant.",
+          "id": "Definition 1(iii)"
+        },
+        {
+          "term": "Strictly increasing function",
+          "definition": "A function f is strictly increasing on interval I if x_1 < x_2 in I implies f(x_1) < f(x_2) for all x_1, x_2 in I.",
+          "id": "Definition 1(iv)"
+        },
+        {
+          "term": "Strictly decreasing function",
+          "definition": "A function f is strictly decreasing on interval I if x_1 < x_2 in I implies f(x_1) > f(x_2) for all x_1, x_2 in I.",
+          "id": "Definition 1(v)"
+        },
+        {
+          "term": "Increasing/Decreasing at a point",
+          "definition": "Let x_0 be a point in the domain of f. Then f is said to be increasing (decreasing) at x_0 if there exists an open interval I containing x_0 such that f is increasing (decreasing) in I.",
+          "id": "Definition 2"
+        }
+      ],
+      "formulas": [],
+      "theorems": [
+        {
+          "id": "Theorem 1",
+          "name": "First Derivative Test for Increasing/Decreasing",
+          "statement": "Let f be continuous on [a, b] and differentiable on (a, b). Then: (a) f is increasing in [a,b] if f'(x) >= 0 for each x in (a,b); (b) f is decreasing in [a,b] if f'(x) <= 0 for each x in (a,b); (c) f is a constant function in [a,b] if f'(x) = 0 for each x in (a,b).",
+          "proof_outline": "Using Mean Value Theorem: for x_1 < x_2 in [a,b], there exists c between x_1 and x_2 such that f(x_2) - f(x_1) = f'(c)(x_2 - x_1). Since f'(c) >= 0 and x_2 - x_1 > 0, we get f(x_2) >= f(x_1), hence f is increasing."
+        }
+      ],
+      "key_points": [
+        "If f'(x) > 0 for x in an interval (excluding endpoints) and f is continuous, then f is increasing",
+        "If f'(x) < 0 for x in an interval (excluding endpoints) and f is continuous, then f is decreasing",
+        "To find intervals: set f'(x) = 0, find critical points, test sign of f'(x) in each interval",
+        "f(x) = x^3 - 3x^2 + 4x is increasing on R since f'(x) = 3(x-1)^2 + 1 > 0 always",
+        "cos x is decreasing in (0, pi) and increasing in (pi, 2*pi)",
+        "For f(x) = sin x + cos x on [0, 2*pi]: increasing on [0, pi/4] and [5*pi/4, 2*pi], decreasing on [pi/4, 5*pi/4]"
+      ]
+    },
+    {
+      "id": "6.4",
+      "title": "Maxima and Minima",
+      "concepts": [
+        "Maximum and minimum values of a function",
+        "Local (relative) maxima and minima",
+        "Absolute (global) maxima and minima",
+        "Turning points of a function",
+        "Critical points",
+        "Point of inflection",
+        "First Derivative Test for local maxima/minima",
+        "Second Derivative Test for local maxima/minima",
+        "Absolute maxima and minima on a closed interval",
+        "Optimization problems (applied maxima and minima)"
+      ],
+      "definitions": [
+        {
+          "term": "Maximum value",
+          "definition": "f is said to have a maximum value in interval I if there exists a point c in I such that f(c) > f(x) for all x in I. The number f(c) is called the maximum value and c is called the point of maximum value.",
+          "id": "Definition 3(a)"
+        },
+        {
+          "term": "Minimum value",
+          "definition": "f is said to have a minimum value in interval I if there exists a point c in I such that f(c) < f(x) for all x in I. The number f(c) is called the minimum value and c is called the point of minimum value.",
+          "id": "Definition 3(b)"
+        },
+        {
+          "term": "Extreme value",
+          "definition": "f is said to have an extreme value in I if there exists a point c in I such that f(c) is either a maximum or minimum value of f in I. The number f(c) is called an extreme value and c is called an extreme point.",
+          "id": "Definition 3(c)"
+        },
+        {
+          "term": "Local maxima",
+          "definition": "c is a point of local maxima if there is an h > 0 such that f(c) >= f(x) for all x in (c-h, c+h), x != c. The value f(c) is called the local maximum value.",
+          "id": "Definition 4(a)"
+        },
+        {
+          "term": "Local minima",
+          "definition": "c is a point of local minima if there is an h > 0 such that f(c) <= f(x) for all x in (c-h, c+h). The value f(c) is called the local minimum value.",
+          "id": "Definition 4(b)"
+        },
+        {
+          "term": "Critical point",
+          "definition": "A point c in the domain of a function f at which either f'(c) = 0 or f is not differentiable is called a critical point of f."
+        },
+        {
+          "term": "Point of inflection",
+          "definition": "A point where f'(x) does not change sign as x increases through c. It is neither a point of local maxima nor local minima."
+        },
+        {
+          "term": "Absolute maximum (global maximum / greatest value)",
+          "definition": "The maximum value of f at x = a on a closed interval [a, d] where f(a) >= f(x) for all x in [a, d]."
+        },
+        {
+          "term": "Absolute minimum (global minimum / least value)",
+          "definition": "The minimum value of f at x = d on a closed interval [a, d] where f(d) <= f(x) for all x in [a, d]."
+        }
+      ],
+      "formulas": [],
+      "theorems": [
+        {
+          "id": "Theorem 2",
+          "name": "Necessary condition for local extrema",
+          "statement": "Let f be a function defined on an open interval I. Suppose c is in I. If f has a local maxima or a local minima at x = c, then either f'(c) = 0 or f is not differentiable at c.",
+          "remark": "The converse is not true. For example, f(x) = x^3, f'(0) = 0, but 0 is neither a local maxima nor local minima."
+        },
+        {
+          "id": "Theorem 3",
+          "name": "First Derivative Test",
+          "statement": "Let f be a function defined on an open interval I. Let f be continuous at a critical point c in I. Then: (i) If f'(x) changes sign from positive to negative as x increases through c (f'(x) > 0 to left, f'(x) < 0 to right), then c is a point of local maxima. (ii) If f'(x) changes sign from negative to positive as x increases through c (f'(x) < 0 to left, f'(x) > 0 to right), then c is a point of local minima. (iii) If f'(x) does not change sign as x increases through c, then c is neither a point of local maxima nor local minima (point of inflection)."
+        },
+        {
+          "id": "Theorem 4",
+          "name": "Second Derivative Test",
+          "statement": "Let f be a function defined on an interval I and c in I. Let f be twice differentiable at c. Then: (i) x = c is a point of local maxima if f'(c) = 0 and f''(c) < 0. The value f(c) is local maximum value. (ii) x = c is a point of local minima if f'(c) = 0 and f''(c) > 0. The value f(c) is local minimum value. (iii) The test fails if f'(c) = 0 and f''(c) = 0. In this case, go back to the first derivative test."
+        },
+        {
+          "id": "Theorem 5",
+          "name": "Existence of absolute extrema on closed interval",
+          "statement": "Let f be a continuous function on an interval I = [a, b]. Then f has the absolute maximum value and f attains it at least once in I. Also, f has the absolute minimum value and attains it at least once in I."
+        },
+        {
+          "id": "Theorem 6",
+          "name": "Condition for absolute extrema at interior points",
+          "statement": "Let f be a differentiable function on a closed interval I and let c be any interior point of I. Then: (i) f'(c) = 0 if f attains its absolute maximum value at c. (ii) f'(c) = 0 if f attains its absolute minimum value at c."
+        }
+      ],
+      "key_points": [
+        "Every monotonic function assumes its maximum/minimum value at the end points of the domain of definition",
+        "Every continuous function on a closed interval has a maximum and a minimum value",
+        "f(x) = x^2 on R: minimum value is 0 at x = 0, no maximum value",
+        "f(x) = |x| on R: minimum value is 0 at x = 0, no maximum value",
+        "f(x) = x on (0,1): has neither maximum nor minimum value in the open interval",
+        "Turning points are where the function changes from increasing to decreasing or vice versa",
+        "At local maxima: f'(x) changes from + to - (hill shape)",
+        "At local minima: f'(x) changes from - to + (valley shape)",
+        "Second derivative test is often easier to apply than the first derivative test",
+        "When second derivative test fails (f''(c) = 0), fall back to first derivative test"
+      ]
+    },
+    {
+      "id": "6.4.1",
+      "title": "Maximum and Minimum Values of a Function in a Closed Interval",
+      "concepts": [
+        "Absolute maximum and absolute minimum on closed intervals",
+        "Working rule for finding absolute maxima/minima",
+        "Difference between local and absolute extrema",
+        "Evaluating function at critical points and endpoints"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Absolute maximum/minimum may differ from local maximum/minimum",
+        "Working Rule: Step 1: Find all critical points (f'(x) = 0 or f not differentiable). Step 2: Take end points of the interval. Step 3: Evaluate f at all points from Steps 1 and 2. Step 4: The largest value is absolute maximum, the smallest is absolute minimum.",
+        "Example: f(x) = 2x^3 - 15x^2 + 36x + 1 on [1,5]: absolute max = 56 at x = 5, absolute min = 24 at x = 1"
+      ]
+    }
+  ],
+  "summary": [
+    "If a quantity y varies with another quantity x satisfying y = f(x), then dy/dx (or f'(x)) represents the rate of change of y with respect to x.",
+    "(dy/dx) at x = x_0 (or f'(x_0)) represents the rate of change of y with respect to x at x = x_0.",
+    "If x = f(t) and y = g(t), then by Chain Rule: dy/dx = (dy/dt)/(dx/dt), if dx/dt != 0.",
+    "A function f is increasing on (a,b) if x_1 < x_2 implies f(x_1) < f(x_2) for all x_1, x_2 in (a,b). Alternatively, if f'(x) >= 0 for each x in (a,b).",
+    "A function f is decreasing on (a,b) if x_1 < x_2 implies f(x_1) > f(x_2) for all x_1, x_2 in (a,b). Alternatively, if f'(x) <= 0 for each x in (a,b).",
+    "A function f is constant in (a,b) if f(x) = c for all x in (a,b), where c is a constant.",
+    "A point c in the domain of f at which either f'(c) = 0 or f is not differentiable is called a critical point of f.",
+    "First Derivative Test: Let f be continuous at critical point c in open interval I. (i) If f'(x) changes from + to - through c, then c is a point of local maxima. (ii) If f'(x) changes from - to + through c, then c is a point of local minima. (iii) If f'(x) does not change sign through c, then c is a point of inflection.",
+    "Second Derivative Test: Let f be twice differentiable at c in interval I. (i) x = c is local maxima if f'(c) = 0 and f''(c) < 0; f(c) is local maximum value. (ii) x = c is local minima if f'(c) = 0 and f''(c) > 0; f(c) is local minimum value. (iii) Test fails if f'(c) = 0 and f''(c) = 0; use first derivative test instead.",
+    "Working rule for absolute maxima/minima on [a,b]: Step 1: Find all critical points of f in the interval. Step 2: Take the end points of the interval. Step 3: At all these points, calculate values of f. Step 4: The maximum value is the absolute maximum and the minimum value is the absolute minimum of f."
+  ],
+  "exercises": [
+    {
+      "id": "6.1",
+      "title": "Exercise 6.1",
+      "topic": "Rate of Change of Quantities",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the rate of change of the area of a circle with respect to its radius r when (a) r = 3 cm (b) r = 4 cm",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "The volume of a cube is increasing at the rate of 8 cm^3/s. How fast is the surface area increasing when the length of an edge is 12 cm?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "The radius of a circle is increasing uniformly at the rate of 3 cm/s. Find the rate at which the area of the circle is increasing when the radius is 10 cm.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "An edge of a variable cube is increasing at the rate of 3 cm/s. How fast is the volume of the cube increasing when the edge is 10 cm long?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "A stone is dropped into a quiet lake and waves move in circles at the speed of 5 cm/s. At the instant when the radius of the circular wave is 8 cm, how fast is the enclosed area increasing?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "The radius of a circle is increasing at the rate of 0.7 cm/s. What is the rate of increase of its circumference?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "The length x of a rectangle is decreasing at the rate of 5 cm/minute and the width y is increasing at the rate of 4 cm/minute. When x = 8cm and y = 6cm, find the rates of change of (a) the perimeter, and (b) the area of the rectangle.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "A balloon, which always remains spherical on inflation, is being inflated by pumping in 900 cubic centimetres of gas per second. Find the rate at which the radius of the balloon increases when the radius is 15 cm.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "A balloon, which always remains spherical has a variable radius. Find the rate at which its volume is increasing with the radius when the later is 10 cm.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "A ladder 5 m long is leaning against a wall. The bottom of the ladder is pulled along the ground, away from the wall, at the rate of 2cm/s. How fast is its height on the wall decreasing when the foot of the ladder is 4 m away from the wall?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "A particle moves along the curve 6y = x^3 + 2. Find the points on the curve at which the y-coordinate is changing 8 times as fast as the x-coordinate.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 12,
+          "question": "The radius of an air bubble is increasing at the rate of 1/2 cm/s. At what rate is the volume of the bubble increasing when the radius is 1 cm?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "A balloon, which always remains spherical, has a variable diameter (3/2)(2x + 1). Find the rate of change of its volume with respect to x.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 14,
+          "question": "Sand is pouring from a pipe at the rate of 12 cm^3/s. The falling sand forms a cone on the ground in such a way that the height of the cone is always one-sixth of the radius of the base. How fast is the height of the sand cone increasing when the height is 4 cm?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 15,
+          "question": "The total cost C(x) in Rupees associated with the production of x units of an item is given by C(x) = 0.007x^3 - 0.003x^2 + 15x + 4000. Find the marginal cost when 17 units are produced.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 16,
+          "question": "The total revenue in Rupees received from the sale of x units of a product is given by R(x) = 13x^2 + 26x + 15. Find the marginal revenue when x = 7.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 17,
+          "question": "The rate of change of the area of a circle with respect to its radius r at r = 6 cm is (A) 10*pi (B) 12*pi (C) 8*pi (D) 11*pi",
+          "type": "MCQ",
+          "options": ["10*pi", "12*pi", "8*pi", "11*pi"]
+        },
+        {
+          "qno": 18,
+          "question": "The total revenue in Rupees received from the sale of x units of a product is given by R(x) = 3x^2 + 36x + 5. The marginal revenue, when x = 15 is (A) 116 (B) 96 (C) 90 (D) 126",
+          "type": "MCQ",
+          "options": ["116", "96", "90", "126"]
+        }
+      ]
+    },
+    {
+      "id": "6.2",
+      "title": "Exercise 6.2",
+      "topic": "Increasing and Decreasing Functions",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Show that the function given by f(x) = 3x + 17 is increasing on R.",
+          "type": "proof"
+        },
+        {
+          "qno": 2,
+          "question": "Show that the function given by f(x) = e^(2x) is increasing on R.",
+          "type": "proof"
+        },
+        {
+          "qno": 3,
+          "question": "Show that the function given by f(x) = sin x is (a) increasing in (0, pi/2) (b) decreasing in (pi/2, pi) (c) neither increasing nor decreasing in (0, pi)",
+          "type": "proof"
+        },
+        {
+          "qno": 4,
+          "question": "Find the intervals in which the function f given by f(x) = 2x^2 - 3x is (a) increasing (b) decreasing",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find the intervals in which the function f given by f(x) = 2x^3 - 3x^2 - 36x + 7 is (a) increasing (b) decreasing",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Find the intervals in which the following functions are strictly increasing or decreasing: (a) x^2 + 2x - 5 (b) 10 - 6x - 2x^2 (c) -2x^3 - 9x^2 - 12x + 1 (d) 6 - 9x - x^2 (e) (x+1)^3 (x-3)^3",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Show that y = log(1+x) - 2x/(2+x), x > -1, is an increasing function of x throughout its domain.",
+          "type": "proof"
+        },
+        {
+          "qno": 8,
+          "question": "Find the values of x for which y = [x(x-2)]^2 is an increasing function.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Prove that y = (4*sin(theta))/(2+cos(theta)) - theta is an increasing function of theta in [0, pi/2].",
+          "type": "proof"
+        },
+        {
+          "qno": 10,
+          "question": "Prove that the logarithmic function is increasing on (0, infinity).",
+          "type": "proof"
+        },
+        {
+          "qno": 11,
+          "question": "Prove that the function f given by f(x) = x^2 - x + 1 is neither strictly increasing nor decreasing on (-1, 1).",
+          "type": "proof"
+        },
+        {
+          "qno": 12,
+          "question": "Which of the following functions are decreasing on (0, pi/2)? (A) cos x (B) cos 2x (C) cos 3x (D) tan x",
+          "type": "MCQ",
+          "options": ["cos x", "cos 2x", "cos 3x", "tan x"]
+        },
+        {
+          "qno": 13,
+          "question": "On which of the following intervals is the function f given by f(x) = x^100 + sin x - 1 decreasing? (A) (0,1) (B) (pi/2, pi) (C) (0, pi/2) (D) None of these",
+          "type": "MCQ",
+          "options": ["(0,1)", "(pi/2, pi)", "(0, pi/2)", "None of these"]
+        },
+        {
+          "qno": 14,
+          "question": "For what values of a the function f given by f(x) = x^2 + ax + 1 is increasing on [1, 2]?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 15,
+          "question": "Let I be any interval disjoint from [-1, 1]. Prove that the function f given by f(x) = x + 1/x is increasing on I.",
+          "type": "proof"
+        },
+        {
+          "qno": 16,
+          "question": "Prove that the function f given by f(x) = log(sin x) is increasing on (0, pi/2) and decreasing on (pi/2, pi).",
+          "type": "proof"
+        },
+        {
+          "qno": 17,
+          "question": "Prove that the function f given by f(x) = log|cos x| is decreasing on (0, pi/2) and increasing on (3*pi/2, 2*pi).",
+          "type": "proof"
+        },
+        {
+          "qno": 18,
+          "question": "Prove that the function given by f(x) = x^3 - 3x^2 + 3x - 100 is increasing in R.",
+          "type": "proof"
+        },
+        {
+          "qno": 19,
+          "question": "The interval in which y = x^2 * e^(-x) is increasing is (A) (-infinity, infinity) (B) (-2, 0) (C) (2, infinity) (D) (0, 2)",
+          "type": "MCQ",
+          "options": ["(-infinity, infinity)", "(-2, 0)", "(2, infinity)", "(0, 2)"]
+        }
+      ]
+    },
+    {
+      "id": "6.3",
+      "title": "Exercise 6.3",
+      "topic": "Maxima and Minima",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the maximum and minimum values, if any, of the following functions given by (i) f(x) = (2x-1)^2 + 3 (ii) f(x) = 9x^2 + 12x + 2 (iii) f(x) = -(x-1)^2 + 10 (iv) g(x) = x^3 + 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Find the maximum and minimum values, if any, of the following functions given by (i) f(x) = |x+2| - 1 (ii) g(x) = -|x+1| + 3 (iii) h(x) = sin(2x) + 5 (iv) f(x) = |sin 4x + 3| (v) h(x) = x + 1, x in (-1, 1)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Find the local maxima and local minima, if any, of the following functions. Find also the local maximum and the local minimum values, as the case may be: (i) f(x) = x^2 (ii) g(x) = x^3 - 3x (iii) h(x) = sin x + cos x, 0 < x < pi/2 (iv) f(x) = sin x - cos x, 0 < x < 2*pi (v) f(x) = x^3 - 6x^2 + 9x + 15 (vi) g(x) = x/2 + 2/x, x > 0 (vii) g(x) = 1/(x^2 + 2) (viii) f(x) = x*sqrt(1-x), 0 < x < 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Prove that the following functions do not have maxima or minima: (i) f(x) = e^x (ii) g(x) = log x (iii) h(x) = x^3 + x^2 + x + 1",
+          "type": "proof"
+        },
+        {
+          "qno": 5,
+          "question": "Find the absolute maximum value and the absolute minimum value of the following functions in the given intervals: (i) f(x) = x^3, x in [-2, 2] (ii) f(x) = sin x + cos x, x in [0, pi] (iii) f(x) = 4x - (1/2)x^2, x in [-2, 9/2] (iv) f(x) = (x-1)^2 + 3, x in [-3, 1]",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Find the maximum profit that a company can make, if the profit function is given by p(x) = 41 - 72x - 18x^2",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Find both the maximum value and the minimum value of 3x^4 - 8x^3 + 12x^2 - 48x + 25 on the interval [0, 3].",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "At what points in the interval [0, 2*pi], does the function sin 2x attain its maximum value?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "What is the maximum value of the function sin x + cos x?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Find the maximum value of 2x^3 - 24x + 107 in the interval [1, 3]. Find the maximum value of the same function in [-3, -1].",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "It is given that at x = 1, the function x^4 - 62x^2 + ax + 9 attains its maximum value, on the interval [0, 2]. Find the value of a.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 12,
+          "question": "Find the maximum and minimum values of x + sin 2x on [0, 2*pi].",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "Find two numbers whose sum is 24 and whose product is as large as possible.",
+          "type": "word_problem"
+        },
+        {
+          "qno": 14,
+          "question": "Find two positive numbers x and y such that x + y = 60 and xy^3 is maximum.",
+          "type": "word_problem"
+        },
+        {
+          "qno": 15,
+          "question": "Find two positive numbers x and y such that their sum is 35 and the product x^2 * y^5 is a maximum.",
+          "type": "word_problem"
+        },
+        {
+          "qno": 16,
+          "question": "Find two positive numbers whose sum is 16 and the sum of whose cubes is minimum.",
+          "type": "word_problem"
+        },
+        {
+          "qno": 17,
+          "question": "A square piece of tin of side 18 cm is to be made into a box without top, by cutting a square from each corner and folding up the flaps to form the box. What should be the side of the square to be cut off so that the volume of the box is the maximum possible.",
+          "type": "word_problem"
+        },
+        {
+          "qno": 18,
+          "question": "A rectangular sheet of tin 45 cm by 24 cm is to be made into a box without top, by cutting off square from each corner and folding up the flaps. What should be the side of the square to be cut off so that the volume of the box is maximum?",
+          "type": "word_problem"
+        },
+        {
+          "qno": 19,
+          "question": "Show that of all the rectangles inscribed in a given fixed circle, the square has the maximum area.",
+          "type": "proof"
+        },
+        {
+          "qno": 20,
+          "question": "Show that the right circular cylinder of given surface and maximum volume is such that its height is equal to the diameter of the base.",
+          "type": "proof"
+        },
+        {
+          "qno": 21,
+          "question": "Of all the closed cylindrical cans (right circular), of a given volume of 100 cubic centimetres, find the dimensions of the can which has the minimum surface area?",
+          "type": "word_problem"
+        },
+        {
+          "qno": 22,
+          "question": "A wire of length 28 m is to be cut into two pieces. One of the pieces is to be made into a square and the other into a circle. What should be the length of the two pieces so that the combined area of the square and the circle is minimum?",
+          "type": "word_problem"
+        },
+        {
+          "qno": 23,
+          "question": "Prove that the volume of the largest cone that can be inscribed in a sphere of radius R is 8/27 of the volume of the sphere.",
+          "type": "proof"
+        },
+        {
+          "qno": 24,
+          "question": "Show that the right circular cone of least curved surface and given volume has an altitude equal to sqrt(2) times the radius of the base.",
+          "type": "proof"
+        },
+        {
+          "qno": 25,
+          "question": "Show that the semi-vertical angle of the cone of the maximum volume and of given slant height is tan^(-1)(sqrt(2)).",
+          "type": "proof"
+        },
+        {
+          "qno": 26,
+          "question": "Show that semi-vertical angle of right circular cone of given surface area and maximum volume is sin^(-1)(1/3).",
+          "type": "proof"
+        },
+        {
+          "qno": 27,
+          "question": "The point on the curve x^2 = 2y which is nearest to the point (0, 5) is (A) (2*sqrt(2), 4) (B) (2*sqrt(2), 0) (C) (0, 0) (D) (2, 2)",
+          "type": "MCQ",
+          "options": ["(2*sqrt(2), 4)", "(2*sqrt(2), 0)", "(0, 0)", "(2, 2)"]
+        },
+        {
+          "qno": 28,
+          "question": "For all real values of x, the minimum value of (1 - x + x^2)/(1 + x + x^2) is (A) 0 (B) 1 (C) 3 (D) 1/3",
+          "type": "MCQ",
+          "options": ["0", "1", "3", "1/3"]
+        },
+        {
+          "qno": 29,
+          "question": "The maximum value of [x(x-1)+1]^(1/3), 0 <= x <= 1 is (A) (1/3)^(1/3) (B) 1/2 (C) 1 (D) 0",
+          "type": "MCQ",
+          "options": ["(1/3)^(1/3)", "1/2", "1", "0"]
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 6",
+      "topic": "Mixed problems on Application of Derivatives",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Show that the function given by f(x) = (log x)/x has maximum at x = e.",
+          "type": "proof"
+        },
+        {
+          "qno": 2,
+          "question": "The two equal sides of an isosceles triangle with fixed base b are decreasing at the rate of 3 cm per second. How fast is the area decreasing when the two equal sides are equal to the base?",
+          "type": "word_problem"
+        },
+        {
+          "qno": 3,
+          "question": "Find the intervals in which the function f given by f(x) = (4*sin x - 2x - x*cos x)/(2 + cos x) is (i) increasing (ii) decreasing.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Find the intervals in which the function f given by f(x) = x^3 + 1/x^3, x != 0 is (i) increasing (ii) decreasing.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find the maximum area of an isosceles triangle inscribed in the ellipse x^2/a^2 + y^2/b^2 = 1 with its vertex at one end of the major axis.",
+          "type": "word_problem"
+        },
+        {
+          "qno": 6,
+          "question": "A tank with rectangular base and rectangular sides, open at the top is to be constructed so that its depth is 2 m and volume is 8 m^3. If building of tank costs Rs 70 per sq metres for the base and Rs 45 per square metre for sides. What is the cost of least expensive tank?",
+          "type": "word_problem"
+        },
+        {
+          "qno": 7,
+          "question": "The sum of the perimeter of a circle and square is k, where k is some constant. Prove that the sum of their areas is least when the side of square is double the radius of the circle.",
+          "type": "proof"
+        },
+        {
+          "qno": 8,
+          "question": "A window is in the form of a rectangle surmounted by a semicircular opening. The total perimeter of the window is 10 m. Find the dimensions of the window to admit maximum light through the whole opening.",
+          "type": "word_problem"
+        },
+        {
+          "qno": 9,
+          "question": "A point on the hypotenuse of a triangle is at distance a and b from the sides of the triangle. Show that the minimum length of the hypotenuse is (a^(2/3) + b^(2/3))^(3/2).",
+          "type": "proof"
+        },
+        {
+          "qno": 10,
+          "question": "Find the points at which the function f given by f(x) = (x-2)^4 * (x+1)^3 has (i) local maxima (ii) local minima (iii) point of inflexion",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "Find the absolute maximum and minimum values of the function f given by f(x) = cos^2(x) + sin x, x in [0, pi]",
+          "type": "short_answer"
+        },
+        {
+          "qno": 12,
+          "question": "Show that the altitude of the right circular cone of maximum volume that can be inscribed in a sphere of radius r is 4r/3.",
+          "type": "proof"
+        },
+        {
+          "qno": 13,
+          "question": "Let f be a function defined on [a, b] such that f'(x) > 0, for all x in (a, b). Then prove that f is an increasing function on (a, b).",
+          "type": "proof"
+        },
+        {
+          "qno": 14,
+          "question": "Show that the height of the cylinder of maximum volume that can be inscribed in a sphere of radius R is 2R/sqrt(3). Also find the maximum volume.",
+          "type": "proof"
+        },
+        {
+          "qno": 15,
+          "question": "Show that height of the cylinder of greatest volume which can be inscribed in a right circular cone of height h and semi vertical angle alpha is one-third that of the cone and the greatest volume of cylinder is (4/27)*pi*h^3*tan^2(alpha).",
+          "type": "proof"
+        },
+        {
+          "qno": 16,
+          "question": "A cylindrical tank of radius 10 m is being filled with wheat at the rate of 314 cubic metre per hour. Then the depth of the wheat is increasing at the rate of (A) 1 m/h (B) 0.1 m/h (C) 1.1 m/h (D) 0.5 m/h",
+          "type": "MCQ",
+          "options": ["1 m/h", "0.1 m/h", "1.1 m/h", "0.5 m/h"]
+        }
+      ]
+    }
+  ]
+}

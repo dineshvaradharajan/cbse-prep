@@ -1,0 +1,693 @@
+{
+  "chapter": 13,
+  "title": "Probability",
+  "sections": [
+    {
+      "id": "13.1",
+      "title": "Introduction",
+      "concepts": [
+        "Axiomatic approach to probability by A.N. Kolmogorov",
+        "Classical theory of probability for equally likely outcomes",
+        "Probabilities of events associated with discrete sample spaces",
+        "Addition rule of probability",
+        "Conditional probability",
+        "Bayes' theorem",
+        "Multiplication rule of probability",
+        "Independence of events",
+        "Random variable and its probability distribution",
+        "Mean and variance of a probability distribution",
+        "Binomial distribution"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "In earlier classes, probability was studied as a measure of uncertainty of events in a random experiment",
+        "The axiomatic theory and the classical theory of probability are equivalent for equally likely outcomes",
+        "Throughout this chapter, experiments have equally likely outcomes unless stated otherwise"
+      ]
+    },
+    {
+      "id": "13.2",
+      "title": "Conditional Probability",
+      "concepts": [
+        "Conditional probability of an event given another event has occurred",
+        "Reduced sample space when additional information is given",
+        "Properties of conditional probability"
+      ],
+      "definitions": [
+        {
+          "term": "Conditional Probability",
+          "definition": "If E and F are two events associated with the same sample space of a random experiment, the conditional probability of the event E given that F has occurred, i.e., P(E|F) is given by P(E|F) = P(E intersection F) / P(F), provided P(F) != 0."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Conditional Probability",
+          "formula": "P(E|F) = P(E n F) / P(F), provided P(F) != 0",
+          "notes": "Also written as P(E|F) = n(E n F) / n(F) for equally likely outcomes"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "When event F is known to have occurred, the sample space reduces from S to F",
+        "The elements of F favourable to event E are the common elements of E and F, i.e., E n F",
+        "Conditional probability is valid only when P(F) != 0, i.e., F != phi"
+      ]
+    },
+    {
+      "id": "13.2.1",
+      "title": "Properties of Conditional Probability",
+      "concepts": [
+        "Conditional probability of sample space given an event",
+        "Addition rule for conditional probability",
+        "Complement rule for conditional probability"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Property 1: P(S|F)",
+          "formula": "P(S|F) = P(F|F) = 1",
+          "notes": "The conditional probability of the sample space S given F is 1"
+        },
+        {
+          "name": "Property 2: Addition rule for conditional probability",
+          "formula": "P((A u B)|F) = P(A|F) + P(B|F) - P((A n B)|F)",
+          "notes": "For disjoint events A and B: P((A u B)|F) = P(A|F) + P(B|F)"
+        },
+        {
+          "name": "Property 3: Complement rule",
+          "formula": "P(E'|F) = 1 - P(E|F)",
+          "notes": "Follows from P(S|F) = 1 and E, E' being disjoint with E u E' = S"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "0 <= P(E|F) <= 1",
+        "P(S|F) = P(F|F) = 1",
+        "For disjoint events A and B: P((A u B)|F) = P(A|F) + P(B|F)",
+        "P(E'|F) = 1 - P(E|F)"
+      ]
+    },
+    {
+      "id": "13.3",
+      "title": "Multiplication Theorem on Probability",
+      "concepts": [
+        "Probability of simultaneous occurrence of two events",
+        "Multiplication rule for two events",
+        "Extension of multiplication rule for three or more events"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Multiplication Rule (two events)",
+          "formula": "P(E n F) = P(E) . P(F|E) = P(F) . P(E|F)",
+          "notes": "Provided P(E) != 0 and P(F) != 0"
+        },
+        {
+          "name": "Multiplication Rule (three events)",
+          "formula": "P(E n F n G) = P(E) . P(F|E) . P(G|(E n F)) = P(E) . P(F|E) . P(G|EF)",
+          "notes": "Can be extended to four or more events similarly"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Multiplication Theorem of Probability",
+          "statement": "For any two events E and F: P(E n F) = P(E) . P(F|E) = P(F) . P(E|F), provided P(E) != 0 and P(F) != 0."
+        }
+      ],
+      "key_points": [
+        "E n F (also written as EF) denotes the simultaneous occurrence of events E and F",
+        "P(E n F) = P(E) . P(F|E) where P(F|E) is the conditional probability of F given E",
+        "For three events: P(E n F n G) = P(E) . P(F|E) . P(G|EF)",
+        "The rule can be extended to any finite number of events"
+      ]
+    },
+    {
+      "id": "13.4",
+      "title": "Independent Events",
+      "concepts": [
+        "Independence of two events",
+        "Difference between independence and mutual exclusivity",
+        "Independence of more than two events",
+        "Pairwise independence vs mutual independence"
+      ],
+      "definitions": [
+        {
+          "term": "Independent Events (Definition 2)",
+          "definition": "Two events E and F are said to be independent if P(F|E) = P(F) provided P(E) != 0, and P(E|F) = P(E) provided P(F) != 0. Thus, we need P(E) != 0 and P(F) != 0."
+        },
+        {
+          "term": "Independent Events (Definition 3)",
+          "definition": "Let E and F be two events associated with the same random experiment, then E and F are said to be independent if P(E n F) = P(E) . P(F)."
+        },
+        {
+          "term": "Mutually Independent Events (three events)",
+          "definition": "Three events A, B and C are said to be mutually independent if: P(A n B) = P(A) P(B), P(A n C) = P(A) P(C), P(B n C) = P(B) P(C), and P(A n B n C) = P(A) P(B) P(C). All four conditions must hold."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Test for Independence",
+          "formula": "P(E n F) = P(E) . P(F)",
+          "notes": "If this holds, E and F are independent events"
+        },
+        {
+          "name": "Probability of at least one of two independent events",
+          "formula": "P(A u B) = 1 - P(A') P(B')",
+          "notes": "For independent events A and B"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Independence of Complements",
+          "statement": "If E and F are independent events, then (a) E and F' are independent, (b) E' and F are independent, (c) E' and F' are independent."
+        }
+      ],
+      "key_points": [
+        "Events E and F are independent if occurrence of one does not affect the probability of the other",
+        "Events E and F are dependent if P(E n F) != P(E) . P(F)",
+        "Independent is NOT the same as mutually exclusive: independent events with nonzero probabilities cannot be mutually exclusive, and vice versa",
+        "Mutually exclusive events: defined in terms of events (subsets of sample space); never have a common outcome",
+        "Independent events: defined in terms of probabilities; may have common outcomes",
+        "If E and F are independent, then E and F', E' and F, E' and F' are also independent",
+        "Two experiments are independent if for every pair of events E and F (from each experiment), P(E n F) = P(E) . P(F)",
+        "For three events, pairwise independence does not imply mutual independence -- all four conditions must hold"
+      ]
+    },
+    {
+      "id": "13.5",
+      "title": "Bayes' Theorem",
+      "concepts": [
+        "Partition of a sample space",
+        "Theorem of total probability",
+        "Bayes' theorem (reverse/posterior probability)",
+        "Hypotheses, prior probability and posterior probability"
+      ],
+      "definitions": [
+        {
+          "term": "Partition of a Sample Space",
+          "definition": "A set of events E_1, E_2, ..., E_n is said to represent a partition of the sample space S if: (a) E_i n E_j = phi for i != j (pairwise disjoint), (b) E_1 u E_2 u ... u E_n = S (exhaustive), and (c) P(E_i) > 0 for all i = 1, 2, ..., n (nonzero probabilities)."
+        },
+        {
+          "term": "Hypotheses",
+          "definition": "When Bayes' theorem is applied, the events E_1, E_2, ..., E_n are called hypotheses."
+        },
+        {
+          "term": "Prior Probability",
+          "definition": "The probability P(E_i) is called the priori probability of the hypothesis E_i."
+        },
+        {
+          "term": "Posterior Probability",
+          "definition": "The conditional probability P(E_i|A) is called the a posteriori probability of the hypothesis E_i. It gives the probability of a particular 'cause' E_i given that event A has occurred."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Theorem of Total Probability",
+          "formula": "P(A) = sum_{j=1}^{n} P(E_j) P(A|E_j) = P(E_1) P(A|E_1) + P(E_2) P(A|E_2) + ... + P(E_n) P(A|E_n)",
+          "notes": "Where {E_1, E_2, ..., E_n} is a partition of S and each E_i has nonzero probability"
+        },
+        {
+          "name": "Bayes' Theorem",
+          "formula": "P(E_i|A) = P(E_i) P(A|E_i) / sum_{j=1}^{n} P(E_j) P(A|E_j)",
+          "notes": "For any i = 1, 2, ..., n. Also called the formula for the probability of 'causes'."
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Theorem of Total Probability",
+          "statement": "Let {E_1, E_2, ..., E_n} be a partition of the sample space S, and suppose that each of E_1, E_2, ..., E_n has nonzero probability of occurrence. Let A be any event associated with S, then P(A) = P(E_1) P(A|E_1) + P(E_2) P(A|E_2) + ... + P(E_n) P(A|E_n) = sum_{j=1}^{n} P(E_j) P(A|E_j)."
+        },
+        {
+          "name": "Bayes' Theorem",
+          "statement": "If E_1, E_2, ..., E_n are n non-empty events which constitute a partition of sample space S, i.e., E_1, E_2, ..., E_n are pairwise disjoint and E_1 u E_2 u ... u E_n = S, and A is any event of nonzero probability, then P(E_i|A) = P(E_i) P(A|E_i) / sum_{j=1}^{n} P(E_j) P(A|E_j), for any i = 1, 2, 3, ..., n."
+        }
+      ],
+      "key_points": [
+        "Any nonempty event E and its complement E' form a partition of S since E n E' = phi and E u E' = S",
+        "If E and F are any two events with a sample space S, then {E n F', E n F, E' n F, E' n F'} is a partition of S",
+        "Partition of a sample space is not unique -- there can be several partitions of the same sample space",
+        "Bayes' theorem is also called the formula for the probability of 'causes'",
+        "Bayes' theorem finds the reverse probability: given effect A has occurred, find probability of cause E_i",
+        "The events E_1, ..., E_n are called hypotheses in Bayes' theorem",
+        "P(E_i) is called the priori probability (before observing A)",
+        "P(E_i|A) is called the a posteriori probability (after observing A)"
+      ]
+    },
+    {
+      "id": "13.6",
+      "title": "Random Variables and Probability Distribution",
+      "concepts": [
+        "Random variable as a real-valued function on the sample space",
+        "Probability distribution of a random variable",
+        "Mean (expectation) of a random variable",
+        "Variance and standard deviation of a random variable"
+      ],
+      "definitions": [
+        {
+          "term": "Random Variable",
+          "definition": "A random variable is a real valued function whose domain is the sample space of a random experiment. It assigns a real number to each outcome of the experiment."
+        },
+        {
+          "term": "Probability Distribution",
+          "definition": "The system of values of a random variable X together with the corresponding probabilities is called the probability distribution of X: X takes values x_1, x_2, ..., x_n with probabilities p_1, p_2, ..., p_n where p_i >= 0 and sum of all p_i = 1."
+        },
+        {
+          "term": "Mean (Expected Value)",
+          "definition": "The mean or expectation of a random variable X is defined as E(X) = mu = sum_{i=1}^{n} x_i p_i, where x_i are the values of X and p_i are the corresponding probabilities."
+        },
+        {
+          "term": "Variance",
+          "definition": "The variance of a random variable X is defined as Var(X) = sigma^2 = E(X^2) - [E(X)]^2 = sum x_i^2 p_i - (sum x_i p_i)^2."
+        },
+        {
+          "term": "Standard Deviation",
+          "definition": "The standard deviation of a random variable X is sigma = sqrt(Var(X))."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Mean (Expected Value)",
+          "formula": "E(X) = mu = sum_{i=1}^{n} x_i p_i",
+          "notes": "x_i are values of X and p_i are corresponding probabilities"
+        },
+        {
+          "name": "Variance",
+          "formula": "Var(X) = E(X^2) - [E(X)]^2 = sum x_i^2 p_i - (sum x_i p_i)^2",
+          "notes": "Also written as sigma^2"
+        },
+        {
+          "name": "Standard Deviation",
+          "formula": "sigma = sqrt(Var(X))",
+          "notes": "Non-negative square root of the variance"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "A random variable X maps outcomes in the sample space to real numbers",
+        "More than one random variable can be defined on the same sample space",
+        "For a valid probability distribution: all p_i >= 0 and sum of all p_i = 1",
+        "E(X) gives the weighted average (long-run average) value of X",
+        "Var(X) = E(X^2) - [E(X)]^2 is always non-negative"
+      ]
+    },
+    {
+      "id": "13.7",
+      "title": "Bernoulli Trials and Binomial Distribution",
+      "concepts": [
+        "Bernoulli trials",
+        "Conditions for Bernoulli trials",
+        "Binomial distribution",
+        "Parameters n and p of binomial distribution"
+      ],
+      "definitions": [
+        {
+          "term": "Bernoulli Trials",
+          "definition": "Trials of a random experiment are called Bernoulli trials if: (i) there are a finite number of trials, (ii) the trials are independent of each other, (iii) each trial has exactly two outcomes: success or failure, and (iv) the probability of success (p) remains the same in each trial."
+        },
+        {
+          "term": "Binomial Distribution",
+          "definition": "A random variable X taking values 0, 1, 2, ..., n is said to have a binomial distribution with parameters n and p if its probability distribution is given by P(X = r) = nCr p^r q^(n-r), where q = 1 - p and r = 0, 1, 2, ..., n."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Binomial Probability",
+          "formula": "P(X = r) = nCr p^r q^(n-r), where q = 1 - p",
+          "notes": "r = 0, 1, 2, ..., n. Here n = number of trials, p = probability of success, q = probability of failure"
+        },
+        {
+          "name": "Mean of Binomial Distribution",
+          "formula": "E(X) = np",
+          "notes": "n = number of trials, p = probability of success"
+        },
+        {
+          "name": "Variance of Binomial Distribution",
+          "formula": "Var(X) = npq = np(1-p)",
+          "notes": "Always less than or equal to the mean np since q <= 1"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "In Bernoulli trials, the probability of success p and failure q = 1 - p remain constant across trials",
+        "The number of successes X in n Bernoulli trials follows a binomial distribution B(n, p)",
+        "P(X = r) = nCr p^r q^(n-r) where nCr = n! / (r!(n-r)!)",
+        "Mean = np, Variance = npq where q = 1 - p",
+        "The trials must be independent for the binomial model to apply"
+      ]
+    }
+  ],
+  "summary": [
+    "The conditional probability of an event E, given the occurrence of the event F is given by P(E|F) = P(E n F) / P(F), P(F) != 0.",
+    "0 <= P(E|F) <= 1, P(E'|F) = 1 - P(E|F).",
+    "P((A u B)|F) = P(A|F) + P(B|F) - P((A n B)|F).",
+    "P(E n F) = P(E) P(F|E), P(E) != 0. Also P(E n F) = P(F) P(E|F), P(F) != 0.",
+    "If E and F are independent, then P(E n F) = P(E) . P(F).",
+    "If E and F are independent, then P(E|F) = P(E) when P(F) != 0, and P(F|E) = P(F) when P(E) != 0.",
+    "Theorem of total probability: Let {E_1, E_2, ..., E_n} be a partition of a sample space and suppose that each of E_1, E_2, ..., E_n has nonzero probability. Let A be any event associated with S, then P(A) = P(E_1) P(A|E_1) + P(E_2) P(A|E_2) + ... + P(E_n) P(A|E_n).",
+    "Bayes' theorem: If E_1, E_2, ..., E_n are events which constitute a partition of sample space S, i.e., E_1, E_2, ..., E_n are pairwise disjoint and E_1 u E_2 u ... u E_n = S, and A is any event of nonzero probability, then P(E_i|A) = P(E_i) P(A|E_i) / sum_{j=1}^{n} P(E_j) P(A|E_j).",
+    "A random variable is a real valued function whose domain is the sample space of a random experiment.",
+    "The probability distribution of a random variable X is the system of numbers: x_1, x_2, ..., x_n with p_1, p_2, ..., p_n where p_i >= 0 and sum p_i = 1.",
+    "The mean (expectation) of a random variable X is E(X) = mu = sum x_i p_i.",
+    "The variance of a random variable X is Var(X) = sigma^2 = E(X^2) - [E(X)]^2.",
+    "Bernoulli trials: trials of a random experiment with finite trials, independent of each other, exactly two outcomes (success/failure) per trial, and constant probability of success.",
+    "Binomial distribution: P(X = r) = nCr p^r q^(n-r), where q = 1 - p, for r = 0, 1, 2, ..., n."
+  ],
+  "exercises": [
+    {
+      "id": "13.1",
+      "title": "Exercise 13.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Given that E and F are events such that P(E) = 0.6, P(F) = 0.3 and P(E n F) = 0.2, find P(E|F) and P(F|E).",
+          "type": "short"
+        },
+        {
+          "qno": 2,
+          "question": "Compute P(A|B), if P(B) = 0.5 and P(A n B) = 0.32.",
+          "type": "short"
+        },
+        {
+          "qno": 3,
+          "question": "If P(A) = 0.8, P(B) = 0.5 and P(B|A) = 0.4, find\n(i) P(A n B)\n(ii) P(A|B)\n(iii) P(A u B)",
+          "type": "short"
+        },
+        {
+          "qno": 4,
+          "question": "Evaluate P(A u B), if 2P(A) = P(B) = 5/13 and P(A|B) = 2/5.",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "If P(A) = 6/11, P(B) = 5/11 and P(A u B) = 7/11, find\n(i) P(A n B)\n(ii) P(A|B)\n(iii) P(B|A)",
+          "type": "short"
+        },
+        {
+          "qno": 6,
+          "question": "A coin is tossed three times, where\n(i) E: head on third toss, F: heads on first two tosses\n(ii) E: at least two heads, F: at most two heads\n(iii) E: at most two tails, F: at least one tail\nDetermine P(E|F).",
+          "type": "long"
+        },
+        {
+          "qno": 7,
+          "question": "Two coins are tossed once, where\n(i) E: tail appears on one coin, F: one coin shows head\n(ii) E: no tail appears, F: no head appears\nDetermine P(E|F).",
+          "type": "short"
+        },
+        {
+          "qno": 8,
+          "question": "A die is thrown three times, E: 4 appears on the third toss, F: 6 and 5 appears respectively on first two tosses. Determine P(E|F).",
+          "type": "short"
+        },
+        {
+          "qno": 9,
+          "question": "Mother, father and son line up at random for a family picture. E: son on one end, F: father in middle. Determine P(E|F).",
+          "type": "short"
+        },
+        {
+          "qno": 10,
+          "question": "A black and a red dice are rolled.\n(a) Find the conditional probability of obtaining a sum greater than 9, given that the black die resulted in a 5.\n(b) Find the conditional probability of obtaining the sum 8, given that the red die resulted in a number less than 4.",
+          "type": "long"
+        },
+        {
+          "qno": 11,
+          "question": "A fair die is rolled. Consider events E = {1,3,5}, F = {2,3} and G = {2,3,4,5}. Find\n(i) P(E|F) and P(F|E)\n(ii) P(E|G) and P(G|E)\n(iii) P((E u F)|G) and P((E n F)|G)",
+          "type": "long"
+        },
+        {
+          "qno": 12,
+          "question": "Assume that each born child is equally likely to be a boy or a girl. If a family has two children, what is the conditional probability that both are girls given that\n(i) the youngest is a girl,\n(ii) at least one is a girl?",
+          "type": "short"
+        },
+        {
+          "qno": 13,
+          "question": "An instructor has a question bank consisting of 300 easy True/False questions, 200 difficult True/False questions, 500 easy multiple choice questions and 400 difficult multiple choice questions. If a question is selected at random from the question bank, what is the probability that it will be an easy question given that it is a multiple choice question?",
+          "type": "short"
+        },
+        {
+          "qno": 14,
+          "question": "Given that the two numbers appearing on throwing two dice are different. Find the probability of the event 'the sum of numbers on the dice is 4'.",
+          "type": "short"
+        },
+        {
+          "qno": 15,
+          "question": "Consider the experiment of throwing a die, if a multiple of 3 comes up, throw the die again and if any other number comes, toss a coin. Find the conditional probability of the event 'the coin shows a tail', given that 'at least one die shows a 3'.",
+          "type": "long"
+        },
+        {
+          "qno": 16,
+          "question": "If P(A) = 1/2, P(B) = 0, then P(A|B) is\n(A) 0\n(B) 1/2\n(C) not defined\n(D) 1",
+          "type": "MCQ"
+        },
+        {
+          "qno": 17,
+          "question": "If A and B are events such that P(A|B) = P(B|A), then\n(A) A is subset of B but A != B\n(B) A = B\n(C) A n B = phi\n(D) P(A) = P(B)",
+          "type": "MCQ"
+        }
+      ]
+    },
+    {
+      "id": "13.2",
+      "title": "Exercise 13.2",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "If P(A) = 3/5 and P(B) = 1/5, find P(A n B) if A and B are independent events.",
+          "type": "short"
+        },
+        {
+          "qno": 2,
+          "question": "Two cards are drawn at random and without replacement from a pack of 52 playing cards. Find the probability that both the cards are black.",
+          "type": "short"
+        },
+        {
+          "qno": 3,
+          "question": "A box of oranges is inspected by examining three randomly selected oranges drawn without replacement. If all the three oranges are good, the box is approved for sale, otherwise, it is rejected. Find the probability that a box containing 15 oranges out of which 12 are good and 3 are bad ones will be approved for sale.",
+          "type": "short"
+        },
+        {
+          "qno": 4,
+          "question": "A fair coin and an unbiased die are tossed. Let A be the event 'head appears on the coin' and B be the event '3 on the die'. Check whether A and B are independent events or not.",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "A die marked 1, 2, 3 in red and 4, 5, 6 in green is tossed. Let A be the event, 'the number is even,' and B be the event, 'the number is red'. Are A and B independent?",
+          "type": "short"
+        },
+        {
+          "qno": 6,
+          "question": "Let E and F be events with P(E) = 3/5, P(F) = 3/10 and P(E n F) = 1/5. Are E and F independent?",
+          "type": "short"
+        },
+        {
+          "qno": 7,
+          "question": "Given that the events A and B are such that P(A) = 1/2, P(A u B) = 3/5 and P(B) = p. Find p if they are\n(i) mutually exclusive\n(ii) independent.",
+          "type": "short"
+        },
+        {
+          "qno": 8,
+          "question": "Let A and B be independent events with P(A) = 0.3 and P(B) = 0.4. Find\n(i) P(A n B)\n(ii) P(A u B)\n(iii) P(A|B)\n(iv) P(B|A)",
+          "type": "short"
+        },
+        {
+          "qno": 9,
+          "question": "If A and B are two events such that P(A) = 1/4, P(B) = 1/2 and P(A n B) = 1/8, find P(not A and not B).",
+          "type": "short"
+        },
+        {
+          "qno": 10,
+          "question": "Events A and B are such that P(A) = 1/2, P(B) = 7/12 and P(not A or not B) = 1/4. State whether A and B are independent.",
+          "type": "short"
+        },
+        {
+          "qno": 11,
+          "question": "Given two independent events A and B such that P(A) = 0.3, P(B) = 0.6. Find\n(i) P(A and B)\n(ii) P(A and not B)\n(iii) P(A or B)\n(iv) P(neither A nor B)",
+          "type": "short"
+        },
+        {
+          "qno": 12,
+          "question": "A die is tossed thrice. Find the probability of getting an odd number at least once.",
+          "type": "short"
+        },
+        {
+          "qno": 13,
+          "question": "Two balls are drawn at random with replacement from a box containing 10 black and 8 red balls. Find the probability that\n(i) both balls are red.\n(ii) first ball is black and second is red.\n(iii) one of them is black and other is red.",
+          "type": "short"
+        },
+        {
+          "qno": 14,
+          "question": "Probability of solving specific problem independently by A and B are 1/2 and 1/3 respectively. If both try to solve the problem independently, find the probability that\n(i) the problem is solved\n(ii) exactly one of them solves the problem.",
+          "type": "short"
+        },
+        {
+          "qno": 15,
+          "question": "One card is drawn at random from a well shuffled deck of 52 cards. In which of the following cases are the events E and F independent?\n(i) E: 'the card drawn is a spade', F: 'the card drawn is an ace'\n(ii) E: 'the card drawn is black', F: 'the card drawn is a king'\n(iii) E: 'the card drawn is a king or queen', F: 'the card drawn is a queen or jack'.",
+          "type": "long"
+        },
+        {
+          "qno": 16,
+          "question": "In a hostel, 60% of the students read Hindi newspaper, 40% read English newspaper and 20% read both Hindi and English newspapers. A student is selected at random.\n(a) Find the probability that she reads neither Hindi nor English newspapers.\n(b) If she reads Hindi newspaper, find the probability that she reads English newspaper.\n(c) If she reads English newspaper, find the probability that she reads Hindi newspaper.",
+          "type": "long"
+        },
+        {
+          "qno": 17,
+          "question": "The probability of obtaining an even prime number on each die, when a pair of dice is rolled is\n(A) 0\n(B) 1/3\n(C) 1/12\n(D) 1/36",
+          "type": "MCQ"
+        },
+        {
+          "qno": 18,
+          "question": "Two events A and B will be independent, if\n(A) A and B are mutually exclusive\n(B) P(A'B') = [1 - P(A)] [1 - P(B)]\n(C) P(A) = P(B)\n(D) P(A) + P(B) = 1",
+          "type": "MCQ"
+        }
+      ]
+    },
+    {
+      "id": "13.3",
+      "title": "Exercise 13.3",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "An urn contains 5 red and 5 black balls. A ball is drawn at random, its colour is noted and is returned to the urn. Moreover, 2 additional balls of the colour drawn are put in the urn and then a ball is drawn at random. What is the probability that the second ball is red?",
+          "type": "long"
+        },
+        {
+          "qno": 2,
+          "question": "A bag contains 4 red and 4 black balls, another bag contains 2 red and 6 black balls. One of the two bags is selected at random and a ball is drawn from the bag which is found to be red. Find the probability that the ball is drawn from the first bag.",
+          "type": "long"
+        },
+        {
+          "qno": 3,
+          "question": "Of the students in a college, it is known that 60% reside in hostel and 40% are day scholars (not residing in hostel). Previous year results report that 30% of all students who reside in hostel attain A grade and 20% of day scholars attain A grade in their annual examination. At the end of the year, one student is chosen at random from the college and he has an A grade, what is the probability that the student is a hostlier?",
+          "type": "long"
+        },
+        {
+          "qno": 4,
+          "question": "In answering a question on a multiple choice test, a student either knows the answer or guesses. Let 3/4 be the probability that he knows the answer and 1/4 be the probability that he guesses. Assuming that a student who guesses at the answer will be correct with probability 1/4. What is the probability that the student knows the answer given that he answered it correctly?",
+          "type": "long"
+        },
+        {
+          "qno": 5,
+          "question": "A laboratory blood test is 99% effective in detecting a certain disease when it is in fact, present. However, the test also yields a false positive result for 0.5% of the healthy person tested (i.e. if a healthy person is tested, then, with probability 0.005, the test will imply he has the disease). If 0.1 percent of the population actually has the disease, what is the probability that a person has the disease given that his test result is positive?",
+          "type": "long"
+        },
+        {
+          "qno": 6,
+          "question": "There are three coins. One is a two headed coin (having head on both faces), another is a biased coin that comes up heads 75% of the time and third is an unbiased coin. One of the three coins is chosen at random and tossed, it shows heads, what is the probability that it was the two headed coin?",
+          "type": "long"
+        },
+        {
+          "qno": 7,
+          "question": "An insurance company insured 2000 scooter drivers, 4000 car drivers and 6000 truck drivers. The probability of an accidents are 0.01, 0.03 and 0.15 respectively. One of the insured persons meets with an accident. What is the probability that he is a scooter driver?",
+          "type": "long"
+        },
+        {
+          "qno": 8,
+          "question": "A factory has two machines A and B. Past record shows that machine A produced 60% of the items of output and machine B produced 40% of the items. Further, 2% of the items produced by machine A and 1% produced by machine B were defective. All the items are put into one stockpile and then one item is chosen at random from this and is found to be defective. What is the probability that it was produced by machine B?",
+          "type": "long"
+        },
+        {
+          "qno": 9,
+          "question": "Two groups are competing for the position on the Board of directors of a corporation. The probabilities that the first and the second groups will win are 0.6 and 0.4 respectively. Further, if the first group wins, the probability of introducing a new product is 0.7 and the corresponding probability is 0.3 if the second group wins. Find the probability that the new product introduced was by the second group.",
+          "type": "long"
+        },
+        {
+          "qno": 10,
+          "question": "Suppose a girl throws a die. If she gets a 5 or 6, she tosses a coin three times and notes the number of heads. If she gets 1, 2, 3 or 4, she tosses a coin once and notes whether a head or tail is obtained. If she obtained exactly one head, what is the probability that she threw 1, 2, 3 or 4 with the die?",
+          "type": "long"
+        },
+        {
+          "qno": 11,
+          "question": "A manufacturer has three machine operators A, B and C. The first operator A produces 1% defective items, where as the other two operators B and C produce 5% and 7% defective items respectively. A is on the job for 50% of the time, B is on the job for 30% of the time and C is on the job for 20% of the time. A defective item is produced, what is the probability that it was produced by A?",
+          "type": "long"
+        },
+        {
+          "qno": 12,
+          "question": "A card from a pack of 52 cards is lost. From the remaining cards of the pack, two cards are drawn and are found to be both diamonds. Find the probability of the lost card being a diamond.",
+          "type": "long"
+        },
+        {
+          "qno": 13,
+          "question": "Probability that A speaks truth is 4/5. A coin is tossed. A reports that a head appears. The probability that actually there was head is\n(A) 4/5\n(B) 1/2\n(C) 1/5\n(D) 2/5",
+          "type": "MCQ"
+        },
+        {
+          "qno": 14,
+          "question": "If A and B are two events such that A is subset of B and P(B) != 0, then which of the following is correct?\n(A) P(A|B) = P(B)/P(A)\n(B) P(A|B) < P(A)\n(C) P(A|B) >= P(A)\n(D) None of these",
+          "type": "MCQ"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 13",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "A and B are two events such that P(A) != 0. Find P(B|A), if\n(i) A is a subset of B\n(ii) A n B = phi",
+          "type": "short"
+        },
+        {
+          "qno": 2,
+          "question": "A couple has two children,\n(i) Find the probability that both children are males, if it is known that at least one of the children is male.\n(ii) Find the probability that both children are females, if it is known that the elder child is a female.",
+          "type": "short"
+        },
+        {
+          "qno": 3,
+          "question": "Suppose that 5% of men and 0.25% of women have grey hair. A grey haired person is selected at random. What is the probability of this person being male? Assume that there are equal number of males and females.",
+          "type": "short"
+        },
+        {
+          "qno": 4,
+          "question": "Suppose that 90% of people are right-handed. What is the probability that at most 6 of a random sample of 10 people are right-handed?",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "If a leap year is selected at random, what is the chance that it will contain 53 tuesdays?",
+          "type": "short"
+        },
+        {
+          "qno": 6,
+          "question": "Suppose we have four boxes A, B, C and D containing coloured marbles as given below:\nBox A: Red 1, White 6, Black 3\nBox B: Red 6, White 2, Black 2\nBox C: Red 8, White 1, Black 1\nBox D: Red 0, White 6, Black 4\nOne of the boxes has been selected at random and a single marble is drawn from it. If the marble is red, what is the probability that it was drawn from box A?, box B?, box C?",
+          "type": "long"
+        },
+        {
+          "qno": 7,
+          "question": "Assume that the chances of a patient having a heart attack is 40%. It is also assumed that a meditation and yoga course reduce the risk of heart attack by 30% and prescription of certain drug reduces its chances by 25%. At a time a patient can choose any one of the two options with equal probabilities. It is given that after going through one of the two options the patient selected at random suffers a heart attack. Find the probability that the patient followed a course of meditation and yoga.",
+          "type": "long"
+        },
+        {
+          "qno": 8,
+          "question": "If each element of a second order determinant is either zero or one, what is the probability that the value of the determinant is positive? (Assume that the individual entries of the determinant are chosen independently, each value being assumed with probability 1/2).",
+          "type": "long"
+        },
+        {
+          "qno": 9,
+          "question": "An electronic assembly consists of two subsystems, say, A and B. From previous testing procedures, the following probabilities are assumed to be known:\nP(A fails) = 0.2\nP(B fails alone) = 0.15\nP(A and B fail) = 0.15\nEvaluate the following probabilities\n(i) P(A fails|B has failed)\n(ii) P(A fails alone)",
+          "type": "long"
+        },
+        {
+          "qno": 10,
+          "question": "Bag I contains 3 red and 4 black balls and Bag II contains 4 red and 5 black balls. One ball is transferred from Bag I to Bag II and then a ball is drawn from Bag II. The ball so drawn is found to be red in colour. Find the probability that the transferred ball is black.",
+          "type": "long"
+        },
+        {
+          "qno": 11,
+          "question": "If A and B are two events such that P(A) != 0 and P(B|A) = 1, then\n(A) A is subset of B\n(B) B is subset of A\n(C) B = phi\n(D) A = phi",
+          "type": "MCQ"
+        },
+        {
+          "qno": 12,
+          "question": "If P(A|B) > P(A), then which of the following is correct:\n(A) P(B|A) < P(B)\n(B) P(A n B) < P(A) . P(B)\n(C) P(B|A) > P(B)\n(D) P(B|A) = P(B)",
+          "type": "MCQ"
+        },
+        {
+          "qno": 13,
+          "question": "If A and B are any two events such that P(A) + P(B) - P(A and B) = P(A), then\n(A) P(B|A) = 1\n(B) P(A|B) = 1\n(C) P(B|A) = 0\n(D) P(A|B) = 0",
+          "type": "MCQ"
+        }
+      ]
+    }
+  ]
+}

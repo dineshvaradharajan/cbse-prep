@@ -1,0 +1,708 @@
+{
+  "chapter": 3,
+  "title": "Matrices",
+  "sections": [
+    {
+      "id": "3.1",
+      "title": "Introduction",
+      "concepts": [
+        "Matrices are ordered rectangular arrays of numbers or functions",
+        "Matrices are used in various branches of mathematics, physics, business, economics, and cryptography",
+        "Physical operations such as magnification, rotation, and reflection can be represented by matrices"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Matrices simplify work compared to straightforward methods",
+        "Matrices represent coefficients in systems of linear equations",
+        "Matrix notation is used in electronic spreadsheet programs"
+      ]
+    },
+    {
+      "id": "3.2",
+      "title": "Matrix",
+      "concepts": [
+        "A matrix is an ordered rectangular array of numbers or functions",
+        "The numbers or functions are called elements or entries of the matrix",
+        "Matrices are denoted by capital letters",
+        "Horizontal lines of elements are called rows",
+        "Vertical lines of elements are called columns",
+        "A point (x, y) in a plane can be represented as a column or row matrix"
+      ],
+      "definitions": [
+        {
+          "term": "Matrix",
+          "definition": "An ordered rectangular array of numbers or functions. The numbers or functions are called the elements or the entries of the matrix."
+        },
+        {
+          "term": "Order of a matrix",
+          "definition": "A matrix having m rows and n columns is called a matrix of order m x n (read as an m by n matrix). The number of elements in an m x n matrix is mn."
+        },
+        {
+          "term": "Element a_ij",
+          "definition": "An element lying in the i-th row and j-th column of a matrix. Also called the (i, j)-th element of the matrix."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "General m x n matrix",
+          "formula": "A = [a_ij]_{m x n}, 1 <= i <= m, 1 <= j <= n, i, j in N",
+          "notes": "The i-th row consists of elements a_i1, a_i2, ..., a_in and the j-th column consists of elements a_1j, a_2j, ..., a_mj"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "We follow the notation A = [a_ij]_{m x n} to indicate that A is a matrix of order m x n",
+        "We consider only matrices whose elements are real numbers or functions taking real values",
+        "Matrices can represent vertices of geometric figures in a plane"
+      ]
+    },
+    {
+      "id": "3.3",
+      "title": "Types of Matrices",
+      "concepts": [
+        "Column matrix",
+        "Row matrix",
+        "Square matrix",
+        "Diagonal matrix",
+        "Scalar matrix",
+        "Identity matrix",
+        "Zero matrix",
+        "Equality of matrices"
+      ],
+      "definitions": [
+        {
+          "term": "Column matrix",
+          "definition": "A matrix is said to be a column matrix if it has only one column. In general, A = [a_ij]_{m x 1} is a column matrix of order m x 1."
+        },
+        {
+          "term": "Row matrix",
+          "definition": "A matrix is said to be a row matrix if it has only one row. In general, B = [b_ij]_{1 x n} is a row matrix of order 1 x n."
+        },
+        {
+          "term": "Square matrix",
+          "definition": "A matrix in which the number of rows is equal to the number of columns. An m x n matrix is a square matrix if m = n, and is known as a square matrix of order n."
+        },
+        {
+          "term": "Diagonal elements",
+          "definition": "If A = [a_ij] is a square matrix of order n, then elements a_11, a_22, ..., a_nn are said to constitute the diagonal of the matrix A."
+        },
+        {
+          "term": "Diagonal matrix",
+          "definition": "A square matrix B = [b_ij]_{m x m} is said to be a diagonal matrix if all its non-diagonal elements are zero, that is b_ij = 0 when i != j."
+        },
+        {
+          "term": "Scalar matrix",
+          "definition": "A diagonal matrix is said to be a scalar matrix if its diagonal elements are equal, that is B = [b_ij]_{n x n} is a scalar matrix if b_ij = 0 when i != j, and b_ij = k when i = j, for some constant k."
+        },
+        {
+          "term": "Identity matrix",
+          "definition": "A square matrix in which elements in the diagonal are all 1 and rest are all zero is called an identity matrix. The square matrix A = [a_ij]_{n x n} is an identity matrix if a_ij = 1 when i = j, and a_ij = 0 when i != j. Denoted by I_n or simply I."
+        },
+        {
+          "term": "Zero matrix",
+          "definition": "A matrix is said to be zero matrix or null matrix if all its elements are zero. Denoted by O. Its order will be clear from the context."
+        },
+        {
+          "term": "Equality of matrices",
+          "definition": "Two matrices A = [a_ij] and B = [b_ij] are said to be equal if (i) they are of the same order, and (ii) each element of A is equal to the corresponding element of B, that is a_ij = b_ij for all i and j. Written as A = B."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "A scalar matrix is an identity matrix when k = 1",
+        "Every identity matrix is a scalar matrix, but not every scalar matrix is an identity matrix",
+        "For equality of matrices, both order and all corresponding elements must match"
+      ]
+    },
+    {
+      "id": "3.4",
+      "title": "Operations on Matrices",
+      "concepts": [
+        "Addition of matrices",
+        "Multiplication of a matrix by a scalar",
+        "Negative of a matrix",
+        "Difference of matrices",
+        "Properties of matrix addition",
+        "Properties of scalar multiplication",
+        "Multiplication of matrices",
+        "Non-commutativity of matrix multiplication",
+        "Zero matrix as the product of two non-zero matrices",
+        "Properties of multiplication of matrices"
+      ],
+      "definitions": [
+        {
+          "term": "Addition of matrices",
+          "definition": "If A = [a_ij] and B = [b_ij] are two matrices of the same order m x n, then their sum A + B is defined as a matrix C = [c_ij]_{m x n}, where c_ij = a_ij + b_ij for all possible values of i and j."
+        },
+        {
+          "term": "Scalar multiplication",
+          "definition": "If A = [a_ij]_{m x n} is a matrix and k is a scalar, then kA is another matrix obtained by multiplying each element of A by the scalar k. In other words, kA = k[a_ij]_{m x n} = [k(a_ij)]_{m x n}."
+        },
+        {
+          "term": "Negative of a matrix",
+          "definition": "The negative of a matrix is denoted by -A. We define -A = (-1)A."
+        },
+        {
+          "term": "Difference of matrices",
+          "definition": "If A = [a_ij] and B = [b_ij] are two matrices of the same order, then difference A - B is defined as A + (-1)B, i.e., D = [d_ij] where d_ij = a_ij - b_ij."
+        },
+        {
+          "term": "Multiplication of matrices",
+          "definition": "The product of two matrices A and B is defined if the number of columns of A is equal to the number of rows of B. If A = [a_ij] is an m x n matrix and B = [b_jk] is an n x p matrix, then the product AB is the matrix C = [c_ik]_{m x p}, where c_ik = sum_{j=1}^{n} a_ij * b_jk."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Matrix addition",
+          "formula": "If A = [a_ij] and B = [b_ij] are m x n matrices, then A + B = [a_ij + b_ij]_{m x n}",
+          "notes": "Both matrices must be of the same order"
+        },
+        {
+          "name": "Scalar multiplication",
+          "formula": "kA = [k * a_ij]_{m x n}",
+          "notes": "The (i,j)-th element of kA is k * a_ij"
+        },
+        {
+          "name": "Matrix multiplication element",
+          "formula": "c_ik = a_i1*b_1k + a_i2*b_2k + ... + a_in*b_nk = sum_{j=1}^{n} a_ij * b_jk",
+          "notes": "Number of columns of A must equal number of rows of B"
+        },
+        {
+          "name": "Commutative law of addition",
+          "formula": "A + B = B + A",
+          "notes": "For matrices of the same order"
+        },
+        {
+          "name": "Associative law of addition",
+          "formula": "(A + B) + C = A + (B + C)",
+          "notes": "For matrices of the same order"
+        },
+        {
+          "name": "Additive identity",
+          "formula": "A + O = O + A = A",
+          "notes": "O is the zero matrix of the same order as A"
+        },
+        {
+          "name": "Additive inverse",
+          "formula": "A + (-A) = (-A) + A = O",
+          "notes": "-A = [-a_ij]_{m x n}"
+        },
+        {
+          "name": "Scalar distributive over matrix addition",
+          "formula": "k(A + B) = kA + kB",
+          "notes": "A, B are matrices of same order, k is a scalar"
+        },
+        {
+          "name": "Scalar sum distributive",
+          "formula": "(k + l)A = kA + lA",
+          "notes": "k and l are scalars"
+        },
+        {
+          "name": "Associative law of multiplication",
+          "formula": "(AB)C = A(BC)",
+          "notes": "Whenever both sides of the equality are defined"
+        },
+        {
+          "name": "Distributive law (left)",
+          "formula": "A(B + C) = AB + AC",
+          "notes": "Whenever both sides are defined"
+        },
+        {
+          "name": "Distributive law (right)",
+          "formula": "(A + B)C = AC + BC",
+          "notes": "Whenever both sides are defined"
+        },
+        {
+          "name": "Multiplicative identity",
+          "formula": "IA = AI = A",
+          "notes": "I is the identity matrix of appropriate order"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "A + B is defined only when A and B are of the same order",
+        "Addition of matrices is a binary operation on the set of matrices of the same order",
+        "Matrix multiplication is NOT commutative in general: AB != BA",
+        "Even if AB and BA are both defined and of the same order, they may not be equal",
+        "Multiplication of diagonal matrices of same order is commutative",
+        "The product of two non-zero matrices can be a zero matrix",
+        "For real numbers if ab = 0 then a = 0 or b = 0, but this is NOT true for matrices",
+        "If AB is defined, BA need not be defined",
+        "If A and B are m x n and k x l matrices respectively, both AB and BA are defined if and only if n = k and l = m"
+      ]
+    },
+    {
+      "id": "3.5",
+      "title": "Transpose of a Matrix",
+      "concepts": [
+        "Definition of transpose",
+        "Properties of transpose"
+      ],
+      "definitions": [
+        {
+          "term": "Transpose of a matrix",
+          "definition": "If A = [a_ij] is an m x n matrix, then the matrix obtained by interchanging the rows and columns of A is called the transpose of A. It is denoted by A' or A^T. If A = [a_ij]_{m x n}, then A' = [a_ji]_{n x m}."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Transpose of transpose",
+          "formula": "(A')' = A",
+          "notes": "Taking transpose twice gives back the original matrix"
+        },
+        {
+          "name": "Transpose of scalar multiple",
+          "formula": "(kA)' = kA'",
+          "notes": "Where k is any constant"
+        },
+        {
+          "name": "Transpose of sum",
+          "formula": "(A + B)' = A' + B'",
+          "notes": "For matrices A and B of suitable orders"
+        },
+        {
+          "name": "Transpose of product",
+          "formula": "(AB)' = B'A'",
+          "notes": "The order reverses when taking transpose of a product"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "If A is m x n, then A' is n x m",
+        "The transpose of a product reverses the order: (AB)' = B'A'"
+      ]
+    },
+    {
+      "id": "3.6",
+      "title": "Symmetric and Skew Symmetric Matrices",
+      "concepts": [
+        "Symmetric matrix",
+        "Skew symmetric matrix",
+        "Decomposition of a square matrix into symmetric and skew symmetric parts"
+      ],
+      "definitions": [
+        {
+          "term": "Symmetric matrix",
+          "definition": "A square matrix A = [a_ij] is said to be symmetric if A' = A, that is [a_ij] = [a_ji] for all possible values of i and j."
+        },
+        {
+          "term": "Skew symmetric matrix",
+          "definition": "A square matrix A = [a_ij] is said to be skew symmetric matrix if A' = -A, that is a_ji = -a_ij for all possible values of i and j. All the diagonal elements of a skew symmetric matrix are zero (since a_ii = -a_ii implies a_ii = 0)."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Symmetric part of a matrix",
+          "formula": "(1/2)(A + A') is a symmetric matrix",
+          "notes": "For any square matrix A with real number entries"
+        },
+        {
+          "name": "Skew symmetric part of a matrix",
+          "formula": "(1/2)(A - A') is a skew symmetric matrix",
+          "notes": "For any square matrix A with real number entries"
+        },
+        {
+          "name": "Decomposition of a square matrix",
+          "formula": "A = (1/2)(A + A') + (1/2)(A - A')",
+          "notes": "Any square matrix can be expressed as the sum of a symmetric and a skew symmetric matrix"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Theorem 1",
+          "statement": "For any square matrix A with real number entries, A + A' is a symmetric matrix and A - A' is a skew symmetric matrix."
+        },
+        {
+          "name": "Theorem 2",
+          "statement": "Any square matrix can be expressed as the sum of a symmetric and a skew symmetric matrix. Specifically, A = (1/2)(A + A') + (1/2)(A - A')."
+        }
+      ],
+      "key_points": [
+        "All diagonal elements of a skew symmetric matrix are zero",
+        "For a symmetric matrix, a_ij = a_ji for all i, j",
+        "For a skew symmetric matrix, a_ji = -a_ij for all i, j"
+      ]
+    },
+    {
+      "id": "3.7",
+      "title": "Invertible Matrices",
+      "concepts": [
+        "Inverse of a matrix",
+        "Uniqueness of inverse",
+        "Inverse of a product"
+      ],
+      "definitions": [
+        {
+          "term": "Invertible matrix / Inverse",
+          "definition": "If A is a square matrix of order m, and if there exists another square matrix B of the same order m such that AB = BA = I, then B is called the inverse matrix of A and is denoted by A^(-1). In that case A is said to be invertible."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Inverse of a product",
+          "formula": "(AB)^(-1) = B^(-1) A^(-1)",
+          "notes": "If A and B are invertible matrices of the same order"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Theorem 3 (Uniqueness of inverse)",
+          "statement": "Inverse of a square matrix, if it exists, is unique."
+        },
+        {
+          "name": "Theorem 4 (Inverse of a product)",
+          "statement": "If A and B are invertible matrices of the same order, then (AB)^(-1) = B^(-1) A^(-1)."
+        }
+      ],
+      "key_points": [
+        "A rectangular matrix does not possess an inverse matrix",
+        "For products BA and AB to be defined and equal, matrices A and B should be square matrices of the same order",
+        "If B is the inverse of A, then A is also the inverse of B",
+        "If A = [[cos theta, sin theta], [-sin theta, cos theta]], then A^n = [[cos n*theta, sin n*theta], [-sin n*theta, cos n*theta]] for all natural numbers n"
+      ]
+    }
+  ],
+  "summary": [
+    "A matrix is an ordered rectangular array of numbers or functions.",
+    "A matrix having m rows and n columns is called a matrix of order m x n.",
+    "[a_ij]_{m x 1} is a column matrix.",
+    "[a_ij]_{1 x n} is a row matrix.",
+    "An m x n matrix is a square matrix if m = n.",
+    "A = [a_ij]_{m x m} is a diagonal matrix if a_ij = 0, when i != j.",
+    "A = [a_ij]_{n x n} is a scalar matrix if a_ij = 0, when i != j, and a_ij = k (k is some constant), when i = j.",
+    "A = [a_ij]_{n x n} is an identity matrix if a_ij = 1 when i = j, and a_ij = 0 when i != j.",
+    "A zero matrix has all its elements as zero.",
+    "A = [a_ij] = [b_ij] = B if (i) A and B are of same order, (ii) a_ij = b_ij for all possible values of i and j.",
+    "kA = k[a_ij]_{m x n} = [k(a_ij)]_{m x n}",
+    "-A = (-1)A",
+    "A - B = A + (-1)B",
+    "A + B = B + A (commutative law of addition)",
+    "(A + B) + C = A + (B + C), where A, B and C are of same order.",
+    "k(A + B) = kA + kB, where A and B are of same order, k is constant.",
+    "(k + l)A = kA + lA, where k and l are constants.",
+    "If A = [a_ij]_{m x n} and B = [b_jk]_{n x p}, then AB = C = [c_ik]_{m x p}, where c_ik = sum_{j=1}^{n} a_ij * b_jk.",
+    "(i) A(BC) = (AB)C, (ii) A(B + C) = AB + AC, (iii) (A + B)C = AC + BC",
+    "If A = [a_ij]_{m x n}, then A' or A^T = [a_ji]_{n x m}.",
+    "(i) (A')' = A, (ii) (kA)' = kA', (iii) (A + B)' = A' + B', (iv) (AB)' = B'A'",
+    "A is a symmetric matrix if A' = A.",
+    "A is a skew symmetric matrix if A' = -A.",
+    "Any square matrix can be represented as the sum of a symmetric and a skew symmetric matrix.",
+    "If A and B are two square matrices such that AB = BA = I, then B is the inverse matrix of A, denoted by A^(-1), and A is the inverse of B.",
+    "Inverse of a square matrix, if it exists, is unique."
+  ],
+  "exercises": [
+    {
+      "id": "3.1",
+      "title": "Exercise 3.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "In the matrix A = [[2, 5, 19, -7], [35, -2, 5/2, 12], [sqrt(3), 1, -5, 17]], write:\n(i) The order of the matrix\n(ii) The number of elements\n(iii) Write the elements a_13, a_21, a_33, a_24, a_23.",
+          "type": "short"
+        },
+        {
+          "qno": 2,
+          "question": "If a matrix has 24 elements, what are the possible orders it can have? What, if it has 13 elements?",
+          "type": "short"
+        },
+        {
+          "qno": 3,
+          "question": "If a matrix has 18 elements, what are the possible orders it can have? What, if it has 5 elements?",
+          "type": "short"
+        },
+        {
+          "qno": 4,
+          "question": "Construct a 2 x 2 matrix, A = [a_ij], whose elements are given by:\n(i) a_ij = (i + j)^2 / 2\n(ii) a_ij = i / j\n(iii) a_ij = (i + 2j)^2 / 2",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "Construct a 3 x 4 matrix, whose elements are given by:\n(i) a_ij = (1/2)|{-3i + j}|\n(ii) a_ij = 2i - j",
+          "type": "short"
+        },
+        {
+          "qno": 6,
+          "question": "Find the values of x, y and z from the following equations:\n(i) [[4, 3], [x, 5]] = [[y, z], [1, 5]]\n(ii) [[x+y, 2], [5+z, xy]] = [[6, 2], [5, 8]]\n(iii) [[x+y+z], [x+z], [y+z]] = [[9], [5], [7]]",
+          "type": "short"
+        },
+        {
+          "qno": 7,
+          "question": "Find the value of a, b, c and d from the equation: [[a-b, 2a+c], [2a-b, 3c+d]] = [[-1, 5], [0, 13]]",
+          "type": "short"
+        },
+        {
+          "qno": 8,
+          "question": "A = [a_ij]_{m x n} is a square matrix, if\n(A) m < n\n(B) m > n\n(C) m = n\n(D) None of these",
+          "type": "mcq"
+        },
+        {
+          "qno": 9,
+          "question": "Which of the given values of x and y make the following pair of matrices equal: [[3x+7, 5], [y+1, 2-3x]], [[0, y-2], [8, 4]]\n(A) x = -1/3, y = 7\n(B) Not possible to find\n(C) y = 7, x = -2/3\n(D) x = -1/3, y = -2/3",
+          "type": "mcq"
+        },
+        {
+          "qno": 10,
+          "question": "The number of all possible matrices of order 3 x 3 with each entry 0 or 1 is:\n(A) 27\n(B) 18\n(C) 81\n(D) 512",
+          "type": "mcq"
+        }
+      ]
+    },
+    {
+      "id": "3.2",
+      "title": "Exercise 3.2",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Let A = [[2, 4], [3, 2]], B = [[1, 3], [-2, 5]], C = [[-2, 5], [3, 4]]. Find each of the following:\n(i) A + B\n(ii) A - B\n(iii) 3A - C\n(iv) AB\n(v) BA",
+          "type": "long"
+        },
+        {
+          "qno": 2,
+          "question": "Compute the following:\n(i) [[a, b], [-b, a]] + [[a, b], [b, a]]\n(ii) [[a^2+b^2, b^2+c^2], [a^2+c^2, a^2+b^2]] + [[2ab, 2bc], [-2ac, -2ab]]\n(iii) [[-1, 4, -6], [8, 5, 16], [2, 8, 5]] + [[12, 7, 6], [8, 0, 5], [3, 2, 4]]\n(iv) [[cos^2(x), sin^2(x)], [sin^2(x), cos^2(x)]] + [[sin^2(x), cos^2(x)], [cos^2(x), sin^2(x)]]",
+          "type": "short"
+        },
+        {
+          "qno": 3,
+          "question": "Compute the indicated products:\n(i) [[a, b], [-b, a]][[a, -b], [b, a]]\n(ii) [[1], [2], [3]][2, 3, 4]\n(iii) [[1, -2], [2, 3]][[1, 2, 3], [2, 3, 1]]\n(iv) [[2, 3, 4], [3, 4, 5], [4, 5, 6]][[1, -3, 5], [0, 2, 4], [3, 0, 5]]\n(v) [[2, 1], [3, 2], [-1, 1]][[1, 0, 1], [-1, 2, 1]]\n(vi) [[3, -1, 3], [-1, 0, 2]][[2, -3], [1, 0], [3, 1]]",
+          "type": "long"
+        },
+        {
+          "qno": 4,
+          "question": "If A = [[1, 2, -3], [5, 0, 2], [1, -1, 1]], B = [[3, -1, 2], [4, 2, 5], [2, 0, 3]] and C = [[4, 1, 2], [0, 3, 2], [1, -2, 3]], then compute (A+B) and (B-C). Also, verify that A + (B - C) = (A + B) - C.",
+          "type": "long"
+        },
+        {
+          "qno": 5,
+          "question": "If A = [[2/3, 1, 5/3], [1/3, 2/3, 4/3], [7/3, 2, 2/3]] and B = [[2/5, 3/5, 1], [1/5, 2/5, 4/5], [7/5, 6/5, 2/5]], then compute 3A - 5B.",
+          "type": "short"
+        },
+        {
+          "qno": 6,
+          "question": "Simplify: cos(theta) * [[cos(theta), sin(theta)], [-sin(theta), cos(theta)]] + sin(theta) * [[sin(theta), -cos(theta)], [cos(theta), sin(theta)]]",
+          "type": "short"
+        },
+        {
+          "qno": 7,
+          "question": "Find X and Y, if\n(i) X + Y = [[7, 0], [2, 5]] and X - Y = [[3, 0], [0, 3]]\n(ii) 2X + 3Y = [[2, 3], [4, 0]] and 3X + 2Y = [[2, -2], [-1, 5]]",
+          "type": "short"
+        },
+        {
+          "qno": 8,
+          "question": "Find X, if Y = [[3, 2], [1, 4]] and 2X + Y = [[1, 0], [-3, 2]].",
+          "type": "short"
+        },
+        {
+          "qno": 9,
+          "question": "Find x and y, if 2[[1, 3], [0, x]] + [[y, 0], [1, 2]] = [[5, 6], [1, 8]].",
+          "type": "short"
+        },
+        {
+          "qno": 10,
+          "question": "Solve the equation for x, y, z and t, if 2[[x, z], [y, t]] + 3[[1, -1], [0, 2]] = 3[[3, 5], [4, 6]].",
+          "type": "short"
+        },
+        {
+          "qno": 11,
+          "question": "If x[[2], [3]] + y[[-1], [1]] = [[10], [5]], find the values of x and y.",
+          "type": "short"
+        },
+        {
+          "qno": 12,
+          "question": "Given 3[[x, y], [z, w]] = [[x, 6], [-1, 2w]] + [[4, x+y], [z+w, 3]], find the values of x, y, z and w.",
+          "type": "short"
+        },
+        {
+          "qno": 13,
+          "question": "If F(x) = [[cos(x), -sin(x), 0], [sin(x), cos(x), 0], [0, 0, 1]], show that F(x) F(y) = F(x + y).",
+          "type": "long"
+        },
+        {
+          "qno": 14,
+          "question": "Show that\n(i) [[5, -1], [6, 7]][[2, 1], [3, 4]] != [[2, 1], [3, 4]][[5, -1], [6, 7]]\n(ii) [[1, 2, 3], [0, 1, 0], [1, 1, 0]][[-1, 1, 0], [0, -1, 1], [2, 3, 4]] != [[-1, 1, 0], [0, -1, 1], [2, 3, 4]][[1, 2, 3], [0, 1, 0], [1, 1, 0]]",
+          "type": "long"
+        },
+        {
+          "qno": 15,
+          "question": "Find A^2 - 5A + 6I, if A = [[2, 0, 1], [2, 1, 3], [1, -1, 0]].",
+          "type": "long"
+        },
+        {
+          "qno": 16,
+          "question": "If A = [[1, 0, 2], [0, 2, 1], [2, 0, 3]], prove that A^3 - 6A^2 + 7A + 2I = 0.",
+          "type": "long"
+        },
+        {
+          "qno": 17,
+          "question": "If A = [[3, -2], [4, -2]] and I = [[1, 0], [0, 1]], find k so that A^2 = kA - 2I.",
+          "type": "short"
+        },
+        {
+          "qno": 18,
+          "question": "If A = [[0, -tan(alpha/2)], [tan(alpha/2), 0]] and I is the identity matrix of order 2, show that I + A = (I - A)[[cos(alpha), -sin(alpha)], [sin(alpha), cos(alpha)]].",
+          "type": "long"
+        },
+        {
+          "qno": 19,
+          "question": "A trust fund has Rs 30,000 that must be invested in two different types of bonds. The first bond pays 5% interest per year, and the second bond pays 7% interest per year. Using matrix multiplication, determine how to divide Rs 30,000 among the two types of bonds. If the trust fund must obtain an annual total interest of:\n(a) Rs 1800\n(b) Rs 2000",
+          "type": "long"
+        },
+        {
+          "qno": 20,
+          "question": "The bookshop of a particular school has 10 dozen chemistry books, 8 dozen physics books, 10 dozen economics books. Their selling prices are Rs 80, Rs 60 and Rs 40 each respectively. Find the total amount the bookshop will receive from selling all the books using matrix algebra.",
+          "type": "short"
+        },
+        {
+          "qno": 21,
+          "question": "Assume X, Y, Z, W and P are matrices of order 2 x n, 3 x k, 2 x p, n x 3 and p x k, respectively. The restriction on n, k and p so that PY + WY will be defined are:\n(A) k = 3, p = n\n(B) k is arbitrary, p = 2\n(C) p is arbitrary, k = 3\n(D) k = 2, p = 3",
+          "type": "mcq"
+        },
+        {
+          "qno": 22,
+          "question": "If n = p, then the order of the matrix 7X - 5Z is:\n(A) p x 2\n(B) 2 x n\n(C) n x 3\n(D) p x n",
+          "type": "mcq"
+        }
+      ]
+    },
+    {
+      "id": "3.3",
+      "title": "Exercise 3.3",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the transpose of each of the following matrices:\n(i) [[5], [1/2], [-1]]\n(ii) [[1, -1], [2, 3]]\n(iii) [[-1, 5, 6], [sqrt(3), 5, 6], [2, 3, -1]]",
+          "type": "short"
+        },
+        {
+          "qno": 2,
+          "question": "If A = [[-1, 2, 3], [5, 7, 9], [-2, 1, 1]] and B = [[-4, 1, -5], [1, 2, 0], [1, 3, 1]], then verify that\n(i) (A + B)' = A' + B'\n(ii) (A - B)' = A' - B'",
+          "type": "long"
+        },
+        {
+          "qno": 3,
+          "question": "If A' = [[3, 4], [-1, 2], [0, 1]] and B = [[-1, 2, 1], [1, 2, 3]], then verify that\n(i) (A + B)' = A' + B'\n(ii) (A - B)' = A' - B'",
+          "type": "long"
+        },
+        {
+          "qno": 4,
+          "question": "If A' = [[-2, 3], [1, 2]] and B = [[-1, 0], [1, 2]], then find (A + 2B)'.",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "For the matrices A and B, verify that (AB)' = B'A', where\n(i) A = [[1], [-4], [3]], B = [-1, 2, 1]\n(ii) A = [[0], [1], [2]], B = [1, 5, 7]",
+          "type": "long"
+        },
+        {
+          "qno": 6,
+          "question": "(i) If A = [[cos(alpha), sin(alpha)], [-sin(alpha), cos(alpha)]], then verify that A'A = I.\n(ii) If A = [[sin(alpha), cos(alpha)], [-cos(alpha), sin(alpha)]], then verify that A'A = I.",
+          "type": "long"
+        },
+        {
+          "qno": 7,
+          "question": "(i) Show that the matrix A = [[1, -1, 5], [-1, 2, 1], [5, 1, 3]] is a symmetric matrix.\n(ii) Show that the matrix A = [[0, 1, -1], [-1, 0, 1], [1, -1, 0]] is a skew symmetric matrix.",
+          "type": "long"
+        },
+        {
+          "qno": 8,
+          "question": "For the matrix A = [[1, 5], [6, 7]], verify that\n(i) (A + A') is a symmetric matrix\n(ii) (A - A') is a skew symmetric matrix",
+          "type": "short"
+        },
+        {
+          "qno": 9,
+          "question": "Find (1/2)(A + A') and (1/2)(A - A'), when A = [[0, a, b], [-a, 0, c], [-b, -c, 0]].",
+          "type": "short"
+        },
+        {
+          "qno": 10,
+          "question": "Express the following matrices as the sum of a symmetric and a skew symmetric matrix:\n(i) [[3, 5], [1, -1]]\n(ii) [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]\n(iii) [[3, 3, -1], [-2, -2, 1], [-4, -5, 2]]\n(iv) [[1, 5], [-1, 2]]",
+          "type": "long"
+        },
+        {
+          "qno": 11,
+          "question": "If A, B are symmetric matrices of same order, then AB - BA is a\n(A) Skew symmetric matrix\n(B) Symmetric matrix\n(C) Zero matrix\n(D) Identity matrix",
+          "type": "mcq"
+        },
+        {
+          "qno": 12,
+          "question": "If A = [[cos(alpha), -sin(alpha)], [sin(alpha), cos(alpha)]], and A + A' = I, then the value of alpha is\n(A) pi/6\n(B) pi/3\n(C) pi\n(D) 3*pi/2",
+          "type": "mcq"
+        }
+      ]
+    },
+    {
+      "id": "3.4",
+      "title": "Exercise 3.4",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Matrices A and B will be inverse of each other only if\n(A) AB = BA\n(B) AB = BA = 0\n(C) AB = 0, BA = I\n(D) AB = BA = I",
+          "type": "mcq"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 3",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "If A and B are symmetric matrices, prove that AB - BA is a skew symmetric matrix.",
+          "type": "long"
+        },
+        {
+          "qno": 2,
+          "question": "Show that the matrix B'AB is symmetric or skew symmetric according as A is symmetric or skew symmetric.",
+          "type": "long"
+        },
+        {
+          "qno": 3,
+          "question": "Find the values of x, y, z if the matrix A = [[0, 2y, z], [x, y, -z], [x, -y, z]] satisfy the equation A'A = I.",
+          "type": "long"
+        },
+        {
+          "qno": 4,
+          "question": "For what values of x: [1, 2, 1][[1, 2, 0], [2, 0, 1], [1, 0, 2]][[0], [2], [x]] = O?",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "If A = [[3, 1], [-1, 2]], show that A^2 - 5A + 7I = 0.",
+          "type": "long"
+        },
+        {
+          "qno": 6,
+          "question": "Find x, if [x, -5, -1][[1, 0, 2], [0, 2, 1], [2, 0, 3]][[x], [4], [1]] = O.",
+          "type": "short"
+        },
+        {
+          "qno": 7,
+          "question": "A manufacturer produces three products x, y, z which he sells in two markets. Annual sales are indicated below:\nMarket I: 10000, 2000, 18000\nMarket II: 6000, 20000, 8000\n(a) If unit sale prices of x, y and z are Rs 2.50, Rs 1.50 and Rs 1.00, respectively, find the total revenue in each market with the help of matrix algebra.\n(b) If the unit costs of the above three commodities are Rs 2.00, Rs 1.00 and 50 paise respectively, find the gross profit.",
+          "type": "long"
+        },
+        {
+          "qno": 8,
+          "question": "Find the matrix X so that X[[1, 2, 3], [4, 5, 6]] = [[-7, -8, -9], [2, 4, 6]].",
+          "type": "short"
+        },
+        {
+          "qno": 9,
+          "question": "If A = [[alpha, beta], [gamma, -alpha]] is such that A^2 = I, then\n(A) 1 + alpha^2 + beta*gamma = 0\n(B) 1 - alpha^2 + beta*gamma = 0\n(C) 1 - alpha^2 - beta*gamma = 0\n(D) 1 + alpha^2 - beta*gamma = 0",
+          "type": "mcq"
+        },
+        {
+          "qno": 10,
+          "question": "If the matrix A is both symmetric and skew symmetric, then\n(A) A is a diagonal matrix\n(B) A is a zero matrix\n(C) A is a square matrix\n(D) None of these",
+          "type": "mcq"
+        },
+        {
+          "qno": 11,
+          "question": "If A is square matrix such that A^2 = A, then (I + A)^3 - 7A is equal to\n(A) A\n(B) I - A\n(C) I\n(D) 3A",
+          "type": "mcq"
+        }
+      ]
+    }
+  ]
+}

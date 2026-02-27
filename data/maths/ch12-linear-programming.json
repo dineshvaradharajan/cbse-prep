@@ -1,0 +1,319 @@
+{
+  "chapter": 12,
+  "title": "Linear Programming",
+  "sections": [
+    {
+      "id": "12.1",
+      "title": "Introduction",
+      "concepts": [
+        "Systems of linear equations and inequalities applied to real-life optimisation problems",
+        "Optimisation problems seek to maximise or minimise profit, cost, or resources",
+        "A special class of optimisation problems is called linear programming problems",
+        "Linear programming problems have wide applicability in industry, commerce, management science etc.",
+        "In this chapter, solutions are found by graphical method only"
+      ],
+      "definitions": [
+        {
+          "term": "Optimisation Problems",
+          "definition": "Problems which seek to maximise (or minimise) profit (or cost) form a general class of problems called optimisation problems. An optimisation problem may involve finding maximum profit, minimum cost, or minimum use of resources etc."
+        },
+        {
+          "term": "Linear Programming Problem",
+          "definition": "A special but very important class of optimisation problems is linear programming problem. Linear programming problems are of much interest because of their wide applicability in industry, commerce, management science etc."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "In earlier classes, systems of linear equations and linear inequalities in two variables were studied",
+        "Many applications in mathematics involve systems of inequalities/equations",
+        "This chapter applies systems of linear inequalities/equations to solve real life problems",
+        "Example: A furniture dealer wanting to maximise profit from buying tables and chairs with investment and storage constraints"
+      ]
+    },
+    {
+      "id": "12.2",
+      "title": "Linear Programming Problem and its Mathematical Formulation",
+      "concepts": [
+        "Mathematical formulation of a linear programming problem",
+        "Decision variables and their non-negativity constraints",
+        "Objective function formulation",
+        "Constraint formulation from real-world conditions",
+        "Graphical method of solving linear programming problems",
+        "Feasible region and its properties",
+        "Corner Point Method for solving LPP",
+        "Bounded and unbounded feasible regions",
+        "Multiple optimal solutions"
+      ],
+      "definitions": [
+        {
+          "term": "Linear Programming Problem (LPP)",
+          "definition": "A Linear Programming Problem is one that is concerned with finding the optimal value (maximum or minimum value) of a linear function (called objective function) of several variables (say x and y), subject to the conditions that the variables are non-negative and satisfy a set of linear inequalities (called linear constraints). The term 'linear' implies that all the mathematical relations used in the problem are linear relations while the term 'programming' refers to the method of determining a particular programme or plan of action."
+        },
+        {
+          "term": "Objective Function",
+          "definition": "A linear function Z = ax + by, where a, b are constants, which has to be maximised or minimised is called a linear objective function. Variables x and y are called decision variables."
+        },
+        {
+          "term": "Constraints",
+          "definition": "The linear inequalities or equations or restrictions on the variables of a linear programming problem are called constraints. The conditions x >= 0, y >= 0 are called non-negative restrictions."
+        },
+        {
+          "term": "Optimisation Problem",
+          "definition": "A problem which seeks to maximise or minimise a linear function (say of two variables x and y) subject to certain constraints as determined by a set of linear inequalities is called an optimisation problem. Linear programming problems are special type of optimisation problems."
+        },
+        {
+          "term": "Feasible Region",
+          "definition": "The common region determined by all the constraints including non-negative constraints x >= 0, y >= 0 of a linear programming problem is called the feasible region (or solution region) for the problem. The region other than feasible region is called an infeasible region."
+        },
+        {
+          "term": "Feasible Solutions",
+          "definition": "Points within and on the boundary of the feasible region represent feasible solutions of the constraints. Every point within and on the boundary of the feasible region represents a feasible solution to the problem."
+        },
+        {
+          "term": "Infeasible Solution",
+          "definition": "Any point outside the feasible region is called an infeasible solution."
+        },
+        {
+          "term": "Optimal (Feasible) Solution",
+          "definition": "Any point in the feasible region that gives the optimal value (maximum or minimum) of the objective function is called an optimal solution."
+        },
+        {
+          "term": "Bounded Feasible Region",
+          "definition": "A feasible region of a system of linear inequalities is said to be bounded if it can be enclosed within a circle."
+        },
+        {
+          "term": "Unbounded Feasible Region",
+          "definition": "A feasible region is called unbounded if it cannot be enclosed within a circle, meaning the feasible region does extend indefinitely in any direction."
+        },
+        {
+          "term": "Corner Point",
+          "definition": "A corner point of a feasible region is a point in the region which is the intersection of two boundary lines."
+        },
+        {
+          "term": "Decision Variables",
+          "definition": "The variables x and y in the objective function Z = ax + by are called decision variables. They are sometimes also simply called variables and are non-negative."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "General Objective Function",
+          "formula": "Z = ax + by",
+          "description": "where a and b are constants, x and y are decision variables, and Z is to be maximised or minimised"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Theorem 1 (Fundamental Theorem of Linear Programming)",
+          "statement": "Let R be the feasible region (convex polygon) for a linear programming problem and let Z = ax + by be the objective function. When Z has an optimal value (maximum or minimum), where the variables x and y are subject to constraints described by linear inequalities, this optimal value must occur at a corner point (vertex) of the feasible region."
+        },
+        {
+          "name": "Theorem 2",
+          "statement": "Let R be the feasible region for a linear programming problem, and let Z = ax + by be the objective function. If R is bounded, then the objective function Z has both a maximum and a minimum value on R and each of these occurs at a corner point (vertex) of R."
+        }
+      ],
+      "key_points": [
+        "If the feasible region is unbounded, then a maximum or a minimum value of the objective function may not exist. However, if it exists, it must occur at a corner point of R (by Theorem 1).",
+        "The feasible region is always a convex region.",
+        "The maximum (or minimum) solution of the objective function occurs at the vertex (corner) of the feasible region.",
+        "If two corner points produce the same maximum (or minimum) value of the objective function, then every point on the line segment joining these points will also give the same maximum (or minimum) value.",
+        "A problem may have multiple optimal solutions when two corner points give the same optimal value.",
+        "If there is no point satisfying all the constraints simultaneously, the problem has no feasible region and hence no feasible solution."
+      ]
+    },
+    {
+      "id": "12.2.1",
+      "title": "Mathematical Formulation of the Problem",
+      "concepts": [
+        "Translating real-world problems into mathematical form",
+        "Identifying decision variables",
+        "Formulating non-negative constraints",
+        "Formulating resource constraints as linear inequalities",
+        "Writing the objective function"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Step 1: Identify the decision variables (e.g., number of tables x and chairs y)",
+        "Step 2: Write non-negative constraints (x >= 0, y >= 0)",
+        "Step 3: Formulate constraints from problem conditions (e.g., 5x + y <= 100 for investment, x + y <= 60 for storage)",
+        "Step 4: Write the objective function to maximise or minimise (e.g., Z = 250x + 75y)",
+        "Example: Furniture dealer problem with Z = 250x + 75y, constraints 5x + y <= 100, x + y <= 60, x >= 0, y >= 0"
+      ]
+    },
+    {
+      "id": "12.2.2",
+      "title": "Graphical Method of Solving Linear Programming Problems",
+      "concepts": [
+        "Graphing constraints as linear inequalities",
+        "Identifying the feasible region",
+        "Finding corner points of the feasible region",
+        "Evaluating the objective function at corner points",
+        "Determining optimal solution"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Graph the system of linear inequalities to find the feasible region",
+        "Each point in the feasible region represents a feasible choice",
+        "Every point within and on the boundary of the feasible region is a feasible solution",
+        "The optimal solution is found by evaluating the objective function at corner points"
+      ]
+    },
+    {
+      "id": "12.2.2.method",
+      "title": "Corner Point Method",
+      "concepts": [
+        "Systematic method for solving LPP graphically",
+        "Steps of the Corner Point Method",
+        "Handling bounded feasible regions",
+        "Handling unbounded feasible regions"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Step 1: Find the feasible region of the LPP and determine its corner points (vertices) either by inspection or by solving the two equations of the lines intersecting at that point.",
+        "Step 2: Evaluate the objective function Z = ax + by at each corner point. Let M and m denote the largest and smallest values of these points.",
+        "Step 3(i): When the feasible region is bounded, M and m are the maximum and minimum values of Z.",
+        "Step 3(ii): When the feasible region is unbounded: (a) M is the maximum value of Z if the open half plane determined by ax + by > M has no point in common with the feasible region. Otherwise, Z has no maximum value. (b) Similarly, m is the minimum value of Z if the open half plane determined by ax + by < m has no point in common with the feasible region. Otherwise, Z has no minimum value."
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": 1,
+      "title": "Example 1",
+      "problem": "Solve the following linear programming problem graphically: Maximise Z = 4x + y, subject to the constraints: x + y <= 50, 3x + y <= 90, x >= 0, y >= 0.",
+      "solution_summary": "The feasible region OABC is bounded. Corner points: O(0,0), A(30,0), B(20,30), C(0,50). Evaluating Z: O gives 0, A gives 120, B gives 110, C gives 50. Maximum value of Z is 120 at the point (30, 0).",
+      "answer": "Maximum Z = 120 at (30, 0)"
+    },
+    {
+      "id": 2,
+      "title": "Example 2",
+      "problem": "Solve the following linear programming problem graphically: Minimise Z = 200x + 500y, subject to the constraints: x + 2y >= 10, 3x + 4y <= 24, x >= 0, y >= 0.",
+      "solution_summary": "The feasible region ABC is bounded. Corner points: A(0,5), B(4,3), C(0,6). Evaluating Z: A gives 2500, B gives 2300, C gives 3000. Minimum value of Z is 2300 at point (4, 3).",
+      "answer": "Minimum Z = 2300 at (4, 3)"
+    },
+    {
+      "id": 3,
+      "title": "Example 3",
+      "problem": "Solve the following problem graphically: Minimise and Maximise Z = 3x + 9y, subject to the constraints: x + 3y <= 60, x + y >= 10, x <= y, x >= 0, y >= 0.",
+      "solution_summary": "The feasible region ABCD is bounded. Corner points: A(0,10), B(5,5), C(15,15), D(0,20). Evaluating Z: A gives 90, B gives 60, C gives 180, D gives 180. Minimum Z = 60 at B(5,5). Maximum Z = 180 at both C(15,15) and D(0,20) — multiple optimal solutions.",
+      "answer": "Minimum Z = 60 at (5, 5); Maximum Z = 180 at (15, 15) and (0, 20)"
+    },
+    {
+      "id": 4,
+      "title": "Example 4",
+      "problem": "Determine graphically the minimum value of the objective function Z = -50x + 20y, subject to the constraints: 2x - y >= -5, 3x + y >= 3, 2x - 3y <= 12, x >= 0, y >= 0.",
+      "solution_summary": "The feasible region is unbounded. Corner points: (0,5), (0,3), (1,0), (6,0). Evaluating Z: values are 100, 60, -50, -300. Smallest value is -300 at (6,0). But since the region is unbounded, we check if the open half plane -50x + 20y < -300 (i.e., -5x + 2y < -30) has common points with the feasible region. It does have common points, so Z = -50x + 20y has no minimum value.",
+      "answer": "Z has no minimum value subject to the given constraints"
+    },
+    {
+      "id": 5,
+      "title": "Example 5",
+      "problem": "Minimise Z = 3x + 2y, subject to the constraints: x + y >= 8, 3x + 5y <= 15, x >= 0, y >= 0.",
+      "solution_summary": "Graphing the inequalities, there is no point satisfying all the constraints simultaneously. The problem has no feasible region and hence no feasible solution.",
+      "answer": "No feasible solution exists"
+    }
+  ],
+  "summary": [
+    "A linear programming problem is one that is concerned with finding the optimal value (maximum or minimum) of a linear function of several variables (called objective function) subject to the conditions that the variables are non-negative and satisfy a set of linear inequalities (called linear constraints). Variables are sometimes called decision variables and are non-negative.",
+    "The common region determined by all the constraints including the non-negative constraints x >= 0, y >= 0 of a linear programming problem is called the feasible region (or solution region) for the problem.",
+    "Any point in the feasible region that gives the optimal value (maximum or minimum) of the objective function is called an optimal solution.",
+    "Theorem 1 (Fundamental Theorem): Let R be the feasible region (convex polygon) for a linear programming problem and let Z = ax + by be the objective function. When Z has an optimal value, this optimal value must occur at a corner point (vertex) of the feasible region.",
+    "Theorem 2: Let R be the feasible region for a linear programming problem, and let Z = ax + by be the objective function. If R is bounded, then Z has both a maximum and a minimum value on R and each occurs at a corner point of R.",
+    "If R is unbounded, a maximum or minimum value of the objective function may not exist. However, if it exists, it must occur at a corner point of R.",
+    "Corner Point Method: (1) Find the feasible region and determine its corner points. (2) Evaluate Z = ax + by at each corner point, let M and m be the largest and smallest values. (3) If bounded, M and m are the max and min of Z. If unbounded, check whether the open half plane has common points with the feasible region.",
+    "The feasible region is always a convex region.",
+    "If two corner points produce the same maximum (or minimum) value, every point on the line segment joining them gives the same value.",
+    "Types of LPP problems include: manufacturing problems (maximise profit), diet problems (minimise cost), and transportation problems (minimise cost)."
+  ],
+  "historical_note": [
+    "In World War II, linear programming problems came to the forefront for planning war operations to economise expenditure and maximise damage to the enemy.",
+    "The first problem in linear programming was formulated in 1941 by the Russian mathematician L. Kantorovich and the American economist F. L. Hitchcock — the well known transportation problem.",
+    "In 1945, English economist G. Stigler described the optimal diet problem.",
+    "In 1947, American economist G. B. Dantzig suggested the simplex method, an efficient iterative procedure to solve any linear programming problem in a finite number of steps.",
+    "L. Kantorovich and T. C. Koopmans were awarded the Nobel Prize in 1975 in economics for their pioneering work in linear programming."
+  ],
+  "exercises": [
+    {
+      "id": "12.1",
+      "title": "Exercise 12.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Maximise Z = 3x + 4y, subject to the constraints: x + y <= 4, x >= 0, y >= 0.",
+          "type": "maximisation"
+        },
+        {
+          "qno": 2,
+          "question": "Minimise Z = -3x + 4y, subject to x + 2y <= 8, 3x + 2y <= 12, x >= 0, y >= 0.",
+          "type": "minimisation"
+        },
+        {
+          "qno": 3,
+          "question": "Maximise Z = 5x + 3y, subject to 3x + 5y <= 15, 5x + 2y <= 10, x >= 0, y >= 0.",
+          "type": "maximisation"
+        },
+        {
+          "qno": 4,
+          "question": "Minimise Z = 3x + 5y, such that x + 3y >= 3, x + y >= 2, x, y >= 0.",
+          "type": "minimisation"
+        },
+        {
+          "qno": 5,
+          "question": "Maximise Z = 3x + 2y, subject to x + 2y <= 10, 3x + y <= 15, x, y >= 0.",
+          "type": "maximisation"
+        },
+        {
+          "qno": 6,
+          "question": "Minimise Z = x + 2y, subject to 2x + y >= 3, x + 2y >= 6, x, y >= 0. Show that the minimum of Z occurs at more than two points.",
+          "type": "minimisation"
+        },
+        {
+          "qno": 7,
+          "question": "Minimise and Maximise Z = 5x + 10y, subject to x + 2y <= 120, x + y >= 60, x - 2y >= 0, x, y >= 0.",
+          "type": "minimisation_and_maximisation"
+        },
+        {
+          "qno": 8,
+          "question": "Minimise and Maximise Z = x + 2y, subject to x + 2y >= 100, 2x - y <= 0, 2x + y <= 200, x, y >= 0.",
+          "type": "minimisation_and_maximisation"
+        },
+        {
+          "qno": 9,
+          "question": "Maximise Z = -x + 2y, subject to the constraints: x >= 3, x + y >= 5, x + 2y >= 6, y >= 0.",
+          "type": "maximisation"
+        },
+        {
+          "qno": 10,
+          "question": "Maximise Z = x + y, subject to x - y <= -1, -x + y <= 0, x, y >= 0.",
+          "type": "maximisation"
+        }
+      ]
+    }
+  ],
+  "types_of_problems": [
+    {
+      "type": "Manufacturing Problems",
+      "description": "Problems involving maximisation of profit by determining optimal number of units of different products to manufacture, subject to constraints on resources like labour, materials, machine hours, and storage."
+    },
+    {
+      "type": "Diet Problems",
+      "description": "Problems involving minimisation of cost of a diet that meets minimum nutritional requirements, determining how much of each food item to include subject to constraints on nutrients."
+    },
+    {
+      "type": "Transportation Problems",
+      "description": "Problems involving minimisation of transportation cost for shipping goods from factories/warehouses to different destinations, subject to supply and demand constraints."
+    }
+  ],
+  "remarks": [
+    "The feasible region is always a convex region.",
+    "The maximum (or minimum) solution of the objective function occurs at the vertex (corner) of the feasible region.",
+    "If two corner points produce the same maximum (or minimum) value of the objective function, then every point on the line segment joining these points will also give the same maximum (or minimum) value.",
+    "If R is unbounded, then a maximum or a minimum value of the objective function may not exist. However, if it exists, it must occur at a corner point of R (by Theorem 1)."
+  ]
+}

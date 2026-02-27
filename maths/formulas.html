@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/formulas.css">
+<style>:root{--subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="All Mathematics formulas for CBSE Class 12 — 13 chapters with 223+ formulas organised by topic.">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Mathematics Formula Reference | CBSE Class 12">
+<meta property="og:description" content="All Mathematics formulas for CBSE Class 12 — 13 chapters organised by topic.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/maths/formulas.html">
+<title>Mathematics Formula Reference | CBSE Class 12</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+
+<div class="hero">
+  <div class="badge">Mathematics XII &middot; 13 Chapters &middot; 223+ formulas</div>
+  <h1>Mathematics Formula Reference</h1>
+  <p class="sub">Every formula from all 13 chapters — organised by topic for quick revision.</p>
+</div>
+
+<nav class="chapter-nav"><div class="chapter-nav-inner">
+    <a href="#ch1">1. Relations and Functions</a>
+    <a href="#ch2">2. Inverse Trigonometric Functions</a>
+    <a href="#ch3">3. Matrices</a>
+    <a href="#ch4">4. Determinants</a>
+    <a href="#ch5">5. Continuity and Differentiability</a>
+    <a href="#ch6">6. Application of Derivatives</a>
+    <a href="#ch7">7. Integrals</a>
+    <a href="#ch8">8. Application of Integrals</a>
+    <a href="#ch9">9. Differential Equations</a>
+    <a href="#ch10">10. Vector Algebra</a>
+    <a href="#ch11">11. Three Dimensional Geometry</a>
+    <a href="#ch12">12. Linear Programming</a>
+    <a href="#ch13">13. Probability</a>
+  </div></nav>
+
+
+<div class="quick-ref">
+  <h3>⚡ Critical Formulas — Memorise These First</h3>
+  <div class="qr-grid">
+    <div class="qr-item"><span class="qr-label">Sum/Difference Rule</span><span class="qr-val">(u +/- v)' = u' +/- v'</span></div>
+    <div class="qr-item"><span class="qr-label">Product Rule (Leibnitz Rule)</span><span class="qr-val">(uv)' = u'v + uv'</span></div>
+    <div class="qr-item"><span class="qr-label">Rate of change using Chain Rule</span><span class="qr-val">dy/dx = (dy/dt) / (dx/dt), if dx/dt ≠ 0</span></div>
+    <div class="qr-item"><span class="qr-label">Rate of change of area of circle</span><span class="qr-val">dA/dr = 2*π*r</span></div>
+    <div class="qr-item"><span class="qr-label">Power Rule</span><span class="qr-val">∫ xⁿ dx = x<sup>n+1</sup>/(n+1) + C, n ≠ -1</span></div>
+    <div class="qr-item"><span class="qr-label">Cosine integral</span><span class="qr-val">∫ cos x dx = sin x + C</span></div>
+    <div class="qr-item"><span class="qr-label">Variable Separable Form</span><span class="qr-val">dy/dx = h(y) · g(x)</span></div>
+    <div class="qr-item"><span class="qr-label">Separated Form</span><span class="qr-val">(1/h(y)) dy = g(x) dx</span></div>
+  </div>
+</div>
+
+<div class="chapters">
+<div class="ch-section" id="ch1">
+  <div class="ch-header" style="border-bottom-color:#7c3aed">
+    <span class="ch-number">01</span>
+    <span class="ch-title">Relations and Functions</span>
+    <span class="ch-marks">3 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Empty Relation</div>
+      <code class="fc-eq">R = φ ⊂ A x A</code>
+      <div class="fc-note">No element is related to any element</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Universal Relation</div>
+      <code class="fc-eq">R = A x A</code>
+      <div class="fc-note">Every element is related to every element</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">One-one test</div>
+      <code class="fc-eq">f(x1) = f(x2) ⇒ x1 = x2, for all x1, x2 ∈ X</code>
+      <div class="fc-note">Equivalent to: x1 ≠ x2 ⇒ f(x1) ≠ f(x2)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Onto condition</div>
+      <code class="fc-eq">For every y ∈ Y, there exists x ∈ X such that f(x) = y</code>
+      <div class="fc-note">Equivalently, f is onto if and only if Range of f = Y (codomain)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Composition of functions</div>
+      <code class="fc-eq">gof(x) = g(f(x)), for all x ∈ A</code>
+      <div class="fc-note">If f: A → B and g: B → C, then gof: A → C</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Inverse function condition</div>
+      <code class="fc-eq">gof = I_X and fog = I_Y</code>
+      <div class="fc-note">f is invertible ⟺ f is one-one and onto (bijective)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Inverse verification</div>
+      <code class="fc-eq">f⁻¹(y) = x ⟺ f(x) = y</code>
+      <div class="fc-note">f⁻¹ o f = I_X and f o f⁻¹ = I_Y</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch2">
+  <div class="ch-header" style="border-bottom-color:#8b5cf6">
+    <span class="ch-number">02</span>
+    <span class="ch-title">Inverse Trigonometric Functions</span>
+    <span class="ch-marks">3 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Domain and Range of sin⁻¹</div>
+      <code class="fc-eq">sin⁻¹ : [−1, 1] → [−π/2, π/2]</code>
+      <div class="fc-note">Principal value branch</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Domain and Range of cos⁻¹</div>
+      <code class="fc-eq">cos⁻¹ : [−1, 1] → [0, π]</code>
+      <div class="fc-note">Principal value branch</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Domain and Range of cosec⁻¹</div>
+      <code class="fc-eq">cosec⁻¹ : R − (−1, 1) → [−π/2, π/2] − {0}</code>
+      <div class="fc-note">Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Domain and Range of sec⁻¹</div>
+      <code class="fc-eq">sec⁻¹ : R − (−1, 1) → [0, π] − {π/2}</code>
+      <div class="fc-note">Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Domain and Range of tan⁻¹</div>
+      <code class="fc-eq">tan⁻¹ : R → (−π/2, π/2)</code>
+      <div class="fc-note">Principal value branch</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Domain and Range of cot⁻¹</div>
+      <code class="fc-eq">cot⁻¹ : R → (0, π)</code>
+      <div class="fc-note">Principal value branch</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Sine inverse-forward composition</div>
+      <code class="fc-eq">sin(sin⁻¹ x) = x, for x ∈ [−1, 1]</code>
+      <div class="fc-note">Composition of function with its inverse</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Sine forward-inverse composition</div>
+      <code class="fc-eq">sin⁻¹(sin x) = x, for x ∈ [−π/2, π/2]</code>
+      <div class="fc-note">Composition of inverse with function</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Cancellation property (sin)</div>
+      <code class="fc-eq">sin(sin⁻¹ x) = x, x ∈ [−1, 1] and sin⁻¹(sin x) = x, x ∈ [−π/2, π/2]</code>
+      <div class="fc-note">Similar results hold for other trigonometric functions for suitable values of domain</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Double angle formula for sin⁻¹</div>
+      <code class="fc-eq">sin⁻¹(2x√(1 − x²)) = 2 sin⁻¹ x, −1/√2 ≤ x ≤ 1/√2</code>
+      <div class="fc-note">Derived by substituting x = sin θ</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Double angle formula for cos⁻¹</div>
+      <code class="fc-eq">sin⁻¹(2x√(1 − x²)) = 2 cos⁻¹ x, 1/√2 ≤ x ≤ 1</code>
+      <div class="fc-note">Derived by substituting x = cos θ</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Simplification of cot⁻¹(1/√(x² − 1))</div>
+      <code class="fc-eq">cot⁻¹(1/√(x² − 1)) = sec⁻¹ x, x &gt; 1</code>
+      <div class="fc-note">Derived by substituting x = sec θ</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch3">
+  <div class="ch-header" style="border-bottom-color:#6d28d9">
+    <span class="ch-number">03</span>
+    <span class="ch-title">Matrices</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">General m x n matrix</div>
+      <code class="fc-eq">A = [aᵢⱼ]ₘ ₓ ₙ, 1 ≤ i ≤ m, 1 ≤ j ≤ n, i, j ∈ N</code>
+      <div class="fc-note">The i-th row consists of elements aᵢ₁, aᵢ₂, ..., aᵢₙ and the j-th column consists of elements a₁ⱼ, a₂ⱼ, ..., aₘⱼ</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Matrix addition</div>
+      <code class="fc-eq">If A = [aᵢⱼ] and B = [bᵢⱼ] are m x n matrices, then A + B = [aᵢⱼ + bᵢⱼ]ₘ ₓ ₙ</code>
+      <div class="fc-note">Both matrices must be of the same order</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar multiplication</div>
+      <code class="fc-eq">kA = [k · aᵢⱼ]ₘ ₓ ₙ</code>
+      <div class="fc-note">The (i,j)-th element of kA is k · aᵢⱼ</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Matrix multiplication element</div>
+      <code class="fc-eq">cᵢₖ = aᵢ₁*b₁ₖ + aᵢ₂*b₂ₖ + ... + aᵢₙ*bₙₖ = sumⱼ=₁^{n} aᵢⱼ · bⱼₖ</code>
+      <div class="fc-note">Number of columns of A must equal number of rows of B</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Commutative law of addition</div>
+      <code class="fc-eq">A + B = B + A</code>
+      <div class="fc-note">For matrices of the same order</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Associative law of addition</div>
+      <code class="fc-eq">(A + B) + C = A + (B + C)</code>
+      <div class="fc-note">For matrices of the same order</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Additive identity</div>
+      <code class="fc-eq">A + O = O + A = A</code>
+      <div class="fc-note">O is the zero matrix of the same order as A</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Additive inverse</div>
+      <code class="fc-eq">A + (-A) = (-A) + A = O</code>
+      <div class="fc-note">-A = [-aᵢⱼ]ₘ ₓ ₙ</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar distributive over matrix addition</div>
+      <code class="fc-eq">k(A + B) = kA + kB</code>
+      <div class="fc-note">A, B are matrices of same order, k is a scalar</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar sum distributive</div>
+      <code class="fc-eq">(k + l)A = kA + lA</code>
+      <div class="fc-note">k and l are scalars</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Associative law of multiplication</div>
+      <code class="fc-eq">(AB)C = A(BC)</code>
+      <div class="fc-note">Whenever both sides of the equality are defined</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distributive law (left)</div>
+      <code class="fc-eq">A(B + C) = AB + AC</code>
+      <div class="fc-note">Whenever both sides are defined</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distributive law (right)</div>
+      <code class="fc-eq">(A + B)C = AC + BC</code>
+      <div class="fc-note">Whenever both sides are defined</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Multiplicative identity</div>
+      <code class="fc-eq">IA = AI = A</code>
+      <div class="fc-note">I is the identity matrix of appropriate order</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Transpose of transpose</div>
+      <code class="fc-eq">(A')' = A</code>
+      <div class="fc-note">Taking transpose twice gives back the original matrix</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Transpose of scalar multiple</div>
+      <code class="fc-eq">(kA)' = kA'</code>
+      <div class="fc-note">Where k is any constant</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Transpose of sum</div>
+      <code class="fc-eq">(A + B)' = A' + B'</code>
+      <div class="fc-note">For matrices A and B of suitable orders</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Transpose of product</div>
+      <code class="fc-eq">(AB)' = B'A'</code>
+      <div class="fc-note">The order reverses when taking transpose of a ∏</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Symmetric part of a matrix</div>
+      <code class="fc-eq">(1/2)(A + A') is a symmetric matrix</code>
+      <div class="fc-note">For any square matrix A with real number entries</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Skew symmetric part of a matrix</div>
+      <code class="fc-eq">(1/2)(A - A') is a skew symmetric matrix</code>
+      <div class="fc-note">For any square matrix A with real number entries</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Decomposition of a square matrix</div>
+      <code class="fc-eq">A = (1/2)(A + A') + (1/2)(A - A')</code>
+      <div class="fc-note">Any square matrix can be expressed as the ∑ of a symmetric and a skew symmetric matrix</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Inverse of a product</div>
+      <code class="fc-eq">(AB)⁻¹ = B⁻¹ A⁻¹</code>
+      <div class="fc-note">If A and B are invertible matrices of the same order</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch4">
+  <div class="ch-header" style="border-bottom-color:#a855f7">
+    <span class="ch-number">04</span>
+    <span class="ch-title">Determinants</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Area of triangle Δ = (1/2)|x1  y1  1 ┃ x2  y2  1 ┃ x3  y3  1|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Since area is positive, Δ = (1/2)|determinant value|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">If three points are collinear, then |x1  y1  1 ┃ x2  y2  1 ┃ x3  y3  1| = 0</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Mᵢⱼ = minor of aᵢⱼ = determinant obtained by deleting row i and column j</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Aᵢⱼ = (-1)<sup>i+j</sup> · Mᵢⱼ (cofactor of aᵢⱼ)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Minor of an element of a determinant of order n (n ≥ 2) is a determinant of order n-1</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Δ = aᵢ₁*Aᵢ₁ + aᵢ₂*Aᵢ₂ + aᵢ₃*Aᵢ₃ (expansion along ith row)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Δ = a₁ⱼ*A₁ⱼ + a₂ⱼ*A₂ⱼ + a₃ⱼ*A₃ⱼ (expansion along jth column)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">If elements of one row are multiplied with cofactors of another row: aᵢ₁*Aⱼ₁ + aᵢ₂*Aⱼ₂ + aᵢ₃*Aⱼ₃ = 0</code>
+      <div class="fc-note">for i ≠ j</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">For A = [a11 a12 a13 ┃ a21 a22 a23 ┃ a31 a32 a33]</code>
+      <div class="fc-note">adj A = Transpose of [A11 A12 A13 ┃ A21 A22 A23 ┃ A31 A32 A33] = [A11 A21 A31 ┃ A12 A22 A32 ┃ A13 A23 A33]</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">For 2x2 matrix A = [a11 a12 ┃ a21 a22]</code>
+      <div class="fc-note">adj A = [a22 -a12 ┃ -a21 a11] (interchange diagonal elements, change sign of off-diagonal elements)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">A(adj A) = (adj A)A = |A|*I</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">|adj(A)| = |A|<sup>n-1</sup>, where n is the order of the square matrix</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">A⁻¹ = (1/|A|) · adj(A), provided |A| ≠ 0</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">|AB| = |A| · |B|, where A and B are square matrices of same order</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">If AB = BA = I, then B is called the inverse of A, i.e., B = A⁻¹</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">Also A⁻¹ = B or B⁻¹ = A, and (A⁻¹)⁻¹ = A</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <div class="fc-name">For system</div>
+      <code class="fc-eq">a1·x + b1·y + c1·z = d1, a2·x + b2·y + c2·z = d2, a3·x + b3·y + c3·z = d3: Matrix form AX = B where A = [a1 b1 c1 ┃ a2 b2 c2 ┃ a3 b3 c3], X = [x ┃ y ┃ z], B = [d1 ┃ d2 ┃ d3]</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">If |A| ≠ 0, unique solution exists: X = A⁻¹*B (Matrix Method)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">If |A| = 0 and (adj A)B ≠ O, system is inconsistent (no solution)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <code class="fc-eq">If |A| = 0 and (adj A)B = O, system may be consistent (infinitely many solutions) or inconsistent</code>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch5">
+  <div class="ch-header" style="border-bottom-color:#7c3aed">
+    <span class="ch-number">05</span>
+    <span class="ch-title">Continuity and Differentiability</span>
+    <span class="ch-marks">8 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Sum/Difference Rule</div>
+      <code class="fc-eq">(u +/- v)' = u' +/- v'</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Product Rule (Leibnitz Rule)</div>
+      <code class="fc-eq">(uv)' = u'v + uv'</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Quotient Rule</div>
+      <code class="fc-eq">(u/v)' = (u'v - uv')/v², where v ≠ 0</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Chain Rule (two functions)</div>
+      <code class="fc-eq">If f = v o u, t = u(x), then df/dx = (dv/dt) . (dt/dx)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Chain Rule (three functions)</div>
+      <code class="fc-eq">If f = (w o u) o v, t = v(x), s = u(t), then df/dx = (dw/ds) . (ds/dt) . (dt/dx)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Derivative of sin^(-1) x</div>
+      <code class="fc-eq">d/dx(sin⁻¹ x) = 1/√(1 - x²)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Derivative of cos^(-1) x</div>
+      <code class="fc-eq">d/dx(cos⁻¹ x) = -1/√(1 - x²)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Derivative of tan^(-1) x</div>
+      <code class="fc-eq">d/dx(tan⁻¹ x) = 1/(1 + x²)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Derivative of e^x</div>
+      <code class="fc-eq">d/dx(eˣ) = eˣ</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Derivative of log x (natural log)</div>
+      <code class="fc-eq">d/dx(log x) = 1/x</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Derivative of a^x</div>
+      <code class="fc-eq">d/dx(aˣ) = aˣ log a</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Change of base formula</div>
+      <code class="fc-eq">logₐ p = (log_b p)/(log_b a)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Log of product</div>
+      <code class="fc-eq">log_b(pq) = log_b p + log_b q</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Log of power</div>
+      <code class="fc-eq">log_b(pⁿ) = n log_b p</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Log of quotient</div>
+      <code class="fc-eq">log_b(x/y) = log_b x - log_b y</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Logarithmic differentiation formula</div>
+      <code class="fc-eq">For y = [u(x)]<sup>v(x</sup>): log y = v(x) . log[u(x)], then (1/y)(dy/dx) = v(x) . (1/u(x)) . u'(x) + v'(x) . log[u(x)], so dy/dx = y[v(x) . u'(x)/u(x) + v'(x) . log(u(x))]</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Parametric differentiation</div>
+      <code class="fc-eq">dy/dx = (dy/dt)/(dx/dt) = g'(t)/f'(t), provided f'(t) ≠ 0</code>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch6">
+  <div class="ch-header" style="border-bottom-color:#6d28d9">
+    <span class="ch-number">06</span>
+    <span class="ch-title">Application of Derivatives</span>
+    <span class="ch-marks">8 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Rate of change using Chain Rule</div>
+      <code class="fc-eq">dy/dx = (dy/dt) / (dx/dt), if dx/dt ≠ 0</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Rate of change of area of circle</div>
+      <code class="fc-eq">dA/dr = 2*π*r</code>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch7">
+  <div class="ch-header" style="border-bottom-color:#8b5cf6">
+    <span class="ch-number">07</span>
+    <span class="ch-title">Integrals</span>
+    <span class="ch-marks">8 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Power Rule</div>
+      <code class="fc-eq">∫ xⁿ dx = x<sup>n+1</sup>/(n+1) + C, n ≠ -1</code>
+      <div class="fc-note">Particularly, ∫ dx = x + C</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Cosine integral</div>
+      <code class="fc-eq">∫ cos x dx = sin x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Sine integral</div>
+      <code class="fc-eq">∫ sin x dx = -cos x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Secant squared integral</div>
+      <code class="fc-eq">∫ sec² x dx = tan x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Cosecant squared integral</div>
+      <code class="fc-eq">∫ cosec² x dx = -cot x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Secant-tangent integral</div>
+      <code class="fc-eq">∫ sec x tan x dx = sec x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Cosecant-cotangent integral</div>
+      <code class="fc-eq">∫ cosec x cot x dx = -cosec x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Inverse sine integral</div>
+      <code class="fc-eq">∫ dx/√(1 - x²) = sin⁻¹ x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Negative inverse cosine integral</div>
+      <code class="fc-eq">∫ dx/√(1 - x²) = -cos⁻¹ x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Inverse tangent integral</div>
+      <code class="fc-eq">∫ dx/(1 + x²) = tan⁻¹ x + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Exponential integral</div>
+      <code class="fc-eq">∫ eˣ dx = eˣ + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Logarithmic integral</div>
+      <code class="fc-eq">∫ (1/x) dx = log |x| + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">General exponential integral</div>
+      <code class="fc-eq">∫ aˣ dx = aˣ / log a + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <code class="fc-eq">∫ dx/(x² - a²) = (1/2a) log |(x-a)/(x+a)| + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <code class="fc-eq">∫ dx/(a² - x²) = (1/2a) log |(a+x)/(a-x)| + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <code class="fc-eq">∫ dx/(x² + a²) = (1/a) tan⁻¹(x/a) + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <code class="fc-eq">∫ dx/√(x² - a²) = log |x + √(x² - a²)| + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <code class="fc-eq">∫ dx/√(a² - x²) = sin⁻¹(x/a) + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <code class="fc-eq">∫ dx/√(x² + a²) = log |x + √(x² + a²)| + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Distinct linear factors</div>
+      <code class="fc-eq"></code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Repeated linear factor</div>
+      <code class="fc-eq"></code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Three distinct linear factors</div>
+      <code class="fc-eq"></code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Repeated and distinct linear factors</div>
+      <code class="fc-eq"></code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Linear and irreducible quadratic factors</div>
+      <code class="fc-eq"></code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Integration by Parts formula</div>
+      <code class="fc-eq">∫ f(x) g(x) dx = f(x) ∫ g(x) dx - ∫ [f'(x) ∫ g(x) dx] dx</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Special exponential formula</div>
+      <code class="fc-eq">∫ eˣ [f(x) + f'(x)] dx = eˣ f(x) + C</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P0</div>
+      <code class="fc-eq">∫ from a to b of f(x) dx = ∫ from a to b of f(t) dt</code>
+      <div class="fc-note">The variable of integration is a dummy variable.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P1</div>
+      <code class="fc-eq">∫ from a to b of f(x) dx = -∫ from b to a of f(x) dx. In particular, ∫ from a to a of f(x) dx = 0.</code>
+      <div class="fc-note">Interchanging limits changes the sign.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P2</div>
+      <code class="fc-eq">∫ from a to b of f(x) dx = ∫ from a to c of f(x) dx + ∫ from c to b of f(x) dx</code>
+      <div class="fc-note">Splitting the interval at an intermediate point c.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P3</div>
+      <code class="fc-eq">∫ from a to b of f(x) dx = ∫ from a to b of f(a + b - x) dx</code>
+      <div class="fc-note">Substitution x → a + b - x.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P4</div>
+      <code class="fc-eq">∫ from 0 to a of f(x) dx = ∫ from 0 to a of f(a - x) dx</code>
+      <div class="fc-note">Particular case of P3 with lower limit 0.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P5</div>
+      <code class="fc-eq">∫ from 0 to 2a of f(x) dx = ∫ from 0 to a of f(x) dx + ∫ from 0 to a of f(2a - x) dx</code>
+      <div class="fc-note">Splitting [0, 2a] using substitution.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P6</div>
+      <code class="fc-eq">∫ from 0 to 2a of f(x) dx = 2 ∫ from 0 to a of f(x) dx if f(2a - x) = f(x); and = 0 if f(2a - x) = -f(x)</code>
+      <div class="fc-note">Useful for symmetric/antisymmetric functions about x = a.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Property P7</div>
+      <code class="fc-eq">(i) ∫ from -a to a of f(x) dx = 2 ∫ from 0 to a of f(x) dx, if f is an even function [f(-x) = f(x)]. (ii) ∫ from -a to a of f(x) dx = 0, if f is an odd function [f(-x) = -f(x)].</code>
+      <div class="fc-note">Even and odd function properties for symmetric intervals.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch8">
+  <div class="ch-header" style="border-bottom-color:#a855f7">
+    <span class="ch-number">08</span>
+    <span class="ch-title">Application of Integrals</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <div class="fc-name">Area using vertical strips</div>
+      <code class="fc-eq">A = ∫ from a to b of y dx = ∫ from a to b of f(x) dx</code>
+      <div class="fc-note">Area bounded by curve y = f(x), x-axis, and lines x = a, x = b</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <div class="fc-name">Area using horizontal strips</div>
+      <code class="fc-eq">A = ∫ from c to d of x dy = ∫ from c to d of g(y) dy</code>
+      <div class="fc-note">Area bounded by curve x = g(y), y-axis, and lines y = c, y = d</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <div class="fc-name">Area when curve is below x-axis</div>
+      <code class="fc-eq">A = |∫ from a to b of f(x) dx|</code>
+      <div class="fc-note">If f(x) &lt; 0 from x = a to x = b, the area is the absolute value of the ∫.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <div class="fc-name">Area when curve crosses x-axis</div>
+      <code class="fc-eq">A = |A1| + A2</code>
+      <div class="fc-note">When part of the curve is above and part below x-axis, take absolute value of negative area and add to positive area.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch9">
+  <div class="ch-header" style="border-bottom-color:#7c3aed">
+    <span class="ch-number">09</span>
+    <span class="ch-title">Differential Equations</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Variable Separable Form</div>
+      <code class="fc-eq">dy/dx = h(y) · g(x)</code>
+      <div class="fc-note">Standard form for variable separable equations</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Separated Form</div>
+      <code class="fc-eq">(1/h(y)) dy = g(x) dx</code>
+      <div class="fc-note">After separating the variables</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">General Solution</div>
+      <code class="fc-eq">∫(1/h(y)) dy = ∫g(x) dx + C</code>
+      <div class="fc-note">Integrate both sides to get the solution; H(y) = G(x) + C</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Substitution for dy/dx form</div>
+      <code class="fc-eq">y = vx, so dy/dx = v + x(dv/dx)</code>
+      <div class="fc-note">Used when dy/dx = g(y/x)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Substitution for dx/dy form</div>
+      <code class="fc-eq">x = vy, so dx/dy = v + y(dv/dy)</code>
+      <div class="fc-note">Used when dx/dy = h(x/y)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Reduced form</div>
+      <code class="fc-eq">x(dv/dx) = g(v) - v, then dv/(g(v) - v) = dx/x</code>
+      <div class="fc-note">After substitution, separate variables ∈ v and x</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">General Solution</div>
+      <code class="fc-eq">∫dv/(g(v) - v) = ∫(1/x)dx + C</code>
+      <div class="fc-note">Integrate and replace v by y/x to get the solution</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Standard Form (Type 1)</div>
+      <code class="fc-eq">dy/dx + Py = Q</code>
+      <div class="fc-note">P, Q are constants or functions of x only</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Integrating Factor (Type 1)</div>
+      <code class="fc-eq">I.F. = e<sup>∫P dx</sup></code>
+      <div class="fc-note">Integrating factor for dy/dx + Py = Q</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">General Solution (Type 1)</div>
+      <code class="fc-eq">y · (I.F.) = ∫(Q × I.F.) dx + C</code>
+      <div class="fc-note">y · e<sup>∫P dx</sup> = ∫(Q · e<sup>∫P dx</sup>) dx + C</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Standard Form (Type 2)</div>
+      <code class="fc-eq">dx/dy + P₁x = Q₁</code>
+      <div class="fc-note">P₁, Q₁ are constants or functions of y only</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Integrating Factor (Type 2)</div>
+      <code class="fc-eq">I.F. = e<sup>∫P₁ dy</sup></code>
+      <div class="fc-note">Integrating factor for dx/dy + P₁x = Q₁</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">General Solution (Type 2)</div>
+      <code class="fc-eq">x · (I.F.) = ∫(Q₁ × I.F.) dy + C</code>
+      <div class="fc-note">x · e<sup>∫P₁ dy</sup> = ∫(Q₁ · e<sup>∫P₁ dy</sup>) dy + C</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch10">
+  <div class="ch-header" style="border-bottom-color:#6d28d9">
+    <span class="ch-number">10</span>
+    <span class="ch-title">Vector Algebra</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Magnitude of position vector</div>
+      <code class="fc-eq">|OP| = √(x² + y² + z²)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Direction cosines</div>
+      <code class="fc-eq">cos(α) = x/r, cos(β) = y/r, cos(γ) = z/r where r = |rvₑc|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Direction cosine identity</div>
+      <code class="fc-eq">l² + m² + n² = 1</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Triangle law</div>
+      <code class="fc-eq">AC = AB + BC</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Vector difference</div>
+      <code class="fc-eq">a - b = AB + BC' where BC' = -BC</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Sides of triangle sum to zero</div>
+      <code class="fc-eq">AB + BC + CA = AA = 0⃗</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar multiplication magnitude</div>
+      <code class="fc-eq">|λ · a| = |λ| · |a|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Negative of a vector</div>
+      <code class="fc-eq">a + (-a) = (-a) + a = 0⃗</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Unit vector</div>
+      <code class="fc-eq">â = (1/|a|) · a, provided a ≠ 0⃗</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">For any scalar k</div>
+      <code class="fc-eq">k · 0⃗ = 0⃗</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Position vector in component form</div>
+      <code class="fc-eq">OP (or r) = xî + yĵ + zk̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Magnitude from components</div>
+      <code class="fc-eq">|r| = |xî + yĵ + zk̂| = √(x² + y² + z²)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Sum of vectors in component form</div>
+      <code class="fc-eq">a + b = (a1+b1)î + (a2+b2)ĵ + (a3+b3)k̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Difference of vectors in component form</div>
+      <code class="fc-eq">a - b = (a1-b1)î + (a2-b2)ĵ + (a3-b3)k̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Equality of vectors</div>
+      <code class="fc-eq">a = b if and only if a1 = b1, a2 = b2, a3 = b3</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar multiplication in component form</div>
+      <code class="fc-eq">λ*a = (λ*a1)î + (λ*a2)ĵ + (λ*a3)k̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distributive law 1</div>
+      <code class="fc-eq">k·a + m·a = (k + m)*a</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distributive law 2</div>
+      <code class="fc-eq">k(m·a) = (km)*a</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distributive law 3</div>
+      <code class="fc-eq">k(a + b) = k·a + k·b</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Collinearity condition</div>
+      <code class="fc-eq">a and b are collinear ⟺ b = λ*a for some nonzero scalar λ, i.e., b1/a1 = b2/a2 = b3/a3 = λ</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Vector joining two points</div>
+      <code class="fc-eq">P1P2 = (x2-x1)î + (y2-y1)ĵ + (z2-z1)k̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distance between two points</div>
+      <code class="fc-eq">|P1P2| = √((x2-x1)² + (y2-y1)² + (z2-z1)²)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Section formula (internal)</div>
+      <code class="fc-eq">OR = (m·b + n·a)/(m + n)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Section formula (external)</div>
+      <code class="fc-eq">OR = (m·b - n·a)/(m - n)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Midpoint formula</div>
+      <code class="fc-eq">OR = (a + b)/2</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar (dot) product definition</div>
+      <code class="fc-eq">a . b = |a||b|cos(θ)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Dot product of perpendicular vectors</div>
+      <code class="fc-eq">a . b = 0 if and only if a is perpendicular to b (for nonzero vectors)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Dot product when theta = 0</div>
+      <code class="fc-eq">a . b = |a||b| ┃ ∈ particular a . a = |a|²</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Dot product when theta = pi</div>
+      <code class="fc-eq">a . b = -|a||b|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Dot products of unit vectors</div>
+      <code class="fc-eq">î . î = ĵ . ĵ = k̂ . k̂ = 1; î . ĵ = ĵ . k̂ = k̂ . î = 0</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Angle between vectors using dot product</div>
+      <code class="fc-eq">cos(θ) = (a . b)/(|a||b|), or θ = cos⁻¹((a . b)/(|a||b|))</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Commutative property of dot product</div>
+      <code class="fc-eq">a . b = b . a</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distributive property of dot product</div>
+      <code class="fc-eq">a . (b + c) = a . b + a . c</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar factor in dot product</div>
+      <code class="fc-eq">(λ*a) . b = λ(a . b) = a . (λ*b)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Dot product in component form</div>
+      <code class="fc-eq">a . b = a1·b1 + a2·b2 + a3·b3</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Projection of a on b</div>
+      <code class="fc-eq">Projection of a on b = (a . b)/|b| = a . b̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Projection of a on b (vector form)</div>
+      <code class="fc-eq">a . (b/|b|) or (1/|b|)(a . b)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Direction cosines from dot product</div>
+      <code class="fc-eq">cos(α) = a1/|a|, cos(β) = a2/|a|, cos(γ) = a3/|a|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Unit vector in terms of direction cosines</div>
+      <code class="fc-eq">â = cos(α)*î + cos(β)*ĵ + cos(γ)*k̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Vector (cross) product definition</div>
+      <code class="fc-eq">a x b = |a||b|sin(θ) · n̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Cross product of parallel/collinear vectors</div>
+      <code class="fc-eq">a x b = 0⃗ if and only if a is parallel to b (for nonzero vectors)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Cross product of self</div>
+      <code class="fc-eq">a x a = 0⃗</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Cross product when theta = pi/2</div>
+      <code class="fc-eq">|a x b| = |a||b|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Cross products of unit vectors</div>
+      <code class="fc-eq">î x î = ĵ x ĵ = k̂ x k̂ = 0⃗; î x ĵ = k̂, ĵ x k̂ = î, k̂ x î = ĵ</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Reverse cross products of unit vectors</div>
+      <code class="fc-eq">ĵ x î = -k̂, k̂ x ĵ = -î, î x k̂ = -ĵ</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Angle from cross product</div>
+      <code class="fc-eq">sin(θ) = |a x b|/(|a||b|)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Anti-commutative property</div>
+      <code class="fc-eq">a x b = -(b x a)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Area of triangle</div>
+      <code class="fc-eq">Area = (1/2)|a x b| where a, b are adjacent sides</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Area of parallelogram</div>
+      <code class="fc-eq">Area = |a x b| where a, b are adjacent sides</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Distributive property of cross product</div>
+      <code class="fc-eq">a x (b + c) = a x b + a x c</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Scalar factor in cross product</div>
+      <code class="fc-eq">λ(a x b) = (λ*a) x b = a x (λ*b)</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Cross product in component form (determinant)</div>
+      <code class="fc-eq">a x b = |î  ĵ  k̂ ┃ a1  a2  a3 ┃ b1  b2  b3| = (a2·b3 - a3·b2)î - (a1·b3 - a3·b1)ĵ + (a1·b2 - a2·b1)k̂</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Cauchy-Schwarz Inequality</div>
+      <code class="fc-eq">|a . b| ≤ |a||b|</code>
+    </div>
+    <div class="formula-card" style="border-left-color:#6d28d9">
+      <div class="fc-name">Triangle Inequality</div>
+      <code class="fc-eq">|a + b| ≤ |a| + |b|</code>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch11">
+  <div class="ch-header" style="border-bottom-color:#8b5cf6">
+    <span class="ch-number">11</span>
+    <span class="ch-title">Three Dimensional Geometry</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Direction cosines identity</div>
+      <code class="fc-eq">l² + m² + n² = 1</code>
+      <div class="fc-note">Sum of squares of direction cosines equals 1</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Relation between direction ratios and direction cosines</div>
+      <code class="fc-eq">l/a = m/b = n/c = k, where k = +/- 1/√(a² + b² + c²)</code>
+      <div class="fc-note">Connecting direction ratios (a,b,c) to direction cosines (l,m,n)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Direction cosines from direction ratios</div>
+      <code class="fc-eq">l = +/- a/√(a²+b²+c²), m = +/- b/√(a²+b²+c²), n = +/- c/√(a²+b²+c²)</code>
+      <div class="fc-note">Direction cosines computed from direction ratios</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Direction cosines of line joining two points</div>
+      <code class="fc-eq">l = (x2-x1)/PQ, m = (y2-y1)/PQ, n = (z2-z1)/PQ where PQ = √((x2-x1)² + (y2-y1)² + (z2-z1)²)</code>
+      <div class="fc-note">Direction cosines of line segment joining P(x1,y1,z1) and Q(x2,y2,z2)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Direction ratios of line joining two points</div>
+      <code class="fc-eq">x2-x1, y2-y1, z2-z1 (or x1-x2, y1-y2, z1-z2)</code>
+      <div class="fc-note">Direction ratios of line segment from P(x1,y1,z1) to Q(x2,y2,z2)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Vector equation of a line (point + direction)</div>
+      <code class="fc-eq">r = a + λ*b</code>
+      <div class="fc-note">Line through point with position vector a, parallel to vector b. λ is a real parameter.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Cartesian equation of a line (point + direction ratios)</div>
+      <code class="fc-eq">(x - x1)/a = (y - y1)/b = (z - z1)/c</code>
+      <div class="fc-note">Line through (x1,y1,z1) with direction ratios a, b, c</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Cartesian equation using direction cosines</div>
+      <code class="fc-eq">(x - x1)/l = (y - y1)/m = (z - z1)/n</code>
+      <div class="fc-note">Line through (x1,y1,z1) with direction cosines l, m, n</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Parametric equations of a line</div>
+      <code class="fc-eq">x = x1 + λ*a, y = y1 + λ*b, z = z1 + λ*c</code>
+      <div class="fc-note">Parametric form of line through (x1,y1,z1) with direction ratios a, b, c</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Vector equation of a line through two points</div>
+      <code class="fc-eq">r = a + λ*(b - a)</code>
+      <div class="fc-note">Line through two points with position vectors a and b</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Angle between two lines (direction ratios)</div>
+      <code class="fc-eq">cos(θ) = |a1·a2 + b1·b2 + c1·c2| / (√(a1²+b1²+c1²) · √(a2²+b2²+c2²))</code>
+      <div class="fc-note">Angle between lines with direction ratios (a1,b1,c1) and (a2,b2,c2)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Angle between two lines (direction cosines)</div>
+      <code class="fc-eq">cos(θ) = |l1·l2 + m1·m2 + n1·n2|</code>
+      <div class="fc-note">Angle between lines with direction cosines (l1,m1,n1) and (l2,m2,n2), since l²+m²+n²=1</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">sin(theta) using direction ratios</div>
+      <code class="fc-eq">sin(θ) = √((a1·b2-a2·b1)² + (b1·c2-b2·c1)² + (c1·a2-c2·a1)²) / (√(a1²+b1²+c1²) · √(a2²+b2²+c2²))</code>
+      <div class="fc-note">Sine of angle between two lines</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">sin(theta) using direction cosines</div>
+      <code class="fc-eq">sin(θ) = √((l1·m2-l2·m1)² + (m1·n2-m2·n1)² + (n1·l2-n2·l1)²)</code>
+      <div class="fc-note">Sine of angle between two lines using direction cosines</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Angle between lines in vector form</div>
+      <code class="fc-eq">cos(θ) = |b1 . b2| / (|b1| · |b2|)</code>
+      <div class="fc-note">For lines r = a1 + λ*b1 and r = a2 + μ*b2</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Condition for perpendicular lines (direction ratios)</div>
+      <code class="fc-eq">a1·a2 + b1·b2 + c1·c2 = 0</code>
+      <div class="fc-note">Two lines are perpendicular when θ = 90 deg</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Condition for parallel lines (direction ratios)</div>
+      <code class="fc-eq">a1/a2 = b1/b2 = c1/c2</code>
+      <div class="fc-note">Two lines are parallel when θ = 0</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Shortest distance between skew lines (vector form)</div>
+      <code class="fc-eq">d = |(b1 x b2) . (a2 - a1)| / |b1 x b2|</code>
+      <div class="fc-note">For lines r = a1 + λ*b1 and r = a2 + μ*b2</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Shortest distance between skew lines (Cartesian form)</div>
+      <code class="fc-eq">d = |determinant of [[x2-x1, y2-y1, z2-z1], [a1, b1, c1], [a2, b2, c2]]| / √((b1·c2-b2·c1)² + (c1·a2-c2·a1)² + (a1·b2-a2·b1)²)</code>
+      <div class="fc-note">For lines (x-x1)/a1 = (y-y1)/b1 = (z-z1)/c1 and (x-x2)/a2 = (y-y2)/b2 = (z-z2)/c2</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#8b5cf6">
+      <div class="fc-name">Distance between parallel lines</div>
+      <code class="fc-eq">d = |b x (a2 - a1)| / |b|</code>
+      <div class="fc-note">For parallel lines r = a1 + λ*b and r = a2 + μ*b</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch12">
+  <div class="ch-header" style="border-bottom-color:#a855f7">
+    <span class="ch-number">12</span>
+    <span class="ch-title">Linear Programming</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#a855f7">
+      <div class="fc-name">General Objective Function</div>
+      <code class="fc-eq">Z = ax + by</code>
+      <div class="fc-note">where a and b are constants, x and y are decision variables, and Z is to be maximised or minimised</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch13">
+  <div class="ch-header" style="border-bottom-color:#7c3aed">
+    <span class="ch-number">13</span>
+    <span class="ch-title">Probability</span>
+    <span class="ch-marks">8 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Conditional Probability</div>
+      <code class="fc-eq">P(E|F) = P(E ∩ F) / P(F), provided P(F) ≠ 0</code>
+      <div class="fc-note">Also written as P(E|F) = n(E ∩ F) / n(F) for equally likely outcomes</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Property 1: P(S|F)</div>
+      <code class="fc-eq">P(S|F) = P(F|F) = 1</code>
+      <div class="fc-note">The conditional probability of the sample space S given F is 1</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Property 2: Addition rule for conditional probability</div>
+      <code class="fc-eq">P((A ∪ B)|F) = P(A|F) + P(B|F) - P((A ∩ B)|F)</code>
+      <div class="fc-note">For disjoint events A and B: P((A ∪ B)|F) = P(A|F) + P(B|F)</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Property 3: Complement rule</div>
+      <code class="fc-eq">P(E'|F) = 1 - P(E|F)</code>
+      <div class="fc-note">Follows from P(S|F) = 1 and E, E' being disjoint with E ∪ E' = S</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Multiplication Rule (two events)</div>
+      <code class="fc-eq">P(E ∩ F) = P(E) . P(F|E) = P(F) . P(E|F)</code>
+      <div class="fc-note">Provided P(E) ≠ 0 and P(F) ≠ 0</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Multiplication Rule (three events)</div>
+      <code class="fc-eq">P(E ∩ F n G) = P(E) . P(F|E) . P(G|(E ∩ F)) = P(E) . P(F|E) . P(G|EF)</code>
+      <div class="fc-note">Can be extended to four or more events similarly</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Test for Independence</div>
+      <code class="fc-eq">P(E ∩ F) = P(E) . P(F)</code>
+      <div class="fc-note">If this holds, E and F are independent events</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Probability of at least one of two independent events</div>
+      <code class="fc-eq">P(A ∪ B) = 1 - P(A') P(B')</code>
+      <div class="fc-note">For independent events A and B</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Theorem of Total Probability</div>
+      <code class="fc-eq">P(A) = sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ) = P(E₁) P(A|E₁) + P(E₂) P(A|E₂) + ... + P(Eₙ) P(A|Eₙ)</code>
+      <div class="fc-note">Where {E₁, E₂, ..., Eₙ} is a partition of S and each Eᵢ has nonzero probability</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Bayes' Theorem</div>
+      <code class="fc-eq">P(Eᵢ|A) = P(Eᵢ) P(A|Eᵢ) / sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ)</code>
+      <div class="fc-note">For any i = 1, 2, ..., n. Also called the formula for the probability of 'causes'.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Mean (Expected Value)</div>
+      <code class="fc-eq">E(X) = μ = sumᵢ=₁^{n} xᵢ pᵢ</code>
+      <div class="fc-note">xᵢ are values of X and pᵢ are corresponding probabilities</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Variance</div>
+      <code class="fc-eq">Var(X) = E(X²) - [E(X)]² = ∑ xᵢ² pᵢ - (∑ xᵢ pᵢ)²</code>
+      <div class="fc-note">Also written as σ²</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Standard Deviation</div>
+      <code class="fc-eq">σ = √(Var(X))</code>
+      <div class="fc-note">Non-negative square root of the variance</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Binomial Probability</div>
+      <code class="fc-eq">P(X = r) = nCr pʳ q<sup>n-r</sup>, where q = 1 - p</code>
+      <div class="fc-note">r = 0, 1, 2, ..., n. Here n = number of trials, p = probability of success, q = probability of failure</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Mean of Binomial Distribution</div>
+      <code class="fc-eq">E(X) = np</code>
+      <div class="fc-note">n = number of trials, p = probability of success</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#7c3aed">
+      <div class="fc-name">Variance of Binomial Distribution</div>
+      <code class="fc-eq">Var(X) = npq = np(1-p)</code>
+      <div class="fc-note">Always less than or equal to the mean np since q ≤ 1</div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+<script src="../js/mobile-dropdowns.js"></script>
+</body>
+</html>

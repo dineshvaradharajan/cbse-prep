@@ -1,0 +1,893 @@
+{
+  "chapter": 10,
+  "title": "Vector Algebra",
+  "sections": [
+    {
+      "id": "10.1",
+      "title": "Introduction",
+      "concepts": [
+        "Scalar quantities: quantities involving only one value (magnitude), e.g., length, mass, time, distance, speed, area, volume, temperature, work, money, voltage, density, resistance",
+        "Vector quantities: quantities involving both magnitude and direction, e.g., displacement, velocity, acceleration, force, weight, momentum, electric field intensity",
+        "Vectors have algebraic and geometric properties that together give a full realisation of the concept"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Scalars are real numbers representing magnitude only",
+        "Vectors have both magnitude and direction",
+        "This chapter covers basic concepts, operations on vectors, and their algebraic and geometric properties"
+      ]
+    },
+    {
+      "id": "10.2",
+      "title": "Some Basic Concepts",
+      "concepts": [
+        "Directed line: a line given a direction by means of arrowheads",
+        "Directed line segment: a line segment with magnitude and direction",
+        "A vector is denoted as AB (with arrow) or a (with arrow), read as 'vector AB' or 'vector a'",
+        "Initial point: the point A from where the vector AB starts",
+        "Terminal point: the point B where the vector AB ends",
+        "Magnitude (or length) of a vector: the distance between initial and terminal points, denoted |AB|, |a|, or a",
+        "The arrow indicates the direction of the vector",
+        "Position vector: vector OP having origin O as initial point and point P as terminal point",
+        "Direction angles: angles alpha, beta, gamma made by a vector with the positive directions of x, y, z axes",
+        "Direction cosines: cos(alpha), cos(beta), cos(gamma) denoted by l, m, n respectively",
+        "Direction ratios: numbers lr, mr, nr (proportional to direction cosines), denoted as a, b, c"
+      ],
+      "definitions": [
+        {
+          "term": "Vector",
+          "definition": "A quantity that has magnitude as well as direction is called a vector. A directed line segment is a vector."
+        },
+        {
+          "term": "Position Vector",
+          "definition": "The vector OP having O (origin) as initial point and P as terminal point is called the position vector of point P with respect to origin O."
+        },
+        {
+          "term": "Direction Cosines",
+          "definition": "The cosine values of the direction angles alpha, beta, gamma that a vector makes with the positive x, y, z axes, denoted by l, m, n respectively."
+        },
+        {
+          "term": "Direction Ratios",
+          "definition": "Numbers proportional to the direction cosines of a vector, denoted as a, b, c."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Magnitude of position vector",
+          "formula": "|OP| = sqrt(x^2 + y^2 + z^2)"
+        },
+        {
+          "name": "Direction cosines",
+          "formula": "cos(alpha) = x/r, cos(beta) = y/r, cos(gamma) = z/r where r = |r_vec|"
+        },
+        {
+          "name": "Direction cosine identity",
+          "formula": "l^2 + m^2 + n^2 = 1"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Since the length is never negative, the notation |a| < 0 has no meaning",
+        "l^2 + m^2 + n^2 = 1 but a^2 + b^2 + c^2 != 1 in general",
+        "Coordinates of point P(x,y,z) can be expressed as (lr, mr, nr)"
+      ]
+    },
+    {
+      "id": "10.3",
+      "title": "Types of Vectors",
+      "concepts": [
+        "Zero Vector (or null vector)",
+        "Unit Vector",
+        "Coinitial Vectors",
+        "Collinear Vectors",
+        "Equal Vectors",
+        "Negative of a Vector",
+        "Free Vectors"
+      ],
+      "definitions": [
+        {
+          "term": "Zero Vector",
+          "definition": "A vector whose initial and terminal points coincide, denoted as 0_vec. It has zero magnitude and cannot be assigned a definite direction (or may be regarded as having any direction). Vectors AA, BB represent the zero vector."
+        },
+        {
+          "term": "Unit Vector",
+          "definition": "A vector whose magnitude is unity (1 unit). The unit vector in the direction of a given vector a is denoted by a_hat."
+        },
+        {
+          "term": "Coinitial Vectors",
+          "definition": "Two or more vectors having the same initial point are called coinitial vectors."
+        },
+        {
+          "term": "Collinear Vectors",
+          "definition": "Two or more vectors are said to be collinear if they are parallel to the same line, irrespective of their magnitudes and directions."
+        },
+        {
+          "term": "Equal Vectors",
+          "definition": "Two vectors a and b are said to be equal if they have the same magnitude and direction regardless of the positions of their initial points, written as a = b."
+        },
+        {
+          "term": "Negative of a Vector",
+          "definition": "A vector whose magnitude is the same as that of a given vector but direction is opposite to that of it. Vector BA is negative of vector AB, written as BA = -AB."
+        },
+        {
+          "term": "Free Vectors",
+          "definition": "Vectors that may be subject to parallel displacement without changing magnitude and direction. Throughout this chapter, we deal with free vectors only."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Zero vector has zero magnitude and indeterminate direction",
+        "Unit vector a_hat has |a_hat| = 1",
+        "Coinitial vectors share the same starting point",
+        "Collinear vectors are parallel to the same line",
+        "Equal vectors have same magnitude AND same direction",
+        "Negative vector has same magnitude but opposite direction"
+      ]
+    },
+    {
+      "id": "10.4",
+      "title": "Addition of Vectors",
+      "concepts": [
+        "Triangle law of vector addition",
+        "Parallelogram law of vector addition",
+        "Difference of vectors",
+        "Properties of vector addition: commutative and associative",
+        "Additive identity (zero vector)"
+      ],
+      "definitions": [
+        {
+          "term": "Triangle Law of Vector Addition",
+          "definition": "If two vectors a and b are positioned so that the initial point of one coincides with the terminal point of the other, then the sum (resultant) a + b is represented by the third side of the triangle formed. In triangle ABC: AC = AB + BC."
+        },
+        {
+          "term": "Parallelogram Law of Vector Addition",
+          "definition": "If two vectors a and b are represented by the two adjacent sides of a parallelogram in magnitude and direction, then their sum a + b is represented in magnitude and direction by the diagonal of the parallelogram through their common point."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Triangle law",
+          "formula": "AC = AB + BC"
+        },
+        {
+          "name": "Vector difference",
+          "formula": "a - b = AB + BC' where BC' = -BC"
+        },
+        {
+          "name": "Sides of triangle sum to zero",
+          "formula": "AB + BC + CA = AA = 0_vec"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Commutative Property of Vector Addition",
+          "statement": "For any two vectors a and b: a + b = b + a",
+          "proof_outline": "Consider parallelogram ABCD with AB = a and BC = b. Using triangle law on triangles ABC and ADC, AC = a + b = b + a."
+        },
+        {
+          "name": "Associative Property of Vector Addition",
+          "statement": "For any three vectors a, b, c: (a + b) + c = a + (b + c)",
+          "proof_outline": "Let a, b, c be represented by PQ, QR, RS respectively. Then (a+b)+c = PR + RS = PS and a+(b+c) = PQ + QS = PS."
+        }
+      ],
+      "key_points": [
+        "The triangle law and parallelogram law of vector addition are equivalent",
+        "When sides of a triangle are taken in order, the resultant is zero (initial and terminal points coincide)",
+        "a + 0 = 0 + a = a (zero vector is the additive identity)",
+        "The associative property allows writing a + b + c without brackets",
+        "The two laws of vector addition are equivalent to each other"
+      ]
+    },
+    {
+      "id": "10.5",
+      "title": "Multiplication of a Vector by a Scalar",
+      "concepts": [
+        "Scalar multiplication of vectors",
+        "Negative (additive inverse) of a vector",
+        "Unit vector from scalar multiplication",
+        "Components of a vector",
+        "Unit vectors along axes: i_hat, j_hat, k_hat",
+        "Component form of a vector",
+        "Scalar and vector components",
+        "Rectangular components",
+        "Vector joining two points",
+        "Section formula (internal and external division)",
+        "Collinearity condition for vectors",
+        "Direction ratios from components"
+      ],
+      "definitions": [
+        {
+          "term": "Scalar Multiplication",
+          "definition": "The product of vector a by scalar lambda, denoted lambda*a, is a vector collinear to a. The vector lambda*a has direction same (or opposite) to a according as lambda is positive (or negative). Its magnitude is |lambda| times the magnitude of a: |lambda*a| = |lambda||a|."
+        },
+        {
+          "term": "Component Form",
+          "definition": "Any vector r = xi_hat + yj_hat + zk_hat is said to be in component form. Here x, y, z are scalar components and xi_hat, yj_hat, zk_hat are vector components along the respective axes. Also called rectangular components."
+        },
+        {
+          "term": "Section Formula (Internal Division)",
+          "definition": "The position vector of point R dividing the line segment PQ internally in the ratio m:n is OR = (mb + na)/(m + n), where a and b are position vectors of P and Q."
+        },
+        {
+          "term": "Section Formula (External Division)",
+          "definition": "The position vector of point R dividing the line segment PQ externally in the ratio m:n is OR = (mb - na)/(m - n)."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Scalar multiplication magnitude",
+          "formula": "|lambda * a| = |lambda| * |a|"
+        },
+        {
+          "name": "Negative of a vector",
+          "formula": "a + (-a) = (-a) + a = 0_vec"
+        },
+        {
+          "name": "Unit vector",
+          "formula": "a_hat = (1/|a|) * a, provided a != 0_vec"
+        },
+        {
+          "name": "For any scalar k",
+          "formula": "k * 0_vec = 0_vec"
+        },
+        {
+          "name": "Position vector in component form",
+          "formula": "OP (or r) = xi_hat + yj_hat + zk_hat"
+        },
+        {
+          "name": "Magnitude from components",
+          "formula": "|r| = |xi_hat + yj_hat + zk_hat| = sqrt(x^2 + y^2 + z^2)"
+        },
+        {
+          "name": "Sum of vectors in component form",
+          "formula": "a + b = (a1+b1)i_hat + (a2+b2)j_hat + (a3+b3)k_hat"
+        },
+        {
+          "name": "Difference of vectors in component form",
+          "formula": "a - b = (a1-b1)i_hat + (a2-b2)j_hat + (a3-b3)k_hat"
+        },
+        {
+          "name": "Equality of vectors",
+          "formula": "a = b if and only if a1 = b1, a2 = b2, a3 = b3"
+        },
+        {
+          "name": "Scalar multiplication in component form",
+          "formula": "lambda*a = (lambda*a1)i_hat + (lambda*a2)j_hat + (lambda*a3)k_hat"
+        },
+        {
+          "name": "Distributive law 1",
+          "formula": "k*a + m*a = (k + m)*a"
+        },
+        {
+          "name": "Distributive law 2",
+          "formula": "k(m*a) = (km)*a"
+        },
+        {
+          "name": "Distributive law 3",
+          "formula": "k(a + b) = k*a + k*b"
+        },
+        {
+          "name": "Collinearity condition",
+          "formula": "a and b are collinear iff b = lambda*a for some nonzero scalar lambda, i.e., b1/a1 = b2/a2 = b3/a3 = lambda"
+        },
+        {
+          "name": "Vector joining two points",
+          "formula": "P1P2 = (x2-x1)i_hat + (y2-y1)j_hat + (z2-z1)k_hat"
+        },
+        {
+          "name": "Distance between two points",
+          "formula": "|P1P2| = sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)"
+        },
+        {
+          "name": "Section formula (internal)",
+          "formula": "OR = (m*b + n*a)/(m + n)"
+        },
+        {
+          "name": "Section formula (external)",
+          "formula": "OR = (m*b - n*a)/(m - n)"
+        },
+        {
+          "name": "Midpoint formula",
+          "formula": "OR = (a + b)/2"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "When lambda = -1, lambda*a = -a (the negative/additive inverse of vector a)",
+        "lambda = 1/|a| gives unit vector in the direction of a",
+        "i_hat, j_hat, k_hat are unit vectors along x, y, z axes with |OA| = |OB| = |OC| = 1",
+        "Two vectors are collinear iff one is a scalar multiple of the other",
+        "Components a1, a2, a3 of a = a1*i_hat + a2*j_hat + a3*k_hat are also called direction ratios of a",
+        "If l, m, n are direction cosines, then l*i_hat + m*j_hat + n*k_hat is the unit vector in that direction",
+        "If R is the midpoint of PQ then m = n, giving OR = (a + b)/2"
+      ]
+    },
+    {
+      "id": "10.6",
+      "title": "Product of Two Vectors",
+      "concepts": [
+        "Scalar (dot) product of two vectors",
+        "Projection of a vector on a line",
+        "Vector (cross) product of two vectors",
+        "Geometric interpretation of cross product (area)",
+        "Right-handed coordinate system"
+      ],
+      "definitions": [
+        {
+          "term": "Scalar (Dot) Product",
+          "definition": "The scalar product of two nonzero vectors a and b, denoted by a . b, is defined as a . b = |a||b|cos(theta), where theta is the angle between a and b, 0 <= theta <= pi. If either a = 0 or b = 0, then theta is not defined and a . b = 0."
+        },
+        {
+          "term": "Vector (Cross) Product",
+          "definition": "The vector product of two nonzero vectors a and b, denoted by a x b, is defined as a x b = |a||b|sin(theta) * n_hat, where theta is the angle between a and b (0 <= theta <= pi) and n_hat is a unit vector perpendicular to both a and b such that a, b, n_hat form a right-handed system."
+        },
+        {
+          "term": "Projection Vector",
+          "definition": "If vector AB makes angle theta with directed line l, the projection of AB on l is a vector p with magnitude |AB||cos(theta)| and direction same as (or opposite to) the line l."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Scalar (dot) product definition",
+          "formula": "a . b = |a||b|cos(theta)"
+        },
+        {
+          "name": "Dot product of perpendicular vectors",
+          "formula": "a . b = 0 if and only if a is perpendicular to b (for nonzero vectors)"
+        },
+        {
+          "name": "Dot product when theta = 0",
+          "formula": "a . b = |a||b|; in particular a . a = |a|^2"
+        },
+        {
+          "name": "Dot product when theta = pi",
+          "formula": "a . b = -|a||b|"
+        },
+        {
+          "name": "Dot products of unit vectors",
+          "formula": "i_hat . i_hat = j_hat . j_hat = k_hat . k_hat = 1; i_hat . j_hat = j_hat . k_hat = k_hat . i_hat = 0"
+        },
+        {
+          "name": "Angle between vectors using dot product",
+          "formula": "cos(theta) = (a . b)/(|a||b|), or theta = cos^(-1)((a . b)/(|a||b|))"
+        },
+        {
+          "name": "Commutative property of dot product",
+          "formula": "a . b = b . a"
+        },
+        {
+          "name": "Distributive property of dot product",
+          "formula": "a . (b + c) = a . b + a . c"
+        },
+        {
+          "name": "Scalar factor in dot product",
+          "formula": "(lambda*a) . b = lambda(a . b) = a . (lambda*b)"
+        },
+        {
+          "name": "Dot product in component form",
+          "formula": "a . b = a1*b1 + a2*b2 + a3*b3"
+        },
+        {
+          "name": "Projection of a on b",
+          "formula": "Projection of a on b = (a . b)/|b| = a . b_hat"
+        },
+        {
+          "name": "Projection of a on b (vector form)",
+          "formula": "a . (b/|b|) or (1/|b|)(a . b)"
+        },
+        {
+          "name": "Direction cosines from dot product",
+          "formula": "cos(alpha) = a1/|a|, cos(beta) = a2/|a|, cos(gamma) = a3/|a|"
+        },
+        {
+          "name": "Unit vector in terms of direction cosines",
+          "formula": "a_hat = cos(alpha)*i_hat + cos(beta)*j_hat + cos(gamma)*k_hat"
+        },
+        {
+          "name": "Vector (cross) product definition",
+          "formula": "a x b = |a||b|sin(theta) * n_hat"
+        },
+        {
+          "name": "Cross product of parallel/collinear vectors",
+          "formula": "a x b = 0_vec if and only if a is parallel to b (for nonzero vectors)"
+        },
+        {
+          "name": "Cross product of self",
+          "formula": "a x a = 0_vec"
+        },
+        {
+          "name": "Cross product when theta = pi/2",
+          "formula": "|a x b| = |a||b|"
+        },
+        {
+          "name": "Cross products of unit vectors",
+          "formula": "i_hat x i_hat = j_hat x j_hat = k_hat x k_hat = 0_vec; i_hat x j_hat = k_hat, j_hat x k_hat = i_hat, k_hat x i_hat = j_hat"
+        },
+        {
+          "name": "Reverse cross products of unit vectors",
+          "formula": "j_hat x i_hat = -k_hat, k_hat x j_hat = -i_hat, i_hat x k_hat = -j_hat"
+        },
+        {
+          "name": "Angle from cross product",
+          "formula": "sin(theta) = |a x b|/(|a||b|)"
+        },
+        {
+          "name": "Anti-commutative property",
+          "formula": "a x b = -(b x a)"
+        },
+        {
+          "name": "Area of triangle",
+          "formula": "Area = (1/2)|a x b| where a, b are adjacent sides"
+        },
+        {
+          "name": "Area of parallelogram",
+          "formula": "Area = |a x b| where a, b are adjacent sides"
+        },
+        {
+          "name": "Distributive property of cross product",
+          "formula": "a x (b + c) = a x b + a x c"
+        },
+        {
+          "name": "Scalar factor in cross product",
+          "formula": "lambda(a x b) = (lambda*a) x b = a x (lambda*b)"
+        },
+        {
+          "name": "Cross product in component form (determinant)",
+          "formula": "a x b = |i_hat  j_hat  k_hat; a1  a2  a3; b1  b2  b3| = (a2*b3 - a3*b2)i_hat - (a1*b3 - a3*b1)j_hat + (a1*b2 - a2*b1)k_hat"
+        },
+        {
+          "name": "Cauchy-Schwarz Inequality",
+          "formula": "|a . b| <= |a||b|"
+        },
+        {
+          "name": "Triangle Inequality",
+          "formula": "|a + b| <= |a| + |b|"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Cauchy-Schwarz Inequality",
+          "statement": "For any two vectors a and b: |a . b| <= |a||b|",
+          "proof_outline": "Since |a . b|/(|a||b|) = |cos(theta)| <= 1, it follows that |a . b| <= |a||b|."
+        },
+        {
+          "name": "Triangle Inequality",
+          "statement": "For any two vectors a and b: |a + b| <= |a| + |b|",
+          "proof_outline": "|a+b|^2 = |a|^2 + 2(a.b) + |b|^2 <= |a|^2 + 2|a||b| + |b|^2 = (|a|+|b|)^2 using Cauchy-Schwarz."
+        },
+        {
+          "name": "Collinearity from Triangle Inequality",
+          "statement": "If |a + b| = |a| + |b|, then |AC| = |AB| + |BC|, showing that A, B, C are collinear."
+        }
+      ],
+      "key_points": [
+        "a . b is a real number (scalar), not a vector",
+        "a . b = 0 iff a is perpendicular to b (for nonzero vectors)",
+        "a x b is a vector, not a scalar",
+        "a x b = 0_vec iff a is parallel to b (for nonzero vectors)",
+        "Dot product is commutative: a . b = b . a",
+        "Cross product is NOT commutative: a x b = -(b x a) (anti-commutative)",
+        "Both dot and cross products are distributive over addition",
+        "If theta = 0 or pi, projection vector of AB is AB itself or BA",
+        "If theta = pi/2 or 3pi/2, projection vector of AB is zero vector",
+        "The projections of a along OX, OY, OZ are the scalar components a1, a2, a3",
+        "If a is a unit vector, a_hat = cos(alpha)*i_hat + cos(beta)*j_hat + cos(gamma)*k_hat",
+        "There are two perpendicular directions to any plane, so the unit vector perpendicular to a+b and a-b can also be the negative of the one found",
+        "Cross product gives area interpretation: triangle = (1/2)|a x b|, parallelogram = |a x b|"
+      ]
+    }
+  ],
+  "summary": [
+    "Position vector of a point P(x, y, z) is given as OP = r = xi_hat + yj_hat + zk_hat, and its magnitude by sqrt(x^2 + y^2 + z^2).",
+    "The scalar components of a vector are its direction ratios, and represent its projections along the respective axes.",
+    "The magnitude (r), direction ratios (a, b, c) and direction cosines (l, m, n) of any vector are related as: l = a/r, m = b/r, n = c/r.",
+    "The vector sum of the three sides of a triangle taken in order is 0_vec.",
+    "The vector sum of two coinitial vectors is given by the diagonal of the parallelogram whose adjacent sides are the given vectors.",
+    "The multiplication of a given vector by a scalar lambda changes the magnitude of the vector by the multiple |lambda|, and keeps the direction same (or makes it opposite) according as the value of lambda is positive (or negative).",
+    "For a given vector a, the vector a_hat = a/|a| gives the unit vector in the direction of a.",
+    "The position vector of a point R dividing a line segment joining the points P and Q whose position vectors are a and b respectively, in the ratio m : n: (i) internally, is given by (na + mb)/(m + n); (ii) externally, is given by (mb - na)/(m - n).",
+    "The scalar product of two given vectors a and b having angle theta between them is defined as a . b = |a||b|cos(theta). Also, when a . b is given, the angle theta between the vectors a and b may be determined by cos(theta) = (a . b)/(|a||b|).",
+    "If theta is the angle between two vectors a and b, then their cross product is given as a x b = |a||b|sin(theta) * n_hat, where n_hat is a unit vector perpendicular to the plane containing a and b, such that a, b, n_hat form right handed system of coordinate axes.",
+    "If we have two vectors a and b, given in component form as a = a1*i_hat + a2*j_hat + a3*k_hat and b = b1*i_hat + b2*j_hat + b3*k_hat and lambda any scalar, then: a + b = (a1+b1)*i_hat + (a2+b2)*j_hat + (a3+b3)*k_hat; lambda*a = (lambda*a1)*i_hat + (lambda*a2)*j_hat + (lambda*a3)*k_hat; a . b = a1*b1 + a2*b2 + a3*b3; a x b = |i_hat j_hat k_hat; a1 a2 a3; b1 b2 b3| (determinant form)."
+  ],
+  "exercises": [
+    {
+      "id": "10.1",
+      "title": "Exercise 10.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Represent graphically a displacement of 40 km, 30 degrees east of north.",
+          "type": "graphical"
+        },
+        {
+          "qno": 2,
+          "question": "Classify the following measures as scalars and vectors.\n(i) 10 kg\n(ii) 2 meters north-west\n(iii) 40 degrees\n(iv) 40 watt\n(v) 10^(-19) coulomb\n(vi) 20 m/s^2",
+          "type": "classification"
+        },
+        {
+          "qno": 3,
+          "question": "Classify the following as scalar and vector quantities.\n(i) time period\n(ii) distance\n(iii) force\n(iv) velocity\n(v) work done",
+          "type": "classification"
+        },
+        {
+          "qno": 4,
+          "question": "In Fig 10.6 (a square), identify the following vectors.\n(i) Coinitial\n(ii) Equal\n(iii) Collinear but not equal",
+          "type": "identification"
+        },
+        {
+          "qno": 5,
+          "question": "Answer the following as true or false.\n(i) a and -a are collinear.\n(ii) Two collinear vectors are always equal in magnitude.\n(iii) Two vectors having same magnitude are collinear.\n(iv) Two collinear vectors having the same magnitude are equal.",
+          "type": "true_false"
+        }
+      ]
+    },
+    {
+      "id": "10.2",
+      "title": "Exercise 10.2",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Compute the magnitude of the following vectors:\na = i_hat + j_hat + k_hat;\nb = 2i_hat - 7j_hat - 3k_hat;\nc = (1/sqrt(3))i_hat + (1/sqrt(3))j_hat - (1/sqrt(3))k_hat",
+          "type": "computation"
+        },
+        {
+          "qno": 2,
+          "question": "Write two different vectors having same magnitude.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Write two different vectors having same direction.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Find the values of x and y so that the vectors 2i_hat + 3j_hat and xi_hat + yj_hat are equal.",
+          "type": "computation"
+        },
+        {
+          "qno": 5,
+          "question": "Find the scalar and vector components of the vector with initial point (2, 1) and terminal point (-5, 7).",
+          "type": "computation"
+        },
+        {
+          "qno": 6,
+          "question": "Find the sum of the vectors a = i_hat - 2j_hat + k_hat, b = -2i_hat + 4j_hat + 5k_hat and c = i_hat - 6j_hat - 7k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 7,
+          "question": "Find the unit vector in the direction of the vector a = i_hat + j_hat + 2k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 8,
+          "question": "Find the unit vector in the direction of vector PQ, where P and Q are the points (1, 2, 3) and (4, 5, 6), respectively.",
+          "type": "computation"
+        },
+        {
+          "qno": 9,
+          "question": "For given vectors, a = 2i_hat - j_hat + 2k_hat and b = -i_hat + j_hat - k_hat, find the unit vector in the direction of the vector a + b.",
+          "type": "computation"
+        },
+        {
+          "qno": 10,
+          "question": "Find a vector in the direction of vector 5i_hat - j_hat + 2k_hat which has magnitude 8 units.",
+          "type": "computation"
+        },
+        {
+          "qno": 11,
+          "question": "Show that the vectors 2i_hat - 3j_hat + 4k_hat and -4i_hat + 6j_hat - 8k_hat are collinear.",
+          "type": "proof"
+        },
+        {
+          "qno": 12,
+          "question": "Find the direction cosines of the vector i_hat + 2j_hat + 3k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 13,
+          "question": "Find the direction cosines of the vector joining the points A(1, 2, -3) and B(-1, -2, 1), directed from A to B.",
+          "type": "computation"
+        },
+        {
+          "qno": 14,
+          "question": "Show that the vector i_hat + j_hat + k_hat is equally inclined to the axes OX, OY and OZ.",
+          "type": "proof"
+        },
+        {
+          "qno": 15,
+          "question": "Find the position vector of a point R which divides the line joining two points P and Q whose position vectors are i_hat + 2j_hat - k_hat and -i_hat + j_hat + k_hat respectively, in the ratio 2 : 1\n(i) internally\n(ii) externally",
+          "type": "computation"
+        },
+        {
+          "qno": 16,
+          "question": "Find the position vector of the mid point of the vector joining the points P(2, 3, 4) and Q(4, 1, -2).",
+          "type": "computation"
+        },
+        {
+          "qno": 17,
+          "question": "Show that the points A, B and C with position vectors, a = 3i_hat - 4j_hat - 4k_hat, b = 2i_hat - j_hat + k_hat and c = i_hat - 3j_hat - 5k_hat, respectively form the vertices of a right angled triangle.",
+          "type": "proof"
+        },
+        {
+          "qno": 18,
+          "question": "In triangle ABC (Fig 10.18), which of the following is not true:\n(A) AB + BC + CA = 0_vec\n(B) AB + BC - AC = 0_vec\n(C) AB + BC - CA = 0_vec\n(D) AB - CB + CA = 0_vec",
+          "type": "MCQ"
+        },
+        {
+          "qno": 19,
+          "question": "If a and b are two collinear vectors, then which of the following are incorrect:\n(A) b = lambda*a, for some scalar lambda\n(B) a = +/- b\n(C) the respective components of a and b are not proportional\n(D) both the vectors a and b have same direction, but different magnitudes.",
+          "type": "MCQ"
+        }
+      ]
+    },
+    {
+      "id": "10.3",
+      "title": "Exercise 10.3",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the angle between two vectors a and b with magnitudes sqrt(3) and 2, respectively having a . b = sqrt(6).",
+          "type": "computation"
+        },
+        {
+          "qno": 2,
+          "question": "Find the angle between the vectors i_hat - 2j_hat + 3k_hat and 3i_hat - 2j_hat + k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 3,
+          "question": "Find the projection of the vector i_hat - j_hat on the vector i_hat + j_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 4,
+          "question": "Find the projection of the vector i_hat + 3j_hat + 7k_hat on the vector 7i_hat - j_hat + 8k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 5,
+          "question": "Show that each of the given three vectors is a unit vector:\n(1/7)(2i_hat + 3j_hat + 6k_hat), (1/7)(3i_hat - 6j_hat + 2k_hat), (1/7)(6i_hat + 2j_hat - 3k_hat)\nAlso, show that they are mutually perpendicular to each other.",
+          "type": "proof"
+        },
+        {
+          "qno": 6,
+          "question": "Find |a| and |b|, if (a + b) . (a - b) = 8 and |a| = 8|b|.",
+          "type": "computation"
+        },
+        {
+          "qno": 7,
+          "question": "Evaluate the product (3a - 5b) . (2a + 7b).",
+          "type": "computation"
+        },
+        {
+          "qno": 8,
+          "question": "Find the magnitude of two vectors a and b, having the same magnitude and such that the angle between them is 60 degrees and their scalar product is 1/2.",
+          "type": "computation"
+        },
+        {
+          "qno": 9,
+          "question": "Find |x|, if for a unit vector a, (x - a) . (x + a) = 12.",
+          "type": "computation"
+        },
+        {
+          "qno": 10,
+          "question": "If a = 2i_hat + 2j_hat + 3k_hat, b = -i_hat + 2j_hat + k_hat and c = 3i_hat + j_hat are such that a + lambda*b is perpendicular to c, then find the value of lambda.",
+          "type": "computation"
+        },
+        {
+          "qno": 11,
+          "question": "Show that |a|b + |b|a is perpendicular to |a|b - |b|a, for any two nonzero vectors a and b.",
+          "type": "proof"
+        },
+        {
+          "qno": 12,
+          "question": "If a . a = 0 and a . b = 0, then what can be concluded about the vector b?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "If a, b, c are unit vectors such that a + b + c = 0_vec, find the value of a . b + b . c + c . a.",
+          "type": "computation"
+        },
+        {
+          "qno": 14,
+          "question": "If either vector a = 0_vec or b = 0_vec, then a . b = 0. But the converse need not be true. Justify your answer with an example.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 15,
+          "question": "If the vertices A, B, C of a triangle ABC are (1, 2, 3), (-1, 0, 0), (0, 1, 2), respectively, then find angle ABC [angle ABC is the angle between the vectors BA and BC].",
+          "type": "computation"
+        },
+        {
+          "qno": 16,
+          "question": "Show that the points A(1, 2, 7), B(2, 6, 3) and C(3, 10, -1) are collinear.",
+          "type": "proof"
+        },
+        {
+          "qno": 17,
+          "question": "Show that the vectors 2i_hat - j_hat + k_hat, i_hat - 3j_hat - 5k_hat and 3i_hat - 4j_hat - 4k_hat form the vertices of a right angled triangle.",
+          "type": "proof"
+        },
+        {
+          "qno": 18,
+          "question": "If a is a nonzero vector of magnitude 'a' and lambda a nonzero scalar, then lambda*a is unit vector if\n(A) lambda = 1\n(B) lambda = -1\n(C) a = |lambda|\n(D) a = 1/|lambda|",
+          "type": "MCQ"
+        }
+      ]
+    },
+    {
+      "id": "10.4",
+      "title": "Exercise 10.4",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find |a x b|, if a = i_hat - 7j_hat + 7k_hat and b = 3i_hat - 2j_hat + 2k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 2,
+          "question": "Find a unit vector perpendicular to each of the vector a + b and a - b, where a = 3i_hat + 2j_hat + 2k_hat and b = i_hat + 2j_hat - 2k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 3,
+          "question": "If a unit vector a makes angles pi/3 with i_hat, pi/4 with j_hat and an acute angle theta with k_hat, then find theta and hence, the components of a.",
+          "type": "computation"
+        },
+        {
+          "qno": 4,
+          "question": "Show that (a - b) x (a + b) = 2(a x b).",
+          "type": "proof"
+        },
+        {
+          "qno": 5,
+          "question": "Find lambda and mu if (2i_hat + 6j_hat + 27k_hat) x (i_hat + lambda*j_hat + mu*k_hat) = 0_vec.",
+          "type": "computation"
+        },
+        {
+          "qno": 6,
+          "question": "Given that a . b = 0 and a x b = 0_vec. What can you conclude about the vectors a and b?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Let the vectors a, b, c be given as a1*i_hat + a2*j_hat + a3*k_hat, b1*i_hat + b2*j_hat + b3*k_hat, c1*i_hat + c2*j_hat + c3*k_hat. Then show that a x (b + c) = a x b + a x c.",
+          "type": "proof"
+        },
+        {
+          "qno": 8,
+          "question": "If either a = 0_vec or b = 0_vec, then a x b = 0_vec. Is the converse true? Justify your answer with an example.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Find the area of the triangle with vertices A(1, 1, 2), B(2, 3, 5) and C(1, 5, 5).",
+          "type": "computation"
+        },
+        {
+          "qno": 10,
+          "question": "Find the area of the parallelogram whose adjacent sides are determined by the vectors a = i_hat - j_hat + 3k_hat and b = 2i_hat - 7j_hat + k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 11,
+          "question": "Let the vectors a and b be such that |a| = 3 and |b| = sqrt(2)/3, then a x b is a unit vector, if the angle between a and b is\n(A) pi/6\n(B) pi/4\n(C) pi/3\n(D) pi/2",
+          "type": "MCQ"
+        },
+        {
+          "qno": 12,
+          "question": "Area of a rectangle having vertices A, B, C and D with position vectors -i_hat + (1/2)j_hat + 4k_hat, i_hat + (1/2)j_hat + 4k_hat, i_hat - (1/2)j_hat + 4k_hat and -i_hat - (1/2)j_hat + 4k_hat, respectively is\n(A) 1/2\n(B) 1\n(C) 2\n(D) 4",
+          "type": "MCQ"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 10",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Write down a unit vector in XY-plane, making an angle of 30 degrees with the positive direction of x-axis.",
+          "type": "computation"
+        },
+        {
+          "qno": 2,
+          "question": "Find the scalar components and magnitude of the vector joining the points P(x1, y1, z1) and Q(x2, y2, z2).",
+          "type": "computation"
+        },
+        {
+          "qno": 3,
+          "question": "A girl walks 4 km towards west, then she walks 3 km in a direction 30 degrees east of north and stops. Determine the girl's displacement from her initial point of departure.",
+          "type": "computation"
+        },
+        {
+          "qno": 4,
+          "question": "If a = b + c, then is it true that |a| = |b| + |c|? Justify your answer.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find the value of x for which x(i_hat + j_hat + k_hat) is a unit vector.",
+          "type": "computation"
+        },
+        {
+          "qno": 6,
+          "question": "Find a vector of magnitude 5 units, and parallel to the resultant of the vectors a = 2i_hat + 3j_hat - k_hat and b = i_hat - 2j_hat + k_hat.",
+          "type": "computation"
+        },
+        {
+          "qno": 7,
+          "question": "If a = i_hat + j_hat + k_hat, b = 2i_hat - j_hat + 3k_hat and c = i_hat - 2j_hat + k_hat, find a unit vector parallel to the vector 2a - b + 3c.",
+          "type": "computation"
+        },
+        {
+          "qno": 8,
+          "question": "Show that the points A(1, -2, -8), B(5, 0, -2) and C(11, 3, 7) are collinear, and find the ratio in which B divides AC.",
+          "type": "proof_and_computation"
+        },
+        {
+          "qno": 9,
+          "question": "Find the position vector of a point R which divides the line joining two points P and Q whose position vectors are (2a + b) and (a - 3b) externally in the ratio 1 : 2. Also, show that P is the mid point of the line segment RQ.",
+          "type": "computation"
+        },
+        {
+          "qno": 10,
+          "question": "The two adjacent sides of a parallelogram are 2i_hat - 4j_hat + 5k_hat and i_hat - 2j_hat - 3k_hat. Find the unit vector parallel to its diagonal. Also, find its area.",
+          "type": "computation"
+        },
+        {
+          "qno": 11,
+          "question": "Show that the direction cosines of a vector equally inclined to the axes OX, OY and OZ are +/-(1/sqrt(3), 1/sqrt(3), 1/sqrt(3)).",
+          "type": "proof"
+        },
+        {
+          "qno": 12,
+          "question": "Let a = i_hat + 4j_hat + 2k_hat, b = 3i_hat - 2j_hat + 7k_hat and c = 2i_hat - j_hat + 4k_hat. Find a vector d which is perpendicular to both a and b, and c . d = 15.",
+          "type": "computation"
+        },
+        {
+          "qno": 13,
+          "question": "The scalar product of the vector i_hat + j_hat + k_hat with a unit vector along the sum of vectors 2i_hat + 4j_hat - 5k_hat and lambda*i_hat + 2j_hat + 3k_hat is equal to one. Find the value of lambda.",
+          "type": "computation"
+        },
+        {
+          "qno": 14,
+          "question": "If a, b, c are mutually perpendicular vectors of equal magnitudes, show that the vector a + b + c is equally inclined to a, b and c.",
+          "type": "proof"
+        },
+        {
+          "qno": 15,
+          "question": "Prove that (a + b) . (a + b) = |a|^2 + |b|^2, if and only if a, b are perpendicular, given a != 0_vec, b != 0_vec.",
+          "type": "proof"
+        },
+        {
+          "qno": 16,
+          "question": "If theta is the angle between two vectors a and b, then a . b >= 0 only when\n(A) 0 < theta < pi/2\n(B) 0 <= theta <= pi/2\n(C) 0 < theta < pi\n(D) 0 <= theta <= pi",
+          "type": "MCQ"
+        },
+        {
+          "qno": 17,
+          "question": "Let a and b be two unit vectors and theta is the angle between them. Then a + b is a unit vector if\n(A) theta = pi/4\n(B) theta = pi/3\n(C) theta = pi/2\n(D) theta = 2*pi/3",
+          "type": "MCQ"
+        },
+        {
+          "qno": 18,
+          "question": "The value of i_hat . (j_hat x k_hat) + j_hat . (i_hat x k_hat) + k_hat . (i_hat x j_hat) is\n(A) 0\n(B) -1\n(C) 1\n(D) 3",
+          "type": "MCQ"
+        },
+        {
+          "qno": 19,
+          "question": "If theta is the angle between any two vectors a and b, then |a . b| = |a x b| when theta is equal to\n(A) 0\n(B) pi/4\n(C) pi/2\n(D) pi",
+          "type": "MCQ"
+        }
+      ]
+    }
+  ]
+}

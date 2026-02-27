@@ -1,0 +1,856 @@
+{
+  "chapter": 7,
+  "title": "Integrals",
+  "subject": "Mathematics",
+  "class": 12,
+  "book": "NCERT Mathematics Part II",
+  "pageRange": "225-291",
+  "sections": [
+    {
+      "id": "7.1",
+      "title": "Introduction",
+      "concepts": [
+        "Differential Calculus is centred on the concept of the derivative; Integral Calculus is motivated by the problem of defining and calculating the area of the region bounded by the graph of functions.",
+        "If a function f is differentiable in an interval I, its derivative f' exists at each point. The functions that could possibly have given function as a derivative are called anti derivatives (or primitive) of the function.",
+        "The formula that gives all anti derivatives is called the indefinite integral of the function, and the process of finding anti derivatives is called integration.",
+        "Integration arises from two types of problems: (a) finding a function whenever its derivative is given, (b) finding the area bounded by the graph of a function under certain conditions.",
+        "These two problems lead to indefinite and definite integrals, which together constitute the Integral Calculus.",
+        "The Fundamental Theorem of Calculus connects indefinite and definite integrals."
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Integration is the inverse process of differentiation.",
+        "Integral calculus was developed to solve problems of finding functions from derivatives and finding areas under curves."
+      ]
+    },
+    {
+      "id": "7.2",
+      "title": "Integration as an Inverse Process of Differentiation",
+      "concepts": [
+        "Integration is the inverse process of differentiation. Instead of differentiating a function, we are given the derivative and asked to find its primitive.",
+        "Such a process is called integration or anti differentiation.",
+        "Anti derivatives (or integrals) of a function are not unique. They differ by an arbitrary constant C called the constant of integration.",
+        "If F is a function such that (d/dx)F(x) = f(x) for all x in interval I, then for any real number C, (d/dx)[F(x) + C] = f(x).",
+        "The family {F + C, C in R} denotes all possible anti derivatives of f.",
+        "Functions with same derivatives differ by a constant."
+      ],
+      "definitions": [
+        {
+          "term": "Anti derivative (Primitive)",
+          "definition": "A function F is called an anti derivative of f if F'(x) = f(x) for all x in the domain."
+        },
+        {
+          "term": "Indefinite Integral",
+          "definition": "The symbol integral f(x) dx represents the entire class of anti derivatives, read as the indefinite integral of f with respect to x."
+        },
+        {
+          "term": "Integrand",
+          "definition": "f(x) in the expression integral f(x) dx."
+        },
+        {
+          "term": "Variable of integration",
+          "definition": "x in the expression integral f(x) dx."
+        },
+        {
+          "term": "Constant of Integration",
+          "definition": "Any real number C, considered as a constant function, that appears in the general anti derivative F(x) + C."
+        }
+      ],
+      "formulas": [
+        {
+          "id": "7.2.1",
+          "name": "Power Rule",
+          "formula": "integral x^n dx = x^(n+1)/(n+1) + C, n != -1",
+          "note": "Particularly, integral dx = x + C"
+        },
+        {
+          "id": "7.2.2",
+          "name": "Cosine integral",
+          "formula": "integral cos x dx = sin x + C"
+        },
+        {
+          "id": "7.2.3",
+          "name": "Sine integral",
+          "formula": "integral sin x dx = -cos x + C"
+        },
+        {
+          "id": "7.2.4",
+          "name": "Secant squared integral",
+          "formula": "integral sec^2 x dx = tan x + C"
+        },
+        {
+          "id": "7.2.5",
+          "name": "Cosecant squared integral",
+          "formula": "integral cosec^2 x dx = -cot x + C"
+        },
+        {
+          "id": "7.2.6",
+          "name": "Secant-tangent integral",
+          "formula": "integral sec x tan x dx = sec x + C"
+        },
+        {
+          "id": "7.2.7",
+          "name": "Cosecant-cotangent integral",
+          "formula": "integral cosec x cot x dx = -cosec x + C"
+        },
+        {
+          "id": "7.2.8",
+          "name": "Inverse sine integral",
+          "formula": "integral dx/sqrt(1 - x^2) = sin^(-1) x + C"
+        },
+        {
+          "id": "7.2.9",
+          "name": "Negative inverse cosine integral",
+          "formula": "integral dx/sqrt(1 - x^2) = -cos^(-1) x + C"
+        },
+        {
+          "id": "7.2.10",
+          "name": "Inverse tangent integral",
+          "formula": "integral dx/(1 + x^2) = tan^(-1) x + C"
+        },
+        {
+          "id": "7.2.11",
+          "name": "Exponential integral",
+          "formula": "integral e^x dx = e^x + C"
+        },
+        {
+          "id": "7.2.12",
+          "name": "Logarithmic integral",
+          "formula": "integral (1/x) dx = log |x| + C"
+        },
+        {
+          "id": "7.2.13",
+          "name": "General exponential integral",
+          "formula": "integral a^x dx = a^x / log a + C"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "d/dx[integral f(x) dx] = f(x) and integral f'(x) dx = f(x) + C: differentiation and integration are inverses of each other.",
+        "Two indefinite integrals with the same derivative lead to the same family of curves and so they are equivalent.",
+        "integral [f(x) + g(x)] dx = integral f(x) dx + integral g(x) dx (Property III)",
+        "For any real number k, integral k f(x) dx = k integral f(x) dx (Property IV)",
+        "integral [k1*f1(x) + k2*f2(x) + ... + kn*fn(x)] dx = k1*integral f1(x) dx + k2*integral f2(x) dx + ... + kn*integral fn(x) dx (Property V: generalization)"
+      ],
+      "subsections": [
+        {
+          "id": "7.2.1",
+          "title": "Some properties of indefinite integral",
+          "properties": [
+            "(I) d/dx[integral f(x) dx] = f(x) and integral f'(x) dx = f(x) + C",
+            "(II) Two indefinite integrals with the same derivative are equivalent (differ by a constant).",
+            "(III) integral [f(x) + g(x)] dx = integral f(x) dx + integral g(x) dx",
+            "(IV) For any real number k, integral k f(x) dx = k integral f(x) dx",
+            "(V) Generalization: integral [k1*f1(x) + k2*f2(x) + ... + kn*fn(x)] dx = k1 integral f1(x) dx + ... + kn integral fn(x) dx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7.3",
+      "title": "Methods of Integration",
+      "concepts": [
+        "When integrals cannot be found by inspection, we use additional techniques: (1) Integration by Substitution, (2) Integration using Partial Fractions, (3) Integration by Parts."
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [],
+      "subsections": [
+        {
+          "id": "7.3.1",
+          "title": "Integration by substitution",
+          "concepts": [
+            "The integral f(x) dx can be transformed by substituting x = g(t), so that dx = g'(t) dt, giving integral f(x) dx = integral f(g(t)) g'(t) dt.",
+            "Usually, we substitute for a function whose derivative also occurs in the integrand."
+          ],
+          "formulas": [
+            {
+              "name": "Tangent integral",
+              "formula": "integral tan x dx = log |sec x| + C"
+            },
+            {
+              "name": "Cotangent integral",
+              "formula": "integral cot x dx = log |sin x| + C"
+            },
+            {
+              "name": "Secant integral",
+              "formula": "integral sec x dx = log |sec x + tan x| + C"
+            },
+            {
+              "name": "Cosecant integral",
+              "formula": "integral cosec x dx = log |cosec x - cot x| + C"
+            }
+          ]
+        },
+        {
+          "id": "7.3.2",
+          "title": "Integration using trigonometric identities",
+          "concepts": [
+            "When the integrand involves trigonometric functions, we use known identities to simplify before integrating.",
+            "cos 2x = 2cos^2 x - 1 gives cos^2 x = (1 + cos 2x)/2",
+            "cos 2x = 1 - 2sin^2 x gives sin^2 x = (1 - cos 2x)/2",
+            "sin x cos y = (1/2)[sin(x+y) + sin(x-y)]",
+            "sin 3x = 3 sin x - 4 sin^3 x gives sin^3 x = (3 sin x - sin 3x)/4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7.4",
+      "title": "Integrals of Some Particular Functions",
+      "concepts": [
+        "Important standard formulae used for integrating many other related standard integrals."
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "id": "7.4.1",
+          "formula": "integral dx/(x^2 - a^2) = (1/2a) log |(x-a)/(x+a)| + C"
+        },
+        {
+          "id": "7.4.2",
+          "formula": "integral dx/(a^2 - x^2) = (1/2a) log |(a+x)/(a-x)| + C"
+        },
+        {
+          "id": "7.4.3",
+          "formula": "integral dx/(x^2 + a^2) = (1/a) tan^(-1)(x/a) + C"
+        },
+        {
+          "id": "7.4.4",
+          "formula": "integral dx/sqrt(x^2 - a^2) = log |x + sqrt(x^2 - a^2)| + C"
+        },
+        {
+          "id": "7.4.5",
+          "formula": "integral dx/sqrt(a^2 - x^2) = sin^(-1)(x/a) + C"
+        },
+        {
+          "id": "7.4.6",
+          "formula": "integral dx/sqrt(x^2 + a^2) = log |x + sqrt(x^2 + a^2)| + C"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "(7) To find integral dx/(ax^2 + bx + c), write ax^2+bx+c = a[(x+b/2a)^2 + (c/a - b^2/4a^2)] and reduce to standard form.",
+        "(8) To find integral dx/sqrt(ax^2 + bx + c), proceed similarly as in (7).",
+        "(9) To find integral (px+q)/(ax^2+bx+c) dx, express px+q = A d/dx(ax^2+bx+c) + B = A(2ax+b) + B, then solve for A, B.",
+        "(10) To find integral (px+q)/sqrt(ax^2+bx+c) dx, proceed as in (9) and reduce to standard forms."
+      ]
+    },
+    {
+      "id": "7.5",
+      "title": "Integration by Partial Fractions",
+      "concepts": [
+        "A rational function P(x)/Q(x) where degree P < degree Q is called proper; otherwise improper.",
+        "Improper rational functions are reduced to proper by long division: P(x)/Q(x) = T(x) + P1(x)/Q(x).",
+        "Proper rational functions with factorable denominators can be decomposed into partial fractions."
+      ],
+      "definitions": [
+        {
+          "term": "Proper rational function",
+          "definition": "P(x)/Q(x) where degree of P(x) is less than degree of Q(x)."
+        },
+        {
+          "term": "Improper rational function",
+          "definition": "P(x)/Q(x) where degree of P(x) is greater than or equal to degree of Q(x)."
+        }
+      ],
+      "formulas": [
+        {
+          "id": "7.5.1",
+          "name": "Distinct linear factors",
+          "form": "(px+q)/((x-a)(x-b)) = A/(x-a) + B/(x-b), a != b"
+        },
+        {
+          "id": "7.5.2",
+          "name": "Repeated linear factor",
+          "form": "(px+q)/(x-a)^2 = A/(x-a) + B/(x-a)^2"
+        },
+        {
+          "id": "7.5.3",
+          "name": "Three distinct linear factors",
+          "form": "(px^2+qx+r)/((x-a)(x-b)(x-c)) = A/(x-a) + B/(x-b) + C/(x-c)"
+        },
+        {
+          "id": "7.5.4",
+          "name": "Repeated and distinct linear factors",
+          "form": "(px^2+qx+r)/((x-a)^2(x-b)) = A/(x-a) + B/(x-a)^2 + C/(x-b)"
+        },
+        {
+          "id": "7.5.5",
+          "name": "Linear and irreducible quadratic factors",
+          "form": "(px^2+qx+r)/((x-a)(x^2+bx+c)) = A/(x-a) + (Bx+C)/(x^2+bx+c), where x^2+bx+c cannot be factorised further"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "To find constants A, B, C, equate numerators after multiplying both sides by the denominator, then compare coefficients or substitute suitable values of x."
+      ]
+    },
+    {
+      "id": "7.6",
+      "title": "Integration by Parts",
+      "concepts": [
+        "Integration by parts is used for integrating products of functions.",
+        "Derived from the product rule of differentiation: d/dx(uv) = u dv/dx + v du/dx.",
+        "The integral of the product of two functions = (first function) x (integral of second function) - Integral of [(differential coefficient of first function) x (integral of second function)].",
+        "Usually, if any function is a power of x or a polynomial in x, we take it as the first function. In cases where the other function is inverse trigonometric or logarithmic, we take them as first function.",
+        "ILATE rule: Inverse trigonometric, Logarithmic, Algebraic, Trigonometric, Exponential - priority order for choosing the first function."
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "id": "7.6.1",
+          "name": "Integration by Parts formula",
+          "formula": "integral f(x) g(x) dx = f(x) integral g(x) dx - integral [f'(x) integral g(x) dx] dx"
+        },
+        {
+          "id": "7.6.2",
+          "name": "Special exponential formula",
+          "formula": "integral e^x [f(x) + f'(x)] dx = e^x f(x) + C"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Integration by parts is not applicable to all product functions. For example, integral sqrt(x) sin x dx cannot be solved this way.",
+        "When finding the integral of the second function, do not add constant of integration - it is superfluous.",
+        "integral log x dx = x log x - x + C (taking log x as first function and 1 as second)",
+        "integral e^x sin x dx = e^x(sin x - cos x)/2 + C",
+        "integral e^x cos x dx = e^x(sin x + cos x)/2 + C"
+      ],
+      "subsections": [
+        {
+          "id": "7.6.1",
+          "title": "Integral of the type e^x[f(x) + f'(x)] dx",
+          "formula": "integral e^x [f(x) + f'(x)] dx = e^x f(x) + C",
+          "proof": "Split into integral e^x f(x) dx + integral e^x f'(x) dx. Apply integration by parts to the first integral taking f(x) as first function and e^x as second. The terms cancel to give e^x f(x) + C."
+        },
+        {
+          "id": "7.6.2",
+          "title": "Integrals of some more types",
+          "formulas": [
+            {
+              "name": "Square root of x^2 - a^2",
+              "formula": "integral sqrt(x^2 - a^2) dx = (x/2) sqrt(x^2 - a^2) - (a^2/2) log |x + sqrt(x^2 - a^2)| + C"
+            },
+            {
+              "name": "Square root of x^2 + a^2",
+              "formula": "integral sqrt(x^2 + a^2) dx = (x/2) sqrt(x^2 + a^2) + (a^2/2) log |x + sqrt(x^2 + a^2)| + C"
+            },
+            {
+              "name": "Square root of a^2 - x^2",
+              "formula": "integral sqrt(a^2 - x^2) dx = (x/2) sqrt(a^2 - x^2) + (a^2/2) sin^(-1)(x/a) + C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7.7",
+      "title": "Definite Integral",
+      "concepts": [
+        "The definite integral has a unique value, denoted by integral from a to b of f(x) dx.",
+        "a is called the lower limit and b is called the upper limit of the integral.",
+        "The definite integral is introduced either as the limit of a sum or as the difference F(b) - F(a) where F is an anti derivative of f on [a,b]."
+      ],
+      "definitions": [
+        {
+          "term": "Definite Integral",
+          "definition": "If f has an anti derivative F on [a, b], then integral from a to b of f(x) dx = F(b) - F(a)."
+        },
+        {
+          "term": "Lower limit",
+          "definition": "The value a in integral from a to b of f(x) dx."
+        },
+        {
+          "term": "Upper limit",
+          "definition": "The value b in integral from a to b of f(x) dx."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": []
+    },
+    {
+      "id": "7.8",
+      "title": "Fundamental Theorem of Calculus",
+      "concepts": [
+        "The area function A(x) = integral from a to x of f(t) dt represents the area of the region bounded by the curve y = f(x), the x-axis, and the ordinates x = a and x."
+      ],
+      "definitions": [
+        {
+          "term": "Area function",
+          "definition": "A(x) = integral from a to x of f(x) dx, representing the area under the curve from a to x."
+        }
+      ],
+      "formulas": [],
+      "theorems": [
+        {
+          "id": "7.8.1",
+          "name": "First Fundamental Theorem of Integral Calculus",
+          "statement": "Let f be a continuous function on the closed interval [a, b] and let A(x) be the area function. Then A'(x) = f(x), for all x in [a, b]."
+        },
+        {
+          "id": "7.8.2",
+          "name": "Second Fundamental Theorem of Integral Calculus",
+          "statement": "Let f be continuous function defined on the closed interval [a, b] and F be an anti derivative of f. Then integral from a to b of f(x) dx = [F(x)] from a to b = F(b) - F(a)."
+        }
+      ],
+      "key_points": [
+        "The value of integral from a to b of f(x) dx = (value of the anti derivative F of f at the upper limit b) - (value of the same anti derivative at the lower limit a).",
+        "The arbitrary constant C disappears in evaluating the definite integral.",
+        "The function f needs to be well defined and continuous in [a, b].",
+        "Steps for calculating: (i) Find the indefinite integral F(x). (ii) Evaluate F(b) - F(a)."
+      ],
+      "subsections": [
+        {
+          "id": "7.8.1",
+          "title": "Area function"
+        },
+        {
+          "id": "7.8.2",
+          "title": "First fundamental theorem of integral calculus"
+        },
+        {
+          "id": "7.8.3",
+          "title": "Second fundamental theorem of integral calculus"
+        }
+      ]
+    },
+    {
+      "id": "7.9",
+      "title": "Evaluation of Definite Integrals by Substitution",
+      "concepts": [
+        "To evaluate definite integrals by substitution, the steps are: (1) Consider the integral without limits and substitute y = f(x) or x = g(y) to reduce to a known form. (2) Integrate with respect to the new variable. (3) Resubstitute in terms of the original variable. (4) Find values at the given limits and compute the difference.",
+        "Alternatively, after performing steps 1 and 2, keep the integral in the new variable and change the limits accordingly, then evaluate directly."
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "When changing variable, the limits of integration must also be changed to correspond to the new variable."
+      ]
+    },
+    {
+      "id": "7.10",
+      "title": "Some Properties of Definite Integrals",
+      "concepts": [
+        "These properties are useful in evaluating definite integrals more easily."
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "id": "P0",
+          "name": "Property P0",
+          "formula": "integral from a to b of f(x) dx = integral from a to b of f(t) dt",
+          "description": "The variable of integration is a dummy variable."
+        },
+        {
+          "id": "P1",
+          "name": "Property P1",
+          "formula": "integral from a to b of f(x) dx = -integral from b to a of f(x) dx. In particular, integral from a to a of f(x) dx = 0.",
+          "description": "Interchanging limits changes the sign."
+        },
+        {
+          "id": "P2",
+          "name": "Property P2",
+          "formula": "integral from a to b of f(x) dx = integral from a to c of f(x) dx + integral from c to b of f(x) dx",
+          "description": "Splitting the interval at an intermediate point c."
+        },
+        {
+          "id": "P3",
+          "name": "Property P3",
+          "formula": "integral from a to b of f(x) dx = integral from a to b of f(a + b - x) dx",
+          "description": "Substitution x -> a + b - x."
+        },
+        {
+          "id": "P4",
+          "name": "Property P4",
+          "formula": "integral from 0 to a of f(x) dx = integral from 0 to a of f(a - x) dx",
+          "description": "Particular case of P3 with lower limit 0."
+        },
+        {
+          "id": "P5",
+          "name": "Property P5",
+          "formula": "integral from 0 to 2a of f(x) dx = integral from 0 to a of f(x) dx + integral from 0 to a of f(2a - x) dx",
+          "description": "Splitting [0, 2a] using substitution."
+        },
+        {
+          "id": "P6",
+          "name": "Property P6",
+          "formula": "integral from 0 to 2a of f(x) dx = 2 integral from 0 to a of f(x) dx if f(2a - x) = f(x); and = 0 if f(2a - x) = -f(x)",
+          "description": "Useful for symmetric/antisymmetric functions about x = a."
+        },
+        {
+          "id": "P7",
+          "name": "Property P7",
+          "formula": "(i) integral from -a to a of f(x) dx = 2 integral from 0 to a of f(x) dx, if f is an even function [f(-x) = f(x)]. (ii) integral from -a to a of f(x) dx = 0, if f is an odd function [f(-x) = -f(x)].",
+          "description": "Even and odd function properties for symmetric intervals."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "P4 is a particular case of P3 (with a = 0).",
+        "These properties are extensively used in competitive exams to simplify definite integrals."
+      ]
+    }
+  ],
+  "summary": [
+    "Integration is the inverse process of differentiation. Let (d/dx)F(x) = f(x). Then integral f(x) dx = F(x) + C. These are called indefinite integrals or general integrals. C is called constant of integration. All these integrals differ by a constant.",
+    "Some properties of indefinite integrals: (1) integral [f(x) + g(x)] dx = integral f(x) dx + integral g(x) dx. (2) For any real number k, integral k f(x) dx = k integral f(x) dx. More generally, integral [k1 f1(x) + k2 f2(x) + ... + kn fn(x)] dx = k1 integral f1(x) dx + ... + kn integral fn(x) dx.",
+    "Some standard integrals: (i) integral x^n dx = x^(n+1)/(n+1) + C, n != -1. (ii) integral cos x dx = sin x + C. (iii) integral sin x dx = -cos x + C. (iv) integral sec^2 x dx = tan x + C. (v) integral cosec^2 x dx = -cot x + C. (vi) integral sec x tan x dx = sec x + C. (vii) integral cosec x cot x dx = -cosec x + C. (viii) integral dx/sqrt(1-x^2) = sin^(-1) x + C. (ix) integral dx/sqrt(1-x^2) = -cos^(-1) x + C. (x) integral dx/(1+x^2) = tan^(-1) x + C. (xi) integral dx/(1+x^2) = -cot^(-1) x + C. (xii) integral e^x dx = e^x + C. (xiii) integral a^x dx = a^x/log a + C. (xiv) integral (1/x) dx = log |x| + C.",
+    "Integration by partial fractions: P(x)/Q(x) where P, Q are polynomials and Q(x) != 0. If degree of P >= degree of Q, divide to get T(x) + P1(x)/Q(x). Decompose into partial fractions of five standard types based on the nature of factors in denominator.",
+    "Integration by substitution: A change in the variable often reduces an integral to one of the fundamental integrals. Using substitution technique for trigonometric functions: (i) integral tan x dx = log |sec x| + C. (ii) integral cot x dx = log |sin x| + C. (iii) integral sec x dx = log |sec x + tan x| + C. (iv) integral cosec x dx = log |cosec x - cot x| + C.",
+    "Integrals of some special functions: (i) integral dx/(x^2 - a^2) = (1/2a) log |(x-a)/(x+a)| + C. (ii) integral dx/(a^2 - x^2) = (1/2a) log |(a+x)/(a-x)| + C. (iii) integral dx/(x^2 + a^2) = (1/a) tan^(-1)(x/a) + C. (iv) integral dx/sqrt(x^2 - a^2) = log |x + sqrt(x^2 - a^2)| + C. (v) integral dx/sqrt(a^2 - x^2) = sin^(-1)(x/a) + C. (vi) integral dx/sqrt(x^2 + a^2) = log |x + sqrt(x^2 + a^2)| + C.",
+    "Integration by parts: integral f1(x) f2(x) dx = f1(x) integral f2(x) dx - integral [f1'(x) integral f2(x) dx] dx. The integral of product of two functions = first function x integral of second - integral of (derivative of first x integral of second). Care must be taken in choosing first and second functions (ILATE rule).",
+    "Special formula: integral e^x [f(x) + f'(x)] dx = e^x f(x) + C.",
+    "Some special types of integrals: (i) integral sqrt(x^2 - a^2) dx = (x/2)sqrt(x^2 - a^2) - (a^2/2) log |x + sqrt(x^2 - a^2)| + C. (ii) integral sqrt(x^2 + a^2) dx = (x/2)sqrt(x^2 + a^2) + (a^2/2) log |x + sqrt(x^2 + a^2)| + C. (iii) integral sqrt(a^2 - x^2) dx = (x/2)sqrt(a^2 - x^2) + (a^2/2) sin^(-1)(x/a) + C.",
+    "Integrals of the types integral dx/(ax^2+bx+c) or integral dx/sqrt(ax^2+bx+c) can be transformed into standard form by expressing ax^2+bx+c = a[(x+b/2a)^2 + (c/a - b^2/4a^2)].",
+    "Integrals of the types integral (px+q)/(ax^2+bx+c) dx or integral (px+q)/sqrt(ax^2+bx+c) dx can be transformed by expressing px+q = A(d/dx)(ax^2+bx+c) + B, where A and B are determined by comparing coefficients.",
+    "We have defined integral from a to b of f(x) dx as the area of the region bounded by the curve y = f(x), the x-axis, and ordinates x = a, x = b. The area function A(x) = integral from a to x of f(x) dx leads to the Fundamental Theorems.",
+    "First fundamental theorem of integral calculus: Let the area function be defined by A(x) = integral from a to x of f(x) dx for all x >= a, where f is assumed continuous on [a, b]. Then A'(x) = f(x) for all x in [a, b].",
+    "Second fundamental theorem of integral calculus: Let f be continuous on [a, b] and let F be another function such that (d/dx)F(x) = f(x) for all x in the domain of f. Then integral from a to b of f(x) dx = [F(x) + C] from a to b = F(b) - F(a). This is called the definite integral of f over [a, b], where a is the lower limit and b is the upper limit."
+  ],
+  "exercises": [
+    {
+      "id": "7.1",
+      "title": "Exercise 7.1",
+      "description": "Find anti derivatives by inspection; find indefinite integrals.",
+      "questions": [
+        {"qno": 1, "question": "Find an anti derivative (or integral) of sin 2x by the method of inspection.", "type": "short_answer"},
+        {"qno": 2, "question": "Find an anti derivative (or integral) of cos 3x by the method of inspection.", "type": "short_answer"},
+        {"qno": 3, "question": "Find an anti derivative (or integral) of e^(2x) by the method of inspection.", "type": "short_answer"},
+        {"qno": 4, "question": "Find an anti derivative (or integral) of (ax + b)^2 by the method of inspection.", "type": "short_answer"},
+        {"qno": 5, "question": "Find an anti derivative (or integral) of sin 2x - 4 e^(3x) by the method of inspection.", "type": "short_answer"},
+        {"qno": 6, "question": "Find the integral: integral (4 e^(3x) + 1) dx", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Find the integral: integral x^2 (1 - 1/x^2) dx", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Find the integral: integral (ax^2 + bx + c) dx", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Find the integral: integral (2x^2 + e^x) dx", "type": "indefinite_integral"},
+        {"qno": 10, "question": "Find the integral: integral (sqrt(x) - 1/sqrt(x))^2 dx", "type": "indefinite_integral"},
+        {"qno": 11, "question": "Find the integral: integral (x^3 + 5x^2 - 4)/x^2 dx", "type": "indefinite_integral"},
+        {"qno": 12, "question": "Find the integral: integral (x^3 + 3x + 4)/sqrt(x) dx", "type": "indefinite_integral"},
+        {"qno": 13, "question": "Find the integral: integral (x^3 - x^2 + x - 1)/(x - 1) dx", "type": "indefinite_integral"},
+        {"qno": 14, "question": "Find the integral: integral (1 - x) sqrt(x) dx", "type": "indefinite_integral"},
+        {"qno": 15, "question": "Find the integral: integral sqrt(x) (3x^2 + 2x + 3) dx", "type": "indefinite_integral"},
+        {"qno": 16, "question": "Find the integral: integral (2x - 3 cos x + e^x) dx", "type": "indefinite_integral"},
+        {"qno": 17, "question": "Find the integral: integral (2x^2 - 3 sin x + 5 sqrt(x)) dx", "type": "indefinite_integral"},
+        {"qno": 18, "question": "Find the integral: integral sec x (sec x + tan x) dx", "type": "indefinite_integral"},
+        {"qno": 19, "question": "Find the integral: integral (sec^2 x)/(cosec^2 x) dx", "type": "indefinite_integral"},
+        {"qno": 20, "question": "Find the integral: integral (2 - 3 sin x)/cos^2 x dx", "type": "indefinite_integral"},
+        {"qno": 21, "question": "The anti derivative of (sqrt(x) + 1/sqrt(x)) equals: (A) (1/3)x^(1/3) + 2x^(1/2) + C (B) (2/3)x^(2/3) + (1/2)x^2 + C (C) (2/3)x^(3/2) + 2x^(1/2) + C (D) (3/2)x^(3/2) + (1/2)x^(1/2) + C", "type": "MCQ", "answer": "C"},
+        {"qno": 22, "question": "If (d/dx)f(x) = 4x^3 - 3/x^4 such that f(2) = 0. Then f(x) is: (A) x^4 + 1/x^3 - 129/8 (B) x^3 + 1/x^4 + 129/8 (C) x^4 + 1/x^3 + 129/8 (D) x^3 + 1/x^4 - 129/8", "type": "MCQ", "answer": "A"}
+      ]
+    },
+    {
+      "id": "7.2",
+      "title": "Exercise 7.2",
+      "description": "Integrate functions using substitution.",
+      "questions": [
+        {"qno": 1, "question": "Integrate: 2x/(1 + x^2)", "type": "indefinite_integral"},
+        {"qno": 2, "question": "Integrate: (log x)^2 / x", "type": "indefinite_integral"},
+        {"qno": 3, "question": "Integrate: 1/(x + x log x)", "type": "indefinite_integral"},
+        {"qno": 4, "question": "Integrate: sin x sin(cos x)", "type": "indefinite_integral"},
+        {"qno": 5, "question": "Integrate: sin(ax + b) cos(ax + b)", "type": "indefinite_integral"},
+        {"qno": 6, "question": "Integrate: sqrt(ax + b)", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Integrate: x sqrt(x + 2)", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Integrate: x sqrt(1 + 2x^2)", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Integrate: (4x + 2) sqrt(x^2 + x + 1)", "type": "indefinite_integral"},
+        {"qno": 10, "question": "Integrate: 1/(x - sqrt(x))", "type": "indefinite_integral"},
+        {"qno": 11, "question": "Integrate: x/sqrt(x + 4), x > 0", "type": "indefinite_integral"},
+        {"qno": 12, "question": "Integrate: (x^3 - 1)^(1/3) x^5", "type": "indefinite_integral"},
+        {"qno": 13, "question": "Integrate: x^2/(2 + 3x^3)^3", "type": "indefinite_integral"},
+        {"qno": 14, "question": "Integrate: 1/(x(log x)^m), x > 0, m != 1", "type": "indefinite_integral"},
+        {"qno": 15, "question": "Integrate: x/(9 - 4x^2)", "type": "indefinite_integral"},
+        {"qno": 16, "question": "Integrate: e^(2x+3)", "type": "indefinite_integral"},
+        {"qno": 17, "question": "Integrate: x/e^(x^2)", "type": "indefinite_integral"},
+        {"qno": 18, "question": "Integrate: e^(tan^(-1) x)/(1 + x^2)", "type": "indefinite_integral"},
+        {"qno": 19, "question": "Integrate: (e^(2x) - 1)/(e^(2x) + 1)", "type": "indefinite_integral"},
+        {"qno": 20, "question": "Integrate: (e^(2x) - e^(-2x))/(e^(2x) + e^(-2x))", "type": "indefinite_integral"},
+        {"qno": 21, "question": "Integrate: tan^2(2x - 3)", "type": "indefinite_integral"},
+        {"qno": 22, "question": "Integrate: sec^2(7 - 4x)", "type": "indefinite_integral"},
+        {"qno": 23, "question": "Integrate: sin^(-1) x / sqrt(1 - x^2)", "type": "indefinite_integral"},
+        {"qno": 24, "question": "Integrate: (2 cos x - 3 sin x)/(6 cos x + 4 sin x)", "type": "indefinite_integral"},
+        {"qno": 25, "question": "Integrate: 1/(cos^2 x (1 - tan x)^2)", "type": "indefinite_integral"},
+        {"qno": 26, "question": "Integrate: cos sqrt(x) / sqrt(x)", "type": "indefinite_integral"},
+        {"qno": 27, "question": "Integrate: sqrt(sin 2x) cos 2x", "type": "indefinite_integral"},
+        {"qno": 28, "question": "Integrate: cos x / sqrt(1 + sin x)", "type": "indefinite_integral"},
+        {"qno": 29, "question": "Integrate: cot x log sin x", "type": "indefinite_integral"},
+        {"qno": 30, "question": "Integrate: sin x / (1 + cos x)", "type": "indefinite_integral"},
+        {"qno": 31, "question": "Integrate: sin x / (1 + cos x)^2", "type": "indefinite_integral"},
+        {"qno": 32, "question": "Integrate: 1/(1 + cot x)", "type": "indefinite_integral"},
+        {"qno": 33, "question": "Integrate: 1/(1 - tan x)", "type": "indefinite_integral"},
+        {"qno": 34, "question": "Integrate: sqrt(tan x) / (sin x cos x)", "type": "indefinite_integral"},
+        {"qno": 35, "question": "Integrate: (1 + log x)^2 / x", "type": "indefinite_integral"},
+        {"qno": 36, "question": "Integrate: (x + 1)(x + log x)^2 / x", "type": "indefinite_integral"},
+        {"qno": 37, "question": "Integrate: x^3 sin(tan^(-1) x^4) / (1 + x^8)", "type": "indefinite_integral"},
+        {"qno": 38, "question": "integral (10x^9 + 10^x log_e 10)/(x^10 + 10^x) dx equals: (A) 10^x - x^10 + C (B) 10^x + x^10 + C (C) (10^x - x^10)^(-1) + C (D) log(10^x + x^10) + C", "type": "MCQ", "answer": "D"},
+        {"qno": 39, "question": "integral dx/(sin^2 x cos^2 x) equals: (A) tan x + cot x + C (B) tan x - cot x + C (C) tan x cot x + C (D) tan x - cot 2x + C", "type": "MCQ", "answer": "B"}
+      ]
+    },
+    {
+      "id": "7.3",
+      "title": "Exercise 7.3",
+      "description": "Find integrals using trigonometric identities.",
+      "questions": [
+        {"qno": 1, "question": "Integrate: sin^2(2x + 5)", "type": "indefinite_integral"},
+        {"qno": 2, "question": "Integrate: sin 3x cos 4x", "type": "indefinite_integral"},
+        {"qno": 3, "question": "Integrate: cos 2x cos 4x cos 6x", "type": "indefinite_integral"},
+        {"qno": 4, "question": "Integrate: sin^3(2x + 1)", "type": "indefinite_integral"},
+        {"qno": 5, "question": "Integrate: sin^3 x cos^3 x", "type": "indefinite_integral"},
+        {"qno": 6, "question": "Integrate: sin x sin 2x sin 3x", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Integrate: sin 4x sin 8x", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Integrate: (1 - cos x)/(1 + cos x)", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Integrate: cos x/(1 + cos x)", "type": "indefinite_integral"},
+        {"qno": 10, "question": "Integrate: sin^4 x", "type": "indefinite_integral"},
+        {"qno": 11, "question": "Integrate: cos^4 2x", "type": "indefinite_integral"},
+        {"qno": 12, "question": "Integrate: sin^2 x/(1 + cos x)", "type": "indefinite_integral"},
+        {"qno": 13, "question": "Integrate: (cos 2x - cos 2alpha)/(cos x - cos alpha)", "type": "indefinite_integral"},
+        {"qno": 14, "question": "Integrate: (cos x - sin x)/(1 + sin 2x)", "type": "indefinite_integral"},
+        {"qno": 15, "question": "Integrate: tan^3 2x sec 2x", "type": "indefinite_integral"},
+        {"qno": 16, "question": "Integrate: tan^4 x", "type": "indefinite_integral"},
+        {"qno": 17, "question": "Integrate: (sin^3 x + cos^3 x)/(sin^2 x cos^2 x)", "type": "indefinite_integral"},
+        {"qno": 18, "question": "Integrate: (cos 2x + 2 sin^2 x)/cos^2 x", "type": "indefinite_integral"},
+        {"qno": 19, "question": "Integrate: 1/(sin x cos^3 x)", "type": "indefinite_integral"},
+        {"qno": 20, "question": "Integrate: cos 2x/(cos x + sin x)^2", "type": "indefinite_integral"},
+        {"qno": 21, "question": "Integrate: sin^(-1)(cos x)", "type": "indefinite_integral"},
+        {"qno": 22, "question": "Integrate: 1/(cos(x - a) cos(x - b))", "type": "indefinite_integral"},
+        {"qno": 23, "question": "integral (sin^2 x - cos^2 x)/(sin^2 x cos^2 x) dx is equal to: (A) tan x + cot x + C (B) tan x + cosec x + C (C) -tan x + cot x + C (D) tan x + sec x + C", "type": "MCQ", "answer": "A"},
+        {"qno": 24, "question": "integral e^x(1 + x)/cos^2(e^x x) dx equals: (A) -cot(e^x) + C (B) tan(xe^x) + C (C) tan(e^x) + C (D) cot(e^x) + C", "type": "MCQ", "answer": "B"}
+      ]
+    },
+    {
+      "id": "7.4",
+      "title": "Exercise 7.4",
+      "description": "Integrate functions using standard formulae for particular functions.",
+      "questions": [
+        {"qno": 1, "question": "Integrate: 3x^2/(x^6 + 1)", "type": "indefinite_integral"},
+        {"qno": 2, "question": "Integrate: 1/sqrt(1 + 4x^2)", "type": "indefinite_integral"},
+        {"qno": 3, "question": "Integrate: 1/sqrt((2-x)^2 + 1)", "type": "indefinite_integral"},
+        {"qno": 4, "question": "Integrate: 1/sqrt(9 - 25x^2)", "type": "indefinite_integral"},
+        {"qno": 5, "question": "Integrate: 3x/(1 + 2x^4)", "type": "indefinite_integral"},
+        {"qno": 6, "question": "Integrate: x^2/(1 - x^6)", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Integrate: (x - 1)/sqrt(x^2 - 1)", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Integrate: x^2/sqrt(x^6 + a^6)", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Integrate: sec^2 x/sqrt(tan^2 x + 4)", "type": "indefinite_integral"},
+        {"qno": 10, "question": "Integrate: 1/sqrt(x^2 + 2x + 2)", "type": "indefinite_integral"},
+        {"qno": 11, "question": "Integrate: 1/(9x^2 + 6x + 5)", "type": "indefinite_integral"},
+        {"qno": 12, "question": "Integrate: 1/sqrt(7 - 6x - x^2)", "type": "indefinite_integral"},
+        {"qno": 13, "question": "Integrate: 1/sqrt((x-1)(x-2))", "type": "indefinite_integral"},
+        {"qno": 14, "question": "Integrate: 1/sqrt(8 + 3x - x^2)", "type": "indefinite_integral"},
+        {"qno": 15, "question": "Integrate: 1/sqrt((x-a)(x-b))", "type": "indefinite_integral"},
+        {"qno": 16, "question": "Integrate: (4x + 1)/sqrt(2x^2 + x - 3)", "type": "indefinite_integral"},
+        {"qno": 17, "question": "Integrate: (x + 2)/sqrt(x^2 - 1)", "type": "indefinite_integral"},
+        {"qno": 18, "question": "Integrate: (5x - 2)/(1 + 2x + 3x^2)", "type": "indefinite_integral"},
+        {"qno": 19, "question": "Integrate: (6x + 7)/sqrt((x-5)(x-4))", "type": "indefinite_integral"},
+        {"qno": 20, "question": "Integrate: (x + 2)/sqrt(4x - x^2)", "type": "indefinite_integral"},
+        {"qno": 21, "question": "Integrate: (x + 2)/sqrt(x^2 + 2x + 3)", "type": "indefinite_integral"},
+        {"qno": 22, "question": "Integrate: (x + 3)/(x^2 - 2x - 5)", "type": "indefinite_integral"},
+        {"qno": 23, "question": "Integrate: (5x + 3)/sqrt(x^2 + 4x + 10)", "type": "indefinite_integral"},
+        {"qno": 24, "question": "integral dx/(x^2 + 2x + 2) equals: (A) x tan^(-1)(x+1) + C (B) tan^(-1)(x+1) + C (C) (x+1) tan^(-1) x + C (D) tan^(-1) x + C", "type": "MCQ", "answer": "B"},
+        {"qno": 25, "question": "integral dx/sqrt(9x - 4x^2) equals: (A) (1/9) sin^(-1)((9x-8)/8) + C (B) (1/2) sin^(-1)((8x-9)/9) + C (C) (1/3) sin^(-1)((9x-8)/8) + C (D) (1/2) sin^(-1)((9x-8)/8) + C", "type": "MCQ", "answer": "B"}
+      ]
+    },
+    {
+      "id": "7.5",
+      "title": "Exercise 7.5",
+      "description": "Integrate rational functions using partial fractions.",
+      "questions": [
+        {"qno": 1, "question": "Integrate: x/((x+1)(x+2))", "type": "indefinite_integral"},
+        {"qno": 2, "question": "Integrate: 1/(x^2 - 9)", "type": "indefinite_integral"},
+        {"qno": 3, "question": "Integrate: (3x - 1)/((x-1)(x-2)(x-3))", "type": "indefinite_integral"},
+        {"qno": 4, "question": "Integrate: x/((x-1)(x-2)(x-3))", "type": "indefinite_integral"},
+        {"qno": 5, "question": "Integrate: 2x/(x^2 + 3x + 2)", "type": "indefinite_integral"},
+        {"qno": 6, "question": "Integrate: (1 - x^2)/(x(1 - 2x))", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Integrate: x/((x^2 + 1)(x - 1))", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Integrate: x/((x-1)^2 (x+2))", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Integrate: (3x + 5)/(x^3 - x^2 - x + 1)", "type": "indefinite_integral"},
+        {"qno": 10, "question": "Integrate: (2x - 3)/((x^2 - 1)(2x + 3))", "type": "indefinite_integral"},
+        {"qno": 11, "question": "Integrate: 5x/((x+1)(x^2 - 4))", "type": "indefinite_integral"},
+        {"qno": 12, "question": "Integrate: (x^3 + x + 1)/(x^2 - 1)", "type": "indefinite_integral"},
+        {"qno": 13, "question": "Integrate: 2/((1-x)(1+x^2))", "type": "indefinite_integral"},
+        {"qno": 14, "question": "Integrate: (3x - 1)/(x+2)^2", "type": "indefinite_integral"},
+        {"qno": 15, "question": "Integrate: 1/(x^4 - 1)", "type": "indefinite_integral"},
+        {"qno": 16, "question": "Integrate: 1/(x(x^n + 1)) [Hint: multiply numerator and denominator by x^(n-1) and put x^n = t]", "type": "indefinite_integral"},
+        {"qno": 17, "question": "Integrate: cos x/((1 - sin x)(2 - sin x)) [Hint: Put sin x = t]", "type": "indefinite_integral"},
+        {"qno": 18, "question": "Integrate: (x^2 + 1)(x^2 + 2)/((x^2 + 3)(x^2 + 4))", "type": "indefinite_integral"},
+        {"qno": 19, "question": "Integrate: 2x/((x^2 + 1)(x^2 + 3))", "type": "indefinite_integral"},
+        {"qno": 20, "question": "Integrate: 1/(x(x^4 - 1))", "type": "indefinite_integral"},
+        {"qno": 21, "question": "Integrate: 1/(e^x - 1) [Hint: Put e^x = t]", "type": "indefinite_integral"},
+        {"qno": 22, "question": "integral x dx/((x-1)(x-2)) equals: (A) log |(x-1)^2/(x-2)| + C (B) log |(x-2)^2/(x-1)| + C (C) log |(x-1/(x-2))^2| + C (D) log |(x-1)(x-2)| + C", "type": "MCQ", "answer": "B"},
+        {"qno": 23, "question": "integral dx/(x(x^2 + 1)) equals: (A) log |x| - (1/2) log(x^2+1) + C (B) log |x| + (1/2) log(x^2+1) + C (C) -log |x| + (1/2) log(x^2+1) + C (D) (1/2) log |x| + log(x^2+1) + C", "type": "MCQ", "answer": "A"}
+      ]
+    },
+    {
+      "id": "7.6",
+      "title": "Exercise 7.6",
+      "description": "Integrate functions using integration by parts.",
+      "questions": [
+        {"qno": 1, "question": "Integrate: x sin x", "type": "indefinite_integral"},
+        {"qno": 2, "question": "Integrate: x sin 3x", "type": "indefinite_integral"},
+        {"qno": 3, "question": "Integrate: x^2 e^x", "type": "indefinite_integral"},
+        {"qno": 4, "question": "Integrate: x log x", "type": "indefinite_integral"},
+        {"qno": 5, "question": "Integrate: x log 2x", "type": "indefinite_integral"},
+        {"qno": 6, "question": "Integrate: x^2 log x", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Integrate: x sin^(-1) x", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Integrate: x tan^(-1) x", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Integrate: x cos^(-1) x", "type": "indefinite_integral"},
+        {"qno": 10, "question": "Integrate: (sin^(-1) x)^2", "type": "indefinite_integral"},
+        {"qno": 11, "question": "Integrate: x cos^(-1) x / sqrt(1 - x^2)", "type": "indefinite_integral"},
+        {"qno": 12, "question": "Integrate: x sec^2 x", "type": "indefinite_integral"},
+        {"qno": 13, "question": "Integrate: tan^(-1) x", "type": "indefinite_integral"},
+        {"qno": 14, "question": "Integrate: x (log x)^2", "type": "indefinite_integral"},
+        {"qno": 15, "question": "Integrate: (x^2 + 1) log x", "type": "indefinite_integral"},
+        {"qno": 16, "question": "Integrate: e^x (sin x + cos x)", "type": "indefinite_integral"},
+        {"qno": 17, "question": "Integrate: x e^x / (1 + x)^2", "type": "indefinite_integral"},
+        {"qno": 18, "question": "Integrate: e^x ((1 + sin x)/(1 + cos x))", "type": "indefinite_integral"},
+        {"qno": 19, "question": "Integrate: e^x (1/x - 1/x^2)", "type": "indefinite_integral"},
+        {"qno": 20, "question": "Integrate: (x - 3) e^x / (x - 1)^3", "type": "indefinite_integral"},
+        {"qno": 21, "question": "Integrate: e^(2x) sin x", "type": "indefinite_integral"},
+        {"qno": 22, "question": "Integrate: sin^(-1)(2x/(1 + x^2))", "type": "indefinite_integral"},
+        {"qno": 23, "question": "integral x^2 e^(x^3) dx equals: (A) (1/3) e^(x^3) + C (B) (1/3) e^(x^2) + C (C) (1/2) e^(x^3) + C (D) (1/2) e^(x^2) + C", "type": "MCQ", "answer": "A"},
+        {"qno": 24, "question": "integral e^x sec x (1 + tan x) dx equals: (A) e^x cos x + C (B) e^x sec x + C (C) e^x sin x + C (D) e^x tan x + C", "type": "MCQ", "answer": "B"}
+      ]
+    },
+    {
+      "id": "7.7",
+      "title": "Exercise 7.7",
+      "description": "Integrate functions involving sqrt(x^2 +/- a^2) and sqrt(a^2 - x^2) type expressions.",
+      "questions": [
+        {"qno": 1, "question": "Integrate: sqrt(4 - x^2)", "type": "indefinite_integral"},
+        {"qno": 2, "question": "Integrate: sqrt(1 - 4x^2)", "type": "indefinite_integral"},
+        {"qno": 3, "question": "Integrate: sqrt(x^2 + 4x + 6)", "type": "indefinite_integral"},
+        {"qno": 4, "question": "Integrate: sqrt(x^2 + 4x + 1)", "type": "indefinite_integral"},
+        {"qno": 5, "question": "Integrate: sqrt(1 - 4x - x^2)", "type": "indefinite_integral"},
+        {"qno": 6, "question": "Integrate: sqrt(x^2 + 4x - 5)", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Integrate: sqrt(1 + 3x - x^2)", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Integrate: sqrt(x^2 + 3x)", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Integrate: sqrt(1 + x^2/9)", "type": "indefinite_integral"},
+        {"qno": 10, "question": "integral sqrt(1 + x^2) dx is equal to: (A) (x/2)sqrt(1+x^2) + (1/2)log|x + sqrt(1+x^2)| + C (B) (2/3)(1+x^2)^(3/2) + C (C) (2/3)x(1+x^2)^(3/2) + C (D) (x^2/2)sqrt(1+x^2) + (1/2)x^2 log|x + sqrt(1+x^2)| + C", "type": "MCQ", "answer": "A"},
+        {"qno": 11, "question": "integral sqrt(x^2 - 8x + 7) dx is equal to: (A) (1/2)(x-4)sqrt(x^2-8x+7) + 9 log|x-4+sqrt(x^2-8x+7)| + C (B) (1/2)(x+4)sqrt(x^2-8x+7) + 9 log|x+4+sqrt(x^2-8x+7)| + C (C) (1/2)(x-4)sqrt(x^2-8x+7) - 3sqrt(2) log|x-4+sqrt(x^2-8x+7)| + C (D) (1/2)(x-4)sqrt(x^2-8x+7) - (9/2) log|x-4+sqrt(x^2-8x+7)| + C", "type": "MCQ", "answer": "D"}
+      ]
+    },
+    {
+      "id": "7.8",
+      "title": "Exercise 7.8",
+      "description": "Evaluate definite integrals.",
+      "questions": [
+        {"qno": 1, "question": "Evaluate: integral from -1 to 1 of (x + 1) dx", "type": "definite_integral"},
+        {"qno": 2, "question": "Evaluate: integral from 2 to 3 of (1/x) dx", "type": "definite_integral"},
+        {"qno": 3, "question": "Evaluate: integral from 1 to 2 of (4x^3 - 5x^2 + 6x + 9) dx", "type": "definite_integral"},
+        {"qno": 4, "question": "Evaluate: integral from 0 to pi/4 of sin 2x dx", "type": "definite_integral"},
+        {"qno": 5, "question": "Evaluate: integral from 0 to pi/2 of cos 2x dx", "type": "definite_integral"},
+        {"qno": 6, "question": "Evaluate: integral from 4 to 5 of e^x dx", "type": "definite_integral"},
+        {"qno": 7, "question": "Evaluate: integral from 0 to pi/4 of tan x dx", "type": "definite_integral"},
+        {"qno": 8, "question": "Evaluate: integral from pi/6 to pi/4 of cosec x dx", "type": "definite_integral"},
+        {"qno": 9, "question": "Evaluate: integral from 0 to 1 of dx/sqrt(1 - x^2)", "type": "definite_integral"},
+        {"qno": 10, "question": "Evaluate: integral from 0 to 1 of dx/(1 + x^2)", "type": "definite_integral"},
+        {"qno": 11, "question": "Evaluate: integral from 2 to 3 of dx/(x^2 - 1)", "type": "definite_integral"},
+        {"qno": 12, "question": "Evaluate: integral from 0 to pi/2 of cos^2 x dx", "type": "definite_integral"},
+        {"qno": 13, "question": "Evaluate: integral from 2 to 3 of x dx/(x^2 + 1)", "type": "definite_integral"},
+        {"qno": 14, "question": "Evaluate: integral from 0 to 1 of (2x + 3)/(5x^2 + 1) dx", "type": "definite_integral"},
+        {"qno": 15, "question": "Evaluate: integral from 0 to 1 of x e^(x^2) dx", "type": "definite_integral"},
+        {"qno": 16, "question": "Evaluate: integral from 1 to 2 of 5x^2/(x^2 + 4x + 3) dx", "type": "definite_integral"},
+        {"qno": 17, "question": "Evaluate: integral from 0 to pi/3 of (2 sec^2 x + x^3 + 2) dx", "type": "definite_integral"},
+        {"qno": 18, "question": "Evaluate: integral from 0 to pi of (sin^2(x/2) - cos^2(x/2)) dx", "type": "definite_integral"},
+        {"qno": 19, "question": "Evaluate: integral from 0 to 2 of (6x + 3)/(x^2 + 4) dx", "type": "definite_integral"},
+        {"qno": 20, "question": "Evaluate: integral from 0 to 1 of (x e^x + sin(pi x/4)) dx", "type": "definite_integral"},
+        {"qno": 21, "question": "integral from 1 to sqrt(3) of dx/(1 + x^2) equals: (A) pi/3 (B) 2pi/3 (C) pi/6 (D) pi/12", "type": "MCQ", "answer": "D"},
+        {"qno": 22, "question": "integral from 0 to 2/3 of dx/(4 + 9x^2) equals: (A) pi/6 (B) pi/12 (C) pi/24 (D) pi/4", "type": "MCQ", "answer": "C"}
+      ]
+    },
+    {
+      "id": "7.9",
+      "title": "Exercise 7.9",
+      "description": "Evaluate definite integrals using substitution.",
+      "questions": [
+        {"qno": 1, "question": "Evaluate: integral from 0 to 1 of x/(x^2 + 1) dx", "type": "definite_integral"},
+        {"qno": 2, "question": "Evaluate: integral from 0 to pi/2 of sqrt(sin phi) cos^5 phi d(phi)", "type": "definite_integral"},
+        {"qno": 3, "question": "Evaluate: integral from 0 to 1 of sin^(-1)(2x/(1 + x^2)) dx", "type": "definite_integral"},
+        {"qno": 4, "question": "Evaluate: integral from 0 to 2 of x sqrt(x + 2) dx (Put x + 2 = t^2)", "type": "definite_integral"},
+        {"qno": 5, "question": "Evaluate: integral from 0 to pi/2 of sin x/(1 + cos^2 x) dx", "type": "definite_integral"},
+        {"qno": 6, "question": "Evaluate: integral from 0 to 2 of dx/(x + 4 - x^2)", "type": "definite_integral"},
+        {"qno": 7, "question": "Evaluate: integral from -1 to 1 of dx/(x^2 + 2x + 5)", "type": "definite_integral"},
+        {"qno": 8, "question": "Evaluate: integral from 1 to 2 of (1/x - 1/(2x^2)) e^(2x) dx", "type": "definite_integral"},
+        {"qno": 9, "question": "The value of integral from 1/3 to 1 of (x - x^3)^(1/3)/x^4 dx is: (A) 6 (B) 0 (C) 3 (D) 4", "type": "MCQ", "answer": "A"},
+        {"qno": 10, "question": "If f(x) = integral from 0 to x of t sin t dt, then f'(x) is: (A) cos x + x sin x (B) x sin x (C) x cos x (D) sin x + x cos x", "type": "MCQ", "answer": "B"}
+      ]
+    },
+    {
+      "id": "7.10",
+      "title": "Exercise 7.10",
+      "description": "Evaluate definite integrals using properties of definite integrals.",
+      "questions": [
+        {"qno": 1, "question": "Evaluate: integral from 0 to pi/2 of cos^2 x dx", "type": "definite_integral"},
+        {"qno": 2, "question": "Evaluate: integral from 0 to pi/2 of sqrt(sin x)/(sqrt(sin x) + sqrt(cos x)) dx", "type": "definite_integral"},
+        {"qno": 3, "question": "Evaluate: integral from 0 to pi/2 of sin^(3/2) x/(sin^(3/2) x + cos^(3/2) x) dx", "type": "definite_integral"},
+        {"qno": 4, "question": "Evaluate: integral from 0 to pi/2 of cos^5 x dx/(sin^5 x + cos^5 x)", "type": "definite_integral"},
+        {"qno": 5, "question": "Evaluate: integral from -5 to 5 of |x + 2| dx", "type": "definite_integral"},
+        {"qno": 6, "question": "Evaluate: integral from 2 to 8 of |x - 5| dx", "type": "definite_integral"},
+        {"qno": 7, "question": "Evaluate: integral from 0 to 1 of x(1 - x)^n dx", "type": "definite_integral"},
+        {"qno": 8, "question": "Evaluate: integral from 0 to pi/4 of log(1 + tan x) dx", "type": "definite_integral"},
+        {"qno": 9, "question": "Evaluate: integral from 0 to 2 of x sqrt(2 - x) dx", "type": "definite_integral"},
+        {"qno": 10, "question": "Evaluate: integral from 0 to pi/2 of (2 log sin x - log sin 2x) dx", "type": "definite_integral"},
+        {"qno": 11, "question": "Evaluate: integral from -pi/2 to pi/2 of sin^2 x dx", "type": "definite_integral"},
+        {"qno": 12, "question": "Evaluate: integral from 0 to pi of x dx/(1 + sin x)", "type": "definite_integral"},
+        {"qno": 13, "question": "Evaluate: integral from -pi/2 to pi/2 of sin^7 x dx", "type": "definite_integral"},
+        {"qno": 14, "question": "Evaluate: integral from 0 to 2pi of cos^5 x dx", "type": "definite_integral"},
+        {"qno": 15, "question": "Evaluate: integral from 0 to pi/2 of (sin x - cos x)/(1 + sin x cos x) dx", "type": "definite_integral"},
+        {"qno": 16, "question": "Evaluate: integral from 0 to pi of log(1 + cos x) dx", "type": "definite_integral"},
+        {"qno": 17, "question": "Evaluate: integral from 0 to a of sqrt(x)/sqrt(sqrt(x) + sqrt(a-x)) dx", "type": "definite_integral"},
+        {"qno": 18, "question": "Evaluate: integral from 0 to 4 of |x - 1| dx", "type": "definite_integral"},
+        {"qno": 19, "question": "Show that integral from 0 to a of f(x) g(x) dx = 2 integral from 0 to a of f(x) dx, if f and g are defined as f(x) = f(a - x) and g(x) + g(a - x) = 4", "type": "prove"},
+        {"qno": 20, "question": "The value of integral from -pi/2 to pi/2 of (x^3 + x cos x + tan^5 x + 1) dx is: (A) 0 (B) 2 (C) pi (D) 1", "type": "MCQ", "answer": "C"},
+        {"qno": 21, "question": "The value of integral from 0 to pi/2 of log((4 + 3 sin x)/(4 + 3 cos x)) dx is: (A) 2 (B) 3/4 (C) 0 (D) -2", "type": "MCQ", "answer": "C"}
+      ]
+    },
+    {
+      "id": "7.misc",
+      "title": "Miscellaneous Exercise on Chapter 7",
+      "description": "Mixed problems covering all integration techniques.",
+      "questions": [
+        {"qno": 1, "question": "Integrate: 1/(x - x^3)", "type": "indefinite_integral"},
+        {"qno": 2, "question": "Integrate: 1/(sqrt(x+a) + sqrt(x+b))", "type": "indefinite_integral"},
+        {"qno": 3, "question": "Integrate: 1/(x sqrt(ax - x^2)) [Hint: Put x = a/t]", "type": "indefinite_integral"},
+        {"qno": 4, "question": "Integrate: 1/(x^2 (x^4 + 1)^(3/4))", "type": "indefinite_integral"},
+        {"qno": 5, "question": "Integrate: 1/(x^(1/2) + x^(1/3)) [Hint: 1/(x^(1/2) + x^(1/3)) = 1/(x^(1/3)(1 + x^(1/6))), put x = t^6]", "type": "indefinite_integral"},
+        {"qno": 6, "question": "Integrate: 5x/((x+1)(x^2 + 9))", "type": "indefinite_integral"},
+        {"qno": 7, "question": "Integrate: sin x/sin(x - a)", "type": "indefinite_integral"},
+        {"qno": 8, "question": "Integrate: (e^(5 log x) - e^(4 log x))/(e^(3 log x) - e^(2 log x))", "type": "indefinite_integral"},
+        {"qno": 9, "question": "Integrate: cos x/sqrt(4 - sin^2 x)", "type": "indefinite_integral"},
+        {"qno": 10, "question": "Integrate: (sin^8 x - cos^8 x)/(1 - 2 sin^2 x cos^2 x)", "type": "indefinite_integral"},
+        {"qno": 11, "question": "Integrate: 1/(cos(x+a) cos(x+b))", "type": "indefinite_integral"},
+        {"qno": 12, "question": "Integrate: x^3/sqrt(1 - x^8)", "type": "indefinite_integral"},
+        {"qno": 13, "question": "Integrate: e^x/((1 + e^x)(2 + e^x))", "type": "indefinite_integral"},
+        {"qno": 14, "question": "Integrate: 1/((x^2 + 1)(x^2 + 4))", "type": "indefinite_integral"},
+        {"qno": 15, "question": "Integrate: cos^3 x e^(log sin x)", "type": "indefinite_integral"},
+        {"qno": 16, "question": "Integrate: e^(3 log x) (x^4 + 1)^(-1)", "type": "indefinite_integral"},
+        {"qno": 17, "question": "Integrate: f'(ax + b) [f(ax + b)]^n", "type": "indefinite_integral"},
+        {"qno": 18, "question": "Integrate: 1/sqrt(sin^3 x sin(x + alpha))", "type": "indefinite_integral"},
+        {"qno": 19, "question": "Integrate: sqrt((1 - sqrt(x))/(1 + sqrt(x)))", "type": "indefinite_integral"},
+        {"qno": 20, "question": "Integrate: (2 + sin 2x)/(1 + cos 2x) e^x", "type": "indefinite_integral"},
+        {"qno": 21, "question": "Integrate: (x^2 + x + 1)/((x + 1)^2 (x + 2))", "type": "indefinite_integral"},
+        {"qno": 22, "question": "Integrate: tan^(-1) sqrt((1 - x)/(1 + x))", "type": "indefinite_integral"},
+        {"qno": 23, "question": "Integrate: (sqrt(x^2 + 1) [log(x^2 + 1) - 2 log x])/x^4", "type": "indefinite_integral"},
+        {"qno": 24, "question": "Evaluate: integral from pi/2 to pi of e^x ((1 - sin x)/(1 - cos x)) dx", "type": "definite_integral"},
+        {"qno": 25, "question": "Evaluate: integral from 0 to pi/4 of (sin x cos x)/(cos^4 x + sin^4 x) dx", "type": "definite_integral"},
+        {"qno": 26, "question": "Evaluate: integral from 0 to pi/2 of (cos^2 x dx)/(cos^2 x + 4 sin^2 x)", "type": "definite_integral"},
+        {"qno": 27, "question": "Evaluate: integral from pi/6 to pi/3 of (sin x + cos x)/sqrt(sin 2x) dx", "type": "definite_integral"},
+        {"qno": 28, "question": "Evaluate: integral from 0 to 1 of dx/(sqrt(1+x) - sqrt(x))", "type": "definite_integral"},
+        {"qno": 29, "question": "Evaluate: integral from 0 to pi/4 of (sin x + cos x)/(9 + 16 sin 2x) dx", "type": "definite_integral"},
+        {"qno": 30, "question": "Evaluate: integral from 0 to pi/2 of sin 2x tan^(-1)(sin x) dx", "type": "definite_integral"},
+        {"qno": 31, "question": "Evaluate: integral from 1 to 4 of [|x - 1| + |x - 2| + |x - 3|] dx", "type": "definite_integral"},
+        {"qno": 32, "question": "Prove that: integral from 1 to 3 of dx/(x^2(x+1)) = 2/3 + log(2/3)", "type": "prove"},
+        {"qno": 33, "question": "Prove that: integral from 0 to 1 of x e^x dx = 1", "type": "prove"},
+        {"qno": 34, "question": "Prove that: integral from -1 to 1 of x^17 cos^4 x dx = 0", "type": "prove"},
+        {"qno": 35, "question": "Prove that: integral from 0 to pi/2 of sin^3 x dx = 2/3", "type": "prove"},
+        {"qno": 36, "question": "Prove that: integral from 0 to pi/4 of 2 tan^3 x dx = 1 - log 2", "type": "prove"},
+        {"qno": 37, "question": "Prove that: integral from 0 to 1 of sin^(-1) x dx = pi/2 - 1", "type": "prove"},
+        {"qno": 38, "question": "integral dx/(e^x + e^(-x)) is equal to: (A) tan^(-1)(e^x) + C (B) tan^(-1)(e^(-x)) + C (C) log(e^x - e^(-x)) + C (D) log(e^x + e^(-x)) + C", "type": "MCQ", "answer": "A"},
+        {"qno": 39, "question": "integral cos 2x/(sin x + cos x)^2 dx is equal to: (A) -1/(sin x + cos x) + C (B) log |sin x + cos x| + C (C) log |sin x - cos x| + C (D) 1/(sin x + cos x)^2", "type": "MCQ", "answer": "B"},
+        {"qno": 40, "question": "If f(a + b - x) = f(x), then integral from a to b of x f(x) dx is equal to: (A) (a+b)/2 integral from a to b of f(b-x) dx (B) (a+b)/2 integral from a to b of f(b+x) dx (C) (b-a)/2 integral from a to b of f(x) dx (D) (a+b)/2 integral from a to b of f(x) dx", "type": "MCQ", "answer": "D"}
+      ]
+    }
+  ]
+}

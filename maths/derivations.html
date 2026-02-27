@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<style>
+:root{--subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;}
+.deriv-chapter { margin-bottom: 2.5rem }
+.deriv-ch-title {
+  font-family:'Newsreader',serif; font-size:1.15rem; font-weight:700; color:var(--ink);
+  display:flex; align-items:center; gap:.6rem; padding-bottom:.5rem; border-bottom:2px solid; margin-bottom:1rem;
+}
+.deriv-card {
+  background:#fff; border:1px solid var(--sand-200); border-radius:12px; padding:1.25rem;
+  margin-bottom:.75rem; border-left:4px solid var(--subject-color);
+}
+.deriv-header { display:flex; align-items:center; gap:.75rem; margin-bottom:.5rem }
+.deriv-num {
+  font-family:'Lato',sans-serif; font-size:.7rem; font-weight:800; color:#fff; background:var(--subject-color);
+  width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.deriv-name { font-family:'Newsreader',serif; font-size:1rem; font-weight:600; color:var(--ink) }
+.deriv-statement { font-size:.84rem; color:var(--ink-2); line-height:1.7 }
+.dot { width:8px; height:8px; border-radius:50%; display:inline-block; flex-shrink:0 }
+.page-header { padding:2.5rem 0 1.5rem; border-bottom:1px solid var(--sand-200); margin-bottom:2rem }
+.page-header h1 { font-family:'Newsreader',serif; font-size:clamp(1.6rem,3vw,2.2rem); font-weight:700; color:var(--ink); margin-bottom:.35rem }
+.page-header .subtitle { font-size:.88rem; color:var(--ink-3) }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Important mathematical proofs and theorems for CBSE Class 12 — 38 theorems across 13 chapters.">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Important Proofs &amp; Theorems | CBSE Class 12 Maths">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/maths/derivations.html">
+<title>Important Proofs &amp; Theorems | CBSE Class 12 Maths</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+
+<div class="page-header">
+  <h1>Important Proofs &amp; Theorems</h1>
+  <p class="subtitle">38 key theorems from NCERT — statements and proof outlines for CBSE board exam.</p>
+</div>
+
+<div class="deriv-chapter" id="ch1">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#7c3aed"><span class="dot" style="background:#7c3aed"></span> Ch 1: Relations and Functions</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">Equivalence Classes Partition Theorem</h3>
+    </div>
+    <div class="deriv-statement">Given an arbitrary equivalence relation R ∈ an arbitrary set X, R divides X into mutually disjoint subsets Aᵢ called partitions or subdivisions of X satisfying: (i) all elements of Aᵢ are related to each other, for all i, (ii) no element of Aᵢ is related to any element of Aⱼ, i ≠ j, (iii) union of Aⱼ = X and Aᵢ intersect Aⱼ = φ, i ≠ j. The subsets Aᵢ are called equivalence classes.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Finite Set Bijection Property</h3>
+    </div>
+    <div class="deriv-statement">For an arbitrary finite set X, a one-one function f: X → X is necessarily onto and an onto map f: X → X is necessarily one-one. This is a characteristic difference between a finite and an infinite set.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">3</span>
+      <h3 class="deriv-name">Invertibility and Bijectivity</h3>
+    </div>
+    <div class="deriv-statement">A function f is invertible if and only if f is one-one and onto (bijective). If f is invertible, then f must be one-one and onto, and conversely, if f is one-one and onto, then f must be invertible.</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch3">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#6d28d9"><span class="dot" style="background:#6d28d9"></span> Ch 3: Matrices</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">Theorem 1</h3>
+    </div>
+    <div class="deriv-statement">For any square matrix A with real number entries, A + A' is a symmetric matrix and A - A' is a skew symmetric matrix.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Theorem 2</h3>
+    </div>
+    <div class="deriv-statement">Any square matrix can be expressed as the ∑ of a symmetric and a skew symmetric matrix. Specifically, A = (1/2)(A + A') + (1/2)(A - A').</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">3</span>
+      <h3 class="deriv-name">Theorem 3 (Uniqueness of inverse)</h3>
+    </div>
+    <div class="deriv-statement">Inverse of a square matrix, if it exists, is unique.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">4</span>
+      <h3 class="deriv-name">Theorem 4 (Inverse of a product)</h3>
+    </div>
+    <div class="deriv-statement">If A and B are invertible matrices of the same order, then (AB)⁻¹ = B⁻¹ A⁻¹.</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch4">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#a855f7"><span class="dot" style="background:#a855f7"></span> Ch 4: Determinants</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">Theorem 1</h3>
+    </div>
+    <div class="deriv-statement">If A be any given square matrix of order n, then A(adj A) = (adj A)A = |A|*I, where I is the identity matrix of order n.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Theorem 2</h3>
+    </div>
+    <div class="deriv-statement">If A and B are nonsingular matrices of the same order, then AB and BA are also nonsingular matrices of the same order.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">3</span>
+      <h3 class="deriv-name">Theorem 3</h3>
+    </div>
+    <div class="deriv-statement">The determinant of the ∏ of matrices is equal to ∏ of their respective determinants, that is, |AB| = |A| · |B|, where A and B are square matrices of the same order.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">4</span>
+      <h3 class="deriv-name">Theorem 4</h3>
+    </div>
+    <div class="deriv-statement">A square matrix A is invertible if and only if A is nonsingular matrix.</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch5">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#7c3aed"><span class="dot" style="background:#7c3aed"></span> Ch 5: Continuity and Differentiability</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">Theorem 1</h3>
+    </div>
+    <div class="deriv-statement">Suppose f and g be two real functions continuous at a real number c. Then: (1) f + g is continuous at x = c, (2) f - g is continuous at x = c, (3) f . g is continuous at x = c, (4) f/g is continuous at x = c (provided g(c) ≠ 0)</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Theorem 2 (Composition)</h3>
+    </div>
+    <div class="deriv-statement">Suppose f and g are real valued functions such that (f o g) is defined at c. If g is continuous at c and if f is continuous at g(c), then (f o g) is continuous at c</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">3</span>
+      <h3 class="deriv-name">Theorem 3</h3>
+    </div>
+    <div class="deriv-statement">If a function f is differentiable at a point c, then it is also continuous at that point.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">4</span>
+      <h3 class="deriv-name">Corollary 1</h3>
+    </div>
+    <div class="deriv-statement">Every differentiable function is continuous. The converse is NOT true: f(x) = |x| is continuous at x = 0 but not differentiable at x = 0.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">5</span>
+      <h3 class="deriv-name">Theorem 4 (Chain Rule)</h3>
+    </div>
+    <div class="deriv-statement">Let f be a real valued function which is a composite of two functions u and v; i.e., f = v o u. Suppose t = u(x) and if both dt/dx and dv/dt exist, then df/dx = (dv/dt) . (dt/dx)</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">6</span>
+      <h3 class="deriv-name">Theorem 5*</h3>
+    </div>
+    <div class="deriv-statement">(1) The derivative of eˣ w.r.t. x is eˣ; i.e., d/dx(eˣ) = eˣ. (2) The derivative of log x w.r.t. x is 1/x; i.e., d/dx(log x) = 1/x. (*Please see supplementary material on Page 222)</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">7</span>
+      <h3 class="deriv-name">Rolle's Theorem</h3>
+    </div>
+    <div class="deriv-statement">If f: [a, b] → R is continuous on [a, b], differentiable on (a, b), and f(a) = f(b), then there exists some c ∈ (a, b) such that f'(c) = 0</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">8</span>
+      <h3 class="deriv-name">Mean Value Theorem (Lagrange's MVT)</h3>
+    </div>
+    <div class="deriv-statement">If f: [a, b] → R is continuous on [a, b] and differentiable on (a, b), then there exists some c ∈ (a, b) such that f'(c) = [f(b) - f(a)]/(b - a)</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch6">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#6d28d9"><span class="dot" style="background:#6d28d9"></span> Ch 6: Application of Derivatives</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">First Derivative Test for Increasing/Decreasing</h3>
+    </div>
+    <div class="deriv-statement">Let f be continuous on [a, b] and differentiable on (a, b). Then: (a) f is increasing ∈ [a,b] if f'(x) ≥ 0 for each x ∈ (a,b) ┃ (b) f is decreasing ∈ [a,b] if f'(x) ≤ 0 for each x ∈ (a,b) ┃ (c) f is a constant function ∈ [a,b] if f'(x) = 0 for each x ∈ (a,b).</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Necessary condition for local extrema</h3>
+    </div>
+    <div class="deriv-statement">Let f be a function defined on an open interval I. Suppose c is ∈ I. If f has a local maxima or a local minima at x = c, then either f'(c) = 0 or f is not differentiable at c.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">3</span>
+      <h3 class="deriv-name">First Derivative Test</h3>
+    </div>
+    <div class="deriv-statement">Let f be a function defined on an open interval I. Let f be continuous at a critical point c ∈ I. Then: (i) If f'(x) changes sign from positive to negative as x increases through c (f'(x) &gt; 0 to left, f'(x) &lt; 0 to right), then c is a point of local maxima. (ii) If f'(x) changes sign from negative to positive as x increases through c (f'(x) &lt; 0 to left, f'(x) &gt; 0 to right), then c is a point of local minima. (iii) If f'(x) does not change sign as x increases through c, then c is neither a point of local maxima nor local minima (point of inflection).</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">4</span>
+      <h3 class="deriv-name">Second Derivative Test</h3>
+    </div>
+    <div class="deriv-statement">Let f be a function defined on an interval I and c ∈ I. Let f be twice differentiable at c. Then: (i) x = c is a point of local maxima if f'(c) = 0 and f''(c) &lt; 0. The value f(c) is local maximum value. (ii) x = c is a point of local minima if f'(c) = 0 and f''(c) &gt; 0. The value f(c) is local minimum value. (iii) The test fails if f'(c) = 0 and f''(c) = 0. In this case, go back to the first derivative test.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">5</span>
+      <h3 class="deriv-name">Existence of absolute extrema on closed interval</h3>
+    </div>
+    <div class="deriv-statement">Let f be a continuous function on an interval I = [a, b]. Then f has the absolute maximum value and f attains it at least once ∈ I. Also, f has the absolute minimum value and attains it at least once ∈ I.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">6</span>
+      <h3 class="deriv-name">Condition for absolute extrema at interior points</h3>
+    </div>
+    <div class="deriv-statement">Let f be a differentiable function on a closed interval I and let c be any interior point of I. Then: (i) f'(c) = 0 if f attains its absolute maximum value at c. (ii) f'(c) = 0 if f attains its absolute minimum value at c.</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch7">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#8b5cf6"><span class="dot" style="background:#8b5cf6"></span> Ch 7: Integrals</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">First Fundamental Theorem of Integral Calculus</h3>
+    </div>
+    <div class="deriv-statement">Let f be a continuous function on the closed interval [a, b] and let A(x) be the area function. Then A'(x) = f(x), for all x ∈ [a, b].</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Second Fundamental Theorem of Integral Calculus</h3>
+    </div>
+    <div class="deriv-statement">Let f be continuous function defined on the closed interval [a, b] and F be an anti derivative of f. Then ∫ from a to b of f(x) dx = [F(x)] from a to b = F(b) - F(a).</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch10">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#6d28d9"><span class="dot" style="background:#6d28d9"></span> Ch 10: Vector Algebra</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">Commutative Property of Vector Addition</h3>
+    </div>
+    <div class="deriv-statement">For any two vectors a and b: a + b = b + a</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Associative Property of Vector Addition</h3>
+    </div>
+    <div class="deriv-statement">For any three vectors a, b, c: (a + b) + c = a + (b + c)</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">3</span>
+      <h3 class="deriv-name">Cauchy-Schwarz Inequality</h3>
+    </div>
+    <div class="deriv-statement">For any two vectors a and b: |a . b| ≤ |a||b|</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">4</span>
+      <h3 class="deriv-name">Triangle Inequality</h3>
+    </div>
+    <div class="deriv-statement">For any two vectors a and b: |a + b| ≤ |a| + |b|</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">5</span>
+      <h3 class="deriv-name">Collinearity from Triangle Inequality</h3>
+    </div>
+    <div class="deriv-statement">If |a + b| = |a| + |b|, then |AC| = |AB| + |BC|, showing that A, B, C are collinear.</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch12">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#a855f7"><span class="dot" style="background:#a855f7"></span> Ch 12: Linear Programming</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">Theorem 1 (Fundamental Theorem of Linear Programming)</h3>
+    </div>
+    <div class="deriv-statement">Let R be the feasible region (convex polygon) for a linear programming problem and let Z = ax + by be the objective function. When Z has an optimal value (maximum or minimum), where the variables x and y are subject to constraints described by linear inequalities, this optimal value must occur at a corner point (vertex) of the feasible region.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Theorem 2</h3>
+    </div>
+    <div class="deriv-statement">Let R be the feasible region for a linear programming problem, and let Z = ax + by be the objective function. If R is bounded, then the objective function Z has both a maximum and a minimum value on R and each of these occurs at a corner point (vertex) of R.</div>
+  </div>
+</div>
+
+<div class="deriv-chapter" id="ch13">
+  <h2 class="deriv-ch-title" style="border-bottom-color:#7c3aed"><span class="dot" style="background:#7c3aed"></span> Ch 13: Probability</h2>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">1</span>
+      <h3 class="deriv-name">Multiplication Theorem of Probability</h3>
+    </div>
+    <div class="deriv-statement">For any two events E and F: P(E ∩ F) = P(E) . P(F|E) = P(F) . P(E|F), provided P(E) ≠ 0 and P(F) ≠ 0.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">2</span>
+      <h3 class="deriv-name">Independence of Complements</h3>
+    </div>
+    <div class="deriv-statement">If E and F are independent events, then (a) E and F' are independent, (b) E' and F are independent, (c) E' and F' are independent.</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">3</span>
+      <h3 class="deriv-name">Theorem of Total Probability</h3>
+    </div>
+    <div class="deriv-statement">Let {E₁, E₂, ..., Eₙ} be a partition of the sample space S, and suppose that each of E₁, E₂, ..., Eₙ has nonzero probability of occurrence. Let A be any event associated with S, then P(A) = P(E₁) P(A|E₁) + P(E₂) P(A|E₂) + ... + P(Eₙ) P(A|Eₙ) = sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ).</div>
+  </div>
+  <div class="deriv-card">
+    <div class="deriv-header">
+      <span class="deriv-num">4</span>
+      <h3 class="deriv-name">Bayes' Theorem</h3>
+    </div>
+    <div class="deriv-statement">If E₁, E₂, ..., Eₙ are n non-empty events which constitute a partition of sample space S, i.e., E₁, E₂, ..., Eₙ are pairwise disjoint and E₁ u E₂ u ... u Eₙ = S, and A is any event of nonzero probability, then P(Eᵢ|A) = P(Eᵢ) P(A|Eᵢ) / sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ), for any i = 1, 2, 3, ..., n.</div>
+  </div>
+</div>
+
+
+
+</div>
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+</body>
+</html>

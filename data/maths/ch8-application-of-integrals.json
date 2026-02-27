@@ -1,0 +1,201 @@
+{
+  "chapter": 8,
+  "title": "Application of Integrals",
+  "quote": "One should study Mathematics because it is only through Mathematics that nature can be conceived in harmonious form. - BIRKHOFF",
+  "sections": [
+    {
+      "id": "8.1",
+      "title": "Introduction",
+      "concepts": [
+        "In geometry, formulae exist for areas of triangles, rectangles, trapezias and circles, but these are inadequate for areas enclosed by curves.",
+        "Integral Calculus provides the tools to calculate areas enclosed by curves.",
+        "This chapter deals with finding area under simple curves, area between lines and arcs of circles, parabolas and ellipses (standard forms only).",
+        "The area bounded by the curve y = f(x), the ordinates x = a, x = b and the x-axis is calculated as the limit of a sum using definite integrals."
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Application of definite integrals to find area under curves is a specific use of integration as the limit of a sum.",
+        "We also find the area bounded by the above said curves."
+      ]
+    },
+    {
+      "id": "8.2",
+      "title": "Area under Simple Curves",
+      "concepts": [
+        "The area under a curve can be thought of as composed of a large number of very thin vertical strips.",
+        "Consider an arbitrary strip of height y and width dx, then dA (area of the elementary strip) = y dx, where y = f(x).",
+        "This elementary area is located at an arbitrary position within the region between x = a and x = b.",
+        "The total area A of the region between the curve y = f(x), x-axis, and ordinates x = a and x = b is the sum of all such elementary strip areas.",
+        "Alternatively, horizontal strips can be used where the curve is expressed as x = g(y) between y = c and y = d."
+      ],
+      "definitions": [
+        {
+          "term": "Elementary area (vertical strip)",
+          "definition": "dA = y dx = f(x) dx, a thin vertical strip of height y and width dx under the curve y = f(x)."
+        },
+        {
+          "term": "Elementary area (horizontal strip)",
+          "definition": "dA = x dy = g(y) dy, a thin horizontal strip of width x and height dy beside the curve x = g(y)."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Area using vertical strips",
+          "formula": "A = integral from a to b of y dx = integral from a to b of f(x) dx",
+          "description": "Area bounded by curve y = f(x), x-axis, and lines x = a, x = b"
+        },
+        {
+          "name": "Area using horizontal strips",
+          "formula": "A = integral from c to d of x dy = integral from c to d of g(y) dy",
+          "description": "Area bounded by curve x = g(y), y-axis, and lines y = c, y = d"
+        },
+        {
+          "name": "Area when curve is below x-axis",
+          "formula": "A = |integral from a to b of f(x) dx|",
+          "description": "If f(x) < 0 from x = a to x = b, the area is the absolute value of the integral."
+        },
+        {
+          "name": "Area when curve crosses x-axis",
+          "formula": "A = |A1| + A2",
+          "description": "When part of the curve is above and part below x-axis, take absolute value of negative area and add to positive area."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "If the curve lies below the x-axis, the definite integral gives a negative value; take the absolute value for the area.",
+        "If the curve crosses the x-axis, split the integral at the crossing points and take absolute values of the negative parts.",
+        "The choice between vertical strips (integrating with respect to x) and horizontal strips (integrating with respect to y) depends on the curve and which is more convenient."
+      ],
+      "examples": [
+        {
+          "id": "Example 1",
+          "title": "Area enclosed by the circle x^2 + y^2 = a^2",
+          "solution_summary": "By symmetry, Area = 4 * integral from 0 to a of sqrt(a^2 - x^2) dx = 4 * [(x/2)sqrt(a^2 - x^2) + (a^2/2)sin^{-1}(x/a)] from 0 to a = 4 * (a^2/2)(pi/2) = pi*a^2",
+          "formulas_used": [
+            "Area of circle = pi*a^2",
+            "integral of sqrt(a^2 - x^2) dx = (x/2)sqrt(a^2 - x^2) + (a^2/2)sin^{-1}(x/a) + C"
+          ]
+        },
+        {
+          "id": "Example 2",
+          "title": "Area enclosed by the ellipse x^2/a^2 + y^2/b^2 = 1",
+          "solution_summary": "By symmetry, Area = 4 * integral from 0 to a of (b/a)sqrt(a^2 - x^2) dx = (4b/a) * [(x/2)sqrt(a^2 - x^2) + (a^2/2)sin^{-1}(x/a)] from 0 to a = (4b/a) * (a^2/2)(pi/2) = pi*a*b",
+          "formulas_used": [
+            "Area of ellipse = pi*a*b",
+            "From x^2/a^2 + y^2/b^2 = 1, y = (b/a)sqrt(a^2 - x^2) in first quadrant"
+          ]
+        },
+        {
+          "id": "Example 3",
+          "title": "Area bounded by the line y = 3x + 2, x-axis and ordinates x = -1 and x = 1",
+          "solution_summary": "The line meets x-axis at x = -2/3. The graph lies below x-axis for x in (-1, -2/3) and above for x in (-2/3, 1). Required area = |integral from -1 to -2/3 of (3x+2)dx| + integral from -2/3 to 1 of (3x+2)dx = 1/6 + 25/6 = 13/3",
+          "formulas_used": [
+            "Split integral at the zero-crossing point x = -2/3"
+          ]
+        },
+        {
+          "id": "Example 4",
+          "title": "Area bounded by the curve y = cos x between x = 0 and x = 2*pi",
+          "solution_summary": "Area = integral from 0 to pi/2 of cos x dx + |integral from pi/2 to 3*pi/2 of cos x dx| + integral from 3*pi/2 to 2*pi of cos x dx = [sin x] from 0 to pi/2 + |[sin x] from pi/2 to 3*pi/2| + [sin x] from 3*pi/2 to 2*pi = 1 + 2 + 1 = 4",
+          "formulas_used": [
+            "Split at points where cos x changes sign: x = pi/2, 3*pi/2"
+          ]
+        }
+      ]
+    }
+  ],
+  "standard_curve_area_formulas": [
+    {
+      "curve": "Circle: x^2 + y^2 = a^2",
+      "area_formula": "pi * a^2",
+      "derivation": "A = 4 * integral from 0 to a of sqrt(a^2 - x^2) dx = pi*a^2"
+    },
+    {
+      "curve": "Ellipse: x^2/a^2 + y^2/b^2 = 1",
+      "area_formula": "pi * a * b",
+      "derivation": "A = 4 * integral from 0 to a of (b/a)*sqrt(a^2 - x^2) dx = pi*a*b"
+    },
+    {
+      "curve": "Parabola: y^2 = 4ax between x = 0 and x = a",
+      "area_formula": "A = integral from 0 to a of 2*sqrt(ax) dx = (8/3)*a^2",
+      "derivation": "Using y = 2*sqrt(ax), total area between both branches and the latus rectum"
+    }
+  ],
+  "summary": [
+    "The area of the region bounded by the curve y = f(x), x-axis and the lines x = a and x = b (b > a) is given by the formula: Area = integral from a to b of y dx = integral from a to b of f(x) dx.",
+    "The area of the region bounded by the curve x = phi(y), y-axis and the lines y = c, y = d is given by the formula: Area = integral from c to d of x dy = integral from c to d of phi(y) dy."
+  ],
+  "exercises": [
+    {
+      "id": "8.1",
+      "title": "Exercise 8.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the area of the region bounded by the ellipse x^2/16 + y^2/9 = 1.",
+          "type": "long_answer",
+          "hint": "Use the standard formula for area of ellipse with a = 4, b = 3"
+        },
+        {
+          "qno": 2,
+          "question": "Find the area of the region bounded by the ellipse x^2/4 + y^2/9 = 1.",
+          "type": "long_answer",
+          "hint": "Use the standard formula for area of ellipse with a = 2, b = 3"
+        },
+        {
+          "qno": 3,
+          "question": "Area lying in the first quadrant and bounded by the circle x^2 + y^2 = 4 and the lines x = 0 and x = 2 is\n(A) pi\n(B) pi/2\n(C) pi/3\n(D) pi/4",
+          "type": "mcq",
+          "options": ["pi", "pi/2", "pi/3", "pi/4"],
+          "answer": "A"
+        },
+        {
+          "qno": 4,
+          "question": "Area of the region bounded by the curve y^2 = 4x, y-axis and the line y = 3 is\n(A) 2\n(B) 9/4\n(C) 9/3\n(D) 9/2",
+          "type": "mcq",
+          "options": ["2", "9/4", "9/3", "9/2"],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 8",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the area under the given curves and given lines:\n(i) y = x^2, x = 1, x = 2 and x-axis\n(ii) y = x^4, x = 1, x = 5 and x-axis",
+          "type": "long_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Sketch the graph of y = |x + 3| and evaluate integral from -6 to 0 of |x + 3| dx.",
+          "type": "long_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Find the area bounded by the curve y = sin x between x = 0 and x = 2*pi.",
+          "type": "long_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Area bounded by the curve y = x^3, the x-axis and the ordinates x = -2 and x = 1 is\n(A) -9\n(B) -15/4\n(C) 15/4\n(D) 17/4",
+          "type": "mcq",
+          "options": ["-9", "-15/4", "15/4", "17/4"],
+          "answer": "D"
+        },
+        {
+          "qno": 5,
+          "question": "The area bounded by the curve y = x|x|, x-axis and the ordinates x = -1 and x = 1 is given by\n(A) 0\n(B) 1/3\n(C) 2/3\n(D) 4/3",
+          "type": "mcq",
+          "options": ["0", "1/3", "2/3", "4/3"],
+          "hint": "y = x^2 if x > 0 and y = -x^2 if x < 0",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "historical_note": "The origin of Integral Calculus goes back to the early period of development of Mathematics and is related to the method of exhaustion developed by the mathematicians of ancient Greece (Eudoxus 440 B.C. and Archimedes 300 B.C.). Systematic approach to Calculus began in the 17th century. In 1665, Newton began his work on Calculus (theory of fluxions). During 1684-86, Leibniz published his work introducing the integral symbol. The fundamental concepts were developed in the work of P. de Fermat, I. Newton and G. Leibniz at the end of the 17th century, with rigorous justification by A.L. Cauchy in the early 19th century."
+}

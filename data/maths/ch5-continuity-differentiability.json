@@ -1,0 +1,1249 @@
+{
+  "chapter": 5,
+  "title": "Continuity and Differentiability",
+  "subject": "Mathematics",
+  "class": 12,
+  "book": "NCERT Mathematics Part I",
+  "edition": "Reprint 2025-26",
+  "sections": [
+    {
+      "id": "5.1",
+      "title": "Introduction",
+      "concepts": [
+        "This chapter is a continuation of the study of differentiation of functions from Class XI",
+        "Introduces concepts of continuity, differentiability and relations between them",
+        "Covers differentiation of inverse trigonometric functions",
+        "Introduces exponential and logarithmic functions and their derivatives",
+        "Illustrates geometrically obvious conditions through differential calculus"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Previously learnt to differentiate polynomial and trigonometric functions",
+        "This chapter connects continuity and differentiability",
+        "Powerful techniques of differentiation are developed"
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Continuity",
+      "concepts": [
+        "Intuitive idea of continuity: a function whose graph can be drawn without lifting pen from paper",
+        "Left hand limit and right hand limit must exist and be equal for continuity",
+        "A function not continuous at a point has a point of discontinuity there",
+        "Continuity at endpoints of closed interval [a, b] uses one-sided limits",
+        "Concept of infinity: lim(x->0+) 1/x = +infinity, lim(x->0-) 1/x = -infinity"
+      ],
+      "definitions": [
+        {
+          "name": "Continuity at a point",
+          "id": "Definition 1",
+          "statement": "Suppose f is a real function on a subset of the real numbers and let c be a point in the domain of f. Then f is continuous at c if lim(x->c) f(x) = f(c)"
+        },
+        {
+          "name": "Continuous function",
+          "id": "Definition 2",
+          "statement": "A real function f is said to be continuous if it is continuous at every point in the domain of f"
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "f is continuous at x = c if: (1) f(c) is defined, (2) lim(x->c) f(x) exists, (3) lim(x->c) f(x) = f(c)",
+        "If f is not continuous at c, then c is called a point of discontinuity of f",
+        "Every constant function f(x) = k is continuous at every real number",
+        "The identity function f(x) = x is continuous at every real number",
+        "Every polynomial function is continuous",
+        "f(x) = |x| is a continuous function",
+        "f(x) = 1/x is continuous at every point of its domain (x != 0)",
+        "The greatest integer function f(x) = [x] is discontinuous at every integer"
+      ]
+    },
+    {
+      "id": "5.2.1",
+      "title": "Algebra of Continuous Functions",
+      "concepts": [
+        "Operations on continuous functions preserve continuity",
+        "Composition of continuous functions is continuous"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [
+        {
+          "name": "Theorem 1",
+          "id": "Theorem 1",
+          "statement": "Suppose f and g be two real functions continuous at a real number c. Then: (1) f + g is continuous at x = c, (2) f - g is continuous at x = c, (3) f . g is continuous at x = c, (4) f/g is continuous at x = c (provided g(c) != 0)"
+        },
+        {
+          "name": "Theorem 2 (Composition)",
+          "id": "Theorem 2",
+          "statement": "Suppose f and g are real valued functions such that (f o g) is defined at c. If g is continuous at c and if f is continuous at g(c), then (f o g) is continuous at c"
+        }
+      ],
+      "key_points": [
+        "If f(x) = lambda for some real number lambda, then (lambda . g)(x) = lambda . g(x) is also continuous",
+        "If f(x) = lambda, then lambda/g is continuous wherever g(x) != 0",
+        "Every rational function p(x)/q(x) is continuous wherever q(x) != 0",
+        "sin x is a continuous function",
+        "cos x is a continuous function",
+        "tan x is continuous wherever it is defined (x != (2n+1)pi/2)",
+        "sin(x^2) is continuous as a composite of continuous functions",
+        "f(x) = |1 - x + |x|| is continuous as a composite of continuous functions"
+      ]
+    },
+    {
+      "id": "5.3",
+      "title": "Differentiability",
+      "concepts": [
+        "Definition of derivative as a limit",
+        "Relationship between differentiability and continuity",
+        "Left hand and right hand derivatives",
+        "Algebra of derivatives: sum, product, quotient rules"
+      ],
+      "definitions": [
+        {
+          "name": "Derivative of f at c",
+          "statement": "The derivative of f at c is defined by lim(h->0) [f(c+h) - f(c)]/h, provided this limit exists. Denoted by f'(c) or (d/dx)(f(x))|_c"
+        },
+        {
+          "name": "Derivative function",
+          "statement": "f'(x) = lim(h->0) [f(x+h) - f(x)]/h, wherever the limit exists. Also denoted by f'(x) or (d/dx)(f(x)) or dy/dx or y'"
+        },
+        {
+          "name": "Differentiable in an interval",
+          "statement": "A function is differentiable in [a, b] if it is differentiable at every point of [a, b]. At endpoints, we use left/right hand derivatives respectively. Differentiable in (a, b) means differentiable at every point of (a, b)"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Sum/Difference Rule",
+          "formula": "(u +/- v)' = u' +/- v'"
+        },
+        {
+          "name": "Product Rule (Leibnitz Rule)",
+          "formula": "(uv)' = u'v + uv'"
+        },
+        {
+          "name": "Quotient Rule",
+          "formula": "(u/v)' = (u'v - uv')/v^2, where v != 0"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Theorem 3",
+          "id": "Theorem 3",
+          "statement": "If a function f is differentiable at a point c, then it is also continuous at that point."
+        },
+        {
+          "name": "Corollary 1",
+          "statement": "Every differentiable function is continuous. The converse is NOT true: f(x) = |x| is continuous at x = 0 but not differentiable at x = 0."
+        }
+      ],
+      "key_points": [
+        "Differentiability implies continuity, but continuity does NOT imply differentiability",
+        "f(x) = |x| is continuous at x = 0 but not differentiable (left derivative = -1, right derivative = 1)",
+        "Standard derivatives: d/dx(x^n) = nx^(n-1), d/dx(sin x) = cos x, d/dx(cos x) = -sin x, d/dx(tan x) = sec^2 x"
+      ]
+    },
+    {
+      "id": "5.3.1",
+      "title": "Derivatives of Composite Functions (Chain Rule)",
+      "concepts": [
+        "Chain rule for differentiating composite functions",
+        "Extension to composition of three or more functions"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Chain Rule (two functions)",
+          "formula": "If f = v o u, t = u(x), then df/dx = (dv/dt) . (dt/dx)"
+        },
+        {
+          "name": "Chain Rule (three functions)",
+          "formula": "If f = (w o u) o v, t = v(x), s = u(t), then df/dx = (dw/ds) . (ds/dt) . (dt/dx)"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Theorem 4 (Chain Rule)",
+          "id": "Theorem 4",
+          "statement": "Let f be a real valued function which is a composite of two functions u and v; i.e., f = v o u. Suppose t = u(x) and if both dt/dx and dv/dt exist, then df/dx = (dv/dt) . (dt/dx)"
+        }
+      ],
+      "key_points": [
+        "Example: d/dx[sin(x^2)] = cos(x^2) . 2x = 2x cos(x^2)",
+        "The chain rule simplifies finding derivatives of complex composite functions like (2x+1)^100"
+      ]
+    },
+    {
+      "id": "5.3.2",
+      "title": "Derivatives of Implicit Functions",
+      "concepts": [
+        "Explicit vs implicit functions",
+        "Technique of implicit differentiation: differentiate both sides w.r.t. x and solve for dy/dx"
+      ],
+      "definitions": [
+        {
+          "name": "Explicit function",
+          "statement": "When y = f(x) expresses y directly in terms of x"
+        },
+        {
+          "name": "Implicit function",
+          "statement": "When the relationship between x and y is given by an equation like x + sin(xy) - y = 0, where y cannot easily be expressed as a function of x"
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "To find dy/dx from an implicit relation: differentiate every term w.r.t. x using chain rule, then solve for dy/dx",
+        "Example: y + sin y = cos x gives dy/dx = -sin x/(1 + cos y)",
+        "Remember to apply chain rule when differentiating terms involving y (multiply by dy/dx)"
+      ]
+    },
+    {
+      "id": "5.3.3",
+      "title": "Derivatives of Inverse Trigonometric Functions",
+      "concepts": [
+        "Inverse trigonometric functions are continuous functions",
+        "Chain rule is used to find their derivatives"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Derivative of sin^(-1) x",
+          "formula": "d/dx(sin^(-1) x) = 1/sqrt(1 - x^2)",
+          "domain": "x in (-1, 1)"
+        },
+        {
+          "name": "Derivative of cos^(-1) x",
+          "formula": "d/dx(cos^(-1) x) = -1/sqrt(1 - x^2)",
+          "domain": "x in (-1, 1)"
+        },
+        {
+          "name": "Derivative of tan^(-1) x",
+          "formula": "d/dx(tan^(-1) x) = 1/(1 + x^2)",
+          "domain": "x in R"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Derivation of d/dx(sin^(-1) x): Let y = sin^(-1) x, then x = sin y. Differentiating: 1 = cos y . dy/dx, so dy/dx = 1/cos y = 1/sqrt(1 - x^2)",
+        "For sin^(-1) x, y is in (-pi/2, pi/2) so cos y is positive, giving cos y = sqrt(1 - sin^2 y) = sqrt(1 - x^2)"
+      ]
+    },
+    {
+      "id": "5.4",
+      "title": "Exponential and Logarithmic Functions",
+      "concepts": [
+        "Exponential functions grow faster than any polynomial function",
+        "The natural exponential function y = e^x where e = 1 + 1/1! + 1/2! + ...",
+        "Logarithmic function as inverse of exponential function",
+        "Properties of logarithms"
+      ],
+      "definitions": [
+        {
+          "name": "Exponential function",
+          "id": "Definition 3",
+          "statement": "The exponential function with positive base b > 1 is the function y = f(x) = b^x"
+        },
+        {
+          "name": "Logarithmic function",
+          "id": "Definition 4",
+          "statement": "Let b > 1 be a real number. Then we say logarithm of a to base b is x if b^x = a. Written as log_b a = x if b^x = a"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Derivative of e^x",
+          "formula": "d/dx(e^x) = e^x"
+        },
+        {
+          "name": "Derivative of log x (natural log)",
+          "formula": "d/dx(log x) = 1/x"
+        },
+        {
+          "name": "Derivative of a^x",
+          "formula": "d/dx(a^x) = a^x log a"
+        },
+        {
+          "name": "Change of base formula",
+          "formula": "log_a p = (log_b p)/(log_b a)"
+        },
+        {
+          "name": "Log of product",
+          "formula": "log_b(pq) = log_b p + log_b q"
+        },
+        {
+          "name": "Log of power",
+          "formula": "log_b(p^n) = n log_b p"
+        },
+        {
+          "name": "Log of quotient",
+          "formula": "log_b(x/y) = log_b x - log_b y"
+        }
+      ],
+      "theorems": [
+        {
+          "name": "Theorem 5*",
+          "id": "Theorem 5",
+          "statement": "(1) The derivative of e^x w.r.t. x is e^x; i.e., d/dx(e^x) = e^x. (2) The derivative of log x w.r.t. x is 1/x; i.e., d/dx(log x) = 1/x. (*Please see supplementary material on Page 222)"
+        }
+      ],
+      "key_points": [
+        "e^(log x) = x is true only for positive values of x",
+        "Domain of exponential function is R, range is all positive reals",
+        "Domain of log function is R+ (positive reals), range is R",
+        "The point (0, 1) is always on the graph of y = b^x",
+        "The point (1, 0) is always on the graph of y = log_b x",
+        "y = e^x and y = ln x are mirror images of each other reflected in the line y = x",
+        "In this chapter, log x denotes the natural logarithm (base e), i.e., ln x",
+        "The exponential function does not change during differentiation"
+      ]
+    },
+    {
+      "id": "5.5",
+      "title": "Logarithmic Differentiation",
+      "concepts": [
+        "Technique for differentiating functions of the form y = [u(x)]^(v(x))",
+        "Take logarithm on both sides, then differentiate using chain rule",
+        "Both f(x) and u(x) must be positive for logarithms to be defined"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Logarithmic differentiation formula",
+          "formula": "For y = [u(x)]^(v(x)): log y = v(x) . log[u(x)], then (1/y)(dy/dx) = v(x) . (1/u(x)) . u'(x) + v'(x) . log[u(x)], so dy/dx = y[v(x) . u'(x)/u(x) + v'(x) . log(u(x))]"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Used when variable is in both base and exponent, e.g., x^(sin x)",
+        "Also useful for complex products/quotients involving many factors",
+        "Example: d/dx(x^(sin x)) = x^(sin x)[sin x/x + cos x . log x] for x > 0",
+        "For y = a^x: log y = x log a, so dy/dx = a^x log a"
+      ]
+    },
+    {
+      "id": "5.6",
+      "title": "Derivatives of Functions in Parametric Forms",
+      "concepts": [
+        "Parametric representation: x = f(t), y = g(t) where t is the parameter",
+        "Finding dy/dx without eliminating the parameter"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Parametric differentiation",
+          "formula": "dy/dx = (dy/dt)/(dx/dt) = g'(t)/f'(t), provided f'(t) != 0"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Derived from chain rule: dy/dt = (dy/dx)(dx/dt)",
+        "x = a cos theta, y = a sin theta gives dy/dx = -cot theta",
+        "x = at^2, y = 2at gives dy/dx = 1/t",
+        "x = a(theta + sin theta), y = a(1 - cos theta) gives dy/dx = tan(theta/2)",
+        "dy/dx may be expressed in terms of parameter only, without involving x and y directly"
+      ]
+    },
+    {
+      "id": "5.7",
+      "title": "Second Order Derivative",
+      "concepts": [
+        "Differentiating the first derivative gives the second order derivative",
+        "Higher order derivatives are defined similarly"
+      ],
+      "definitions": [
+        {
+          "name": "Second order derivative",
+          "statement": "If y = f(x), then dy/dx = f'(x). If f'(x) is differentiable, then d/dx(dy/dx) = d^2y/dx^2 is the second order derivative. Denoted by f''(x), D^2y, y'', or y_2"
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Example: y = x^3 + tan x gives d^2y/dx^2 = 6x + 2 sec^2 x tan x",
+        "If y = A sin x + B cos x, then d^2y/dx^2 + y = 0",
+        "If y = 3e^(2x) + 2e^(3x), then d^2y/dx^2 - 5(dy/dx) + 6y = 0",
+        "If y = sin^(-1) x, then (1 - x^2)(d^2y/dx^2) - x(dy/dx) = 0"
+      ]
+    },
+    {
+      "id": "5.8",
+      "title": "Mean Value Theorem",
+      "concepts": [
+        "Rolle's Theorem as a special case of Mean Value Theorem",
+        "Geometric interpretation of both theorems",
+        "Note: In the 2025-26 rationalized edition, this section is moved to supplementary material (Page 222)"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [
+        {
+          "name": "Rolle's Theorem",
+          "statement": "If f: [a, b] -> R is continuous on [a, b], differentiable on (a, b), and f(a) = f(b), then there exists some c in (a, b) such that f'(c) = 0",
+          "geometric_meaning": "There is a point on the curve between a and b where the tangent is parallel to the x-axis"
+        },
+        {
+          "name": "Mean Value Theorem (Lagrange's MVT)",
+          "statement": "If f: [a, b] -> R is continuous on [a, b] and differentiable on (a, b), then there exists some c in (a, b) such that f'(c) = [f(b) - f(a)]/(b - a)",
+          "geometric_meaning": "There is a point on the curve where the tangent is parallel to the secant (chord) joining the endpoints"
+        }
+      ],
+      "key_points": [
+        "Rolle's Theorem is a special case of MVT where f(a) = f(b)",
+        "MVT: the instantaneous rate of change equals the average rate of change at some interior point",
+        "These theorems are referenced as supplementary material in the 2025-26 edition"
+      ]
+    }
+  ],
+  "all_differentiation_formulas": [
+    {
+      "function": "x^n",
+      "derivative": "n x^(n-1)",
+      "category": "Power Rule"
+    },
+    {
+      "function": "sin x",
+      "derivative": "cos x",
+      "category": "Trigonometric"
+    },
+    {
+      "function": "cos x",
+      "derivative": "-sin x",
+      "category": "Trigonometric"
+    },
+    {
+      "function": "tan x",
+      "derivative": "sec^2 x",
+      "category": "Trigonometric"
+    },
+    {
+      "function": "sec x",
+      "derivative": "sec x tan x",
+      "category": "Trigonometric"
+    },
+    {
+      "function": "cosec x",
+      "derivative": "-cosec x cot x",
+      "category": "Trigonometric"
+    },
+    {
+      "function": "cot x",
+      "derivative": "-cosec^2 x",
+      "category": "Trigonometric"
+    },
+    {
+      "function": "sin^(-1) x",
+      "derivative": "1/sqrt(1 - x^2)",
+      "domain": "x in (-1, 1)",
+      "category": "Inverse Trigonometric"
+    },
+    {
+      "function": "cos^(-1) x",
+      "derivative": "-1/sqrt(1 - x^2)",
+      "domain": "x in (-1, 1)",
+      "category": "Inverse Trigonometric"
+    },
+    {
+      "function": "tan^(-1) x",
+      "derivative": "1/(1 + x^2)",
+      "domain": "x in R",
+      "category": "Inverse Trigonometric"
+    },
+    {
+      "function": "e^x",
+      "derivative": "e^x",
+      "category": "Exponential"
+    },
+    {
+      "function": "a^x",
+      "derivative": "a^x log a",
+      "category": "Exponential"
+    },
+    {
+      "function": "log x (natural log, base e)",
+      "derivative": "1/x",
+      "category": "Logarithmic"
+    }
+  ],
+  "differentiation_rules": [
+    {
+      "name": "Sum/Difference Rule",
+      "formula": "d/dx(u +/- v) = du/dx +/- dv/dx"
+    },
+    {
+      "name": "Product Rule (Leibnitz Rule)",
+      "formula": "d/dx(uv) = u'v + uv'"
+    },
+    {
+      "name": "Quotient Rule",
+      "formula": "d/dx(u/v) = (u'v - uv')/v^2, v != 0"
+    },
+    {
+      "name": "Chain Rule",
+      "formula": "df/dx = (dv/dt)(dt/dx) where f = v o u, t = u(x)"
+    },
+    {
+      "name": "Parametric Differentiation",
+      "formula": "dy/dx = (dy/dt)/(dx/dt), dx/dt != 0"
+    },
+    {
+      "name": "Logarithmic Differentiation",
+      "formula": "For y = [u(x)]^(v(x)): take log, then (1/y)(dy/dx) = v(x)u'(x)/u(x) + v'(x) log[u(x)]"
+    }
+  ],
+  "summary": [
+    "A real valued function is continuous at a point in its domain if the limit of the function at that point equals the value of the function at that point. A function is continuous if it is continuous on the whole of its domain.",
+    "Sum, difference, product and quotient of continuous functions are continuous. i.e., if f and g are continuous functions, then (f +/- g)(x) = f(x) +/- g(x) is continuous, (f . g)(x) = f(x) . g(x) is continuous, (f/g)(x) = f(x)/g(x) (wherever g(x) != 0) is continuous.",
+    "Every differentiable function is continuous, but the converse is not true.",
+    "Chain rule is the rule to differentiate composites of functions. If f = v o u, t = u(x) and if both dt/dx and dv/dt exist, then df/dx = (dv/dt)(dt/dx).",
+    "Following are some of the standard derivatives (in appropriate domains): d/dx(sin^(-1) x) = 1/sqrt(1 - x^2), d/dx(cos^(-1) x) = -1/sqrt(1 - x^2), d/dx(tan^(-1) x) = 1/(1 + x^2).",
+    "d/dx(e^x) = e^x and d/dx(log x) = 1/x.",
+    "Logarithmic differentiation is a powerful technique to differentiate functions of the form f(x) = [u(x)]^(v(x)). Here both f(x) and u(x) need to be positive for this technique to make sense."
+  ],
+  "exercises": [
+    {
+      "id": "5.1",
+      "title": "Exercise 5.1",
+      "topic": "Continuity",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Prove that the function f(x) = 5x - 3 is continuous at x = 0, at x = -3 and at x = 5.",
+          "type": "proof"
+        },
+        {
+          "qno": 2,
+          "question": "Examine the continuity of the function f(x) = 2x^2 - 1 at x = 3.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Examine the following functions for continuity.\n(a) f(x) = x - 5\n(b) f(x) = 1/(x - 5), x != 5\n(c) f(x) = (x^2 - 25)/(x + 5), x != -5\n(d) f(x) = |x - 5|",
+          "type": "multi_part"
+        },
+        {
+          "qno": 4,
+          "question": "Prove that the function f(x) = x^n is continuous at x = n, where n is a positive integer.",
+          "type": "proof"
+        },
+        {
+          "qno": 5,
+          "question": "Is the function f defined by f(x) = { x, if x <= 1; 5, if x > 1 } continuous at x = 0? At x = 1? At x = 2?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Find all points of discontinuity of f, where f is defined by f(x) = { 2x + 3, if x <= 2; 2x - 3, if x > 2 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Find all points of discontinuity of f, where f is defined by f(x) = { |x| + 3, if x <= -3; -2x, if -3 < x < 3; 6x + 2, if x >= 3 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Find all points of discontinuity of f, where f is defined by f(x) = { |x|/x, if x != 0; 0, if x = 0 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Find all points of discontinuity of f, where f is defined by f(x) = { x/|x|, if x < 0; -1, if x >= 0 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Find all points of discontinuity of f, where f is defined by f(x) = { x + 1, if x >= 1; x^2 + 1, if x < 1 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "Find all points of discontinuity of f, where f is defined by f(x) = { x^3 - 3, if x <= 2; x^2 + 1, if x > 2 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 12,
+          "question": "Find all points of discontinuity of f, where f is defined by f(x) = { x^10 - 1, if x <= 1; x^2, if x > 1 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "Is the function defined by f(x) = { x + 5, if x <= 1; x - 5, if x > 1 } a continuous function?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 14,
+          "question": "Discuss the continuity of the function f, where f is defined by f(x) = { 3, if 0 <= x <= 1; 4, if 1 < x < 3; 5, if 3 <= x <= 10 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 15,
+          "question": "Discuss the continuity of the function f, where f is defined by f(x) = { 2x, if x < 0; 0, if 0 <= x <= 1; 4x, if x > 1 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 16,
+          "question": "Discuss the continuity of the function f, where f is defined by f(x) = { -2, if x <= -1; 2x, if -1 < x <= 1; 2, if x > 1 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 17,
+          "question": "Find the relationship between a and b so that the function f defined by f(x) = { ax + 1, if x <= 3; bx + 3, if x > 3 } is continuous at x = 3.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 18,
+          "question": "For what value of lambda is the function defined by f(x) = { lambda(x^2 - 2x), if x <= 0; 4x + 1, if x > 0 } continuous at x = 0? What about continuity at x = 1?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 19,
+          "question": "Show that the function defined by g(x) = x - [x] is discontinuous at all integral points. Here [x] denotes the greatest integer less than or equal to x.",
+          "type": "proof"
+        },
+        {
+          "qno": 20,
+          "question": "Is the function defined by f(x) = x^2 - sin x + 5 continuous at x = pi?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 21,
+          "question": "Discuss the continuity of the following functions:\n(a) f(x) = sin x + cos x\n(b) f(x) = sin x - cos x\n(c) f(x) = sin x . cos x",
+          "type": "multi_part"
+        },
+        {
+          "qno": 22,
+          "question": "Discuss the continuity of the cosine, cosecant, secant and cotangent functions.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 23,
+          "question": "Find all points of discontinuity of f, where f(x) = { sin x / x, if x < 0; x + 1, if x >= 0 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 24,
+          "question": "Determine if f defined by f(x) = { x^2 sin(1/x), if x != 0; 0, if x = 0 } is a continuous function?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 25,
+          "question": "Examine the continuity of f, where f is defined by f(x) = { sin x - cos x, if x != 0; -1, if x = 0 }",
+          "type": "short_answer"
+        },
+        {
+          "qno": 26,
+          "question": "Find the values of k so that the function f is continuous at the indicated point: f(x) = { k cos x / (pi - 2x), if x != pi/2; 3, if x = pi/2 } at x = pi/2.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 27,
+          "question": "Find the values of k so that the function f is continuous at the indicated point: f(x) = { kx^2, if x <= 2; 3, if x > 2 } at x = 2.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 28,
+          "question": "Find the values of k so that the function f is continuous at the indicated point: f(x) = { kx + 1, if x <= pi; cos x, if x > pi } at x = pi.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 29,
+          "question": "Find the values of k so that the function f is continuous at the indicated point: f(x) = { kx + 1, if x <= 5; 3x - 5, if x > 5 } at x = 5.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 30,
+          "question": "Find the values of a and b such that the function defined by f(x) = { 5, if x <= 2; ax + b, if 2 < x < 10; 21, if x >= 10 } is a continuous function.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 31,
+          "question": "Show that the function defined by f(x) = cos(x^2) is a continuous function.",
+          "type": "proof"
+        },
+        {
+          "qno": 32,
+          "question": "Show that the function defined by f(x) = |cos x| is a continuous function.",
+          "type": "proof"
+        },
+        {
+          "qno": 33,
+          "question": "Examine that sin |x| is a continuous function.",
+          "type": "proof"
+        },
+        {
+          "qno": 34,
+          "question": "Find all the points of discontinuity of f defined by f(x) = |x| - |x + 1|.",
+          "type": "short_answer"
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Exercise 5.2",
+      "topic": "Differentiability and Chain Rule",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Differentiate with respect to x: sin(x^2 + 5)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Differentiate with respect to x: cos(sin x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Differentiate with respect to x: sin(ax + b)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate with respect to x: sec(tan(sqrt(x)))",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Differentiate with respect to x: sin(ax + b)/cos(cx + d)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Differentiate with respect to x: cos x^3 . sin^2(x^5)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Differentiate with respect to x: 2 sqrt(cot(x^2))",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Differentiate with respect to x: cos(sqrt(x))",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Prove that the function f given by f(x) = |x - 1|, x in R is not differentiable at x = 1.",
+          "type": "proof"
+        },
+        {
+          "qno": 10,
+          "question": "Prove that the greatest integer function defined by f(x) = [x], 0 < x < 3 is not differentiable at x = 1 and x = 2.",
+          "type": "proof"
+        }
+      ]
+    },
+    {
+      "id": "5.3",
+      "title": "Exercise 5.3",
+      "topic": "Implicit Differentiation and Inverse Trigonometric Derivatives",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find dy/dx: 2x + 3y = sin x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Find dy/dx: 2x + 3y = sin y",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Find dy/dx: ax + by^2 = cos y",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Find dy/dx: xy + y^2 = tan x + y",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find dy/dx: x^2 + xy + y^2 = 100",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Find dy/dx: x^3 + x^2y + xy^2 + y^3 = 81",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Find dy/dx: sin^2 y + cos xy = kappa",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Find dy/dx: sin^2 x + cos^2 y = 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Find dy/dx: y = sin^(-1)(2x/(1 + x^2))",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Find dy/dx: y = tan^(-1)((3x - x^3)/(1 - 3x^2)), -1/sqrt(3) < x < 1/sqrt(3)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "Find dy/dx: y = cos^(-1)((1 - x^2)/(1 + x^2)), 0 < x < 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 12,
+          "question": "Find dy/dx: y = sin^(-1)((1 - x^2)/(1 + x^2)), 0 < x < 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "Find dy/dx: y = cos^(-1)(2x/(1 + x^2)), -1 < x < 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 14,
+          "question": "Find dy/dx: y = sin^(-1)(2x sqrt(1 - x^2)), -1/sqrt(2) < x < 1/sqrt(2)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 15,
+          "question": "Find dy/dx: y = sec^(-1)(1/(2x^2 - 1)), 0 < x < 1/sqrt(2)",
+          "type": "short_answer"
+        }
+      ]
+    },
+    {
+      "id": "5.4",
+      "title": "Exercise 5.4",
+      "topic": "Exponential and Logarithmic Derivatives",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Differentiate w.r.t. x: e^x / sin x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Differentiate w.r.t. x: e^(sin^(-1) x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Differentiate w.r.t. x: e^(x^3)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate w.r.t. x: sin(tan^(-1) e^(-x))",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Differentiate w.r.t. x: log(cos e^x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Differentiate w.r.t. x: e^x + e^(x^2) + ... + e^(x^5)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Differentiate w.r.t. x: sqrt(e^(sqrt(x))), x > 0",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Differentiate w.r.t. x: log(log x), x > 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Differentiate w.r.t. x: cos x / log x, x > 0",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Differentiate w.r.t. x: cos(log x + e^x), x > 0",
+          "type": "short_answer"
+        }
+      ]
+    },
+    {
+      "id": "5.5",
+      "title": "Exercise 5.5",
+      "topic": "Logarithmic Differentiation",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Differentiate w.r.t. x: cos x . cos 2x . cos 3x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Differentiate w.r.t. x: sqrt((x - 1)(x - 2)/((x - 3)(x - 4)(x - 5)))",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Differentiate w.r.t. x: (log x)^(cos x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate w.r.t. x: x^x - 2^(sin x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Differentiate w.r.t. x: (x + 3)^2 . (x + 4)^3 . (x + 5)^4",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Differentiate w.r.t. x: (x + 1/x)^x + x^(1 + 1/x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Differentiate w.r.t. x: (log x)^x + x^(log x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Differentiate w.r.t. x: (sin x)^x + sin^(-1) sqrt(x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Differentiate w.r.t. x: x^(sin x) + (sin x)^(cos x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Differentiate w.r.t. x: x^(x cos x) + (x^2 + 1)/(x^2 - 1)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "Differentiate w.r.t. x: (x cos x)^x + (x sin x)^(1/x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 12,
+          "question": "Find dy/dx: x^y + y^x = 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "Find dy/dx: y^x = x^y",
+          "type": "short_answer"
+        },
+        {
+          "qno": 14,
+          "question": "Find dy/dx: (cos x)^y = (cos y)^x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 15,
+          "question": "Find dy/dx: xy = e^(x - y)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 16,
+          "question": "Find the derivative of the function given by f(x) = (1 + x)(1 + x^2)(1 + x^4)(1 + x^8) and hence find f'(1).",
+          "type": "short_answer"
+        },
+        {
+          "qno": 17,
+          "question": "Differentiate (x^2 - 5x + 8)(x^3 + 7x + 9) in three ways mentioned below:\n(i) by using product rule\n(ii) by expanding the product to obtain a single polynomial\n(iii) by logarithmic differentiation\nDo they all give the same answer?",
+          "type": "multi_part"
+        },
+        {
+          "qno": 18,
+          "question": "If u, v and w are functions of x, then show that d/dx(u . v . w) = (du/dx) v . w + u . (dv/dx) . w + u . v . (dw/dx) in two ways - first by repeated application of product rule, second by logarithmic differentiation.",
+          "type": "proof"
+        }
+      ]
+    },
+    {
+      "id": "5.6",
+      "title": "Exercise 5.6",
+      "topic": "Parametric Differentiation",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "If x and y are connected parametrically, find dy/dx without eliminating the parameter: x = 2at^2, y = at^4",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Find dy/dx: x = a cos theta, y = b cos theta",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Find dy/dx: x = sin t, y = cos 2t",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Find dy/dx: x = 4t, y = 4/t",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find dy/dx: x = cos theta - cos 2theta, y = sin theta - sin 2theta",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Find dy/dx: x = a(theta - sin theta), y = a(1 + cos theta)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Find dy/dx: x = sin^3 t / sqrt(cos 2t), y = cos^3 t / sqrt(cos 2t)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Find dy/dx: x = a(cos t + log tan(t/2)), y = a sin t",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Find dy/dx: x = a sec theta, y = b tan theta",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Find dy/dx: x = a(cos theta + theta sin theta), y = a(sin theta - theta cos theta)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "If x = sqrt(a^(sin^(-1) t)), y = sqrt(a^(cos^(-1) t)), show that dy/dx = -y/x.",
+          "type": "proof"
+        }
+      ]
+    },
+    {
+      "id": "5.7",
+      "title": "Exercise 5.7",
+      "topic": "Second Order Derivatives",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the second order derivative of: x^2 + 3x + 2",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Find the second order derivative of: x^20",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Find the second order derivative of: x . cos x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Find the second order derivative of: log x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find the second order derivative of: x^3 log x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Find the second order derivative of: e^x sin 5x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Find the second order derivative of: e^(6x) cos 3x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Find the second order derivative of: tan^(-1) x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Find the second order derivative of: log(log x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Find the second order derivative of: sin(log x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "If y = 5 cos x - 3 sin x, prove that d^2y/dx^2 + y = 0.",
+          "type": "proof"
+        },
+        {
+          "qno": 12,
+          "question": "If y = cos^(-1) x, find d^2y/dx^2 in terms of y alone.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "If y = 3 cos(log x) + 4 sin(log x), show that x^2 y_2 + x y_1 + y = 0.",
+          "type": "proof"
+        },
+        {
+          "qno": 14,
+          "question": "If y = Ae^(mx) + Be^(nx), show that d^2y/dx^2 - (m + n) dy/dx + mny = 0.",
+          "type": "proof"
+        },
+        {
+          "qno": 15,
+          "question": "If y = 500e^(7x) + 600e^(-7x), show that d^2y/dx^2 = 49y.",
+          "type": "proof"
+        },
+        {
+          "qno": 16,
+          "question": "If e^y(x + 1) = 1, show that d^2y/dx^2 = (dy/dx)^2.",
+          "type": "proof"
+        },
+        {
+          "qno": 17,
+          "question": "If y = (tan^(-1) x)^2, show that (x^2 + 1)^2 y_2 + 2x(x^2 + 1) y_1 = 2.",
+          "type": "proof"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 5",
+      "topic": "Mixed Problems",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Differentiate w.r.t. x: (3x^2 - 9x + 5)^9",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Differentiate w.r.t. x: sin^3 x + cos^6 x",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "Differentiate w.r.t. x: (5x)^(3 cos 2x)",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate w.r.t. x: sin^(-1)(x sqrt(x)), 0 <= x <= 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Differentiate w.r.t. x: cos^(-1)(x/2) / sqrt(2x + 7), -2 < x < 2",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Differentiate w.r.t. x: cot^(-1)[(sqrt(1 + sin x) + sqrt(1 - sin x))/(sqrt(1 + sin x) - sqrt(1 - sin x))], 0 < x < pi/2",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "Differentiate w.r.t. x: (log x)^(log x), x > 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Differentiate w.r.t. x: cos(a cos x + b sin x), for some constant a and b.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 9,
+          "question": "Differentiate w.r.t. x: (sin x - cos x)^(sin x - cos x), pi/4 < x < 3pi/4",
+          "type": "short_answer"
+        },
+        {
+          "qno": 10,
+          "question": "Differentiate w.r.t. x: x^x + x^a + a^x + a^a, for some fixed a > 0 and x > 0",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "Differentiate w.r.t. x: x^(x^2 - 3) + (x - 3)^(x^2), for x > 3",
+          "type": "short_answer"
+        },
+        {
+          "qno": 12,
+          "question": "Find dy/dx, if y = 12(1 - cos t), x = 10(t - sin t), -pi/2 < t < pi/2",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "Find dy/dx, if y = sin^(-1) x + sin^(-1) sqrt(1 - x^2), 0 < x < 1",
+          "type": "short_answer"
+        },
+        {
+          "qno": 14,
+          "question": "If x sqrt(1 + y) + y sqrt(1 + x) = 0, for -1 < x < 1, prove that dy/dx = -1/(1 + x)^2.",
+          "type": "proof"
+        },
+        {
+          "qno": 15,
+          "question": "If (x - a)^2 + (y - b)^2 = c^2, for some c > 0, prove that [1 + (dy/dx)^2]^(3/2) / (d^2y/dx^2) is a constant independent of a and b.",
+          "type": "proof"
+        },
+        {
+          "qno": 16,
+          "question": "If cos y = x cos(a + y), with cos a != +/-1, prove that dy/dx = cos^2(a + y)/sin a.",
+          "type": "proof"
+        },
+        {
+          "qno": 17,
+          "question": "If x = a(cos t + t sin t) and y = a(sin t - t cos t), find d^2y/dx^2.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 18,
+          "question": "If f(x) = |x|^3, show that f''(x) exists for all real x and find it.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 19,
+          "question": "Using the fact that sin(A + B) = sin A cos B + cos A sin B and the differentiation, obtain the sum formula for cosines.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 20,
+          "question": "Does there exist a function which is continuous everywhere but not differentiable at exactly two points? Justify your answer.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 21,
+          "question": "If y = | f(x) g(x) h(x) ; l m n ; a b c | (determinant), prove that dy/dx = | f'(x) g'(x) h'(x) ; l m n ; a b c |.",
+          "type": "proof"
+        },
+        {
+          "qno": 22,
+          "question": "If y = e^(a cos^(-1) x), -1 <= x <= 1, show that (1 - x^2) d^2y/dx^2 - x dy/dx - a^2 y = 0.",
+          "type": "proof"
+        }
+      ]
+    }
+  ]
+}

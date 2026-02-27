@@ -1,0 +1,500 @@
+{
+  "chapter": 11,
+  "title": "Three Dimensional Geometry",
+  "quote": "The moving power of mathematical invention is not reasoning but imagination. -- A. DEMORGAN",
+  "sections": [
+    {
+      "id": "11.1",
+      "title": "Introduction",
+      "concepts": [
+        "Use of vector algebra in three dimensional geometry makes the study simple and elegant",
+        "Direction cosines and direction ratios of a line joining two points",
+        "Equations of lines and planes in space under different conditions",
+        "Angle between two lines, two planes, a line and a plane",
+        "Shortest distance between two skew lines",
+        "Distance of a point from a plane",
+        "Results obtained in vector form and translated to Cartesian form"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "In Class XI, Analytical Geometry in two dimensions and introduction to three dimensional geometry used Cartesian methods only",
+        "This chapter uses vector algebra for 3D geometry"
+      ]
+    },
+    {
+      "id": "11.2",
+      "title": "Direction Cosines and Direction Ratios of a Line",
+      "concepts": [
+        "Direction angles: angles alpha, beta, gamma that a directed line L makes with x, y, z axes",
+        "Direction cosines: cos(alpha), cos(beta), cos(gamma) denoted by l, m, n",
+        "Reversing direction of L replaces angles by their supplements, reversing signs of direction cosines",
+        "A line in space has two sets of direction cosines (opposite directions)",
+        "For a unique set, the line must be taken as a directed line",
+        "Direction ratios: any three numbers proportional to direction cosines"
+      ],
+      "definitions": [
+        {
+          "term": "Direction cosines",
+          "definition": "If a directed line L passes through the origin making angles alpha, beta, gamma with x, y, z axes respectively, then cos(alpha), cos(beta), cos(gamma) are called direction cosines, denoted by l, m, n"
+        },
+        {
+          "term": "Direction ratios",
+          "definition": "Any three numbers a, b, c which are proportional to the direction cosines l, m, n of a line. If l, m, n are direction cosines, then a = lambda*l, b = lambda*m, c = lambda*n for any nonzero lambda in R"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Direction cosines identity",
+          "formula": "l^2 + m^2 + n^2 = 1",
+          "description": "Sum of squares of direction cosines equals 1"
+        },
+        {
+          "name": "Relation between direction ratios and direction cosines",
+          "formula": "l/a = m/b = n/c = k, where k = +/- 1/sqrt(a^2 + b^2 + c^2)",
+          "description": "Connecting direction ratios (a,b,c) to direction cosines (l,m,n)"
+        },
+        {
+          "name": "Direction cosines from direction ratios",
+          "formula": "l = +/- a/sqrt(a^2+b^2+c^2), m = +/- b/sqrt(a^2+b^2+c^2), n = +/- c/sqrt(a^2+b^2+c^2)",
+          "description": "Direction cosines computed from direction ratios"
+        },
+        {
+          "name": "Direction cosines of line joining two points",
+          "formula": "l = (x2-x1)/PQ, m = (y2-y1)/PQ, n = (z2-z1)/PQ where PQ = sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)",
+          "description": "Direction cosines of line segment joining P(x1,y1,z1) and Q(x2,y2,z2)"
+        },
+        {
+          "name": "Direction ratios of line joining two points",
+          "formula": "x2-x1, y2-y1, z2-z1 (or x1-x2, y1-y2, z1-z2)",
+          "description": "Direction ratios of line segment from P(x1,y1,z1) to Q(x2,y2,z2)"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "For any line, if a, b, c are direction ratios, then ka, kb, kc (k != 0) are also direction ratios",
+        "Any two sets of direction ratios of a line are proportional",
+        "There are infinitely many sets of direction ratios for any line",
+        "Two parallel lines have the same set of direction cosines",
+        "Direction cosines of x-axis: 1, 0, 0; y-axis: 0, 1, 0; z-axis: 0, 0, 1"
+      ],
+      "subsections": [
+        {
+          "id": "11.2.1",
+          "title": "Direction cosines of a line passing through two points",
+          "description": "Since one and only one line passes through two given points, we can determine the direction cosines of a line passing through points P(x1,y1,z1) and Q(x2,y2,z2)"
+        }
+      ],
+      "examples": [
+        {
+          "number": 1,
+          "statement": "If a line makes angle 90 deg, 60 deg and 30 deg with the positive direction of x, y and z-axis respectively, find its direction cosines.",
+          "answer": "l = cos 90 = 0, m = cos 60 = 1/2, n = cos 30 = sqrt(3)/2"
+        },
+        {
+          "number": 2,
+          "statement": "If a line has direction ratios 2, -1, -2, determine its direction cosines.",
+          "answer": "2/3, -1/3, -2/3"
+        },
+        {
+          "number": 3,
+          "statement": "Find the direction cosines of the line passing through the two points (-2, 4, -5) and (1, 2, 3).",
+          "answer": "3/sqrt(77), -2/sqrt(77), 8/sqrt(77)"
+        },
+        {
+          "number": 4,
+          "statement": "Find the direction cosines of x, y and z-axis.",
+          "answer": "x-axis: 1,0,0; y-axis: 0,1,0; z-axis: 0,0,1"
+        },
+        {
+          "number": 5,
+          "statement": "Show that the points A(2, 3, -4), B(1, -2, 3) and C(3, 8, -11) are collinear.",
+          "answer": "Direction ratios of AB are -1, -5, 7 and of BC are 2, 10, -14 which are proportional, hence collinear."
+        }
+      ]
+    },
+    {
+      "id": "11.3",
+      "title": "Equation of a Line in Space",
+      "concepts": [
+        "A line is uniquely determined if (i) it passes through a given point and has given direction, or (ii) it passes through two given points",
+        "Vector equation of a line through a point parallel to a given vector",
+        "Cartesian equation of a line (symmetric form)",
+        "Parametric equations of a line",
+        "Equation of line passing through two given points"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Vector equation of a line (point + direction)",
+          "formula": "r = a + lambda*b",
+          "description": "Line through point with position vector a, parallel to vector b. lambda is a real parameter."
+        },
+        {
+          "name": "Cartesian equation of a line (point + direction ratios)",
+          "formula": "(x - x1)/a = (y - y1)/b = (z - z1)/c",
+          "description": "Line through (x1,y1,z1) with direction ratios a, b, c"
+        },
+        {
+          "name": "Cartesian equation using direction cosines",
+          "formula": "(x - x1)/l = (y - y1)/m = (z - z1)/n",
+          "description": "Line through (x1,y1,z1) with direction cosines l, m, n"
+        },
+        {
+          "name": "Parametric equations of a line",
+          "formula": "x = x1 + lambda*a, y = y1 + lambda*b, z = z1 + lambda*c",
+          "description": "Parametric form of line through (x1,y1,z1) with direction ratios a, b, c"
+        },
+        {
+          "name": "Vector equation of a line through two points",
+          "formula": "r = a + lambda*(b - a)",
+          "description": "Line through two points with position vectors a and b"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "If b = a*i_hat + b*j_hat + c*k_hat, then a, b, c are direction ratios of the line and conversely",
+        "b should not be confused with |b|",
+        "Derivation of Cartesian form from vector form: eliminate lambda from parametric equations"
+      ],
+      "subsections": [
+        {
+          "id": "11.3.1",
+          "title": "Equation of a line through a given point and parallel to a given vector b",
+          "description": "Let a be the position vector of point A. Line through A parallel to b has vector equation r = a + lambda*b"
+        },
+        {
+          "id": "11.3.2",
+          "title": "Equation of a line passing through two given points",
+          "description": "Line through two points with position vectors a and b has equation r = a + lambda*(b - a)"
+        }
+      ],
+      "examples": [
+        {
+          "number": 6,
+          "statement": "Find the vector and the Cartesian equations of the line through the point (5, 2, -4) and which is parallel to the vector 3i_hat + 2j_hat - 8k_hat.",
+          "answer": "Vector: r = 5i_hat + 2j_hat - 4k_hat + lambda(3i_hat + 2j_hat - 8k_hat). Cartesian: (x-5)/3 = (y-2)/2 = (z+4)/(-8)"
+        }
+      ]
+    },
+    {
+      "id": "11.4",
+      "title": "Angle between Two Lines",
+      "concepts": [
+        "Angle between two lines using direction ratios",
+        "Angle between two lines using direction cosines",
+        "Angle between lines in vector form",
+        "Conditions for perpendicularity and parallelism of two lines"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Angle between two lines (direction ratios)",
+          "formula": "cos(theta) = |a1*a2 + b1*b2 + c1*c2| / (sqrt(a1^2+b1^2+c1^2) * sqrt(a2^2+b2^2+c2^2))",
+          "description": "Angle between lines with direction ratios (a1,b1,c1) and (a2,b2,c2)"
+        },
+        {
+          "name": "Angle between two lines (direction cosines)",
+          "formula": "cos(theta) = |l1*l2 + m1*m2 + n1*n2|",
+          "description": "Angle between lines with direction cosines (l1,m1,n1) and (l2,m2,n2), since l^2+m^2+n^2=1"
+        },
+        {
+          "name": "sin(theta) using direction ratios",
+          "formula": "sin(theta) = sqrt((a1*b2-a2*b1)^2 + (b1*c2-b2*c1)^2 + (c1*a2-c2*a1)^2) / (sqrt(a1^2+b1^2+c1^2) * sqrt(a2^2+b2^2+c2^2))",
+          "description": "Sine of angle between two lines"
+        },
+        {
+          "name": "sin(theta) using direction cosines",
+          "formula": "sin(theta) = sqrt((l1*m2-l2*m1)^2 + (m1*n2-m2*n1)^2 + (n1*l2-n2*l1)^2)",
+          "description": "Sine of angle between two lines using direction cosines"
+        },
+        {
+          "name": "Angle between lines in vector form",
+          "formula": "cos(theta) = |b1 . b2| / (|b1| * |b2|)",
+          "description": "For lines r = a1 + lambda*b1 and r = a2 + mu*b2"
+        },
+        {
+          "name": "Condition for perpendicular lines (direction ratios)",
+          "formula": "a1*a2 + b1*b2 + c1*c2 = 0",
+          "description": "Two lines are perpendicular when theta = 90 deg"
+        },
+        {
+          "name": "Condition for parallel lines (direction ratios)",
+          "formula": "a1/a2 = b1/b2 = c1/c2",
+          "description": "Two lines are parallel when theta = 0"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "If lines do not pass through origin, take parallel lines through origin to find angle",
+        "The angle theta is always taken as the acute angle between the lines"
+      ],
+      "examples": [
+        {
+          "number": 7,
+          "statement": "Find the angle between the pair of lines r = 3i_hat + 2j_hat - 4k_hat + lambda(i_hat + 2j_hat + 2k_hat) and r = 5i_hat - 2j_hat + mu(3i_hat + 2j_hat + 6k_hat).",
+          "answer": "cos(theta) = |(1)(3)+(2)(2)+(2)(6)| / (sqrt(1+4+4)*sqrt(9+4+36)) = 19/21, so theta = cos^(-1)(19/21)"
+        },
+        {
+          "number": 8,
+          "statement": "Find the angle between the pair of lines (x+3)/3 = (y-1)/5 = (z+3)/4 and (x+1)/1 = (y-4)/1 = (z-5)/2.",
+          "answer": "cos(theta) = |3+5+8|/(sqrt(50)*sqrt(6)) = 16/(5*sqrt(2)*sqrt(6)) = 8*sqrt(3)/15, so theta = cos^(-1)(8*sqrt(3)/15)"
+        }
+      ]
+    },
+    {
+      "id": "11.5",
+      "title": "Shortest Distance between Two Lines",
+      "concepts": [
+        "Shortest distance between intersecting lines is zero",
+        "Shortest distance between parallel lines is the perpendicular distance",
+        "Skew lines: lines that are neither parallel nor intersecting (non-coplanar)",
+        "The shortest distance between skew lines is perpendicular to both lines"
+      ],
+      "definitions": [
+        {
+          "term": "Skew lines",
+          "definition": "Lines in space which are neither intersecting nor parallel. Such pair of lines are non coplanar."
+        },
+        {
+          "term": "Shortest distance between two lines",
+          "definition": "The join of a point in one line with one point on the other line so that the length of the segment so obtained is the smallest."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Shortest distance between skew lines (vector form)",
+          "formula": "d = |(b1 x b2) . (a2 - a1)| / |b1 x b2|",
+          "description": "For lines r = a1 + lambda*b1 and r = a2 + mu*b2"
+        },
+        {
+          "name": "Shortest distance between skew lines (Cartesian form)",
+          "formula": "d = |determinant of [[x2-x1, y2-y1, z2-z1], [a1, b1, c1], [a2, b2, c2]]| / sqrt((b1*c2-b2*c1)^2 + (c1*a2-c2*a1)^2 + (a1*b2-a2*b1)^2)",
+          "description": "For lines (x-x1)/a1 = (y-y1)/b1 = (z-z1)/c1 and (x-x2)/a2 = (y-y2)/b2 = (z-z2)/c2"
+        },
+        {
+          "name": "Distance between parallel lines",
+          "formula": "d = |b x (a2 - a1)| / |b|",
+          "description": "For parallel lines r = a1 + lambda*b and r = a2 + mu*b"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "For skew lines, the line of shortest distance is perpendicular to both lines",
+        "The unit vector along the shortest distance is n_hat = (b1 x b2)/|b1 x b2|",
+        "If two lines intersect, the shortest distance is zero",
+        "If two lines are parallel, they are coplanar"
+      ],
+      "subsections": [
+        {
+          "id": "11.5.1",
+          "title": "Distance between two skew lines",
+          "description": "Derivation of shortest distance formula using cross product and projection"
+        },
+        {
+          "id": "11.5.2",
+          "title": "Distance between parallel lines",
+          "description": "For parallel lines, the distance equals |b x (a2-a1)|/|b|"
+        }
+      ],
+      "examples": [
+        {
+          "number": 9,
+          "statement": "Find the shortest distance between the lines l1 and l2 whose vector equations are r = i_hat + j_hat + lambda(2i_hat - j_hat + k_hat) and r = 2i_hat + j_hat - k_hat + mu(3i_hat - 5j_hat + 2k_hat).",
+          "answer": "a2 - a1 = i_hat - k_hat, b1 x b2 = 3i_hat - j_hat - 7k_hat, |b1 x b2| = sqrt(59), d = |3-0+7|/sqrt(59) = 10/sqrt(59)"
+        },
+        {
+          "number": 10,
+          "statement": "Find the distance between the lines l1 and l2 given by r = i_hat + 2j_hat - 4k_hat + lambda(2i_hat + 3j_hat + 6k_hat) and r = 3i_hat + 3j_hat - 5k_hat + mu(2i_hat + 3j_hat + 6k_hat).",
+          "answer": "Lines are parallel. a2 - a1 = 2i_hat + j_hat - k_hat, b = 2i_hat + 3j_hat + 6k_hat. d = |-9i_hat + 14j_hat - 4k_hat|/sqrt(49) = sqrt(293)/7"
+        }
+      ]
+    }
+  ],
+  "summary": [
+    "Direction cosines of a line are the cosines of the angles made by the line with the positive directions of the coordinate axes.",
+    "If l, m, n are the direction cosines of a line, then l^2 + m^2 + n^2 = 1.",
+    "Direction cosines of a line joining two points P(x1,y1,z1) and Q(x2,y2,z2) are (x2-x1)/PQ, (y2-y1)/PQ, (z2-z1)/PQ where PQ = sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2).",
+    "Direction ratios of a line are the numbers which are proportional to the direction cosines of a line.",
+    "If l, m, n are the direction cosines and a, b, c are the direction ratios of a line then l = a/sqrt(a^2+b^2+c^2), m = b/sqrt(a^2+b^2+c^2), n = c/sqrt(a^2+b^2+c^2).",
+    "Skew lines are lines in space which are neither parallel nor intersecting. They lie in different planes.",
+    "Angle between skew lines is the angle between two intersecting lines drawn from any point (preferably through the origin) parallel to each of the skew lines.",
+    "If l1, m1, n1 and l2, m2, n2 are the direction cosines of two lines and theta is the acute angle between them, then cos(theta) = |l1*l2 + m1*m2 + n1*n2|.",
+    "If a1, b1, c1 and a2, b2, c2 are the direction ratios of two lines and theta is the acute angle between them, then cos(theta) = |a1*a2 + b1*b2 + c1*c2| / (sqrt(a1^2+b1^2+c1^2) * sqrt(a2^2+b2^2+c2^2)).",
+    "Vector equation of a line through a point with position vector a and parallel to vector b is r = a + lambda*b.",
+    "Equation of a line through point (x1,y1,z1) having direction cosines l, m, n is (x-x1)/l = (y-y1)/m = (z-z1)/n.",
+    "The vector equation of a line passing through two points with position vectors a and b is r = a + lambda*(b - a).",
+    "If theta is the acute angle between r = a1 + lambda*b1 and r = a2 + mu*b2, then cos(theta) = |b1 . b2| / (|b1| * |b2|).",
+    "If (x-x1)/l1 = (y-y1)/m1 = (z-z1)/n1 and (x-x2)/l2 = (y-y2)/m2 = (z-z2)/n2 are the equations of two lines, then the acute angle between them is given by cos(theta) = |l1*l2 + m1*m2 + n1*n2|.",
+    "Shortest distance between two skew lines is the line segment perpendicular to both the lines.",
+    "Shortest distance between r = a1 + lambda*b1 and r = a2 + mu*b2 is |(b1 x b2) . (a2 - a1)| / |b1 x b2|.",
+    "Shortest distance between lines (x-x1)/a1 = (y-y1)/b1 = (z-z1)/c1 and (x-x2)/a2 = (y-y2)/b2 = (z-z2)/c2 is |det[[x2-x1,y2-y1,z2-z1],[a1,b1,c1],[a2,b2,c2]]| / sqrt((b1*c2-b2*c1)^2+(c1*a2-c2*a1)^2+(a1*b2-a2*b1)^2).",
+    "Distance between parallel lines r = a1 + lambda*b and r = a2 + mu*b is |b x (a2 - a1)| / |b|."
+  ],
+  "exercises": [
+    {
+      "id": "11.1",
+      "title": "Exercise 11.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "If a line makes angles 90 deg, 135 deg, 45 deg with the x, y and z-axes respectively, find its direction cosines.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Find the direction cosines of a line which makes equal angles with the coordinate axes.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "If a line has the direction ratios -18, 12, -4, then what are its direction cosines?",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Show that the points (2, 3, 4), (-1, -2, 1), (5, 8, 7) are collinear.",
+          "type": "proof"
+        },
+        {
+          "qno": 5,
+          "question": "Find the direction cosines of the sides of the triangle whose vertices are (3, 5, -4), (-1, 1, 2) and (-5, -5, -2).",
+          "type": "short_answer"
+        }
+      ]
+    },
+    {
+      "id": "11.2",
+      "title": "Exercise 11.2",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Show that the three lines with direction cosines 12/13, -3/13, -4/13; 4/13, 12/13, 3/13; 3/13, -4/13, 12/13 are mutually perpendicular.",
+          "type": "proof"
+        },
+        {
+          "qno": 2,
+          "question": "Show that the line through the points (1, -1, 2), (3, 4, -2) is perpendicular to the line through the points (0, 3, 2) and (3, 5, 6).",
+          "type": "proof"
+        },
+        {
+          "qno": 3,
+          "question": "Show that the line through the points (4, 7, 8), (2, 3, 4) is parallel to the line through the points (-1, -2, 1), (1, 2, 5).",
+          "type": "proof"
+        },
+        {
+          "qno": 4,
+          "question": "Find the equation of the line which passes through the point (1, 2, 3) and is parallel to the vector 3i_hat + 2j_hat - 2k_hat.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find the equation of the line in vector and in cartesian form that passes through the point with position vector 2i_hat - j_hat + 4k_hat and is in the direction i_hat + 2j_hat - k_hat.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 6,
+          "question": "Find the cartesian equation of the line which passes through the point (-2, 4, -5) and parallel to the line given by (x+3)/3 = (y-4)/5 = (z+8)/6.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 7,
+          "question": "The cartesian equation of a line is (x-5)/3 = (y+4)/7 = (z-6)/2. Write its vector form.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 8,
+          "question": "Find the angle between the following pairs of lines:",
+          "type": "multi_part",
+          "parts": [
+            {
+              "part": "(i)",
+              "question": "r = 2i_hat - 5j_hat + k_hat + lambda(3i_hat + 2j_hat + 6k_hat) and r = 7i_hat - 6k_hat + mu(i_hat + 2j_hat + 2k_hat)"
+            },
+            {
+              "part": "(ii)",
+              "question": "r = 3i_hat + j_hat - 2k_hat + lambda(i_hat - j_hat - 2k_hat) and r = 2i_hat - j_hat - 56k_hat + mu(3i_hat - 5j_hat - 4k_hat)"
+            }
+          ]
+        },
+        {
+          "qno": 9,
+          "question": "Find the angle between the following pair of lines:",
+          "type": "multi_part",
+          "parts": [
+            {
+              "part": "(i)",
+              "question": "(x-2)/2 = (y-1)/5 = (z+3)/(-3) and (x+2)/(-1) = (y-4)/8 = (z-5)/4"
+            },
+            {
+              "part": "(ii)",
+              "question": "x/2 = y/2 = z/1 and (x-5)/4 = (y-2)/1 = (z-3)/8"
+            }
+          ]
+        },
+        {
+          "qno": 10,
+          "question": "Find the values of p so that the lines (1-x)/3 = (7y-14)/(2p) = (z-3)/2 and (7-7x)/(3p) = (y-5)/1 = (6-z)/5 are at right angles.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 11,
+          "question": "Show that the lines (x-5)/7 = (y+2)/(-5) = z/1 and x/1 = y/2 = z/3 are perpendicular to each other.",
+          "type": "proof"
+        },
+        {
+          "qno": 12,
+          "question": "Find the shortest distance between the lines r = (i_hat + 2j_hat + k_hat) + lambda(i_hat - j_hat + k_hat) and r = 2i_hat - j_hat - k_hat + mu(2i_hat + j_hat + 2k_hat).",
+          "type": "short_answer"
+        },
+        {
+          "qno": 13,
+          "question": "Find the shortest distance between the lines (x+1)/7 = (y+1)/(-6) = (z+1)/1 and (x-3)/1 = (y-5)/(-2) = (z-7)/1.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 14,
+          "question": "Find the shortest distance between the lines whose vector equations are r = (i_hat + 2j_hat + 3k_hat) + lambda(i_hat - 3j_hat + 2k_hat) and r = 4i_hat + 5j_hat + 6k_hat + mu(2i_hat + 3j_hat + k_hat).",
+          "type": "short_answer"
+        },
+        {
+          "qno": 15,
+          "question": "Find the shortest distance between the lines whose vector equations are r = (1-t)i_hat + (t-2)j_hat + (3-2t)k_hat and r = (s+1)i_hat + (2s-1)j_hat - (2s+1)k_hat.",
+          "type": "short_answer"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 11",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the angle between the lines whose direction ratios are a, b, c and b-c, c-a, a-b.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 2,
+          "question": "Find the equation of a line parallel to x-axis and passing through the origin.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 3,
+          "question": "If the lines (x-1)/(-3) = (y-2)/(2k) = (z-3)/2 and (x-1)/(3k) = (y-1)/1 = (z-6)/(-5) are perpendicular, find the value of k.",
+          "type": "short_answer"
+        },
+        {
+          "qno": 4,
+          "question": "Find the shortest distance between lines r = 6i_hat + 2j_hat + 2k_hat + lambda(i_hat - 2j_hat + 2k_hat) and r = -4i_hat - k_hat + mu(3i_hat - 2j_hat - 2k_hat).",
+          "type": "short_answer"
+        },
+        {
+          "qno": 5,
+          "question": "Find the vector equation of the line passing through the point (1, 2, -4) and perpendicular to the two lines: (x-8)/3 = (y+19)/(-16) = (z-10)/7 and (x-15)/3 = (y-29)/8 = (z-5)/(-5).",
+          "type": "short_answer"
+        }
+      ]
+    }
+  ]
+}

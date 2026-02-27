@@ -1,0 +1,407 @@
+{
+  "chapter": 2,
+  "title": "Inverse Trigonometric Functions",
+  "sections": [
+    {
+      "id": "2.1",
+      "title": "Introduction",
+      "concepts": [
+        "The inverse of a function f, denoted by f⁻¹, exists if f is one-one and onto",
+        "Trigonometric functions are not one-one and onto over their natural domains and ranges, hence their inverses do not exist without restricting domains",
+        "By restricting domains and ranges of trigonometric functions, we ensure existence of their inverses",
+        "Inverse trigonometric functions play an important role in calculus for defining many integrals",
+        "The concepts of inverse trigonometric functions are also used in science and engineering"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "If f : X → Y such that f(x) = y is one-one and onto, then we can define a unique function g : Y → X such that g(y) = x, where x ∈ X and y = f(x), y ∈ Y",
+        "The function g is called the inverse of f and is denoted by f⁻¹",
+        "Domain of g = Range of f, and Range of g = Domain of f",
+        "g⁻¹ = (f⁻¹)⁻¹ = f",
+        "(f⁻¹ ∘ f)(x) = f⁻¹(f(x)) = f⁻¹(y) = x",
+        "(f ∘ f⁻¹)(y) = f(f⁻¹(y)) = f(x) = y"
+      ]
+    },
+    {
+      "id": "2.2",
+      "title": "Basic Concepts",
+      "concepts": [
+        "Restricting domains of trigonometric functions to obtain one-one and onto functions",
+        "Principal value branch of inverse trigonometric functions",
+        "Graphs of inverse trigonometric functions obtained by reflecting graphs of trigonometric functions along y = x"
+      ],
+      "definitions": [
+        {
+          "term": "Principal Value Branch",
+          "definition": "The branch of an inverse trigonometric function with a specific restricted range that is conventionally chosen as the standard. For sin⁻¹, the principal value branch has range [−π/2, π/2]."
+        },
+        {
+          "term": "Principal Value",
+          "definition": "The value of an inverse trigonometric function which lies in the range of the principal branch is called the principal value of that inverse trigonometric function."
+        },
+        {
+          "term": "sin⁻¹ (arc sine function)",
+          "definition": "The inverse of sine function with domain [−1, 1] and range [−π/2, π/2]. If sin y = x, then y = sin⁻¹ x."
+        },
+        {
+          "term": "cos⁻¹ (arc cosine function)",
+          "definition": "The inverse of cosine function with domain [−1, 1] and range [0, π]. If cos y = x, then y = cos⁻¹ x."
+        },
+        {
+          "term": "cosec⁻¹ (arc cosecant function)",
+          "definition": "The inverse of cosecant function with domain R − (−1, 1) and range [−π/2, π/2] − {0}."
+        },
+        {
+          "term": "sec⁻¹ (arc secant function)",
+          "definition": "The inverse of secant function with domain R − (−1, 1) and range [0, π] − {π/2}."
+        },
+        {
+          "term": "tan⁻¹ (arc tangent function)",
+          "definition": "The inverse of tangent function with domain R and range (−π/2, π/2)."
+        },
+        {
+          "term": "cot⁻¹ (arc cotangent function)",
+          "definition": "The inverse of cotangent function with domain R and range (0, π)."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Domain and Range of sin⁻¹",
+          "formula": "sin⁻¹ : [−1, 1] → [−π/2, π/2]",
+          "notes": "Principal value branch"
+        },
+        {
+          "name": "Domain and Range of cos⁻¹",
+          "formula": "cos⁻¹ : [−1, 1] → [0, π]",
+          "notes": "Principal value branch"
+        },
+        {
+          "name": "Domain and Range of cosec⁻¹",
+          "formula": "cosec⁻¹ : R − (−1, 1) → [−π/2, π/2] − {0}",
+          "notes": "Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1"
+        },
+        {
+          "name": "Domain and Range of sec⁻¹",
+          "formula": "sec⁻¹ : R − (−1, 1) → [0, π] − {π/2}",
+          "notes": "Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1"
+        },
+        {
+          "name": "Domain and Range of tan⁻¹",
+          "formula": "tan⁻¹ : R → (−π/2, π/2)",
+          "notes": "Principal value branch"
+        },
+        {
+          "name": "Domain and Range of cot⁻¹",
+          "formula": "cot⁻¹ : R → (0, π)",
+          "notes": "Principal value branch"
+        },
+        {
+          "name": "Sine inverse-forward composition",
+          "formula": "sin(sin⁻¹ x) = x, for x ∈ [−1, 1]",
+          "notes": "Composition of function with its inverse"
+        },
+        {
+          "name": "Sine forward-inverse composition",
+          "formula": "sin⁻¹(sin x) = x, for x ∈ [−π/2, π/2]",
+          "notes": "Composition of inverse with function"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "sin⁻¹ x should not be confused with (sin x)⁻¹. In fact (sin x)⁻¹ = 1/sin x, and similarly for other trigonometric functions",
+        "Whenever no branch of an inverse trigonometric function is mentioned, we mean the principal value branch of that function",
+        "The graph of y = sin⁻¹ x can be obtained from the graph of y = sin x by interchanging x and y axes",
+        "The graph of an inverse function is a mirror image (reflection) of the corresponding graph of the original function along the line y = x",
+        "Sine function restricted to [−π/2, π/2] is one-one and onto with range [−1, 1]",
+        "Cosine function restricted to [0, π] is one-one and onto with range [−1, 1]",
+        "Tangent function restricted to (−π/2, π/2) is one-one and onto with range R",
+        "Cotangent function restricted to (0, π) is one-one and onto with range R",
+        "Cosecant function restricted to [−π/2, π/2] − {0} is one-one and onto with range R − (−1, 1)",
+        "Secant function restricted to [0, π] − {π/2} is one-one and onto with range R − (−1, 1)"
+      ]
+    },
+    {
+      "id": "2.3",
+      "title": "Properties of Inverse Trigonometric Functions",
+      "concepts": [
+        "Properties valid within the principal value branches of inverse trigonometric functions",
+        "Some results may not be valid for all values of the domains of inverse trigonometric functions",
+        "Simplification of expressions using inverse trigonometric identities"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Cancellation property (sin)",
+          "formula": "sin(sin⁻¹ x) = x, x ∈ [−1, 1] and sin⁻¹(sin x) = x, x ∈ [−π/2, π/2]",
+          "notes": "Similar results hold for other trigonometric functions for suitable values of domain"
+        },
+        {
+          "name": "Double angle formula for sin⁻¹",
+          "formula": "sin⁻¹(2x√(1 − x²)) = 2 sin⁻¹ x, −1/√2 ≤ x ≤ 1/√2",
+          "notes": "Derived by substituting x = sin θ"
+        },
+        {
+          "name": "Double angle formula for cos⁻¹",
+          "formula": "sin⁻¹(2x√(1 − x²)) = 2 cos⁻¹ x, 1/√2 ≤ x ≤ 1",
+          "notes": "Derived by substituting x = cos θ"
+        },
+        {
+          "name": "Simplification of cot⁻¹(1/√(x² − 1))",
+          "formula": "cot⁻¹(1/√(x² − 1)) = sec⁻¹ x, x > 1",
+          "notes": "Derived by substituting x = sec θ"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "These properties are valid within the principal value branches of the corresponding inverse trigonometric functions and wherever they are defined",
+        "Some results may be valid only for some values of x for which inverse trigonometric functions are defined",
+        "When sin⁻¹(sin x) is evaluated and x is not in [−π/2, π/2], use trigonometric identities to bring the argument into the principal range"
+      ]
+    }
+  ],
+  "summary": [
+    "The domains and ranges (principal value branches) of inverse trigonometric functions are: sin⁻¹: [−1, 1] → [−π/2, π/2]; cos⁻¹: [−1, 1] → [0, π]; cosec⁻¹: R − (−1, 1) → [−π/2, π/2] − {0}; sec⁻¹: R − (−1, 1) → [0, π] − {π/2}; tan⁻¹: R → (−π/2, π/2); cot⁻¹: R → (0, π)",
+    "sin⁻¹ x should not be confused with (sin x)⁻¹. In fact (sin x)⁻¹ = 1/sin x, and similarly for other trigonometric functions",
+    "The value of an inverse trigonometric function which lies in the range of its principal value branch is called the principal value of that inverse trigonometric function",
+    "For suitable values of domain: y = sin⁻¹ x implies x = sin y",
+    "For suitable values of domain: sin(sin⁻¹ x) = x",
+    "For suitable values of domain: sin⁻¹(sin x) = x"
+  ],
+  "exercises": [
+    {
+      "id": "2.1",
+      "title": "Exercise 2.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the principal value of sin⁻¹(−1/2)",
+          "type": "short"
+        },
+        {
+          "qno": 2,
+          "question": "Find the principal value of cos⁻¹(√3/2)",
+          "type": "short"
+        },
+        {
+          "qno": 3,
+          "question": "Find the principal value of cosec⁻¹(2)",
+          "type": "short"
+        },
+        {
+          "qno": 4,
+          "question": "Find the principal value of tan⁻¹(−√3)",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "Find the principal value of cos⁻¹(−1/2)",
+          "type": "short"
+        },
+        {
+          "qno": 6,
+          "question": "Find the principal value of tan⁻¹(−1)",
+          "type": "short"
+        },
+        {
+          "qno": 7,
+          "question": "Find the principal value of sec⁻¹(2/√3)",
+          "type": "short"
+        },
+        {
+          "qno": 8,
+          "question": "Find the principal value of cot⁻¹(√3)",
+          "type": "short"
+        },
+        {
+          "qno": 9,
+          "question": "Find the principal value of cos⁻¹(−1/√2)",
+          "type": "short"
+        },
+        {
+          "qno": 10,
+          "question": "Find the principal value of cosec⁻¹(−√2)",
+          "type": "short"
+        },
+        {
+          "qno": 11,
+          "question": "Find the value of tan⁻¹(1) + cos⁻¹(−1/2) + sin⁻¹(−1/2)",
+          "type": "short"
+        },
+        {
+          "qno": 12,
+          "question": "Find the value of cos⁻¹(1/2) + 2 sin⁻¹(1/2)",
+          "type": "short"
+        },
+        {
+          "qno": 13,
+          "question": "If sin⁻¹ x = y, then\n(A) 0 ≤ y ≤ π\n(B) −π/2 ≤ y ≤ π/2\n(C) 0 < y < π\n(D) −π/2 < y < π/2",
+          "type": "mcq"
+        },
+        {
+          "qno": 14,
+          "question": "tan⁻¹ √3 − sec⁻¹(−2) is equal to\n(A) π\n(B) −π/3\n(C) π/3\n(D) 2π/3",
+          "type": "mcq"
+        }
+      ]
+    },
+    {
+      "id": "2.2",
+      "title": "Exercise 2.2",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Prove that 3 sin⁻¹ x = sin⁻¹(3x − 4x³), x ∈ [−1/2, 1/2]",
+          "type": "long"
+        },
+        {
+          "qno": 2,
+          "question": "Prove that 3 cos⁻¹ x = cos⁻¹(4x³ − 3x), x ∈ [1/2, 1]",
+          "type": "long"
+        },
+        {
+          "qno": 3,
+          "question": "Write tan⁻¹(√(1 + x²) − 1)/x, x ≠ 0, in the simplest form",
+          "type": "long"
+        },
+        {
+          "qno": 4,
+          "question": "Write tan⁻¹(√((1 − cos x)/(1 + cos x))), 0 < x < π, in the simplest form",
+          "type": "short"
+        },
+        {
+          "qno": 5,
+          "question": "Write tan⁻¹((cos x − sin x)/(cos x + sin x)), −π/4 < x < 3π/4, in the simplest form",
+          "type": "long"
+        },
+        {
+          "qno": 6,
+          "question": "Write tan⁻¹(x/√(a² − x²)), |x| < a, in the simplest form",
+          "type": "short"
+        },
+        {
+          "qno": 7,
+          "question": "Write tan⁻¹((3a²x − x³)/(a³ − 3ax²)), a > 0; −a/√3 < x < a/√3, in the simplest form",
+          "type": "long"
+        },
+        {
+          "qno": 8,
+          "question": "Find the value of tan⁻¹[2 cos(2 sin⁻¹(1/2))]",
+          "type": "short"
+        },
+        {
+          "qno": 9,
+          "question": "Find the value of tan(1/2)[sin⁻¹(2x/(1 + x²)) + cos⁻¹((1 − y²)/(1 + y²))], |x| < 1, y > 0 and xy < 1",
+          "type": "long"
+        },
+        {
+          "qno": 10,
+          "question": "Find the value of sin⁻¹(sin 2π/3)",
+          "type": "short"
+        },
+        {
+          "qno": 11,
+          "question": "Find the value of tan⁻¹(tan 3π/4)",
+          "type": "short"
+        },
+        {
+          "qno": 12,
+          "question": "Find the value of tan(sin⁻¹(3/5) + cot⁻¹(3/2))",
+          "type": "short"
+        },
+        {
+          "qno": 13,
+          "question": "cos⁻¹(cos 7π/6) is equal to\n(A) 7π/6\n(B) 5π/6\n(C) π/3\n(D) π/6",
+          "type": "mcq"
+        },
+        {
+          "qno": 14,
+          "question": "sin(π/3 − sin⁻¹(−1/2)) is equal to\n(A) 1/2\n(B) 1/3\n(C) 1/4\n(D) 1",
+          "type": "mcq"
+        },
+        {
+          "qno": 15,
+          "question": "tan⁻¹ √3 − cot⁻¹(−√3) is equal to\n(A) π\n(B) −π/2\n(C) 0\n(D) 2√3",
+          "type": "mcq"
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Miscellaneous Exercise on Chapter 2",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Find the value of cos⁻¹(cos 13π/6)",
+          "type": "short"
+        },
+        {
+          "qno": 2,
+          "question": "Find the value of tan⁻¹(tan 7π/6)",
+          "type": "short"
+        },
+        {
+          "qno": 3,
+          "question": "Prove that 2 sin⁻¹(3/5) = tan⁻¹(24/7)",
+          "type": "long"
+        },
+        {
+          "qno": 4,
+          "question": "Prove that sin⁻¹(8/17) + sin⁻¹(3/5) = tan⁻¹(77/36)",
+          "type": "long"
+        },
+        {
+          "qno": 5,
+          "question": "Prove that cos⁻¹(4/5) + cos⁻¹(12/13) = cos⁻¹(33/65)",
+          "type": "long"
+        },
+        {
+          "qno": 6,
+          "question": "Prove that cos⁻¹(12/13) + sin⁻¹(3/5) = sin⁻¹(56/65)",
+          "type": "long"
+        },
+        {
+          "qno": 7,
+          "question": "Prove that tan⁻¹(63/16) = sin⁻¹(5/13) + cos⁻¹(3/5)",
+          "type": "long"
+        },
+        {
+          "qno": 8,
+          "question": "Prove that tan⁻¹(√x) = (1/2) cos⁻¹((1 − x)/(1 + x)), x ∈ [0, 1]",
+          "type": "long"
+        },
+        {
+          "qno": 9,
+          "question": "Prove that cot⁻¹((√(1 + sin x) + √(1 − sin x))/(√(1 + sin x) − √(1 − sin x))) = x/2, x ∈ (0, π/4)",
+          "type": "long"
+        },
+        {
+          "qno": 10,
+          "question": "Prove that tan⁻¹((√(1 + x) − √(1 − x))/(√(1 + x) + √(1 − x))) = π/4 − (1/2) cos⁻¹ x, −1/√2 ≤ x ≤ 1 [Hint: Put x = cos 2θ]",
+          "type": "long"
+        },
+        {
+          "qno": 11,
+          "question": "Solve: 2 tan⁻¹(cos x) = tan⁻¹(2 cosec x)",
+          "type": "long"
+        },
+        {
+          "qno": 12,
+          "question": "Solve: tan⁻¹((1 − x)/(1 + x)) = (1/2) tan⁻¹ x, (x > 0)",
+          "type": "long"
+        },
+        {
+          "qno": 13,
+          "question": "sin(tan⁻¹ x), |x| < 1 is equal to\n(A) x/√(1 − x²)\n(B) 1/√(1 − x²)\n(C) 1/√(1 + x²)\n(D) x/√(1 + x²)",
+          "type": "mcq"
+        },
+        {
+          "qno": 14,
+          "question": "sin⁻¹(1 − x) − 2 sin⁻¹ x = π/2, then x is equal to\n(A) 0, 1/2\n(B) 1, 1/2\n(C) 0\n(D) 1/2",
+          "type": "mcq"
+        }
+      ]
+    }
+  ]
+}
