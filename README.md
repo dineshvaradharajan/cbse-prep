@@ -1,12 +1,12 @@
 # CBSE Class 12 Exam Preparation
 
-A comprehensive, fully static revision platform for CBSE Class 12 Physics and Chemistry — live at **[ncert.myailab.space](https://ncert.myailab.space)**.
+A comprehensive, fully static revision platform for CBSE Class 12 Physics, Chemistry and Mathematics — live at **[ncert.myailab.space](https://ncert.myailab.space)**.
 
 ---
 
 ## What It Is
 
-A structured study tool built specifically for CBSE board exam preparation. Every page is focused on one job: help a student score more marks. No accounts, no tracking, no paywall — just content.
+A structured study tool built specifically for CBSE board exam preparation. Every page is focused on one job: help a student score more marks. No accounts, no tracking, no paywall — just content. Covers all three core subjects — Physics, Chemistry and Mathematics.
 
 ---
 
@@ -38,6 +38,24 @@ A structured study tool built specifically for CBSE board exam preparation. Ever
 **Organic Chemistry** — Haloalkanes & Haloarenes, Alcohols, Aldehydes & Ketones, Amines, Biomolecules
 
 **Inorganic Chemistry** — d & f Block Elements, Coordination Compounds
+
+### Mathematics — 13 Chapters
+
+| # | Chapter |
+|---|---------|
+| 1 | Relations and Functions |
+| 2 | Inverse Trigonometric Functions |
+| 3 | Matrices |
+| 4 | Determinants |
+| 5 | Continuity and Differentiability |
+| 6 | Application of Derivatives |
+| 7 | Integrals |
+| 8 | Application of Integrals |
+| 9 | Differential Equations |
+| 10 | Vector Algebra |
+| 11 | Three Dimensional Geometry |
+| 12 | Linear Programming |
+| 13 | Probability |
 
 ---
 
@@ -132,6 +150,41 @@ A structured revision roadmap:
 - High-yield vs. low-yield topic classification
 - Last-week sprint checklist
 
+### Previous Year Questions (Maths)
+391 questions from CBSE board papers (2019–2025) with:
+- Filter by year, chapter, marks, and question type (MCQ / Subjective / Case Study)
+- Answer toggles with explanations for 200+ questions
+- Covers all 13 chapters across 6 board papers
+
+### Maths Mock Tests
+30 PYQ-based timed mini-tests:
+- 5 MCQs per test, 5 minutes each
+- Sourced from 150 actual CBSE board MCQs (2019–2025)
+- Full test engine — timer, question nav, result screen, detailed review
+- Solved answers with explanations
+
+### Maths Question Bank
+952 NCERT book-back exercises from all 13 chapters:
+- Grouped by chapter and exercise number
+- Collapsible chapter sections
+- 85 MCQ exercises with "Show Answer" toggles and explanations
+
+### Maths Chapters
+13 chapter summary pages with:
+- Chapter banners with subtopics and marks allocation
+- Must-know concepts, summary tables
+- Key formulas and tips & tricks cards
+- Common mistakes to avoid
+
+### Maths Formulas
+Complete formula reference across all 13 chapters:
+- Organised by chapter with formula cards
+- Conditions and usage notes
+
+### Maths Concepts & Derivations
+- 5-mark concept guide — important proofs, derivations, long-answer patterns
+- Step-by-step proofs: Rolle's theorem, MVT, Bayes' theorem, integration formulas
+
 ---
 
 ## Project Structure
@@ -160,7 +213,18 @@ CBSEPrep/
 ├── chemistry/
 │   ├── physical/                 # Physical chemistry pages
 │   ├── organic/                  # Organic chemistry pages (+ named-reactions, maps)
-│   └── inorganic/                # Inorganic chemistry pages
+│   ├── inorganic/                # Inorganic chemistry pages
+│   └── all/                      # All-branches pages (mock tests)
+│
+├── maths/
+│   ├── chapters.html             # 13 chapter summaries with formulas & tips
+│   ├── formulas.html             # Formula reference sheets
+│   ├── concepts.html             # 5-mark concept guide
+│   ├── derivations.html          # Important proofs & derivations
+│   ├── mock-tests.html           # 30 PYQ-based MCQ mock tests
+│   ├── question-bank.html        # 952 NCERT exercises with MCQ answers
+│   ├── pyq.html                  # 391 previous year questions (2019–2025)
+│   └── case-study.html           # Case study questions
 │
 ├── data/
 │   ├── ch1-charges-fields/       # concepts.js + questions.js
@@ -178,7 +242,11 @@ CBSEPrep/
 │   ├── ch13-nuclei/
 │   ├── ch14-semiconductors/
 │   ├── dipole/
-│   ├── mock-tests/               # Full mock paper data
+│   ├── mock-tests/               # Physics mock paper data
+│   ├── maths/                    # Maths chapter JSON (ch1–ch13)
+│   ├── pyq/maths/               # Maths PYQ JSON (2019–2025)
+│   ├── maths-mock-tests.js       # Maths mock test data (30 tests)
+│   ├── all-chemistry-mock-tests.js # Chemistry mock test data
 │   └── registry.js               # Topic-to-data mapping
 │
 ├── engine/
@@ -194,10 +262,17 @@ CBSEPrep/
 │   ├── mock-tests.css            # Mock test UI
 │   └── strategy.css              # Strategy page layout
 │
+├── scripts/
+│   ├── gen-maths-pages.js        # Generator for maths HTML pages
+│   ├── gen-maths-chapters.js     # Generator for maths chapters page
+│   ├── gen-maths-mock-tests.py   # Generator for maths mock test data
+│   └── inject-qbank-answers.py   # Injects MCQ answers into question bank
+│
 └── js/
     ├── index.js                  # Subject/tab switching, localStorage
     ├── chapter-nav.js            # Overflow tab dropdown
     ├── mcq.js                    # MCQ interaction
+    ├── mobile-dropdowns.js       # Mobile question dot dropdown
     └── tab-nav.js                # Generic tab helper
 ```
 
@@ -243,12 +318,15 @@ All styles use a unified token system defined in `css/base.css`.
 |---|---|
 | Physics chapters | 14 + 1 sub-topic |
 | Chemistry branches | 3 |
+| Maths chapters | 13 |
 | Concept data files | 17 |
 | Concept cards (est.) | 150+ |
-| MCQs | 700+ |
-| Mock test questions | 200+ |
+| MCQs (Physics + Chemistry) | 700+ |
+| Maths PYQ questions | 391 |
+| Maths NCERT exercises | 952 |
+| Mock test questions | 350+ |
 | Animated diagrams | 30+ |
-| HTML pages | 33 |
+| HTML pages | 41 |
 | CSS files | 8 |
 
 ---
