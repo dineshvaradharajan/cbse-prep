@@ -27,11 +27,13 @@ code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;backgro
 .qb-type-badge.subj{color:#78716c;background:var(--sand-100);border:1px solid var(--sand-300)}
 .qb-type-badge.mcq{color:#059669;background:#f0fdf4;border:1px solid #86efac}
 .qb-type-badge.case{color:#ea580c;background:#fff7ed;border:1px solid #fdba74}
-.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65;white-space:pre-line}
+.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65}
 .qb-ans-toggle{display:inline-block;margin-top:.6rem;padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
 .qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
-.qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
+.qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7}
 .qb-answer.hidden{display:none}
+pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
+.qb-answer pre.pyq-code{background:#064e3b;color:#d1fae5;border:1px solid #059669}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
   .qb-question{font-size:.82rem}
@@ -78,7 +80,7 @@ Key differences: (1) Syntax errors are detected at parse/compile time, exception
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">What will be the output of the following code?
-try:
+<pre class="pyq-code">try:
     num = int(input('Enter a number: '))  # User enters 'abc'
     print(num)
 except ValueError:
@@ -88,15 +90,15 @@ except:
 else:
     print('No error')
 finally:
-    print('Execution complete')</div>
+    print('Execution complete')</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> If the user enters 'abc', the output will be:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">If the user enters 'abc', the output will be:</pre>
 Invalid input!
 Execution complete
 
 Explanation: When the user enters 'abc', int('abc') raises a ValueError. The first except clause catches ValueError and prints 'Invalid input!'. The else block does NOT execute because an exception occurred. The finally block always executes, so 'Execution complete' is printed.
 
-If the user enters a valid number like 5, the output will be:
+<pre class="pyq-code">If the user enters a valid number like 5, the output will be:</pre>
 5
 No error
 Execution complete</div>
@@ -118,7 +120,7 @@ Execution complete</div>
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a program that asks the user to enter a number and prints whether it is positive, negative or zero. Handle the ValueError exception if the user enters a non-numeric value.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> try:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">try:
     num = float(input('Enter a number: '))
     if num &gt; 0:
         print('Positive number')
@@ -127,7 +129,7 @@ Execution complete</div>
     else:
         print('Zero')
 except ValueError:
-    print('Error: Please enter a valid number')</div>
+    print('Error: Please enter a valid number')</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge case">Short</span></div>
@@ -138,17 +140,17 @@ except ValueError:
 Syntax: assert condition, 'optional error message'
 
 Example:
-def calculate_average(marks):
+<pre class="pyq-code">def calculate_average(marks):
     assert len(marks) &gt; 0, 'List cannot be empty'
     return sum(marks) / len(marks)
 
 print(calculate_average([80, 90, 70]))  # Output: 80.0
-print(calculate_average([]))  # Raises AssertionError: List cannot be empty</div>
+print(calculate_average([]))  # Raises AssertionError: List cannot be empty</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">What will be the output of the following code?
-try:
+<pre class="pyq-code">try:
     x = 10
     y = 0
     z = x / y
@@ -158,7 +160,7 @@ except ZeroDivisionError:
 else:
     print('Division successful')
 finally:
-    print('Thank you')</div>
+    print('Thank you')</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Output:
 Cannot divide by zero
@@ -172,7 +174,7 @@ Explanation: x/y causes ZeroDivisionError since y is 0. The except block catches
 (a) ZeroDivisionError — if the second number is 0
 (b) ValueError — if the user enters a non-numeric value</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> try:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">try:
     num1 = float(input('Enter first number: '))
     num2 = float(input('Enter second number: '))
     result = num1 / num2
@@ -182,7 +184,7 @@ except ZeroDivisionError:
 except ValueError:
     print('Error: Please enter valid numeric values!')
 finally:
-    print('Program execution complete.')</div>
+    print('Program execution complete.')</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span></div>
@@ -201,7 +203,7 @@ Importance: It guarantees that critical cleanup code runs even if an unhandled e
 <div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a program that opens a file 'data.txt' in read mode and handles the FileNotFoundError exception. Use the finally clause to display a message that the program has completed execution.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> try:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">try:
     f = open('data.txt', 'r')
     content = f.read()
     print(content)
@@ -209,17 +211,16 @@ Importance: It guarantees that critical cleanup code runs even if an unhandled e
 except FileNotFoundError:
     print('Error: The file data.txt was not found!')
 finally:
-    print('Program execution complete.')
-
+    print('Program execution complete.')</pre>
 Alternatively, using the with statement:
-try:
+<pre class="pyq-code">try:
     with open('data.txt', 'r') as f:
         content = f.read()
         print(content)
 except FileNotFoundError:
     print('Error: The file data.txt was not found!')
 finally:
-    print('Program execution complete.')</div>
+    print('Program execution complete.')</pre></div>
 </div>
 </div>
 </div>
@@ -273,31 +274,30 @@ Binary File:
 <div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a program to read a text file 'story.txt' line by line and display each word separated by a '#'.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> f = open('story.txt', 'r')
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">f = open('story.txt', 'r')
 for line in f:
     words = line.split()
     for word in words:
         print(word + '#', end='')
     print()  # newline after each line
-f.close()
-
+f.close()</pre>
 Alternatively using with statement:
-with open('story.txt', 'r') as f:
+<pre class="pyq-code">with open('story.txt', 'r') as f:
     for line in f:
         words = line.split()
-        print('#'.join(words))</div>
+        print('#'.join(words))</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">What is the difference between write() and writelines() methods?</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> write() method:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">write() method:</pre>
 - Writes a single string to the file
 - Syntax: file_object.write(string)
 - Returns the number of characters written
 - Example: f.write('Hello World\n')
 
-writelines() method:
+<pre class="pyq-code">writelines() method:</pre>
 - Writes a list (or iterable) of strings to the file
 - Syntax: file_object.writelines(list_of_strings)
 - Does not return the character count
@@ -309,17 +309,17 @@ Both methods do NOT add newline characters automatically.</div>
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">What is the difference between read(), readline() and readlines() methods?</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> read([n]):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">read([n]):</pre>
 - Without argument: reads the entire file as a single string
 - With argument n: reads at most n characters
 - Returns a string
 
-readline():
+<pre class="pyq-code">readline():</pre>
 - Reads a single line from the file (including the newline character)
 - Returns an empty string '' at end of file
 - Returns a string
 
-readlines():
+<pre class="pyq-code">readlines():</pre>
 - Reads all lines from the file
 - Returns a list of strings, where each string is a line (including newline)
 - Returns a list
@@ -333,12 +333,12 @@ Example: If file contains 'Hello\nWorld\n'
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">What is the significance of the tell() and seek() methods?</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> tell() method:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">tell() method:</pre>
 - Returns the current position of the file pointer (in bytes from the beginning)
 - Syntax: file_object.tell()
 - Useful to know where you are in the file
 
-seek() method:
+<pre class="pyq-code">seek() method:</pre>
 - Changes the position of the file pointer
 - Syntax: file_object.seek(offset, reference_point)
 - reference_point: 0 (beginning, default), 1 (current), 2 (end)
@@ -349,12 +349,11 @@ seek() method:
 <div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">What is pickling and unpickling? Explain with an example.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> Pickling (Serialization): The process of converting a Python object into a byte stream to store in a binary file.
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">Pickling (Serialization): The process of converting a Python object into a byte stream to store in a binary file.
 
-Unpickling (Deserialization): The process of converting a byte stream from a binary file back into a Python object.
-
+Unpickling (Deserialization): The process of converting a byte stream from a binary file back into a Python object.</pre>
 Example:
-import pickle
+<pre class="pyq-code">import pickle
 
 # Pickling — writing a dictionary to a binary file
 student = {'name': 'Rahul', 'age': 17, 'marks': [85, 90, 78]}
@@ -366,24 +365,24 @@ f.close()
 f = open('student.dat', 'rb')
 data = pickle.load(f)
 print(data)  # Output: {'name': 'Rahul', 'age': 17, 'marks': [85, 90, 78]}
-f.close()</div>
+f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a program to count the number of lines in a text file 'poem.txt' that start with an uppercase letter.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> count = 0
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">count = 0
 with open('poem.txt', 'r') as f:
     for line in f:
         if line[0].isupper():
             count += 1
-print('Number of lines starting with uppercase:', count)</div>
+print('Number of lines starting with uppercase:', count)</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a program using pickle to store and retrieve a list of employee records (each record is a dictionary with keys: empno, name, salary) in a binary file.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> import pickle
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">import pickle
 
 # Writing employee records
 def write_records():
@@ -407,7 +406,7 @@ def read_records():
         print('Emp No:', emp['empno'], 'Name:', emp['name'], 'Salary:', emp['salary'])
 
 write_records()
-read_records()</div>
+read_records()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
@@ -421,9 +420,9 @@ read_records()</div>
 5. Exception safety: The file is closed even if an error occurs within the with block.
 
 Syntax:
-with open('file.txt', 'r') as f:
+<pre class="pyq-code">with open('file.txt', 'r') as f:
     data = f.read()
-# File is automatically closed here</div>
+# File is automatically closed here</pre></div>
 </div>
 </div>
 </div>
@@ -490,7 +489,7 @@ Token | Stack        | Action
 -     | [8, 6]       | Pop 2, 8; compute 8-2=6; Push 6
 *     | [48]         | Pop 6, 8; compute 8*6=48; Push 48
 
-Result = 48</div>
+<pre class="pyq-code">Result = 48</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
@@ -501,7 +500,7 @@ Result = 48</div>
 (d) display(stack) — to display all elements
 (e) isEmpty(stack) — to check if the stack is empty</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def isEmpty(stack):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def isEmpty(stack):
     return len(stack) == 0
 
 def push(stack, element):
@@ -536,13 +535,13 @@ push(stack, 30)
 display(stack)
 print('Top element:', peek(stack))
 print('Popped:', pop(stack))
-display(stack)</div>
+display(stack)</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python program to check whether a given string is a palindrome using a stack.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def is_palindrome(string):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def is_palindrome(string):
     stack = []
     # Push all characters onto the stack
     for char in string:
@@ -562,12 +561,12 @@ word = input('Enter a string: ')
 if is_palindrome(word):
     print(word, 'is a palindrome')
 else:
-    print(word, 'is not a palindrome')</div>
+    print(word, 'is not a palindrome')</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">What will be the output of the following code?
-stack = []
+<pre class="pyq-code">stack = []
 stack.append(5)
 stack.append(10)
 stack.append(15)
@@ -575,7 +574,7 @@ print(stack.pop())
 stack.append(20)
 print(stack.pop())
 print(stack.pop())
-print(stack)</div>
+print(stack)</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Output:
 15
@@ -597,7 +596,7 @@ Explanation:
 <div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python program to implement a stack of student records. Each record contains roll number and name. Implement push, pop, and display operations using a menu-driven approach.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> stack = []
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">stack = []
 
 def push_student():
     rollno = int(input('Enter roll number: '))
@@ -639,7 +638,7 @@ while True:
         print('Exiting program.')
         break
     else:
-        print('Invalid choice!')</div>
+        print('Invalid choice!')</pre></div>
 </div>
 </div>
 </div>
@@ -691,7 +690,7 @@ Differences from a simple queue:
 (d) display(queue) — to display all elements
 (e) isEmpty(queue) — to check if the queue is empty</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def isEmpty(queue):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def isEmpty(queue):
     return len(queue) == 0
 
 def enqueue(queue, element):
@@ -727,19 +726,19 @@ enqueue(queue, 30)
 display(queue)
 print('Front element:', peek(queue))
 print('Dequeued:', dequeue(queue))
-display(queue)</div>
+display(queue)</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">What will be the output of the following code?
-queue = []
+<pre class="pyq-code">queue = []
 queue.append(1)
 queue.append(2)
 queue.append(3)
 print(queue.pop(0))
 queue.append(4)
 print(queue.pop(0))
-print(queue)</div>
+print(queue)</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Output:
 1
@@ -759,7 +758,7 @@ Explanation:
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python program to implement a deque using a list with functions to add and remove elements from both ends.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def isEmpty(deque):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def isEmpty(deque):
     return len(deque) == 0
 
 def add_front(deque, element):
@@ -796,13 +795,13 @@ add_front(dq, 5)
 display(dq)  # [5, 10, 20]
 print('Removed from front:', remove_front(dq))
 print('Removed from rear:', remove_rear(dq))
-display(dq)  # [10]</div>
+display(dq)  # [10]</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python program to implement a queue of customer orders in a restaurant. Each order has an order number and item name. Implement enqueue, dequeue, and display using a menu-driven approach.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> queue = []
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">queue = []
 
 def enqueue_order():
     order_no = int(input('Enter order number: '))
@@ -844,7 +843,7 @@ while True:
         print('Exiting program.')
         break
     else:
-        print('Invalid choice!')</div>
+        print('Invalid choice!')</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span></div>
@@ -887,17 +886,17 @@ Other applications: keyboard buffer, call center systems, traffic management, me
 5. If no swaps in a pass, stop (list is sorted).
 
 Trace for [5, 3, 8, 1, 2]:
-Pass 1: [3,5,8,1,2] → [3,5,8,1,2] → [3,5,1,8,2] → [3,5,1,2,8] (3 swaps)
+<pre class="pyq-code">Pass 1: [3,5,8,1,2] → [3,5,8,1,2] → [3,5,1,8,2] → [3,5,1,2,8] (3 swaps)
 Pass 2: [3,5,1,2,8] → [3,1,5,2,8] → [3,1,2,5,8] (2 swaps)
 Pass 3: [1,3,2,5,8] → [1,2,3,5,8] (2 swaps)
-Pass 4: [1,2,3,5,8] (0 swaps — sorted, stop)
+Pass 4: [1,2,3,5,8] (0 swaps — sorted, stop)</pre>
 Sorted list: [1, 2, 3, 5, 8]</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python function to implement Bubble Sort.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def bubble_sort(a):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def bubble_sort(a):
     n = len(a)
     for i in range(n - 1):
         swapped = False
@@ -911,16 +910,16 @@ Sorted list: [1, 2, 3, 5, 8]</div>
 
 # Example usage:
 data = [64, 34, 25, 12, 22, 11, 90]
-print(bubble_sort(data))  # Output: [11, 12, 22, 25, 34, 64, 90]</div>
+print(bubble_sort(data))  # Output: [11, 12, 22, 25, 34, 64, 90]</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">How many passes and comparisons does Bubble Sort need for a list of 6 elements in the worst case?</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> For n = 6 elements:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">For n = 6 elements:</pre>
 Number of passes = n - 1 = 5
 Number of comparisons = n(n-1)/2 = 6 × 5 / 2 = 15
-Pass 1: 5 comparisons, Pass 2: 4 comparisons, Pass 3: 3 comparisons, Pass 4: 2 comparisons, Pass 5: 1 comparison. Total = 5 + 4 + 3 + 2 + 1 = 15.</div>
+<pre class="pyq-code">Pass 1: 5 comparisons, Pass 2: 4 comparisons, Pass 3: 3 comparisons, Pass 4: 2 comparisons, Pass 5: 1 comparison. Total = 5 + 4 + 3 + 2 + 1 = 15.</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
@@ -935,17 +934,17 @@ Algorithm:
 4. Repeat until the entire array is sorted.
 
 Example: Sort [29, 10, 14, 37, 13]
-Pass 1: Min = 10 (index 1), swap with index 0 → [10, 29, 14, 37, 13]
+<pre class="pyq-code">Pass 1: Min = 10 (index 1), swap with index 0 → [10, 29, 14, 37, 13]
 Pass 2: Min = 13 (index 4), swap with index 1 → [10, 13, 14, 37, 29]
 Pass 3: Min = 14 (index 2), already in place → [10, 13, 14, 37, 29]
-Pass 4: Min = 29 (index 4), swap with index 3 → [10, 13, 14, 29, 37]
+Pass 4: Min = 29 (index 4), swap with index 3 → [10, 13, 14, 29, 37]</pre>
 Sorted list: [10, 13, 14, 29, 37]</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python function to implement Selection Sort.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def selection_sort(a):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def selection_sort(a):
     n = len(a)
     for i in range(n - 1):
         min_idx = i
@@ -958,7 +957,7 @@ Sorted list: [10, 13, 14, 29, 37]</div>
 
 # Example usage:
 data = [64, 25, 12, 22, 11]
-print(selection_sort(data))  # Output: [11, 12, 22, 25, 64]</div>
+print(selection_sort(data))  # Output: [11, 12, 22, 25, 64]</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
@@ -975,16 +974,16 @@ Algorithm:
 6. Repeat for all elements.
 
 Example: Sort [7, 4, 5, 2]
-Pass 1: key=4, compare with 7, shift 7 right → [4, 7, 5, 2]
+<pre class="pyq-code">Pass 1: key=4, compare with 7, shift 7 right → [4, 7, 5, 2]
 Pass 2: key=5, compare with 7 (shift), compare with 4 (stop) → [4, 5, 7, 2]
-Pass 3: key=2, compare with 7 (shift), 5 (shift), 4 (shift) → [2, 4, 5, 7]
+Pass 3: key=2, compare with 7 (shift), 5 (shift), 4 (shift) → [2, 4, 5, 7]</pre>
 Sorted list: [2, 4, 5, 7]</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python function to implement Insertion Sort.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def insertion_sort(a):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def insertion_sort(a):
     n = len(a)
     for i in range(1, n):
         key = a[i]
@@ -997,7 +996,7 @@ Sorted list: [2, 4, 5, 7]</div>
 
 # Example usage:
 data = [12, 11, 13, 5, 6]
-print(insertion_sort(data))  # Output: [5, 6, 11, 12, 13]</div>
+print(insertion_sort(data))  # Output: [5, 6, 11, 12, 13]</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
@@ -1028,14 +1027,14 @@ Key observations:
 <div class="qb-answer hidden"><strong>Answer:</strong> Big-O notation describes the upper bound of an algorithm's growth rate as a function of input size n. It represents the worst-case scenario of how execution time or space requirements grow.
 
 Common time complexities in increasing order:
-O(1) — Constant time
+<pre class="pyq-code">O(1) — Constant time
 O(log n) — Logarithmic time
 O(n) — Linear time
 O(n log n) — Linearithmic time
 O(n^2) — Quadratic time
 O(n^3) — Cubic time
 O(2^n) — Exponential time
-O(n!) — Factorial time</div>
+O(n!) — Factorial time</pre></div>
 </div>
 </div>
 </div>
@@ -1058,12 +1057,11 @@ O(n!) — Factorial time</div>
 <div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python function for Linear Search and trace it for the list [4, 9, 2, 7, 3] with search key 7.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def linear_search(a, key):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def linear_search(a, key):
     for i in range(len(a)):
         if a[i] == key:
             return i
-    return -1
-
+    return -1</pre>
 Trace for a = [4, 9, 2, 7, 3], key = 7:
 Step 1: i=0, a[0]=4, 4 != 7, continue
 Step 2: i=1, a[1]=9, 9 != 7, continue
@@ -1098,7 +1096,7 @@ Only 3 comparisons needed instead of 6 (Linear Search).</div>
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python function for Binary Search (iterative version).</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def binary_search(a, key):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def binary_search(a, key):
     low = 0
     high = len(a) - 1
     while low &lt;= high:
@@ -1117,7 +1115,7 @@ result = binary_search(data, 23)
 if result != -1:
     print(f'Element found at index {result}')  # Output: Element found at index 5
 else:
-    print('Element not found')</div>
+    print('Element not found')</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
@@ -1136,7 +1134,7 @@ else:
 | Simplicity       | Very simple        | Slightly complex     |
 | Use case         | Small/unsorted     | Large sorted data    |
 
-For n = 1024, Linear Search may need 1024 comparisons, while Binary Search needs at most 11 comparisons (log2(1024) + 1 = 11).</div>
+<pre class="pyq-code">For n = 1024, Linear Search may need 1024 comparisons, while Binary Search needs at most 11 comparisons (log2(1024) + 1 = 11).</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
@@ -1168,7 +1166,7 @@ Collision Resolution:
 <div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a recursive Python function for Binary Search.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def binary_search_rec(a, key, low, high):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def binary_search_rec(a, key, low, high):
     if low &gt; high:
         return -1
     mid = (low + high) // 2
@@ -1182,7 +1180,7 @@ Collision Resolution:
 # Example usage:
 data = [1, 3, 5, 7, 9, 11, 13, 15]
 result = binary_search_rec(data, 7, 0, len(data) - 1)
-print(f'Element found at index {result}')  # Output: Element found at index 3</div>
+print(f'Element found at index {result}')  # Output: Element found at index 3</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge subj">Long</span></div>
@@ -1235,10 +1233,9 @@ Key differences: Primary data is original and specific; secondary data is pre-ex
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Given data: 5, 8, 3, 7, 5, 9, 5, 2, 8, 6
 Sorted data: 2, 3, 5, 5, 5, 6, 7, 8, 8, 9
-n = 10
+<pre class="pyq-code">n = 10
 
-Mean = (2 + 3 + 5 + 5 + 5 + 6 + 7 + 8 + 8 + 9) / 10 = 58 / 10 = 5.8
-
+Mean = (2 + 3 + 5 + 5 + 5 + 6 + 7 + 8 + 8 + 9) / 10 = 58 / 10 = 5.8</pre>
 Median: Since n = 10 (even), median = (5th value + 6th value) / 2 = (5 + 6) / 2 = 5.5
 
 Mode: The value that occurs most frequently. 5 occurs 3 times (most frequent). Mode = 5.</div>
@@ -1248,11 +1245,9 @@ Mode: The value that occurs most frequently. 5 occurs 3 times (most frequent). M
 <div class="qb-question">Calculate the variance and standard deviation for the data: 4, 8, 6, 5, 3.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Given data: 4, 8, 6, 5, 3
-n = 5
-
+<pre class="pyq-code">n = 5</pre>
 Step 1: Calculate mean
-Mean = (4 + 8 + 6 + 5 + 3) / 5 = 26 / 5 = 5.2
-
+<pre class="pyq-code">Mean = (4 + 8 + 6 + 5 + 3) / 5 = 26 / 5 = 5.2</pre>
 Step 2: Calculate squared deviations from mean
 (4 - 5.2)^2 = (-1.2)^2 = 1.44
 (8 - 5.2)^2 = (2.8)^2 = 7.84
@@ -1261,8 +1256,7 @@ Step 2: Calculate squared deviations from mean
 (3 - 5.2)^2 = (-2.2)^2 = 4.84
 
 Step 3: Calculate variance
-Variance = (1.44 + 7.84 + 0.64 + 0.04 + 4.84) / 5 = 14.8 / 5 = 2.96
-
+<pre class="pyq-code">Variance = (1.44 + 7.84 + 0.64 + 0.04 + 4.84) / 5 = 14.8 / 5 = 2.96</pre>
 Step 4: Calculate standard deviation
 Standard Deviation = sqrt(2.96) = 1.72 (approximately)
 
@@ -1314,7 +1308,7 @@ Key differences: (1) Variance is in squared units; standard deviation is in orig
 <div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write a Python program to calculate mean, median, and mode of a list of numbers.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> import statistics
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">import statistics
 
 def calculate_stats(data):
     # Mean
@@ -1346,7 +1340,7 @@ calculate_stats(data)
 # Using statistics module:
 print(statistics.mean(data))    # 5.8
 print(statistics.median(data))  # 5.5
-print(statistics.mode(data))    # 5</div>
+print(statistics.mode(data))    # 5</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
@@ -1520,8 +1514,7 @@ Example: A university database — Physical level: data stored in specific files
 <div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">What is SQL? What are its advantages?</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> SQL (Structured Query Language) is a standard programming language used to manage and manipulate relational databases.
-
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">SQL (Structured Query Language) is a standard programming language used to manage and manipulate relational databases.</pre>
 Advantages of SQL:
 1. Simple and easy to learn — uses English-like syntax.
 2. Non-procedural — specify what data you want, not how to get it.
@@ -1534,11 +1527,11 @@ Advantages of SQL:
 <div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">Differentiate between DDL and DML commands with examples.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> DDL (Data Definition Language) defines the structure of database objects.
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">DDL (Data Definition Language) defines the structure of database objects.</pre>
 Commands: CREATE, ALTER, DROP
 Example: CREATE TABLE student (RollNo INT PRIMARY KEY, Name VARCHAR(30));
 
-DML (Data Manipulation Language) manipulates the data within tables.
+<pre class="pyq-code">DML (Data Manipulation Language) manipulates the data within tables.</pre>
 Commands: INSERT, UPDATE, DELETE, SELECT
 Example: INSERT INTO student VALUES (1, 'Aman');
 
@@ -1548,10 +1541,9 @@ Key difference: DDL changes structure (schema); DML changes data (content). DDL 
 <div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">Differentiate between CHAR and VARCHAR data types.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> CHAR(n): Fixed-length string. Always uses n bytes regardless of actual string length. Shorter strings are padded with spaces. Faster for fixed-length data. Example: CHAR(10) storing 'ABC' uses 10 bytes.
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">CHAR(n): Fixed-length string. Always uses n bytes regardless of actual string length. Shorter strings are padded with spaces. Faster for fixed-length data. Example: CHAR(10) storing 'ABC' uses 10 bytes.
 
-VARCHAR(n): Variable-length string. Uses only as much space as needed (plus 1-2 bytes overhead). More storage-efficient for varying-length data. Example: VARCHAR(10) storing 'ABC' uses 4-5 bytes.
-
+VARCHAR(n): Variable-length string. Uses only as much space as needed (plus 1-2 bytes overhead). More storage-efficient for varying-length data. Example: VARCHAR(10) storing 'ABC' uses 4-5 bytes.</pre>
 Use CHAR for fixed-length data (e.g., PIN codes, gender). Use VARCHAR for variable-length data (e.g., names, addresses).</div>
 </div>
 <div class="qb-card">
@@ -1564,14 +1556,12 @@ Use CHAR for fixed-length data (e.g., PIN codes, gender). Use VARCHAR for variab
 (b) CREATE TABLE STUDENT (
         RollNo INT PRIMARY KEY,
         Name VARCHAR(30) NOT NULL,
-        Class VARCHAR(5),
+<pre class="pyq-code">        Class VARCHAR(5),
         Marks FLOAT DEFAULT 0
-    );
-
+    );</pre>
 (c) DESCRIBE STUDENT;
     -- or --
-    DESC STUDENT;
-
+<pre class="pyq-code">    DESC STUDENT;</pre>
 This will display:
 | Field  | Type        | Null | Key | Default | Extra |
 |--------|-------------|------|-----|---------|-------|
@@ -1584,19 +1574,18 @@ This will display:
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Write SQL commands to insert the following data into the STUDENT table: (1, 'Aman', 'XII', 85), (2, 'Priya', 'XII', 92), (3, 'Rahul', 'XI', 78), (4, 'Sneha', 'XII', 88), (5, 'Karan', 'XI', 65).</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> INSERT INTO STUDENT VALUES (1, 'Aman', 'XII', 85);
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">INSERT INTO STUDENT VALUES (1, 'Aman', 'XII', 85);
 INSERT INTO STUDENT VALUES (2, 'Priya', 'XII', 92);
 INSERT INTO STUDENT VALUES (3, 'Rahul', 'XI', 78);
 INSERT INTO STUDENT VALUES (4, 'Sneha', 'XII', 88);
-INSERT INTO STUDENT VALUES (5, 'Karan', 'XI', 65);
-
+INSERT INTO STUDENT VALUES (5, 'Karan', 'XI', 65);</pre>
 Alternatively, in MySQL you can insert multiple rows:
-INSERT INTO STUDENT VALUES
+<pre class="pyq-code">INSERT INTO STUDENT VALUES
     (1, 'Aman', 'XII', 85),
     (2, 'Priya', 'XII', 92),
     (3, 'Rahul', 'XI', 78),
     (4, 'Sneha', 'XII', 88),
-    (5, 'Karan', 'XI', 65);</div>
+    (5, 'Karan', 'XI', 65);</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
@@ -1618,23 +1607,23 @@ INSERT INTO STUDENT VALUES
 <div class="qb-question">Write SQL queries using LIKE, IN, ORDER BY, and DISTINCT on the STUDENT table.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> -- LIKE: Students whose name starts with 'A'
-SELECT * FROM STUDENT WHERE Name LIKE 'A%';
+<pre class="pyq-code">SELECT * FROM STUDENT WHERE Name LIKE 'A%';</pre>
 -- Output: Aman
 
 -- LIKE: Students whose name has 'a' as the second character
-SELECT * FROM STUDENT WHERE Name LIKE '_a%';
+<pre class="pyq-code">SELECT * FROM STUDENT WHERE Name LIKE '_a%';</pre>
 -- Output: Karan, Rahul
 
 -- IN: Students in class XI or XII
-SELECT * FROM STUDENT WHERE Class IN ('XI', 'XII');
+<pre class="pyq-code">SELECT * FROM STUDENT WHERE Class IN ('XI', 'XII');</pre>
 -- Output: All 5 students
 
 -- ORDER BY: Students sorted by marks in descending order
-SELECT * FROM STUDENT ORDER BY Marks DESC;
+<pre class="pyq-code">SELECT * FROM STUDENT ORDER BY Marks DESC;</pre>
 -- Output: Priya(92), Sneha(88), Aman(85), Rahul(78), Karan(65)
 
 -- DISTINCT: Unique classes
-SELECT DISTINCT Class FROM STUDENT;
+<pre class="pyq-code">SELECT DISTINCT Class FROM STUDENT;</pre>
 -- Output: XII, XI</div>
 </div>
 <div class="qb-card">
@@ -1693,13 +1682,13 @@ SELECT DISTINCT Class FROM STUDENT;
 <div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">Explain the difference between WHERE and HAVING clauses.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> WHERE clause:
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">WHERE clause:</pre>
 - Filters individual rows before grouping.
 - Cannot use aggregate functions.
 - Applied before GROUP BY.
 - Example: SELECT * FROM STUDENT WHERE Marks &gt; 80;
 
-HAVING clause:
+<pre class="pyq-code">HAVING clause:</pre>
 - Filters groups after GROUP BY.
 - Can use aggregate functions.
 - Applied after GROUP BY.
@@ -1729,24 +1718,23 @@ Key difference: WHERE works on rows; HAVING works on groups. WHERE cannot contai
 <div class="qb-question">Consider two tables: STUDENT(RollNo, Name, Class) and RESULT(RollNo, Subject, Marks). Write SQL queries to: (a) Display the Cartesian product. (b) Display names and marks using equi-join. (c) Display names of students who scored more than 90 in any subject.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) Cartesian Product:
-SELECT * FROM STUDENT, RESULT;
+<pre class="pyq-code">SELECT * FROM STUDENT, RESULT;</pre>
 -- This produces every combination of rows from both tables.
 -- If STUDENT has 5 rows and RESULT has 10 rows, result has 50 rows.
 
 (b) Equi-Join to display names with marks:
-SELECT STUDENT.Name, RESULT.Subject, RESULT.Marks
+<pre class="pyq-code">SELECT STUDENT.Name, RESULT.Subject, RESULT.Marks
 FROM STUDENT, RESULT
-WHERE STUDENT.RollNo = RESULT.RollNo;
-
+WHERE STUDENT.RollNo = RESULT.RollNo;</pre>
 -- Or using JOIN syntax:
-SELECT S.Name, R.Subject, R.Marks
-FROM STUDENT S
+<pre class="pyq-code">SELECT S.Name, R.Subject, R.Marks
+FROM STUDENT S</pre>
 JOIN RESULT R ON S.RollNo = R.RollNo;
 
 (c) Names of students scoring more than 90:
-SELECT DISTINCT STUDENT.Name
+<pre class="pyq-code">SELECT DISTINCT STUDENT.Name
 FROM STUDENT, RESULT
-WHERE STUDENT.RollNo = RESULT.RollNo
+WHERE STUDENT.RollNo = RESULT.RollNo</pre>
 AND RESULT.Marks &gt; 90;</div>
 </div>
 <div class="qb-card">
@@ -1768,9 +1756,8 @@ Key difference: UNION adds rows from two queries; Cartesian product multiplies r
 <div class="qb-answer hidden"><strong>Answer:</strong> A sub-query (or nested query) is a SELECT query inside another SQL statement. The inner query executes first and its result is used by the outer query.
 
 Query to find the student with the highest marks:
-SELECT Name, Marks FROM STUDENT
-WHERE Marks = (SELECT MAX(Marks) FROM STUDENT);
-
+<pre class="pyq-code">SELECT Name, Marks FROM STUDENT
+WHERE Marks = (SELECT MAX(Marks) FROM STUDENT);</pre>
 Explanation: The inner query (SELECT MAX(Marks) FROM STUDENT) returns 92. The outer query then finds the student whose marks equal 92, returning 'Priya'.</div>
 </div>
 <div class="qb-card">
@@ -1779,15 +1766,15 @@ Explanation: The inner query (SELECT MAX(Marks) FROM STUDENT) returns 92. The ou
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> General syntax with order of clauses:
 
-SELECT [DISTINCT] column1, column2, aggregate_function(column)
-FROM table1 [, table2]
+<pre class="pyq-code">SELECT [DISTINCT] column1, column2, aggregate_function(column)
+FROM table1 [, table2]</pre>
 [WHERE condition]
 [GROUP BY column1, column2]
 [HAVING group_condition]
 [ORDER BY column1 [ASC|DESC]]
 [LIMIT n];
 
-Order of execution:
+<pre class="pyq-code">Order of execution:</pre>
 1. FROM — identifies the tables
 2. WHERE — filters individual rows
 3. GROUP BY — groups rows
@@ -1830,11 +1817,11 @@ Order of execution:
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
 <div class="qb-question">Differentiate between LAN, MAN, and WAN.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> LAN (Local Area Network): Covers a small area like a room, building, or campus (up to a few km). It offers high speed (10 Mbps to 1 Gbps+), is privately owned, and uses Ethernet/WiFi. Example: office network.
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">LAN (Local Area Network): Covers a small area like a room, building, or campus (up to a few km). It offers high speed (10 Mbps to 1 Gbps+), is privately owned, and uses Ethernet/WiFi. Example: office network.
 
 MAN (Metropolitan Area Network): Covers a city or metropolitan area (5-50 km). It has moderate speed, may be public or private, and connects multiple LANs. Example: cable TV network.
 
-WAN (Wide Area Network): Covers large geographical areas like countries or the entire world. It has relatively lower speed, uses leased lines and satellites, and may be public or private. Example: the Internet.</div>
+WAN (Wide Area Network): Covers large geographical areas like countries or the entire world. It has relatively lower speed, uses leased lines and satellites, and may be public or private. Example: the Internet.</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge case">Short</span></div>
@@ -1947,8 +1934,7 @@ Fiber Optic Cable: Glass/plastic strands transmitting light pulses. Highest band
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Radio Waves (3 KHz-1 GHz): Omnidirectional, can penetrate walls, used in FM radio, TV broadcasting, and WiFi. Range varies from metres to kilometres.
 
-Microwaves (1 GHz-300 GHz): Unidirectional (straight line), require line-of-sight, used in satellite communication and long-distance telephone links. Repeaters needed every 25-30 km on earth.
-
+<pre class="pyq-code">Microwaves (1 GHz-300 GHz): Unidirectional (straight line), require line-of-sight, used in satellite communication and long-distance telephone links. Repeaters needed every 25-30 km on earth.</pre>
 Infrared Waves (300 GHz-400 THz): Very short range, cannot penetrate walls, used in TV remotes and short-range device communication.
 
 Radio waves have the widest coverage but lower bandwidth. Microwaves offer higher bandwidth but need line-of-sight. Infrared is limited to short range and cannot pass through obstacles.</div>

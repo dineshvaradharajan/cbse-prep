@@ -389,10 +389,10 @@ function genQuestionBank() {
 
         chapterSections += `<div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q${q.qno}</span>${typeBadge}</div>
-<div class="qb-question">${esc(q.question)}</div>`;
+<div class="qb-question">${escCode(q.question)}</div>`;
         if (q.answer) {
           chapterSections += `\n<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> ${esc(q.answer)}</div>`;
+<div class="qb-answer hidden"><strong>Answer:</strong> ${escCode(q.answer)}</div>`;
         }
         chapterSections += `\n</div>\n`;
       });
@@ -430,11 +430,13 @@ ${codeStyle}
 .qb-type-badge.subj{color:#78716c;background:var(--sand-100);border:1px solid var(--sand-300)}
 .qb-type-badge.mcq{color:#059669;background:#f0fdf4;border:1px solid #86efac}
 .qb-type-badge.case{color:#ea580c;background:#fff7ed;border:1px solid #fdba74}
-.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65;white-space:pre-line}
+.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65}
 .qb-ans-toggle{display:inline-block;margin-top:.6rem;padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
 .qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
-.qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
+.qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7}
 .qb-answer.hidden{display:none}
+pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
+.qb-answer pre.pyq-code{background:#064e3b;color:#d1fae5;border:1px solid #059669}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
   .qb-question{font-size:.82rem}
