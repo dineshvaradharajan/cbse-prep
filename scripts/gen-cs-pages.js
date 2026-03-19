@@ -93,12 +93,18 @@ function escCode(s) {
       codeBlock += line + '\n';
     } else {
       flushCode();
-      result += line + '\n';
+      // Convert newlines to <br> for prose text
+      if (trimmed === '') {
+        result += '<br>\n';
+      } else {
+        result += line + '<br>\n';
+      }
     }
   }
   flushCode();
   flushTable();
-  return result.trimEnd();
+  // Clean up trailing <br>
+  return result.replace(/(<br>\s*)+$/, '').trimEnd();
 }
 
 /** Format options — wrap code-like options in <code> tags */
