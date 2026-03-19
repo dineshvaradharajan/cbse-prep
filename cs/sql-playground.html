@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<meta name="description" content="Interactive SQL Playground for CBSE Class 12 Computer Science — write and run SQL queries in the browser with pre-loaded exam tables.">
+<meta name="author" content="Dinesh Varadharajan">
+<title>SQL Playground | CBSE Class 12 Computer Science</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+<style>
+:root {
+  --subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* Layout */
+.playground{display:grid;grid-template-columns:280px 1fr;gap:0;min-height:calc(100vh - 200px);border:1px solid var(--sand-200);border-radius:14px;overflow:hidden;background:#fff;margin-top:1.5rem}
+@media(max-width:800px){.playground{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
+
+/* Sidebar */
+.sidebar{background:var(--sand-50);border-right:1px solid var(--sand-200);padding:1rem;overflow-y:auto;max-height:80vh}
+.sidebar h3{font-family:'Newsreader',serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.75rem}
+.table-card{background:#fff;border:1px solid var(--sand-200);border-radius:10px;margin-bottom:.75rem;overflow:hidden}
+.table-card-head{display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:var(--subject-bg);cursor:pointer;font-size:.78rem;font-weight:700;color:var(--subject-text);border-bottom:1px solid var(--subject-border)}
+.table-card-head:hover{background:#dcfce7}
+.table-card-body{padding:.4rem .6rem;font-size:.72rem;color:var(--ink-2)}
+.table-card-body.collapsed{display:none}
+.col-row{display:flex;justify-content:space-between;padding:.2rem 0;border-bottom:1px solid var(--sand-100)}
+.col-row:last-child{border-bottom:none}
+.col-name{font-weight:700;font-family:'Courier New',monospace;color:var(--ink)}
+.col-type{color:var(--ink-3);font-family:'Courier New',monospace}
+.pk-badge{font-size:.55rem;font-weight:800;color:#fff;background:var(--subject-color);border-radius:3px;padding:0 .25rem;margin-left:.3rem}
+.sample-queries{margin-top:1rem}
+.sample-queries h4{font-size:.8rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.sq-btn{display:block;width:100%;text-align:left;padding:.45rem .6rem;margin-bottom:.35rem;font-size:.72rem;font-family:'Courier New',monospace;color:var(--subject-text);background:#fff;border:1px solid var(--sand-200);border-radius:6px;cursor:pointer;transition:all .15s;line-height:1.4}
+.sq-btn:hover{background:var(--subject-bg);border-color:var(--subject-border)}
+
+/* Main area */
+.main-area{display:flex;flex-direction:column;min-height:400px}
+
+/* Editor */
+.editor-wrap{border-bottom:1px solid var(--sand-200);position:relative}
+.editor-toolbar{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;background:var(--sand-50);border-bottom:1px solid var(--sand-200)}
+.editor-toolbar .label{font-size:.72rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em}
+.btn{padding:.4rem 1rem;font-size:.75rem;font-weight:700;border-radius:8px;cursor:pointer;transition:all .15s;border:none}
+.btn-run{background:var(--subject-color);color:#fff;margin-left:auto}
+.btn-run:hover{background:#047857}
+.btn-run:active{transform:scale(.97)}
+.btn-clear{background:var(--sand-100);color:var(--ink-2);border:1px solid var(--sand-300)}
+.btn-clear:hover{background:var(--sand-200)}
+.btn-reset{background:#fef2f2;color:#dc2626;border:1px solid #fca5a5}
+.btn-reset:hover{background:#fee2e2}
+textarea.editor{width:100%;min-height:160px;padding:1rem;font-family:'Courier New',Courier,monospace;font-size:.85rem;line-height:1.6;border:none;outline:none;resize:vertical;color:var(--ink);background:#fff;tab-size:2}
+textarea.editor::placeholder{color:var(--ink-3)}
+.shortcut-hint{font-size:.65rem;color:var(--ink-3);margin-left:.5rem}
+
+/* Results */
+.results-wrap{flex:1;overflow:auto;padding:0}
+.results-toolbar{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;background:var(--sand-50);border-bottom:1px solid var(--sand-200)}
+.results-toolbar .label{font-size:.72rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em}
+.result-info{font-size:.72rem;color:var(--ink-3);margin-left:auto}
+.result-table-wrap{overflow-x:auto;padding:.75rem}
+table.result-table{border-collapse:collapse;width:100%;font-size:.8rem}
+table.result-table th{background:var(--subject-color);color:#fff;padding:.4rem .6rem;text-align:left;font-weight:700;font-family:'Courier New',monospace;font-size:.72rem;text-transform:uppercase;white-space:nowrap}
+table.result-table td{padding:.35rem .6rem;border-bottom:1px solid var(--sand-100);font-family:'Courier New',monospace;font-size:.78rem;color:var(--ink);white-space:nowrap}
+table.result-table tr:hover td{background:var(--subject-bg)}
+table.result-table tr:nth-child(even) td{background:var(--sand-50)}
+.result-message{padding:1.5rem;text-align:center;color:var(--ink-3);font-size:.85rem}
+.result-error{padding:1rem;margin:.75rem;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;color:#991b1b;font-size:.82rem;font-family:'Courier New',monospace;white-space:pre-wrap;line-height:1.5}
+.result-success{padding:.75rem 1rem;margin:.75rem;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;color:#166534;font-size:.82rem;line-height:1.5}
+.multi-result{margin-bottom:1rem}
+.multi-result h4{font-size:.75rem;font-weight:700;color:var(--subject-color);padding:.5rem .75rem;background:var(--sand-50);border-bottom:1px solid var(--sand-200)}
+
+/* History */
+.history-wrap{border-top:1px solid var(--sand-200);max-height:200px;overflow-y:auto}
+.history-item{display:flex;gap:.5rem;align-items:flex-start;padding:.4rem .75rem;border-bottom:1px solid var(--sand-100);cursor:pointer;font-size:.72rem;transition:background .1s}
+.history-item:hover{background:var(--sand-50)}
+.history-item .q{flex:1;font-family:'Courier New',monospace;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.history-item .t{color:var(--ink-3);flex-shrink:0}
+.history-item.err .q{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">&larr; Back to Hub</a>
+
+<div class="hero">
+  <div class="badge">Computer Science XII &middot; Interactive Practice</div>
+  <h1>SQL Playground</h1>
+  <p class="sub">Write and run SQL queries right in your browser — pre-loaded with CBSE exam-style tables. No setup needed.</p>
+</div>
+
+<div class="playground">
+  <!-- Sidebar: Tables & Sample Queries -->
+  <div class="sidebar">
+    <h3>Tables</h3>
+    <div id="tableCards"></div>
+
+    <div class="sample-queries">
+      <h4>Try These Queries</h4>
+      <div id="sampleQueries"></div>
+    </div>
+  </div>
+
+  <!-- Main Editor & Results -->
+  <div class="main-area">
+    <div class="editor-wrap">
+      <div class="editor-toolbar">
+        <span class="label">SQL Editor</span>
+        <span class="shortcut-hint">Ctrl+Enter to run</span>
+        <button class="btn btn-clear" onclick="clearEditor()">Clear</button>
+        <button class="btn btn-reset" onclick="resetDB()">Reset Tables</button>
+        <button class="btn btn-run" onclick="runQuery()">Run &nbsp;&#9654;</button>
+      </div>
+      <textarea class="editor" id="editor" placeholder="-- Write your SQL query here&#10;SELECT * FROM STUDENT;" spellcheck="false"></textarea>
+    </div>
+    <div class="results-wrap">
+      <div class="results-toolbar">
+        <span class="label">Results</span>
+        <span class="result-info" id="resultInfo"></span>
+      </div>
+      <div id="resultsArea">
+        <div class="result-message">Run a query to see results here</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+
+<script>
+// ── Table definitions (CBSE exam style) ──
+const TABLES = [
+  {
+    name: 'STUDENT',
+    columns: [
+      { name: 'RNO', type: 'INT', pk: true },
+      { name: 'NAME', type: 'VARCHAR(20)' },
+      { name: 'CLASS', type: 'INT' },
+      { name: 'SECTION', type: 'CHAR(1)' },
+      { name: 'MARKS', type: 'FLOAT' },
+      { name: 'GRADE', type: 'CHAR(1)' },
+      { name: 'CITY', type: 'VARCHAR(20)' }
+    ],
+    create: `CREATE TABLE STUDENT (
+      RNO INT PRIMARY KEY, NAME VARCHAR(20), CLASS INT,
+      SECTION CHAR(1), MARKS FLOAT, GRADE CHAR(1), CITY VARCHAR(20)
+    )`,
+    inserts: [
+      "INSERT INTO STUDENT VALUES (1,'Aman',12,'A',92.5,'A','Delhi')",
+      "INSERT INTO STUDENT VALUES (2,'Priya',12,'B',85.0,'B','Mumbai')",
+      "INSERT INTO STUDENT VALUES (3,'Ravi',12,'A',78.5,'C','Delhi')",
+      "INSERT INTO STUDENT VALUES (4,'Sneha',12,'B',95.0,'A','Chennai')",
+      "INSERT INTO STUDENT VALUES (5,'Kabir',12,'A',62.0,'D','Mumbai')",
+      "INSERT INTO STUDENT VALUES (6,'Meera',12,'C',88.5,'B','Kolkata')",
+      "INSERT INTO STUDENT VALUES (7,'Arjun',12,'B',71.0,'C','Delhi')",
+      "INSERT INTO STUDENT VALUES (8,'Diya',12,'A',56.5,'D','Chennai')",
+      "INSERT INTO STUDENT VALUES (9,'Rohit',12,'C',91.0,'A','Mumbai')",
+      "INSERT INTO STUDENT VALUES (10,'Anita',12,'B',83.0,'B','Kolkata')"
+    ]
+  },
+  {
+    name: 'EMPLOYEE',
+    columns: [
+      { name: 'EMPNO', type: 'INT', pk: true },
+      { name: 'ENAME', type: 'VARCHAR(20)' },
+      { name: 'DEPARTMENT', type: 'VARCHAR(15)' },
+      { name: 'SALARY', type: 'FLOAT' },
+      { name: 'DOJ', type: 'DATE' },
+      { name: 'CITY', type: 'VARCHAR(20)' }
+    ],
+    create: `CREATE TABLE EMPLOYEE (
+      EMPNO INT PRIMARY KEY, ENAME VARCHAR(20), DEPARTMENT VARCHAR(15),
+      SALARY FLOAT, DOJ DATE, CITY VARCHAR(20)
+    )`,
+    inserts: [
+      "INSERT INTO EMPLOYEE VALUES (101,'Nisha','HR',55000,'2019-06-15','Delhi')",
+      "INSERT INTO EMPLOYEE VALUES (102,'Amit','IT',72000,'2018-03-20','Mumbai')",
+      "INSERT INTO EMPLOYEE VALUES (103,'Priya','HR',48000,'2021-01-10','Delhi')",
+      "INSERT INTO EMPLOYEE VALUES (104,'Raj','IT',85000,'2017-08-05','Chennai')",
+      "INSERT INTO EMPLOYEE VALUES (105,'Suman','SALES',42000,'2020-11-25','Kolkata')",
+      "INSERT INTO EMPLOYEE VALUES (106,'Kavita','IT',68000,'2019-04-18','Mumbai')",
+      "INSERT INTO EMPLOYEE VALUES (107,'Deepak','SALES',45000,'2022-02-14','Delhi')",
+      "INSERT INTO EMPLOYEE VALUES (108,'Ritu','HR',52000,'2020-07-30','Chennai')"
+    ]
+  },
+  {
+    name: 'PRODUCT',
+    columns: [
+      { name: 'PID', type: 'INT', pk: true },
+      { name: 'PNAME', type: 'VARCHAR(25)' },
+      { name: 'CATEGORY', type: 'VARCHAR(15)' },
+      { name: 'PRICE', type: 'FLOAT' },
+      { name: 'QTY', type: 'INT' },
+      { name: 'SUPPLIER', type: 'VARCHAR(20)' }
+    ],
+    create: `CREATE TABLE PRODUCT (
+      PID INT PRIMARY KEY, PNAME VARCHAR(25), CATEGORY VARCHAR(15),
+      PRICE FLOAT, QTY INT, SUPPLIER VARCHAR(20)
+    )`,
+    inserts: [
+      "INSERT INTO PRODUCT VALUES (1,'Laptop','Electronics',45000,25,'TechWorld')",
+      "INSERT INTO PRODUCT VALUES (2,'Mouse','Electronics',500,150,'TechWorld')",
+      "INSERT INTO PRODUCT VALUES (3,'Notebook','Stationery',80,500,'PaperMart')",
+      "INSERT INTO PRODUCT VALUES (4,'Pen','Stationery',20,1000,'PaperMart')",
+      "INSERT INTO PRODUCT VALUES (5,'Monitor','Electronics',18000,30,'DigitalHub')",
+      "INSERT INTO PRODUCT VALUES (6,'Keyboard','Electronics',1200,80,'TechWorld')",
+      "INSERT INTO PRODUCT VALUES (7,'Eraser','Stationery',10,800,'PaperMart')",
+      "INSERT INTO PRODUCT VALUES (8,'Tablet','Electronics',28000,15,'DigitalHub')"
+    ]
+  },
+  {
+    name: 'ORDERS',
+    columns: [
+      { name: 'OID', type: 'INT', pk: true },
+      { name: 'PID', type: 'INT', fk: 'PRODUCT' },
+      { name: 'CUST_NAME', type: 'VARCHAR(20)' },
+      { name: 'ORDER_DATE', type: 'DATE' },
+      { name: 'QUANTITY', type: 'INT' }
+    ],
+    create: `CREATE TABLE ORDERS (
+      OID INT PRIMARY KEY, PID INT, CUST_NAME VARCHAR(20),
+      ORDER_DATE DATE, QUANTITY INT
+    )`,
+    inserts: [
+      "INSERT INTO ORDERS VALUES (1001,1,'Rahul','2024-01-15',2)",
+      "INSERT INTO ORDERS VALUES (1002,3,'Sonia','2024-01-20',10)",
+      "INSERT INTO ORDERS VALUES (1003,2,'Rahul','2024-02-05',5)",
+      "INSERT INTO ORDERS VALUES (1004,5,'Amit','2024-02-10',1)",
+      "INSERT INTO ORDERS VALUES (1005,1,'Sonia','2024-03-01',1)",
+      "INSERT INTO ORDERS VALUES (1006,4,'Neha','2024-03-12',20)",
+      "INSERT INTO ORDERS VALUES (1007,6,'Amit','2024-03-15',3)",
+      "INSERT INTO ORDERS VALUES (1008,8,'Rahul','2024-04-01',1)"
+    ]
+  }
+];
+
+const SAMPLE_QUERIES = [
+  { label: 'Show all students', sql: 'SELECT * FROM STUDENT;' },
+  { label: 'Students with marks > 85', sql: "SELECT NAME, MARKS FROM STUDENT\nWHERE MARKS > 85\nORDER BY MARKS DESC;" },
+  { label: 'Count students per city', sql: "SELECT CITY, COUNT(*) AS TOTAL\nFROM STUDENT\nGROUP BY CITY;" },
+  { label: 'Average salary by dept', sql: "SELECT DEPARTMENT,\n  AVG(SALARY) AS AVG_SAL,\n  MAX(SALARY) AS MAX_SAL\nFROM EMPLOYEE\nGROUP BY DEPARTMENT;" },
+  { label: 'Products between 500-20000', sql: "SELECT PNAME, PRICE\nFROM PRODUCT\nWHERE PRICE BETWEEN 500 AND 20000;" },
+  { label: 'JOIN: Orders with product names', sql: "SELECT O.OID, P.PNAME,\n  O.CUST_NAME, O.QUANTITY,\n  P.PRICE * O.QUANTITY AS TOTAL\nFROM ORDERS O, PRODUCT P\nWHERE O.PID = P.PID;" },
+  { label: 'Names starting with \'A\'', sql: "SELECT NAME FROM STUDENT\nWHERE NAME LIKE 'A%';" },
+  { label: 'DISTINCT categories', sql: "SELECT DISTINCT CATEGORY\nFROM PRODUCT;" },
+  { label: 'Dept with avg salary > 50000', sql: "SELECT DEPARTMENT,\n  AVG(SALARY) AS AVG_SAL\nFROM EMPLOYEE\nGROUP BY DEPARTMENT\nHAVING AVG(SALARY) > 50000;" },
+  { label: 'UPDATE a record', sql: "UPDATE STUDENT\nSET MARKS = 96.0, GRADE = 'A'\nWHERE RNO = 3;\n\nSELECT * FROM STUDENT\nWHERE RNO = 3;" },
+  { label: 'INSERT a new student', sql: "INSERT INTO STUDENT VALUES\n  (11,'Zara',12,'C',89.0,'B','Pune');\n\nSELECT * FROM STUDENT\nORDER BY RNO;" },
+  { label: 'DELETE and verify', sql: "DELETE FROM ORDERS\nWHERE OID = 1008;\n\nSELECT * FROM ORDERS;" },
+];
+
+let db = null;
+const history = [];
+
+// ── Init sql.js ──
+async function initDB() {
+  const SQL = await initSqlJs({
+    locateFile: f => 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/' + f
+  });
+  db = new SQL.Database();
+  loadTables();
+  renderSidebar();
+}
+
+function loadTables() {
+  TABLES.forEach(t => {
+    db.run(t.create);
+    t.inserts.forEach(ins => db.run(ins));
+  });
+}
+
+function resetDB() {
+  if (!confirm('Reset all tables to original data? Your changes will be lost.')) return;
+  TABLES.forEach(t => { try { db.run('DROP TABLE IF EXISTS ' + t.name); } catch(e){} });
+  loadTables();
+  document.getElementById('resultsArea').innerHTML = '<div class="result-success">All tables reset to original data.</div>';
+  document.getElementById('resultInfo').textContent = '';
+}
+
+// ── Render sidebar ──
+function renderSidebar() {
+  const cardsEl = document.getElementById('tableCards');
+  cardsEl.innerHTML = TABLES.map(t => {
+    const cols = t.columns.map(c => {
+      let badges = '';
+      if (c.pk) badges += '<span class="pk-badge">PK</span>';
+      if (c.fk) badges += '<span class="pk-badge" style="background:#2563eb">FK</span>';
+      return `<div class="col-row"><span class="col-name">${c.name}${badges}</span><span class="col-type">${c.type}</span></div>`;
+    }).join('');
+    return `<div class="table-card">
+      <div class="table-card-head" onclick="this.nextElementSibling.classList.toggle('collapsed')">
+        <span>${t.name}</span><span>${t.columns.length} cols &middot; ${t.inserts.length} rows</span>
+      </div>
+      <div class="table-card-body">${cols}</div>
+    </div>`;
+  }).join('');
+
+  const sqEl = document.getElementById('sampleQueries');
+  sqEl.innerHTML = SAMPLE_QUERIES.map(sq =>
+    `<button class="sq-btn" onclick="loadQuery(this)" data-sql="${sq.sql.replace(/"/g, '&quot;')}">${sq.label}</button>`
+  ).join('');
+}
+
+function loadQuery(btn) {
+  document.getElementById('editor').value = btn.dataset.sql;
+  document.getElementById('editor').focus();
+}
+
+function clearEditor() {
+  document.getElementById('editor').value = '';
+  document.getElementById('editor').focus();
+}
+
+// ── Run query ──
+function runQuery() {
+  const editor = document.getElementById('editor');
+  const sql = editor.value.trim();
+  if (!sql) return;
+
+  const resultsArea = document.getElementById('resultsArea');
+  const resultInfo = document.getElementById('resultInfo');
+  const startTime = performance.now();
+
+  try {
+    // Split by semicolons to handle multiple statements
+    const statements = sql.split(';').map(s => s.trim()).filter(s => s.length > 0);
+    let html = '';
+    let totalRows = 0;
+    let lastSelectResult = null;
+
+    statements.forEach((stmt, idx) => {
+      const isSelect = /^\s*(SELECT|PRAGMA|DESCRIBE|SHOW|EXPLAIN)/i.test(stmt);
+
+      if (isSelect) {
+        const results = db.exec(stmt);
+        if (results.length > 0) {
+          const r = results[0];
+          totalRows += r.values.length;
+          lastSelectResult = r;
+
+          if (statements.length > 1) {
+            html += `<div class="multi-result"><h4>Statement ${idx + 1}</h4>`;
+          }
+          html += '<div class="result-table-wrap"><table class="result-table"><thead><tr>';
+          r.columns.forEach(col => { html += `<th>${col}</th>`; });
+          html += '</tr></thead><tbody>';
+          r.values.forEach(row => {
+            html += '<tr>';
+            row.forEach(val => {
+              html += `<td>${val === null ? '<em style="color:#a8a29e">NULL</em>' : escapeHtml(String(val))}</td>`;
+            });
+            html += '</tr>';
+          });
+          html += '</tbody></table></div>';
+          if (statements.length > 1) html += '</div>';
+        } else {
+          html += '<div class="result-success">Query executed successfully. No rows returned.</div>';
+        }
+      } else {
+        db.run(stmt);
+        const changes = db.getRowsModified();
+        html += `<div class="result-success">Query OK. ${changes} row(s) affected.</div>`;
+      }
+    });
+
+    const elapsed = (performance.now() - startTime).toFixed(1);
+    resultsArea.innerHTML = html || '<div class="result-success">Query executed successfully.</div>';
+    resultInfo.textContent = totalRows > 0 ? `${totalRows} row(s) in ${elapsed}ms` : `Done in ${elapsed}ms`;
+
+    addHistory(sql, false);
+  } catch (err) {
+    resultsArea.innerHTML = `<div class="result-error">Error: ${escapeHtml(err.message)}</div>`;
+    resultInfo.textContent = 'Error';
+    addHistory(sql, true);
+  }
+}
+
+function addHistory(sql, isError) {
+  history.unshift({ sql, isError, time: new Date().toLocaleTimeString() });
+  if (history.length > 50) history.pop();
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// ── Keyboard shortcut ──
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    e.preventDefault();
+    runQuery();
+  }
+});
+
+// ── Tab key in editor ──
+document.addEventListener('DOMContentLoaded', function() {
+  const editor = document.getElementById('editor');
+  editor.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      this.value = this.value.substring(0, start) + '  ' + this.value.substring(end);
+      this.selectionStart = this.selectionEnd = start + 2;
+    }
+  });
+});
+
+// ── Boot ──
+initDB().catch(err => {
+  document.getElementById('resultsArea').innerHTML =
+    `<div class="result-error">Failed to initialize SQL engine: ${err.message}</div>`;
+});
+</script>
+</body>
+</html>

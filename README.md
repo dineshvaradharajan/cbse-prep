@@ -1,12 +1,12 @@
 # CBSE Class 12 Exam Preparation
 
-A comprehensive, fully static revision platform for CBSE Class 12 Physics, Chemistry and Mathematics — live at **[ncert.myailab.space](https://ncert.myailab.space)**.
+A comprehensive, fully static revision platform for CBSE Class 12 Physics, Chemistry, Mathematics and Computer Science — live at **[cbse-prep.pages.dev](https://cbse-prep.pages.dev)**.
 
 ---
 
 ## What It Is
 
-A structured study tool built specifically for CBSE board exam preparation. Every page is focused on one job: help a student score more marks. No accounts, no tracking, no paywall — just content. Covers all three core subjects — Physics, Chemistry and Mathematics.
+A structured study tool built specifically for CBSE board exam preparation. Every page is focused on one job: help a student score more marks. No accounts, no tracking, no paywall — just content. Covers all four core subjects — Physics, Chemistry, Mathematics and Computer Science.
 
 ---
 
@@ -56,6 +56,24 @@ A structured study tool built specifically for CBSE board exam preparation. Ever
 | 11 | Three Dimensional Geometry |
 | 12 | Linear Programming |
 | 13 | Probability |
+
+### Computer Science — 13 Chapters
+
+| # | Chapter |
+|---|---------|
+| 1 | Exception Handling in Python |
+| 2 | File Handling in Python |
+| 3 | Stack |
+| 4 | Queue |
+| 5 | Sorting |
+| 6 | Searching |
+| 7 | Understanding Data |
+| 8 | Database Concepts |
+| 9 | Structured Query Language (SQL) |
+| 10 | Computer Networks |
+| 11 | Data Communication |
+| 12 | Security Aspects |
+| 13 | Project Based Learning |
 
 ---
 
@@ -185,6 +203,51 @@ Complete formula reference across all 13 chapters:
 - 5-mark concept guide — important proofs, derivations, long-answer patterns
 - Step-by-step proofs: Rolle's theorem, MVT, Bayes' theorem, integration formulas
 
+### CS Chapters
+13 chapter summary pages covering Python, Data Structures, SQL, Networks:
+- Chapter banners with subtopics and marks allocation
+- Key syntax and commands reference
+- Important algorithms and concepts
+- Exercise overviews with 129 NCERT questions
+
+### CS Syntax & Commands Reference
+75+ syntax items organised by chapter:
+- Python file handling modes, pickle methods, CSV operations
+- SQL DDL/DML commands, aggregate functions, JOIN syntax
+- Stack/Queue operations, sorting algorithms
+
+### CS Important Programs Bank
+33 most-asked programs for CBSE board exam:
+- File handling (text, binary, CSV) — read, write, search, update
+- Stack operations (push, pop for integers, strings, tuples)
+- Python functions (recursion, scope, default arguments)
+- SQL queries (SELECT, JOIN, GROUP BY, aggregate functions)
+- Code, expected output, and examiner tips for each program
+
+### CS MCQ Mock Tests
+15 timed mini-tests with 75 MCQs:
+- 5 MCQs per test, 5 minutes each
+- Python output prediction, SQL queries, networking, file handling
+- Full test engine — timer, question nav, result screen, detailed review
+
+### CS SQL Playground
+Interactive SQL editor running in the browser (sql.js/WebAssembly):
+- 4 pre-loaded exam-style tables (STUDENT, EMPLOYEE, PRODUCT, ORDERS)
+- 12 sample queries covering all CBSE exam patterns
+- Write, run, and see results instantly — no setup needed
+- Supports SELECT, INSERT, UPDATE, DELETE, JOIN, GROUP BY, aggregate functions
+
+### CS Previous Year Questions
+150 questions from CBSE board papers (2020–2025):
+- Section A MCQs, Section B–E coding and SQL questions
+- All questions with answers and explanations
+- Organised by year with collapsible sections
+
+### CS Question Bank
+129 NCERT textbook exercises from all 13 chapters:
+- Grouped by chapter and exercise number
+- Show/hide answers with explanations
+
 ---
 
 ## Project Structure
@@ -226,6 +289,16 @@ CBSEPrep/
 │   ├── pyq.html                  # 391 previous year questions (2019–2025)
 │   └── case-study.html           # Case study questions
 │
+├── cs/
+│   ├── chapters.html             # 13 chapter summaries with syntax & tips
+│   ├── formulas.html             # Syntax & commands reference
+│   ├── concepts.html             # Important concepts guide
+│   ├── programs.html             # 33 most-asked programs with code
+│   ├── mock-tests.html           # 15 MCQ mini-tests (75 questions)
+│   ├── sql-playground.html       # Interactive SQL editor (sql.js)
+│   ├── question-bank.html        # 129 NCERT exercises
+│   └── pyq.html                  # 150 previous year questions (2020–2025)
+│
 ├── data/
 │   ├── ch1-charges-fields/       # concepts.js + questions.js
 │   ├── ch2-potential-capacitance/
@@ -246,6 +319,9 @@ CBSEPrep/
 │   ├── maths/                    # Maths chapter JSON (ch1–ch13)
 │   ├── pyq/maths/               # Maths PYQ JSON (2019–2025)
 │   ├── maths-mock-tests.js       # Maths mock test data (30 tests)
+│   ├── cs-mock-tests.js          # CS mock test data (15 tests)
+│   ├── cs/                       # CS chapter JSON (ch1–ch13) + programs-bank.json
+│   ├── pyq/cs/                   # CS PYQ JSON (2020–2025)
 │   ├── all-chemistry-mock-tests.js # Chemistry mock test data
 │   └── registry.js               # Topic-to-data mapping
 │
@@ -266,7 +342,9 @@ CBSEPrep/
 │   ├── gen-maths-pages.js        # Generator for maths HTML pages
 │   ├── gen-maths-chapters.js     # Generator for maths chapters page
 │   ├── gen-maths-mock-tests.py   # Generator for maths mock test data
-│   └── inject-qbank-answers.py   # Injects MCQ answers into question bank
+│   ├── inject-qbank-answers.py   # Injects MCQ answers into question bank
+│   ├── gen-cs-chapters.js        # Generator for CS chapters page
+│   └── gen-cs-pages.js           # Generator for CS HTML pages
 │
 └── js/
     ├── index.js                  # Subject/tab switching, localStorage
@@ -319,21 +397,25 @@ All styles use a unified token system defined in `css/base.css`.
 | Physics chapters | 14 + 1 sub-topic |
 | Chemistry branches | 3 |
 | Maths chapters | 13 |
-| Concept data files | 17 |
+| CS chapters | 13 |
+| Concept data files | 30 |
 | Concept cards (est.) | 150+ |
 | MCQs (Physics + Chemistry) | 700+ |
 | Maths PYQ questions | 391 |
 | Maths NCERT exercises | 952 |
-| Mock test questions | 350+ |
+| CS PYQ questions | 150 |
+| CS NCERT exercises | 129 |
+| CS important programs | 33 |
+| Mock test questions | 500+ |
 | Animated diagrams | 30+ |
-| HTML pages | 41 |
+| HTML pages | 49 |
 | CSS files | 8 |
 
 ---
 
 ## Deployment
 
-Hosted on **Cloudflare Pages** at `ncert.myailab.space`.
+Hosted on **Cloudflare Pages** at `cbse-prep.pages.dev`.
 
 Deployed via Wrangler CLI — no build step needed (pure static files):
 

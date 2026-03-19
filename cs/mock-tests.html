@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/mock-tests.css">
+<style>:root{
+  --subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;
+  --green:#16a34a;--orange:#d97706;--red:#dc2626;
+}
+code{font-family:'Courier New',monospace;font-size:.85rem;background:#f0fdf4;padding:.05rem .3rem;border-radius:3px}
+.q-text{white-space:pre-wrap !important}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Computer Science MCQ Mock Tests for CBSE Class 12 — 15 timed mini-tests covering Python, SQL, Networks.">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CS Mock Tests | CBSE Class 12">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/cs/mock-tests.html">
+<title>CS Mock Tests | CBSE Class 12</title>
+</head>
+<body>
+<div class="container">
+
+  <a href="../index.html" class="back-link">&larr; Back to Prep Hub</a>
+
+  <!-- ══════════════════ SELECT SCREEN ══════════════════ -->
+  <div id="screen-select">
+    <div class="page-header">
+      <h1>MCQ Mock Tests</h1>
+      <p>15 tests &middot; 5 questions each &middot; 5 minutes &middot; Python, SQL, Networks</p>
+    </div>
+    <div class="test-grid" id="test-grid"></div>
+  </div>
+
+  <!-- ══════════════════ TEST SCREEN ══════════════════ -->
+  <div id="screen-test" style="display:none">
+    <div class="test-topbar">
+      <div>
+        <div class="test-topbar-name" id="topbar-name"></div>
+        <div class="test-topbar-meta">5 questions &middot; 1 mark each &middot; No negative marking</div>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-label">Time left</div>
+        <div class="timer-display" id="timer-display">05:00</div>
+      </div>
+    </div>
+
+    <div class="q-nav-bar" id="q-nav-bar">
+      <div class="nav-legend">
+        <span class="dot-legend answered"></span> Answered
+        <span class="dot-legend active"></span> Current
+      </div>
+    </div>
+
+    <div class="progress-row">
+      <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+      <div class="prog-label" id="prog-label">0 / 5 answered</div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header">
+        <span class="q-num" id="q-number-label">Question 1 of 5</span>
+        <span class="q-counter" id="q-counter">1 / 5</span>
+      </div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options-grid" id="options-grid"></div>
+
+      <div class="explanation-box" id="expl-box" style="display:none">
+        <div class="expl-label" id="expl-label"></div>
+        <div class="expl-text" id="expl-text"></div>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" id="btn-prev" onclick="navigate(-1)">&larr; Previous</button>
+      <button class="nav-btn primary" id="btn-next" onclick="navigate(1)">Next &rarr;</button>
+      <button class="nav-btn submit" id="btn-submit" onclick="confirmSubmit()">Submit Test</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ RESULT SCREEN ══════════════════ -->
+  <div id="screen-result" style="display:none">
+    <div class="result-card">
+      <div class="result-header">
+        <h2>Test Complete!</h2>
+        <div class="result-grade" id="res-grade"></div>
+      </div>
+      <div class="result-score-ring">
+        <div class="score-big" id="res-score">0</div>
+        <div class="score-of">/ 5</div>
+        <div class="score-pct" id="res-pct">0%</div>
+      </div>
+      <div class="result-stats">
+        <div class="stat correct"><span class="stat-num" id="res-correct">0</span><span class="stat-label">Correct</span></div>
+        <div class="stat wrong"><span class="stat-num" id="res-wrong">0</span><span class="stat-label">Wrong</span></div>
+        <div class="stat skipped"><span class="stat-num" id="res-skipped">0</span><span class="stat-label">Skipped</span></div>
+        <div class="stat time"><span class="stat-num" id="res-time">-</span><span class="stat-label">Time</span></div>
+      </div>
+      <div class="result-actions">
+        <button class="nav-btn" onclick="retakeTest()">Retake</button>
+        <button class="nav-btn primary" onclick="backToSelect()">All Tests</button>
+      </div>
+    </div>
+    <h3 class="review-heading">Detailed Review</h3>
+    <div id="review-list"></div>
+  </div>
+
+</div>
+
+<script src="../data/cs-mock-tests.js"></script>
+<script src="../js/mobile-dropdowns.js"></script>
+<script>
+function escHtml(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+/* ═══════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════ */
+let activeTest = null;
+let currentQ = 0;
+let selections = {};
+let submitted = false;
+let timerSeconds = 0;
+let timerInterval = null;
+let startTime = null;
+const LETTERS = ['A','B','C','D'];
+const TOTAL_Q = 5;
+
+/* ═══════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════ */
+function buildSelectScreen() {
+  const grid = document.getElementById('test-grid');
+  grid.innerHTML = '';
+  csTests.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'test-card';
+    card.innerHTML = `
+      <div class="test-card-header">
+        <div class="test-icon">💻</div>
+        <div>
+          <h3>${t.title}</h3>
+          <div class="test-sub">5 MCQs &middot; 5 minutes</div>
+        </div>
+      </div>
+      <div class="test-meta">
+        <span class="test-badge">5 Questions</span>
+        <span class="test-badge time">&#9201; 5 min</span>
+        <span class="test-badge marks">&#9733; 5 Marks</span>
+      </div>
+      <button class="test-start-btn" onclick="startTest(${t.id})">Start Test &rarr;</button>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   START TEST
+═══════════════════════════════════════════════ */
+function startTest(testId) {
+  activeTest = csTests.find(t => t.id === testId);
+  currentQ = 0;
+  selections = {};
+  submitted = false;
+  startTime = Date.now();
+
+  document.getElementById('screen-select').style.display = 'none';
+  document.getElementById('screen-result').style.display = 'none';
+  document.getElementById('screen-test').style.display = 'block';
+  document.getElementById('topbar-name').textContent = activeTest.title;
+
+  buildQNav();
+  renderQuestion();
+  startTimer(activeTest.duration);
+}
+
+/* ═══════════════════════════════════════════════
+   TIMER
+═══════════════════════════════════════════════ */
+function startTimer(seconds) {
+  if (timerInterval) clearInterval(timerInterval);
+  timerSeconds = seconds;
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timerSeconds--;
+    updateTimerDisplay();
+    if (timerSeconds <= 0) { clearInterval(timerInterval); timerSeconds = 0; submitTest(true); }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const el = document.getElementById('timer-display');
+  const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+  const s = (timerSeconds % 60).toString().padStart(2, '0');
+  el.textContent = `${m}:${s}`;
+  if (timerSeconds < 60) el.style.color = '#dc2626';
+  else if (timerSeconds < 180) el.style.color = '#d97706';
+  else el.style.color = '';
+}
+
+function elapsedStr() {
+  const elapsed = Math.round((Date.now() - startTime) / 1000);
+  return `${Math.floor(elapsed / 60)}m ${elapsed % 60}s`;
+}
+
+/* ═══════════════════════════════════════════════
+   QUESTION NAV DOTS
+═══════════════════════════════════════════════ */
+function buildQNav() {
+  const bar = document.getElementById('q-nav-bar');
+  bar.querySelectorAll('.q-dot').forEach(d => d.remove());
+  const legend = bar.querySelector('.nav-legend');
+  activeTest.questions.forEach((q, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'q-dot';
+    dot.id = `dot-${i}`;
+    dot.textContent = i + 1;
+    dot.onclick = () => { currentQ = i; renderQuestion(); };
+    bar.insertBefore(dot, legend);
+  });
+  updateQNav();
+}
+
+function updateQNav() {
+  if (!activeTest) return;
+  activeTest.questions.forEach((q, i) => {
+    const dot = document.getElementById(`dot-${i}`);
+    if (!dot) return;
+    dot.className = 'q-dot';
+    if (submitted) {
+      const sel = selections[i];
+      if (sel === undefined) dot.classList.add('skipped');
+      else if (sel === q.correct) dot.classList.add('correct');
+      else dot.classList.add('wrong');
+    } else {
+      if (selections[i] !== undefined) dot.classList.add('answered');
+    }
+    if (i === currentQ) dot.classList.add('active');
+  });
+
+  const answered = Object.keys(selections).length;
+  document.getElementById('prog-fill').style.width = (answered / TOTAL_Q * 100) + '%';
+  document.getElementById('prog-label').textContent = `${answered} / ${TOTAL_Q} answered`;
+}
+
+/* ═══════════════════════════════════════════════
+   RENDER QUESTION
+═══════════════════════════════════════════════ */
+function renderQuestion() {
+  const q = activeTest.questions[currentQ];
+
+  document.getElementById('q-number-label').textContent = `Question ${currentQ + 1} of ${TOTAL_Q}`;
+  document.getElementById('q-text').innerHTML = escHtml(q.question);
+  document.getElementById('q-counter').textContent = `${currentQ + 1} / ${TOTAL_Q}`;
+
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const letter = LETTERS[i];
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+
+    const sel = selections[currentQ];
+    if (submitted) {
+      btn.disabled = true;
+      if (i === q.correct) btn.classList.add('correct-ans');
+      else if (sel === i) btn.classList.add('wrong-ans');
+    } else {
+      if (sel === i) btn.classList.add('selected');
+      btn.onclick = () => selectAnswer(i);
+    }
+
+    btn.innerHTML = `<span class="opt-letter">${letter}</span><span>${escHtml(opt)}</span>`;
+    grid.appendChild(btn);
+  });
+
+  const explBox = document.getElementById('expl-box');
+  if (submitted) {
+    const sel = selections[currentQ];
+    const isCorrect = sel === q.correct;
+    explBox.style.display = 'block';
+    explBox.className = 'explanation-box' + (isCorrect ? '' : ' wrong');
+    document.getElementById('expl-label').textContent = isCorrect ? 'Correct!' : `Incorrect — Answer: ${LETTERS[q.correct]}`;
+    document.getElementById('expl-text').innerHTML = escHtml(q.explanation);
+  } else {
+    explBox.style.display = 'none';
+  }
+
+  document.getElementById('btn-prev').disabled = currentQ === 0;
+  document.getElementById('btn-next').disabled = currentQ === TOTAL_Q - 1;
+  document.getElementById('btn-submit').style.display = submitted ? 'none' : '';
+  updateQNav();
+}
+
+/* ═══════════════════════════════════════════════
+   SELECT / NAVIGATE / SUBMIT
+═══════════════════════════════════════════════ */
+function selectAnswer(idx) {
+  if (submitted) return;
+  if (selections[currentQ] === idx) delete selections[currentQ];
+  else selections[currentQ] = idx;
+  renderQuestion();
+}
+
+function navigate(dir) {
+  const n = currentQ + dir;
+  if (n < 0 || n >= TOTAL_Q) return;
+  currentQ = n;
+  renderQuestion();
+}
+
+function confirmSubmit() {
+  const answered = Object.keys(selections).length;
+  const rem = TOTAL_Q - answered;
+  if (rem > 0 && !confirm(`You have ${rem} unanswered question${rem > 1 ? 's' : ''}. Submit anyway?`)) return;
+  submitTest(false);
+}
+
+function submitTest(auto) {
+  if (submitted) return;
+  submitted = true;
+  if (timerInterval) clearInterval(timerInterval);
+
+  const elapsed = elapsedStr();
+  let correct = 0, wrong = 0, skipped = 0;
+  activeTest.questions.forEach((q, i) => {
+    const sel = selections[i];
+    if (sel === undefined) skipped++;
+    else if (sel === q.correct) correct++;
+    else wrong++;
+  });
+
+  updateQNav();
+
+  document.getElementById('screen-test').style.display = 'none';
+  document.getElementById('screen-result').style.display = 'block';
+
+  const pct = Math.round((correct / TOTAL_Q) * 100);
+  document.getElementById('res-score').textContent = correct;
+  document.getElementById('res-pct').textContent = `${pct}%`;
+  document.getElementById('res-correct').textContent = correct;
+  document.getElementById('res-wrong').textContent = wrong;
+  document.getElementById('res-skipped').textContent = skipped;
+  document.getElementById('res-time').textContent = elapsed;
+
+  let grade, gradeClass;
+  if (pct >= 80)      { grade = 'A+  Excellent'; gradeClass = 'grade-a-plus'; }
+  else if (pct >= 60) { grade = 'A  Good';       gradeClass = 'grade-a'; }
+  else if (pct >= 40) { grade = 'B  Average';    gradeClass = 'grade-b'; }
+  else                { grade = 'C  Needs Work'; gradeClass = 'grade-d'; }
+
+  const gradeEl = document.getElementById('res-grade');
+  gradeEl.textContent = grade;
+  gradeEl.className = `result-grade ${gradeClass}`;
+  document.getElementById('res-pct').style.color = pct >= 60 ? 'var(--green)' : pct >= 40 ? 'var(--orange)' : 'var(--red)';
+
+  buildReview();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function buildReview() {
+  const list = document.getElementById('review-list');
+  list.innerHTML = '';
+  activeTest.questions.forEach((q, i) => {
+    const sel = selections[i];
+    const isCorrect = sel === q.correct;
+    const isSkipped = sel === undefined;
+    const cls = isSkipped ? 'r-skipped' : isCorrect ? 'r-correct' : 'r-wrong';
+    const item = document.createElement('div');
+    item.className = `review-item ${cls}`;
+
+    const yourText = sel !== undefined ? `Your answer: ${LETTERS[sel]} — ${escHtml(q.options[sel])}` : 'Not attempted';
+    const correctText = `Correct: ${LETTERS[q.correct]} — ${escHtml(q.options[q.correct])}`;
+
+    item.innerHTML = `
+      <div class="review-header">
+        <div class="review-num">${i + 1}</div>
+        <div class="review-q-text">${escHtml(q.question)}</div>
+      </div>
+      <div class="review-answers">
+        <span class="review-your">${yourText}</span>
+        ${!isCorrect ? `<span class="review-correct-tag">${correctText}</span>` : ''}
+      </div>
+      <div class="review-expl">${escHtml(q.explanation)}</div>
+    `;
+    list.appendChild(item);
+  });
+}
+
+function backToSelect() {
+  submitted = false;
+  document.getElementById('screen-result').style.display = 'none';
+  document.getElementById('screen-test').style.display = 'none';
+  document.getElementById('screen-select').style.display = 'block';
+  if (timerInterval) clearInterval(timerInterval);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function retakeTest() {
+  document.getElementById('screen-result').style.display = 'none';
+  startTest(activeTest.id);
+}
+
+/* Keyboard */
+document.addEventListener('keydown', e => {
+  if (!activeTest || submitted) return;
+  if (e.key === 'ArrowRight') navigate(1);
+  else if (e.key === 'ArrowLeft') navigate(-1);
+  else if ('1aA'.includes(e.key)) selectAnswer(0);
+  else if ('2bB'.includes(e.key)) selectAnswer(1);
+  else if ('3cC'.includes(e.key)) selectAnswer(2);
+  else if ('4dD'.includes(e.key)) selectAnswer(3);
+});
+
+/* BOOT */
+buildSelectScreen();
+document.getElementById('screen-select').style.display = 'block';
+</script>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+</body>
+</html>

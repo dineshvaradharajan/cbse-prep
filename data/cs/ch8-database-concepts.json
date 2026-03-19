@@ -1,0 +1,285 @@
+{
+  "chapter": 8,
+  "title": "Database Concepts",
+  "sections": [
+    {
+      "id": "8.1",
+      "title": "Introduction to Databases",
+      "concepts": [
+        "A database is an organized collection of related data",
+        "A Database Management System (DBMS) is software for creating and managing databases",
+        "Need for databases: data storage, retrieval, sharing, security, integrity",
+        "Examples of databases: school records, bank accounts, airline reservations",
+        "Popular DBMS: MySQL, Oracle, PostgreSQL, Microsoft SQL Server"
+      ],
+      "definitions": [
+        {
+          "term": "Database",
+          "definition": "A database is an organized collection of structured data (or information) stored electronically, so that it can be easily accessed, managed, and updated."
+        },
+        {
+          "term": "Database Management System (DBMS)",
+          "definition": "A Database Management System (DBMS) is a software system that provides an interface for users and applications to define, create, maintain, and control access to a database. It acts as an intermediary between the user and the database."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "A database stores related data in an organized manner",
+        "DBMS is the software used to manage databases",
+        "DBMS provides data independence, security, integrity, and concurrent access",
+        "Examples of DBMS: MySQL (open-source), Oracle, PostgreSQL, MS SQL Server"
+      ]
+    },
+    {
+      "id": "8.2",
+      "title": "File System vs DBMS",
+      "concepts": [
+        "File system stores data in separate files with no relationship management",
+        "DBMS provides centralized data management with relationships",
+        "Problems with file systems: data redundancy, data inconsistency, difficulty in accessing data, data isolation, integrity problems, security issues",
+        "DBMS overcomes limitations of file-based systems"
+      ],
+      "definitions": [
+        {
+          "term": "Data Redundancy",
+          "definition": "Data redundancy is the unnecessary duplication of data across multiple files. It wastes storage and can lead to data inconsistency when one copy is updated but others are not."
+        },
+        {
+          "term": "Data Inconsistency",
+          "definition": "Data inconsistency occurs when multiple copies of the same data have different values due to redundancy, leading to unreliable and conflicting information."
+        },
+        {
+          "term": "Data Isolation",
+          "definition": "Data isolation is a problem in file systems where data is scattered in various files with different formats, making it difficult to write programs to retrieve appropriate data."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "File system limitations: redundancy, inconsistency, isolation, security issues, no concurrent access",
+        "DBMS advantages: reduced redundancy, data consistency, data sharing, data security, data integrity, concurrent access, backup and recovery",
+        "File system: data stored in flat files with no relationships defined",
+        "DBMS: data stored in structured tables with relationships, constraints, and access control",
+        "DBMS provides data abstraction — users do not need to know how data is stored internally"
+      ]
+    },
+    {
+      "id": "8.3",
+      "title": "Database Management System",
+      "concepts": [
+        "Functions of DBMS: data definition, data manipulation, data security, data integrity, backup and recovery",
+        "Data abstraction: physical level, logical level, view level",
+        "Data independence: physical data independence, logical data independence",
+        "Components of DBMS: hardware, software, data, users (DBA, programmers, end users), procedures"
+      ],
+      "definitions": [
+        {
+          "term": "Data Abstraction",
+          "definition": "Data abstraction hides the complexity of data storage from users. It has three levels: Physical level (how data is stored), Logical level (what data is stored and relationships), and View level (part of database relevant to a particular user)."
+        },
+        {
+          "term": "Data Independence",
+          "definition": "Data independence is the ability to modify the schema at one level without affecting the schema at the next higher level. Physical data independence means changing storage without affecting logical schema. Logical data independence means changing logical schema without affecting external views."
+        },
+        {
+          "term": "Database Administrator (DBA)",
+          "definition": "A Database Administrator (DBA) is a person responsible for managing the database system, including defining the schema, setting access permissions, backup and recovery, performance tuning, and ensuring data security and integrity."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "DBMS functions: define, create, manipulate, share, protect, and maintain databases",
+        "Three levels of data abstraction: Physical (storage), Logical (structure), View (user perspective)",
+        "Data independence allows changes at one level without affecting other levels",
+        "DBA is responsible for the overall management and administration of the database",
+        "End users interact with the database through applications or queries"
+      ]
+    },
+    {
+      "id": "8.4",
+      "title": "Relational Data Model",
+      "concepts": [
+        "Relational model organizes data into tables (relations)",
+        "Each table has rows (tuples) and columns (attributes)",
+        "Each column has a domain (set of permitted values)",
+        "Degree of a relation: number of attributes (columns)",
+        "Cardinality of a relation: number of tuples (rows)",
+        "Properties of a relation: no duplicate tuples, tuples are unordered, attribute values are atomic"
+      ],
+      "definitions": [
+        {
+          "term": "Relation (Table)",
+          "definition": "In the relational model, a relation is a two-dimensional table consisting of rows and columns. Each relation has a unique name and stores data about a particular entity."
+        },
+        {
+          "term": "Attribute (Column)",
+          "definition": "An attribute is a column in a relation (table) that represents a particular property of the entity. For example, in a STUDENT table, Name, RollNo, and Marks are attributes."
+        },
+        {
+          "term": "Tuple (Row)",
+          "definition": "A tuple is a single row in a relation (table) that represents one record or instance of the entity. Each tuple contains values for all attributes of the relation."
+        },
+        {
+          "term": "Domain",
+          "definition": "The domain of an attribute is the set of all permissible values that the attribute can take. For example, the domain of Marks might be integers from 0 to 100."
+        },
+        {
+          "term": "Degree",
+          "definition": "The degree of a relation is the number of attributes (columns) in the relation. For example, a table with columns RollNo, Name, Marks has degree 3."
+        },
+        {
+          "term": "Cardinality",
+          "definition": "The cardinality of a relation is the number of tuples (rows) in the relation. Cardinality changes as rows are inserted or deleted."
+        },
+        {
+          "term": "Schema",
+          "definition": "A relation schema defines the structure of a relation, including its name, attribute names, and their domains. Example: STUDENT(RollNo, Name, Class, Marks)."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Relational model represents data as tables (relations)",
+        "Table = Relation, Column = Attribute, Row = Tuple",
+        "Degree = number of columns; Cardinality = number of rows",
+        "Domain is the set of valid values for an attribute",
+        "Each cell contains a single (atomic) value",
+        "No two tuples (rows) in a relation are identical",
+        "The order of tuples and attributes does not matter in the relational model",
+        "Example: STUDENT table with attributes (RollNo, Name, Class, Marks) has degree 4. If it has 50 students, cardinality is 50."
+      ]
+    },
+    {
+      "id": "8.5",
+      "title": "Keys in a Relational Database",
+      "concepts": [
+        "Keys uniquely identify tuples in a relation",
+        "Candidate key: minimal set of attributes that uniquely identifies each tuple",
+        "Primary key: the selected candidate key used to uniquely identify tuples",
+        "Alternate key: candidate keys that are not selected as primary key",
+        "Foreign key: attribute in one relation that references the primary key of another relation",
+        "Composite key: a key consisting of more than one attribute"
+      ],
+      "definitions": [
+        {
+          "term": "Candidate Key",
+          "definition": "A candidate key is a minimal set of attributes that can uniquely identify each tuple in a relation. A relation can have multiple candidate keys. Each candidate key must be unique and irreducible (no subset of it is also a key)."
+        },
+        {
+          "term": "Primary Key",
+          "definition": "A primary key is the candidate key selected by the database designer to uniquely identify each tuple in a relation. A table can have only one primary key. It cannot contain NULL values."
+        },
+        {
+          "term": "Alternate Key",
+          "definition": "An alternate key is a candidate key that is not chosen as the primary key. If a relation has multiple candidate keys, one becomes the primary key and the rest are alternate keys."
+        },
+        {
+          "term": "Foreign Key",
+          "definition": "A foreign key is an attribute (or set of attributes) in one relation that references the primary key of another relation. It establishes a link between two relations and enforces referential integrity."
+        },
+        {
+          "term": "Composite Key",
+          "definition": "A composite key is a primary key or candidate key that consists of two or more attributes. Together, these attributes uniquely identify each tuple, even though individually they may not."
+        },
+        {
+          "term": "Referential Integrity",
+          "definition": "Referential integrity is a constraint that ensures that a foreign key value in one table must either match a primary key value in the referenced table or be NULL. It prevents orphan records."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "A candidate key uniquely identifies each tuple and is minimal (no unnecessary attributes)",
+        "A relation can have multiple candidate keys, but only one primary key",
+        "Primary key cannot have NULL values and must be unique",
+        "Alternate keys are candidate keys not chosen as primary key",
+        "Foreign key creates a relationship between two tables",
+        "Foreign key in one table references the primary key of another table",
+        "Referential integrity ensures foreign key values match existing primary key values",
+        "Example: In STUDENT(RollNo, AdmNo, Name, Class), both RollNo and AdmNo are candidate keys. If RollNo is chosen as primary key, AdmNo is the alternate key. In RESULT(RollNo, Subject, Marks), RollNo is a foreign key referencing STUDENT."
+      ]
+    }
+  ],
+  "summary": [
+    "A database is an organized collection of related data managed by a DBMS.",
+    "DBMS advantages over file system: reduced redundancy, consistency, security, integrity, concurrent access.",
+    "The relational data model organizes data into tables (relations) with rows (tuples) and columns (attributes).",
+    "Degree = number of attributes (columns); Cardinality = number of tuples (rows).",
+    "Domain is the set of all permissible values for an attribute.",
+    "Candidate key uniquely identifies each tuple; primary key is the chosen candidate key.",
+    "Alternate keys are candidate keys not selected as primary key.",
+    "Foreign key references the primary key of another table, establishing relationships.",
+    "Primary key cannot be NULL; foreign key enforces referential integrity.",
+    "Data abstraction has three levels: physical, logical, and view."
+  ],
+  "exercises": [
+    {
+      "id": "8.1",
+      "title": "Exercise 8.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is a database? Give examples.",
+          "type": "short",
+          "answer": "A database is an organized collection of structured, related data stored electronically so that it can be easily accessed, managed, and updated. Examples: (1) School database — stores student details, marks, attendance. (2) Bank database — stores account details, transactions. (3) Railway reservation system — stores train schedules, passenger bookings. (4) Library database — stores book details, member information, issue/return records."
+        },
+        {
+          "qno": 2,
+          "question": "What are the limitations of a file system that led to the development of DBMS?",
+          "type": "long",
+          "answer": "Limitations of the file system:\n\n1. Data Redundancy: Same data stored in multiple files leads to wastage of storage and inconsistency.\n2. Data Inconsistency: When redundant data is updated in one file but not in others, conflicting information arises.\n3. Difficulty in Accessing Data: Retrieving specific data requires writing new programs each time; no standard query language.\n4. Data Isolation: Data scattered in various files with different formats makes it hard to combine and access related data.\n5. Integrity Problems: Enforcing consistency constraints (e.g., marks between 0-100) is difficult across multiple files.\n6. Security Issues: File systems lack fine-grained access control; it is hard to restrict specific data from certain users.\n7. Concurrent Access Problems: Multiple users accessing the same file simultaneously can lead to data corruption.\n8. No Backup and Recovery: File systems lack automatic backup and recovery mechanisms."
+        },
+        {
+          "qno": 3,
+          "question": "Explain the terms: Relation, Attribute, Tuple, Domain, Degree, and Cardinality with reference to a relational database.",
+          "type": "long",
+          "answer": "Consider the STUDENT table:\n| RollNo | Name   | Class | Marks |\n|--------|--------|-------|-------|\n| 1      | Aman   | XII   | 85    |\n| 2      | Priya  | XII   | 92    |\n| 3      | Rahul  | XII   | 78    |\n\n1. Relation: A table in the database. STUDENT is a relation.\n2. Attribute: A column in the table representing a property. RollNo, Name, Class, Marks are attributes.\n3. Tuple: A row in the table representing one record. (1, Aman, XII, 85) is a tuple.\n4. Domain: Set of permissible values for an attribute. Domain of Marks = {0 to 100}.\n5. Degree: Number of attributes (columns). Degree of STUDENT = 4.\n6. Cardinality: Number of tuples (rows). Cardinality of STUDENT = 3."
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate between Candidate Key and Primary Key.",
+          "type": "short",
+          "answer": "Candidate Key: A minimal set of attributes that can uniquely identify each tuple. A relation can have multiple candidate keys. Example: In STUDENT(RollNo, AdmNo, Name), both RollNo and AdmNo are candidate keys.\n\nPrimary Key: The candidate key selected by the designer to uniquely identify tuples. Only one per relation. Cannot contain NULL values.\n\nDifference: All primary keys are candidate keys, but not all candidate keys are primary keys. The chosen candidate key becomes the primary key; the rest become alternate keys."
+        },
+        {
+          "qno": 5,
+          "question": "What is a Foreign Key? Explain with an example.",
+          "type": "long",
+          "answer": "A foreign key is an attribute in one relation that references the primary key of another relation. It establishes a relationship between two tables and enforces referential integrity.\n\nExample:\nSTUDENT table:\n| RollNo (PK) | Name  | Class |\n|-------------|-------|-------|\n| 1           | Aman  | XII   |\n| 2           | Priya | XII   |\n\nRESULT table:\n| RollNo (FK) | Subject | Marks |\n|-------------|---------|-------|\n| 1           | Maths   | 85    |\n| 1           | Physics | 78    |\n| 2           | Maths   | 92    |\n\nHere, RollNo in RESULT is a foreign key that references RollNo (primary key) in STUDENT. This means: (1) Every RollNo in RESULT must exist in STUDENT. (2) You cannot insert RollNo=5 in RESULT if RollNo=5 does not exist in STUDENT. (3) You cannot delete RollNo=1 from STUDENT if it is referenced in RESULT."
+        },
+        {
+          "qno": 6,
+          "question": "A relation EMPLOYEE has attributes EmpNo, AadhaarNo, Name, Dept, and Salary. Identify candidate keys, primary key, and alternate key.",
+          "type": "short",
+          "answer": "Candidate Keys: EmpNo and AadhaarNo — both can uniquely identify each employee.\n\nPrimary Key: EmpNo (chosen as the primary key since employee numbers are typically used for internal identification).\n\nAlternate Key: AadhaarNo (candidate key not chosen as primary key).\n\nNote: Name cannot be a candidate key because multiple employees may have the same name. Dept and Salary are also not unique."
+        },
+        {
+          "qno": 7,
+          "question": "What are the advantages of DBMS over the file system?",
+          "type": "long",
+          "answer": "Advantages of DBMS over the file system:\n\n1. Reduced Data Redundancy: DBMS uses normalization to minimize duplicate data, saving storage.\n2. Data Consistency: Since data is stored centrally with minimal redundancy, updates are reflected everywhere.\n3. Data Sharing: Multiple users can access the same database concurrently.\n4. Data Security: DBMS provides access control — different users can have different privileges.\n5. Data Integrity: Constraints (primary key, foreign key, check) ensure data accuracy and validity.\n6. Data Independence: Changes in storage or structure do not affect applications.\n7. Efficient Data Access: DBMS uses indexes and query optimization for fast data retrieval.\n8. Backup and Recovery: DBMS provides automatic backup and recovery mechanisms to prevent data loss.\n9. Standard Query Language: SQL provides a standardized way to query and manipulate data."
+        },
+        {
+          "qno": 8,
+          "question": "What is referential integrity? Why is it important?",
+          "type": "short",
+          "answer": "Referential integrity is a constraint that ensures every foreign key value in a table must either match an existing primary key value in the referenced table, or be NULL.\n\nImportance: (1) Prevents orphan records — a RESULT record cannot reference a student that does not exist. (2) Maintains data consistency across related tables. (3) Ensures valid relationships between tables. (4) Prevents accidental deletion of records that are still referenced by other tables."
+        },
+        {
+          "qno": 9,
+          "question": "What is a composite key? Give an example.",
+          "type": "short",
+          "answer": "A composite key is a primary key (or candidate key) that consists of two or more attributes which together uniquely identify each tuple, even though individually they may not.\n\nExample: In the ENROLLMENT table:\n| StudentID | CourseID | EnrollDate |\n|-----------|----------|------------|\n| 101       | CS101    | 2024-01-15 |\n| 101       | MA201    | 2024-01-16 |\n| 102       | CS101    | 2024-01-15 |\n\nNeither StudentID nor CourseID alone is unique. But the combination (StudentID, CourseID) uniquely identifies each enrollment. So (StudentID, CourseID) is a composite key."
+        },
+        {
+          "qno": 10,
+          "question": "Explain the three levels of data abstraction.",
+          "type": "short",
+          "answer": "Three levels of data abstraction:\n\n1. Physical Level (Internal): Describes HOW data is physically stored on disk — file structures, indexes, storage allocation. Managed by the DBA.\n\n2. Logical Level (Conceptual): Describes WHAT data is stored and the relationships between data. Defines tables, attributes, constraints. Designed by database designers.\n\n3. View Level (External): Describes the part of the database that is relevant to a particular user. Different users see different views. Provides security by hiding irrelevant data.\n\nExample: A university database — Physical level: data stored in specific files. Logical level: STUDENT, COURSE, ENROLLMENT tables. View level: a teacher sees only marks for their subject; a student sees only their own records."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+{
+  "chapter": 11,
+  "title": "Data Communication",
+  "sections": [
+    {
+      "id": "11.1",
+      "title": "Concept of Communication",
+      "concepts": [
+        "Data communication",
+        "Components of communication",
+        "Sender",
+        "Receiver",
+        "Message",
+        "Communication medium",
+        "Protocol"
+      ],
+      "definitions": [
+        {
+          "term": "Data Communication",
+          "definition": "Data communication is the exchange of data (in the form of 0s and 1s) between two devices via some form of transmission medium such as a wire cable or wireless medium."
+        },
+        {
+          "term": "Sender",
+          "definition": "The sender (also called source or transmitter) is the device that generates and sends the message or data. It can be a computer, telephone, camera, or any other device."
+        },
+        {
+          "term": "Receiver",
+          "definition": "The receiver (also called destination) is the device that receives the message or data sent by the sender. It can be a computer, telephone, printer, or any other device."
+        },
+        {
+          "term": "Message",
+          "definition": "The message is the data or information to be communicated. It can be in the form of text, numbers, images, audio, video, or any combination of these."
+        },
+        {
+          "term": "Communication Medium",
+          "definition": "The communication medium (also called transmission medium or channel) is the physical path through which the message travels from sender to receiver. It can be wired (cable) or wireless (air, vacuum)."
+        },
+        {
+          "term": "Protocol",
+          "definition": "A protocol is a set of rules that governs data communication. It defines the format, timing, sequence, and error control methods for data exchange between devices. Both sender and receiver must follow the same protocol."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Data communication requires five components: sender, receiver, message, transmission medium, and protocol",
+        "The sender generates the data; the receiver accepts the data",
+        "The message can be text, image, audio, video, or multimedia",
+        "The medium can be wired (guided) or wireless (unguided)",
+        "Protocols define the rules that both sender and receiver must follow for successful communication"
+      ]
+    },
+    {
+      "id": "11.2",
+      "title": "Measuring Capacity of Communication Media",
+      "concepts": [
+        "Bandwidth",
+        "Data transfer rate",
+        "Units of data transfer rate",
+        "Channel capacity"
+      ],
+      "definitions": [
+        {
+          "term": "Bandwidth",
+          "definition": "Bandwidth is the range of frequencies available for transmission of data on a communication channel. It determines the maximum data transfer rate of the channel. Higher bandwidth means more data can be transmitted per unit time."
+        },
+        {
+          "term": "Data Transfer Rate",
+          "definition": "Data transfer rate (also called bit rate) is the number of bits transmitted per second over a communication channel. It is measured in bits per second (bps)."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Data Transfer Rate Units",
+          "formula": "1 Kbps = 1,024 bps (or 10^3 bps); 1 Mbps = 1,024 Kbps (or 10^6 bps); 1 Gbps = 1,024 Mbps (or 10^9 bps); 1 Tbps = 1,024 Gbps (or 10^12 bps)",
+          "notes": "bps = bits per second, Kbps = Kilobits per second, Mbps = Megabits per second, Gbps = Gigabits per second, Tbps = Terabits per second"
+        },
+        {
+          "name": "Time to transfer data",
+          "formula": "Time = File Size (in bits) / Data Transfer Rate (in bps)",
+          "notes": "Remember to convert file size from bytes to bits (multiply by 8) if given in bytes"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Bandwidth determines the capacity (maximum data transfer rate) of a communication channel",
+        "Higher bandwidth allows faster data transmission",
+        "Data transfer rate is measured in bps (bits per second)",
+        "Common units: bps, Kbps (10^3 bps), Mbps (10^6 bps), Gbps (10^9 bps), Tbps (10^12 bps)",
+        "1 byte = 8 bits; when converting file size from bytes to bits, multiply by 8",
+        "Time to transfer = File size (bits) / Data transfer rate (bps)"
+      ]
+    },
+    {
+      "id": "11.3",
+      "title": "Types of Data Communication",
+      "concepts": [
+        "Simplex communication",
+        "Half-duplex communication",
+        "Full-duplex communication",
+        "Direction of data flow"
+      ],
+      "definitions": [
+        {
+          "term": "Simplex Communication",
+          "definition": "In simplex mode, communication is unidirectional — data can flow in only one direction. Only one device can transmit and the other can only receive. Examples: keyboard to computer, radio broadcasting, TV broadcasting."
+        },
+        {
+          "term": "Half-Duplex Communication",
+          "definition": "In half-duplex mode, data can flow in both directions but not simultaneously. Only one device can transmit at a time while the other receives. Example: walkie-talkie."
+        },
+        {
+          "term": "Full-Duplex Communication",
+          "definition": "In full-duplex mode, data can flow in both directions simultaneously. Both devices can transmit and receive at the same time. Example: telephone conversation, video calling."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Simplex: One-way communication only (e.g., keyboard input, radio, TV broadcast)",
+        "Half-duplex: Two-way communication but one direction at a time (e.g., walkie-talkie)",
+        "Full-duplex: Two-way simultaneous communication (e.g., telephone, video call)",
+        "Full-duplex provides the fastest and most efficient communication",
+        "The entire capacity of a simplex channel is used for one-way transmission",
+        "In half-duplex, the channel capacity is shared between two directions alternately",
+        "In full-duplex, the channel capacity allows simultaneous two-way transmission"
+      ]
+    },
+    {
+      "id": "11.4",
+      "title": "Switching Techniques",
+      "concepts": [
+        "Circuit switching",
+        "Packet switching",
+        "Message switching",
+        "Data routing methods"
+      ],
+      "definitions": [
+        {
+          "term": "Circuit Switching",
+          "definition": "In circuit switching, a dedicated communication path (circuit) is established between the sender and receiver before data transfer begins. The circuit remains reserved for the entire duration of the communication, even if no data is being transmitted. Example: traditional telephone network (PSTN)."
+        },
+        {
+          "term": "Packet Switching",
+          "definition": "In packet switching, the message is broken into smaller units called packets. Each packet is sent independently and may take different routes to reach the destination. Packets are reassembled at the destination in the correct order. Example: the Internet."
+        },
+        {
+          "term": "Packet",
+          "definition": "A packet is a small unit of data that includes the actual data (payload), source address, destination address, sequence number, and error-checking information. Packets are the fundamental units of data in packet-switched networks."
+        },
+        {
+          "term": "Message Switching",
+          "definition": "In message switching, the entire message is sent from node to node. Each intermediate node stores the complete message and then forwards it to the next node (store-and-forward). No dedicated path is established."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Circuit Switching: Dedicated path established before communication; path reserved for entire session; used in traditional telephone networks (PSTN)",
+        "Circuit Switching Advantages: Guaranteed bandwidth, no delay once circuit is established, data arrives in order",
+        "Circuit Switching Disadvantages: Wasteful if channel is idle, dedicated path means resources are blocked, not efficient for bursty data",
+        "Packet Switching: Data broken into packets sent independently; packets may take different routes; reassembled at destination",
+        "Packet Switching Advantages: Efficient use of bandwidth, no dedicated path needed, packets can take alternate routes if one path fails, suitable for bursty data",
+        "Packet Switching Disadvantages: Packets may arrive out of order and need reassembly, overhead of header information in each packet, possible delay",
+        "The Internet uses packet switching; traditional telephone uses circuit switching",
+        "Message switching uses store-and-forward approach — no dedicated path, entire message stored at each intermediate node"
+      ]
+    },
+    {
+      "id": "11.5",
+      "title": "Transmission Media",
+      "concepts": [
+        "Guided (wired) media",
+        "Unguided (wireless) media",
+        "Twisted pair cable",
+        "Coaxial cable",
+        "Fiber optic cable",
+        "Radio waves",
+        "Microwaves",
+        "Infrared waves"
+      ],
+      "definitions": [
+        {
+          "term": "Guided Media (Wired)",
+          "definition": "Guided media (also called bounded or wired media) use physical cables to transmit signals. The signal is guided along the cable. Examples include twisted pair cable, coaxial cable, and fiber optic cable."
+        },
+        {
+          "term": "Unguided Media (Wireless)",
+          "definition": "Unguided media (also called unbounded or wireless media) transmit signals through air or vacuum without physical cables. Examples include radio waves, microwaves, and infrared waves."
+        },
+        {
+          "term": "Twisted Pair Cable",
+          "definition": "Twisted pair cable consists of two insulated copper wires twisted together to reduce electromagnetic interference. Two types: Unshielded Twisted Pair (UTP) and Shielded Twisted Pair (STP). UTP is the most commonly used cable in LANs (with RJ45 connectors)."
+        },
+        {
+          "term": "Coaxial Cable",
+          "definition": "Coaxial cable has a central copper conductor surrounded by an insulating layer, a metallic shield (braided mesh), and an outer plastic jacket. It carries signals at higher frequencies than twisted pair and is used in cable TV and older Ethernet networks."
+        },
+        {
+          "term": "Fiber Optic Cable",
+          "definition": "Fiber optic cable uses thin strands of glass or plastic (optical fibers) to transmit data as pulses of light. It offers very high bandwidth, is immune to electromagnetic interference, and can transmit over long distances with minimal signal loss."
+        },
+        {
+          "term": "Radio Waves",
+          "definition": "Radio waves are electromagnetic waves in the frequency range of 3 KHz to 1 GHz. They are omnidirectional (travel in all directions), can penetrate walls, and are used in FM radio, TV broadcasting, and wireless networking (WiFi)."
+        },
+        {
+          "term": "Microwaves",
+          "definition": "Microwaves are electromagnetic waves in the frequency range of 1 GHz to 300 GHz. They are unidirectional (travel in a straight line) and require line-of-sight transmission. Used in satellite communication and long-distance telephone communication."
+        },
+        {
+          "term": "Infrared Waves",
+          "definition": "Infrared waves are electromagnetic waves with frequencies from 300 GHz to 400 THz. They cannot penetrate walls, have a very short range, and are used in TV remotes, short-range device communication (IrDA), and some wireless keyboards/mice."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Twisted Pair Cable: Cheapest wired media, used in LANs and telephone lines, susceptible to interference, speeds up to 1 Gbps, range ~100m",
+        "Coaxial Cable: Better shielding than twisted pair, used in cable TV, higher bandwidth, more expensive than twisted pair",
+        "Fiber Optic Cable: Highest bandwidth and speed (up to Tbps), immune to electromagnetic interference, very long range, most expensive, uses light signals",
+        "Radio Waves: Omnidirectional, penetrate walls, used in WiFi and Bluetooth, range varies from meters to kilometres",
+        "Microwaves: Unidirectional, line-of-sight required, used in satellite communication, repeaters needed every 25-30 km on earth",
+        "Infrared Waves: Very short range, cannot penetrate walls, used in remote controls and short-range communication",
+        "Comparison (speed): Fiber Optic > Coaxial > Twisted Pair",
+        "Comparison (cost): Fiber Optic > Coaxial > Twisted Pair",
+        "Wired media provide better security and reliability; wireless media provide mobility and ease of installation"
+      ]
+    },
+    {
+      "id": "11.6",
+      "title": "Mobile Telecommunication Technologies",
+      "concepts": [
+        "1G (First Generation)",
+        "2G (Second Generation)",
+        "3G (Third Generation)",
+        "4G (Fourth Generation)",
+        "5G (Fifth Generation)",
+        "Evolution of mobile networks"
+      ],
+      "definitions": [
+        {
+          "term": "1G (First Generation)",
+          "definition": "1G was the first generation of wireless cellular technology, introduced in the 1980s. It used analog signals for voice communication only. It had poor voice quality and no data services."
+        },
+        {
+          "term": "2G (Second Generation)",
+          "definition": "2G was introduced in the 1990s and used digital signals. It supported voice calls and basic data services like SMS (Short Message Service) and MMS (Multimedia Message Service). Technologies: GSM, CDMA. Data speed: up to 64 Kbps."
+        },
+        {
+          "term": "3G (Third Generation)",
+          "definition": "3G was introduced in the 2000s and offered higher data transfer rates (up to 2 Mbps). It enabled mobile internet browsing, video calling, and multimedia streaming. Technologies: WCDMA, HSPA."
+        },
+        {
+          "term": "4G (Fourth Generation)",
+          "definition": "4G was introduced around 2010 and provides high-speed mobile broadband with data rates up to 100 Mbps (mobile) and 1 Gbps (stationary). It supports HD video streaming, online gaming, and VoIP. Technology: LTE (Long Term Evolution)."
+        },
+        {
+          "term": "5G (Fifth Generation)",
+          "definition": "5G is the latest generation of mobile technology, offering ultra-high speeds (up to 20 Gbps), very low latency (1 ms), and massive device connectivity. It enables IoT, autonomous vehicles, remote surgery, and other advanced applications."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "1G (1980s): Analog, voice only, poor quality, no data services",
+        "2G (1990s): Digital, voice + SMS/MMS, up to 64 Kbps, introduced GSM and CDMA",
+        "3G (2000s): Mobile internet, video calling, up to 2 Mbps, WCDMA/HSPA",
+        "4G (2010s): High-speed broadband, HD streaming, up to 100 Mbps-1 Gbps, LTE technology",
+        "5G (2020s): Ultra-fast (up to 20 Gbps), ultra-low latency (1 ms), supports IoT and advanced applications",
+        "Each generation brought significant improvements in speed, capacity, and services",
+        "Key trend: analog to digital, voice-only to multimedia, low speed to ultra-high speed"
+      ]
+    },
+    {
+      "id": "11.7",
+      "title": "Protocols",
+      "concepts": [
+        "HTTP",
+        "HTTPS",
+        "FTP",
+        "SMTP",
+        "POP3",
+        "TCP/IP",
+        "PPP",
+        "TELNET",
+        "VoIP",
+        "Network protocols"
+      ],
+      "definitions": [
+        {
+          "term": "HTTP (HyperText Transfer Protocol)",
+          "definition": "HTTP is a protocol used for transferring web pages (hypertext documents) on the World Wide Web. It works on a request-response model where the browser (client) sends a request and the web server sends a response. It uses port 80."
+        },
+        {
+          "term": "HTTPS (HyperText Transfer Protocol Secure)",
+          "definition": "HTTPS is the secure version of HTTP that uses SSL/TLS encryption to protect data during transmission. It is used for sensitive transactions like online banking, shopping, and login pages. It uses port 443."
+        },
+        {
+          "term": "FTP (File Transfer Protocol)",
+          "definition": "FTP is a protocol used for transferring files between computers on a network. It allows uploading and downloading of files between a client and a server. It uses ports 20 (data transfer) and 21 (control/commands)."
+        },
+        {
+          "term": "SMTP (Simple Mail Transfer Protocol)",
+          "definition": "SMTP is a protocol used for sending emails from a client to a mail server and between mail servers. It is a push protocol that works on port 25. It is used only for sending emails, not receiving."
+        },
+        {
+          "term": "POP3 (Post Office Protocol version 3)",
+          "definition": "POP3 is a protocol used for receiving (downloading) emails from a mail server to a client. It downloads emails to the local device and typically deletes them from the server. It works on port 110."
+        },
+        {
+          "term": "TCP/IP (Transmission Control Protocol / Internet Protocol)",
+          "definition": "TCP/IP is the fundamental protocol suite of the Internet. TCP breaks data into packets, ensures reliable delivery with error checking, and reassembles packets at the destination. IP handles addressing and routing of packets across networks."
+        },
+        {
+          "term": "PPP (Point-to-Point Protocol)",
+          "definition": "PPP is a data link layer protocol used for establishing a direct connection between two nodes. It is commonly used for dial-up internet connections over telephone lines and provides authentication and encryption."
+        },
+        {
+          "term": "TELNET (Terminal Network)",
+          "definition": "TELNET is a protocol that allows a user to log into a remote computer and use it as if they were directly connected to it. It provides remote terminal access but transmits data in plain text (not secure). It uses port 23."
+        },
+        {
+          "term": "VoIP (Voice over Internet Protocol)",
+          "definition": "VoIP is a technology that allows voice communication (phone calls) over the Internet instead of traditional telephone lines. It converts voice signals into digital packets and transmits them over IP networks. Examples: Skype, WhatsApp calls, Google Voice."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "HTTP (port 80): Transfers web pages, not secure, request-response model",
+        "HTTPS (port 443): Secure version of HTTP, uses SSL/TLS encryption",
+        "FTP (ports 20, 21): File transfer between client and server",
+        "SMTP (port 25): Sending emails (push protocol)",
+        "POP3 (port 110): Receiving/downloading emails from server",
+        "TCP/IP: Fundamental Internet protocol suite; TCP ensures reliable delivery, IP handles addressing and routing",
+        "PPP: Direct point-to-point connection, used in dial-up connections",
+        "TELNET (port 23): Remote terminal access, not secure (plain text)",
+        "VoIP: Voice calls over the Internet (e.g., Skype, WhatsApp calls)",
+        "SMTP is for sending email; POP3 is for receiving email",
+        "HTTP is unsecured; HTTPS uses encryption (SSL/TLS) for security"
+      ]
+    }
+  ],
+  "summary": [
+    "Data communication requires five components: sender, receiver, message, transmission medium, and protocol",
+    "Bandwidth is the data-carrying capacity of a channel; data transfer rate is measured in bps, Kbps, Mbps, Gbps",
+    "Three modes of communication: Simplex (one-way), Half-duplex (two-way alternate), Full-duplex (two-way simultaneous)",
+    "Circuit switching establishes a dedicated path (telephone); Packet switching breaks data into independent packets (Internet)",
+    "Wired media: Twisted Pair (cheapest, LAN), Coaxial (cable TV), Fiber Optic (fastest, light-based)",
+    "Wireless media: Radio waves (omnidirectional, WiFi), Microwaves (line-of-sight, satellite), Infrared (short range, remotes)",
+    "Mobile generations: 1G (analog voice) -> 2G (digital, SMS) -> 3G (mobile internet) -> 4G (broadband, LTE) -> 5G (ultra-fast, IoT)",
+    "Key protocols: HTTP/HTTPS (web), FTP (files), SMTP (send email), POP3 (receive email), TCP/IP (Internet foundation), VoIP (voice over Internet)"
+  ],
+  "exercises": [
+    {
+      "id": "11.1",
+      "title": "Exercise 11.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What are the basic components of data communication?",
+          "type": "short",
+          "answer": "The five basic components of data communication are: (1) Sender — the device that sends the message, (2) Receiver — the device that receives the message, (3) Message — the data or information being communicated, (4) Transmission Medium — the physical path between sender and receiver (wired or wireless), (5) Protocol — the set of rules governing the communication."
+        },
+        {
+          "qno": 2,
+          "question": "Differentiate between simplex, half-duplex, and full-duplex modes of communication.",
+          "type": "long",
+          "answer": "Simplex: Communication is unidirectional (one-way only). Only one device transmits and the other receives. Example: TV broadcasting, radio, keyboard to CPU.\n\nHalf-Duplex: Communication is bidirectional but not simultaneous. Only one device can transmit at a time. Example: walkie-talkie.\n\nFull-Duplex: Communication is bidirectional and simultaneous. Both devices can transmit and receive at the same time. Example: telephone conversation, video calling.\n\nFull-duplex is the most efficient mode as it allows simultaneous two-way communication."
+        },
+        {
+          "qno": 3,
+          "question": "What is bandwidth? How is data transfer rate measured?",
+          "type": "short",
+          "answer": "Bandwidth is the range of frequencies available for data transmission on a communication channel. It determines the maximum data transfer rate. Data transfer rate is the number of bits transmitted per second, measured in bps (bits per second). Higher units include Kbps (10^3 bps), Mbps (10^6 bps), Gbps (10^9 bps), and Tbps (10^12 bps)."
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate between circuit switching and packet switching.",
+          "type": "long",
+          "answer": "Circuit Switching: A dedicated communication path is established before data transfer. The path remains reserved throughout the session. It is reliable with guaranteed bandwidth but wasteful if the channel is idle. Used in traditional telephone networks (PSTN). Data arrives in order.\n\nPacket Switching: Data is broken into smaller packets sent independently. Each packet may take a different route. No dedicated path is established. It is efficient as bandwidth is shared. Used in the Internet. Packets may arrive out of order and need reassembly. More suitable for bursty data traffic."
+        },
+        {
+          "qno": 5,
+          "question": "Compare twisted pair cable, coaxial cable, and fiber optic cable.",
+          "type": "long",
+          "answer": "Twisted Pair Cable: Two insulated copper wires twisted together. Cheapest option. Susceptible to electromagnetic interference. Speed up to 1 Gbps. Range ~100m. Used in LANs and telephone lines. Uses RJ45 connector.\n\nCoaxial Cable: Central copper conductor with insulation and braided shield. Better shielding than twisted pair. Higher bandwidth. Used in cable TV networks. More expensive than twisted pair.\n\nFiber Optic Cable: Glass/plastic strands transmitting light pulses. Highest bandwidth (up to Tbps). Immune to electromagnetic interference. Very long range with minimal signal loss. Most expensive. Used in backbone networks, undersea cables, and high-speed connections."
+        },
+        {
+          "qno": 6,
+          "question": "What are radio waves, microwaves, and infrared waves? Compare them.",
+          "type": "long",
+          "answer": "Radio Waves (3 KHz-1 GHz): Omnidirectional, can penetrate walls, used in FM radio, TV broadcasting, and WiFi. Range varies from metres to kilometres.\n\nMicrowaves (1 GHz-300 GHz): Unidirectional (straight line), require line-of-sight, used in satellite communication and long-distance telephone links. Repeaters needed every 25-30 km on earth.\n\nInfrared Waves (300 GHz-400 THz): Very short range, cannot penetrate walls, used in TV remotes and short-range device communication.\n\nRadio waves have the widest coverage but lower bandwidth. Microwaves offer higher bandwidth but need line-of-sight. Infrared is limited to short range and cannot pass through obstacles."
+        },
+        {
+          "qno": 7,
+          "question": "Explain the evolution of mobile telecommunication from 1G to 5G.",
+          "type": "long",
+          "answer": "1G (1980s): First generation, used analog signals, supported voice calls only, poor quality, no data services.\n\n2G (1990s): Used digital signals, introduced SMS and MMS, speeds up to 64 Kbps, technologies: GSM, CDMA.\n\n3G (2000s): Enabled mobile internet, video calling, multimedia, speeds up to 2 Mbps, technologies: WCDMA, HSPA.\n\n4G (2010s): High-speed mobile broadband, HD streaming, VoIP, speeds up to 100 Mbps-1 Gbps, technology: LTE.\n\n5G (2020s): Ultra-high speed (up to 20 Gbps), ultra-low latency (1 ms), massive device connectivity, enables IoT, autonomous vehicles, and advanced applications."
+        },
+        {
+          "qno": 8,
+          "question": "What is the difference between HTTP and HTTPS?",
+          "type": "short",
+          "answer": "HTTP (HyperText Transfer Protocol) transfers web pages in plain text without encryption, using port 80. HTTPS (HyperText Transfer Protocol Secure) is the secure version that uses SSL/TLS encryption to protect data during transmission, using port 443. HTTPS is used for sensitive operations like online banking, shopping, and login pages. HTTPS shows a padlock icon in the browser address bar."
+        },
+        {
+          "qno": 9,
+          "question": "What is the difference between SMTP and POP3?",
+          "type": "short",
+          "answer": "SMTP (Simple Mail Transfer Protocol) is used for sending emails from a client to a mail server and between mail servers. It is a push protocol and uses port 25. POP3 (Post Office Protocol version 3) is used for receiving (downloading) emails from a mail server to a client. It downloads emails and typically deletes them from the server. It uses port 110. SMTP handles outgoing mail; POP3 handles incoming mail."
+        },
+        {
+          "qno": 10,
+          "question": "What is VoIP?",
+          "type": "short",
+          "answer": "VoIP (Voice over Internet Protocol) is a technology that enables voice communication (phone calls) over the Internet instead of traditional telephone lines. It converts voice signals into digital data packets and transmits them over IP networks. Advantages include lower cost, multimedia support, and flexibility. Examples include Skype, WhatsApp calls, and Google Voice."
+        },
+        {
+          "qno": 11,
+          "question": "How long will it take to transfer a 2 MB file over a 10 Mbps connection?",
+          "type": "short",
+          "answer": "File size = 2 MB = 2 x 8 = 16 Megabits = 16 x 10^6 bits. Data transfer rate = 10 Mbps = 10 x 10^6 bps. Time = File size / Data transfer rate = (16 x 10^6) / (10 x 10^6) = 1.6 seconds."
+        }
+      ]
+    }
+  ]
+}

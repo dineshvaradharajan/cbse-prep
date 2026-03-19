@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="../js/matrix-render.js"></script>
 <link rel="stylesheet" href="../css/base.css">
 <style>
 :root{--subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;}
@@ -122,6 +126,11 @@ const PYQ_DATA = [{"year": 2025, "marks": 1, "section": "A", "qno": 1, "type": "
 ═══════════════════════════════════════════════ */
 function mathFmt(s) {
   if (!s) return s;
+  // Convert matrix notation to LaTeX
+  s = formatMatrices(s);
+  // Protect LaTeX segments from HTML transformations below
+  var latexSlots = [];
+  s = s.replace(/\$[^$]+\$/g, function(m) { latexSlots.push(m); return '\x00LATEX' + (latexSlots.length - 1) + '\x00'; });
   // Superscripts: x^2, x^(-1), x^(n+1)
   s = s.replace(/\^(\([^)]+\))/g, function(m, exp) {
     return '<sup>' + exp.replace(/[()]/g,'') + '</sup>';
@@ -176,6 +185,9 @@ function mathFmt(s) {
 
   // Newlines
   s = s.replace(/\n/g, '<br>');
+
+  // Restore LaTeX segments
+  s = s.replace(/\x00LATEX(\d+)\x00/g, function(m, i) { return latexSlots[i]; });
 
   return s;
 }
@@ -335,6 +347,7 @@ function renderQuestions() {
   });
 
   container.innerHTML = html;
+  renderMath(container);
 }
 
 function toggleAnswer(el) {

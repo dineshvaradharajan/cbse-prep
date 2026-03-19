@@ -1,0 +1,439 @@
+{
+  "ch9": [
+    {
+      "passage": "In a microbiology laboratory, a researcher is studying the growth of a bacterial colony in a nutrient-rich medium. At time t = 0 hours, the colony has 1000 bacteria. The researcher observes that the rate of growth of the bacterial population is proportional to the number of bacteria present at that instant. After 2 hours, the population doubles to 2000. Let P(t) denote the number of bacteria at time t hours. The researcher wants to model this growth using differential equations to predict future population sizes and plan resource allocation for the experiment.",
+      "source": "Practice",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Which of the following differential equations correctly models the bacterial growth described above?",
+          "options": [
+            "dP/dt = kP, where k is a positive constant",
+            "dP/dt = kP^2, where k is a positive constant",
+            "d^2P/dt^2 = kP, where k is a positive constant",
+            "dP/dt = k/P, where k is a positive constant"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 2,
+          "question": "What is the order and degree of the differential equation formed in this problem?",
+          "options": [
+            "Order 2, Degree 1",
+            "Order 1, Degree 2",
+            "Order 1, Degree 1",
+            "Order 2, Degree 2"
+          ],
+          "answer": 2
+        },
+        {
+          "qno": 3,
+          "question": "The general solution of the differential equation dP/dt = kP is:",
+          "options": [
+            "P = ke^t + C",
+            "P = Ce^(kt)",
+            "P = Ct + k",
+            "P = C/(1 + e^(-kt))"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 4,
+          "question": "Using the initial conditions P(0) = 1000 and P(2) = 2000, the value of k (growth constant) is:",
+          "options": [
+            "ln 2",
+            "2 ln 2",
+            "(ln 2)/2",
+            "1/ln 2"
+          ],
+          "answer": 2
+        },
+        {
+          "qno": 5,
+          "question": "Using the particular solution obtained, what will be the bacterial population after 6 hours?",
+          "options": [
+            "4000",
+            "6000",
+            "8000",
+            "16000"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ],
+  "ch10": [
+    {
+      "passage": "A delivery drone operates in a 3D coordinate system where distances are measured in metres. The drone starts from a warehouse located at point A(1, 2, 3) and must deliver a package to point B(4, 6, 3). After delivery, it flies to a charging station at point C(2, 3, 5). The drone's navigation system uses vector algebra to compute flight paths, angles of approach, and coverage areas. The pilot monitoring the drone needs to analyse the vectors AB and AC for optimal route planning.",
+      "source": "Practice",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "The position vector of point B with respect to point A (i.e., vector AB) is:",
+          "options": [
+            "3i + 4j + 0k",
+            "5i + 8j + 6k",
+            "4i + 6j + 3k",
+            "-3i - 4j + 0k"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 2,
+          "question": "The magnitude of vector AC is:",
+          "options": [
+            "sqrt(6)",
+            "sqrt(5)",
+            "sqrt(14)",
+            "3"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 3,
+          "question": "The dot product of vectors AB and AC is:",
+          "options": [
+            "5",
+            "7",
+            "9",
+            "11"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 4,
+          "question": "The unit vector along AB is:",
+          "options": [
+            "(3i + 4j) / 7",
+            "(3i + 4j) / 5",
+            "(3i + 4j) / 25",
+            "(i + 2j + 3k) / sqrt(14)"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 5,
+          "question": "The area of triangle ABC formed by the three points is:",
+          "options": [
+            "sqrt(101) / 2",
+            "sqrt(125) / 2",
+            "sqrt(75) / 2",
+            "sqrt(100) / 2"
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ],
+  "ch11": [
+    {
+      "passage": "An architect is designing a modern exhibition hall where two laser beams are used for a light show. In the 3D coordinate system of the hall (in metres), the first laser beam L1 passes through the point A(1, 2, 3) and has direction ratios (2, 3, 6). The second laser beam L2 passes through the point B(2, 1, 4) and has direction ratios (1, 2, 2). The architect needs to ensure the beams do not intersect inside the hall and wants to calculate the shortest distance between them to install safety barriers. The beams are modelled as straight lines extending infinitely in both directions.",
+      "source": "Practice",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "The direction cosines of the first laser beam L1 are:",
+          "options": [
+            "2/7, 3/7, 6/7",
+            "2/9, 3/9, 6/9",
+            "1/3, 1/3, 1/3",
+            "2/5, 3/5, 6/5"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 2,
+          "question": "The equation of laser beam L1 in Cartesian form is:",
+          "options": [
+            "(x-1)/2 = (y-2)/3 = (z-3)/6",
+            "(x-2)/1 = (y-3)/2 = (z-6)/3",
+            "(x-2)/1 = (y-1)/2 = (z-4)/2",
+            "(x+1)/2 = (y+2)/3 = (z+3)/6"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 3,
+          "question": "The cosine of the angle between the two laser beams L1 and L2 is:",
+          "options": [
+            "10/21",
+            "20/21",
+            "14/21",
+            "12/21"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 4,
+          "question": "The cross product of the direction vectors of L1 and L2 is:",
+          "options": [
+            "-6i + 2j + k",
+            "6i - 2j + k",
+            "6i + 2j - k",
+            "-6i + 2j - k"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 5,
+          "question": "The shortest distance between the two laser beams L1 and L2 is:",
+          "options": [
+            "3/sqrt(41)",
+            "5/sqrt(41)",
+            "7/sqrt(41)",
+            "1/sqrt(41)"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ],
+  "ch12": [
+    {
+      "passage": "A bakery produces two types of products: chocolate cakes and vanilla pastries. Each chocolate cake requires 2 kg of flour and 1 kg of sugar. Each vanilla pastry requires 1 kg of flour and 1 kg of sugar. The bakery has 40 kg of flour and 30 kg of sugar available per day. The profit on each chocolate cake is Rs 300 and on each vanilla pastry is Rs 200. The bakery owner wants to determine how many of each product to make daily to maximise profit.",
+      "source": "Practice",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "If x represents the number of chocolate cakes and y represents the number of vanilla pastries, the objective function to maximise profit Z is:",
+          "options": [
+            "Z = 200x + 300y",
+            "Z = 300x + 200y",
+            "Z = 2x + y",
+            "Z = 300x + 200y + 40"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 2,
+          "question": "Which of the following is the correct flour constraint?",
+          "options": [
+            "x + 2y <= 40",
+            "2x + y <= 40",
+            "2x + 2y <= 40",
+            "x + y <= 40"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 3,
+          "question": "Which of the following points is NOT in the feasible region?",
+          "options": [
+            "(0, 0)",
+            "(10, 15)",
+            "(20, 0)",
+            "(15, 20)"
+          ],
+          "answer": 3
+        },
+        {
+          "qno": 4,
+          "question": "The corner points of the feasible region are (0, 0), (20, 0), (10, 20), and (0, 30). At which corner point is the profit maximised?",
+          "options": [
+            "(20, 0)",
+            "(10, 20)",
+            "(0, 30)",
+            "(0, 0)"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 5,
+          "question": "What is the maximum profit per day?",
+          "options": [
+            "Rs 6000",
+            "Rs 7000",
+            "Rs 5000",
+            "Rs 8000"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "passage": "A farmer has 200 hectares of land available to grow wheat and rice. Wheat requires 3 workers per hectare and rice requires 2 workers per hectare. The farmer can hire at most 500 workers. Additionally, the government mandates that at least 40 hectares must be used for rice cultivation to ensure food security. The profit per hectare on wheat is Rs 5000 and on rice is Rs 4000. The farmer wants to allocate land between the two crops to maximise total profit.",
+      "source": "Practice",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "If x hectares are used for wheat and y hectares for rice, which system of constraints correctly represents the problem?",
+          "options": [
+            "x + y <= 200, 3x + 2y <= 500, y >= 40, x >= 0",
+            "x + y <= 200, 2x + 3y <= 500, y >= 40, x >= 0",
+            "x + y >= 200, 3x + 2y <= 500, y >= 40, x >= 0",
+            "x + y <= 200, 3x + 2y >= 500, y >= 40, x >= 0"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 2,
+          "question": "The objective function for this problem is:",
+          "options": [
+            "Minimise Z = 5000x + 4000y",
+            "Maximise Z = 3x + 2y",
+            "Maximise Z = 5000x + 4000y",
+            "Maximise Z = 4000x + 5000y"
+          ],
+          "answer": 2
+        },
+        {
+          "qno": 3,
+          "question": "The corner points of the feasible region are (0, 200), (0, 40), (100, 100), and (140, 40). The value of Z at (100, 100) is:",
+          "options": [
+            "Rs 8,00,000",
+            "Rs 9,00,000",
+            "Rs 10,00,000",
+            "Rs 7,60,000"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 4,
+          "question": "At which corner point is the profit maximised?",
+          "options": [
+            "(0, 200)",
+            "(100, 100)",
+            "(140, 40)",
+            "(0, 40)"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 5,
+          "question": "What is the maximum profit the farmer can earn?",
+          "options": [
+            "Rs 8,60,000",
+            "Rs 8,00,000",
+            "Rs 9,00,000",
+            "Rs 7,00,000"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ],
+  "ch13": [
+    {
+      "passage": "A hospital uses a diagnostic test to detect a rare disease that affects 1% of the population. The test has a sensitivity (true positive rate) of 95%, meaning it correctly identifies 95% of people who actually have the disease. The test has a specificity (true negative rate) of 90%, meaning it correctly identifies 90% of people who do not have the disease. A patient visits the hospital and tests positive. The doctors need to evaluate the reliability of the test result using probability theory before recommending expensive treatment.",
+      "source": "Practice",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Let D denote the event that a person has the disease and T denote the event that the test is positive. What is P(T|D)?",
+          "options": [
+            "0.90",
+            "0.95",
+            "0.01",
+            "0.10"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 2,
+          "question": "What is the probability of a false positive, i.e., P(T|D'), where D' means the person does not have the disease?",
+          "options": [
+            "0.95",
+            "0.05",
+            "0.10",
+            "0.01"
+          ],
+          "answer": 2
+        },
+        {
+          "qno": 3,
+          "question": "Using the law of total probability, P(T) — the probability that a randomly selected person tests positive — is:",
+          "options": [
+            "0.1085",
+            "0.0585",
+            "0.1490",
+            "0.9500"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 4,
+          "question": "Using Bayes' theorem, the probability that the patient actually has the disease given that the test is positive, P(D|T), is approximately:",
+          "options": [
+            "0.95",
+            "0.161",
+            "0.088",
+            "0.50"
+          ],
+          "answer": 2
+        },
+        {
+          "qno": 5,
+          "question": "If two independent tests are conducted on the same patient and both are positive, what is the probability that both tests are positive given the patient does NOT have the disease?",
+          "options": [
+            "0.01",
+            "0.10",
+            "0.001",
+            "0.20"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "passage": "A smartphone factory has three production lines: Machine A, Machine B, and Machine C. Machine A produces 30% of the total output, Machine B produces 45%, and Machine C produces 25%. The defect rates are 2% for Machine A, 3% for Machine B, and 5% for Machine C. A quality inspector randomly picks a phone from the day's production for testing. The factory management uses probability analysis to identify which machine needs maintenance and to estimate overall quality metrics.",
+      "source": "Practice",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is the total probability that a randomly selected phone is defective?",
+          "options": [
+            "0.0260",
+            "0.0320",
+            "0.0335",
+            "0.0400"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 2,
+          "question": "If a randomly selected phone is found defective, the probability that it was produced by Machine B is (approximately):",
+          "options": [
+            "0.1875",
+            "0.4219",
+            "0.3906",
+            "0.500"
+          ],
+          "answer": 1
+        },
+        {
+          "qno": 3,
+          "question": "If 4 phones are randomly selected from Machine C's output, what is the probability that exactly one is defective? (Use binomial distribution)",
+          "options": [
+            "4 * (0.05) * (0.95)^3",
+            "4 * (0.05)^3 * (0.95)",
+            "(0.05)^4",
+            "(0.95)^4"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 4,
+          "question": "If 3 phones are selected randomly from the entire production (independently), what is the probability that none of them is defective?",
+          "options": [
+            "(0.968)^3",
+            "(0.97)^3",
+            "(0.95)^3",
+            "(0.98)^3"
+          ],
+          "answer": 0
+        },
+        {
+          "qno": 5,
+          "question": "Events 'phone is from Machine A' and 'phone is defective' are:",
+          "options": [
+            "Mutually exclusive events",
+            "Independent events",
+            "Neither mutually exclusive nor independent",
+            "Both mutually exclusive and independent"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

@@ -99,6 +99,7 @@
         {
           "name": "General Objective Function",
           "formula": "Z = ax + by",
+          "notes": "a, b are constants; x, y are decision variables; Z is to be maximised or minimised",
           "description": "where a and b are constants, x and y are decision variables, and Z is to be maximised or minimised"
         }
       ],
@@ -246,52 +247,62 @@
         {
           "qno": 1,
           "question": "Maximise Z = 3x + 4y, subject to the constraints: x + y <= 4, x >= 0, y >= 0.",
-          "type": "maximisation"
+          "type": "maximisation",
+          "answer": "Maximum Z = 16 at (0, 4)"
         },
         {
           "qno": 2,
           "question": "Minimise Z = -3x + 4y, subject to x + 2y <= 8, 3x + 2y <= 12, x >= 0, y >= 0.",
-          "type": "minimisation"
+          "type": "minimisation",
+          "answer": "Minimum Z = -12 at (4, 0)"
         },
         {
           "qno": 3,
           "question": "Maximise Z = 5x + 3y, subject to 3x + 5y <= 15, 5x + 2y <= 10, x >= 0, y >= 0.",
-          "type": "maximisation"
+          "type": "maximisation",
+          "answer": "Maximum Z = 235/19 at (20/19, 45/19)"
         },
         {
           "qno": 4,
           "question": "Minimise Z = 3x + 5y, such that x + 3y >= 3, x + y >= 2, x, y >= 0.",
-          "type": "minimisation"
+          "type": "minimisation",
+          "answer": "Minimum Z = 7 at (3/2, 1/2)"
         },
         {
           "qno": 5,
           "question": "Maximise Z = 3x + 2y, subject to x + 2y <= 10, 3x + y <= 15, x, y >= 0.",
-          "type": "maximisation"
+          "type": "maximisation",
+          "answer": "Maximum Z = 18 at (4, 3)"
         },
         {
           "qno": 6,
           "question": "Minimise Z = x + 2y, subject to 2x + y >= 3, x + 2y >= 6, x, y >= 0. Show that the minimum of Z occurs at more than two points.",
-          "type": "minimisation"
+          "type": "minimisation",
+          "answer": "Minimum Z = 6 at all points on the line segment joining (6, 0) and (0, 3)"
         },
         {
           "qno": 7,
           "question": "Minimise and Maximise Z = 5x + 10y, subject to x + 2y <= 120, x + y >= 60, x - 2y >= 0, x, y >= 0.",
-          "type": "minimisation_and_maximisation"
+          "type": "minimisation_and_maximisation",
+          "answer": "Minimum Z = 300 at (60, 0); Maximum Z = 600 at (120, 0) and (60, 30)"
         },
         {
           "qno": 8,
           "question": "Minimise and Maximise Z = x + 2y, subject to x + 2y >= 100, 2x - y <= 0, 2x + y <= 200, x, y >= 0.",
-          "type": "minimisation_and_maximisation"
+          "type": "minimisation_and_maximisation",
+          "answer": "Minimum Z = 100 at (0, 50) and (20, 40); Maximum Z = 400 at (0, 200)"
         },
         {
           "qno": 9,
           "question": "Maximise Z = -x + 2y, subject to the constraints: x >= 3, x + y >= 5, x + 2y >= 6, y >= 0.",
-          "type": "maximisation"
+          "type": "maximisation",
+          "answer": "Z has no maximum value (unbounded feasible region allows Z to increase indefinitely)"
         },
         {
           "qno": 10,
           "question": "Maximise Z = x + y, subject to x - y <= -1, -x + y <= 0, x, y >= 0.",
-          "type": "maximisation"
+          "type": "maximisation",
+          "answer": "No feasible region exists, hence no maximum value"
         }
       ]
     }

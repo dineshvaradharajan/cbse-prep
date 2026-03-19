@@ -121,9 +121,9 @@
       ],
       "definitions": [],
       "formulas": [
-        "Area of triangle Delta = (1/2)|x1  y1  1; x2  y2  1; x3  y3  1|",
-        "Since area is positive, Delta = (1/2)|determinant value|",
-        "If three points are collinear, then |x1  y1  1; x2  y2  1; x3  y3  1| = 0"
+        "\\Delta = \\frac{1}{2} \\begin{vmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{vmatrix}",
+        "\\Delta = \\frac{1}{2} |\\text{determinant value}|",
+        "\\begin{vmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{vmatrix} = 0 \\; (\\text{collinear})"
       ],
       "theorems": [],
       "key_points": [
@@ -163,12 +163,12 @@
         }
       ],
       "formulas": [
-        "M_ij = minor of a_ij = determinant obtained by deleting row i and column j",
-        "A_ij = (-1)^(i+j) * M_ij (cofactor of a_ij)",
+        "M_{ij} = \\text{minor of } a_{ij}",
+        "A_{ij} = (-1)^{i+j} \\cdot M_{ij}",
         "Minor of an element of a determinant of order n (n >= 2) is a determinant of order n-1",
-        "Delta = a_i1*A_i1 + a_i2*A_i2 + a_i3*A_i3 (expansion along ith row)",
-        "Delta = a_1j*A_1j + a_2j*A_2j + a_3j*A_3j (expansion along jth column)",
-        "If elements of one row are multiplied with cofactors of another row: a_i1*A_j1 + a_i2*A_j2 + a_i3*A_j3 = 0, for i != j"
+        "\\Delta = a_{i1}A_{i1} + a_{i2}A_{i2} + a_{i3}A_{i3}",
+        "\\Delta = a_{1j}A_{1j} + a_{2j}A_{2j} + a_{3j}A_{3j}",
+        "a_{i1}A_{j1} + a_{i2}A_{j2} + a_{i3}A_{j3} = 0, \\; i \\neq j"
       ],
       "theorems": [],
       "key_points": [
@@ -226,12 +226,12 @@
       "formulas": [
         "For A = [a11 a12 a13; a21 a22 a23; a31 a32 a33], adj A = Transpose of [A11 A12 A13; A21 A22 A23; A31 A32 A33] = [A11 A21 A31; A12 A22 A32; A13 A23 A33]",
         "For 2x2 matrix A = [a11 a12; a21 a22], adj A = [a22 -a12; -a21 a11] (interchange diagonal elements, change sign of off-diagonal elements)",
-        "A(adj A) = (adj A)A = |A|*I",
-        "|adj(A)| = |A|^(n-1), where n is the order of the square matrix",
-        "A^(-1) = (1/|A|) * adj(A), provided |A| != 0",
-        "|AB| = |A| * |B|, where A and B are square matrices of same order",
+        "A(\\text{adj } A) = (\\text{adj } A)A = |A| \\cdot I",
+        "|\\text{adj}(A)| = |A|^{n-1}",
+        "A^{-1} = \\frac{1}{|A|} \\cdot \\text{adj}(A), \\; |A| \\neq 0",
+        "|AB| = |A| \\cdot |B|",
         "If AB = BA = I, then B is called the inverse of A, i.e., B = A^(-1)",
-        "Also A^(-1) = B or B^(-1) = A, and (A^(-1))^(-1) = A"
+        "A^{-1} = B, \\; B^{-1} = A, \\; (A^{-1})^{-1} = A"
       ],
       "theorems": [
         {
@@ -302,7 +302,7 @@
       ],
       "formulas": [
         "For system: a1*x + b1*y + c1*z = d1, a2*x + b2*y + c2*z = d2, a3*x + b3*y + c3*z = d3: Matrix form AX = B where A = [a1 b1 c1; a2 b2 c2; a3 b3 c3], X = [x; y; z], B = [d1; d2; d3]",
-        "If |A| != 0, unique solution exists: X = A^(-1)*B (Matrix Method)",
+        "|A| \\neq 0 \\Rightarrow X = A^{-1}B",
         "If |A| = 0 and (adj A)B != O, system is inconsistent (no solution)",
         "If |A| = 0 and (adj A)B = O, system may be consistent (infinitely many solutions) or inconsistent"
       ],
@@ -375,43 +375,56 @@
         {
           "qno": 1,
           "question": "Evaluate the determinant |2  4; -5  -1|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "18"
         },
         {
           "qno": 2,
           "question": "(i) Evaluate |cos(theta)  -sin(theta); sin(theta)  cos(theta)|.\n(ii) Evaluate |x^2-x+1  x-1; x+1  x+1|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) 1, (ii) x^2 - x + 1 + x + 1 - (x-1)(x+1) = x^2 + 2 - x^2 + 1 = 2x"
         },
         {
           "qno": 3,
           "question": "If A = [1  2; 4  2], then show that |2A| = 4|A|.",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: |2A| = 2^2 * |A| for a 2x2 matrix. |A| = 2 - 8 = -6, |2A| = 4(-6) = -24"
         },
         {
           "qno": 4,
           "question": "If A = [1  0  1; 0  1  2; 0  0  4], then show that |3A| = 27|A|.",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: |3A| = 3^3 * |A| for a 3x3 matrix. |A| = 4, |3A| = 27(4) = 108"
         },
         {
           "qno": 5,
           "question": "Evaluate the determinants:\n(i) |3  -1  -2; 0  0  -1; 3  -5  0|\n(ii) |3  -4  5; 1  1  -2; 2  3  1|\n(iii) |0  1  2; -1  0  -3; -2  3  0|\n(iv) |2  -1  -2; 0  2  -1; 3  -5  0|",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) -12, (ii) 46, (iii) 0, (iv) -1"
         },
         {
           "qno": 6,
           "question": "If A = [1  1  -2; 2  1  -3; 5  4  -9], find |A|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "0"
         },
         {
           "qno": 7,
           "question": "Find values of x, if:\n(i) |2  4; 5  1| = |2x  4; 6  x|\n(ii) |2  3; 4  5| = |x  3; 2x  5|",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) x = +/- 3, (ii) x = 2"
         },
         {
           "qno": 8,
           "question": "If |x  2; 18  x| = |6  2; 18  6|, then x is equal to:\n(A) 6\n(B) +/- 6\n(C) -6\n(D) 0",
           "type": "mcq",
-          "options": ["6", "+/- 6", "-6", "0"]
+          "options": [
+            "6",
+            "+/- 6",
+            "-6",
+            "0"
+          ],
+          "answer": "B"
         }
       ]
     },
@@ -422,28 +435,38 @@
         {
           "qno": 1,
           "question": "Find area of the triangle with vertices at the point given in each of the following:\n(i) (1, 0), (6, 0), (4, 3)\n(ii) (2, 7), (1, 1), (10, 8)\n(iii) (-2, -3), (3, 2), (-1, -8)",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) 15/2 sq units, (ii) 47/2 sq units, (iii) 15 sq units"
         },
         {
           "qno": 2,
           "question": "Show that points A(a, b+c), B(b, c+a), C(c, a+b) are collinear.",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: Apply R2 -> R2 - R1, R3 -> R3 - R1, then show determinant = 0"
         },
         {
           "qno": 3,
           "question": "Find values of k if area of triangle is 4 sq. units and vertices are:\n(i) (k, 0), (4, 0), (0, 2)\n(ii) (-2, 0), (0, 4), (0, k)",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) k = 0 or k = 8, (ii) k = -4 or k = 12"
         },
         {
           "qno": 4,
           "question": "(i) Find equation of line joining (1, 2) and (3, 6) using determinants.\n(ii) Find equation of line joining (3, 1) and (9, 3) using determinants.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) y = 2x, (ii) x - 3y = 0"
         },
         {
           "qno": 5,
           "question": "If area of triangle is 35 sq units with vertices (2, -6), (5, 4) and (k, 4). Then k is:\n(A) 12\n(B) -2\n(C) -12, -2\n(D) 12, -2",
           "type": "mcq",
-          "options": ["12", "-2", "-12, -2", "12, -2"]
+          "options": [
+            "12",
+            "-2",
+            "-12, -2",
+            "12, -2"
+          ],
+          "answer": "D"
         }
       ]
     },
@@ -454,22 +477,26 @@
         {
           "qno": 1,
           "question": "Write Minors and Cofactors of the elements of following determinants:\n(i) |2  -4; 0  3|\n(ii) |a  c; b  d|",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) M11=3, M12=0, M21=-4, M22=2; A11=3, A12=0, A21=4, A22=2. (ii) M11=d, M12=b, M21=c, M22=a; A11=d, A12=-b, A21=-c, A22=a"
         },
         {
           "qno": 2,
           "question": "Write Minors and Cofactors of the elements of following determinants:\n(i) |1  0  0; 0  1  0; 0  0  1|\n(ii) |1  0  4; 3  5  -1; 0  1  2|",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) M11=1, M12=0, M13=0, M21=0, M22=1, M23=0, M31=0, M32=0, M33=1; all cofactors same as minors with appropriate signs. (ii) M11=11, M12=6, M13=3, M21=-4, M22=2, M23=1, M31=-20, M32=-13, M33=5; A11=11, A12=-6, A13=3, A21=4, A22=2, A23=-1, A31=-20, A32=13, A33=5"
         },
         {
           "qno": 3,
           "question": "Using Cofactors of elements of second row, evaluate Delta = |5  3  8; 2  0  1; 1  2  3|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "7"
         },
         {
           "qno": 4,
           "question": "Using Cofactors of elements of third column, evaluate Delta = |1  x  yz; 1  y  zx; 1  z  xy|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(x - y)(y - z)(z - x)"
         },
         {
           "qno": 5,
@@ -480,7 +507,8 @@
             "a11*A11 + a12*A21 + a13*A31",
             "a21*A11 + a22*A12 + a23*A13",
             "a11*A11 + a21*A21 + a31*A31"
-          ]
+          ],
+          "answer": "D"
         }
       ]
     },
@@ -491,94 +519,122 @@
         {
           "qno": 1,
           "question": "Find adjoint of the matrix [1  2; 3  4].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "[4  -2; -3  1]"
         },
         {
           "qno": 2,
           "question": "Find adjoint of the matrix [1  -1  2; 2  3  5; -2  0  1].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "[3  1  -11; -12  5  -1; 6  2  5]"
         },
         {
           "qno": 3,
           "question": "Verify A(adj A) = (adj A)A = |A|I for the matrix [2  3; -4  -6].",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: |A| = -12 + 12 = 0, adj A = [-6  -3; 4  2]. A(adj A) = (adj A)A = O = 0*I"
         },
         {
           "qno": 4,
           "question": "Verify A(adj A) = (adj A)A = |A|I for the matrix [1  -1  2; 3  0  -2; 1  0  3].",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: |A| = 1(0+0) + 1(9+2) + 2(0-0) = 11. Compute cofactor matrix, transpose to get adj A, then verify both products equal 11*I"
         },
         {
           "qno": 5,
           "question": "Find the inverse of the matrix (if it exists): [2  -2; 4  3].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(1/14)[3  2; -4  2]"
         },
         {
           "qno": 6,
           "question": "Find the inverse of the matrix (if it exists): [-1  5; -3  2].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(1/13)[-2  5; -3  1]"
         },
         {
           "qno": 7,
           "question": "Find the inverse of the matrix (if it exists): [1  2  3; 0  2  4; 0  0  5].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(1/10)[10  -10  2; 0  5  -4; 0  0  2]"
         },
         {
           "qno": 8,
           "question": "Find the inverse of the matrix (if it exists): [1  0  0; 3  3  0; 5  2  -1].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(1/-3)[-3  0  0; 3  -1  0; -9  -2  3]"
         },
         {
           "qno": 9,
           "question": "Find the inverse of the matrix (if it exists): [2  1  3; 4  -1  0; -7  2  1].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(1/-3)[-1  5  3; -4  23  12; 1  -11  -6]"
         },
         {
           "qno": 10,
           "question": "Find the inverse of the matrix (if it exists): [1  -1  2; 0  2  -3; 3  -2  4].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(1/-1)[2  0  -1; -9  -2  3; -6  -1  2]"
         },
         {
           "qno": 11,
           "question": "Find the inverse of the matrix (if it exists): [1  0  0; 0  cos(alpha)  sin(alpha); 0  sin(alpha)  -cos(alpha)].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "[1  0  0; 0  cos(alpha)  sin(alpha); 0  sin(alpha)  -cos(alpha)] (the matrix is its own inverse since |A| = -1 and A^2 = I)"
         },
         {
           "qno": 12,
           "question": "Let A = [3  7; 2  5] and B = [6  8; 7  9]. Verify that (AB)^(-1) = B^(-1)*A^(-1).",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: Find AB, then compute (AB)^(-1) directly and compare with B^(-1)*A^(-1). |A| = 1, |B| = -2"
         },
         {
           "qno": 13,
           "question": "If A = [3  1; -1  2], show that A^2 - 5A + 7I = O. Hence find A^(-1).",
-          "type": "prove"
+          "type": "prove",
+          "answer": "A^(-1) = (1/7)[2  -1; 1  3]. From A^2 - 5A + 7I = O, we get A^(-1) = (1/7)(5I - A)"
         },
         {
           "qno": 14,
           "question": "For the matrix A = [3  2; 1  1], find the numbers a and b such that A^2 + aA + bI = O.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "a = -4, b = 1"
         },
         {
           "qno": 15,
           "question": "For the matrix A = [1  1  1; 1  2  -3; 2  -1  3], show that A^3 - 6A^2 + 5A + 11I = O. Hence, find A^(-1).",
-          "type": "prove"
+          "type": "prove",
+          "answer": "A^(-1) = (1/11)[3  -4  -5; -9  1  4; -5  3  1]. From the equation: A^(-1) = (1/11)(A^2 - 6A + 5I)"
         },
         {
           "qno": 16,
           "question": "If A = [2  -1  1; -1  2  -1; 1  -1  2], verify that A^3 - 6A^2 + 9A - 4I = O and hence find A^(-1).",
-          "type": "prove"
+          "type": "prove",
+          "answer": "A^(-1) = (1/4)[3  1  -1; 1  3  1; -1  1  3]. From the equation: A^(-1) = (1/4)(A^2 - 6A + 9I)"
         },
         {
           "qno": 17,
           "question": "Let A be a nonsingular square matrix of order 3 x 3. Then |adj A| is equal to:\n(A) |A|\n(B) |A|^2\n(C) |A|^3\n(D) 3|A|",
           "type": "mcq",
-          "options": ["|A|", "|A|^2", "|A|^3", "3|A|"]
+          "options": [
+            "|A|",
+            "|A|^2",
+            "|A|^3",
+            "3|A|"
+          ],
+          "answer": "B"
         },
         {
           "qno": 18,
           "question": "If A is an invertible matrix of order 2, then det(A^(-1)) is equal to:\n(A) det(A)\n(B) 1/det(A)\n(C) 1\n(D) 0",
           "type": "mcq",
-          "options": ["det(A)", "1/det(A)", "1", "0"]
+          "options": [
+            "det(A)",
+            "1/det(A)",
+            "1",
+            "0"
+          ],
+          "answer": "B"
         }
       ]
     },
@@ -589,82 +645,98 @@
         {
           "qno": 1,
           "question": "Examine the consistency of the system of equations:\nx + 2y = 2\n2x + 3y = 3",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Consistent. |A| = -1 (nonzero), unique solution: x = 0, y = 1"
         },
         {
           "qno": 2,
           "question": "Examine the consistency of the system of equations:\n2x - y = 5\nx + y = 4",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Consistent. |A| = 3 (nonzero), unique solution: x = 3, y = 1"
         },
         {
           "qno": 3,
           "question": "Examine the consistency of the system of equations:\nx + 3y = 5\n2x + 6y = 8",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Inconsistent. |A| = 0 and (adj A)B is nonzero, so no solution exists"
         },
         {
           "qno": 4,
           "question": "Examine the consistency of the system of equations:\nx + y + z = 1\n2x + 3y + 2z = 2\nax + ay + 2az = 4",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Consistent. |A| = a (nonzero for a != 0), unique solution: x = 0, y = 0, z = 1. Note: the third equation is a(x + y + 2z) = 4, so a != 0"
         },
         {
           "qno": 5,
           "question": "Examine the consistency of the system of equations:\n3x - y - 2z = 2\n2y - z = -1\n3x - 5y = 3",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Consistent. |A| = -15 (nonzero), unique solution exists"
         },
         {
           "qno": 6,
           "question": "Examine the consistency of the system of equations:\n5x - y + 4z = 5\n2x + 3y + 5z = 2\n5x - 2y + 6z = -1",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Consistent. |A| = 0, but (adj A)B = O, so system has infinitely many solutions"
         },
         {
           "qno": 7,
           "question": "Solve system of linear equations, using matrix method:\n5x + 2y = 4\n7x + 3y = 5",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = 2, y = -3"
         },
         {
           "qno": 8,
           "question": "Solve system of linear equations, using matrix method:\n2x - y = -2\n3x + 4y = 3",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = -5/11, y = 12/11"
         },
         {
           "qno": 9,
           "question": "Solve system of linear equations, using matrix method:\n4x - 3y = 3\n3x - 5y = 7",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = -6/11, y = -19/11"
         },
         {
           "qno": 10,
           "question": "Solve system of linear equations, using matrix method:\n5x + 2y = 3\n3x + 2y = 5",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = -1, y = 4"
         },
         {
           "qno": 11,
           "question": "Solve system of linear equations, using matrix method:\n2x + y + z = 1\nx - 2y - z = 3/2\n3y - 5z = 9",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = 1, y = 1/2, z = -3/2"
         },
         {
           "qno": 12,
           "question": "Solve system of linear equations, using matrix method:\nx - y + z = 4\n2x + y - 3z = 0\nx + y + z = 2",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = 2, y = -1, z = 1"
         },
         {
           "qno": 13,
           "question": "Solve system of linear equations, using matrix method:\n2x + 3y + 3z = 5\nx - 2y + z = -4\n3x - y - 2z = 3",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = 1, y = 2, z = -1"
         },
         {
           "qno": 14,
           "question": "Solve system of linear equations, using matrix method:\nx - y + 2z = 7\n3x + 4y - 5z = -5\n2x - y + 3z = 12",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = 2, y = 1, z = 3"
         },
         {
           "qno": 15,
           "question": "If A = [2  -3  5; 3  2  -4; 1  1  -2], find A^(-1). Using A^(-1) solve the system of equations:\n2x - 3y + 5z = 11\n3x + 2y - 4z = -5\nx + y - 2z = -3",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = 1, y = 2, z = 3"
         },
         {
           "qno": 16,
           "question": "The cost of 4 kg onion, 3 kg wheat and 2 kg rice is Rs 60. The cost of 2 kg onion, 4 kg wheat and 6 kg rice is Rs 90. The cost of 6 kg onion, 2 kg wheat and 3 kg rice is Rs 70. Find cost of each item per kg by matrix method.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "Onion = Rs 5/kg, Wheat = Rs 8/kg, Rice = Rs 8/kg"
         }
       ]
     },
@@ -675,37 +747,44 @@
         {
           "qno": 1,
           "question": "Prove that the determinant |x  sin(theta)  cos(theta); -sin(theta)  -x  1; cos(theta)  1  x| is independent of theta.",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: Expand along R1 to get -x^3 - x + x(sin^2(theta) + cos^2(theta)) = -x^3 - x + x = -x(x^2), i.e., determinant = -(x^3 + x), which has no theta"
         },
         {
           "qno": 2,
           "question": "Evaluate |cos(alpha)cos(beta)  cos(alpha)sin(beta)  -sin(alpha); -sin(beta)  cos(beta)  0; sin(alpha)cos(beta)  sin(alpha)sin(beta)  cos(alpha)|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "1"
         },
         {
           "qno": 3,
           "question": "If A^(-1) = [3  -1  1; -15  6  -5; 5  -2  2] and B = [1  2  -2; -1  3  0; 0  -2  1], find (AB)^(-1).",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(AB)^(-1) = B^(-1) * A^(-1) = [3  1  -2; -1  0  1; 2  1  -1] * A^(-1) = [-1  1  0; 0  -2  1; -1  0  1] (after multiplying B^(-1) with given A^(-1))"
         },
         {
           "qno": 4,
           "question": "Let A = [1  2  1; 2  3  1; 1  1  5]. Verify that:\n(i) [adj A]^(-1) = adj(A^(-1))\n(ii) (A^(-1))^(-1) = A",
-          "type": "prove"
+          "type": "prove",
+          "answer": "Hint: |A| = -6. Find adj A, then compute both sides and verify equality"
         },
         {
           "qno": 5,
           "question": "Evaluate |x  y  x+y; y  x+y  x; x+y  x  y|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "-2(x^3 + y^3)"
         },
         {
           "qno": 6,
           "question": "Evaluate |1  x  y; 1  x+y  y; 1  x  x+y|.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "xy"
         },
         {
           "qno": 7,
           "question": "Solve the system of equations:\n2/x + 3/y + 10/z = 4\n4/x - 6/y + 5/z = 1\n6/x + 9/y - 20/z = 2",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "x = 2, y = 3, z = 5"
         },
         {
           "qno": 8,
@@ -716,7 +795,8 @@
             "xyz * [x^(-1)  0  0; 0  y^(-1)  0; 0  0  z^(-1)]",
             "(1/xyz) * [x  0  0; 0  y  0; 0  0  z]",
             "(1/xyz) * [1  0  0; 0  1  0; 0  0  1]"
-          ]
+          ],
+          "answer": "A"
         },
         {
           "qno": 9,
@@ -727,7 +807,8 @@
             "Det(A) is in (2, infinity)",
             "Det(A) is in (2, 4)",
             "Det(A) is in [2, 4]"
-          ]
+          ],
+          "answer": "D"
         }
       ]
     }

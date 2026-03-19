@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/chapter.css">
 <style>:root{
@@ -101,37 +110,37 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Empty Relation</span>
-            <code class="fl-eq">R = φ ⊂ A x A</code>
+            <span class="fl-eq">$R = \phi \subset A \times A$</span>
             <span class="fl-note">No element is related to any element</span>
           </li>
           <li>
             <span class="fl-name">Universal Relation</span>
-            <code class="fl-eq">R = A x A</code>
+            <span class="fl-eq">$R = A \times A$</span>
             <span class="fl-note">Every element is related to every element</span>
           </li>
           <li>
             <span class="fl-name">One-one test</span>
-            <code class="fl-eq">f(x1) = f(x2) ⇒ x1 = x2, for all x1, x2 ∈ X</code>
+            <span class="fl-eq">$f(x_1) = f(x_2) \Rightarrow x_1 = x_2, \; \forall \; x_1, x_2 \in X$</span>
             <span class="fl-note">Equivalent to: x1 ≠ x2 ⇒ f(x1) ≠ f(x2)</span>
           </li>
           <li>
             <span class="fl-name">Onto condition</span>
-            <code class="fl-eq">For every y ∈ Y, there exists x ∈ X such that f(x) = y</code>
+            <span class="fl-eq">$\forall \; y \in Y, \; \exists \; x \in X \text{ such that } f(x) = y$</span>
             <span class="fl-note">Equivalently, f is onto if and only if Range of f = Y (codomain)</span>
           </li>
           <li>
             <span class="fl-name">Composition of functions</span>
-            <code class="fl-eq">gof(x) = g(f(x)), for all x ∈ A</code>
+            <span class="fl-eq">$g \circ f(x) = g(f(x)), \; \forall \; x \in A$</span>
             <span class="fl-note">If f: A → B and g: B → C, then gof: A → C</span>
           </li>
           <li>
             <span class="fl-name">Inverse function condition</span>
-            <code class="fl-eq">gof = I_X and fog = I_Y</code>
+            <span class="fl-eq">$g \circ f = I_X \text{ and } f \circ g = I_Y$</span>
             <span class="fl-note">f is invertible ⟺ f is one-one and onto (bijective)</span>
           </li>
           <li>
             <span class="fl-name">Inverse verification</span>
-            <code class="fl-eq">f⁻¹(y) = x ⟺ f(x) = y</code>
+            <span class="fl-eq">$f^{-1}(y) = x \iff f(x) = y$</span>
             <span class="fl-note">f⁻¹ o f = I_X and f o f⁻¹ = I_Y</span>
           </li>
         </ul>
@@ -224,62 +233,62 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Domain and Range of sin⁻¹</span>
-            <code class="fl-eq">sin⁻¹ : [−1, 1] → [−π/2, π/2]</code>
+            <span class="fl-eq">$\sin^{-1} : [-1, 1] \to \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$</span>
             <span class="fl-note">Principal value branch</span>
           </li>
           <li>
             <span class="fl-name">Domain and Range of cos⁻¹</span>
-            <code class="fl-eq">cos⁻¹ : [−1, 1] → [0, π]</code>
+            <span class="fl-eq">$\cos^{-1} : [-1, 1] \to [0, \pi]$</span>
             <span class="fl-note">Principal value branch</span>
           </li>
           <li>
             <span class="fl-name">Domain and Range of cosec⁻¹</span>
-            <code class="fl-eq">cosec⁻¹ : R − (−1, 1) → [−π/2, π/2] − {0}</code>
+            <span class="fl-eq">$\csc^{-1} : \mathbb{R} - (-1, 1) \to \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] - \{0\}$</span>
             <span class="fl-note">Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1</span>
           </li>
           <li>
             <span class="fl-name">Domain and Range of sec⁻¹</span>
-            <code class="fl-eq">sec⁻¹ : R − (−1, 1) → [0, π] − {π/2}</code>
+            <span class="fl-eq">$\sec^{-1} : \mathbb{R} - (-1, 1) \to [0, \pi] - \left\{\frac{\pi}{2}\right\}$</span>
             <span class="fl-note">Principal value branch. Domain is |x| ≥ 1, i.e., x ≤ −1 or x ≥ 1</span>
           </li>
           <li>
             <span class="fl-name">Domain and Range of tan⁻¹</span>
-            <code class="fl-eq">tan⁻¹ : R → (−π/2, π/2)</code>
+            <span class="fl-eq">$\tan^{-1} : \mathbb{R} \to \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$</span>
             <span class="fl-note">Principal value branch</span>
           </li>
           <li>
             <span class="fl-name">Domain and Range of cot⁻¹</span>
-            <code class="fl-eq">cot⁻¹ : R → (0, π)</code>
+            <span class="fl-eq">$\cot^{-1} : \mathbb{R} \to (0, \pi)$</span>
             <span class="fl-note">Principal value branch</span>
           </li>
           <li>
             <span class="fl-name">Sine inverse-forward composition</span>
-            <code class="fl-eq">sin(sin⁻¹ x) = x, for x ∈ [−1, 1]</code>
+            <span class="fl-eq">$\sin(\sin^{-1} x) = x, \; x \in [-1, 1]$</span>
             <span class="fl-note">Composition of function with its inverse</span>
           </li>
           <li>
             <span class="fl-name">Sine forward-inverse composition</span>
-            <code class="fl-eq">sin⁻¹(sin x) = x, for x ∈ [−π/2, π/2]</code>
+            <span class="fl-eq">$\sin^{-1}(\sin x) = x, \; x \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$</span>
             <span class="fl-note">Composition of inverse with function</span>
           </li>
           <li>
             <span class="fl-name">Cancellation property (sin)</span>
-            <code class="fl-eq">sin(sin⁻¹ x) = x, x ∈ [−1, 1] and sin⁻¹(sin x) = x, x ∈ [−π/2, π/2]</code>
+            <span class="fl-eq">$\sin(\sin^{-1} x) = x, \; x \in [-1,1] \text{ and } \sin^{-1}(\sin x) = x, \; x \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$</span>
             <span class="fl-note">Similar results hold for other trigonometric functions for suitable values of domain</span>
           </li>
           <li>
             <span class="fl-name">Double angle formula for sin⁻¹</span>
-            <code class="fl-eq">sin⁻¹(2x√(1 − x²)) = 2 sin⁻¹ x, −1/√2 ≤ x ≤ 1/√2</code>
+            <span class="fl-eq">$\sin^{-1}(2x\sqrt{1 - x^2}) = 2\sin^{-1} x, \; -\frac{1}{\sqrt{2}} \leq x \leq \frac{1}{\sqrt{2}}$</span>
             <span class="fl-note">Derived by substituting x = sin θ</span>
           </li>
           <li>
             <span class="fl-name">Double angle formula for cos⁻¹</span>
-            <code class="fl-eq">sin⁻¹(2x√(1 − x²)) = 2 cos⁻¹ x, 1/√2 ≤ x ≤ 1</code>
+            <span class="fl-eq">$\sin^{-1}(2x\sqrt{1 - x^2}) = 2\cos^{-1} x, \; \frac{1}{\sqrt{2}} \leq x \leq 1$</span>
             <span class="fl-note">Derived by substituting x = cos θ</span>
           </li>
           <li>
             <span class="fl-name">Simplification of cot⁻¹(1/√(x² − 1))</span>
-            <code class="fl-eq">cot⁻¹(1/√(x² − 1)) = sec⁻¹ x, x &gt; 1</code>
+            <span class="fl-eq">$\cot^{-1}\!\left(\frac{1}{\sqrt{x^2 - 1}}\right) = \sec^{-1} x, \; x > 1$</span>
             <span class="fl-note">Derived by substituting x = sec θ</span>
           </li>
         </ul>
@@ -363,102 +372,102 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">General m x n matrix</span>
-            <code class="fl-eq">A = [aᵢⱼ]ₘ ₓ ₙ, 1 ≤ i ≤ m, 1 ≤ j ≤ n, i, j ∈ N</code>
+            <span class="fl-eq">$A = [a_{ij}]_{m \times n}, \; 1 \leq i \leq m, \; 1 \leq j \leq n$</span>
             <span class="fl-note">The i-th row consists of elements aᵢ₁, aᵢ₂, ..., aᵢₙ and the j-th column consists of elements a₁ⱼ, a₂ⱼ, ..., aₘⱼ</span>
           </li>
           <li>
             <span class="fl-name">Matrix addition</span>
-            <code class="fl-eq">If A = [aᵢⱼ] and B = [bᵢⱼ] are m x n matrices, then A + B = [aᵢⱼ + bᵢⱼ]ₘ ₓ ₙ</code>
+            <span class="fl-eq">$A + B = [a_{ij} + b_{ij}]_{m \times n}$</span>
             <span class="fl-note">Both matrices must be of the same order</span>
           </li>
           <li>
             <span class="fl-name">Scalar multiplication</span>
-            <code class="fl-eq">kA = [k · aᵢⱼ]ₘ ₓ ₙ</code>
+            <span class="fl-eq">$kA = [k \cdot a_{ij}]_{m \times n}$</span>
             <span class="fl-note">The (i,j)-th element of kA is k · aᵢⱼ</span>
           </li>
           <li>
             <span class="fl-name">Matrix multiplication element</span>
-            <code class="fl-eq">cᵢₖ = aᵢ₁*b₁ₖ + aᵢ₂*b₂ₖ + ... + aᵢₙ*bₙₖ = sumⱼ=₁^{n} aᵢⱼ · bⱼₖ</code>
+            <span class="fl-eq">$c_{ik} = a_{i1}b_{1k} + a_{i2}b_{2k} + \cdots + a_{in}b_{nk} = \sum_{j=1}^{n} a_{ij} b_{jk}$</span>
             <span class="fl-note">Number of columns of A must equal number of rows of B</span>
           </li>
           <li>
             <span class="fl-name">Commutative law of addition</span>
-            <code class="fl-eq">A + B = B + A</code>
+            <span class="fl-eq">$A + B = B + A$</span>
             <span class="fl-note">For matrices of the same order</span>
           </li>
           <li>
             <span class="fl-name">Associative law of addition</span>
-            <code class="fl-eq">(A + B) + C = A + (B + C)</code>
+            <span class="fl-eq">$(A + B) + C = A + (B + C)$</span>
             <span class="fl-note">For matrices of the same order</span>
           </li>
           <li>
             <span class="fl-name">Additive identity</span>
-            <code class="fl-eq">A + O = O + A = A</code>
+            <span class="fl-eq">$A + O = O + A = A$</span>
             <span class="fl-note">O is the zero matrix of the same order as A</span>
           </li>
           <li>
             <span class="fl-name">Additive inverse</span>
-            <code class="fl-eq">A + (-A) = (-A) + A = O</code>
+            <span class="fl-eq">$A + (-A) = (-A) + A = O$</span>
             <span class="fl-note">-A = [-aᵢⱼ]ₘ ₓ ₙ</span>
           </li>
           <li>
             <span class="fl-name">Scalar distributive over matrix addition</span>
-            <code class="fl-eq">k(A + B) = kA + kB</code>
+            <span class="fl-eq">$k(A + B) = kA + kB$</span>
             <span class="fl-note">A, B are matrices of same order, k is a scalar</span>
           </li>
           <li>
             <span class="fl-name">Scalar sum distributive</span>
-            <code class="fl-eq">(k + l)A = kA + lA</code>
+            <span class="fl-eq">$(k + l)A = kA + lA$</span>
             <span class="fl-note">k and l are scalars</span>
           </li>
           <li>
             <span class="fl-name">Associative law of multiplication</span>
-            <code class="fl-eq">(AB)C = A(BC)</code>
+            <span class="fl-eq">$(AB)C = A(BC)$</span>
             <span class="fl-note">Whenever both sides of the equality are defined</span>
           </li>
           <li>
             <span class="fl-name">Distributive law (left)</span>
-            <code class="fl-eq">A(B + C) = AB + AC</code>
+            <span class="fl-eq">$A(B + C) = AB + AC$</span>
             <span class="fl-note">Whenever both sides are defined</span>
           </li>
           <li>
             <span class="fl-name">Distributive law (right)</span>
-            <code class="fl-eq">(A + B)C = AC + BC</code>
+            <span class="fl-eq">$(A + B)C = AC + BC$</span>
             <span class="fl-note">Whenever both sides are defined</span>
           </li>
           <li>
             <span class="fl-name">Multiplicative identity</span>
-            <code class="fl-eq">IA = AI = A</code>
+            <span class="fl-eq">$IA = AI = A$</span>
             <span class="fl-note">I is the identity matrix of appropriate order</span>
           </li>
           <li>
             <span class="fl-name">Transpose of transpose</span>
-            <code class="fl-eq">(A')' = A</code>
+            <span class="fl-eq">$(A^{T})^{T} = A$</span>
             <span class="fl-note">Taking transpose twice gives back the original matrix</span>
           </li>
           <li>
             <span class="fl-name">Transpose of scalar multiple</span>
-            <code class="fl-eq">(kA)' = kA'</code>
+            <span class="fl-eq">$(kA)^{T} = kA^{T}$</span>
             <span class="fl-note">Where k is any constant</span>
           </li>
           <li>
             <span class="fl-name">Transpose of sum</span>
-            <code class="fl-eq">(A + B)' = A' + B'</code>
+            <span class="fl-eq">$(A + B)^{T} = A^{T} + B^{T}$</span>
             <span class="fl-note">For matrices A and B of suitable orders</span>
           </li>
           <li>
             <span class="fl-name">Transpose of product</span>
-            <code class="fl-eq">(AB)' = B'A'</code>
+            <span class="fl-eq">$(AB)^{T} = B^{T}A^{T}$</span>
             <span class="fl-note">The order reverses when taking transpose of a product</span>
           </li>
           <li>
             <span class="fl-name">Symmetric part of a matrix</span>
-            <code class="fl-eq">(1/2)(A + A') is a symmetric matrix</code>
+            <span class="fl-eq">$\frac{1}{2}(A + A') \text{ is symmetric}$</span>
             <span class="fl-note">For any square matrix A with real number entries</span>
           </li>
           <li>
             <span class="fl-name">Skew symmetric part of a matrix</span>
-            <code class="fl-eq">(1/2)(A - A') is a skew symmetric matrix</code>
+            <span class="fl-eq">$\frac{1}{2}(A - A') \text{ is skew-symmetric}$</span>
             <span class="fl-note">For any square matrix A with real number entries</span>
           </li>
         </ul>
@@ -552,64 +561,64 @@
       <div class="block-body">
         <ul class="formula-list">
           <li>
-            <code class="fl-eq">Area of triangle Δ = (1/2)|x1  y1  1 ┃ x2  y2  1 ┃ x3  y3  1|</code>
+            <span class="fl-eq">$\Delta = \frac{1}{2} \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix}$</span>
           </li>
           <li>
-            <code class="fl-eq">Since area is positive, Δ = (1/2)|determinant value|</code>
+            <span class="fl-eq">$\Delta = \frac{1}{2} |\text{determinant value}|$</span>
           </li>
           <li>
-            <code class="fl-eq">If three points are collinear, then |x1  y1  1 ┃ x2  y2  1 ┃ x3  y3  1| = 0</code>
+            <span class="fl-eq">$\begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} = 0 \; (\text{collinear})$</span>
           </li>
           <li>
-            <code class="fl-eq">Mᵢⱼ = minor of aᵢⱼ = determinant obtained by deleting row i and column j</code>
+            <span class="fl-eq">$M_{ij} = \text{minor of } a_{ij}$</span>
           </li>
           <li>
-            <code class="fl-eq">Aᵢⱼ = (-1)<sup>i+j</sup> · Mᵢⱼ (cofactor of aᵢⱼ)</code>
+            <span class="fl-eq">$A_{ij} = (-1)^{i+j} \cdot M_{ij}$</span>
           </li>
           <li>
-            <code class="fl-eq">Minor of an element of a determinant of order n (n ≥ 2) is a determinant of order n-1</code>
+            <span class="fl-eq">$Minor of an element of a determinant of order n (n >= 2) is a determinant of order n-1$</span>
           </li>
           <li>
-            <code class="fl-eq">Δ = aᵢ₁*Aᵢ₁ + aᵢ₂*Aᵢ₂ + aᵢ₃*Aᵢ₃ (expansion along ith row)</code>
+            <span class="fl-eq">$\Delta = a_{i1}A_{i1} + a_{i2}A_{i2} + a_{i3}A_{i3}$</span>
           </li>
           <li>
-            <code class="fl-eq">Δ = a₁ⱼ*A₁ⱼ + a₂ⱼ*A₂ⱼ + a₃ⱼ*A₃ⱼ (expansion along jth column)</code>
+            <span class="fl-eq">$\Delta = a_{1j}A_{1j} + a_{2j}A_{2j} + a_{3j}A_{3j}$</span>
           </li>
           <li>
-            <code class="fl-eq">If elements of one row are multiplied with cofactors of another row: aᵢ₁*Aⱼ₁ + aᵢ₂*Aⱼ₂ + aᵢ₃*Aⱼ₃ = 0, for i ≠ j</code>
+            <span class="fl-eq">$a_{i1}A_{j1} + a_{i2}A_{j2} + a_{i3}A_{j3} = 0, \; i \neq j$</span>
           </li>
           <li>
-            <code class="fl-eq">For A = [a11 a12 a13 ┃ a21 a22 a23 ┃ a31 a32 a33], adj A = Transpose of [A11 A12 A13 ┃ A21 A22 A23 ┃ A31 A32 A33] = [A11 A21 A31 ┃ A12 A22 A32 ┃ A13 A23 A33]</code>
+            <span class="fl-eq">$For A = [a11 a12 a13; a21 a22 a23; a31 a32 a33], adj A = Transpose of [A11 A12 A13; A21 A22 A23; A31 A32 A33] = [A11 A21 A31; A12 A22 A32; A13 A23 A33]$</span>
           </li>
           <li>
-            <code class="fl-eq">For 2x2 matrix A = [a11 a12 ┃ a21 a22], adj A = [a22 -a12 ┃ -a21 a11] (interchange diagonal elements, change sign of off-diagonal elements)</code>
+            <span class="fl-eq">$For 2x2 matrix A = [a11 a12; a21 a22], adj A = [a22 -a12; -a21 a11] (interchange diagonal elements, change sign of off-diagonal elements)$</span>
           </li>
           <li>
-            <code class="fl-eq">A(adj A) = (adj A)A = |A|*I</code>
+            <span class="fl-eq">$A(\text{adj } A) = (\text{adj } A)A = |A| \cdot I$</span>
           </li>
           <li>
-            <code class="fl-eq">|adj(A)| = |A|<sup>n-1</sup>, where n is the order of the square matrix</code>
+            <span class="fl-eq">$|\text{adj}(A)| = |A|^{n-1}$</span>
           </li>
           <li>
-            <code class="fl-eq">A⁻¹ = (1/|A|) · adj(A), provided |A| ≠ 0</code>
+            <span class="fl-eq">$A^{-1} = \frac{1}{|A|} \cdot \text{adj}(A), \; |A| \neq 0$</span>
           </li>
           <li>
-            <code class="fl-eq">|AB| = |A| · |B|, where A and B are square matrices of same order</code>
+            <span class="fl-eq">$|AB| = |A| \cdot |B|$</span>
           </li>
           <li>
-            <code class="fl-eq">If AB = BA = I, then B is called the inverse of A, i.e., B = A⁻¹</code>
+            <span class="fl-eq">$If AB = BA = I, then B is called the inverse of A, i.e., B = A^(-1)$</span>
           </li>
           <li>
-            <code class="fl-eq">Also A⁻¹ = B or B⁻¹ = A, and (A⁻¹)⁻¹ = A</code>
+            <span class="fl-eq">$A^{-1} = B, \; B^{-1} = A, \; (A^{-1})^{-1} = A$</span>
           </li>
           <li>
-            <code class="fl-eq">For system: a1·x + b1·y + c1·z = d1, a2·x + b2·y + c2·z = d2, a3·x + b3·y + c3·z = d3: Matrix form AX = B where A = [a1 b1 c1 ┃ a2 b2 c2 ┃ a3 b3 c3], X = [x ┃ y ┃ z], B = [d1 ┃ d2 ┃ d3]</code>
+            <span class="fl-eq">$For system: a1*x + b1*y + c1*z = d1, a2*x + b2*y + c2*z = d2, a3*x + b3*y + c3*z = d3: Matrix form AX = B where A = [a1 b1 c1; a2 b2 c2; a3 b3 c3], X = [x; y; z], B = [d1; d2; d3]$</span>
           </li>
           <li>
-            <code class="fl-eq">If |A| ≠ 0, unique solution exists: X = A⁻¹*B (Matrix Method)</code>
+            <span class="fl-eq">$|A| \neq 0 \Rightarrow X = A^{-1}B$</span>
           </li>
           <li>
-            <code class="fl-eq">If |A| = 0 and (adj A)B ≠ O, system is inconsistent (no solution)</code>
+            <span class="fl-eq">$If |A| = 0 and (adj A)B != O, system is inconsistent (no solution)$</span>
           </li>
         </ul>
       </div>
@@ -701,71 +710,72 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Sum/Difference Rule</span>
-            <code class="fl-eq">(u +/- v)' = u' +/- v'</code>
+            <span class="fl-eq">$(u \pm v)' = u' \pm v'$</span>
           </li>
           <li>
             <span class="fl-name">Product Rule (Leibnitz Rule)</span>
-            <code class="fl-eq">(uv)' = u'v + uv'</code>
+            <span class="fl-eq">$(uv)' = u'v + uv'$</span>
+            <span class="fl-note">Derivative of a product of two functions</span>
           </li>
           <li>
             <span class="fl-name">Quotient Rule</span>
-            <code class="fl-eq">(u/v)' = (u'v - uv')/v², where v ≠ 0</code>
+            <span class="fl-eq">$\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}, \; v \neq 0$</span>
           </li>
           <li>
             <span class="fl-name">Chain Rule (two functions)</span>
-            <code class="fl-eq">If f = v o u, t = u(x), then df/dx = (dv/dt) . (dt/dx)</code>
+            <span class="fl-eq">$\frac{df}{dx} = \frac{dv}{dt} \cdot \frac{dt}{dx}$</span>
           </li>
           <li>
             <span class="fl-name">Chain Rule (three functions)</span>
-            <code class="fl-eq">If f = (w o u) o v, t = v(x), s = u(t), then df/dx = (dw/ds) . (ds/dt) . (dt/dx)</code>
+            <span class="fl-eq">$\frac{df}{dx} = \frac{dw}{ds} \cdot \frac{ds}{dt} \cdot \frac{dt}{dx}$</span>
           </li>
           <li>
             <span class="fl-name">Derivative of sin^(-1) x</span>
-            <code class="fl-eq">d/dx(sin⁻¹ x) = 1/√(1 - x²)</code>
+            <span class="fl-eq">$\frac{d}{dx}(\sin^{-1} x) = \frac{1}{\sqrt{1 - x^2}}$</span>
           </li>
           <li>
             <span class="fl-name">Derivative of cos^(-1) x</span>
-            <code class="fl-eq">d/dx(cos⁻¹ x) = -1/√(1 - x²)</code>
+            <span class="fl-eq">$\frac{d}{dx}(\cos^{-1} x) = \frac{-1}{\sqrt{1 - x^2}}$</span>
           </li>
           <li>
             <span class="fl-name">Derivative of tan^(-1) x</span>
-            <code class="fl-eq">d/dx(tan⁻¹ x) = 1/(1 + x²)</code>
+            <span class="fl-eq">$\frac{d}{dx}(\tan^{-1} x) = \frac{1}{1 + x^2}$</span>
           </li>
           <li>
             <span class="fl-name">Derivative of e^x</span>
-            <code class="fl-eq">d/dx(eˣ) = eˣ</code>
+            <span class="fl-eq">$\frac{d}{dx}(e^x) = e^x$</span>
           </li>
           <li>
             <span class="fl-name">Derivative of log x (natural log)</span>
-            <code class="fl-eq">d/dx(log x) = 1/x</code>
+            <span class="fl-eq">$\frac{d}{dx}(\log x) = \frac{1}{x}$</span>
           </li>
           <li>
             <span class="fl-name">Derivative of a^x</span>
-            <code class="fl-eq">d/dx(aˣ) = aˣ log a</code>
+            <span class="fl-eq">$\frac{d}{dx}(a^x) = a^x \log a$</span>
           </li>
           <li>
             <span class="fl-name">Change of base formula</span>
-            <code class="fl-eq">logₐ p = (log_b p)/(log_b a)</code>
+            <span class="fl-eq">$\log_a p = \frac{\log_b p}{\log_b a}$</span>
           </li>
           <li>
             <span class="fl-name">Log of product</span>
-            <code class="fl-eq">log_b(pq) = log_b p + log_b q</code>
+            <span class="fl-eq">$\log_b(pq) = \log_b p + \log_b q$</span>
           </li>
           <li>
             <span class="fl-name">Log of power</span>
-            <code class="fl-eq">log_b(pⁿ) = n log_b p</code>
+            <span class="fl-eq">$\log_b(p^n) = n \log_b p$</span>
           </li>
           <li>
             <span class="fl-name">Log of quotient</span>
-            <code class="fl-eq">log_b(x/y) = log_b x - log_b y</code>
+            <span class="fl-eq">$\log_b\!\left(\frac{x}{y}\right) = \log_b x - \log_b y$</span>
           </li>
           <li>
             <span class="fl-name">Logarithmic differentiation formula</span>
-            <code class="fl-eq">For y = [u(x)]<sup>v(x</sup>): log y = v(x) . log[u(x)], then (1/y)(dy/dx) = v(x) . (1/u(x)) . u'(x) + v'(x) . log[u(x)], so dy/dx = y[v(x) . u'(x)/u(x) + v'(x) . log(u(x))]</code>
+            <span class="fl-eq">$\frac{dy}{dx} = y\left[v(x) \cdot \frac{u'(x)}{u(x)} + v'(x) \cdot \log u(x)\right]$</span>
           </li>
           <li>
             <span class="fl-name">Parametric differentiation</span>
-            <code class="fl-eq">dy/dx = (dy/dt)/(dx/dt) = g'(t)/f'(t), provided f'(t) ≠ 0</code>
+            <span class="fl-eq">$\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{g'(t)}{f'(t)}, \; f'(t) \neq 0$</span>
           </li>
         </ul>
       </div>
@@ -860,11 +870,11 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Rate of change using Chain Rule</span>
-            <code class="fl-eq">dy/dx = (dy/dt) / (dx/dt), if dx/dt ≠ 0</code>
+            <span class="fl-eq">$\frac{dy}{dx} = \frac{dy/dt}{dx/dt}, \; \frac{dx}{dt} \neq 0$</span>
           </li>
           <li>
             <span class="fl-name">Rate of change of area of circle</span>
-            <code class="fl-eq">dA/dr = 2*π*r</code>
+            <span class="fl-eq">$\frac{dA}{dr} = 2\pi r$</span>
           </li>
         </ul>
       </div>
@@ -957,78 +967,79 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Power Rule</span>
-            <code class="fl-eq">∫ xⁿ dx = x<sup>n+1</sup>/(n+1) + C, n ≠ -1</code>
+            <span class="fl-eq">$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C, \; n \neq -1$</span>
             <span class="fl-note">Particularly, ∫ dx = x + C</span>
           </li>
           <li>
             <span class="fl-name">Cosine integral</span>
-            <code class="fl-eq">∫ cos x dx = sin x + C</code>
+            <span class="fl-eq">$\int \cos x\,dx = \sin x + C$</span>
           </li>
           <li>
             <span class="fl-name">Sine integral</span>
-            <code class="fl-eq">∫ sin x dx = -cos x + C</code>
+            <span class="fl-eq">$\int \sin x\,dx = -\cos x + C$</span>
           </li>
           <li>
             <span class="fl-name">Secant squared integral</span>
-            <code class="fl-eq">∫ sec² x dx = tan x + C</code>
+            <span class="fl-eq">$\int \sec^2 x\,dx = \tan x + C$</span>
           </li>
           <li>
             <span class="fl-name">Cosecant squared integral</span>
-            <code class="fl-eq">∫ cosec² x dx = -cot x + C</code>
+            <span class="fl-eq">$\int \csc^2 x\,dx = -\cot x + C$</span>
           </li>
           <li>
             <span class="fl-name">Secant-tangent integral</span>
-            <code class="fl-eq">∫ sec x tan x dx = sec x + C</code>
+            <span class="fl-eq">$\int \sec x \tan x\,dx = \sec x + C$</span>
           </li>
           <li>
             <span class="fl-name">Cosecant-cotangent integral</span>
-            <code class="fl-eq">∫ cosec x cot x dx = -cosec x + C</code>
+            <span class="fl-eq">$\int \csc x \cot x\,dx = -\csc x + C$</span>
           </li>
           <li>
             <span class="fl-name">Inverse sine integral</span>
-            <code class="fl-eq">∫ dx/√(1 - x²) = sin⁻¹ x + C</code>
+            <span class="fl-eq">$\int \frac{dx}{\sqrt{1 - x^2}} = \sin^{-1} x + C$</span>
           </li>
           <li>
             <span class="fl-name">Negative inverse cosine integral</span>
-            <code class="fl-eq">∫ dx/√(1 - x²) = -cos⁻¹ x + C</code>
+            <span class="fl-eq">$\int \frac{dx}{\sqrt{1 - x^2}} = -\cos^{-1} x + C$</span>
           </li>
           <li>
             <span class="fl-name">Inverse tangent integral</span>
-            <code class="fl-eq">∫ dx/(1 + x²) = tan⁻¹ x + C</code>
+            <span class="fl-eq">$\int \frac{dx}{1 + x^2} = \tan^{-1} x + C$</span>
           </li>
           <li>
             <span class="fl-name">Exponential integral</span>
-            <code class="fl-eq">∫ eˣ dx = eˣ + C</code>
+            <span class="fl-eq">$\int e^x\,dx = e^x + C$</span>
           </li>
           <li>
             <span class="fl-name">Logarithmic integral</span>
-            <code class="fl-eq">∫ (1/x) dx = log |x| + C</code>
+            <span class="fl-eq">$\int \frac{1}{x}\,dx = \log |x| + C$</span>
           </li>
           <li>
             <span class="fl-name">General exponential integral</span>
-            <code class="fl-eq">∫ aˣ dx = aˣ / log a + C</code>
+            <span class="fl-eq">$\int a^x\,dx = \frac{a^x}{\log a} + C$</span>
           </li>
           <li>
-            <code class="fl-eq">∫ dx/(x² - a²) = (1/2a) log |(x-a)/(x+a)| + C</code>
+            <span class="fl-eq">$\int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \log \left|\frac{x-a}{x+a}\right| + C$</span>
           </li>
           <li>
-            <code class="fl-eq">∫ dx/(a² - x²) = (1/2a) log |(a+x)/(a-x)| + C</code>
+            <span class="fl-eq">$\int \frac{dx}{a^2 - x^2} = \frac{1}{2a} \log \left|\frac{a+x}{a-x}\right| + C$</span>
           </li>
           <li>
-            <code class="fl-eq">∫ dx/(x² + a²) = (1/a) tan⁻¹(x/a) + C</code>
+            <span class="fl-eq">$\int \frac{dx}{x^2 + a^2} = \frac{1}{a} \tan^{-1}\!\left(\frac{x}{a}\right) + C$</span>
           </li>
           <li>
-            <code class="fl-eq">∫ dx/√(x² - a²) = log |x + √(x² - a²)| + C</code>
+            <span class="fl-eq">$\int \frac{dx}{\sqrt{x^2 - a^2}} = \log \left|x + \sqrt{x^2 - a^2}\right| + C$</span>
           </li>
           <li>
-            <code class="fl-eq">∫ dx/√(a² - x²) = sin⁻¹(x/a) + C</code>
+            <span class="fl-eq">$\int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1}\!\left(\frac{x}{a}\right) + C$</span>
           </li>
           <li>
-            <code class="fl-eq">∫ dx/√(x² + a²) = log |x + √(x² + a²)| + C</code>
+            <span class="fl-eq">$\int \frac{dx}{\sqrt{x^2 + a^2}} = \log \left|x + \sqrt{x^2 + a^2}\right| + C$</span>
           </li>
           <li>
             <span class="fl-name">Distinct linear factors</span>
-            <code class="fl-eq"></code>
+            <span class="fl-eq">$\frac{px+q}{(x-a)(x-b)} = \frac{A}{x-a} + \frac{B}{x-b}, \; a \neq b$</span>
+            <span class="fl-note">Two distinct linear factors ∈ denominator</span>
           </li>
         </ul>
       </div>
@@ -1106,22 +1117,22 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Area using vertical strips</span>
-            <code class="fl-eq">A = ∫ from a to b of y dx = ∫ from a to b of f(x) dx</code>
+            <span class="fl-eq">$A = \int_a^b y\,dx = \int_a^b f(x)\,dx$</span>
             <span class="fl-note">Area bounded by curve y = f(x), x-axis, and lines x = a, x = b</span>
           </li>
           <li>
             <span class="fl-name">Area using horizontal strips</span>
-            <code class="fl-eq">A = ∫ from c to d of x dy = ∫ from c to d of g(y) dy</code>
+            <span class="fl-eq">$A = \int_c^d x\,dy = \int_c^d g(y)\,dy$</span>
             <span class="fl-note">Area bounded by curve x = g(y), y-axis, and lines y = c, y = d</span>
           </li>
           <li>
             <span class="fl-name">Area when curve is below x-axis</span>
-            <code class="fl-eq">A = |∫ from a to b of f(x) dx|</code>
+            <span class="fl-eq">$A = \left|\int_a^b f(x)\,dx\right|$</span>
             <span class="fl-note">If f(x) &lt; 0 from x = a to x = b, the area is the absolute value of the ∫.</span>
           </li>
           <li>
             <span class="fl-name">Area when curve crosses x-axis</span>
-            <code class="fl-eq">A = |A1| + A2</code>
+            <span class="fl-eq">$A = |A_{1}| + A_{2}$</span>
             <span class="fl-note">When part of the curve is above and part below x-axis, take absolute value of negative area and add to positive area.</span>
           </li>
         </ul>
@@ -1191,67 +1202,67 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Variable Separable Form</span>
-            <code class="fl-eq">dy/dx = h(y) · g(x)</code>
+            <span class="fl-eq">$\frac{dy}{dx} = h(y) \cdot g(x)$</span>
             <span class="fl-note">Standard form for variable separable equations</span>
           </li>
           <li>
             <span class="fl-name">Separated Form</span>
-            <code class="fl-eq">(1/h(y)) dy = g(x) dx</code>
+            <span class="fl-eq">$\frac{1}{h(y)}\,dy = g(x)\,dx$</span>
             <span class="fl-note">After separating the variables</span>
           </li>
           <li>
             <span class="fl-name">General Solution</span>
-            <code class="fl-eq">∫(1/h(y)) dy = ∫g(x) dx + C</code>
+            <span class="fl-eq">$\int \frac{1}{h(y)}\,dy = \int g(x)\,dx + C$</span>
             <span class="fl-note">Integrate both sides to get the solution; H(y) = G(x) + C</span>
           </li>
           <li>
             <span class="fl-name">Substitution for dy/dx form</span>
-            <code class="fl-eq">y = vx, so dy/dx = v + x(dv/dx)</code>
+            <span class="fl-eq">$y = vx, \; \frac{dy}{dx} = v + x\frac{dv}{dx}$</span>
             <span class="fl-note">Used when dy/dx = g(y/x)</span>
           </li>
           <li>
             <span class="fl-name">Substitution for dx/dy form</span>
-            <code class="fl-eq">x = vy, so dx/dy = v + y(dv/dy)</code>
+            <span class="fl-eq">$x = vy, \; \frac{dx}{dy} = v + y\frac{dv}{dy}$</span>
             <span class="fl-note">Used when dx/dy = h(x/y)</span>
           </li>
           <li>
             <span class="fl-name">Reduced form</span>
-            <code class="fl-eq">x(dv/dx) = g(v) - v, then dv/(g(v) - v) = dx/x</code>
+            <span class="fl-eq">$x\frac{dv}{dx} = g(v) - v, \; \frac{dv}{g(v) - v} = \frac{dx}{x}$</span>
             <span class="fl-note">After substitution, separate variables ∈ v and x</span>
           </li>
           <li>
             <span class="fl-name">General Solution</span>
-            <code class="fl-eq">∫dv/(g(v) - v) = ∫(1/x)dx + C</code>
+            <span class="fl-eq">$\int \frac{dv}{g(v) - v} = \int \frac{1}{x}\,dx + C$</span>
             <span class="fl-note">Integrate and replace v by y/x to get the solution</span>
           </li>
           <li>
             <span class="fl-name">Standard Form (Type 1)</span>
-            <code class="fl-eq">dy/dx + Py = Q</code>
+            <span class="fl-eq">$\frac{dy}{dx} + Py = Q$</span>
             <span class="fl-note">P, Q are constants or functions of x only</span>
           </li>
           <li>
             <span class="fl-name">Integrating Factor (Type 1)</span>
-            <code class="fl-eq">I.F. = e<sup>∫P dx</sup></code>
+            <span class="fl-eq">$\text{I.F.} = e^{\int P\,dx}$</span>
             <span class="fl-note">Integrating factor for dy/dx + Py = Q</span>
           </li>
           <li>
             <span class="fl-name">General Solution (Type 1)</span>
-            <code class="fl-eq">y · (I.F.) = ∫(Q × I.F.) dx + C</code>
+            <span class="fl-eq">$y \cdot (\text{I.F.}) = \int (Q \times \text{I.F.})\,dx + C$</span>
             <span class="fl-note">y · e<sup>∫P dx</sup> = ∫(Q · e<sup>∫P dx</sup>) dx + C</span>
           </li>
           <li>
             <span class="fl-name">Standard Form (Type 2)</span>
-            <code class="fl-eq">dx/dy + P₁x = Q₁</code>
+            <span class="fl-eq">$\frac{dx}{dy} + P_1 x = Q_1$</span>
             <span class="fl-note">P₁, Q₁ are constants or functions of y only</span>
           </li>
           <li>
             <span class="fl-name">Integrating Factor (Type 2)</span>
-            <code class="fl-eq">I.F. = e<sup>∫P₁ dy</sup></code>
+            <span class="fl-eq">$\text{I.F.} = e^{\int P_1\,dy}$</span>
             <span class="fl-note">Integrating factor for dx/dy + P₁x = Q₁</span>
           </li>
           <li>
             <span class="fl-name">General Solution (Type 2)</span>
-            <code class="fl-eq">x · (I.F.) = ∫(Q₁ × I.F.) dy + C</code>
+            <span class="fl-eq">$x \cdot (\text{I.F.}) = \int (Q_1 \times \text{I.F.})\,dy + C$</span>
             <span class="fl-note">x · e<sup>∫P₁ dy</sup> = ∫(Q₁ · e<sup>∫P₁ dy</sup>) dy + C</span>
           </li>
         </ul>
@@ -1332,83 +1343,83 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Magnitude of position vector</span>
-            <code class="fl-eq">|OP| = √(x² + y² + z²)</code>
+            <span class="fl-eq">$|\vec{OP}| = \sqrt{x^2 + y^2 + z^2}$</span>
           </li>
           <li>
             <span class="fl-name">Direction cosines</span>
-            <code class="fl-eq">cos(α) = x/r, cos(β) = y/r, cos(γ) = z/r where r = |rvₑc|</code>
+            <span class="fl-eq">$\cos\alpha = \frac{x}{r}, \; \cos\beta = \frac{y}{r}, \; \cos\gamma = \frac{z}{r}$</span>
           </li>
           <li>
             <span class="fl-name">Direction cosine identity</span>
-            <code class="fl-eq">l² + m² + n² = 1</code>
+            <span class="fl-eq">$l^{2} + m^{2} + n^{2} = 1$</span>
           </li>
           <li>
             <span class="fl-name">Triangle law</span>
-            <code class="fl-eq">AC = AB + BC</code>
+            <span class="fl-eq">$\vec{AC} = \vec{AB} + \vec{BC}$</span>
           </li>
           <li>
             <span class="fl-name">Vector difference</span>
-            <code class="fl-eq">a - b = AB + BC' where BC' = -BC</code>
+            <span class="fl-eq">$\vec{a} - \vec{b} = \vec{AB} + \vec{BC'} \text{ where } \vec{BC'} = -\vec{BC}$</span>
           </li>
           <li>
             <span class="fl-name">Sides of triangle sum to zero</span>
-            <code class="fl-eq">AB + BC + CA = AA = 0⃗</code>
+            <span class="fl-eq">$\vec{AB} + \vec{BC} + \vec{CA} = \vec{AA} = \vec{0}$</span>
           </li>
           <li>
             <span class="fl-name">Scalar multiplication magnitude</span>
-            <code class="fl-eq">|λ · a| = |λ| · |a|</code>
+            <span class="fl-eq">$|\lambda \vec{a}| = |\lambda| \cdot |\vec{a}|$</span>
           </li>
           <li>
             <span class="fl-name">Negative of a vector</span>
-            <code class="fl-eq">a + (-a) = (-a) + a = 0⃗</code>
+            <span class="fl-eq">$\vec{a} + (-\vec{a}) = (-\vec{a}) + \vec{a} = \vec{0}$</span>
           </li>
           <li>
             <span class="fl-name">Unit vector</span>
-            <code class="fl-eq">â = (1/|a|) · a, provided a ≠ 0⃗</code>
+            <span class="fl-eq">$\hat{a} = \frac{1}{|\vec{a}|} \cdot \vec{a}, \; \vec{a} \neq \vec{0}$</span>
           </li>
           <li>
             <span class="fl-name">For any scalar k</span>
-            <code class="fl-eq">k · 0⃗ = 0⃗</code>
+            <span class="fl-eq">$k \cdot \vec{0} = \vec{0}$</span>
           </li>
           <li>
             <span class="fl-name">Position vector in component form</span>
-            <code class="fl-eq">OP (or r) = xî + yĵ + zk̂</code>
+            <span class="fl-eq">$\vec{OP} = x\hat{i} + y\hat{j} + z\hat{k}$</span>
           </li>
           <li>
             <span class="fl-name">Magnitude from components</span>
-            <code class="fl-eq">|r| = |xî + yĵ + zk̂| = √(x² + y² + z²)</code>
+            <span class="fl-eq">$|\vec{r}| = |x\hat{i} + y\hat{j} + z\hat{k}| = \sqrt{x^2 + y^2 + z^2}$</span>
           </li>
           <li>
             <span class="fl-name">Sum of vectors in component form</span>
-            <code class="fl-eq">a + b = (a1+b1)î + (a2+b2)ĵ + (a3+b3)k̂</code>
+            <span class="fl-eq">$\vec{a} + \vec{b} = (a_1+b_1)\hat{i} + (a_2+b_2)\hat{j} + (a_3+b_3)\hat{k}$</span>
           </li>
           <li>
             <span class="fl-name">Difference of vectors in component form</span>
-            <code class="fl-eq">a - b = (a1-b1)î + (a2-b2)ĵ + (a3-b3)k̂</code>
+            <span class="fl-eq">$\vec{a} - \vec{b} = (a_1-b_1)\hat{i} + (a_2-b_2)\hat{j} + (a_3-b_3)\hat{k}$</span>
           </li>
           <li>
             <span class="fl-name">Equality of vectors</span>
-            <code class="fl-eq">a = b if and only if a1 = b1, a2 = b2, a3 = b3</code>
+            <span class="fl-eq">$\vec{a} = \vec{b} \iff a_1 = b_1, \; a_2 = b_2, \; a_3 = b_3$</span>
           </li>
           <li>
             <span class="fl-name">Scalar multiplication in component form</span>
-            <code class="fl-eq">λ*a = (λ*a1)î + (λ*a2)ĵ + (λ*a3)k̂</code>
+            <span class="fl-eq">$\lambda\vec{a} = (\lambda a_1)\hat{i} + (\lambda a_2)\hat{j} + (\lambda a_3)\hat{k}$</span>
           </li>
           <li>
             <span class="fl-name">Distributive law 1</span>
-            <code class="fl-eq">k·a + m·a = (k + m)*a</code>
+            <span class="fl-eq">$k\vec{a} + m\vec{a} = (k + m)\vec{a}$</span>
           </li>
           <li>
             <span class="fl-name">Distributive law 2</span>
-            <code class="fl-eq">k(m·a) = (km)*a</code>
+            <span class="fl-eq">$k(m\vec{a}) = (km)\vec{a}$</span>
           </li>
           <li>
             <span class="fl-name">Distributive law 3</span>
-            <code class="fl-eq">k(a + b) = k·a + k·b</code>
+            <span class="fl-eq">$k(\vec{a} + \vec{b}) = k\vec{a} + k\vec{b}$</span>
           </li>
           <li>
             <span class="fl-name">Collinearity condition</span>
-            <code class="fl-eq">a and b are collinear ⟺ b = λ*a for some nonzero scalar λ, i.e., b1/a1 = b2/a2 = b3/a3 = λ</code>
+            <span class="fl-eq">$\vec{b} = \lambda\vec{a} \iff \frac{b_1}{a_1} = \frac{b_2}{a_2} = \frac{b_3}{a_3} = \lambda$</span>
           </li>
         </ul>
       </div>
@@ -1500,102 +1511,102 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Direction cosines identity</span>
-            <code class="fl-eq">l² + m² + n² = 1</code>
+            <span class="fl-eq">$l^{2} + m^{2} + n^{2} = 1$</span>
             <span class="fl-note">Sum of squares of direction cosines equals 1</span>
           </li>
           <li>
             <span class="fl-name">Relation between direction ratios and direction cosines</span>
-            <code class="fl-eq">l/a = m/b = n/c = k, where k = +/- 1/√(a² + b² + c²)</code>
+            <span class="fl-eq">$\frac{l}{a} = \frac{m}{b} = \frac{n}{c} = \pm\frac{1}{\sqrt{a^2 + b^2 + c^2}}$</span>
             <span class="fl-note">Connecting direction ratios (a,b,c) to direction cosines (l,m,n)</span>
           </li>
           <li>
             <span class="fl-name">Direction cosines from direction ratios</span>
-            <code class="fl-eq">l = +/- a/√(a²+b²+c²), m = +/- b/√(a²+b²+c²), n = +/- c/√(a²+b²+c²)</code>
+            <span class="fl-eq">$l = \pm\frac{a}{\sqrt{a^2+b^2+c^2}}, \; m = \pm\frac{b}{\sqrt{a^2+b^2+c^2}}, \; n = \pm\frac{c}{\sqrt{a^2+b^2+c^2}}$</span>
             <span class="fl-note">Direction cosines computed from direction ratios</span>
           </li>
           <li>
             <span class="fl-name">Direction cosines of line joining two points</span>
-            <code class="fl-eq">l = (x2-x1)/PQ, m = (y2-y1)/PQ, n = (z2-z1)/PQ where PQ = √((x2-x1)² + (y2-y1)² + (z2-z1)²)</code>
+            <span class="fl-eq">$l = \frac{x_2-x_1}{PQ}, \; m = \frac{y_2-y_1}{PQ}, \; n = \frac{z_2-z_1}{PQ}$</span>
             <span class="fl-note">Direction cosines of line segment joining P(x1,y1,z1) and Q(x2,y2,z2)</span>
           </li>
           <li>
             <span class="fl-name">Direction ratios of line joining two points</span>
-            <code class="fl-eq">x2-x1, y2-y1, z2-z1 (or x1-x2, y1-y2, z1-z2)</code>
+            <span class="fl-eq">$x_{2}-x_{1}, \; y_{2}-y_{1}, \; z_{2}-z_{1}$</span>
             <span class="fl-note">Direction ratios of line segment from P(x1,y1,z1) to Q(x2,y2,z2)</span>
           </li>
           <li>
             <span class="fl-name">Vector equation of a line (point + direction)</span>
-            <code class="fl-eq">r = a + λ*b</code>
+            <span class="fl-eq">$\vec{r} = \vec{a} + \lambda\vec{b}$</span>
             <span class="fl-note">Line through point with position vector a, parallel to vector b. λ is a real parameter.</span>
           </li>
           <li>
             <span class="fl-name">Cartesian equation of a line (point + direction ratios)</span>
-            <code class="fl-eq">(x - x1)/a = (y - y1)/b = (z - z1)/c</code>
+            <span class="fl-eq">$\frac{x - x_1}{a} = \frac{y - y_1}{b} = \frac{z - z_1}{c}$</span>
             <span class="fl-note">Line through (x1,y1,z1) with direction ratios a, b, c</span>
           </li>
           <li>
             <span class="fl-name">Cartesian equation using direction cosines</span>
-            <code class="fl-eq">(x - x1)/l = (y - y1)/m = (z - z1)/n</code>
+            <span class="fl-eq">$\frac{x - x_1}{l} = \frac{y - y_1}{m} = \frac{z - z_1}{n}$</span>
             <span class="fl-note">Line through (x1,y1,z1) with direction cosines l, m, n</span>
           </li>
           <li>
             <span class="fl-name">Parametric equations of a line</span>
-            <code class="fl-eq">x = x1 + λ*a, y = y1 + λ*b, z = z1 + λ*c</code>
+            <span class="fl-eq">$x = x_1 + \lambda a, \; y = y_1 + \lambda b, \; z = z_1 + \lambda c$</span>
             <span class="fl-note">Parametric form of line through (x1,y1,z1) with direction ratios a, b, c</span>
           </li>
           <li>
             <span class="fl-name">Vector equation of a line through two points</span>
-            <code class="fl-eq">r = a + λ*(b - a)</code>
+            <span class="fl-eq">$\vec{r} = \vec{a} + \lambda(\vec{b} - \vec{a})$</span>
             <span class="fl-note">Line through two points with position vectors a and b</span>
           </li>
           <li>
             <span class="fl-name">Angle between two lines (direction ratios)</span>
-            <code class="fl-eq">cos(θ) = |a1·a2 + b1·b2 + c1·c2| / (√(a1²+b1²+c1²) · √(a2²+b2²+c2²))</code>
+            <span class="fl-eq">$\cos\theta = \frac{|a_1 a_2 + b_1 b_2 + c_1 c_2|}{\sqrt{a_1^2+b_1^2+c_1^2} \cdot \sqrt{a_2^2+b_2^2+c_2^2}}$</span>
             <span class="fl-note">Angle between lines with direction ratios (a1,b1,c1) and (a2,b2,c2)</span>
           </li>
           <li>
             <span class="fl-name">Angle between two lines (direction cosines)</span>
-            <code class="fl-eq">cos(θ) = |l1·l2 + m1·m2 + n1·n2|</code>
+            <span class="fl-eq">$\cos\theta = |l_1 l_2 + m_1 m_2 + n_1 n_2|$</span>
             <span class="fl-note">Angle between lines with direction cosines (l1,m1,n1) and (l2,m2,n2), since l²+m²+n²=1</span>
           </li>
           <li>
             <span class="fl-name">sin(theta) using direction ratios</span>
-            <code class="fl-eq">sin(θ) = √((a1·b2-a2·b1)² + (b1·c2-b2·c1)² + (c1·a2-c2·a1)²) / (√(a1²+b1²+c1²) · √(a2²+b2²+c2²))</code>
+            <span class="fl-eq">$\sin\theta = \frac{\sqrt{(a_1 b_2-a_2 b_1)^2 + (b_1 c_2-b_2 c_1)^2 + (c_1 a_2-c_2 a_1)^2}}{\sqrt{a_1^2+b_1^2+c_1^2} \cdot \sqrt{a_2^2+b_2^2+c_2^2}}$</span>
             <span class="fl-note">Sine of angle between two lines</span>
           </li>
           <li>
             <span class="fl-name">sin(theta) using direction cosines</span>
-            <code class="fl-eq">sin(θ) = √((l1·m2-l2·m1)² + (m1·n2-m2·n1)² + (n1·l2-n2·l1)²)</code>
+            <span class="fl-eq">$\sin\theta = \sqrt{(l_1 m_2-l_2 m_1)^2 + (m_1 n_2-m_2 n_1)^2 + (n_1 l_2-n_2 l_1)^2}$</span>
             <span class="fl-note">Sine of angle between two lines using direction cosines</span>
           </li>
           <li>
             <span class="fl-name">Angle between lines in vector form</span>
-            <code class="fl-eq">cos(θ) = |b1 . b2| / (|b1| · |b2|)</code>
+            <span class="fl-eq">$\cos\theta = \frac{|\vec{b_1} \cdot \vec{b_2}|}{|\vec{b_1}| \cdot |\vec{b_2}|}$</span>
             <span class="fl-note">For lines r = a1 + λ*b1 and r = a2 + μ*b2</span>
           </li>
           <li>
             <span class="fl-name">Condition for perpendicular lines (direction ratios)</span>
-            <code class="fl-eq">a1·a2 + b1·b2 + c1·c2 = 0</code>
+            <span class="fl-eq">$a_{1}a_{2} + b_{1}b_{2} + c_{1}c_{2} = 0$</span>
             <span class="fl-note">Two lines are perpendicular when θ = 90 deg</span>
           </li>
           <li>
             <span class="fl-name">Condition for parallel lines (direction ratios)</span>
-            <code class="fl-eq">a1/a2 = b1/b2 = c1/c2</code>
+            <span class="fl-eq">$\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2}$</span>
             <span class="fl-note">Two lines are parallel when θ = 0</span>
           </li>
           <li>
             <span class="fl-name">Shortest distance between skew lines (vector form)</span>
-            <code class="fl-eq">d = |(b1 x b2) . (a2 - a1)| / |b1 x b2|</code>
+            <span class="fl-eq">$d = \frac{|(\vec{b_1} \times \vec{b_2}) \cdot (\vec{a_2} - \vec{a_1})|}{|\vec{b_1} \times \vec{b_2}|}$</span>
             <span class="fl-note">For lines r = a1 + λ*b1 and r = a2 + μ*b2</span>
           </li>
           <li>
             <span class="fl-name">Shortest distance between skew lines (Cartesian form)</span>
-            <code class="fl-eq">d = |determinant of [[x2-x1, y2-y1, z2-z1], [a1, b1, c1], [a2, b2, c2]]| / √((b1·c2-b2·c1)² + (c1·a2-c2·a1)² + (a1·b2-a2·b1)²)</code>
+            <span class="fl-eq">$d = \frac{\begin{vmatrix} x_2-x_1 & y_2-y_1 & z_2-z_1 \\ a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \end{vmatrix}}{\sqrt{(b_1 c_2-b_2 c_1)^2 + (c_1 a_2-c_2 a_1)^2 + (a_1 b_2-a_2 b_1)^2}}$</span>
             <span class="fl-note">For lines (x-x1)/a1 = (y-y1)/b1 = (z-z1)/c1 and (x-x2)/a2 = (y-y2)/b2 = (z-z2)/c2</span>
           </li>
           <li>
             <span class="fl-name">Distance between parallel lines</span>
-            <code class="fl-eq">d = |b x (a2 - a1)| / |b|</code>
+            <span class="fl-eq">$d = \frac{|\vec{b} \times (\vec{a_2} - \vec{a_1})|}{|\vec{b}|}$</span>
             <span class="fl-note">For parallel lines r = a1 + λ*b and r = a2 + μ*b</span>
           </li>
         </ul>
@@ -1676,8 +1687,8 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">General Objective Function</span>
-            <code class="fl-eq">Z = ax + by</code>
-            <span class="fl-note">where a and b are constants, x and y are decision variables, and Z is to be maximised or minimised</span>
+            <span class="fl-eq">$Z = ax + by$</span>
+            <span class="fl-note">a, b are constants; x, y are decision variables; Z is to be maximised or minimised</span>
           </li>
         </ul>
       </div>
@@ -1766,83 +1777,103 @@
         <ul class="formula-list">
           <li>
             <span class="fl-name">Conditional Probability</span>
-            <code class="fl-eq">P(E|F) = P(E ∩ F) / P(F), provided P(F) ≠ 0</code>
+            <span class="fl-eq">$P(E|F) = \frac{P(E \cap F)}{P(F)}, \; P(F) \neq 0$</span>
             <span class="fl-note">Also written as P(E|F) = n(E ∩ F) / n(F) for equally likely outcomes</span>
           </li>
           <li>
+            <span class="fl-name">Complement Rule</span>
+            <span class="fl-eq">$P(A') = 1 - P(A)$</span>
+            <span class="fl-note">Probability of event not occurring</span>
+          </li>
+          <li>
+            <span class="fl-name">Addition Theorem</span>
+            <span class="fl-eq">$P(A \cup B) = P(A) + P(B) - P(A \cap B)$</span>
+            <span class="fl-note">For any two events A and B</span>
+          </li>
+          <li>
+            <span class="fl-name">Mutually Exclusive Events</span>
+            <span class="fl-eq">$P(A \cup B) = P(A) + P(B)$</span>
+            <span class="fl-note">When A ∩ B = ϕ (no common outcomes)</span>
+          </li>
+          <li>
             <span class="fl-name">Property 1: P(S|F)</span>
-            <code class="fl-eq">P(S|F) = P(F|F) = 1</code>
+            <span class="fl-eq">$P(S|F) = P(F|F) = 1$</span>
             <span class="fl-note">The conditional probability of the sample space S given F is 1</span>
           </li>
           <li>
             <span class="fl-name">Property 2: Addition rule for conditional probability</span>
-            <code class="fl-eq">P((A ∪ B)|F) = P(A|F) + P(B|F) - P((A ∩ B)|F)</code>
+            <span class="fl-eq">$P((A \cup B)|F) = P(A|F) + P(B|F) - P((A \cap B)|F)$</span>
             <span class="fl-note">For disjoint events A and B: P((A ∪ B)|F) = P(A|F) + P(B|F)</span>
           </li>
           <li>
             <span class="fl-name">Property 3: Complement rule</span>
-            <code class="fl-eq">P(E'|F) = 1 - P(E|F)</code>
+            <span class="fl-eq">$P(E'|F) = 1 - P(E|F)$</span>
             <span class="fl-note">Follows from P(S|F) = 1 and E, E' being disjoint with E ∪ E' = S</span>
           </li>
           <li>
             <span class="fl-name">Multiplication Rule (two events)</span>
-            <code class="fl-eq">P(E ∩ F) = P(E) . P(F|E) = P(F) . P(E|F)</code>
+            <span class="fl-eq">$P(E \cap F) = P(E) \cdot P(F|E) = P(F) \cdot P(E|F)$</span>
             <span class="fl-note">Provided P(E) ≠ 0 and P(F) ≠ 0</span>
           </li>
           <li>
             <span class="fl-name">Multiplication Rule (three events)</span>
-            <code class="fl-eq">P(E ∩ F n G) = P(E) . P(F|E) . P(G|(E ∩ F)) = P(E) . P(F|E) . P(G|EF)</code>
+            <span class="fl-eq">$P(E \cap F \cap G) = P(E) \cdot P(F|E) \cdot P(G|E \cap F)$</span>
             <span class="fl-note">Can be extended to four or more events similarly</span>
           </li>
           <li>
             <span class="fl-name">Test for Independence</span>
-            <code class="fl-eq">P(E ∩ F) = P(E) . P(F)</code>
+            <span class="fl-eq">$P(E \cap F) = P(E) \cdot P(F)$</span>
             <span class="fl-note">If this holds, E and F are independent events</span>
           </li>
           <li>
             <span class="fl-name">Probability of at least one of two independent events</span>
-            <code class="fl-eq">P(A ∪ B) = 1 - P(A') P(B')</code>
+            <span class="fl-eq">$P(A \cup B) = 1 - P(A') \cdot P(B')$</span>
             <span class="fl-note">For independent events A and B</span>
           </li>
           <li>
+            <span class="fl-name">Three Independent Events</span>
+            <span class="fl-eq">$P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C)$</span>
+            <span class="fl-note">Extends to n mutually independent events</span>
+          </li>
+          <li>
             <span class="fl-name">Theorem of Total Probability</span>
-            <code class="fl-eq">P(A) = sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ) = P(E₁) P(A|E₁) + P(E₂) P(A|E₂) + ... + P(Eₙ) P(A|Eₙ)</code>
+            <span class="fl-eq">$P(A) = \sum_{j=1}^{n} P(E_j) P(A|E_j)$</span>
             <span class="fl-note">Where {E₁, E₂, ..., Eₙ} is a partition of S and each Eᵢ has nonzero probability</span>
           </li>
           <li>
-            <span class="fl-name">Bayes' Theorem</span>
-            <code class="fl-eq">P(Eᵢ|A) = P(Eᵢ) P(A|Eᵢ) / sumⱼ=₁^{n} P(Eⱼ) P(A|Eⱼ)</code>
-            <span class="fl-note">For any i = 1, 2, ..., n. Also called the formula for the probability of 'causes'.</span>
+            <span class="fl-name">Bayes' Theorem (Simple Form)</span>
+            <span class="fl-eq">$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$</span>
+            <span class="fl-note">Gives posterior probability of A given B has occurred</span>
+          </li>
+          <li>
+            <span class="fl-name">Bayes' Theorem (General Form)</span>
+            <span class="fl-eq">$P(E_i|A) = \frac{P(E_i) P(A|E_i)}{\sum_{j=1}^{n} P(E_j) P(A|E_j)}$</span>
+            <span class="fl-note">For partition {E₁, E₂, …, Eₙ} of S. Also called the formula for the probability of 'causes'.</span>
           </li>
           <li>
             <span class="fl-name">Mean (Expected Value)</span>
-            <code class="fl-eq">E(X) = μ = sumᵢ=₁^{n} xᵢ pᵢ</code>
+            <span class="fl-eq">$E(X) = \mu = \sum_{i=1}^{n} x_i p_i$</span>
             <span class="fl-note">xᵢ are values of X and pᵢ are corresponding probabilities</span>
           </li>
           <li>
             <span class="fl-name">Variance</span>
-            <code class="fl-eq">Var(X) = E(X²) - [E(X)]² = ∑ xᵢ² pᵢ - (∑ xᵢ pᵢ)²</code>
+            <span class="fl-eq">$\text{Var}(X) = E(X^2) - [E(X)]^2 = \sum x_i^2 p_i - \left(\sum x_i p_i\right)^2$</span>
             <span class="fl-note">Also written as σ²</span>
           </li>
           <li>
+            <span class="fl-name">Variance (Alternative)</span>
+            <span class="fl-eq">$\text{Var}(X) = \sum_{i=1}^{n} (x_i - \mu)^2 \cdot p_i$</span>
+            <span class="fl-note">Direct formula using deviations from the mean</span>
+          </li>
+          <li>
             <span class="fl-name">Standard Deviation</span>
-            <code class="fl-eq">σ = √(Var(X))</code>
+            <span class="fl-eq">$\sigma = \sqrt{\text{Var}(X)}$</span>
             <span class="fl-note">Non-negative square root of the variance</span>
           </li>
           <li>
             <span class="fl-name">Binomial Probability</span>
-            <code class="fl-eq">P(X = r) = nCr pʳ q<sup>n-r</sup>, where q = 1 - p</code>
+            <span class="fl-eq">$P(X = r) = \binom{n}{r} p^r q^{n-r}, \; q = 1 - p$</span>
             <span class="fl-note">r = 0, 1, 2, ..., n. Here n = number of trials, p = probability of success, q = probability of failure</span>
-          </li>
-          <li>
-            <span class="fl-name">Mean of Binomial Distribution</span>
-            <code class="fl-eq">E(X) = np</code>
-            <span class="fl-note">n = number of trials, p = probability of success</span>
-          </li>
-          <li>
-            <span class="fl-name">Variance of Binomial Distribution</span>
-            <code class="fl-eq">Var(X) = npq = np(1-p)</code>
-            <span class="fl-note">Always less than or equal to the mean np since q ≤ 1</span>
           </li>
         </ul>
       </div>

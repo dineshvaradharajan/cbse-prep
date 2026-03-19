@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<meta name="description" content="33 most important Python & SQL programs for CBSE Class 12 Computer Science board exam — with code, output, and examiner tips.">
+<meta name="author" content="Dinesh Varadharajan">
+<title>Important Programs Bank | CBSE Class 12 CS</title>
+<style>
+:root{--subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46}
+.cat-section{margin-bottom:2rem}
+.cat-header{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:12px;margin-bottom:1rem;cursor:pointer}
+.cat-header:hover{background:#dcfce7}
+.cat-icon{font-size:1.3rem}
+.cat-title{font-family:'Newsreader',serif;font-size:1.05rem;font-weight:700;color:var(--ink);flex:1}
+.cat-count{font-size:.7rem;font-weight:700;color:var(--subject-color);background:#fff;border:1px solid var(--subject-border);border-radius:999px;padding:.15rem .55rem}
+.cat-arrow{font-size:.6rem;color:var(--ink-3);transition:transform .2s}
+.cat-header.collapsed .cat-arrow{transform:rotate(-90deg)}
+.cat-body.collapsed{display:none}
+
+.prog-card{background:#fff;border:1px solid var(--sand-200);border-radius:12px;padding:1.25rem;margin-bottom:1rem;border-left:4px solid var(--subject-color)}
+.prog-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.prog-header{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.75rem}
+.prog-title{font-family:'Newsreader',serif;font-size:.95rem;font-weight:700;color:var(--ink)}
+.prog-badges{display:flex;gap:.35rem;flex-shrink:0;flex-wrap:wrap}
+.badge{font-size:.6rem;font-weight:800;border-radius:999px;padding:.15rem .5rem;text-transform:uppercase;letter-spacing:.03em}
+.badge-marks{color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border)}
+.badge-freq{color:#dc2626;background:#fef2f2;border:1px solid #fca5a5}
+.badge-freq-med{color:#d97706;background:#fffbeb;border:1px solid #fde68a}
+.prog-desc{font-size:.82rem;color:var(--ink-2);margin-bottom:.75rem;line-height:1.5}
+
+pre.code-block{background:#1e293b;color:#e2e8f0;padding:1rem;border-radius:8px;font-size:.78rem;line-height:1.6;overflow-x:auto;margin-bottom:.5rem;position:relative}
+pre.code-block .copy-btn{position:absolute;top:.4rem;right:.4rem;font-size:.6rem;padding:.2rem .5rem;background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;cursor:pointer;opacity:0;transition:opacity .15s}
+pre.code-block:hover .copy-btn{opacity:1}
+pre.code-block .copy-btn:hover{background:#475569;color:#fff}
+
+.output-block{background:#f8fafc;border:1px solid var(--sand-200);border-radius:8px;padding:.6rem .85rem;font-family:'Courier New',monospace;font-size:.78rem;color:var(--ink);margin-bottom:.5rem}
+.output-label{font-size:.65rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.25rem}
+.tip-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:.6rem .85rem;font-size:.78rem;color:#92400e;margin-top:.5rem;line-height:1.5}
+.tip-box strong{color:#78350f}
+
+.toggle-code{display:inline-block;margin-top:.5rem;padding:.25rem .7rem;font-size:.7rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
+.toggle-code:hover{background:var(--subject-color);color:#fff}
+.code-section{margin-top:.5rem}
+.code-section.collapsed{display:none}
+
+.nav-bar{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.5rem;padding:.5rem 0}
+.nav-bar a{font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.3rem .7rem;text-decoration:none;transition:all .15s}
+.nav-bar a:hover{background:var(--subject-color);color:#fff}
+
+@media(max-width:640px){
+  .prog-card{padding:.85rem;border-radius:10px}
+  pre.code-block{font-size:.72rem;padding:.75rem}
+  .prog-header{flex-direction:column;gap:.35rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">&larr; Back to Hub</a>
+
+<div class="hero">
+  <div class="badge" style="background:var(--subject-bg);color:var(--subject-color);border:1px solid var(--subject-border)">Computer Science XII &middot; Exam Must-Haves</div>
+  <h1>Important Programs Bank</h1>
+  <p class="sub">The 33 most-asked Python & SQL programs for CBSE board exam — with code, expected output, and examiner tips.</p>
+</div>
+
+<div class="nav-bar" id="catNav"></div>
+<div id="programsContainer"></div>
+
+</div>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+
+<script>
+const ICONS = {'File Handling':'📄','Binary File':'💾','CSV File':'📊','Stack':'📚','Python Functions':'🐍','SQL':'🗃️'};
+
+fetch('../data/cs/programs-bank.json')
+  .then(r => r.json())
+  .then(data => render(data))
+  .catch(() => {
+    // Fallback: try loading from script tag
+    const x = new XMLHttpRequest();
+    x.open('GET', '../data/cs/programs-bank.json', true);
+    x.onload = function() { render(JSON.parse(x.responseText)); };
+    x.send();
+  });
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function render(data) {
+  const container = document.getElementById('programsContainer');
+  const nav = document.getElementById('catNav');
+
+  data.categories.forEach((cat, ci) => {
+    const icon = ICONS[cat.name] || '💻';
+    const slug = 'cat-' + ci;
+
+    nav.innerHTML += `<a href="#${slug}">${icon} ${cat.name} (${cat.programs.length})</a>`;
+
+    let html = `<div class="cat-section" id="${slug}">
+      <div class="cat-header" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('collapsed')">
+        <span class="cat-icon">${icon}</span>
+        <span class="cat-title">${cat.name}</span>
+        <span class="cat-count">${cat.programs.length} programs</span>
+        <span class="cat-arrow">&#9660;</span>
+      </div>
+      <div class="cat-body">`;
+
+    cat.programs.forEach((prog, pi) => {
+      const freqClass = prog.frequency === 'Very High' ? 'badge-freq' : 'badge-freq-med';
+      const codeId = `code-${ci}-${pi}`;
+
+      html += `<div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-title">${escHtml(prog.title)}</div>
+          <div class="prog-badges">
+            <span class="badge badge-marks">${prog.marks} marks</span>
+            <span class="badge ${freqClass}">${prog.frequency}</span>
+          </div>
+        </div>
+        <div class="prog-desc">${escHtml(prog.description)}</div>
+        <button class="toggle-code" onclick="document.getElementById('${codeId}').classList.toggle('collapsed');this.textContent=this.textContent.includes('Show')?'Hide Code':'Show Code'">Show Code</button>
+        <div class="code-section collapsed" id="${codeId}">
+          <pre class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button>${escHtml(prog.code)}</pre>`;
+
+      if (prog.output) {
+        html += `<div class="output-label">Expected Output:</div>
+          <div class="output-block">${escHtml(prog.output)}</div>`;
+      }
+      if (prog.tips) {
+        html += `<div class="tip-box"><strong>Examiner Tip:</strong> ${escHtml(prog.tips)}</div>`;
+      }
+      html += `</div></div>`;
+    });
+
+    html += `</div></div>`;
+    container.innerHTML += html;
+  });
+}
+
+function copyCode(btn) {
+  const pre = btn.parentElement;
+  const code = pre.textContent.replace('Copy', '').trim();
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+  });
+}
+</script>
+</body>
+</html>

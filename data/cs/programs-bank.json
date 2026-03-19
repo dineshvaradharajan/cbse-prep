@@ -1,0 +1,337 @@
+{
+  "categories": [
+    {
+      "name": "File Handling — Text Files",
+      "description": "Text file operations are asked every year for 3-5 marks. Master read(), readline(), readlines() and the with statement.",
+      "programs": [
+        {
+          "title": "Count vowels, consonants, uppercase and lowercase in a file",
+          "description": "Read a text file and count the number of vowels, consonants, uppercase letters and lowercase letters.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "def count_characters():\n    fh = open('story.txt', 'r')\n    data = fh.read()\n    vowels = consonants = upper = lower = 0\n    for ch in data:\n        if ch.isalpha():\n            if ch.lower() in 'aeiou':\n                vowels += 1\n            else:\n                consonants += 1\n            if ch.isupper():\n                upper += 1\n            else:\n                lower += 1\n    fh.close()\n    print('Vowels:', vowels)\n    print('Consonants:', consonants)\n    print('Uppercase:', upper)\n    print('Lowercase:', lower)\n\ncount_characters()",
+          "output": "Vowels: 15\nConsonants: 25\nUppercase: 4\nLowercase: 36",
+          "tips": "Always close the file after use. Use ch.isalpha() before checking vowel/consonant to skip spaces and punctuation. The examiner checks for this."
+        },
+        {
+          "title": "Count digits, spaces and special characters in a file",
+          "description": "Read a text file and count digits, blank spaces and other (special) characters.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "def count_types():\n    fh = open('data.txt', 'r')\n    data = fh.read()\n    digits = spaces = special = 0\n    for ch in data:\n        if ch.isdigit():\n            digits += 1\n        elif ch.isspace():\n            spaces += 1\n        elif not ch.isalpha():\n            special += 1\n    fh.close()\n    print('Digits:', digits)\n    print('Spaces:', spaces)\n    print('Special characters:', special)\n\ncount_types()",
+          "output": "Digits: 5\nSpaces: 12\nSpecial characters: 3",
+          "tips": "Use elif for mutually exclusive conditions. isspace() covers spaces, tabs and newlines. Do not count alphabets as special characters."
+        },
+        {
+          "title": "Count words and lines in a file",
+          "description": "Read a text file and display the total number of words and lines.",
+          "marks": 2,
+          "frequency": "Very High",
+          "code": "def count_words_lines():\n    fh = open('story.txt', 'r')\n    lines = fh.readlines()\n    word_count = 0\n    for line in lines:\n        words = line.split()\n        word_count += len(words)\n    fh.close()\n    print('Number of words:', word_count)\n    print('Number of lines:', len(lines))\n\ncount_words_lines()",
+          "output": "Number of words: 42\nNumber of lines: 5",
+          "tips": "Use split() without arguments — it handles multiple spaces and tabs correctly. len(lines) gives the line count directly."
+        },
+        {
+          "title": "Display lines containing a specific word",
+          "description": "Read a text file and display all lines that contain the word 'India'.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "def display_lines_with_word():\n    fh = open('story.txt', 'r')\n    for line in fh:\n        if 'India' in line:\n            print(line, end='')\n    fh.close()\n\ndisplay_lines_with_word()",
+          "output": "India is a great country.\nI love India very much.",
+          "tips": "Use 'in' operator for substring search. Use end='' in print to avoid double newlines since each line already has a newline character."
+        },
+        {
+          "title": "Display words starting with a specific letter",
+          "description": "Read a text file and display all words that start with the letter 'T' or 't'.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "def words_starting_with(letter):\n    fh = open('story.txt', 'r')\n    data = fh.read()\n    words = data.split()\n    for word in words:\n        if word[0].lower() == letter.lower():\n            print(word)\n    fh.close()\n\nwords_starting_with('T')",
+          "output": "The\nto\ntheir\nTechnology",
+          "tips": "Convert both to lowercase for case-insensitive comparison. Use word[0] to access the first character. Make sure file is not empty before calling split()."
+        },
+        {
+          "title": "Display words starting AND ending with a vowel",
+          "description": "Read a text file and display all words that start with a vowel and also end with a vowel.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "def vowel_start_end():\n    fh = open('story.txt', 'r')\n    data = fh.read()\n    words = data.split()\n    vowels = 'aeiouAEIOU'\n    for word in words:\n        if word[0] in vowels and word[-1] in vowels:\n            print(word)\n    fh.close()\n\nvowel_start_end()",
+          "output": "are\neducate\nIndie",
+          "tips": "Use word[-1] to access the last character. Include both uppercase and lowercase vowels in the check string, or convert to lower() before checking."
+        },
+        {
+          "title": "Copy lines from one file to another",
+          "description": "Read a text file and copy only those lines that start with an uppercase letter to another file.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "def copy_lines():\n    fin = open('source.txt', 'r')\n    fout = open('target.txt', 'w')\n    for line in fin:\n        if line[0].isupper():\n            fout.write(line)\n    fin.close()\n    fout.close()\n    print('Lines copied successfully')\n\ncopy_lines()",
+          "output": "Lines copied successfully",
+          "tips": "Open source in 'r' mode and target in 'w' mode. Check line[0] carefully — empty lines may cause IndexError. Always close both files."
+        },
+        {
+          "title": "Count frequency of a word in file",
+          "description": "Read a text file and count how many times a given word occurs in it.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "def count_word(word):\n    fh = open('story.txt', 'r')\n    data = fh.read()\n    words = data.split()\n    count = 0\n    for w in words:\n        if w.lower() == word.lower():\n            count += 1\n    fh.close()\n    print('\"' + word + '\" occurs', count, 'times')\n\ncount_word('the')",
+          "output": "\"the\" occurs 4 times",
+          "tips": "Convert both words to lowercase for case-insensitive matching. You can also use words.count(word) but it is case-sensitive. The manual loop approach is preferred by examiners."
+        }
+      ]
+    },
+    {
+      "name": "File Handling — Binary Files",
+      "description": "Binary file handling with pickle module is asked every year for 3-4 marks. Always import pickle and use 'rb'/'wb'/'ab' modes.",
+      "programs": [
+        {
+          "title": "Write student records to binary file",
+          "description": "Accept student data (roll number, name, marks) and write to a binary file using pickle.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "import pickle\n\ndef write_records():\n    fh = open('students.dat', 'wb')\n    n = int(input('How many records? '))\n    for i in range(n):\n        roll = int(input('Enter roll number: '))\n        name = input('Enter name: ')\n        marks = float(input('Enter marks: '))\n        record = [roll, name, marks]\n        pickle.dump(record, fh)\n    fh.close()\n    print(n, 'records written successfully')\n\nwrite_records()",
+          "output": "How many records? 2\nEnter roll number: 1\nEnter name: Aman\nEnter marks: 89.5\nEnter roll number: 2\nEnter name: Neha\nEnter marks: 92.0\n2 records written successfully",
+          "tips": "Always write 'import pickle' as the first line. Use 'wb' mode to write. Each record is dumped separately using pickle.dump(). Store records as list or dictionary."
+        },
+        {
+          "title": "Read and display all records from binary file",
+          "description": "Read all student records from a binary file and display them.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "import pickle\n\ndef read_records():\n    fh = open('students.dat', 'rb')\n    try:\n        while True:\n            record = pickle.load(fh)\n            print('Roll:', record[0], 'Name:', record[1], 'Marks:', record[2])\n    except EOFError:\n        fh.close()\n    print('--- End of file ---')\n\nread_records()",
+          "output": "Roll: 1 Name: Aman Marks: 89.5\nRoll: 2 Name: Neha Marks: 92.0\n--- End of file ---",
+          "tips": "Use try-except with EOFError to detect end of file. This is the standard CBSE pattern — examiners expect this. Never forget the 'rb' mode for reading binary files."
+        },
+        {
+          "title": "Search for a specific record in binary file",
+          "description": "Search for a student record by roll number in a binary file.",
+          "marks": 4,
+          "frequency": "Very High",
+          "code": "import pickle\n\ndef search_record(roll_no):\n    fh = open('students.dat', 'rb')\n    found = False\n    try:\n        while True:\n            record = pickle.load(fh)\n            if record[0] == roll_no:\n                print('Record found!')\n                print('Roll:', record[0])\n                print('Name:', record[1])\n                print('Marks:', record[2])\n                found = True\n    except EOFError:\n        fh.close()\n    if not found:\n        print('Record not found')\n\nsearch_record(2)",
+          "output": "Record found!\nRoll: 2\nName: Neha\nMarks: 92.0",
+          "tips": "Use a boolean flag 'found' to track whether the record was located. Do NOT use break after finding — continue reading to close properly via EOFError, or close in a finally block."
+        },
+        {
+          "title": "Update a record in binary file",
+          "description": "Update the marks of a student identified by roll number in a binary file.",
+          "marks": 4,
+          "frequency": "High",
+          "code": "import pickle\n\ndef update_record(roll_no, new_marks):\n    fh = open('students.dat', 'rb')\n    records = []\n    try:\n        while True:\n            record = pickle.load(fh)\n            records.append(record)\n    except EOFError:\n        fh.close()\n\n    found = False\n    for record in records:\n        if record[0] == roll_no:\n            record[2] = new_marks\n            found = True\n\n    if found:\n        fh = open('students.dat', 'wb')\n        for record in records:\n            pickle.dump(record, fh)\n        fh.close()\n        print('Record updated successfully')\n    else:\n        print('Record not found')\n\nupdate_record(2, 95.0)",
+          "output": "Record updated successfully",
+          "tips": "Read all records into a list first, modify the required record, then rewrite all records. This is the safest approach for binary files. Use 'wb' when rewriting to overwrite the old file."
+        }
+      ]
+    },
+    {
+      "name": "File Handling — CSV Files",
+      "description": "CSV file handling is asked frequently for 3-4 marks. Always import csv module and understand the difference between writer/reader objects.",
+      "programs": [
+        {
+          "title": "Write data to CSV file",
+          "description": "Write student records to a CSV file using csv.writer().",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "import csv\n\ndef write_csv():\n    fh = open('students.csv', 'w', newline='')\n    writer = csv.writer(fh)\n    writer.writerow(['Roll', 'Name', 'Marks'])\n    n = int(input('How many records? '))\n    for i in range(n):\n        roll = int(input('Enter roll number: '))\n        name = input('Enter name: ')\n        marks = float(input('Enter marks: '))\n        writer.writerow([roll, name, marks])\n    fh.close()\n    print('Data written to CSV file')\n\nwrite_csv()",
+          "output": "How many records? 2\nEnter roll number: 1\nEnter name: Aman\nEnter marks: 89.5\nEnter roll number: 2\nEnter name: Neha\nEnter marks: 92.0\nData written to CSV file",
+          "tips": "Always pass newline='' when opening CSV file to avoid blank rows on Windows. Write the header row first using writerow(). Use 'w' mode for writing."
+        },
+        {
+          "title": "Read and display data from CSV file",
+          "description": "Read all records from a CSV file and display them using csv.reader().",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "import csv\n\ndef read_csv():\n    fh = open('students.csv', 'r')\n    reader = csv.reader(fh)\n    for row in reader:\n        print(row)\n    fh.close()\n\nread_csv()",
+          "output": "['Roll', 'Name', 'Marks']\n['1', 'Aman', '89.5']\n['2', 'Neha', '92.0']",
+          "tips": "csv.reader() returns each row as a list of strings. Even numbers are read as strings. Use int() or float() if you need to do calculations. The first row is usually the header."
+        },
+        {
+          "title": "Search records in CSV file",
+          "description": "Search for a student by name in a CSV file and display matching records.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "import csv\n\ndef search_csv(search_name):\n    fh = open('students.csv', 'r')\n    reader = csv.reader(fh)\n    header = next(reader)\n    found = False\n    for row in reader:\n        if row[1].lower() == search_name.lower():\n            print('Roll:', row[0])\n            print('Name:', row[1])\n            print('Marks:', row[2])\n            found = True\n    fh.close()\n    if not found:\n        print('Record not found')\n\nsearch_csv('Neha')",
+          "output": "Roll: 2\nName: Neha\nMarks: 92.0",
+          "tips": "Use next(reader) to skip the header row before searching. All values in CSV are strings, so compare as strings or convert types. Use lower() for case-insensitive search."
+        }
+      ]
+    },
+    {
+      "name": "Stack Operations",
+      "description": "Stack implementation using Python list is asked every year for 3-4 marks. Use append() for push and pop() for pop. Always check for underflow.",
+      "programs": [
+        {
+          "title": "Stack — Push and Pop integers",
+          "description": "Implement push and pop operations on a stack of integers using a list.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "stack = []\n\ndef push(item):\n    stack.append(item)\n    print(item, 'pushed to stack')\n\ndef pop():\n    if stack == []:\n        print('Stack Underflow!')\n    else:\n        item = stack.pop()\n        print(item, 'popped from stack')\n\ndef display():\n    if stack == []:\n        print('Stack is empty')\n    else:\n        print('Stack (top to bottom):')\n        for i in range(len(stack) - 1, -1, -1):\n            print(stack[i])\n\npush(10)\npush(20)\npush(30)\ndisplay()\npop()\ndisplay()",
+          "output": "10 pushed to stack\n20 pushed to stack\n30 pushed to stack\nStack (top to bottom):\n30\n20\n10\n30 popped from stack\nStack (top to bottom):\n20\n10",
+          "tips": "Always check for empty stack before pop — this is called underflow. Display from top to bottom using reverse traversal. Use append() for push, pop() for pop — never use insert() or remove()."
+        },
+        {
+          "title": "Stack — Push and Pop strings",
+          "description": "Implement a stack to store and manage a list of book titles.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "stack = []\n\ndef push_book(title):\n    stack.append(title)\n    print('\"' + title + '\" added to stack')\n\ndef pop_book():\n    if len(stack) == 0:\n        print('Stack Underflow! No books in stack.')\n    else:\n        title = stack.pop()\n        print('\"' + title + '\" removed from stack')\n\ndef display_books():\n    if len(stack) == 0:\n        print('No books in stack')\n    else:\n        print('Books in stack (top to bottom):')\n        for i in range(len(stack) - 1, -1, -1):\n            print(stack[i])\n\npush_book('Python Basics')\npush_book('Data Structures')\npush_book('DBMS')\ndisplay_books()\npop_book()\ndisplay_books()",
+          "output": "\"Python Basics\" added to stack\n\"Data Structures\" added to stack\n\"DBMS\" added to stack\nBooks in stack (top to bottom):\nDBMS\nData Structures\nPython Basics\n\"DBMS\" removed from stack\nBooks in stack (top to bottom):\nData Structures\nPython Basics",
+          "tips": "The logic is the same regardless of data type. Examiners often change the context (books, cities, names) but the push/pop/display structure remains identical."
+        },
+        {
+          "title": "Stack — Push and Pop employee tuples",
+          "description": "Implement a stack where each element is a tuple containing employee number and name. Push only those employees whose salary is above 50000.",
+          "marks": 4,
+          "frequency": "Very High",
+          "code": "stack = []\n\ndef push_employee(empno, name, salary):\n    if salary > 50000:\n        stack.append((empno, name))\n        print((empno, name), 'pushed to stack')\n    else:\n        print(name, 'not eligible (salary <= 50000)')\n\ndef pop_employee():\n    if stack == []:\n        print('Stack Underflow!')\n    else:\n        item = stack.pop()\n        print(item, 'popped from stack')\n\ndef display():\n    if stack == []:\n        print('Stack is empty')\n    else:\n        print('Employee Stack (top to bottom):')\n        for i in range(len(stack) - 1, -1, -1):\n            print('EmpNo:', stack[i][0], 'Name:', stack[i][1])\n\npush_employee(101, 'Aman', 60000)\npush_employee(102, 'Neha', 45000)\npush_employee(103, 'Ravi', 75000)\ndisplay()\npop_employee()\ndisplay()",
+          "output": "(101, 'Aman') pushed to stack\nNeha not eligible (salary <= 50000)\n(103, 'Ravi') pushed to stack\nEmployee Stack (top to bottom):\nEmpNo: 103 Name: Ravi\nEmpNo: 101 Name: Aman\n(103, 'Ravi') popped from stack\nEmployee Stack (top to bottom):\nEmpNo: 101 Name: Aman",
+          "tips": "This is the most common board exam pattern — push with a condition. The tuple stores only selected fields, not all. Read the question carefully to identify which fields go into the tuple and what the push condition is."
+        },
+        {
+          "title": "Stack — Display without deleting (peek and traverse)",
+          "description": "Display all elements of a stack without removing them, and also show the topmost element.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "stack = [10, 20, 30, 40, 50]\n\ndef peek():\n    if stack == []:\n        print('Stack is empty')\n    else:\n        print('Top element:', stack[-1])\n\ndef display():\n    if stack == []:\n        print('Stack is empty')\n    else:\n        top = len(stack) - 1\n        print('Stack contents:')\n        for i in range(top, -1, -1):\n            if i == top:\n                print(stack[i], '<-- TOP')\n            else:\n                print(stack[i])\n\npeek()\ndisplay()",
+          "output": "Top element: 50\nStack contents:\n50 <-- TOP\n40\n30\n20\n10",
+          "tips": "Use stack[-1] to peek at the top without removing. To display, traverse from the last index to 0 using range(len(stack)-1, -1, -1). Never use pop() in display function."
+        }
+      ]
+    },
+    {
+      "name": "Python Functions — Output Prediction",
+      "description": "Output prediction questions on functions test understanding of scope, default arguments and recursion. Worth 1-3 marks.",
+      "programs": [
+        {
+          "title": "Function with default arguments",
+          "description": "Predict the output of a function that uses default parameter values.",
+          "marks": 2,
+          "frequency": "Very High",
+          "code": "def greet(name, msg='Good Morning'):\n    print('Hello', name + ',', msg)\n\ngreet('Aman')\ngreet('Neha', 'Good Evening')\ngreet(msg='Good Night', name='Ravi')",
+          "output": "Hello Aman, Good Morning\nHello Neha, Good Evening\nHello Ravi, Good Night",
+          "tips": "Default arguments are used when a value is not passed. When using keyword arguments, the order does not matter. Default parameters must come after non-default parameters in the function definition."
+        },
+        {
+          "title": "Function with mutable default argument (list)",
+          "description": "Predict the output when a list is used as a default argument — a classic Python trap.",
+          "marks": 2,
+          "frequency": "High",
+          "code": "def add_item(item, lst=[]):\n    lst.append(item)\n    print(lst)\n\nadd_item(1)\nadd_item(2)\nadd_item(3, [10, 20])",
+          "output": "[1]\n[1, 2]\n[10, 20, 3]",
+          "tips": "Mutable default arguments (like lists) are shared across all calls. The default list is created once and reused. When a new list is passed explicitly, the default is not used for that call."
+        },
+        {
+          "title": "Global vs Local variable scope",
+          "description": "Predict the output involving global and local variables with the same name.",
+          "marks": 2,
+          "frequency": "Very High",
+          "code": "x = 10\n\ndef func1():\n    x = 20\n    print('Inside func1, x =', x)\n\ndef func2():\n    global x\n    x = 30\n    print('Inside func2, x =', x)\n\nfunc1()\nprint('After func1, x =', x)\nfunc2()\nprint('After func2, x =', x)",
+          "output": "Inside func1, x = 20\nAfter func1, x = 10\nInside func2, x = 30\nAfter func2, x = 30",
+          "tips": "Without 'global' keyword, assignment creates a local variable that does not affect the global one. With 'global' keyword, the function modifies the actual global variable. This is the most common scope question in CBSE."
+        },
+        {
+          "title": "Recursive function — Factorial",
+          "description": "Write a recursive function to find the factorial of a number.",
+          "marks": 2,
+          "frequency": "Very High",
+          "code": "def factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nnum = 5\nresult = factorial(num)\nprint('Factorial of', num, '=', result)",
+          "output": "Factorial of 5 = 120",
+          "tips": "Every recursive function must have a base case (here n==0 or n==1). The recursive call must move towards the base case. Trace the calls: factorial(5) = 5 * 4 * 3 * 2 * 1 = 120."
+        },
+        {
+          "title": "Recursive function — Sum of digits",
+          "description": "Write a recursive function to find the sum of digits of a number.",
+          "marks": 2,
+          "frequency": "High",
+          "code": "def sum_of_digits(n):\n    if n == 0:\n        return 0\n    else:\n        return n % 10 + sum_of_digits(n // 10)\n\nnum = 1234\nresult = sum_of_digits(num)\nprint('Sum of digits of', num, '=', result)",
+          "output": "Sum of digits of 1234 = 10",
+          "tips": "Use n % 10 to get the last digit and n // 10 to remove it. Base case is when n becomes 0. Trace: 4 + 3 + 2 + 1 = 10."
+        },
+        {
+          "title": "Recursive function — Fibonacci series",
+          "description": "Write a recursive function to return the nth Fibonacci number.",
+          "marks": 3,
+          "frequency": "High",
+          "code": "def fibonacci(n):\n    if n == 1:\n        return 0\n    elif n == 2:\n        return 1\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\n\nfor i in range(1, 8):\n    print(fibonacci(i), end=' ')\nprint()",
+          "output": "0 1 1 2 3 5 8",
+          "tips": "Fibonacci has two base cases: fib(1)=0 and fib(2)=1. Each call makes two recursive calls so it is slower for large n. CBSE usually asks for small values only."
+        },
+        {
+          "title": "Recursive function — Power (x raised to n)",
+          "description": "Write a recursive function to calculate x raised to the power n.",
+          "marks": 2,
+          "frequency": "High",
+          "code": "def power(x, n):\n    if n == 0:\n        return 1\n    else:\n        return x * power(x, n - 1)\n\nbase = 2\nexp = 5\nresult = power(base, exp)\nprint(base, 'raised to', exp, '=', result)",
+          "output": "2 raised to 5 = 32",
+          "tips": "Base case: any number raised to power 0 is 1. Recursive step: x^n = x * x^(n-1). This is a clean example that examiners love to ask."
+        }
+      ]
+    },
+    {
+      "name": "SQL Queries — Common Patterns",
+      "description": "SQL queries are asked for 2-5 marks in every board exam. Practice writing queries based on given table structures. Questions may ask you to write a query or predict the output.",
+      "programs": [
+        {
+          "title": "SELECT with WHERE, BETWEEN, IN, LIKE",
+          "description": "Write queries using common WHERE clause operators on an EMPLOYEE table (EmpNo, Name, Department, Salary, City).",
+          "marks": 2,
+          "frequency": "Very High",
+          "code": "-- Display employees with salary between 30000 and 60000\nSELECT * FROM EMPLOYEE WHERE Salary BETWEEN 30000 AND 60000;\n\n-- Display employees from Delhi or Mumbai\nSELECT Name, City FROM EMPLOYEE WHERE City IN ('Delhi', 'Mumbai');\n\n-- Display employees whose name starts with 'A'\nSELECT * FROM EMPLOYEE WHERE Name LIKE 'A%';\n\n-- Display employees whose name has exactly 4 characters\nSELECT * FROM EMPLOYEE WHERE Name LIKE '____';\n\n-- Display employees whose name contains 'an' anywhere\nSELECT * FROM EMPLOYEE WHERE Name LIKE '%an%';",
+          "output": "-- Results depend on table data --\n-- BETWEEN is inclusive of both limits\n-- IN checks for membership in a set\n-- % matches zero or more characters\n-- _ matches exactly one character",
+          "tips": "BETWEEN is inclusive (includes both endpoints). LIKE patterns: % for any number of characters, _ for exactly one character. IN is shorthand for multiple OR conditions. String values must be in single quotes."
+        },
+        {
+          "title": "GROUP BY with HAVING",
+          "description": "Write queries using GROUP BY and HAVING on the EMPLOYEE table.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "-- Count employees in each department\nSELECT Department, COUNT(*) AS Total\nFROM EMPLOYEE\nGROUP BY Department;\n\n-- Display departments with more than 3 employees\nSELECT Department, COUNT(*) AS Total\nFROM EMPLOYEE\nGROUP BY Department\nHAVING COUNT(*) > 3;\n\n-- Average salary per department, only for departments with avg > 40000\nSELECT Department, AVG(Salary) AS AvgSalary\nFROM EMPLOYEE\nGROUP BY Department\nHAVING AVG(Salary) > 40000;",
+          "output": "-- GROUP BY groups rows with same column values\n-- HAVING filters groups (like WHERE for groups)\n-- WHERE filters rows BEFORE grouping\n-- HAVING filters groups AFTER grouping",
+          "tips": "WHERE filters individual rows before grouping. HAVING filters groups after grouping. You cannot use aggregate functions in WHERE — use HAVING instead. Always write GROUP BY before HAVING."
+        },
+        {
+          "title": "ORDER BY — Sorting results",
+          "description": "Write queries to sort results in ascending and descending order.",
+          "marks": 2,
+          "frequency": "Very High",
+          "code": "-- Sort employees by name in ascending order (default)\nSELECT * FROM EMPLOYEE ORDER BY Name;\n\n-- Sort employees by salary in descending order\nSELECT * FROM EMPLOYEE ORDER BY Salary DESC;\n\n-- Sort by department ascending, then by salary descending\nSELECT Name, Department, Salary\nFROM EMPLOYEE\nORDER BY Department ASC, Salary DESC;\n\n-- Display top 3 highest paid employees\nSELECT * FROM EMPLOYEE ORDER BY Salary DESC LIMIT 3;",
+          "output": "-- ASC = ascending (default, A-Z, 0-9)\n-- DESC = descending (Z-A, 9-0)\n-- Multiple columns: first sorts by first column, then by second",
+          "tips": "ORDER BY is always the last clause before LIMIT. ASC is the default sort order. You can sort by multiple columns. NULL values appear first in ASC order. LIMIT is used to restrict the number of rows returned."
+        },
+        {
+          "title": "Aggregate Functions — COUNT, SUM, AVG, MAX, MIN",
+          "description": "Write queries using SQL aggregate functions on the EMPLOYEE table.",
+          "marks": 3,
+          "frequency": "Very High",
+          "code": "-- Total number of employees\nSELECT COUNT(*) AS TotalEmployees FROM EMPLOYEE;\n\n-- Total salary expenditure\nSELECT SUM(Salary) AS TotalSalary FROM EMPLOYEE;\n\n-- Average salary\nSELECT AVG(Salary) AS AvgSalary FROM EMPLOYEE;\n\n-- Highest and lowest salary\nSELECT MAX(Salary) AS Highest, MIN(Salary) AS Lowest FROM EMPLOYEE;\n\n-- Count of distinct departments\nSELECT COUNT(DISTINCT Department) AS Departments FROM EMPLOYEE;\n\n-- Max salary in each department\nSELECT Department, MAX(Salary) AS MaxSalary\nFROM EMPLOYEE\nGROUP BY Department;",
+          "output": "-- COUNT(*) counts all rows including NULL\n-- COUNT(column) counts non-NULL values only\n-- SUM, AVG work only on numeric columns\n-- MAX, MIN work on all data types",
+          "tips": "COUNT(*) counts all rows. COUNT(column_name) ignores NULLs. SUM and AVG only work with numeric columns. MAX and MIN work with text, dates and numbers. Use DISTINCT inside COUNT to count unique values."
+        },
+        {
+          "title": "JOIN — Equi-join between two tables",
+          "description": "Write queries to join EMPLOYEE and DEPARTMENT tables based on a common column.",
+          "marks": 4,
+          "frequency": "Very High",
+          "code": "-- Table: EMPLOYEE (EmpNo, Name, DeptNo, Salary)\n-- Table: DEPARTMENT (DeptNo, DeptName, Location)\n\n-- Equi-Join: Display employee name with department name\nSELECT E.Name, D.DeptName\nFROM EMPLOYEE E, DEPARTMENT D\nWHERE E.DeptNo = D.DeptNo;\n\n-- Same using JOIN keyword\nSELECT E.Name, D.DeptName, D.Location\nFROM EMPLOYEE E\nJOIN DEPARTMENT D ON E.DeptNo = D.DeptNo;\n\n-- Join with additional condition\nSELECT E.Name, E.Salary, D.DeptName\nFROM EMPLOYEE E, DEPARTMENT D\nWHERE E.DeptNo = D.DeptNo AND E.Salary > 50000;\n\n-- Natural Join (automatically matches common column names)\nSELECT Name, DeptName\nFROM EMPLOYEE NATURAL JOIN DEPARTMENT;",
+          "output": "-- Equi-join matches rows where join columns are equal\n-- Use table aliases (E, D) for clarity\n-- Natural join automatically uses common column names\n-- The common column appears only once in natural join",
+          "tips": "Always use table aliases (E, D) when joining tables. The join condition uses the common column. In Cartesian product (without WHERE), every row of table 1 is paired with every row of table 2. CBSE prefers the comma-separated syntax with WHERE over the JOIN keyword."
+        },
+        {
+          "title": "UPDATE and DELETE queries",
+          "description": "Write queries to update and delete records from the EMPLOYEE table.",
+          "marks": 2,
+          "frequency": "High",
+          "code": "-- Increase salary by 10% for all employees in 'Sales' department\nUPDATE EMPLOYEE SET Salary = Salary * 1.10\nWHERE Department = 'Sales';\n\n-- Change department of employee with EmpNo 103\nUPDATE EMPLOYEE SET Department = 'HR'\nWHERE EmpNo = 103;\n\n-- Delete employees with salary less than 20000\nDELETE FROM EMPLOYEE WHERE Salary < 20000;\n\n-- Delete all records (but keep table structure)\nDELETE FROM EMPLOYEE;\n\n-- Update multiple columns at once\nUPDATE EMPLOYEE SET Salary = 55000, City = 'Delhi'\nWHERE EmpNo = 105;",
+          "output": "-- UPDATE modifies existing data in rows\n-- DELETE removes entire rows\n-- Always use WHERE to target specific rows\n-- Without WHERE, UPDATE/DELETE affects ALL rows",
+          "tips": "Always use WHERE clause with UPDATE and DELETE to avoid affecting all rows. UPDATE uses SET to specify new values. DELETE FROM removes rows, not columns. To remove a table entirely, use DROP TABLE (not DELETE)."
+        },
+        {
+          "title": "SQL Output Prediction — Tricky queries",
+          "description": "Predict the output of queries involving NULL values and string functions.",
+          "marks": 2,
+          "frequency": "High",
+          "code": "-- Given: EMPLOYEE table has some NULL values in Salary column\n\n-- NULL arithmetic\nSELECT 5 + NULL;\n-- Output: NULL\n\n-- NULL comparison\nSELECT * FROM EMPLOYEE WHERE Salary = NULL;\n-- Output: No rows (use IS NULL instead)\n\nSELECT * FROM EMPLOYEE WHERE Salary IS NULL;\n-- Output: Rows where Salary is NULL\n\n-- String functions\nSELECT UPPER('hello');\n-- Output: HELLO\n\nSELECT LENGTH('Board Exam');\n-- Output: 10\n\nSELECT SUBSTR('Computer', 4, 3);\n-- Output: put\n\nSELECT INSTR('Python Programming', 'Pro');\n-- Output: 8\n\nSELECT LEFT('Computer', 3);\n-- Output: Com\n\nSELECT TRIM('  Hello  ');\n-- Output: Hello",
+          "output": "NULL + anything = NULL\nNULL cannot be compared using = or !=\nUse IS NULL or IS NOT NULL\nUPPER/LOWER change case\nLENGTH counts all characters including spaces\nSUBSTR(string, start, length) extracts a substring",
+          "tips": "NULL is not zero or empty string — it means unknown/missing. Any operation with NULL gives NULL. Always use IS NULL, never = NULL. Know the common string functions: UPPER, LOWER, LENGTH, SUBSTR, LEFT, RIGHT, TRIM, INSTR."
+        }
+      ]
+    }
+  ]
+}

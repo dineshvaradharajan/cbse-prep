@@ -1,0 +1,292 @@
+{
+  "chapter": 6,
+  "title": "Searching",
+  "sections": [
+    {
+      "id": "6.1",
+      "title": "Introduction to Searching",
+      "concepts": [
+        "Searching is the process of finding a particular element in a collection of data",
+        "Need for searching: locating records, verifying existence, data retrieval",
+        "Search key: the value being searched for in the collection",
+        "Successful search: element is found in the collection",
+        "Unsuccessful search: element is not found in the collection",
+        "Efficiency of search depends on the data structure and algorithm used"
+      ],
+      "definitions": [
+        {
+          "term": "Searching",
+          "definition": "Searching is the process of locating a given element (called the search key) in a collection of data. If the element is found, the search is successful and typically returns the position; otherwise, it is unsuccessful."
+        },
+        {
+          "term": "Search Key",
+          "definition": "The search key is the specific value or element that is being looked for within a data collection during a search operation."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Searching is one of the most fundamental operations in computer science",
+        "The choice of search algorithm depends on whether data is sorted or unsorted",
+        "Linear Search works on both sorted and unsorted data",
+        "Binary Search requires data to be sorted",
+        "Efficiency is measured by the number of comparisons made"
+      ]
+    },
+    {
+      "id": "6.2",
+      "title": "Linear Search",
+      "concepts": [
+        "Linear Search checks each element sequentially from the beginning to the end",
+        "Also known as Sequential Search",
+        "Works on both sorted and unsorted lists",
+        "Simplest search algorithm",
+        "Returns the index of the element if found, or -1 if not found",
+        "Number of comparisons depends on the position of the element"
+      ],
+      "definitions": [
+        {
+          "term": "Linear Search",
+          "definition": "Linear Search (or Sequential Search) is a searching algorithm that checks each element of a list sequentially, starting from the first element, until the desired element is found or the end of the list is reached."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Linear Search Time Complexity (Best Case)",
+          "formula": "O(1)",
+          "notes": "Element is found at the first position. Only 1 comparison needed."
+        },
+        {
+          "name": "Linear Search Time Complexity (Worst Case)",
+          "formula": "O(n)",
+          "notes": "Element is at the last position or not present. All n elements are compared."
+        },
+        {
+          "name": "Linear Search Time Complexity (Average Case)",
+          "formula": "O(n)",
+          "notes": "On average, n/2 comparisons are needed. Still linear."
+        },
+        {
+          "name": "Linear Search Space Complexity",
+          "formula": "O(1)",
+          "notes": "Only a few variables are used regardless of input size."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Linear Search examines each element one by one from start to end",
+        "Best case: 1 comparison (element at first position)",
+        "Worst case: n comparisons (element at last position or not found)",
+        "Average case: n/2 comparisons",
+        "Does not require sorted data",
+        "Simple to implement but inefficient for large datasets",
+        "Python implementation:\ndef linear_search(a, key):\n    for i in range(len(a)):\n        if a[i] == key:\n            return i\n    return -1"
+      ]
+    },
+    {
+      "id": "6.3",
+      "title": "Binary Search",
+      "concepts": [
+        "Binary Search uses divide and conquer strategy",
+        "Prerequisite: the list must be sorted",
+        "Compares the search key with the middle element of the list",
+        "If key equals middle element, search is successful",
+        "If key is less than middle, search the left half",
+        "If key is greater than middle, search the right half",
+        "The search space is halved in each step",
+        "Much more efficient than Linear Search for large sorted datasets"
+      ],
+      "definitions": [
+        {
+          "term": "Binary Search",
+          "definition": "Binary Search is an efficient searching algorithm that works on sorted lists by repeatedly dividing the search interval in half. It compares the target value with the middle element and eliminates half of the remaining elements in each step."
+        },
+        {
+          "term": "Divide and Conquer",
+          "definition": "Divide and Conquer is an algorithmic paradigm that breaks a problem into smaller sub-problems, solves each sub-problem, and combines the results. Binary Search divides the search space in half at each step."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Binary Search Time Complexity (Best Case)",
+          "formula": "O(1)",
+          "notes": "Element is found at the middle position in the first comparison."
+        },
+        {
+          "name": "Binary Search Time Complexity (Worst Case)",
+          "formula": "O(\\log_2 n)",
+          "notes": "Maximum number of comparisons is floor(log2(n)) + 1. The search space halves each time."
+        },
+        {
+          "name": "Binary Search Time Complexity (Average Case)",
+          "formula": "O(\\log_2 n)",
+          "notes": "On average, approximately log2(n) comparisons are needed."
+        },
+        {
+          "name": "Binary Search Space Complexity (Iterative)",
+          "formula": "O(1)",
+          "notes": "Iterative version uses constant extra space."
+        },
+        {
+          "name": "Middle Element Index",
+          "formula": "mid = (low + high) // 2",
+          "notes": "low is the start index and high is the end index of the current search range."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Binary Search requires the list to be sorted beforehand",
+        "It compares the key with the middle element and eliminates half the search space",
+        "Best case: O(1) — element found at the middle in the first step",
+        "Worst case: O(log n) — much faster than O(n) for large datasets",
+        "For n = 1,000,000 elements, Binary Search needs at most 20 comparisons vs 1,000,000 for Linear Search",
+        "Python implementation (iterative):\ndef binary_search(a, key):\n    low = 0\n    high = len(a) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if a[mid] == key:\n            return mid\n        elif key < a[mid]:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return -1",
+        "Python implementation (recursive):\ndef binary_search_rec(a, key, low, high):\n    if low > high:\n        return -1\n    mid = (low + high) // 2\n    if a[mid] == key:\n        return mid\n    elif key < a[mid]:\n        return binary_search_rec(a, key, low, mid - 1)\n    else:\n        return binary_search_rec(a, key, mid + 1, high)"
+      ]
+    },
+    {
+      "id": "6.4",
+      "title": "Search by Hashing",
+      "concepts": [
+        "Hashing is a technique that maps keys to positions in a hash table using a hash function",
+        "Hash function converts a key into an index in the hash table",
+        "Provides near-constant time O(1) average-case search",
+        "Collision occurs when two different keys map to the same index",
+        "Collision resolution techniques: chaining, open addressing (linear probing)",
+        "Hash table is a data structure that stores key-value pairs"
+      ],
+      "definitions": [
+        {
+          "term": "Hashing",
+          "definition": "Hashing is a technique used to uniquely identify a specific object from a group of similar objects. It uses a hash function to map data of arbitrary size to fixed-size values (hash codes) that serve as indices in a hash table."
+        },
+        {
+          "term": "Hash Function",
+          "definition": "A hash function is a function that takes a key as input and returns an index (hash value) in the hash table where the corresponding value can be stored or retrieved. A common hash function is h(key) = key % table_size."
+        },
+        {
+          "term": "Hash Table",
+          "definition": "A hash table is a data structure that stores key-value pairs. It uses a hash function to compute an index into an array of slots, from which the desired value can be found."
+        },
+        {
+          "term": "Collision",
+          "definition": "A collision occurs when two different keys produce the same hash value (index) through the hash function. Collisions must be resolved to store both values."
+        },
+        {
+          "term": "Linear Probing",
+          "definition": "Linear probing is a collision resolution technique in which, if a collision occurs at index i, the algorithm sequentially checks i+1, i+2, i+3, ... (wrapping around) until an empty slot is found."
+        },
+        {
+          "term": "Chaining",
+          "definition": "Chaining is a collision resolution technique where each slot in the hash table holds a linked list (or Python list) of all elements that hash to the same index."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Common Hash Function (Division Method)",
+          "formula": "h(key) = key \\% table\\_size",
+          "notes": "The modulo operation ensures the hash value falls within the valid index range [0, table_size - 1]."
+        },
+        {
+          "name": "Hashing Time Complexity (Average Case)",
+          "formula": "O(1)",
+          "notes": "Average-case search, insert, and delete are constant time with a good hash function."
+        },
+        {
+          "name": "Hashing Time Complexity (Worst Case)",
+          "formula": "O(n)",
+          "notes": "Worst case occurs when all keys hash to the same index (all collisions)."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Hashing provides O(1) average-case search time",
+        "A hash function maps keys to indices: h(key) = key % table_size",
+        "Collisions are inevitable and must be handled",
+        "Linear probing: search the next available slot sequentially",
+        "Chaining: store multiple elements at the same index using a list",
+        "A good hash function distributes keys uniformly across the table",
+        "Python implementation using dictionary (built-in hash table):\nhash_table = {}\nhash_table['name'] = 'Alice'  # Insert\nprint(hash_table['name'])      # Search: O(1) average",
+        "Simple hash table implementation:\ndef create_hash_table(size):\n    return [None] * size\n\ndef hash_insert(table, key):\n    idx = key % len(table)\n    while table[idx] is not None:\n        idx = (idx + 1) % len(table)\n    table[idx] = key\n\ndef hash_search(table, key):\n    idx = key % len(table)\n    while table[idx] is not None:\n        if table[idx] == key:\n            return idx\n        idx = (idx + 1) % len(table)\n    return -1"
+      ]
+    }
+  ],
+  "summary": [
+    "Searching is the process of finding a specific element in a collection of data.",
+    "Linear Search checks each element sequentially; time complexity is O(n).",
+    "Binary Search works on sorted data using divide and conquer; time complexity is O(log n).",
+    "Binary Search is significantly faster than Linear Search for large sorted datasets.",
+    "For Binary Search, the list must be sorted; for Linear Search, sorting is not required.",
+    "Hashing provides O(1) average-case search using a hash function and hash table.",
+    "Collisions in hashing can be resolved using chaining or linear probing.",
+    "Choice of search algorithm depends on: data size, whether data is sorted, and frequency of searches."
+  ],
+  "exercises": [
+    {
+      "id": "6.1",
+      "title": "Exercise 6.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is searching? Explain the need for searching in computer science.",
+          "type": "short",
+          "answer": "Searching is the process of finding a particular element (search key) in a collection of data. The need for searching arises because: (1) Data retrieval — locating specific records in databases. (2) Existence verification — checking whether an element exists in a collection. (3) Decision making — many algorithms depend on search as a sub-routine. (4) Real-world applications — search engines, contact lookup, dictionary word lookup, etc."
+        },
+        {
+          "qno": 2,
+          "question": "Write a Python function for Linear Search and trace it for the list [4, 9, 2, 7, 3] with search key 7.",
+          "type": "long",
+          "answer": "def linear_search(a, key):\n    for i in range(len(a)):\n        if a[i] == key:\n            return i\n    return -1\n\nTrace for a = [4, 9, 2, 7, 3], key = 7:\nStep 1: i=0, a[0]=4, 4 != 7, continue\nStep 2: i=1, a[1]=9, 9 != 7, continue\nStep 3: i=2, a[2]=2, 2 != 7, continue\nStep 4: i=3, a[3]=7, 7 == 7, return 3\n\nResult: Element 7 found at index 3. Number of comparisons = 4."
+        },
+        {
+          "qno": 3,
+          "question": "Explain Binary Search algorithm with a suitable example.",
+          "type": "long",
+          "answer": "Binary Search works on sorted lists by repeatedly dividing the search range in half.\n\nAlgorithm:\n1. Set low = 0, high = n - 1.\n2. Find mid = (low + high) // 2.\n3. If a[mid] == key, return mid (element found).\n4. If key < a[mid], set high = mid - 1 (search left half).\n5. If key > a[mid], set low = mid + 1 (search right half).\n6. Repeat steps 2-5 while low <= high.\n7. If low > high, return -1 (element not found).\n\nExample: Search for 23 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]\nStep 1: low=0, high=9, mid=4, a[4]=16, 23 > 16 → low=5\nStep 2: low=5, high=9, mid=7, a[7]=56, 23 < 56 → high=6\nStep 3: low=5, high=6, mid=5, a[5]=23, 23 == 23 → Found at index 5!\n\nOnly 3 comparisons needed instead of 6 (Linear Search)."
+        },
+        {
+          "qno": 4,
+          "question": "Write a Python function for Binary Search (iterative version).",
+          "type": "long",
+          "answer": "def binary_search(a, key):\n    low = 0\n    high = len(a) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if a[mid] == key:\n            return mid\n        elif key < a[mid]:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return -1\n\n# Example usage:\ndata = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]\nresult = binary_search(data, 23)\nif result != -1:\n    print(f'Element found at index {result}')  # Output: Element found at index 5\nelse:\n    print('Element not found')"
+        },
+        {
+          "qno": 5,
+          "question": "Compare Linear Search and Binary Search.",
+          "type": "long",
+          "answer": "Comparison of Linear Search and Binary Search:\n\n| Feature          | Linear Search      | Binary Search        |\n|-----------------|--------------------|----------------------|\n| Data requirement | Unsorted or sorted | Must be sorted       |\n| Approach         | Sequential         | Divide and Conquer   |\n| Best Case        | O(1)              | O(1)                 |\n| Worst Case       | O(n)              | O(log n)             |\n| Average Case     | O(n)              | O(log n)             |\n| Space            | O(1)              | O(1) iterative       |\n| Simplicity       | Very simple        | Slightly complex     |\n| Use case         | Small/unsorted     | Large sorted data    |\n\nFor n = 1024, Linear Search may need 1024 comparisons, while Binary Search needs at most 11 comparisons (log2(1024) + 1 = 11)."
+        },
+        {
+          "qno": 6,
+          "question": "What is hashing? Explain hash function and collision.",
+          "type": "long",
+          "answer": "Hashing is a technique that maps keys to positions in a hash table using a hash function, enabling near-constant time O(1) search.\n\nHash Function: A hash function takes a key and computes an index in the hash table. Example: h(key) = key % table_size. For table_size = 10: h(25) = 25 % 10 = 5, h(37) = 37 % 10 = 7.\n\nCollision: A collision occurs when two different keys produce the same hash value. Example: h(25) = 25 % 10 = 5 and h(35) = 35 % 10 = 5. Both keys map to index 5.\n\nCollision Resolution:\n1. Chaining: Each index stores a list of all elements that hash to it.\n2. Linear Probing: If index i is occupied, try i+1, i+2, ... until an empty slot is found."
+        },
+        {
+          "qno": 7,
+          "question": "What will be the maximum number of comparisons required to search for an element in a sorted list of 1024 elements using Binary Search?",
+          "type": "short",
+          "answer": "Maximum comparisons = floor(log2(n)) + 1 = floor(log2(1024)) + 1 = 10 + 1 = 11 comparisons. This is because Binary Search halves the search space at each step: 1024 → 512 → 256 → 128 → 64 → 32 → 16 → 8 → 4 → 2 → 1 (11 steps)."
+        },
+        {
+          "qno": 8,
+          "question": "Why can Binary Search not be applied to unsorted lists?",
+          "type": "short",
+          "answer": "Binary Search relies on the fact that the list is sorted to decide which half to discard. When a[mid] < key, Binary Search assumes all elements in the left half are smaller than key (due to sorting) and searches the right half. If the list is unsorted, this assumption is invalid — the key could be anywhere. Thus, eliminating half the list would potentially skip the element being searched for, leading to incorrect results."
+        },
+        {
+          "qno": 9,
+          "question": "Write a recursive Python function for Binary Search.",
+          "type": "long",
+          "answer": "def binary_search_rec(a, key, low, high):\n    if low > high:\n        return -1\n    mid = (low + high) // 2\n    if a[mid] == key:\n        return mid\n    elif key < a[mid]:\n        return binary_search_rec(a, key, low, mid - 1)\n    else:\n        return binary_search_rec(a, key, mid + 1, high)\n\n# Example usage:\ndata = [1, 3, 5, 7, 9, 11, 13, 15]\nresult = binary_search_rec(data, 7, 0, len(data) - 1)\nprint(f'Element found at index {result}')  # Output: Element found at index 3"
+        },
+        {
+          "qno": 10,
+          "question": "A hash table of size 10 uses the hash function h(key) = key % 10. Insert the keys 31, 22, 43, 14, 52, 41 and show the hash table using linear probing.",
+          "type": "long",
+          "answer": "Hash function: h(key) = key % 10, table size = 10\n\nInserting keys:\n1. h(31) = 31 % 10 = 1 → Place 31 at index 1\n2. h(22) = 22 % 10 = 2 → Place 22 at index 2\n3. h(43) = 43 % 10 = 3 → Place 43 at index 3\n4. h(14) = 14 % 10 = 4 → Place 14 at index 4\n5. h(52) = 52 % 10 = 2 → Collision! Index 2 occupied. Try 3 → occupied. Try 4 → occupied. Try 5 → empty. Place 52 at index 5.\n6. h(41) = 41 % 10 = 1 → Collision! Index 1 occupied. Try 2 → occupied. Try 3 → occupied. Try 4 → occupied. Try 5 → occupied. Try 6 → empty. Place 41 at index 6.\n\nFinal Hash Table:\nIndex: 0    1    2    3    4    5    6    7    8    9\nValue: --   31   22   43   14   52   41   --   --   --"
+        }
+      ]
+    }
+  ]
+}

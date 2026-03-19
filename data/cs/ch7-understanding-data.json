@@ -1,0 +1,331 @@
+{
+  "chapter": 7,
+  "title": "Understanding Data",
+  "sections": [
+    {
+      "id": "7.1",
+      "title": "Introduction to Data",
+      "concepts": [
+        "Data is a collection of raw facts and figures without context",
+        "Information is processed, organized, and meaningful data",
+        "Data can be qualitative (descriptive) or quantitative (numerical)",
+        "Quantitative data can be discrete (countable) or continuous (measurable)",
+        "Data-Information-Knowledge-Wisdom hierarchy",
+        "Importance of data in decision making"
+      ],
+      "definitions": [
+        {
+          "term": "Data",
+          "definition": "Data is a collection of raw, unprocessed facts and figures. It can be in the form of numbers, text, images, audio, or video. Data by itself has no meaning until it is processed and interpreted."
+        },
+        {
+          "term": "Information",
+          "definition": "Information is data that has been processed, organized, and structured in a meaningful way. It provides context and is useful for decision making."
+        },
+        {
+          "term": "Qualitative Data",
+          "definition": "Qualitative data (also called categorical data) describes qualities or characteristics. It is non-numerical and includes categories such as colors, names, labels, and opinions."
+        },
+        {
+          "term": "Quantitative Data",
+          "definition": "Quantitative data represents measurable quantities and is expressed as numbers. It can be discrete (countable, e.g., number of students) or continuous (measurable, e.g., height, weight)."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Data is raw facts; information is processed data with meaning",
+        "Qualitative data describes qualities (categories); quantitative data deals with numbers",
+        "Discrete data: whole numbers (e.g., number of books). Continuous data: any value in a range (e.g., temperature)",
+        "Data → Processing → Information → Analysis → Knowledge → Wisdom",
+        "Data is the foundation of all computing and data science applications"
+      ]
+    },
+    {
+      "id": "7.2",
+      "title": "Data Collection",
+      "concepts": [
+        "Primary data: data collected directly from the source for a specific purpose",
+        "Secondary data: data that has already been collected by someone else",
+        "Methods of data collection: surveys, questionnaires, interviews, observations, experiments",
+        "Sampling: selecting a subset of a population for study",
+        "Census: collecting data from every member of the population",
+        "Reliability and validity of data"
+      ],
+      "definitions": [
+        {
+          "term": "Primary Data",
+          "definition": "Primary data is data collected directly by the researcher for a specific research purpose through surveys, experiments, interviews, or direct observation. It is original and first-hand."
+        },
+        {
+          "term": "Secondary Data",
+          "definition": "Secondary data is data that has already been collected by someone else for a different purpose and is available for reuse. Examples include government reports, published research, and databases."
+        },
+        {
+          "term": "Survey",
+          "definition": "A survey is a data collection method that involves asking a set of questions to a group of people to gather information about their opinions, behaviors, or characteristics."
+        },
+        {
+          "term": "Sampling",
+          "definition": "Sampling is the process of selecting a representative subset (sample) from a larger population to make inferences about the entire population."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Primary data is original and collected for a specific purpose",
+        "Secondary data is pre-existing and collected by others",
+        "Surveys and questionnaires are common primary data collection methods",
+        "Government databases and published reports are examples of secondary data",
+        "Sampling allows studying a population without examining every member",
+        "Data quality depends on the collection method, sample size, and design"
+      ]
+    },
+    {
+      "id": "7.3",
+      "title": "Data Storage",
+      "concepts": [
+        "Data can be stored in files (text files, CSV files, spreadsheets)",
+        "Databases provide structured and efficient data storage",
+        "File-based storage vs database storage",
+        "CSV (Comma-Separated Values) files for tabular data",
+        "Data formats: structured (tables), semi-structured (JSON, XML), unstructured (text, images)"
+      ],
+      "definitions": [
+        {
+          "term": "CSV File",
+          "definition": "A CSV (Comma-Separated Values) file is a plain text file that stores tabular data where each line represents a row and values within a row are separated by commas."
+        },
+        {
+          "term": "Structured Data",
+          "definition": "Structured data is data that is organized in a predefined format, typically in rows and columns (tables), making it easy to search, sort, and analyze. Examples include relational databases and spreadsheets."
+        },
+        {
+          "term": "Unstructured Data",
+          "definition": "Unstructured data is data that does not have a predefined format or organization. Examples include text documents, images, audio files, and social media posts."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "CSV files are simple and widely used for storing tabular data",
+        "Databases are preferred for large-scale, multi-user data management",
+        "Structured data fits neatly into tables; unstructured data does not",
+        "Semi-structured data (JSON, XML) has some organizational properties but is flexible",
+        "Choice of storage depends on data size, access patterns, and requirements"
+      ]
+    },
+    {
+      "id": "7.4",
+      "title": "Data Processing",
+      "concepts": [
+        "Data processing transforms raw data into meaningful information",
+        "Data cleaning: removing or correcting inaccurate, incomplete, or irrelevant data",
+        "Data transformation: converting data from one format or structure to another",
+        "Handling missing values: deletion, imputation (replacing with mean/median/mode)",
+        "Removing duplicates",
+        "Normalization and standardization of data"
+      ],
+      "definitions": [
+        {
+          "term": "Data Cleaning",
+          "definition": "Data cleaning (or data cleansing) is the process of identifying and correcting (or removing) errors, inconsistencies, and inaccuracies in a dataset to improve its quality."
+        },
+        {
+          "term": "Data Transformation",
+          "definition": "Data transformation is the process of converting data from one format, structure, or value to another. Examples include converting units, encoding categorical variables, and normalizing values."
+        },
+        {
+          "term": "Missing Value",
+          "definition": "A missing value is a data point that is absent from the dataset. Missing values can result from data entry errors, equipment malfunction, or non-response in surveys."
+        },
+        {
+          "term": "Imputation",
+          "definition": "Imputation is the process of replacing missing data with substituted values, such as the mean, median, or mode of the available data."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Data processing converts raw data into useful information",
+        "Data cleaning removes errors, duplicates, and inconsistencies",
+        "Missing values can be handled by deletion or imputation (mean/median/mode)",
+        "Data transformation includes format conversion, encoding, and normalization",
+        "Clean data is essential for accurate analysis and reliable results"
+      ]
+    },
+    {
+      "id": "7.5",
+      "title": "Statistical Techniques for Data Processing",
+      "concepts": [
+        "Measures of central tendency: mean, median, mode",
+        "Measures of variability (dispersion): range, variance, standard deviation",
+        "Data visualization: bar chart, histogram, pie chart, line graph, scatter plot",
+        "Frequency distribution",
+        "Percentiles and quartiles",
+        "Choosing appropriate statistical measures based on data type"
+      ],
+      "definitions": [
+        {
+          "term": "Mean (Arithmetic Mean)",
+          "definition": "The mean is the average of all data values, calculated by dividing the sum of all values by the total number of values. Mean = (sum of all values) / (number of values)."
+        },
+        {
+          "term": "Median",
+          "definition": "The median is the middle value when data is arranged in ascending or descending order. For an even number of values, the median is the average of the two middle values."
+        },
+        {
+          "term": "Mode",
+          "definition": "The mode is the value that occurs most frequently in a dataset. A dataset may have one mode (unimodal), more than one mode (multimodal), or no mode (if all values occur equally often)."
+        },
+        {
+          "term": "Range",
+          "definition": "The range is the difference between the maximum and minimum values in a dataset. Range = Maximum value - Minimum value."
+        },
+        {
+          "term": "Variance",
+          "definition": "Variance measures the average of the squared differences from the mean. It indicates how spread out the data values are from the mean."
+        },
+        {
+          "term": "Standard Deviation",
+          "definition": "Standard deviation is the square root of the variance. It measures the average distance of each data point from the mean, in the same units as the data."
+        },
+        {
+          "term": "Frequency Distribution",
+          "definition": "A frequency distribution is a table or graph that shows the number of times each value or range of values occurs in a dataset."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Mean (Arithmetic Mean)",
+          "formula": "\\bar{x} = \\frac{\\sum_{i=1}^{n} x_i}{n} = \\frac{x_1 + x_2 + ... + x_n}{n}",
+          "notes": "Sum of all values divided by the count of values."
+        },
+        {
+          "name": "Median (Odd n)",
+          "formula": "Median = x_{(n+1)/2}",
+          "notes": "Middle value when n is odd and data is sorted."
+        },
+        {
+          "name": "Median (Even n)",
+          "formula": "Median = \\frac{x_{n/2} + x_{(n/2)+1}}{2}",
+          "notes": "Average of two middle values when n is even and data is sorted."
+        },
+        {
+          "name": "Range",
+          "formula": "Range = x_{max} - x_{min}",
+          "notes": "Difference between the largest and smallest values."
+        },
+        {
+          "name": "Variance (Population)",
+          "formula": "\\sigma^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n}",
+          "notes": "Average of squared deviations from the mean. Uses n in the denominator for population variance."
+        },
+        {
+          "name": "Variance (Sample)",
+          "formula": "s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n - 1}",
+          "notes": "Uses (n-1) in the denominator to provide an unbiased estimate."
+        },
+        {
+          "name": "Standard Deviation",
+          "formula": "\\sigma = \\sqrt{\\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n}}",
+          "notes": "Square root of variance. Expressed in the same units as the data."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Mean is sensitive to outliers; median is robust to outliers",
+        "Mode is useful for categorical data",
+        "For symmetric distributions, mean ≈ median ≈ mode",
+        "For skewed distributions, median is a better measure of central tendency than mean",
+        "Variance and standard deviation measure the spread/dispersion of data",
+        "A small standard deviation means data points are close to the mean",
+        "A large standard deviation means data points are spread out",
+        "Bar charts show categorical data; histograms show frequency distributions of continuous data",
+        "Pie charts show proportions; line graphs show trends over time",
+        "Scatter plots show the relationship between two numerical variables",
+        "Python can compute statistics using built-in functions or the statistics module:\nimport statistics\ndata = [4, 8, 6, 5, 3, 7, 8, 9]\nprint(statistics.mean(data))     # Mean\nprint(statistics.median(data))   # Median\nprint(statistics.mode(data))     # Mode\nprint(statistics.stdev(data))    # Standard deviation"
+      ]
+    }
+  ],
+  "summary": [
+    "Data is raw facts and figures; information is processed and meaningful data.",
+    "Qualitative data describes categories; quantitative data is numerical (discrete or continuous).",
+    "Primary data is collected firsthand; secondary data is pre-existing data collected by others.",
+    "Data can be stored in files (CSV, text) or databases.",
+    "Data processing includes cleaning (removing errors) and transformation (changing format/structure).",
+    "Mean, median, and mode are measures of central tendency.",
+    "Range, variance, and standard deviation are measures of dispersion.",
+    "Mean = sum/count; Median = middle value; Mode = most frequent value.",
+    "Variance measures spread as average squared deviation from mean; standard deviation is its square root.",
+    "Data visualization tools include bar charts, histograms, pie charts, line graphs, and scatter plots."
+  ],
+  "exercises": [
+    {
+      "id": "7.1",
+      "title": "Exercise 7.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Differentiate between data and information with examples.",
+          "type": "short",
+          "answer": "Data is a collection of raw, unprocessed facts without context. Example: 36.6, 37.1, 38.2, 36.8 are just numbers (data). Information is processed data that has meaning and context. Example: 'The average body temperature of 4 patients is 37.175°C, and one patient has a fever (38.2°C)' is information derived from the same data. Data becomes information when it is processed, organized, and given context."
+        },
+        {
+          "qno": 2,
+          "question": "What is the difference between primary data and secondary data?",
+          "type": "short",
+          "answer": "Primary data is collected directly by the researcher for a specific purpose through surveys, experiments, or observations. It is original, current, and specific to the research need. Example: conducting a survey of students' study habits.\n\nSecondary data is data already collected by someone else for a different purpose. It is readily available and less expensive to obtain. Example: using Census data from the government.\n\nKey differences: Primary data is original and specific; secondary data is pre-existing and may not perfectly fit the current need."
+        },
+        {
+          "qno": 3,
+          "question": "Calculate the mean, median, and mode for the data: 5, 8, 3, 7, 5, 9, 5, 2, 8, 6.",
+          "type": "long",
+          "answer": "Given data: 5, 8, 3, 7, 5, 9, 5, 2, 8, 6\nSorted data: 2, 3, 5, 5, 5, 6, 7, 8, 8, 9\nn = 10\n\nMean = (2 + 3 + 5 + 5 + 5 + 6 + 7 + 8 + 8 + 9) / 10 = 58 / 10 = 5.8\n\nMedian: Since n = 10 (even), median = (5th value + 6th value) / 2 = (5 + 6) / 2 = 5.5\n\nMode: The value that occurs most frequently. 5 occurs 3 times (most frequent). Mode = 5."
+        },
+        {
+          "qno": 4,
+          "question": "Calculate the variance and standard deviation for the data: 4, 8, 6, 5, 3.",
+          "type": "long",
+          "answer": "Given data: 4, 8, 6, 5, 3\nn = 5\n\nStep 1: Calculate mean\nMean = (4 + 8 + 6 + 5 + 3) / 5 = 26 / 5 = 5.2\n\nStep 2: Calculate squared deviations from mean\n(4 - 5.2)^2 = (-1.2)^2 = 1.44\n(8 - 5.2)^2 = (2.8)^2 = 7.84\n(6 - 5.2)^2 = (0.8)^2 = 0.64\n(5 - 5.2)^2 = (-0.2)^2 = 0.04\n(3 - 5.2)^2 = (-2.2)^2 = 4.84\n\nStep 3: Calculate variance\nVariance = (1.44 + 7.84 + 0.64 + 0.04 + 4.84) / 5 = 14.8 / 5 = 2.96\n\nStep 4: Calculate standard deviation\nStandard Deviation = sqrt(2.96) = 1.72 (approximately)\n\nThe variance is 2.96 and standard deviation is approximately 1.72."
+        },
+        {
+          "qno": 5,
+          "question": "What is meant by data cleaning? Why is it important?",
+          "type": "short",
+          "answer": "Data cleaning is the process of identifying and correcting errors, inconsistencies, missing values, and duplicates in a dataset. It includes: (1) Removing duplicate entries, (2) Handling missing values (by deletion or imputation), (3) Correcting data entry errors, (4) Standardizing formats.\n\nIt is important because: (1) Dirty data leads to incorrect analysis and wrong conclusions (Garbage In, Garbage Out). (2) Clean data ensures reliable and accurate results. (3) It improves the quality of decision making."
+        },
+        {
+          "qno": 6,
+          "question": "Differentiate between variance and standard deviation.",
+          "type": "short",
+          "answer": "Variance is the average of the squared deviations from the mean. It measures spread but in squared units. Formula: σ² = Σ(xi - x̄)² / n.\n\nStandard Deviation is the square root of variance. It measures spread in the same units as the original data. Formula: σ = √(σ²).\n\nKey differences: (1) Variance is in squared units; standard deviation is in original units. (2) Standard deviation is easier to interpret because it is in the same scale as the data. (3) Both measure dispersion — a small value means data is clustered around the mean."
+        },
+        {
+          "qno": 7,
+          "question": "When is median preferred over mean as a measure of central tendency?",
+          "type": "short",
+          "answer": "Median is preferred over mean when: (1) The data contains outliers (extreme values) — mean is sensitive to outliers, median is not. Example: Salaries [20K, 25K, 22K, 24K, 500K] — mean = 118.2K (skewed by 500K), median = 24K (better representation). (2) The data is skewed (not symmetric). (3) The data is ordinal (ranked). (4) There are open-ended class intervals in grouped data."
+        },
+        {
+          "qno": 8,
+          "question": "What are the different types of data visualization? When should each be used?",
+          "type": "long",
+          "answer": "Types of data visualization:\n\n1. Bar Chart: Displays categorical data with rectangular bars. Height/length represents frequency. Use for comparing quantities across categories.\n\n2. Histogram: Similar to bar chart but for continuous data grouped into intervals (bins). Bars are adjacent (no gaps). Use for showing frequency distribution.\n\n3. Pie Chart: Circular chart divided into slices representing proportions. Use for showing parts of a whole (percentages).\n\n4. Line Graph: Points connected by lines showing data trends over time. Use for showing trends, changes over time.\n\n5. Scatter Plot: Points plotted on x-y axes showing relationship between two variables. Use for showing correlation or relationship between two numerical variables.\n\n6. Box Plot: Shows the distribution of data based on quartiles (minimum, Q1, median, Q3, maximum). Use for comparing distributions and identifying outliers."
+        },
+        {
+          "qno": 9,
+          "question": "Write a Python program to calculate mean, median, and mode of a list of numbers.",
+          "type": "long",
+          "answer": "import statistics\n\ndef calculate_stats(data):\n    # Mean\n    mean = sum(data) / len(data)\n    print(f'Mean = {mean}')\n    \n    # Median\n    sorted_data = sorted(data)\n    n = len(sorted_data)\n    if n % 2 == 1:\n        median = sorted_data[n // 2]\n    else:\n        median = (sorted_data[n // 2 - 1] + sorted_data[n // 2]) / 2\n    print(f'Median = {median}')\n    \n    # Mode\n    freq = {}\n    for val in data:\n        freq[val] = freq.get(val, 0) + 1\n    max_freq = max(freq.values())\n    mode = [k for k, v in freq.items() if v == max_freq]\n    print(f'Mode = {mode}')\n\n# Example\ndata = [5, 8, 3, 7, 5, 9, 5, 2, 8, 6]\ncalculate_stats(data)\n# Output: Mean = 5.8, Median = 5.5, Mode = [5]\n\n# Using statistics module:\nprint(statistics.mean(data))    # 5.8\nprint(statistics.median(data))  # 5.5\nprint(statistics.mode(data))    # 5"
+        },
+        {
+          "qno": 10,
+          "question": "Explain the terms: structured data, unstructured data, and semi-structured data with examples.",
+          "type": "short",
+          "answer": "Structured Data: Organized in a predefined format with rows and columns. Easy to search and analyze. Examples: relational databases, spreadsheets, CSV files.\n\nUnstructured Data: No predefined format or schema. Difficult to search and analyze directly. Examples: text documents, emails, images, videos, social media posts.\n\nSemi-structured Data: Has some organizational properties (tags, markers) but does not follow a rigid table structure. Examples: JSON files, XML files, HTML pages, emails with headers."
+        }
+      ]
+    }
+  ]
+}

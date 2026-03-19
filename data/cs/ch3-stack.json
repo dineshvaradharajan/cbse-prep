@@ -1,0 +1,323 @@
+{
+  "chapter": 3,
+  "title": "Stack",
+  "sections": [
+    {
+      "id": "3.1",
+      "title": "Introduction",
+      "concepts": [
+        "Data structures — ways to organize and store data",
+        "Linear data structures — elements arranged in a sequential order",
+        "Non-linear data structures — elements not in sequence",
+        "Examples of linear data structures: arrays, linked lists, stacks, queues",
+        "Examples of non-linear data structures: trees, graphs",
+        "Importance of choosing the right data structure for efficiency"
+      ],
+      "definitions": [
+        {
+          "term": "Data Structure",
+          "definition": "A data structure is a particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently. It defines the relationship between the data and the operations that can be performed on it."
+        },
+        {
+          "term": "Linear Data Structure",
+          "definition": "A linear data structure is one in which data elements are arranged in a sequential order, where each element has a predecessor and a successor (except the first and last elements). Examples: arrays, stacks, queues, linked lists."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Data structures help in organizing data for efficient access and modification",
+        "Linear data structures have elements in a sequential arrangement",
+        "Stacks and queues are special types of linear data structures with restricted operations",
+        "The choice of data structure depends on the nature of operations to be performed"
+      ]
+    },
+    {
+      "id": "3.2",
+      "title": "Stack",
+      "concepts": [
+        "Stack follows LIFO (Last In First Out) principle",
+        "Elements are added and removed from the same end called the TOP",
+        "Real-world analogies: stack of plates, stack of books, stack of bangles",
+        "Applications of stack: string/expression reversal",
+        "Applications of stack: undo/redo operations in editors",
+        "Applications of stack: browser back button (history)",
+        "Applications of stack: parenthesis/bracket matching",
+        "Applications of stack: function call management (call stack)"
+      ],
+      "definitions": [
+        {
+          "term": "Stack",
+          "definition": "A stack is a linear data structure that follows the LIFO (Last In First Out) principle. Elements can only be added (pushed) or removed (popped) from one end called the TOP of the stack."
+        },
+        {
+          "term": "LIFO",
+          "definition": "LIFO stands for Last In First Out. It means the last element added to the stack is the first element to be removed. The most recently pushed element is always at the top and is the first to be popped."
+        },
+        {
+          "term": "TOP",
+          "definition": "TOP is a pointer/variable that keeps track of the topmost element of the stack. It indicates the position where the next element will be added or from where the next element will be removed."
+        },
+        {
+          "term": "Overflow",
+          "definition": "Stack overflow occurs when an attempt is made to push an element onto a stack that is already full (has reached its maximum capacity)."
+        },
+        {
+          "term": "Underflow",
+          "definition": "Stack underflow occurs when an attempt is made to pop an element from an empty stack (no elements to remove)."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Stack follows LIFO — the last element inserted is the first to be removed",
+        "All insertions and deletions happen at the TOP of the stack",
+        "Stack has two main operations: PUSH (insert) and POP (delete)",
+        "Stack overflow occurs when pushing to a full stack",
+        "Stack underflow occurs when popping from an empty stack",
+        "Applications: expression evaluation, string reversal, undo operations, browser back button, parenthesis matching, function call management"
+      ]
+    },
+    {
+      "id": "3.3",
+      "title": "Operations on Stack",
+      "concepts": [
+        "PUSH operation — adds an element to the top of the stack",
+        "POP operation — removes and returns the top element from the stack",
+        "PEEK/TOP operation — returns the top element without removing it",
+        "isEmpty — checks if the stack is empty",
+        "size — returns the number of elements in the stack",
+        "display — shows all elements in the stack"
+      ],
+      "definitions": [
+        {
+          "term": "PUSH",
+          "definition": "PUSH is the operation of adding (inserting) a new element to the top of the stack. After a push operation, the new element becomes the topmost element and TOP is incremented."
+        },
+        {
+          "term": "POP",
+          "definition": "POP is the operation of removing (deleting) the topmost element from the stack. The element at TOP is removed and returned, and TOP is decremented. POP on an empty stack causes underflow."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "PUSH algorithm",
+          "formula": "Step 1: If stack is full, print 'Overflow' and return\nStep 2: Increment TOP by 1\nStep 3: Set stack[TOP] = element\nStep 4: Return",
+          "notes": "In Python using list, we use append() which handles resizing automatically"
+        },
+        {
+          "name": "POP algorithm",
+          "formula": "Step 1: If stack is empty, print 'Underflow' and return\nStep 2: Set element = stack[TOP]\nStep 3: Decrement TOP by 1\nStep 4: Return element",
+          "notes": "In Python using list, we use pop() which removes and returns the last element"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "PUSH adds an element to the top; POP removes the top element",
+        "Before PUSH, check for overflow (stack full)",
+        "Before POP, check for underflow (stack empty)",
+        "PEEK returns the top element without removing it",
+        "In Python, lists can be used to implement stacks — append() for PUSH, pop() for POP"
+      ]
+    },
+    {
+      "id": "3.4",
+      "title": "Implementation of Stack in Python",
+      "concepts": [
+        "Using Python list to implement a stack",
+        "append() method for PUSH operation",
+        "pop() method for POP operation",
+        "len() function to get stack size",
+        "Checking empty stack using len() == 0 or not operator",
+        "Accessing top element using index -1",
+        "Implementing stack operations as functions",
+        "Menu-driven program for stack operations"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Stack implementation using list",
+          "formula": "stack = []  # empty stack\nstack.append(element)  # PUSH\nelement = stack.pop()  # POP\ntop = stack[-1]  # PEEK\nlen(stack)  # SIZE\nlen(stack) == 0  # isEmpty",
+          "notes": "Python lists grow dynamically, so no overflow check needed for list-based stacks"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Python list is the simplest way to implement a stack",
+        "append() adds to the end (top) of the list — acts as PUSH",
+        "pop() removes and returns the last element — acts as POP",
+        "stack[-1] gives the top element without removing it — acts as PEEK",
+        "len(stack) == 0 checks if the stack is empty",
+        "Since Python lists are dynamic, overflow is generally not an issue",
+        "Always check for underflow (empty stack) before pop()"
+      ]
+    },
+    {
+      "id": "3.5",
+      "title": "Notations for Arithmetic Expressions",
+      "concepts": [
+        "Infix notation — operator between operands (A + B)",
+        "Prefix notation (Polish notation) — operator before operands (+ A B)",
+        "Postfix notation (Reverse Polish notation) — operator after operands (A B +)",
+        "Infix is the most common human-readable form",
+        "Prefix and postfix do not require parentheses",
+        "Operator precedence: ** > *, /, % > +, -",
+        "Operator associativity: left to right (except ** which is right to left)",
+        "Computers evaluate postfix expressions more efficiently than infix"
+      ],
+      "definitions": [
+        {
+          "term": "Infix Notation",
+          "definition": "In infix notation, the operator is placed between the two operands. Example: A + B, (A + B) * C. This is the most commonly used notation by humans but requires parentheses to override operator precedence."
+        },
+        {
+          "term": "Prefix Notation (Polish Notation)",
+          "definition": "In prefix notation, the operator is placed before its operands. Example: + A B, * + A B C. Named after Polish mathematician Jan Lukasiewicz. Does not require parentheses."
+        },
+        {
+          "term": "Postfix Notation (Reverse Polish Notation)",
+          "definition": "In postfix notation, the operator is placed after its operands. Example: A B +, A B + C *. Also called Reverse Polish Notation (RPN). Does not require parentheses and is easy for computers to evaluate using a stack."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Operator precedence (highest to lowest)",
+          "formula": "** (exponentiation) > *, /, //, % > +, -",
+          "notes": "** is right-associative; all others are left-associative"
+        },
+        {
+          "name": "Infix to Postfix conversion examples",
+          "formula": "A + B -> A B +\nA + B * C -> A B C * +\n(A + B) * C -> A B + C *\nA + B * C - D -> A B C * + D -\n(A + B) * (C - D) -> A B + C D - *",
+          "notes": "Follow operator precedence and associativity rules during conversion"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Infix: operator between operands — A + B",
+        "Prefix: operator before operands — + A B",
+        "Postfix: operator after operands — A B +",
+        "Postfix and prefix notations do not require parentheses",
+        "Computers use postfix form for efficient expression evaluation",
+        "Operator precedence determines the order of evaluation when no parentheses are present",
+        "Associativity determines order when operators have the same precedence"
+      ]
+    },
+    {
+      "id": "3.6",
+      "title": "Conversion from Infix to Postfix Notation",
+      "concepts": [
+        "Algorithm uses a stack to hold operators and parentheses",
+        "Operands go directly to the output",
+        "Operators are pushed/popped based on precedence",
+        "Left parenthesis is pushed onto the stack",
+        "Right parenthesis causes popping until left parenthesis is found",
+        "At the end, remaining operators are popped from the stack"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Infix to Postfix Algorithm",
+          "formula": "1. Create an empty stack and output list\n2. Scan the infix expression left to right:\n   a. If operand, add to output\n   b. If '(', push onto stack\n   c. If ')', pop and add to output until '(' is found; discard '('\n   d. If operator, pop and add to output while stack top has >= precedence (for left-assoc) or > precedence (for right-assoc); then push current operator\n3. Pop all remaining operators from stack to output",
+          "notes": "Handle operator associativity: left-to-right for +, -, *, /; right-to-left for **"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "The algorithm uses a stack to temporarily hold operators",
+        "Operands are added directly to the output string",
+        "An operator is pushed onto the stack after popping operators of higher or equal precedence",
+        "Opening parenthesis is always pushed; closing parenthesis triggers popping until matching opening parenthesis",
+        "After scanning all tokens, pop remaining operators from the stack"
+      ]
+    },
+    {
+      "id": "3.7",
+      "title": "Evaluation of Postfix Expression",
+      "concepts": [
+        "Postfix evaluation uses a stack for operands",
+        "Scan left to right — push operands, pop and evaluate on operators",
+        "When an operator is encountered, pop two operands, apply operator, push result",
+        "The final value in the stack is the result",
+        "Order matters for non-commutative operators (-, /, **)"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Postfix Evaluation Algorithm",
+          "formula": "1. Create an empty stack\n2. Scan the postfix expression left to right:\n   a. If operand, push onto stack\n   b. If operator, pop two operands (op2 = pop, op1 = pop), compute op1 operator op2, push result\n3. The final element in the stack is the result",
+          "notes": "op1 is the second popped element, op2 is the first popped. Order: op1 operator op2."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Scan the postfix expression from left to right",
+        "Push operands onto the stack",
+        "When an operator is found, pop two operands, apply the operator, and push the result",
+        "The second popped element is the left operand (op1), and the first popped is the right operand (op2)",
+        "For subtraction and division, the order matters: op1 - op2, op1 / op2",
+        "The last value remaining in the stack is the final result"
+      ]
+    }
+  ],
+  "summary": [
+    "A stack is a linear data structure that follows the LIFO (Last In First Out) principle.",
+    "Elements can only be inserted (PUSH) or removed (POP) from the TOP of the stack.",
+    "Stack overflow occurs when pushing to a full stack; underflow occurs when popping from an empty stack.",
+    "In Python, a stack can be implemented using a list: append() for PUSH and pop() for POP.",
+    "Applications of stacks include: expression evaluation, string reversal, undo/redo operations, browser history, parenthesis matching, and function call management.",
+    "There are three notations for arithmetic expressions: Infix (A + B), Prefix (+ A B), and Postfix (A B +).",
+    "Postfix and prefix notations do not need parentheses and are easier for computers to evaluate.",
+    "Infix to postfix conversion uses a stack to handle operator precedence and associativity.",
+    "Postfix expression evaluation uses a stack: push operands, and when an operator is found, pop two operands, apply the operator, and push the result."
+  ],
+  "exercises": [
+    {
+      "id": "3.1",
+      "title": "Exercise 3",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "State True or False:\n(a) Stack is a LIFO data structure.\n(b) In a stack, elements can be added or removed from both ends.\n(c) PUSH operation adds an element to the top of the stack.\n(d) POP operation on an empty stack causes overflow.\n(e) Postfix expressions require parentheses for correct evaluation.",
+          "type": "short",
+          "answer": "(a) True — Stack follows Last In First Out principle.\n(b) False — Elements can only be added or removed from one end (the TOP).\n(c) True — PUSH inserts an element at the top of the stack.\n(d) False — POP on an empty stack causes underflow, not overflow. Overflow occurs when pushing to a full stack.\n(e) False — Postfix expressions do not require parentheses. The order of operands and operators uniquely determines the evaluation."
+        },
+        {
+          "qno": 2,
+          "question": "Convert the following infix expressions to postfix:\n(a) A + B - C\n(b) (A + B) * (C - D)\n(c) A * B + C / D\n(d) ((A + B) * C - D) / E\n(e) A + B * C ** D - E",
+          "type": "long",
+          "answer": "(a) A + B - C\nPostfix: A B + C -\n\n(b) (A + B) * (C - D)\nPostfix: A B + C D - *\n\n(c) A * B + C / D\nPostfix: A B * C D / +\n\n(d) ((A + B) * C - D) / E\nPostfix: A B + C * D - E /\n\n(e) A + B * C ** D - E\nPostfix: A B C D ** * + E -\n(Note: ** has highest precedence and is right-associative)"
+        },
+        {
+          "qno": 3,
+          "question": "Evaluate the following postfix expression: 5 3 + 8 2 - *",
+          "type": "short",
+          "answer": "Step-by-step evaluation:\nToken | Stack        | Action\n5     | [5]          | Push 5\n3     | [5, 3]       | Push 3\n+     | [8]          | Pop 3, 5; compute 5+3=8; Push 8\n8     | [8, 8]       | Push 8\n2     | [8, 8, 2]    | Pop 2, 8; (not yet — push 2 first)\n-     | [8, 6]       | Pop 2, 8; compute 8-2=6; Push 6\n*     | [48]         | Pop 6, 8; compute 8*6=48; Push 48\n\nResult = 48"
+        },
+        {
+          "qno": 4,
+          "question": "Write a Python program to implement a stack using a list with the following functions:\n(a) push(stack, element) — to add an element\n(b) pop(stack) — to remove and return the top element\n(c) peek(stack) — to return the top element without removing\n(d) display(stack) — to display all elements\n(e) isEmpty(stack) — to check if the stack is empty",
+          "type": "long",
+          "answer": "def isEmpty(stack):\n    return len(stack) == 0\n\ndef push(stack, element):\n    stack.append(element)\n    print(element, 'pushed to stack')\n\ndef pop(stack):\n    if isEmpty(stack):\n        print('Stack Underflow! Stack is empty.')\n        return None\n    return stack.pop()\n\ndef peek(stack):\n    if isEmpty(stack):\n        print('Stack is empty.')\n        return None\n    return stack[-1]\n\ndef display(stack):\n    if isEmpty(stack):\n        print('Stack is empty.')\n    else:\n        print('Stack (top to bottom):')\n        for i in range(len(stack) - 1, -1, -1):\n            print(stack[i])\n\n# Main program\nstack = []\npush(stack, 10)\npush(stack, 20)\npush(stack, 30)\ndisplay(stack)\nprint('Top element:', peek(stack))\nprint('Popped:', pop(stack))\ndisplay(stack)"
+        },
+        {
+          "qno": 5,
+          "question": "Write a Python program to check whether a given string is a palindrome using a stack.",
+          "type": "long",
+          "answer": "def is_palindrome(string):\n    stack = []\n    # Push all characters onto the stack\n    for char in string:\n        stack.append(char)\n    # Pop characters and build reversed string\n    reversed_str = ''\n    while len(stack) > 0:\n        reversed_str += stack.pop()\n    # Compare\n    if string == reversed_str:\n        return True\n    else:\n        return False\n\n# Test\nword = input('Enter a string: ')\nif is_palindrome(word):\n    print(word, 'is a palindrome')\nelse:\n    print(word, 'is not a palindrome')"
+        },
+        {
+          "qno": 6,
+          "question": "What will be the output of the following code?\nstack = []\nstack.append(5)\nstack.append(10)\nstack.append(15)\nprint(stack.pop())\nstack.append(20)\nprint(stack.pop())\nprint(stack.pop())\nprint(stack)",
+          "type": "short",
+          "answer": "Output:\n15\n20\n10\n[5]\n\nExplanation:\n- append(5) -> stack = [5]\n- append(10) -> stack = [5, 10]\n- append(15) -> stack = [5, 10, 15]\n- pop() returns 15 -> stack = [5, 10] -> prints 15\n- append(20) -> stack = [5, 10, 20]\n- pop() returns 20 -> stack = [5, 10] -> prints 20\n- pop() returns 10 -> stack = [5] -> prints 10\n- print(stack) -> prints [5]"
+        },
+        {
+          "qno": 7,
+          "question": "Write a Python program to implement a stack of student records. Each record contains roll number and name. Implement push, pop, and display operations using a menu-driven approach.",
+          "type": "long",
+          "answer": "stack = []\n\ndef push_student():\n    rollno = int(input('Enter roll number: '))\n    name = input('Enter name: ')\n    student = (rollno, name)\n    stack.append(student)\n    print('Student record pushed successfully.')\n\ndef pop_student():\n    if len(stack) == 0:\n        print('Stack Underflow! No records to remove.')\n    else:\n        student = stack.pop()\n        print('Removed student — Roll No:', student[0], 'Name:', student[1])\n\ndef display_stack():\n    if len(stack) == 0:\n        print('Stack is empty.')\n    else:\n        print('Student Records (top to bottom):')\n        for i in range(len(stack) - 1, -1, -1):\n            print('Roll No:', stack[i][0], 'Name:', stack[i][1])\n\n# Menu-driven program\nwhile True:\n    print('\\n--- Stack Menu ---')\n    print('1. Push student record')\n    print('2. Pop student record')\n    print('3. Display stack')\n    print('4. Exit')\n    choice = int(input('Enter your choice: '))\n    if choice == 1:\n        push_student()\n    elif choice == 2:\n        pop_student()\n    elif choice == 3:\n        display_stack()\n    elif choice == 4:\n        print('Exiting program.')\n        break\n    else:\n        print('Invalid choice!')"
+        }
+      ]
+    }
+  ]
+}

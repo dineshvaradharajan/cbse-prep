@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/formulas.css">
+<style>:root{--subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;}
+code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;background:#f0fdf4;padding:.1rem .35rem;border-radius:4px;border:1px solid #d1fae5;color:#065f46}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Computer Science syntax & commands reference for CBSE Class 12 — Python, SQL, networking commands across 13 chapters.">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CS Syntax & Commands Reference | CBSE Class 12">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/cs/formulas.html">
+<title>CS Syntax & Commands Reference | CBSE Class 12</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+
+<div class="hero">
+  <div class="badge">Computer Science XII &middot; 13 Chapters &middot; 75+ syntax items</div>
+  <h1>Syntax & Commands Reference</h1>
+  <p class="sub">Python syntax, SQL commands, and networking concepts — organised by chapter for quick revision.</p>
+</div>
+
+<nav class="chapter-nav"><div class="chapter-nav-inner">
+    <a href="#ch1">1. Exception Handling in Python</a>
+    <a href="#ch2">2. File Handling in Python</a>
+    <a href="#ch3">3. Stack</a>
+    <a href="#ch4">4. Queue</a>
+    <a href="#ch5">5. Sorting</a>
+    <a href="#ch6">6. Searching</a>
+    <a href="#ch7">7. Understanding Data</a>
+    <a href="#ch8">8. Database Concepts</a>
+    <a href="#ch9">9. Structured Query Language (SQL)</a>
+    <a href="#ch10">10. Computer Networks</a>
+    <a href="#ch11">11. Data Communication</a>
+    <a href="#ch12">12. Security Aspects</a>
+    <a href="#ch13">13. Project Based Learning</a>
+  </div></nav>
+
+
+<div class="chapters">
+<div class="ch-section" id="ch1">
+  <div class="ch-header" style="border-bottom-color:#059669">
+    <span class="ch-number">01</span>
+    <span class="ch-title">Exception Handling in Python</span>
+    <span class="ch-marks">8 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">raise syntax</div>
+      <code class="fc-eq">raise ExceptionType('error message')</code>
+      <div class="fc-note">ExceptionType can be any built-in or user-defined exception class</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">assert syntax</div>
+      <code class="fc-eq">assert condition, 'error message'</code>
+      <div class="fc-note">If condition is False, AssertionError is raised with the optional message</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">try-except basic syntax</div>
+      <code class="fc-eq">try:
+    # statements that may raise exception
+except ExceptionType:
+    # handler code</code>
+      <div class="fc-note">The except block executes only if the specified exception occurs in the try block</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Multiple except clauses</div>
+      <code class="fc-eq">try:
+    # statements
+except ValueError:
+    # handle ValueError
+except ZeroDivisionError:
+    # handle ZeroDivisionError</code>
+      <div class="fc-note">Each except clause handles a different type of exception</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">try-except-else syntax</div>
+      <code class="fc-eq">try:
+    # statements
+except ExceptionType:
+    # handle exception
+else:
+    # runs only if no exception occurred</code>
+      <div class="fc-note">The else block is optional and runs when try succeeds without any exception</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">try-except-finally syntax</div>
+      <code class="fc-eq">try:
+    # statements
+except ExceptionType:
+    # handle exception
+finally:
+    # always executes (cleanup code)</code>
+      <div class="fc-note">The finally block is guaranteed to execute in all circumstances</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Complete try block syntax</div>
+      <code class="fc-eq">try:
+    # risky code
+except ExceptionType:
+    # handle error
+else:
+    # no exception occurred
+finally:
+    # cleanup — always runs</code>
+      <div class="fc-note">This is the most complete form of exception handling in Python</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch2">
+  <div class="ch-header" style="border-bottom-color:#10b981">
+    <span class="ch-number">02</span>
+    <span class="ch-title">File Handling in Python</span>
+    <span class="ch-marks">16 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">open() syntax</div>
+      <code class="fc-eq">file_object = open(filename, mode)</code>
+      <div class="fc-note">Default mode is 'r'. Returns a file object (file handle).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">close() syntax</div>
+      <code class="fc-eq">file_object.close()</code>
+      <div class="fc-note">Flushes any unwritten data and closes the file. Good practice to always close files.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">with statement syntax</div>
+      <code class="fc-eq">with open('filename', 'mode') as file_object:
+    # file operations</code>
+      <div class="fc-note">Automatically closes the file when the with block is exited</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">write() syntax</div>
+      <code class="fc-eq">file_object.write(string)</code>
+      <div class="fc-note">Returns the number of characters written. Does not add newline automatically.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">writelines() syntax</div>
+      <code class="fc-eq">file_object.writelines(list_of_strings)</code>
+      <div class="fc-note">Writes each string from the list. No newline added between strings.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">read() syntax</div>
+      <code class="fc-eq">content = file_object.read([size])</code>
+      <div class="fc-note">Without argument, reads the entire file. With size, reads at most that many characters.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">readline() syntax</div>
+      <code class="fc-eq">line = file_object.readline()</code>
+      <div class="fc-note">Reads one line including newline. Returns empty string '' at EOF.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">readlines() syntax</div>
+      <code class="fc-eq">lines = file_object.readlines()</code>
+      <div class="fc-note">Returns a list of all lines. Each line includes the trailing newline character.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">tell() syntax</div>
+      <code class="fc-eq">position = file_object.tell()</code>
+      <div class="fc-note">Returns an integer representing the current position of the file pointer in bytes</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">seek() syntax</div>
+      <code class="fc-eq">file_object.seek(offset, reference_point)</code>
+      <div class="fc-note">reference_point: 0 = beginning (default), 1 = current, 2 = end. For text files, only 0 is allowed as reference_point.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">pickle.dump() syntax</div>
+      <code class="fc-eq">import pickle
+pickle.dump(object, file_object)</code>
+      <div class="fc-note">file_object must be opened in binary write mode ('wb' or 'ab')</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">pickle.load() syntax</div>
+      <code class="fc-eq">import pickle
+object = pickle.load(file_object)</code>
+      <div class="fc-note">file_object must be opened in binary read mode ('rb'). Raises EOFError when no more objects to read.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch3">
+  <div class="ch-header" style="border-bottom-color:#047857">
+    <span class="ch-number">03</span>
+    <span class="ch-title">Stack</span>
+    <span class="ch-marks">16 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">PUSH algorithm</div>
+      <code class="fc-eq">Step 1: If stack is full, print 'Overflow' and return
+Step 2: Increment TOP by 1
+Step 3: Set stack[TOP] = element
+Step 4: Return</code>
+      <div class="fc-note">In Python using list, we use append() which handles resizing automatically</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">POP algorithm</div>
+      <code class="fc-eq">Step 1: If stack is empty, print 'Underflow' and return
+Step 2: Set element = stack[TOP]
+Step 3: Decrement TOP by 1
+Step 4: Return element</code>
+      <div class="fc-note">In Python using list, we use pop() which removes and returns the last element</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Stack implementation using list</div>
+      <code class="fc-eq">stack = []  # empty stack
+stack.append(element)  # PUSH
+element = stack.pop()  # POP
+top = stack[-1]  # PEEK
+len(stack)  # SIZE
+len(stack) == 0  # isEmpty</code>
+      <div class="fc-note">Python lists grow dynamically, so no overflow check needed for list-based stacks</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Operator precedence (highest to lowest)</div>
+      <code class="fc-eq">** (exponentiation) &gt; *, /, //, % &gt; +, -</code>
+      <div class="fc-note">** is right-associative; all others are left-associative</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Infix to Postfix conversion examples</div>
+      <code class="fc-eq">A + B -&gt; A B +
+A + B * C -&gt; A B C * +
+(A + B) * C -&gt; A B + C *
+A + B * C - D -&gt; A B C * + D -
+(A + B) * (C - D) -&gt; A B + C D - *</code>
+      <div class="fc-note">Follow operator precedence and associativity rules during conversion</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Infix to Postfix Algorithm</div>
+      <code class="fc-eq">1. Create an empty stack and output list
+2. Scan the infix expression left to right:
+   a. If operand, add to output
+   b. If '(', push onto stack
+   c. If ')', pop and add to output until '(' is found; discard '('
+   d. If operator, pop and add to output while stack top has &gt;= precedence (for left-assoc) or &gt; precedence (for right-assoc); then push current operator
+3. Pop all remaining operators from stack to output</code>
+      <div class="fc-note">Handle operator associativity: left-to-right for +, -, *, /; right-to-left for **</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Postfix Evaluation Algorithm</div>
+      <code class="fc-eq">1. Create an empty stack
+2. Scan the postfix expression left to right:
+   a. If operand, push onto stack
+   b. If operator, pop two operands (op2 = pop, op1 = pop), compute op1 operator op2, push result
+3. The final element in the stack is the result</code>
+      <div class="fc-note">op1 is the second popped element, op2 is the first popped. Order: op1 operator op2.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch4">
+  <div class="ch-header" style="border-bottom-color:#34d399">
+    <span class="ch-number">04</span>
+    <span class="ch-title">Queue</span>
+    <span class="ch-marks">Supplementary</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#34d399">
+      <div class="fc-name">Enqueue algorithm</div>
+      <code class="fc-eq">Step 1: If queue is full, print 'Overflow' and return
+Step 2: Increment rear by 1
+Step 3: Set queue[rear] = element
+Step 4: If front is -1, set front = 0
+Step 5: Return</code>
+      <div class="fc-note">In Python using list, we use append() which adds to the end automatically</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#34d399">
+      <div class="fc-name">Dequeue algorithm</div>
+      <code class="fc-eq">Step 1: If queue is empty, print 'Underflow' and return
+Step 2: Set element = queue[front]
+Step 3: Increment front by 1
+Step 4: If front &gt; rear, reset front = rear = -1 (queue empty)
+Step 5: Return element</code>
+      <div class="fc-note">In Python using list, we use pop(0) which removes the first element</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#34d399">
+      <div class="fc-name">Queue implementation using list</div>
+      <code class="fc-eq">queue = []  # empty queue
+queue.append(element)  # Enqueue
+element = queue.pop(0)  # Dequeue
+front = queue[0]  # Peek
+len(queue)  # Size
+len(queue) == 0  # isEmpty</code>
+      <div class="fc-note">pop(0) is O(n) — for better performance, use collections.deque</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#34d399">
+      <div class="fc-name">Deque implementation using list</div>
+      <code class="fc-eq">deque = []  # empty deque
+deque.append(element)  # Add at rear
+deque.insert(0, element)  # Add at front
+element = deque.pop()  # Remove from rear
+element = deque.pop(0)  # Remove from front</code>
+      <div class="fc-note">insert(0, elem) and pop(0) are O(n). For O(1), use collections.deque with appendleft() and popleft()</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch5">
+  <div class="ch-header" style="border-bottom-color:#059669">
+    <span class="ch-number">05</span>
+    <span class="ch-title">Sorting</span>
+    <span class="ch-marks">Supplementary</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Bubble Sort Time Complexity (Worst/Average)</div>
+      <code class="fc-eq">O(n^2)</code>
+      <div class="fc-note">Occurs when the array is sorted in reverse order. Total comparisons = n(n-1)/2.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Bubble Sort Time Complexity (Best Case)</div>
+      <code class="fc-eq">O(n)</code>
+      <div class="fc-note">Occurs when the array is already sorted (with optimized version using a flag). Only one pass with n-1 comparisons and no swaps.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Bubble Sort Space Complexity</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">In-place sorting algorithm; only requires a temporary variable for swapping.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Total Comparisons (Worst Case)</div>
+      <code class="fc-eq">(n-1) + (n-2) + ... + 1 = n(n-1)/2</code>
+      <div class="fc-note">In pass i, the number of comparisons is (n - i).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Selection Sort Time Complexity (All Cases)</div>
+      <code class="fc-eq">O(n^2)</code>
+      <div class="fc-note">Always performs n(n-1)/2 comparisons regardless of input order. Best, worst, and average cases are all O(n^2).</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Selection Sort Space Complexity</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">In-place sorting algorithm.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Maximum Number of Swaps</div>
+      <code class="fc-eq">n - 1</code>
+      <div class="fc-note">At most one swap per pass, making it efficient when swapping is costly.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Insertion Sort Time Complexity (Worst Case)</div>
+      <code class="fc-eq">O(n^2)</code>
+      <div class="fc-note">Occurs when the array is sorted in reverse order. Total comparisons and shifts = n(n-1)/2.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Insertion Sort Time Complexity (Best Case)</div>
+      <code class="fc-eq">O(n)</code>
+      <div class="fc-note">Occurs when the array is already sorted. Only n-1 comparisons and no shifts needed.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Insertion Sort Time Complexity (Average Case)</div>
+      <code class="fc-eq">O(n^2)</code>
+      <div class="fc-note">On average, each insertion requires shifting half of the sorted portion.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Insertion Sort Space Complexity</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">In-place sorting algorithm; only needs a variable to hold the key.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Constant Time</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">Time does not depend on input size. Example: accessing an array element by index.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Logarithmic Time</div>
+      <code class="fc-eq">O(\log n)</code>
+      <div class="fc-note">Time grows logarithmically. Example: Binary Search.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Linear Time</div>
+      <code class="fc-eq">O(n)</code>
+      <div class="fc-note">Time grows linearly with input size. Example: Linear Search.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Quadratic Time</div>
+      <code class="fc-eq">O(n^2)</code>
+      <div class="fc-note">Time grows quadratically. Example: Bubble Sort, Selection Sort, Insertion Sort (worst case).</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch6">
+  <div class="ch-header" style="border-bottom-color:#047857">
+    <span class="ch-number">06</span>
+    <span class="ch-title">Searching</span>
+    <span class="ch-marks">Supplementary</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Linear Search Time Complexity (Best Case)</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">Element is found at the first position. Only 1 comparison needed.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Linear Search Time Complexity (Worst Case)</div>
+      <code class="fc-eq">O(n)</code>
+      <div class="fc-note">Element is at the last position or not present. All n elements are compared.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Linear Search Time Complexity (Average Case)</div>
+      <code class="fc-eq">O(n)</code>
+      <div class="fc-note">On average, n/2 comparisons are needed. Still linear.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Linear Search Space Complexity</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">Only a few variables are used regardless of input size.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Binary Search Time Complexity (Best Case)</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">Element is found at the middle position in the first comparison.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Binary Search Time Complexity (Worst Case)</div>
+      <code class="fc-eq">O(\log_2 n)</code>
+      <div class="fc-note">Maximum number of comparisons is floor(log2(n)) + 1. The search space halves each time.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Binary Search Time Complexity (Average Case)</div>
+      <code class="fc-eq">O(\log_2 n)</code>
+      <div class="fc-note">On average, approximately log2(n) comparisons are needed.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Binary Search Space Complexity (Iterative)</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">Iterative version uses constant extra space.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Middle Element Index</div>
+      <code class="fc-eq">mid = (low + high) // 2</code>
+      <div class="fc-note">low is the start index and high is the end index of the current search range.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Common Hash Function (Division Method)</div>
+      <code class="fc-eq">h(key) = key \% table\_size</code>
+      <div class="fc-note">The modulo operation ensures the hash value falls within the valid index range [0, table_size - 1].</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Hashing Time Complexity (Average Case)</div>
+      <code class="fc-eq">O(1)</code>
+      <div class="fc-note">Average-case search, insert, and delete are constant time with a good hash function.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Hashing Time Complexity (Worst Case)</div>
+      <code class="fc-eq">O(n)</code>
+      <div class="fc-note">Worst case occurs when all keys hash to the same index (all collisions).</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch7">
+  <div class="ch-header" style="border-bottom-color:#10b981">
+    <span class="ch-number">07</span>
+    <span class="ch-title">Understanding Data</span>
+    <span class="ch-marks">Supplementary</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Mean (Arithmetic Mean)</div>
+      <code class="fc-eq">\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n}</code>
+      <div class="fc-note">Sum of all values divided by the count of values.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Median (Odd n)</div>
+      <code class="fc-eq">Median = x_{(n+1)/2}</code>
+      <div class="fc-note">Middle value when n is odd and data is sorted.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Median (Even n)</div>
+      <code class="fc-eq">Median = \frac{x_{n/2} + x_{(n/2)+1}}{2}</code>
+      <div class="fc-note">Average of two middle values when n is even and data is sorted.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Range</div>
+      <code class="fc-eq">Range = x_{max} - x_{min}</code>
+      <div class="fc-note">Difference between the largest and smallest values.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Variance (Population)</div>
+      <code class="fc-eq">\sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}</code>
+      <div class="fc-note">Average of squared deviations from the mean. Uses n in the denominator for population variance.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Variance (Sample)</div>
+      <code class="fc-eq">s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}</code>
+      <div class="fc-note">Uses (n-1) in the denominator to provide an unbiased estimate.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Standard Deviation</div>
+      <code class="fc-eq">\sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}</code>
+      <div class="fc-note">Square root of variance. Expressed in the same units as the data.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch8">
+  <div class="ch-header" style="border-bottom-color:#34d399">
+    <span class="ch-number">08</span>
+    <span class="ch-title">Database Concepts</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#34d399">
+      <div class="fc-name">No standalone syntax items</div>
+      <div class="fc-note">This chapter focuses on conceptual understanding. See Chapters page for key points.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch9">
+  <div class="ch-header" style="border-bottom-color:#059669">
+    <span class="ch-number">09</span>
+    <span class="ch-title">Structured Query Language (SQL)</span>
+    <span class="ch-marks">15 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">COUNT</div>
+      <code class="fc-eq">SELECT COUNT(*) FROM table_name;</code>
+      <div class="fc-note">COUNT(*) counts all rows. COUNT(column) counts non-NULL values.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">SUM</div>
+      <code class="fc-eq">SELECT SUM(column) FROM table_name;</code>
+      <div class="fc-note">Returns the total of all values in the column. NULL values are ignored.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">AVG</div>
+      <code class="fc-eq">SELECT AVG(column) FROM table_name;</code>
+      <div class="fc-note">Returns the average. NULL values are excluded from the calculation.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">MAX and MIN</div>
+      <code class="fc-eq">SELECT MAX(column), MIN(column) FROM table_name;</code>
+      <div class="fc-note">Returns the largest and smallest values respectively.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">Cartesian Product Size</div>
+      <code class="fc-eq">Rows = m \times n, \; Columns = p + q</code>
+      <div class="fc-note">If table A has m rows and p columns, table B has n rows and q columns.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch10">
+  <div class="ch-header" style="border-bottom-color:#047857">
+    <span class="ch-number">10</span>
+    <span class="ch-title">Computer Networks</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Number of links in Mesh Topology</div>
+      <code class="fc-eq">Number of links = n(n-1)/2, where n is the number of devices</code>
+      <div class="fc-note">Each device has (n-1) ports. For example, 5 devices need 5(4)/2 = 10 links.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Number of ports per device in Mesh</div>
+      <code class="fc-eq">Ports per device = n - 1</code>
+      <div class="fc-note">Each device must have (n-1) I/O ports to connect to every other device.</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Total IPv4 Addresses</div>
+      <code class="fc-eq">2^32 = 4,294,967,296 (approximately 4.3 billion)</code>
+      <div class="fc-note">32-bit address space, each octet ranges from 0 to 255</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#047857">
+      <div class="fc-name">Total IPv6 Addresses</div>
+      <code class="fc-eq">2^128 = approximately 3.4 x 10^38</code>
+      <div class="fc-note">128-bit address space, providing virtually unlimited addresses</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch11">
+  <div class="ch-header" style="border-bottom-color:#10b981">
+    <span class="ch-number">11</span>
+    <span class="ch-title">Data Communication</span>
+    <span class="ch-marks">5 marks</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Data Transfer Rate Units</div>
+      <code class="fc-eq">1 Kbps = 1,024 bps (or 10^3 bps); 1 Mbps = 1,024 Kbps (or 10^6 bps); 1 Gbps = 1,024 Mbps (or 10^9 bps); 1 Tbps = 1,024 Gbps (or 10^12 bps)</code>
+      <div class="fc-note">bps = bits per second, Kbps = Kilobits per second, Mbps = Megabits per second, Gbps = Gigabits per second, Tbps = Terabits per second</div>
+    </div>
+    <div class="formula-card" style="border-left-color:#10b981">
+      <div class="fc-name">Time to transfer data</div>
+      <code class="fc-eq">Time = File Size (in bits) / Data Transfer Rate (in bps)</code>
+      <div class="fc-note">Remember to convert file size from bytes to bits (multiply by 8) if given in bytes</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch12">
+  <div class="ch-header" style="border-bottom-color:#34d399">
+    <span class="ch-number">12</span>
+    <span class="ch-title">Security Aspects</span>
+    <span class="ch-marks">Supplementary</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#34d399">
+      <div class="fc-name">No standalone syntax items</div>
+      <div class="fc-note">This chapter focuses on conceptual understanding. See Chapters page for key points.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-section" id="ch13">
+  <div class="ch-header" style="border-bottom-color:#059669">
+    <span class="ch-number">13</span>
+    <span class="ch-title">Project Based Learning</span>
+    <span class="ch-marks">Supplementary</span>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card" style="border-left-color:#059669">
+      <div class="fc-name">No standalone syntax items</div>
+      <div class="fc-note">This chapter focuses on conceptual understanding. See Chapters page for key points.</div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+<script src="../js/mobile-dropdowns.js"></script>
+</body>
+</html>

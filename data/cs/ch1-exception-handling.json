@@ -1,0 +1,376 @@
+{
+  "chapter": 1,
+  "title": "Exception Handling in Python",
+  "sections": [
+    {
+      "id": "1.1",
+      "title": "Introduction",
+      "concepts": [
+        "Errors in a program",
+        "Difference between syntax errors and exceptions",
+        "Compile-time errors vs run-time errors",
+        "Error handling mechanisms in Python",
+        "Graceful termination of programs",
+        "Robustness of a program"
+      ],
+      "definitions": [
+        {
+          "term": "Error",
+          "definition": "An error is a mistake or bug in a program that causes it to behave unexpectedly or terminate abnormally. Errors can be broadly categorized as syntax errors and exceptions (logical/runtime errors)."
+        },
+        {
+          "term": "Exception",
+          "definition": "An exception is an error that occurs during the execution of a program, disrupting the normal flow of instructions. Unlike syntax errors, exceptions happen at run-time."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "A program can have two types of errors — syntax errors and exceptions (runtime errors)",
+        "Syntax errors are detected by the interpreter before the program runs",
+        "Exceptions occur during the execution of a program",
+        "Python provides a robust exception handling mechanism using try-except blocks",
+        "Exception handling allows programs to handle errors gracefully without crashing"
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "Syntax Errors",
+      "concepts": [
+        "Syntax errors occur when the rules of a programming language are not followed",
+        "Syntax errors are detected at compile/parse time",
+        "The parser points to the line where the error is detected",
+        "Common syntax errors: missing colon, mismatched parentheses, incorrect indentation",
+        "Syntax errors must be fixed before the program can run"
+      ],
+      "definitions": [
+        {
+          "term": "Syntax Error",
+          "definition": "A syntax error occurs when the Python parser encounters a statement that does not conform to the rules (syntax) of the Python language. The program will not execute until all syntax errors are corrected."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Syntax errors are also called parsing errors",
+        "Python displays the file name, line number, and a caret (^) pointing to the earliest point where the error was detected",
+        "Common causes: missing colon after if/else/while/for/def/class, unmatched parentheses or quotes, incorrect indentation, misspelled keywords",
+        "Syntax errors prevent the program from running at all"
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "Exceptions",
+      "concepts": [
+        "Runtime errors that occur during program execution",
+        "Exceptions disrupt the normal flow of the program",
+        "Unhandled exceptions cause the program to terminate with a traceback",
+        "Python has a hierarchy of built-in exceptions",
+        "All exceptions inherit from the BaseException class",
+        "Custom exceptions can be created by inheriting from Exception class"
+      ],
+      "definitions": [
+        {
+          "term": "Traceback",
+          "definition": "A traceback is a report that Python generates when an exception occurs. It shows the sequence of function calls that led to the error, along with the file name, line number, and the type of exception."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Even if a statement is syntactically correct, it may cause an error during execution — such errors are called exceptions",
+        "When an exception occurs and is not handled, the program terminates and Python displays a traceback",
+        "The traceback includes the type of exception and a descriptive message",
+        "Python provides many built-in exceptions for common error conditions"
+      ]
+    },
+    {
+      "id": "1.4",
+      "title": "Built-in Exceptions",
+      "concepts": [
+        "SyntaxError — raised when the parser encounters a syntax error",
+        "ValueError — raised when a function receives an argument of the right type but inappropriate value",
+        "IOError — raised when an I/O operation fails",
+        "KeyboardInterrupt — raised when the user presses Ctrl+C",
+        "ImportError — raised when an import statement fails to find the module",
+        "EOFError — raised when input() hits an end-of-file condition",
+        "ZeroDivisionError — raised when division or modulo by zero occurs",
+        "IndexError — raised when a sequence subscript is out of range",
+        "NameError — raised when a local or global name is not found",
+        "IndentationError — raised due to incorrect indentation",
+        "TypeError — raised when an operation is applied to an object of inappropriate type",
+        "OverflowError — raised when the result of an arithmetic operation is too large"
+      ],
+      "definitions": [
+        {
+          "term": "SyntaxError",
+          "definition": "Raised when the Python parser encounters a syntax error in the code. Example: print('Hello' — missing closing parenthesis."
+        },
+        {
+          "term": "ValueError",
+          "definition": "Raised when a built-in operation or function receives an argument that has the right type but an inappropriate value. Example: int('abc') raises ValueError."
+        },
+        {
+          "term": "IOError",
+          "definition": "Raised when an I/O operation (such as open(), read(), write()) fails for an I/O related reason. Example: trying to open a file that does not exist."
+        },
+        {
+          "term": "KeyboardInterrupt",
+          "definition": "Raised when the user presses the interrupt key (usually Ctrl+C or Delete). This can be used to gracefully exit an infinite loop or long-running process."
+        },
+        {
+          "term": "ImportError",
+          "definition": "Raised when an import statement fails to find the specified module, or when a from...import fails to find the specified name in the module."
+        },
+        {
+          "term": "EOFError",
+          "definition": "Raised when the input() function hits an end-of-file condition (EOF) without reading any data."
+        },
+        {
+          "term": "ZeroDivisionError",
+          "definition": "Raised when the second operand of a division or modulo operation is zero. Example: 5/0 or 10%0."
+        },
+        {
+          "term": "IndexError",
+          "definition": "Raised when a sequence (list, tuple, string) index is out of range. Example: accessing list[5] when the list has only 3 elements."
+        },
+        {
+          "term": "NameError",
+          "definition": "Raised when a local or global name (variable, function, etc.) is not found. Example: using a variable that has not been defined."
+        },
+        {
+          "term": "IndentationError",
+          "definition": "Raised when there is incorrect indentation. It is a subclass of SyntaxError. Example: inconsistent use of tabs and spaces in indentation."
+        },
+        {
+          "term": "TypeError",
+          "definition": "Raised when an operation or function is applied to an object of inappropriate type. Example: '2' + 2 raises TypeError because a string and integer cannot be added."
+        },
+        {
+          "term": "OverflowError",
+          "definition": "Raised when the result of an arithmetic operation is too large to be represented. Example: math.exp(1000) raises OverflowError."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Python has a rich set of built-in exceptions to handle common error situations",
+        "All built-in exceptions are derived from the BaseException class",
+        "SyntaxError and IndentationError are detected before program execution",
+        "ValueError, TypeError, ZeroDivisionError, IndexError, and NameError are among the most commonly encountered runtime exceptions",
+        "KeyboardInterrupt is raised by user action (Ctrl+C), not by a programming error",
+        "IOError (or OSError in Python 3) relates to file and system operations"
+      ]
+    },
+    {
+      "id": "1.5",
+      "title": "Raising Exceptions",
+      "concepts": [
+        "The raise statement to explicitly raise an exception",
+        "Raising built-in exceptions with custom messages",
+        "The assert statement for debugging",
+        "Assertions as internal self-checks",
+        "AssertionError when assertion fails",
+        "Using raise to enforce preconditions"
+      ],
+      "definitions": [
+        {
+          "term": "raise Statement",
+          "definition": "The raise statement is used to explicitly raise an exception in Python. Syntax: raise ExceptionType('message'). It allows the programmer to force a specified exception to occur."
+        },
+        {
+          "term": "assert Statement",
+          "definition": "The assert statement is used to test an expression. If the expression evaluates to False, Python raises an AssertionError. Syntax: assert expression, 'error message'. It is used as a debugging aid."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "raise syntax",
+          "formula": "raise ExceptionType('error message')",
+          "notes": "ExceptionType can be any built-in or user-defined exception class"
+        },
+        {
+          "name": "assert syntax",
+          "formula": "assert condition, 'error message'",
+          "notes": "If condition is False, AssertionError is raised with the optional message"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "The raise statement allows the programmer to force a specific exception to occur",
+        "Syntax: raise ExceptionType('optional message')",
+        "The assert statement tests an expression; if False, it raises AssertionError",
+        "Syntax: assert expression, 'optional error message'",
+        "assert is primarily used for debugging and testing purposes",
+        "raise can re-raise the current exception if used without arguments inside an except block"
+      ]
+    },
+    {
+      "id": "1.6",
+      "title": "Handling Exceptions",
+      "concepts": [
+        "Need for exception handling — graceful degradation",
+        "Process of handling exceptions in Python",
+        "try block — code that may raise an exception",
+        "except block — code to handle the exception",
+        "Catching specific exceptions with except",
+        "Multiple except clauses for different exceptions",
+        "Generic except clause (without specifying exception type)",
+        "try-except-else clause — else executes when no exception occurs"
+      ],
+      "definitions": [
+        {
+          "term": "try Block",
+          "definition": "The try block contains the code that might raise an exception. If an exception occurs, the remaining code in the try block is skipped and the corresponding except block is executed."
+        },
+        {
+          "term": "except Block",
+          "definition": "The except block contains the code that handles the exception. It is executed only when an exception of the specified type occurs in the corresponding try block."
+        },
+        {
+          "term": "else Clause",
+          "definition": "The else clause in a try-except-else block is executed only when no exception occurs in the try block. It is useful for code that should only run if the try block succeeded."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "try-except basic syntax",
+          "formula": "try:\n    # statements that may raise exception\nexcept ExceptionType:\n    # handler code",
+          "notes": "The except block executes only if the specified exception occurs in the try block"
+        },
+        {
+          "name": "Multiple except clauses",
+          "formula": "try:\n    # statements\nexcept ValueError:\n    # handle ValueError\nexcept ZeroDivisionError:\n    # handle ZeroDivisionError",
+          "notes": "Each except clause handles a different type of exception"
+        },
+        {
+          "name": "try-except-else syntax",
+          "formula": "try:\n    # statements\nexcept ExceptionType:\n    # handle exception\nelse:\n    # runs only if no exception occurred",
+          "notes": "The else block is optional and runs when try succeeds without any exception"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Exception handling prevents abnormal program termination",
+        "The try block contains code that might cause an exception",
+        "The except block catches and handles the exception",
+        "Multiple except blocks can handle different types of exceptions",
+        "A bare except (without exception type) catches all exceptions — but this is generally discouraged",
+        "The else clause runs only when no exception is raised in the try block",
+        "Execution continues normally after the try-except block if the exception is handled"
+      ]
+    },
+    {
+      "id": "1.7",
+      "title": "Finally Clause",
+      "concepts": [
+        "The finally block always executes whether an exception occurred or not",
+        "Used for cleanup actions like closing files and releasing resources",
+        "Recovering and continuing with finally",
+        "Combining try-except-else-finally",
+        "finally executes even if there is a return statement in try or except"
+      ],
+      "definitions": [
+        {
+          "term": "finally Clause",
+          "definition": "The finally clause defines a block of code that will always be executed regardless of whether an exception was raised or not, and regardless of whether the exception was handled. It is typically used for cleanup actions such as closing files or database connections."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "try-except-finally syntax",
+          "formula": "try:\n    # statements\nexcept ExceptionType:\n    # handle exception\nfinally:\n    # always executes (cleanup code)",
+          "notes": "The finally block is guaranteed to execute in all circumstances"
+        },
+        {
+          "name": "Complete try block syntax",
+          "formula": "try:\n    # risky code\nexcept ExceptionType:\n    # handle error\nelse:\n    # no exception occurred\nfinally:\n    # cleanup — always runs",
+          "notes": "This is the most complete form of exception handling in Python"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "The finally block is always executed, whether an exception is raised or not",
+        "It is used for cleanup operations like closing files, releasing locks, or disconnecting from databases",
+        "If an exception is not handled by any except block, it is re-raised after the finally block executes",
+        "The finally clause can be combined with try-except-else for comprehensive error handling",
+        "Even if a return statement is encountered in try or except, the finally block still executes before the function returns"
+      ]
+    }
+  ],
+  "summary": [
+    "A syntax error is detected by the parser when the rules of the programming language are not followed.",
+    "An exception is an error that occurs during execution of a program, disrupting normal flow.",
+    "When an exception occurs and is not handled, the program terminates with a traceback showing the error type and message.",
+    "Python has many built-in exceptions: SyntaxError, ValueError, IOError, KeyboardInterrupt, ImportError, EOFError, ZeroDivisionError, IndexError, NameError, IndentationError, TypeError, OverflowError.",
+    "The raise statement is used to explicitly raise an exception: raise ExceptionType('message').",
+    "The assert statement tests an expression and raises AssertionError if it evaluates to False.",
+    "The try block contains statements that might raise an exception.",
+    "The except block handles the exception raised in the try block.",
+    "Multiple except clauses can be used to handle different types of exceptions.",
+    "The else block executes only when no exception occurs in the try block.",
+    "The finally block always executes regardless of whether an exception occurred, and is used for cleanup operations."
+  ],
+  "exercises": [
+    {
+      "id": "1.1",
+      "title": "Exercise 1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is the difference between a syntax error and an exception? Justify with examples.",
+          "type": "long",
+          "answer": "A syntax error occurs when the code violates the rules of the programming language and is detected before the program runs. Example: print('Hello' — missing closing parenthesis causes SyntaxError.\n\nAn exception occurs during the execution of the program when a syntactically correct statement causes an error at runtime. Example: x = 5/0 — this is syntactically correct but causes ZeroDivisionError at runtime.\n\nKey differences: (1) Syntax errors are detected at parse/compile time, exceptions occur at runtime. (2) Programs with syntax errors cannot run at all, while exceptions occur during execution. (3) Syntax errors must be fixed in the code; exceptions can be handled using try-except blocks."
+        },
+        {
+          "qno": 2,
+          "question": "What will be the output of the following code?\ntry:\n    num = int(input('Enter a number: '))  # User enters 'abc'\n    print(num)\nexcept ValueError:\n    print('Invalid input!')\nexcept:\n    print('Some error occurred')\nelse:\n    print('No error')\nfinally:\n    print('Execution complete')",
+          "type": "long",
+          "answer": "If the user enters 'abc', the output will be:\nInvalid input!\nExecution complete\n\nExplanation: When the user enters 'abc', int('abc') raises a ValueError. The first except clause catches ValueError and prints 'Invalid input!'. The else block does NOT execute because an exception occurred. The finally block always executes, so 'Execution complete' is printed.\n\nIf the user enters a valid number like 5, the output will be:\n5\nNo error\nExecution complete"
+        },
+        {
+          "qno": 3,
+          "question": "Fill in the blanks:\n(i) The ______ statement is used to explicitly raise an exception.\n(ii) The ______ block always executes whether or not an exception has occurred.\n(iii) The ______ error is raised when we try to divide a number by zero.\n(iv) The ______ block is executed only when no exception occurs in the try block.",
+          "type": "short",
+          "answer": "(i) raise\n(ii) finally\n(iii) ZeroDivisionError\n(iv) else"
+        },
+        {
+          "qno": 4,
+          "question": "Write a program that asks the user to enter a number and prints whether it is positive, negative or zero. Handle the ValueError exception if the user enters a non-numeric value.",
+          "type": "long",
+          "answer": "try:\n    num = float(input('Enter a number: '))\n    if num > 0:\n        print('Positive number')\n    elif num < 0:\n        print('Negative number')\n    else:\n        print('Zero')\nexcept ValueError:\n    print('Error: Please enter a valid number')"
+        },
+        {
+          "qno": 5,
+          "question": "Explain the use of the assert statement with an example.",
+          "type": "short",
+          "answer": "The assert statement is used as a debugging aid to test conditions that should be true at a certain point in the program. If the condition is False, an AssertionError is raised.\n\nSyntax: assert condition, 'optional error message'\n\nExample:\ndef calculate_average(marks):\n    assert len(marks) > 0, 'List cannot be empty'\n    return sum(marks) / len(marks)\n\nprint(calculate_average([80, 90, 70]))  # Output: 80.0\nprint(calculate_average([]))  # Raises AssertionError: List cannot be empty"
+        },
+        {
+          "qno": 6,
+          "question": "What will be the output of the following code?\ntry:\n    x = 10\n    y = 0\n    z = x / y\n    print('Result:', z)\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')\nelse:\n    print('Division successful')\nfinally:\n    print('Thank you')",
+          "type": "short",
+          "answer": "Output:\nCannot divide by zero\nThank you\n\nExplanation: x/y causes ZeroDivisionError since y is 0. The except block catches it and prints 'Cannot divide by zero'. The else block does NOT execute because an exception occurred. The finally block always executes, printing 'Thank you'."
+        },
+        {
+          "qno": 7,
+          "question": "Write a program that accepts two numbers from the user, divides the first number by the second, and handles the following exceptions:\n(a) ZeroDivisionError — if the second number is 0\n(b) ValueError — if the user enters a non-numeric value",
+          "type": "long",
+          "answer": "try:\n    num1 = float(input('Enter first number: '))\n    num2 = float(input('Enter second number: '))\n    result = num1 / num2\n    print('Result:', result)\nexcept ZeroDivisionError:\n    print('Error: Cannot divide by zero!')\nexcept ValueError:\n    print('Error: Please enter valid numeric values!')\nfinally:\n    print('Program execution complete.')"
+        },
+        {
+          "qno": 8,
+          "question": "What is the purpose of the finally clause? Why is it important in exception handling?",
+          "type": "short",
+          "answer": "The finally clause defines a block of code that is always executed regardless of whether an exception was raised or not, and regardless of whether the exception was handled or not.\n\nPurpose: It is used for cleanup operations such as:\n- Closing files that were opened\n- Releasing database connections\n- Releasing locks or resources\n\nImportance: It guarantees that critical cleanup code runs even if an unhandled exception occurs or a return statement is encountered in the try or except block. This prevents resource leaks and ensures the program leaves resources in a clean state."
+        },
+        {
+          "qno": 9,
+          "question": "Write a program that opens a file 'data.txt' in read mode and handles the FileNotFoundError exception. Use the finally clause to display a message that the program has completed execution.",
+          "type": "long",
+          "answer": "try:\n    f = open('data.txt', 'r')\n    content = f.read()\n    print(content)\n    f.close()\nexcept FileNotFoundError:\n    print('Error: The file data.txt was not found!')\nfinally:\n    print('Program execution complete.')\n\nAlternatively, using the with statement:\ntry:\n    with open('data.txt', 'r') as f:\n        content = f.read()\n        print(content)\nexcept FileNotFoundError:\n    print('Error: The file data.txt was not found!')\nfinally:\n    print('Program execution complete.')"
+        }
+      ]
+    }
+  ]
+}

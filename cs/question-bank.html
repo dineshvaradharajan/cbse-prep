@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/mcq.css">
+<style>
+:root{--subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;}
+code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;background:#f0fdf4;padding:.1rem .35rem;border-radius:4px;border:1px solid #d1fae5;color:#065f46}
+
+.qb-chapter-section{margin-bottom:.75rem}
+.qb-chapter-toggle{display:flex;align-items:center;gap:.75rem;width:100%;padding:.75rem 1rem;background:#fff;border:1px solid var(--sand-200);border-radius:10px;cursor:pointer;font-family:"Lato",sans-serif;transition:all .15s}
+.qb-chapter-toggle:hover{border-color:var(--subject-border);background:var(--subject-bg)}
+.qb-ch-name{font-family:"Newsreader",serif;font-size:1rem;font-weight:600;color:var(--ink);flex:1;text-align:left}
+.qb-ch-count{font-size:.7rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.15rem .6rem}
+.qb-ch-arrow{font-size:.6rem;color:var(--ink-3);transition:transform .2s}
+.qb-chapter-toggle.collapsed .qb-ch-arrow{transform:rotate(-90deg)}
+.qb-chapter-body{padding:.5rem 0 0}
+.qb-chapter-body.collapsed{display:none}
+.qb-card{background:#fff;border:1px solid var(--sand-200);border-radius:12px;padding:1.25rem;margin-bottom:.75rem;transition:box-shadow .2s}
+.qb-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.qb-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.65rem;align-items:center}
+.qb-year-badge{font-size:.68rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.15rem .55rem}
+.qb-type-badge{font-size:.6rem;font-weight:800;border-radius:999px;padding:.12rem .5rem;text-transform:uppercase;letter-spacing:.04em}
+.qb-type-badge.subj{color:#78716c;background:var(--sand-100);border:1px solid var(--sand-300)}
+.qb-type-badge.mcq{color:#059669;background:#f0fdf4;border:1px solid #86efac}
+.qb-type-badge.case{color:#ea580c;background:#fff7ed;border:1px solid #fdba74}
+.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65;white-space:pre-line}
+.qb-ans-toggle{display:inline-block;margin-top:.6rem;padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
+.qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
+.qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
+.qb-answer.hidden{display:none}
+@media(max-width:640px){
+  .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
+  .qb-question{font-size:.82rem}
+  .qb-ch-name{font-size:.88rem}
+  .qb-chapter-toggle{padding:.6rem .75rem}
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NCERT Computer Science Question Bank — 129 exercises from all 13 chapters for CBSE Class 12.">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CS Question Bank | CBSE Class 12">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/cs/question-bank.html">
+<title>CS Question Bank — 129 NCERT Exercises | CBSE Class 12</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+<div class="hero">
+  <div class="badge">Computer Science XII &middot; NCERT Exercises</div>
+  <h1>Question Bank</h1>
+  <p class="sub">129 textbook exercises from all 13 chapters — grouped by chapter and exercise number.</p>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 1: Exception Handling in Python</span>
+<span class="qb-ch-count">9 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What is the difference between a syntax error and an exception? Justify with examples.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A syntax error occurs when the code violates the rules of the programming language and is detected before the program runs. Example: print('Hello' — missing closing parenthesis causes SyntaxError.
+
+An exception occurs during the execution of the program when a syntactically correct statement causes an error at runtime. Example: x = 5/0 — this is syntactically correct but causes ZeroDivisionError at runtime.
+
+Key differences: (1) Syntax errors are detected at parse/compile time, exceptions occur at runtime. (2) Programs with syntax errors cannot run at all, while exceptions occur during execution. (3) Syntax errors must be fixed in the code; exceptions can be handled using try-except blocks.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What will be the output of the following code?
+try:
+    num = int(input('Enter a number: '))  # User enters 'abc'
+    print(num)
+except ValueError:
+    print('Invalid input!')
+except:
+    print('Some error occurred')
+else:
+    print('No error')
+finally:
+    print('Execution complete')</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> If the user enters 'abc', the output will be:
+Invalid input!
+Execution complete
+
+Explanation: When the user enters 'abc', int('abc') raises a ValueError. The first except clause catches ValueError and prints 'Invalid input!'. The else block does NOT execute because an exception occurred. The finally block always executes, so 'Execution complete' is printed.
+
+If the user enters a valid number like 5, the output will be:
+5
+No error
+Execution complete</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Fill in the blanks:
+(i) The ______ statement is used to explicitly raise an exception.
+(ii) The ______ block always executes whether or not an exception has occurred.
+(iii) The ______ error is raised when we try to divide a number by zero.
+(iv) The ______ block is executed only when no exception occurs in the try block.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) raise
+(ii) finally
+(iii) ZeroDivisionError
+(iv) else</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a program that asks the user to enter a number and prints whether it is positive, negative or zero. Handle the ValueError exception if the user enters a non-numeric value.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> try:
+    num = float(input('Enter a number: '))
+    if num &gt; 0:
+        print('Positive number')
+    elif num &lt; 0:
+        print('Negative number')
+    else:
+        print('Zero')
+except ValueError:
+    print('Error: Please enter a valid number')</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Explain the use of the assert statement with an example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> The assert statement is used as a debugging aid to test conditions that should be true at a certain point in the program. If the condition is False, an AssertionError is raised.
+
+Syntax: assert condition, 'optional error message'
+
+Example:
+def calculate_average(marks):
+    assert len(marks) &gt; 0, 'List cannot be empty'
+    return sum(marks) / len(marks)
+
+print(calculate_average([80, 90, 70]))  # Output: 80.0
+print(calculate_average([]))  # Raises AssertionError: List cannot be empty</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What will be the output of the following code?
+try:
+    x = 10
+    y = 0
+    z = x / y
+    print('Result:', z)
+except ZeroDivisionError:
+    print('Cannot divide by zero')
+else:
+    print('Division successful')
+finally:
+    print('Thank you')</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Output:
+Cannot divide by zero
+Thank you
+
+Explanation: x/y causes ZeroDivisionError since y is 0. The except block catches it and prints 'Cannot divide by zero'. The else block does NOT execute because an exception occurred. The finally block always executes, printing 'Thank you'.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a program that accepts two numbers from the user, divides the first number by the second, and handles the following exceptions:
+(a) ZeroDivisionError — if the second number is 0
+(b) ValueError — if the user enters a non-numeric value</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> try:
+    num1 = float(input('Enter first number: '))
+    num2 = float(input('Enter second number: '))
+    result = num1 / num2
+    print('Result:', result)
+except ZeroDivisionError:
+    print('Error: Cannot divide by zero!')
+except ValueError:
+    print('Error: Please enter valid numeric values!')
+finally:
+    print('Program execution complete.')</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the purpose of the finally clause? Why is it important in exception handling?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> The finally clause defines a block of code that is always executed regardless of whether an exception was raised or not, and regardless of whether the exception was handled or not.
+
+Purpose: It is used for cleanup operations such as:
+- Closing files that were opened
+- Releasing database connections
+- Releasing locks or resources
+
+Importance: It guarantees that critical cleanup code runs even if an unhandled exception occurs or a return statement is encountered in the try or except block. This prevents resource leaks and ensures the program leaves resources in a clean state.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a program that opens a file 'data.txt' in read mode and handles the FileNotFoundError exception. Use the finally clause to display a message that the program has completed execution.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> try:
+    f = open('data.txt', 'r')
+    content = f.read()
+    print(content)
+    f.close()
+except FileNotFoundError:
+    print('Error: The file data.txt was not found!')
+finally:
+    print('Program execution complete.')
+
+Alternatively, using the with statement:
+try:
+    with open('data.txt', 'r') as f:
+        content = f.read()
+        print(content)
+except FileNotFoundError:
+    print('Error: The file data.txt was not found!')
+finally:
+    print('Program execution complete.')</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 2: File Handling in Python</span>
+<span class="qb-ch-count">10 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 2</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between text file and binary file.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Text File:
+- Stores data as a sequence of characters (strings)
+- Human-readable (can be opened in any text editor)
+- Each line ends with an EOL character (\n)
+- Slower to process due to encoding/decoding
+- Example: .txt, .csv, .html files
+
+Binary File:
+- Stores data as a sequence of bytes (same as in memory)
+- Not human-readable
+- No EOL character; data is stored as a stream of bytes
+- Faster to process
+- Example: .jpg, .png, .exe, .dat files</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What are the different file modes available in Python? Explain each.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> The different file modes in Python are:
+
+'r' — Read mode (default). Opens file for reading. File must exist, else FileNotFoundError.
+'w' — Write mode. Opens file for writing. Creates new file if it doesn't exist. Overwrites if it exists.
+'a' — Append mode. Opens file for appending at the end. Creates new file if it doesn't exist.
+'r+' — Read and Write mode. File must exist. File pointer at beginning.
+'w+' — Write and Read mode. Creates new file or overwrites existing. File pointer at beginning.
+'a+' — Append and Read mode. Creates new file if it doesn't exist. File pointer at end.
+'rb' — Read in binary mode.
+'wb' — Write in binary mode.
+'ab' — Append in binary mode.
+'rb+' — Read and write in binary mode.
+'wb+' — Write and read in binary mode.
+'ab+' — Append and read in binary mode.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a program to read a text file 'story.txt' line by line and display each word separated by a '#'.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> f = open('story.txt', 'r')
+for line in f:
+    words = line.split()
+    for word in words:
+        print(word + '#', end='')
+    print()  # newline after each line
+f.close()
+
+Alternatively using with statement:
+with open('story.txt', 'r') as f:
+    for line in f:
+        words = line.split()
+        print('#'.join(words))</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between write() and writelines() methods?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> write() method:
+- Writes a single string to the file
+- Syntax: file_object.write(string)
+- Returns the number of characters written
+- Example: f.write('Hello World\n')
+
+writelines() method:
+- Writes a list (or iterable) of strings to the file
+- Syntax: file_object.writelines(list_of_strings)
+- Does not return the character count
+- Example: f.writelines(['Hello\n', 'World\n'])
+
+Both methods do NOT add newline characters automatically.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What is the difference between read(), readline() and readlines() methods?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> read([n]):
+- Without argument: reads the entire file as a single string
+- With argument n: reads at most n characters
+- Returns a string
+
+readline():
+- Reads a single line from the file (including the newline character)
+- Returns an empty string '' at end of file
+- Returns a string
+
+readlines():
+- Reads all lines from the file
+- Returns a list of strings, where each string is a line (including newline)
+- Returns a list
+
+Example: If file contains 'Hello\nWorld\n'
+- read() returns 'Hello\nWorld\n'
+- readline() returns 'Hello\n' (first call), 'World\n' (second call)
+- readlines() returns ['Hello\n', 'World\n']</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the significance of the tell() and seek() methods?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> tell() method:
+- Returns the current position of the file pointer (in bytes from the beginning)
+- Syntax: file_object.tell()
+- Useful to know where you are in the file
+
+seek() method:
+- Changes the position of the file pointer
+- Syntax: file_object.seek(offset, reference_point)
+- reference_point: 0 (beginning, default), 1 (current), 2 (end)
+- For text files, only reference_point 0 is allowed
+- seek(0) is commonly used to reset file pointer to the beginning after reading</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What is pickling and unpickling? Explain with an example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Pickling (Serialization): The process of converting a Python object into a byte stream to store in a binary file.
+
+Unpickling (Deserialization): The process of converting a byte stream from a binary file back into a Python object.
+
+Example:
+import pickle
+
+# Pickling — writing a dictionary to a binary file
+student = {'name': 'Rahul', 'age': 17, 'marks': [85, 90, 78]}
+f = open('student.dat', 'wb')
+pickle.dump(student, f)
+f.close()
+
+# Unpickling — reading the dictionary from the binary file
+f = open('student.dat', 'rb')
+data = pickle.load(f)
+print(data)  # Output: {'name': 'Rahul', 'age': 17, 'marks': [85, 90, 78]}
+f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a program to count the number of lines in a text file 'poem.txt' that start with an uppercase letter.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> count = 0
+with open('poem.txt', 'r') as f:
+    for line in f:
+        if line[0].isupper():
+            count += 1
+print('Number of lines starting with uppercase:', count)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a program using pickle to store and retrieve a list of employee records (each record is a dictionary with keys: empno, name, salary) in a binary file.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> import pickle
+
+# Writing employee records
+def write_records():
+    employees = []
+    n = int(input('How many employees? '))
+    for i in range(n):
+        empno = int(input('Enter employee number: '))
+        name = input('Enter name: ')
+        salary = float(input('Enter salary: '))
+        emp = {'empno': empno, 'name': name, 'salary': salary}
+        employees.append(emp)
+    with open('employees.dat', 'wb') as f:
+        pickle.dump(employees, f)
+    print('Records saved successfully.')
+
+# Reading employee records
+def read_records():
+    with open('employees.dat', 'rb') as f:
+        employees = pickle.load(f)
+    for emp in employees:
+        print('Emp No:', emp['empno'], 'Name:', emp['name'], 'Salary:', emp['salary'])
+
+write_records()
+read_records()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the advantage of using the 'with' statement for file handling?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Advantages of using the 'with' statement:
+1. Automatic closing: The file is automatically closed when the with block is exited, even if an exception occurs.
+2. No need to explicitly call close(): Eliminates the risk of forgetting to close a file.
+3. Cleaner code: Makes the code more readable and concise.
+4. Resource management: Ensures proper resource cleanup.
+5. Exception safety: The file is closed even if an error occurs within the with block.
+
+Syntax:
+with open('file.txt', 'r') as f:
+    data = f.read()
+# File is automatically closed here</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 3: Stack</span>
+<span class="qb-ch-count">7 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 3</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">State True or False:
+(a) Stack is a LIFO data structure.
+(b) In a stack, elements can be added or removed from both ends.
+(c) PUSH operation adds an element to the top of the stack.
+(d) POP operation on an empty stack causes overflow.
+(e) Postfix expressions require parentheses for correct evaluation.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) True — Stack follows Last In First Out principle.
+(b) False — Elements can only be added or removed from one end (the TOP).
+(c) True — PUSH inserts an element at the top of the stack.
+(d) False — POP on an empty stack causes underflow, not overflow. Overflow occurs when pushing to a full stack.
+(e) False — Postfix expressions do not require parentheses. The order of operands and operators uniquely determines the evaluation.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Convert the following infix expressions to postfix:
+(a) A + B - C
+(b) (A + B) * (C - D)
+(c) A * B + C / D
+(d) ((A + B) * C - D) / E
+(e) A + B * C ** D - E</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) A + B - C
+Postfix: A B + C -
+
+(b) (A + B) * (C - D)
+Postfix: A B + C D - *
+
+(c) A * B + C / D
+Postfix: A B * C D / +
+
+(d) ((A + B) * C - D) / E
+Postfix: A B + C * D - E /
+
+(e) A + B * C ** D - E
+Postfix: A B C D ** * + E -
+(Note: ** has highest precedence and is right-associative)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Evaluate the following postfix expression: 5 3 + 8 2 - *</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Step-by-step evaluation:
+Token | Stack        | Action
+5     | [5]          | Push 5
+3     | [5, 3]       | Push 3
++     | [8]          | Pop 3, 5; compute 5+3=8; Push 8
+8     | [8, 8]       | Push 8
+2     | [8, 8, 2]    | Pop 2, 8; (not yet — push 2 first)
+-     | [8, 6]       | Pop 2, 8; compute 8-2=6; Push 6
+*     | [48]         | Pop 6, 8; compute 8*6=48; Push 48
+
+Result = 48</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python program to implement a stack using a list with the following functions:
+(a) push(stack, element) — to add an element
+(b) pop(stack) — to remove and return the top element
+(c) peek(stack) — to return the top element without removing
+(d) display(stack) — to display all elements
+(e) isEmpty(stack) — to check if the stack is empty</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def isEmpty(stack):
+    return len(stack) == 0
+
+def push(stack, element):
+    stack.append(element)
+    print(element, 'pushed to stack')
+
+def pop(stack):
+    if isEmpty(stack):
+        print('Stack Underflow! Stack is empty.')
+        return None
+    return stack.pop()
+
+def peek(stack):
+    if isEmpty(stack):
+        print('Stack is empty.')
+        return None
+    return stack[-1]
+
+def display(stack):
+    if isEmpty(stack):
+        print('Stack is empty.')
+    else:
+        print('Stack (top to bottom):')
+        for i in range(len(stack) - 1, -1, -1):
+            print(stack[i])
+
+# Main program
+stack = []
+push(stack, 10)
+push(stack, 20)
+push(stack, 30)
+display(stack)
+print('Top element:', peek(stack))
+print('Popped:', pop(stack))
+display(stack)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python program to check whether a given string is a palindrome using a stack.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def is_palindrome(string):
+    stack = []
+    # Push all characters onto the stack
+    for char in string:
+        stack.append(char)
+    # Pop characters and build reversed string
+    reversed_str = ''
+    while len(stack) &gt; 0:
+        reversed_str += stack.pop()
+    # Compare
+    if string == reversed_str:
+        return True
+    else:
+        return False
+
+# Test
+word = input('Enter a string: ')
+if is_palindrome(word):
+    print(word, 'is a palindrome')
+else:
+    print(word, 'is not a palindrome')</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What will be the output of the following code?
+stack = []
+stack.append(5)
+stack.append(10)
+stack.append(15)
+print(stack.pop())
+stack.append(20)
+print(stack.pop())
+print(stack.pop())
+print(stack)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Output:
+15
+20
+10
+[5]
+
+Explanation:
+- append(5) -&gt; stack = [5]
+- append(10) -&gt; stack = [5, 10]
+- append(15) -&gt; stack = [5, 10, 15]
+- pop() returns 15 -&gt; stack = [5, 10] -&gt; prints 15
+- append(20) -&gt; stack = [5, 10, 20]
+- pop() returns 20 -&gt; stack = [5, 10] -&gt; prints 20
+- pop() returns 10 -&gt; stack = [5] -&gt; prints 10
+- print(stack) -&gt; prints [5]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python program to implement a stack of student records. Each record contains roll number and name. Implement push, pop, and display operations using a menu-driven approach.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> stack = []
+
+def push_student():
+    rollno = int(input('Enter roll number: '))
+    name = input('Enter name: ')
+    student = (rollno, name)
+    stack.append(student)
+    print('Student record pushed successfully.')
+
+def pop_student():
+    if len(stack) == 0:
+        print('Stack Underflow! No records to remove.')
+    else:
+        student = stack.pop()
+        print('Removed student — Roll No:', student[0], 'Name:', student[1])
+
+def display_stack():
+    if len(stack) == 0:
+        print('Stack is empty.')
+    else:
+        print('Student Records (top to bottom):')
+        for i in range(len(stack) - 1, -1, -1):
+            print('Roll No:', stack[i][0], 'Name:', stack[i][1])
+
+# Menu-driven program
+while True:
+    print('\n--- Stack Menu ---')
+    print('1. Push student record')
+    print('2. Pop student record')
+    print('3. Display stack')
+    print('4. Exit')
+    choice = int(input('Enter your choice: '))
+    if choice == 1:
+        push_student()
+    elif choice == 2:
+        pop_student()
+    elif choice == 3:
+        display_stack()
+    elif choice == 4:
+        print('Exiting program.')
+        break
+    else:
+        print('Invalid choice!')</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 4: Queue</span>
+<span class="qb-ch-count">7 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 4</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between a stack and a queue.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Stack:
+- Follows LIFO (Last In First Out) principle
+- Insertion (PUSH) and deletion (POP) happen at the same end (TOP)
+- Uses a single pointer (TOP)
+- Example: stack of plates, undo operation
+
+Queue:
+- Follows FIFO (First In First Out) principle
+- Insertion (enqueue) happens at the rear; deletion (dequeue) happens at the front
+- Uses two pointers (front and rear)
+- Example: queue at a ticket counter, print queue</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a deque? How is it different from a simple queue?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A deque (double-ended queue) is a linear data structure that allows insertion and deletion from both the front and rear ends.
+
+Differences from a simple queue:
+- Simple queue: insertion at rear only, deletion at front only
+- Deque: insertion and deletion at both front and rear
+- Simple queue supports only enqueue (rear) and dequeue (front)
+- Deque supports add_front, add_rear, remove_front, remove_rear
+- A deque can function as both a stack and a queue
+- Simple queue is more restrictive than a deque</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python program to implement a queue using a list with the following functions:
+(a) enqueue(queue, element) — to add an element
+(b) dequeue(queue) — to remove and return the front element
+(c) peek(queue) — to return the front element without removing
+(d) display(queue) — to display all elements
+(e) isEmpty(queue) — to check if the queue is empty</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def isEmpty(queue):
+    return len(queue) == 0
+
+def enqueue(queue, element):
+    queue.append(element)
+    print(element, 'added to queue')
+
+def dequeue(queue):
+    if isEmpty(queue):
+        print('Queue Underflow! Queue is empty.')
+        return None
+    return queue.pop(0)
+
+def peek(queue):
+    if isEmpty(queue):
+        print('Queue is empty.')
+        return None
+    return queue[0]
+
+def display(queue):
+    if isEmpty(queue):
+        print('Queue is empty.')
+    else:
+        print('Queue (front to rear):')
+        for element in queue:
+            print(element, end=' ')
+        print()
+
+# Main program
+queue = []
+enqueue(queue, 10)
+enqueue(queue, 20)
+enqueue(queue, 30)
+display(queue)
+print('Front element:', peek(queue))
+print('Dequeued:', dequeue(queue))
+display(queue)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What will be the output of the following code?
+queue = []
+queue.append(1)
+queue.append(2)
+queue.append(3)
+print(queue.pop(0))
+queue.append(4)
+print(queue.pop(0))
+print(queue)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Output:
+1
+2
+[3, 4]
+
+Explanation:
+- append(1) -&gt; queue = [1]
+- append(2) -&gt; queue = [1, 2]
+- append(3) -&gt; queue = [1, 2, 3]
+- pop(0) returns 1 -&gt; queue = [2, 3] -&gt; prints 1
+- append(4) -&gt; queue = [2, 3, 4]
+- pop(0) returns 2 -&gt; queue = [3, 4] -&gt; prints 2
+- print(queue) -&gt; prints [3, 4]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python program to implement a deque using a list with functions to add and remove elements from both ends.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def isEmpty(deque):
+    return len(deque) == 0
+
+def add_front(deque, element):
+    deque.insert(0, element)
+    print(element, 'added at front')
+
+def add_rear(deque, element):
+    deque.append(element)
+    print(element, 'added at rear')
+
+def remove_front(deque):
+    if isEmpty(deque):
+        print('Deque Underflow! Deque is empty.')
+        return None
+    return deque.pop(0)
+
+def remove_rear(deque):
+    if isEmpty(deque):
+        print('Deque Underflow! Deque is empty.')
+        return None
+    return deque.pop()
+
+def display(deque):
+    if isEmpty(deque):
+        print('Deque is empty.')
+    else:
+        print('Deque (front to rear):', deque)
+
+# Main program
+dq = []
+add_rear(dq, 10)
+add_rear(dq, 20)
+add_front(dq, 5)
+display(dq)  # [5, 10, 20]
+print('Removed from front:', remove_front(dq))
+print('Removed from rear:', remove_rear(dq))
+display(dq)  # [10]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python program to implement a queue of customer orders in a restaurant. Each order has an order number and item name. Implement enqueue, dequeue, and display using a menu-driven approach.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> queue = []
+
+def enqueue_order():
+    order_no = int(input('Enter order number: '))
+    item = input('Enter item name: ')
+    order = {'order_no': order_no, 'item': item}
+    queue.append(order)
+    print('Order', order_no, 'added to queue.')
+
+def dequeue_order():
+    if len(queue) == 0:
+        print('No orders in the queue!')
+    else:
+        order = queue.pop(0)
+        print('Processing Order', order['order_no'], '- Item:', order['item'])
+
+def display_orders():
+    if len(queue) == 0:
+        print('No orders in the queue.')
+    else:
+        print('Pending Orders (front to rear):')
+        for order in queue:
+            print('Order No:', order['order_no'], '| Item:', order['item'])
+
+# Menu-driven program
+while True:
+    print('\n--- Restaurant Order Queue ---')
+    print('1. Add new order')
+    print('2. Process next order')
+    print('3. Display all orders')
+    print('4. Exit')
+    choice = int(input('Enter your choice: '))
+    if choice == 1:
+        enqueue_order()
+    elif choice == 2:
+        dequeue_order()
+    elif choice == 3:
+        display_orders()
+    elif choice == 4:
+        print('Exiting program.')
+        break
+    else:
+        print('Invalid choice!')</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">List any four applications of queues in computer science.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Four applications of queues in computer science:
+1. CPU Scheduling: Operating systems use queues to manage processes waiting for CPU time (e.g., round-robin scheduling).
+2. Print Spooling: Print jobs are placed in a queue and processed in FIFO order by the printer.
+3. Breadth-First Search (BFS): BFS algorithm in graphs and trees uses a queue to explore nodes level by level.
+4. Handling Requests in Web Servers: Incoming HTTP requests are placed in a queue and handled one by one.
+
+Other applications: keyboard buffer, call center systems, traffic management, message queues in distributed systems.</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 5: Sorting</span>
+<span class="qb-ch-count">10 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 5.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is sorting? Why is it necessary?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Sorting is the process of arranging data elements in a specific order — either ascending (smallest to largest) or descending (largest to smallest). It is necessary because: (1) It makes searching more efficient (e.g., binary search requires sorted data). (2) It helps in organizing and presenting data in a meaningful way. (3) It simplifies complex problems like finding duplicates, computing medians, etc.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write the Bubble Sort algorithm and trace it for the list [5, 3, 8, 1, 2].</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Bubble Sort Algorithm:
+1. Start from the first element, compare adjacent elements.
+2. If the current element is greater than the next, swap them.
+3. Continue till the end of the list (one pass).
+4. Repeat for n-1 passes, reducing the comparison range by 1 each time.
+5. If no swaps in a pass, stop (list is sorted).
+
+Trace for [5, 3, 8, 1, 2]:
+Pass 1: [3,5,8,1,2] → [3,5,8,1,2] → [3,5,1,8,2] → [3,5,1,2,8] (3 swaps)
+Pass 2: [3,5,1,2,8] → [3,1,5,2,8] → [3,1,2,5,8] (2 swaps)
+Pass 3: [1,3,2,5,8] → [1,2,3,5,8] (2 swaps)
+Pass 4: [1,2,3,5,8] (0 swaps — sorted, stop)
+Sorted list: [1, 2, 3, 5, 8]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python function to implement Bubble Sort.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def bubble_sort(a):
+    n = len(a)
+    for i in range(n - 1):
+        swapped = False
+        for j in range(n - 1 - i):
+            if a[j] &gt; a[j + 1]:
+                a[j], a[j + 1] = a[j + 1], a[j]
+                swapped = True
+        if not swapped:
+            break
+    return a
+
+# Example usage:
+data = [64, 34, 25, 12, 22, 11, 90]
+print(bubble_sort(data))  # Output: [11, 12, 22, 25, 34, 64, 90]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">How many passes and comparisons does Bubble Sort need for a list of 6 elements in the worst case?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> For n = 6 elements:
+Number of passes = n - 1 = 5
+Number of comparisons = n(n-1)/2 = 6 × 5 / 2 = 15
+Pass 1: 5 comparisons, Pass 2: 4 comparisons, Pass 3: 3 comparisons, Pass 4: 2 comparisons, Pass 5: 1 comparison. Total = 5 + 4 + 3 + 2 + 1 = 15.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Explain Selection Sort with an example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Selection Sort works by repeatedly finding the minimum element from the unsorted portion and placing it at the beginning.
+
+Algorithm:
+1. Find the minimum element in the unsorted part of the array.
+2. Swap it with the first element of the unsorted part.
+3. Move the boundary between sorted and unsorted parts one element to the right.
+4. Repeat until the entire array is sorted.
+
+Example: Sort [29, 10, 14, 37, 13]
+Pass 1: Min = 10 (index 1), swap with index 0 → [10, 29, 14, 37, 13]
+Pass 2: Min = 13 (index 4), swap with index 1 → [10, 13, 14, 37, 29]
+Pass 3: Min = 14 (index 2), already in place → [10, 13, 14, 37, 29]
+Pass 4: Min = 29 (index 4), swap with index 3 → [10, 13, 14, 29, 37]
+Sorted list: [10, 13, 14, 29, 37]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python function to implement Selection Sort.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def selection_sort(a):
+    n = len(a)
+    for i in range(n - 1):
+        min_idx = i
+        for j in range(i + 1, n):
+            if a[j] &lt; a[min_idx]:
+                min_idx = j
+        if min_idx != i:
+            a[i], a[min_idx] = a[min_idx], a[i]
+    return a
+
+# Example usage:
+data = [64, 25, 12, 22, 11]
+print(selection_sort(data))  # Output: [11, 12, 22, 25, 64]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Explain Insertion Sort with a suitable example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Insertion Sort builds the sorted array one element at a time by picking each element and inserting it into its correct position in the sorted portion.
+
+Algorithm:
+1. Start from the second element (index 1). The first element is considered sorted.
+2. Pick the current element as the 'key'.
+3. Compare the key with elements in the sorted portion from right to left.
+4. Shift elements greater than the key one position to the right.
+5. Insert the key at the correct position.
+6. Repeat for all elements.
+
+Example: Sort [7, 4, 5, 2]
+Pass 1: key=4, compare with 7, shift 7 right → [4, 7, 5, 2]
+Pass 2: key=5, compare with 7 (shift), compare with 4 (stop) → [4, 5, 7, 2]
+Pass 3: key=2, compare with 7 (shift), 5 (shift), 4 (shift) → [2, 4, 5, 7]
+Sorted list: [2, 4, 5, 7]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python function to implement Insertion Sort.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def insertion_sort(a):
+    n = len(a)
+    for i in range(1, n):
+        key = a[i]
+        j = i - 1
+        while j &gt;= 0 and a[j] &gt; key:
+            a[j + 1] = a[j]
+            j -= 1
+        a[j + 1] = key
+    return a
+
+# Example usage:
+data = [12, 11, 13, 5, 6]
+print(insertion_sort(data))  # Output: [5, 6, 11, 12, 13]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Compare Bubble Sort, Selection Sort, and Insertion Sort in terms of time complexity, space complexity, and stability.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Comparison Table:
+
+| Property         | Bubble Sort | Selection Sort | Insertion Sort |
+|-----------------|-------------|----------------|----------------|
+| Best Case       | O(n)        | O(n^2)         | O(n)           |
+| Average Case    | O(n^2)      | O(n^2)         | O(n^2)         |
+| Worst Case      | O(n^2)      | O(n^2)         | O(n^2)         |
+| Space           | O(1)        | O(1)           | O(1)           |
+| Stable          | Yes         | No             | Yes            |
+| In-place        | Yes         | Yes            | Yes            |
+| Swaps (worst)   | O(n^2)      | O(n)           | O(n^2) shifts  |
+
+Key observations:
+- All three have O(n^2) worst-case time complexity.
+- Bubble Sort and Insertion Sort are adaptive (best case O(n) for sorted input).
+- Selection Sort always does O(n^2) comparisons but minimal swaps.
+- Insertion Sort is preferred for small or nearly sorted datasets.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is Big-O notation? List common time complexities in increasing order.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Big-O notation describes the upper bound of an algorithm's growth rate as a function of input size n. It represents the worst-case scenario of how execution time or space requirements grow.
+
+Common time complexities in increasing order:
+O(1) — Constant time
+O(log n) — Logarithmic time
+O(n) — Linear time
+O(n log n) — Linearithmic time
+O(n^2) — Quadratic time
+O(n^3) — Cubic time
+O(2^n) — Exponential time
+O(n!) — Factorial time</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 6: Searching</span>
+<span class="qb-ch-count">10 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 6.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is searching? Explain the need for searching in computer science.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Searching is the process of finding a particular element (search key) in a collection of data. The need for searching arises because: (1) Data retrieval — locating specific records in databases. (2) Existence verification — checking whether an element exists in a collection. (3) Decision making — many algorithms depend on search as a sub-routine. (4) Real-world applications — search engines, contact lookup, dictionary word lookup, etc.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python function for Linear Search and trace it for the list [4, 9, 2, 7, 3] with search key 7.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def linear_search(a, key):
+    for i in range(len(a)):
+        if a[i] == key:
+            return i
+    return -1
+
+Trace for a = [4, 9, 2, 7, 3], key = 7:
+Step 1: i=0, a[0]=4, 4 != 7, continue
+Step 2: i=1, a[1]=9, 9 != 7, continue
+Step 3: i=2, a[2]=2, 2 != 7, continue
+Step 4: i=3, a[3]=7, 7 == 7, return 3
+
+Result: Element 7 found at index 3. Number of comparisons = 4.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Explain Binary Search algorithm with a suitable example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Binary Search works on sorted lists by repeatedly dividing the search range in half.
+
+Algorithm:
+1. Set low = 0, high = n - 1.
+2. Find mid = (low + high) // 2.
+3. If a[mid] == key, return mid (element found).
+4. If key &lt; a[mid], set high = mid - 1 (search left half).
+5. If key &gt; a[mid], set low = mid + 1 (search right half).
+6. Repeat steps 2-5 while low &lt;= high.
+7. If low &gt; high, return -1 (element not found).
+
+Example: Search for 23 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+Step 1: low=0, high=9, mid=4, a[4]=16, 23 &gt; 16 → low=5
+Step 2: low=5, high=9, mid=7, a[7]=56, 23 &lt; 56 → high=6
+Step 3: low=5, high=6, mid=5, a[5]=23, 23 == 23 → Found at index 5!
+
+Only 3 comparisons needed instead of 6 (Linear Search).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python function for Binary Search (iterative version).</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def binary_search(a, key):
+    low = 0
+    high = len(a) - 1
+    while low &lt;= high:
+        mid = (low + high) // 2
+        if a[mid] == key:
+            return mid
+        elif key &lt; a[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return -1
+
+# Example usage:
+data = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+result = binary_search(data, 23)
+if result != -1:
+    print(f'Element found at index {result}')  # Output: Element found at index 5
+else:
+    print('Element not found')</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Compare Linear Search and Binary Search.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Comparison of Linear Search and Binary Search:
+
+| Feature          | Linear Search      | Binary Search        |
+|-----------------|--------------------|----------------------|
+| Data requirement | Unsorted or sorted | Must be sorted       |
+| Approach         | Sequential         | Divide and Conquer   |
+| Best Case        | O(1)              | O(1)                 |
+| Worst Case       | O(n)              | O(log n)             |
+| Average Case     | O(n)              | O(log n)             |
+| Space            | O(1)              | O(1) iterative       |
+| Simplicity       | Very simple        | Slightly complex     |
+| Use case         | Small/unsorted     | Large sorted data    |
+
+For n = 1024, Linear Search may need 1024 comparisons, while Binary Search needs at most 11 comparisons (log2(1024) + 1 = 11).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What is hashing? Explain hash function and collision.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Hashing is a technique that maps keys to positions in a hash table using a hash function, enabling near-constant time O(1) search.
+
+Hash Function: A hash function takes a key and computes an index in the hash table. Example: h(key) = key % table_size. For table_size = 10: h(25) = 25 % 10 = 5, h(37) = 37 % 10 = 7.
+
+Collision: A collision occurs when two different keys produce the same hash value. Example: h(25) = 25 % 10 = 5 and h(35) = 35 % 10 = 5. Both keys map to index 5.
+
+Collision Resolution:
+1. Chaining: Each index stores a list of all elements that hash to it.
+2. Linear Probing: If index i is occupied, try i+1, i+2, ... until an empty slot is found.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What will be the maximum number of comparisons required to search for an element in a sorted list of 1024 elements using Binary Search?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Maximum comparisons = floor(log2(n)) + 1 = floor(log2(1024)) + 1 = 10 + 1 = 11 comparisons. This is because Binary Search halves the search space at each step: 1024 → 512 → 256 → 128 → 64 → 32 → 16 → 8 → 4 → 2 → 1 (11 steps).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Why can Binary Search not be applied to unsorted lists?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Binary Search relies on the fact that the list is sorted to decide which half to discard. When a[mid] &lt; key, Binary Search assumes all elements in the left half are smaller than key (due to sorting) and searches the right half. If the list is unsorted, this assumption is invalid — the key could be anywhere. Thus, eliminating half the list would potentially skip the element being searched for, leading to incorrect results.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a recursive Python function for Binary Search.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def binary_search_rec(a, key, low, high):
+    if low &gt; high:
+        return -1
+    mid = (low + high) // 2
+    if a[mid] == key:
+        return mid
+    elif key &lt; a[mid]:
+        return binary_search_rec(a, key, low, mid - 1)
+    else:
+        return binary_search_rec(a, key, mid + 1, high)
+
+# Example usage:
+data = [1, 3, 5, 7, 9, 11, 13, 15]
+result = binary_search_rec(data, 7, 0, len(data) - 1)
+print(f'Element found at index {result}')  # Output: Element found at index 3</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">A hash table of size 10 uses the hash function h(key) = key % 10. Insert the keys 31, 22, 43, 14, 52, 41 and show the hash table using linear probing.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Hash function: h(key) = key % 10, table size = 10
+
+Inserting keys:
+1. h(31) = 31 % 10 = 1 → Place 31 at index 1
+2. h(22) = 22 % 10 = 2 → Place 22 at index 2
+3. h(43) = 43 % 10 = 3 → Place 43 at index 3
+4. h(14) = 14 % 10 = 4 → Place 14 at index 4
+5. h(52) = 52 % 10 = 2 → Collision! Index 2 occupied. Try 3 → occupied. Try 4 → occupied. Try 5 → empty. Place 52 at index 5.
+6. h(41) = 41 % 10 = 1 → Collision! Index 1 occupied. Try 2 → occupied. Try 3 → occupied. Try 4 → occupied. Try 5 → occupied. Try 6 → empty. Place 41 at index 6.
+
+Final Hash Table:
+Index: 0    1    2    3    4    5    6    7    8    9
+Value: --   31   22   43   14   52   41   --   --   --</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 7: Understanding Data</span>
+<span class="qb-ch-count">10 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 7.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between data and information with examples.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Data is a collection of raw, unprocessed facts without context. Example: 36.6, 37.1, 38.2, 36.8 are just numbers (data). Information is processed data that has meaning and context. Example: 'The average body temperature of 4 patients is 37.175°C, and one patient has a fever (38.2°C)' is information derived from the same data. Data becomes information when it is processed, organized, and given context.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between primary data and secondary data?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Primary data is collected directly by the researcher for a specific purpose through surveys, experiments, or observations. It is original, current, and specific to the research need. Example: conducting a survey of students' study habits.
+
+Secondary data is data already collected by someone else for a different purpose. It is readily available and less expensive to obtain. Example: using Census data from the government.
+
+Key differences: Primary data is original and specific; secondary data is pre-existing and may not perfectly fit the current need.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Calculate the mean, median, and mode for the data: 5, 8, 3, 7, 5, 9, 5, 2, 8, 6.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Given data: 5, 8, 3, 7, 5, 9, 5, 2, 8, 6
+Sorted data: 2, 3, 5, 5, 5, 6, 7, 8, 8, 9
+n = 10
+
+Mean = (2 + 3 + 5 + 5 + 5 + 6 + 7 + 8 + 8 + 9) / 10 = 58 / 10 = 5.8
+
+Median: Since n = 10 (even), median = (5th value + 6th value) / 2 = (5 + 6) / 2 = 5.5
+
+Mode: The value that occurs most frequently. 5 occurs 3 times (most frequent). Mode = 5.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Calculate the variance and standard deviation for the data: 4, 8, 6, 5, 3.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Given data: 4, 8, 6, 5, 3
+n = 5
+
+Step 1: Calculate mean
+Mean = (4 + 8 + 6 + 5 + 3) / 5 = 26 / 5 = 5.2
+
+Step 2: Calculate squared deviations from mean
+(4 - 5.2)^2 = (-1.2)^2 = 1.44
+(8 - 5.2)^2 = (2.8)^2 = 7.84
+(6 - 5.2)^2 = (0.8)^2 = 0.64
+(5 - 5.2)^2 = (-0.2)^2 = 0.04
+(3 - 5.2)^2 = (-2.2)^2 = 4.84
+
+Step 3: Calculate variance
+Variance = (1.44 + 7.84 + 0.64 + 0.04 + 4.84) / 5 = 14.8 / 5 = 2.96
+
+Step 4: Calculate standard deviation
+Standard Deviation = sqrt(2.96) = 1.72 (approximately)
+
+The variance is 2.96 and standard deviation is approximately 1.72.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is meant by data cleaning? Why is it important?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Data cleaning is the process of identifying and correcting errors, inconsistencies, missing values, and duplicates in a dataset. It includes: (1) Removing duplicate entries, (2) Handling missing values (by deletion or imputation), (3) Correcting data entry errors, (4) Standardizing formats.
+
+It is important because: (1) Dirty data leads to incorrect analysis and wrong conclusions (Garbage In, Garbage Out). (2) Clean data ensures reliable and accurate results. (3) It improves the quality of decision making.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between variance and standard deviation.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Variance is the average of the squared deviations from the mean. It measures spread but in squared units. Formula: σ² = Σ(xi - x̄)² / n.
+
+Standard Deviation is the square root of variance. It measures spread in the same units as the original data. Formula: σ = √(σ²).
+
+Key differences: (1) Variance is in squared units; standard deviation is in original units. (2) Standard deviation is easier to interpret because it is in the same scale as the data. (3) Both measure dispersion — a small value means data is clustered around the mean.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">When is median preferred over mean as a measure of central tendency?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Median is preferred over mean when: (1) The data contains outliers (extreme values) — mean is sensitive to outliers, median is not. Example: Salaries [20K, 25K, 22K, 24K, 500K] — mean = 118.2K (skewed by 500K), median = 24K (better representation). (2) The data is skewed (not symmetric). (3) The data is ordinal (ranked). (4) There are open-ended class intervals in grouped data.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What are the different types of data visualization? When should each be used?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Types of data visualization:
+
+1. Bar Chart: Displays categorical data with rectangular bars. Height/length represents frequency. Use for comparing quantities across categories.
+
+2. Histogram: Similar to bar chart but for continuous data grouped into intervals (bins). Bars are adjacent (no gaps). Use for showing frequency distribution.
+
+3. Pie Chart: Circular chart divided into slices representing proportions. Use for showing parts of a whole (percentages).
+
+4. Line Graph: Points connected by lines showing data trends over time. Use for showing trends, changes over time.
+
+5. Scatter Plot: Points plotted on x-y axes showing relationship between two variables. Use for showing correlation or relationship between two numerical variables.
+
+6. Box Plot: Shows the distribution of data based on quartiles (minimum, Q1, median, Q3, maximum). Use for comparing distributions and identifying outliers.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write a Python program to calculate mean, median, and mode of a list of numbers.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> import statistics
+
+def calculate_stats(data):
+    # Mean
+    mean = sum(data) / len(data)
+    print(f'Mean = {mean}')
+    
+    # Median
+    sorted_data = sorted(data)
+    n = len(sorted_data)
+    if n % 2 == 1:
+        median = sorted_data[n // 2]
+    else:
+        median = (sorted_data[n // 2 - 1] + sorted_data[n // 2]) / 2
+    print(f'Median = {median}')
+    
+    # Mode
+    freq = {}
+    for val in data:
+        freq[val] = freq.get(val, 0) + 1
+    max_freq = max(freq.values())
+    mode = [k for k, v in freq.items() if v == max_freq]
+    print(f'Mode = {mode}')
+
+# Example
+data = [5, 8, 3, 7, 5, 9, 5, 2, 8, 6]
+calculate_stats(data)
+# Output: Mean = 5.8, Median = 5.5, Mode = [5]
+
+# Using statistics module:
+print(statistics.mean(data))    # 5.8
+print(statistics.median(data))  # 5.5
+print(statistics.mode(data))    # 5</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Explain the terms: structured data, unstructured data, and semi-structured data with examples.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Structured Data: Organized in a predefined format with rows and columns. Easy to search and analyze. Examples: relational databases, spreadsheets, CSV files.
+
+Unstructured Data: No predefined format or schema. Difficult to search and analyze directly. Examples: text documents, emails, images, videos, social media posts.
+
+Semi-structured Data: Has some organizational properties (tags, markers) but does not follow a rigid table structure. Examples: JSON files, XML files, HTML pages, emails with headers.</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 8: Database Concepts</span>
+<span class="qb-ch-count">10 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 8.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a database? Give examples.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A database is an organized collection of structured, related data stored electronically so that it can be easily accessed, managed, and updated. Examples: (1) School database — stores student details, marks, attendance. (2) Bank database — stores account details, transactions. (3) Railway reservation system — stores train schedules, passenger bookings. (4) Library database — stores book details, member information, issue/return records.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What are the limitations of a file system that led to the development of DBMS?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Limitations of the file system:
+
+1. Data Redundancy: Same data stored in multiple files leads to wastage of storage and inconsistency.
+2. Data Inconsistency: When redundant data is updated in one file but not in others, conflicting information arises.
+3. Difficulty in Accessing Data: Retrieving specific data requires writing new programs each time; no standard query language.
+4. Data Isolation: Data scattered in various files with different formats makes it hard to combine and access related data.
+5. Integrity Problems: Enforcing consistency constraints (e.g., marks between 0-100) is difficult across multiple files.
+6. Security Issues: File systems lack fine-grained access control; it is hard to restrict specific data from certain users.
+7. Concurrent Access Problems: Multiple users accessing the same file simultaneously can lead to data corruption.
+8. No Backup and Recovery: File systems lack automatic backup and recovery mechanisms.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Explain the terms: Relation, Attribute, Tuple, Domain, Degree, and Cardinality with reference to a relational database.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Consider the STUDENT table:
+| RollNo | Name   | Class | Marks |
+|--------|--------|-------|-------|
+| 1      | Aman   | XII   | 85    |
+| 2      | Priya  | XII   | 92    |
+| 3      | Rahul  | XII   | 78    |
+
+1. Relation: A table in the database. STUDENT is a relation.
+2. Attribute: A column in the table representing a property. RollNo, Name, Class, Marks are attributes.
+3. Tuple: A row in the table representing one record. (1, Aman, XII, 85) is a tuple.
+4. Domain: Set of permissible values for an attribute. Domain of Marks = {0 to 100}.
+5. Degree: Number of attributes (columns). Degree of STUDENT = 4.
+6. Cardinality: Number of tuples (rows). Cardinality of STUDENT = 3.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between Candidate Key and Primary Key.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Candidate Key: A minimal set of attributes that can uniquely identify each tuple. A relation can have multiple candidate keys. Example: In STUDENT(RollNo, AdmNo, Name), both RollNo and AdmNo are candidate keys.
+
+Primary Key: The candidate key selected by the designer to uniquely identify tuples. Only one per relation. Cannot contain NULL values.
+
+Difference: All primary keys are candidate keys, but not all candidate keys are primary keys. The chosen candidate key becomes the primary key; the rest become alternate keys.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What is a Foreign Key? Explain with an example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A foreign key is an attribute in one relation that references the primary key of another relation. It establishes a relationship between two tables and enforces referential integrity.
+
+Example:
+STUDENT table:
+| RollNo (PK) | Name  | Class |
+|-------------|-------|-------|
+| 1           | Aman  | XII   |
+| 2           | Priya | XII   |
+
+RESULT table:
+| RollNo (FK) | Subject | Marks |
+|-------------|---------|-------|
+| 1           | Maths   | 85    |
+| 1           | Physics | 78    |
+| 2           | Maths   | 92    |
+
+Here, RollNo in RESULT is a foreign key that references RollNo (primary key) in STUDENT. This means: (1) Every RollNo in RESULT must exist in STUDENT. (2) You cannot insert RollNo=5 in RESULT if RollNo=5 does not exist in STUDENT. (3) You cannot delete RollNo=1 from STUDENT if it is referenced in RESULT.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">A relation EMPLOYEE has attributes EmpNo, AadhaarNo, Name, Dept, and Salary. Identify candidate keys, primary key, and alternate key.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Candidate Keys: EmpNo and AadhaarNo — both can uniquely identify each employee.
+
+Primary Key: EmpNo (chosen as the primary key since employee numbers are typically used for internal identification).
+
+Alternate Key: AadhaarNo (candidate key not chosen as primary key).
+
+Note: Name cannot be a candidate key because multiple employees may have the same name. Dept and Salary are also not unique.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What are the advantages of DBMS over the file system?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Advantages of DBMS over the file system:
+
+1. Reduced Data Redundancy: DBMS uses normalization to minimize duplicate data, saving storage.
+2. Data Consistency: Since data is stored centrally with minimal redundancy, updates are reflected everywhere.
+3. Data Sharing: Multiple users can access the same database concurrently.
+4. Data Security: DBMS provides access control — different users can have different privileges.
+5. Data Integrity: Constraints (primary key, foreign key, check) ensure data accuracy and validity.
+6. Data Independence: Changes in storage or structure do not affect applications.
+7. Efficient Data Access: DBMS uses indexes and query optimization for fast data retrieval.
+8. Backup and Recovery: DBMS provides automatic backup and recovery mechanisms to prevent data loss.
+9. Standard Query Language: SQL provides a standardized way to query and manipulate data.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is referential integrity? Why is it important?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Referential integrity is a constraint that ensures every foreign key value in a table must either match an existing primary key value in the referenced table, or be NULL.
+
+Importance: (1) Prevents orphan records — a RESULT record cannot reference a student that does not exist. (2) Maintains data consistency across related tables. (3) Ensures valid relationships between tables. (4) Prevents accidental deletion of records that are still referenced by other tables.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a composite key? Give an example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A composite key is a primary key (or candidate key) that consists of two or more attributes which together uniquely identify each tuple, even though individually they may not.
+
+Example: In the ENROLLMENT table:
+| StudentID | CourseID | EnrollDate |
+|-----------|----------|------------|
+| 101       | CS101    | 2024-01-15 |
+| 101       | MA201    | 2024-01-16 |
+| 102       | CS101    | 2024-01-15 |
+
+Neither StudentID nor CourseID alone is unique. But the combination (StudentID, CourseID) uniquely identifies each enrollment. So (StudentID, CourseID) is a composite key.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Explain the three levels of data abstraction.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Three levels of data abstraction:
+
+1. Physical Level (Internal): Describes HOW data is physically stored on disk — file structures, indexes, storage allocation. Managed by the DBA.
+
+2. Logical Level (Conceptual): Describes WHAT data is stored and the relationships between data. Defines tables, attributes, constraints. Designed by database designers.
+
+3. View Level (External): Describes the part of the database that is relevant to a particular user. Different users see different views. Provides security by hiding irrelevant data.
+
+Example: A university database — Physical level: data stored in specific files. Logical level: STUDENT, COURSE, ENROLLMENT tables. View level: a teacher sees only marks for their subject; a student sees only their own records.</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 9: Structured Query Language (SQL)</span>
+<span class="qb-ch-count">16 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 9.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is SQL? What are its advantages?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> SQL (Structured Query Language) is a standard programming language used to manage and manipulate relational databases.
+
+Advantages of SQL:
+1. Simple and easy to learn — uses English-like syntax.
+2. Non-procedural — specify what data you want, not how to get it.
+3. Standardized — ANSI/ISO standard, works across different RDBMS.
+4. Can handle complex queries — supports joins, sub-queries, grouping.
+5. Supports data definition and data manipulation in one language.
+6. Widely used in industry and education.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between DDL and DML commands with examples.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> DDL (Data Definition Language) defines the structure of database objects.
+Commands: CREATE, ALTER, DROP
+Example: CREATE TABLE student (RollNo INT PRIMARY KEY, Name VARCHAR(30));
+
+DML (Data Manipulation Language) manipulates the data within tables.
+Commands: INSERT, UPDATE, DELETE, SELECT
+Example: INSERT INTO student VALUES (1, 'Aman');
+
+Key difference: DDL changes structure (schema); DML changes data (content). DDL commands auto-commit; DML commands can be rolled back.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between CHAR and VARCHAR data types.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> CHAR(n): Fixed-length string. Always uses n bytes regardless of actual string length. Shorter strings are padded with spaces. Faster for fixed-length data. Example: CHAR(10) storing 'ABC' uses 10 bytes.
+
+VARCHAR(n): Variable-length string. Uses only as much space as needed (plus 1-2 bytes overhead). More storage-efficient for varying-length data. Example: VARCHAR(10) storing 'ABC' uses 4-5 bytes.
+
+Use CHAR for fixed-length data (e.g., PIN codes, gender). Use VARCHAR for variable-length data (e.g., names, addresses).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL commands to: (a) Create a database named SCHOOL. (b) Create a table STUDENT with columns RollNo (int, primary key), Name (varchar 30, not null), Class (varchar 5), Marks (float, default 0). (c) Display the structure of the table.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) CREATE DATABASE SCHOOL;
+    USE SCHOOL;
+
+(b) CREATE TABLE STUDENT (
+        RollNo INT PRIMARY KEY,
+        Name VARCHAR(30) NOT NULL,
+        Class VARCHAR(5),
+        Marks FLOAT DEFAULT 0
+    );
+
+(c) DESCRIBE STUDENT;
+    -- or --
+    DESC STUDENT;
+
+This will display:
+| Field  | Type        | Null | Key | Default | Extra |
+|--------|-------------|------|-----|---------|-------|
+| RollNo | int         | NO   | PRI | NULL    |       |
+| Name   | varchar(30) | NO   |     | NULL    |       |
+| Class  | varchar(5)  | YES  |     | NULL    |       |
+| Marks  | float       | YES  |     | 0       |       |</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL commands to insert the following data into the STUDENT table: (1, 'Aman', 'XII', 85), (2, 'Priya', 'XII', 92), (3, 'Rahul', 'XI', 78), (4, 'Sneha', 'XII', 88), (5, 'Karan', 'XI', 65).</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> INSERT INTO STUDENT VALUES (1, 'Aman', 'XII', 85);
+INSERT INTO STUDENT VALUES (2, 'Priya', 'XII', 92);
+INSERT INTO STUDENT VALUES (3, 'Rahul', 'XI', 78);
+INSERT INTO STUDENT VALUES (4, 'Sneha', 'XII', 88);
+INSERT INTO STUDENT VALUES (5, 'Karan', 'XI', 65);
+
+Alternatively, in MySQL you can insert multiple rows:
+INSERT INTO STUDENT VALUES
+    (1, 'Aman', 'XII', 85),
+    (2, 'Priya', 'XII', 92),
+    (3, 'Rahul', 'XI', 78),
+    (4, 'Sneha', 'XII', 88),
+    (5, 'Karan', 'XI', 65);</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL queries for the following based on the STUDENT table: (a) Display all records. (b) Display names of students in class XII. (c) Display students with marks greater than 80. (d) Display students in class XII with marks between 80 and 95.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) SELECT * FROM STUDENT;
+
+(b) SELECT Name FROM STUDENT WHERE Class = 'XII';
+    Output: Aman, Priya, Sneha
+
+(c) SELECT * FROM STUDENT WHERE Marks &gt; 80;
+    Output: Aman (85), Priya (92), Sneha (88)
+
+(d) SELECT * FROM STUDENT WHERE Class = 'XII' AND Marks BETWEEN 80 AND 95;
+    Output: Aman (85), Priya (92), Sneha (88)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL queries using LIKE, IN, ORDER BY, and DISTINCT on the STUDENT table.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> -- LIKE: Students whose name starts with 'A'
+SELECT * FROM STUDENT WHERE Name LIKE 'A%';
+-- Output: Aman
+
+-- LIKE: Students whose name has 'a' as the second character
+SELECT * FROM STUDENT WHERE Name LIKE '_a%';
+-- Output: Karan, Rahul
+
+-- IN: Students in class XI or XII
+SELECT * FROM STUDENT WHERE Class IN ('XI', 'XII');
+-- Output: All 5 students
+
+-- ORDER BY: Students sorted by marks in descending order
+SELECT * FROM STUDENT ORDER BY Marks DESC;
+-- Output: Priya(92), Sneha(88), Aman(85), Rahul(78), Karan(65)
+
+-- DISTINCT: Unique classes
+SELECT DISTINCT Class FROM STUDENT;
+-- Output: XII, XI</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL queries to: (a) Count total students. (b) Find average marks. (c) Find highest and lowest marks. (d) Find total marks of all students.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) SELECT COUNT(*) AS TotalStudents FROM STUDENT;
+    Output: 5
+
+(b) SELECT AVG(Marks) AS AverageMarks FROM STUDENT;
+    Output: 81.6
+
+(c) SELECT MAX(Marks) AS Highest, MIN(Marks) AS Lowest FROM STUDENT;
+    Output: Highest = 92, Lowest = 65
+
+(d) SELECT SUM(Marks) AS TotalMarks FROM STUDENT;
+    Output: 408</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL queries using GROUP BY and HAVING: (a) Count students in each class. (b) Find average marks per class. (c) Display classes where average marks exceed 80.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) SELECT Class, COUNT(*) AS StudentCount FROM STUDENT GROUP BY Class;
+    Output:
+    | Class | StudentCount |
+    |-------|--------------|
+    | XI    | 2            |
+    | XII   | 3            |
+
+(b) SELECT Class, AVG(Marks) AS AvgMarks FROM STUDENT GROUP BY Class;
+    Output:
+    | Class | AvgMarks |
+    |-------|----------|
+    | XI    | 71.5     |
+    | XII   | 88.33    |
+
+(c) SELECT Class, AVG(Marks) AS AvgMarks FROM STUDENT GROUP BY Class HAVING AVG(Marks) &gt; 80;
+    Output:
+    | Class | AvgMarks |
+    |-------|----------|
+    | XII   | 88.33    |</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL commands to: (a) Update marks of RollNo 5 to 70. (b) Add 5 marks to all students in class XI. (c) Delete the record of RollNo 3. (d) Add a new column Email (VARCHAR 40) to the table.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) UPDATE STUDENT SET Marks = 70 WHERE RollNo = 5;
+
+(b) UPDATE STUDENT SET Marks = Marks + 5 WHERE Class = 'XI';
+
+(c) DELETE FROM STUDENT WHERE RollNo = 3;
+
+(d) ALTER TABLE STUDENT ADD COLUMN Email VARCHAR(40);</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Explain the difference between WHERE and HAVING clauses.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> WHERE clause:
+- Filters individual rows before grouping.
+- Cannot use aggregate functions.
+- Applied before GROUP BY.
+- Example: SELECT * FROM STUDENT WHERE Marks &gt; 80;
+
+HAVING clause:
+- Filters groups after GROUP BY.
+- Can use aggregate functions.
+- Applied after GROUP BY.
+- Example: SELECT Class, AVG(Marks) FROM STUDENT GROUP BY Class HAVING AVG(Marks) &gt; 80;
+
+Key difference: WHERE works on rows; HAVING works on groups. WHERE cannot contain aggregate functions; HAVING can.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Write SQL queries using string functions: (a) Display names in uppercase. (b) Display first 3 characters of each name. (c) Display the length of each name. (d) Display names and their reverse.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) SELECT UPPER(Name) AS UpperName FROM STUDENT;
+    Output: AMAN, PRIYA, RAHUL, SNEHA, KARAN
+
+(b) SELECT LEFT(Name, 3) AS ShortName FROM STUDENT;
+    -- or: SELECT MID(Name, 1, 3) AS ShortName FROM STUDENT;
+    Output: Ama, Pri, Rah, Sne, Kar
+
+(c) SELECT Name, LENGTH(Name) AS NameLength FROM STUDENT;
+    Output: Aman-4, Priya-5, Rahul-5, Sneha-5, Karan-5
+
+(d) SELECT Name, REVERSE(Name) AS ReverseName FROM STUDENT;
+    Output: Aman-namA, Priya-ayirP, Rahul-luhaR, Sneha-ahenS, Karan-naraK</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q13</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Consider two tables: STUDENT(RollNo, Name, Class) and RESULT(RollNo, Subject, Marks). Write SQL queries to: (a) Display the Cartesian product. (b) Display names and marks using equi-join. (c) Display names of students who scored more than 90 in any subject.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Cartesian Product:
+SELECT * FROM STUDENT, RESULT;
+-- This produces every combination of rows from both tables.
+-- If STUDENT has 5 rows and RESULT has 10 rows, result has 50 rows.
+
+(b) Equi-Join to display names with marks:
+SELECT STUDENT.Name, RESULT.Subject, RESULT.Marks
+FROM STUDENT, RESULT
+WHERE STUDENT.RollNo = RESULT.RollNo;
+
+-- Or using JOIN syntax:
+SELECT S.Name, R.Subject, R.Marks
+FROM STUDENT S
+JOIN RESULT R ON S.RollNo = R.RollNo;
+
+(c) Names of students scoring more than 90:
+SELECT DISTINCT STUDENT.Name
+FROM STUDENT, RESULT
+WHERE STUDENT.RollNo = RESULT.RollNo
+AND RESULT.Marks &gt; 90;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q14</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between UNION and Cartesian Product?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> UNION combines rows from two SELECT statements vertically (stacks results). Both queries must have the same number of columns with compatible types. Duplicate rows are removed.
+Example: SELECT City FROM customer UNION SELECT City FROM supplier;
+
+Cartesian Product combines rows from two tables horizontally (every combination). If table A has m rows and table B has n rows, the result has m × n rows with all columns from both tables.
+Example: SELECT * FROM student, result; (without WHERE)
+
+Key difference: UNION adds rows from two queries; Cartesian product multiplies rows from two tables.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q15</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a sub-query? Write an SQL query to find the name of the student with the highest marks using a sub-query.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A sub-query (or nested query) is a SELECT query inside another SQL statement. The inner query executes first and its result is used by the outer query.
+
+Query to find the student with the highest marks:
+SELECT Name, Marks FROM STUDENT
+WHERE Marks = (SELECT MAX(Marks) FROM STUDENT);
+
+Explanation: The inner query (SELECT MAX(Marks) FROM STUDENT) returns 92. The outer query then finds the student whose marks equal 92, returning 'Priya'.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q16</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Write the general syntax and order of clauses in a SELECT statement.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> General syntax with order of clauses:
+
+SELECT [DISTINCT] column1, column2, aggregate_function(column)
+FROM table1 [, table2]
+[WHERE condition]
+[GROUP BY column1, column2]
+[HAVING group_condition]
+[ORDER BY column1 [ASC|DESC]]
+[LIMIT n];
+
+Order of execution:
+1. FROM — identifies the tables
+2. WHERE — filters individual rows
+3. GROUP BY — groups rows
+4. HAVING — filters groups
+5. SELECT — selects columns and computes expressions
+6. DISTINCT — removes duplicates
+7. ORDER BY — sorts the result
+8. LIMIT — limits output rows</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 10: Computer Networks</span>
+<span class="qb-ch-count">12 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 10.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a computer network?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A computer network is an interconnection of computers and other devices that can communicate with each other and share hardware, software, and data resources.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What are the advantages of computer networks?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Advantages of computer networks include: (1) Resource Sharing — hardware (printers, scanners) and software can be shared among users, reducing costs. (2) Data Sharing — files and databases can be accessed by multiple users simultaneously. (3) Communication — email, video conferencing, and instant messaging enable fast communication. (4) Internet Access Sharing — a single internet connection can be shared among multiple devices. (5) Centralized Management — data can be stored and managed centrally, making backup and security easier. (6) Reliability — data can be replicated across multiple machines for backup.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What was ARPANET? When was it developed?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> ARPANET (Advanced Research Projects Agency Network) was the first wide-area packet-switching network. It was developed in 1969 by the US Department of Defense (ARPA/DARPA). It initially connected four university nodes: UCLA, Stanford Research Institute, UC Santa Barbara, and University of Utah.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Differentiate between LAN, MAN, and WAN.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> LAN (Local Area Network): Covers a small area like a room, building, or campus (up to a few km). It offers high speed (10 Mbps to 1 Gbps+), is privately owned, and uses Ethernet/WiFi. Example: office network.
+
+MAN (Metropolitan Area Network): Covers a city or metropolitan area (5-50 km). It has moderate speed, may be public or private, and connects multiple LANs. Example: cable TV network.
+
+WAN (Wide Area Network): Covers large geographical areas like countries or the entire world. It has relatively lower speed, uses leased lines and satellites, and may be public or private. Example: the Internet.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between a hub and a switch?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A hub broadcasts incoming data packets to all connected devices regardless of the intended destination, operating at the Physical layer. A switch forwards data packets only to the intended destination device using MAC addresses, operating at the Data Link layer. A switch is more efficient, faster, and more secure than a hub.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between a switch and a router?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A switch connects devices within a single LAN and forwards data using MAC addresses (Data Link layer). A router connects different networks (LANs to WANs) and forwards data using IP addresses (Network layer). A router can determine the best path for data transmission across networks.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Compare bus, star, and mesh topologies.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Bus Topology: All devices connect to a single backbone cable. It is cheap and easy to install but the entire network fails if the backbone breaks. Performance degrades as more devices are added.
+
+Star Topology: All devices connect to a central hub/switch. It is easy to manage and add devices, failure of one node does not affect others, but if the central device fails the entire network goes down. It requires more cable.
+
+Mesh Topology: Every device connects to every other device. It is highly reliable with multiple paths and excellent fault tolerance, but it is very expensive and complex. Number of connections = n(n-1)/2.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between IPv4 and IPv6?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> IPv4 uses 32-bit addresses (4 octets in dotted decimal notation, e.g., 192.168.1.1) and supports about 4.3 billion addresses. IPv6 uses 128-bit addresses (8 groups of 4 hex digits, e.g., 2001:0db8::7334) and supports approximately 3.4 x 10^38 addresses. IPv6 was introduced to overcome the address exhaustion problem of IPv4.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is DNS? How does it work?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> DNS (Domain Name System) is a hierarchical naming system that translates human-readable domain names (e.g., www.google.com) into machine-readable IP addresses (e.g., 172.217.14.206). When a user types a URL in a browser, the browser contacts a DNS server which looks up the domain name and returns the corresponding IP address, allowing the browser to connect to the correct web server.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is IoT? Give examples.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> IoT (Internet of Things) is the network of physical objects embedded with sensors, software, and connectivity to collect and exchange data over the Internet. Examples include: smart home devices (smart lights, thermostat, security cameras), wearable health monitors (fitness trackers, smartwatches), smart agriculture sensors, traffic management systems, and industrial automation systems.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between MAC address and IP address?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> MAC address is a 48-bit hardware (physical) address permanently assigned to a NIC by the manufacturer; it cannot change and is written in hexadecimal (e.g., 00:1A:2B:3C:4D:5E). IP address is a logical address assigned by the network administrator or DHCP server; it can change when a device moves to a different network. MAC address works at the Data Link layer; IP address works at the Network layer.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a modem? Explain its working.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A modem (Modulator-Demodulator) is a device that enables computers to communicate over telephone lines. During modulation, it converts digital signals from the computer into analog signals suitable for transmission over telephone lines. During demodulation, it converts incoming analog signals back into digital form that the computer can understand.</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 11: Data Communication</span>
+<span class="qb-ch-count">11 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 11.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What are the basic components of data communication?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> The five basic components of data communication are: (1) Sender — the device that sends the message, (2) Receiver — the device that receives the message, (3) Message — the data or information being communicated, (4) Transmission Medium — the physical path between sender and receiver (wired or wireless), (5) Protocol — the set of rules governing the communication.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Differentiate between simplex, half-duplex, and full-duplex modes of communication.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Simplex: Communication is unidirectional (one-way only). Only one device transmits and the other receives. Example: TV broadcasting, radio, keyboard to CPU.
+
+Half-Duplex: Communication is bidirectional but not simultaneous. Only one device can transmit at a time. Example: walkie-talkie.
+
+Full-Duplex: Communication is bidirectional and simultaneous. Both devices can transmit and receive at the same time. Example: telephone conversation, video calling.
+
+Full-duplex is the most efficient mode as it allows simultaneous two-way communication.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is bandwidth? How is data transfer rate measured?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Bandwidth is the range of frequencies available for data transmission on a communication channel. It determines the maximum data transfer rate. Data transfer rate is the number of bits transmitted per second, measured in bps (bits per second). Higher units include Kbps (10^3 bps), Mbps (10^6 bps), Gbps (10^9 bps), and Tbps (10^12 bps).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Differentiate between circuit switching and packet switching.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Circuit Switching: A dedicated communication path is established before data transfer. The path remains reserved throughout the session. It is reliable with guaranteed bandwidth but wasteful if the channel is idle. Used in traditional telephone networks (PSTN). Data arrives in order.
+
+Packet Switching: Data is broken into smaller packets sent independently. Each packet may take a different route. No dedicated path is established. It is efficient as bandwidth is shared. Used in the Internet. Packets may arrive out of order and need reassembly. More suitable for bursty data traffic.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Compare twisted pair cable, coaxial cable, and fiber optic cable.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Twisted Pair Cable: Two insulated copper wires twisted together. Cheapest option. Susceptible to electromagnetic interference. Speed up to 1 Gbps. Range ~100m. Used in LANs and telephone lines. Uses RJ45 connector.
+
+Coaxial Cable: Central copper conductor with insulation and braided shield. Better shielding than twisted pair. Higher bandwidth. Used in cable TV networks. More expensive than twisted pair.
+
+Fiber Optic Cable: Glass/plastic strands transmitting light pulses. Highest bandwidth (up to Tbps). Immune to electromagnetic interference. Very long range with minimal signal loss. Most expensive. Used in backbone networks, undersea cables, and high-speed connections.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What are radio waves, microwaves, and infrared waves? Compare them.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Radio Waves (3 KHz-1 GHz): Omnidirectional, can penetrate walls, used in FM radio, TV broadcasting, and WiFi. Range varies from metres to kilometres.
+
+Microwaves (1 GHz-300 GHz): Unidirectional (straight line), require line-of-sight, used in satellite communication and long-distance telephone links. Repeaters needed every 25-30 km on earth.
+
+Infrared Waves (300 GHz-400 THz): Very short range, cannot penetrate walls, used in TV remotes and short-range device communication.
+
+Radio waves have the widest coverage but lower bandwidth. Microwaves offer higher bandwidth but need line-of-sight. Infrared is limited to short range and cannot pass through obstacles.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Explain the evolution of mobile telecommunication from 1G to 5G.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> 1G (1980s): First generation, used analog signals, supported voice calls only, poor quality, no data services.
+
+2G (1990s): Used digital signals, introduced SMS and MMS, speeds up to 64 Kbps, technologies: GSM, CDMA.
+
+3G (2000s): Enabled mobile internet, video calling, multimedia, speeds up to 2 Mbps, technologies: WCDMA, HSPA.
+
+4G (2010s): High-speed mobile broadband, HD streaming, VoIP, speeds up to 100 Mbps-1 Gbps, technology: LTE.
+
+5G (2020s): Ultra-high speed (up to 20 Gbps), ultra-low latency (1 ms), massive device connectivity, enables IoT, autonomous vehicles, and advanced applications.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between HTTP and HTTPS?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> HTTP (HyperText Transfer Protocol) transfers web pages in plain text without encryption, using port 80. HTTPS (HyperText Transfer Protocol Secure) is the secure version that uses SSL/TLS encryption to protect data during transmission, using port 443. HTTPS is used for sensitive operations like online banking, shopping, and login pages. HTTPS shows a padlock icon in the browser address bar.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between SMTP and POP3?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> SMTP (Simple Mail Transfer Protocol) is used for sending emails from a client to a mail server and between mail servers. It is a push protocol and uses port 25. POP3 (Post Office Protocol version 3) is used for receiving (downloading) emails from a mail server to a client. It downloads emails and typically deletes them from the server. It uses port 110. SMTP handles outgoing mail; POP3 handles incoming mail.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is VoIP?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> VoIP (Voice over Internet Protocol) is a technology that enables voice communication (phone calls) over the Internet instead of traditional telephone lines. It converts voice signals into digital data packets and transmits them over IP networks. Advantages include lower cost, multimedia support, and flexibility. Examples include Skype, WhatsApp calls, and Google Voice.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">How long will it take to transfer a 2 MB file over a 10 Mbps connection?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> File size = 2 MB = 2 x 8 = 16 Megabits = 16 x 10^6 bits. Data transfer rate = 10 Mbps = 10 x 10^6 bps. Time = File size / Data transfer rate = (16 x 10^6) / (10 x 10^6) = 1.6 seconds.</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 12: Security Aspects</span>
+<span class="qb-ch-count">11 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 12.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is malware? List the different types of malware.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Malware (malicious software) is any software intentionally designed to cause harm to computers, networks, or users. Types of malware include: (1) Virus — attaches to files and replicates when executed, (2) Worm — self-replicating, spreads automatically over networks, (3) Trojan Horse — disguised as useful software, (4) Spyware — secretly monitors user activity, (5) Adware — displays unwanted advertisements, (6) Ransomware — encrypts files and demands ransom payment.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What is the difference between a virus, worm, and trojan?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Virus: A malicious program that attaches itself to legitimate files. It requires human action (executing the infected file) to spread. It replicates by inserting its code into other programs.
+
+Worm: A standalone malicious program that replicates itself and spreads automatically across networks without needing a host file or human action. It exploits network vulnerabilities and consumes bandwidth.
+
+Trojan Horse: A malicious program disguised as useful or legitimate software. It does NOT replicate itself. It tricks users into installing it and then performs harmful actions like stealing data or creating backdoors.
+
+Key differences: Virus needs a host file and human action; Worm is standalone and automatic; Trojan disguises itself and does not replicate.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is phishing? How can you prevent it?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Phishing is a fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity through fake emails, websites, or messages. Prevention: (1) Verify the sender before clicking links, (2) Check URLs carefully for misspellings, (3) Never share passwords or personal information via email, (4) Look for HTTPS and padlock in browser, (5) Use spam filters, (6) Report suspicious emails.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between HTTP and HTTPS.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> HTTP (HyperText Transfer Protocol) sends data in plain text without encryption, uses port 80, and is vulnerable to eavesdropping. HTTPS (HyperText Transfer Protocol Secure) encrypts data using SSL/TLS before transmission, uses port 443, and shows a padlock icon in the browser. HTTPS should always be used for websites handling sensitive data like banking, shopping, and login credentials.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">What is a firewall? Explain the difference between hardware and software firewalls.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predefined security rules. It acts as a barrier between a trusted internal network and untrusted external networks.
+
+Hardware Firewall: A physical device placed between the network and its Internet connection. It protects all devices on the network. Often built into routers. Provides network-level protection and is harder to configure.
+
+Software Firewall: A program installed on an individual computer. It protects only that specific device. Examples: Windows Firewall, ZoneAlarm. Easier to configure but uses system resources.
+
+Best practice is to use both hardware and software firewalls for comprehensive protection.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What are cookies? What are the different types?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Cookies are small text files stored on a user's computer by websites to remember user information and preferences. Types: (1) Session Cookies — temporary, exist only during the browser session, deleted when browser closes. (2) Persistent Cookies — stored on disk, remain after browser closes, have an expiration date, used for remembering login and preferences. (3) Third-Party Cookies — set by external domains, used for tracking user behaviour across websites for advertising.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Differentiate between hackers and crackers.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Hackers are skilled computer experts who use their knowledge to explore and test computer systems. They can be ethical (white hat) or malicious (black hat). Ethical hackers work with permission to improve security. Crackers are individuals who break into computer systems with malicious intent to steal data, cause damage, or gain unauthorized access. Crackers always operate illegally and destructively, while hackers may work legally as security professionals.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a Denial of Service (DoS) attack?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A Denial of Service (DoS) attack floods a server or network with excessive traffic or requests, making it unavailable to legitimate users. The goal is to disrupt services, not to steal data. A Distributed DoS (DDoS) attack uses multiple compromised computers (botnet) to flood the target simultaneously, making it much harder to stop. Prevention includes using firewalls, intrusion detection systems, and traffic filtering.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is the difference between phishing and pharming?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Phishing uses fake emails or messages to trick users into clicking malicious links and entering personal information on fraudulent websites. The user is lured to a fake site. Pharming redirects website traffic to a fake site by corrupting the DNS server or host file — even when the user types the correct URL. Pharming is more dangerous because the user cannot easily detect the fraud as they typed the correct address.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is a Man-in-the-Middle attack? How can it be prevented?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A Man-in-the-Middle (MitM) attack occurs when an attacker secretly intercepts communication between two parties, potentially reading, modifying, or injecting messages without either party knowing. Prevention: Use HTTPS for web browsing, use VPN (Virtual Private Network), avoid using public/unsecured WiFi for sensitive transactions, use end-to-end encryption for messaging, and verify digital certificates.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is ransomware? Give an example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Ransomware is a type of malware that encrypts the victim's files or locks them out of their system and demands a ransom payment (usually in cryptocurrency like Bitcoin) to restore access. Examples include WannaCry (2017, affected over 200,000 computers worldwide) and Petya. Prevention: Keep regular backups, update software, use antivirus, avoid suspicious email attachments and links.</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">Ch 13: Project Based Learning</span>
+<span class="qb-ch-count">6 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<h4 style="font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink);margin:1rem 0 .5rem;padding-left:.5rem;border-left:3px solid var(--subject-color)">Exercise 13.1</h4>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is Project Based Learning? What are its benefits?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Project Based Learning (PBL) is an instructional methodology where students learn by actively working on meaningful real-world projects. Benefits include: developing problem-solving and critical thinking skills, bridging theory and practice, improving teamwork and communication skills, encouraging creativity and self-management, and providing hands-on practical experience.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">List and explain the steps involved in developing a software project.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> The steps in software project development are:
+
+1. Problem Identification: Clearly define the problem, understand requirements, identify target users, and determine scope.
+
+2. Planning and Analysis: Analyze requirements in detail, plan resources and timeline, choose programming language, database, and tools.
+
+3. Design: Create the solution blueprint including UI design, database schema, algorithms, and flowcharts.
+
+4. Implementation: Write the actual code, build the database, and create the user interface based on the design.
+
+5. Testing and Debugging: Test for correctness and performance, find and fix bugs, ensure all requirements are met.
+
+6. Deployment: Release the software to users, install and configure.
+
+7. Maintenance: Fix post-deployment issues, add new features, and update as needed.
+
+Documentation should be maintained throughout all phases.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">Why is teamwork important in software development?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Teamwork is important because: (1) Complex projects require diverse skills that no single person may possess, (2) Work can be divided and completed faster, (3) Different perspectives improve the quality of the solution, (4) Peer review catches errors early, (5) Team members learn from each other, (6) It develops communication, collaboration, and leadership skills essential for professional careers.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What is version control? Why is it useful?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Version control is a system that records changes to files over time, allowing specific versions to be recalled later. It is useful because: (1) Multiple team members can work on the same project simultaneously, (2) Changes can be tracked and reverted if needed, (3) It maintains a history of all modifications, (4) It prevents overwriting each other's work, (5) Branching allows parallel development of features. Git is a popular version control system.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
+<div class="qb-question">Describe the features of a Library Management System project.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> A Library Management System manages library operations with the following features:
+
+1. Book Management: Add new books, search books by title/author/ISBN, update book details, delete book records.
+
+2. Member Management: Register new members, view member details, update member information.
+
+3. Issue and Return: Issue books to members (record issue date), accept book returns (record return date), track currently issued books.
+
+4. Fine Calculation: Automatically calculate fines for overdue books based on the number of late days.
+
+5. Reports: Generate reports on available books, issued books, overdue books, and member activity.
+
+6. Database: Uses MySQL to store book, member, and transaction data with proper table relationships.
+
+7. User Interface: Menu-driven text interface or GUI using Python (Tkinter).
+
+The project demonstrates Python-MySQL connectivity and CRUD operations.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span></div>
+<div class="qb-question">What are CRUD operations? Why are they important in project development?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> CRUD stands for Create, Read, Update, and Delete — the four basic operations performed on database records. Create adds new records, Read retrieves existing records, Update modifies records, and Delete removes records. They are important because almost every software application requires these fundamental operations to manage data. Mastering CRUD operations is essential for building any database-driven application.</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+
+<script>
+function toggleChapter(btn) {
+  btn.classList.toggle('collapsed');
+  var body = btn.nextElementSibling;
+  body.classList.toggle('collapsed');
+  body.classList.toggle('open');
+}
+function toggleAnswer(btn) {
+  var ans = btn.nextElementSibling;
+  ans.classList.toggle('hidden');
+  btn.textContent = ans.classList.contains('hidden') ? 'Show Answer' : 'Hide Answer';
+}
+</script>
+</body>
+</html>

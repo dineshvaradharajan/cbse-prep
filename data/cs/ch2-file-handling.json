@@ -1,0 +1,443 @@
+{
+  "chapter": 2,
+  "title": "File Handling in Python",
+  "sections": [
+    {
+      "id": "2.1",
+      "title": "Introduction to Files",
+      "concepts": [
+        "Files are named locations on disk to store data permanently",
+        "Data stored in RAM is volatile — lost when program ends",
+        "Files allow data to persist beyond program execution",
+        "Python provides built-in functions for file operations",
+        "File operations: open, read, write, close",
+        "File handle (file object) is used to interact with a file"
+      ],
+      "definitions": [
+        {
+          "term": "File",
+          "definition": "A file is a named location on a secondary storage medium (disk) used to store data permanently. It is a sequence of bytes stored on the disk."
+        },
+        {
+          "term": "File Handle",
+          "definition": "A file handle (or file object) is a reference to a file on disk. It is created by the open() function and is used to perform read, write, and other operations on the file."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Data stored in variables (RAM) is temporary and lost when the program terminates",
+        "Files provide a way to store data permanently on secondary storage",
+        "Python treats files as a sequence of lines (text files) or bytes (binary files)",
+        "A file object (file handle) is used to interact with the file on disk"
+      ]
+    },
+    {
+      "id": "2.2",
+      "title": "Types of Files",
+      "concepts": [
+        "Text files — store data as a sequence of characters (strings)",
+        "Binary files — store data in the same format as in memory (bytes)",
+        "Text files are human-readable",
+        "Binary files are not human-readable",
+        "Text files have EOL (End of Line) characters",
+        "Binary files store data as a stream of bytes",
+        "CSV files as a type of text file"
+      ],
+      "definitions": [
+        {
+          "term": "Text File",
+          "definition": "A text file stores data in the form of characters (strings). Each line is terminated by a special character called EOL (End of Line), which is the newline character ('\\n') in Python. Text files are human-readable."
+        },
+        {
+          "term": "Binary File",
+          "definition": "A binary file stores data in the same format as it is stored in memory (as bytes). Binary files are not human-readable and are used for storing images, audio, video, and serialized objects."
+        },
+        {
+          "term": "EOL (End of Line)",
+          "definition": "EOL is a special character that marks the end of a line in a text file. In Python, the default EOL character is '\\n' (newline). On Windows, it is '\\r\\n'."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Text files store data as characters and are human-readable",
+        "Binary files store data as bytes and are not human-readable",
+        "Each line in a text file ends with an EOL character (\\n)",
+        "Binary files are used to store non-text data like images, audio, video, and pickled objects",
+        "Text files can be opened in any text editor; binary files require specific programs"
+      ]
+    },
+    {
+      "id": "2.3",
+      "title": "Opening and Closing a Text File",
+      "concepts": [
+        "The open() function to open a file",
+        "File modes: r, r+, w, w+, a, a+",
+        "Binary file modes: rb, wb, ab, rb+, wb+, ab+",
+        "Default mode is 'r' (read)",
+        "Closing a file using close() method",
+        "Using the with statement for automatic file closing",
+        "File pointer and its position"
+      ],
+      "definitions": [
+        {
+          "term": "open() Function",
+          "definition": "The open() function is used to open a file and returns a file object. Syntax: file_object = open(filename, mode). The filename is a string representing the path to the file, and mode specifies how the file should be opened."
+        },
+        {
+          "term": "File Mode 'r'",
+          "definition": "Opens the file for reading only. The file pointer is placed at the beginning. This is the default mode. Raises FileNotFoundError if the file does not exist."
+        },
+        {
+          "term": "File Mode 'w'",
+          "definition": "Opens the file for writing only. If the file exists, its contents are overwritten (truncated). If the file does not exist, a new file is created."
+        },
+        {
+          "term": "File Mode 'a'",
+          "definition": "Opens the file for appending. Data is written at the end of the file. The file pointer is placed at the end. If the file does not exist, a new file is created."
+        },
+        {
+          "term": "File Mode 'r+'",
+          "definition": "Opens the file for both reading and writing. The file pointer is placed at the beginning. Raises FileNotFoundError if the file does not exist."
+        },
+        {
+          "term": "File Mode 'w+'",
+          "definition": "Opens the file for both writing and reading. If the file exists, its contents are overwritten. If the file does not exist, a new file is created."
+        },
+        {
+          "term": "File Mode 'a+'",
+          "definition": "Opens the file for both appending and reading. The file pointer is placed at the end. If the file does not exist, a new file is created."
+        },
+        {
+          "term": "with Statement",
+          "definition": "The with statement is used to open a file and ensures that the file is automatically closed when the block inside the with statement is exited, even if an exception occurs. Syntax: with open('file.txt', 'r') as f:"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "open() syntax",
+          "formula": "file_object = open(filename, mode)",
+          "notes": "Default mode is 'r'. Returns a file object (file handle)."
+        },
+        {
+          "name": "close() syntax",
+          "formula": "file_object.close()",
+          "notes": "Flushes any unwritten data and closes the file. Good practice to always close files."
+        },
+        {
+          "name": "with statement syntax",
+          "formula": "with open('filename', 'mode') as file_object:\n    # file operations",
+          "notes": "Automatically closes the file when the with block is exited"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "The open() function returns a file object used for all file operations",
+        "Mode 'r' is default and raises an error if the file doesn't exist",
+        "Mode 'w' creates a new file or overwrites an existing file",
+        "Mode 'a' appends to the end of the file without overwriting existing content",
+        "The 'with' statement is the preferred way to open files as it ensures automatic closing",
+        "Always close a file after operations are complete to free system resources",
+        "Adding 'b' to a mode (e.g., 'rb', 'wb') opens the file in binary mode"
+      ]
+    },
+    {
+      "id": "2.4",
+      "title": "Writing to a Text File",
+      "concepts": [
+        "write() method — writes a string to the file",
+        "writelines() method — writes a list of strings to the file",
+        "write() does not add a newline character automatically",
+        "writelines() does not add newline characters between strings",
+        "File must be opened in 'w', 'a', or 'r+' mode for writing",
+        "write() returns the number of characters written"
+      ],
+      "definitions": [
+        {
+          "term": "write() Method",
+          "definition": "The write() method writes a string to the file and returns the number of characters written. It does not add a newline character at the end. Syntax: file_object.write(string)"
+        },
+        {
+          "term": "writelines() Method",
+          "definition": "The writelines() method writes a list (or any iterable) of strings to the file. It does not add newline characters between the strings. Syntax: file_object.writelines(list_of_strings)"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "write() syntax",
+          "formula": "file_object.write(string)",
+          "notes": "Returns the number of characters written. Does not add newline automatically."
+        },
+        {
+          "name": "writelines() syntax",
+          "formula": "file_object.writelines(list_of_strings)",
+          "notes": "Writes each string from the list. No newline added between strings."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "write() writes a single string to the file",
+        "writelines() writes a list of strings to the file",
+        "Neither write() nor writelines() adds newline characters automatically — you must include '\\n' explicitly",
+        "write() returns the number of characters written",
+        "The file must be opened in write ('w'), append ('a'), or read-write ('r+') mode"
+      ]
+    },
+    {
+      "id": "2.5",
+      "title": "Reading from a Text File",
+      "concepts": [
+        "read() method — reads the entire file or specified number of characters",
+        "readline() method — reads one line at a time",
+        "readlines() method — reads all lines and returns a list",
+        "Iterating over a file object using a for loop",
+        "read(n) reads n characters from the file",
+        "readline() returns an empty string at end of file",
+        "readlines() includes the newline character in each string"
+      ],
+      "definitions": [
+        {
+          "term": "read() Method",
+          "definition": "The read() method reads and returns the entire content of the file as a single string. If a size argument is given (read(n)), it reads at most n characters. Syntax: file_object.read([size])"
+        },
+        {
+          "term": "readline() Method",
+          "definition": "The readline() method reads a single line from the file including the trailing newline character. It returns an empty string when EOF is reached. Syntax: file_object.readline()"
+        },
+        {
+          "term": "readlines() Method",
+          "definition": "The readlines() method reads all the lines of a file and returns them as a list of strings. Each string in the list includes the trailing newline character. Syntax: file_object.readlines()"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "read() syntax",
+          "formula": "content = file_object.read([size])",
+          "notes": "Without argument, reads the entire file. With size, reads at most that many characters."
+        },
+        {
+          "name": "readline() syntax",
+          "formula": "line = file_object.readline()",
+          "notes": "Reads one line including newline. Returns empty string '' at EOF."
+        },
+        {
+          "name": "readlines() syntax",
+          "formula": "lines = file_object.readlines()",
+          "notes": "Returns a list of all lines. Each line includes the trailing newline character."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "read() without arguments reads the entire file content as a single string",
+        "read(n) reads at most n characters/bytes from the file",
+        "readline() reads one line at a time, including the newline character",
+        "readlines() reads all lines and returns a list of strings",
+        "A for loop can iterate directly over a file object to read line by line (most memory efficient)",
+        "After reading the entire file, the file pointer is at the end — use seek(0) to go back to the beginning"
+      ]
+    },
+    {
+      "id": "2.6",
+      "title": "Setting Offsets in a File",
+      "concepts": [
+        "File pointer — tracks the current position in the file",
+        "tell() method — returns the current position of the file pointer",
+        "seek() method — changes the position of the file pointer",
+        "seek(offset, reference_point) — reference_point: 0 (beginning), 1 (current), 2 (end)",
+        "Offset is measured in bytes",
+        "For text files, only seek(0) or seek with reference_point 0 is allowed"
+      ],
+      "definitions": [
+        {
+          "term": "tell() Method",
+          "definition": "The tell() method returns the current position of the file pointer (as number of bytes from the beginning of the file). Syntax: file_object.tell()"
+        },
+        {
+          "term": "seek() Method",
+          "definition": "The seek() method is used to change the position of the file pointer to a given specific position. Syntax: file_object.seek(offset, reference_point). The reference_point is 0 (beginning), 1 (current position), or 2 (end of file). Default reference_point is 0."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "tell() syntax",
+          "formula": "position = file_object.tell()",
+          "notes": "Returns an integer representing the current position of the file pointer in bytes"
+        },
+        {
+          "name": "seek() syntax",
+          "formula": "file_object.seek(offset, reference_point)",
+          "notes": "reference_point: 0 = beginning (default), 1 = current, 2 = end. For text files, only 0 is allowed as reference_point."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "tell() returns the current position of the file pointer in bytes from the beginning",
+        "seek(offset, reference_point) moves the file pointer to a new position",
+        "reference_point 0 = beginning of file, 1 = current position, 2 = end of file",
+        "For text files, Python only allows seek() with reference_point 0",
+        "seek(0) moves the file pointer back to the beginning of the file",
+        "In binary mode, all three reference points (0, 1, 2) can be used with seek()"
+      ]
+    },
+    {
+      "id": "2.7",
+      "title": "Creating and Traversing a Text File",
+      "concepts": [
+        "Creating a text file by opening in write mode",
+        "Writing multiple lines to a file",
+        "Reading and displaying all lines of a file",
+        "Counting lines, words, and characters in a file",
+        "Searching for specific content in a file",
+        "Copying contents from one file to another"
+      ],
+      "definitions": [],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Open a file in 'w' mode to create a new text file (overwrites if exists)",
+        "Use a loop with write() to write multiple lines",
+        "Use a for loop to traverse and read each line of a file",
+        "strip() or rstrip() can be used to remove trailing newline characters from lines",
+        "split() can be used to count words in each line"
+      ]
+    },
+    {
+      "id": "2.8",
+      "title": "The Pickle Module",
+      "concepts": [
+        "Pickling — converting a Python object into a byte stream",
+        "Unpickling — converting a byte stream back into a Python object",
+        "Serialization and deserialization",
+        "The dump() function — writes a pickled object to a binary file",
+        "The load() function — reads a pickled object from a binary file",
+        "Binary file must be used with pickle (modes 'wb', 'rb')",
+        "Importing the pickle module",
+        "Storing complex data structures like lists and dictionaries"
+      ],
+      "definitions": [
+        {
+          "term": "Pickling (Serialization)",
+          "definition": "Pickling is the process of converting a Python object (such as a list, dictionary, etc.) into a byte stream so that it can be stored in a binary file. This is also called serialization. Done using pickle.dump()."
+        },
+        {
+          "term": "Unpickling (Deserialization)",
+          "definition": "Unpickling is the process of converting a byte stream (from a binary file) back into the original Python object. This is also called deserialization. Done using pickle.load()."
+        },
+        {
+          "term": "pickle.dump()",
+          "definition": "The dump() function writes a pickled representation of a Python object to an open binary file. Syntax: pickle.dump(object, file_object)"
+        },
+        {
+          "term": "pickle.load()",
+          "definition": "The load() function reads a pickled object from an open binary file and returns the reconstituted Python object. Syntax: object = pickle.load(file_object)"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "pickle.dump() syntax",
+          "formula": "import pickle\npickle.dump(object, file_object)",
+          "notes": "file_object must be opened in binary write mode ('wb' or 'ab')"
+        },
+        {
+          "name": "pickle.load() syntax",
+          "formula": "import pickle\nobject = pickle.load(file_object)",
+          "notes": "file_object must be opened in binary read mode ('rb'). Raises EOFError when no more objects to read."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "The pickle module must be imported before use: import pickle",
+        "Pickling converts Python objects to byte stream (serialization)",
+        "Unpickling converts byte stream back to Python objects (deserialization)",
+        "pickle.dump(object, file) writes a Python object to a binary file",
+        "pickle.load(file) reads and returns a Python object from a binary file",
+        "Files must be opened in binary mode ('wb', 'rb', 'ab') when using pickle",
+        "pickle can handle complex data types: lists, dictionaries, tuples, sets, class objects",
+        "Use a try-except with EOFError to read all objects from a pickle file"
+      ]
+    }
+  ],
+  "summary": [
+    "A file is a named location on disk to store data permanently.",
+    "There are two types of files: text files (store data as characters) and binary files (store data as bytes).",
+    "The open() function is used to open a file and returns a file object. Syntax: file_object = open(filename, mode).",
+    "File modes: 'r' (read, default), 'w' (write, overwrites), 'a' (append), 'r+' (read and write), 'w+' (write and read), 'a+' (append and read).",
+    "Adding 'b' to a mode opens the file in binary mode (e.g., 'rb', 'wb', 'ab').",
+    "The close() method closes the file. The with statement automatically closes the file.",
+    "write() writes a string to a file; writelines() writes a list of strings to a file.",
+    "read() reads the entire file or n characters; readline() reads one line; readlines() reads all lines as a list.",
+    "tell() returns the current position of the file pointer; seek(offset, reference) moves the file pointer.",
+    "The pickle module is used for serialization (pickling) and deserialization (unpickling) of Python objects.",
+    "pickle.dump(object, file) writes a Python object to a binary file.",
+    "pickle.load(file) reads a Python object from a binary file."
+  ],
+  "exercises": [
+    {
+      "id": "2.1",
+      "title": "Exercise 2",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Differentiate between text file and binary file.",
+          "type": "short",
+          "answer": "Text File:\n- Stores data as a sequence of characters (strings)\n- Human-readable (can be opened in any text editor)\n- Each line ends with an EOL character (\\n)\n- Slower to process due to encoding/decoding\n- Example: .txt, .csv, .html files\n\nBinary File:\n- Stores data as a sequence of bytes (same as in memory)\n- Not human-readable\n- No EOL character; data is stored as a stream of bytes\n- Faster to process\n- Example: .jpg, .png, .exe, .dat files"
+        },
+        {
+          "qno": 2,
+          "question": "What are the different file modes available in Python? Explain each.",
+          "type": "long",
+          "answer": "The different file modes in Python are:\n\n'r' — Read mode (default). Opens file for reading. File must exist, else FileNotFoundError.\n'w' — Write mode. Opens file for writing. Creates new file if it doesn't exist. Overwrites if it exists.\n'a' — Append mode. Opens file for appending at the end. Creates new file if it doesn't exist.\n'r+' — Read and Write mode. File must exist. File pointer at beginning.\n'w+' — Write and Read mode. Creates new file or overwrites existing. File pointer at beginning.\n'a+' — Append and Read mode. Creates new file if it doesn't exist. File pointer at end.\n'rb' — Read in binary mode.\n'wb' — Write in binary mode.\n'ab' — Append in binary mode.\n'rb+' — Read and write in binary mode.\n'wb+' — Write and read in binary mode.\n'ab+' — Append and read in binary mode."
+        },
+        {
+          "qno": 3,
+          "question": "Write a program to read a text file 'story.txt' line by line and display each word separated by a '#'.",
+          "type": "long",
+          "answer": "f = open('story.txt', 'r')\nfor line in f:\n    words = line.split()\n    for word in words:\n        print(word + '#', end='')\n    print()  # newline after each line\nf.close()\n\nAlternatively using with statement:\nwith open('story.txt', 'r') as f:\n    for line in f:\n        words = line.split()\n        print('#'.join(words))"
+        },
+        {
+          "qno": 4,
+          "question": "What is the difference between write() and writelines() methods?",
+          "type": "short",
+          "answer": "write() method:\n- Writes a single string to the file\n- Syntax: file_object.write(string)\n- Returns the number of characters written\n- Example: f.write('Hello World\\n')\n\nwritelines() method:\n- Writes a list (or iterable) of strings to the file\n- Syntax: file_object.writelines(list_of_strings)\n- Does not return the character count\n- Example: f.writelines(['Hello\\n', 'World\\n'])\n\nBoth methods do NOT add newline characters automatically."
+        },
+        {
+          "qno": 5,
+          "question": "What is the difference between read(), readline() and readlines() methods?",
+          "type": "long",
+          "answer": "read([n]):\n- Without argument: reads the entire file as a single string\n- With argument n: reads at most n characters\n- Returns a string\n\nreadline():\n- Reads a single line from the file (including the newline character)\n- Returns an empty string '' at end of file\n- Returns a string\n\nreadlines():\n- Reads all lines from the file\n- Returns a list of strings, where each string is a line (including newline)\n- Returns a list\n\nExample: If file contains 'Hello\\nWorld\\n'\n- read() returns 'Hello\\nWorld\\n'\n- readline() returns 'Hello\\n' (first call), 'World\\n' (second call)\n- readlines() returns ['Hello\\n', 'World\\n']"
+        },
+        {
+          "qno": 6,
+          "question": "What is the significance of the tell() and seek() methods?",
+          "type": "short",
+          "answer": "tell() method:\n- Returns the current position of the file pointer (in bytes from the beginning)\n- Syntax: file_object.tell()\n- Useful to know where you are in the file\n\nseek() method:\n- Changes the position of the file pointer\n- Syntax: file_object.seek(offset, reference_point)\n- reference_point: 0 (beginning, default), 1 (current), 2 (end)\n- For text files, only reference_point 0 is allowed\n- seek(0) is commonly used to reset file pointer to the beginning after reading"
+        },
+        {
+          "qno": 7,
+          "question": "What is pickling and unpickling? Explain with an example.",
+          "type": "long",
+          "answer": "Pickling (Serialization): The process of converting a Python object into a byte stream to store in a binary file.\n\nUnpickling (Deserialization): The process of converting a byte stream from a binary file back into a Python object.\n\nExample:\nimport pickle\n\n# Pickling — writing a dictionary to a binary file\nstudent = {'name': 'Rahul', 'age': 17, 'marks': [85, 90, 78]}\nf = open('student.dat', 'wb')\npickle.dump(student, f)\nf.close()\n\n# Unpickling — reading the dictionary from the binary file\nf = open('student.dat', 'rb')\ndata = pickle.load(f)\nprint(data)  # Output: {'name': 'Rahul', 'age': 17, 'marks': [85, 90, 78]}\nf.close()"
+        },
+        {
+          "qno": 8,
+          "question": "Write a program to count the number of lines in a text file 'poem.txt' that start with an uppercase letter.",
+          "type": "long",
+          "answer": "count = 0\nwith open('poem.txt', 'r') as f:\n    for line in f:\n        if line[0].isupper():\n            count += 1\nprint('Number of lines starting with uppercase:', count)"
+        },
+        {
+          "qno": 9,
+          "question": "Write a program using pickle to store and retrieve a list of employee records (each record is a dictionary with keys: empno, name, salary) in a binary file.",
+          "type": "long",
+          "answer": "import pickle\n\n# Writing employee records\ndef write_records():\n    employees = []\n    n = int(input('How many employees? '))\n    for i in range(n):\n        empno = int(input('Enter employee number: '))\n        name = input('Enter name: ')\n        salary = float(input('Enter salary: '))\n        emp = {'empno': empno, 'name': name, 'salary': salary}\n        employees.append(emp)\n    with open('employees.dat', 'wb') as f:\n        pickle.dump(employees, f)\n    print('Records saved successfully.')\n\n# Reading employee records\ndef read_records():\n    with open('employees.dat', 'rb') as f:\n        employees = pickle.load(f)\n    for emp in employees:\n        print('Emp No:', emp['empno'], 'Name:', emp['name'], 'Salary:', emp['salary'])\n\nwrite_records()\nread_records()"
+        },
+        {
+          "qno": 10,
+          "question": "What is the advantage of using the 'with' statement for file handling?",
+          "type": "short",
+          "answer": "Advantages of using the 'with' statement:\n1. Automatic closing: The file is automatically closed when the with block is exited, even if an exception occurs.\n2. No need to explicitly call close(): Eliminates the risk of forgetting to close a file.\n3. Cleaner code: Makes the code more readable and concise.\n4. Resource management: Ensures proper resource cleanup.\n5. Exception safety: The file is closed even if an error occurs within the with block.\n\nSyntax:\nwith open('file.txt', 'r') as f:\n    data = f.read()\n# File is automatically closed here"
+        }
+      ]
+    }
+  ]
+}

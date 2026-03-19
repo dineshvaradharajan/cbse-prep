@@ -79,12 +79,12 @@
       "formulas": [
         {
           "name": "Empty Relation",
-          "formula": "R = phi (subset of) A x A",
+          "formula": "R = \\phi \\subset A \\times A",
           "notes": "No element is related to any element"
         },
         {
           "name": "Universal Relation",
-          "formula": "R = A x A",
+          "formula": "R = A \\times A",
           "notes": "Every element is related to every element"
         }
       ],
@@ -137,12 +137,12 @@
       "formulas": [
         {
           "name": "One-one test",
-          "formula": "f(x1) = f(x2) => x1 = x2, for all x1, x2 in X",
+          "formula": "f(x_1) = f(x_2) \\Rightarrow x_1 = x_2, \\; \\forall \\; x_1, x_2 \\in X",
           "notes": "Equivalent to: x1 != x2 => f(x1) != f(x2)"
         },
         {
           "name": "Onto condition",
-          "formula": "For every y in Y, there exists x in X such that f(x) = y",
+          "formula": "\\forall \\; y \\in Y, \\; \\exists \\; x \\in X \\text{ such that } f(x) = y",
           "notes": "Equivalently, f is onto if and only if Range of f = Y (codomain)"
         }
       ],
@@ -192,17 +192,17 @@
       "formulas": [
         {
           "name": "Composition of functions",
-          "formula": "gof(x) = g(f(x)), for all x in A",
+          "formula": "g \\circ f(x) = g(f(x)), \\; \\forall \\; x \\in A",
           "notes": "If f: A -> B and g: B -> C, then gof: A -> C"
         },
         {
           "name": "Inverse function condition",
-          "formula": "gof = I_X and fog = I_Y",
+          "formula": "g \\circ f = I_X \\text{ and } f \\circ g = I_Y",
           "notes": "f is invertible iff f is one-one and onto (bijective)"
         },
         {
           "name": "Inverse verification",
-          "formula": "f^(-1)(y) = x iff f(x) = y",
+          "formula": "f^{-1}(y) = x \\iff f(x) = y",
           "notes": "f^(-1) o f = I_X and f o f^(-1) = I_Y"
         }
       ],
@@ -244,82 +244,98 @@
         {
           "qno": 1,
           "question": "Determine whether each of the following relations are reflexive, symmetric and transitive:\n(i) Relation R in the set A = {1, 2, 3, ..., 13, 14} defined as R = {(x, y) : 3x - y = 0}\n(ii) Relation R in the set N of natural numbers defined as R = {(x, y) : y = x + 5 and x < 4}\n(iii) Relation R in the set A = {1, 2, 3, 4, 5, 6} as R = {(x, y) : y is divisible by x}\n(iv) Relation R in the set Z of all integers defined as R = {(x, y) : x - y is an integer}\n(v) Relation R in the set A of human beings in a town at a particular time given by\n(a) R = {(x, y) : x and y work at the same place}\n(b) R = {(x, y) : x and y live in the same locality}\n(c) R = {(x, y) : x is exactly 7 cm taller than y}\n(d) R = {(x, y) : x is wife of y}\n(e) R = {(x, y) : x is father of y}",
-          "type": "long"
+          "type": "long",
+          "answer": "(i) R = {(1,3),(2,6),(3,9),(4,12)}. Not reflexive ((1,1) not in R), not symmetric ((1,3) in R but (3,1) not in R), not transitive ((1,3),(3,9) in R but (1,9) not in R). (ii) R = {(1,6),(2,7),(3,8)}. Not reflexive, not symmetric, not transitive. (iii) Reflexive (x divides x), not symmetric (1 divides 2 but 2 does not divide 1), transitive (x|y and y|z implies x|z). (iv) Reflexive (x - x = 0), symmetric (x - y integer implies y - x integer), transitive (x - y and y - z integers implies x - z integer). R is an equivalence relation. (v)(a) Reflexive, symmetric, transitive — equivalence relation. (b) Equivalence relation. (c) Not reflexive, not symmetric, not transitive. (d) Not reflexive, not symmetric, not transitive. (e) Not reflexive, not symmetric, not transitive."
         },
         {
           "qno": 2,
           "question": "Show that the relation R in the set R of real numbers, defined as R = {(a, b) : a <= b^2} is neither reflexive nor symmetric nor transitive.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Not reflexive — take a = 1/2, then 1/2 <= (1/2)^2 = 1/4 is false. Not symmetric — (1, 4) in R since 1 <= 16 but (4, 1) not in R since 4 <= 1 is false. Not transitive — (3, 2) and (2, 1.5) are in R (3 <= 4 and 2 <= 2.25) but (3, 1.5) not in R since 3 <= 2.25 is false."
         },
         {
           "qno": 3,
           "question": "Check whether the relation R defined in the set {1, 2, 3, 4, 5, 6} as R = {(a, b) : b = a + 1} is reflexive, symmetric or transitive.",
-          "type": "short"
+          "type": "short",
+          "answer": "R is neither reflexive (since (1,1) not in R), nor symmetric ((1,2) in R but (2,1) not in R), nor transitive ((1,2) and (2,3) in R but (1,3) not in R)."
         },
         {
           "qno": 4,
           "question": "Show that the relation R in R defined as R = {(a, b) : a <= b}, is reflexive and transitive but not symmetric.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Reflexive — a <= a for all a. Transitive — a <= b and b <= c implies a <= c. Not symmetric — (1, 2) in R since 1 <= 2 but (2, 1) not in R since 2 <= 1 is false."
         },
         {
           "qno": 5,
           "question": "Check whether the relation R in R defined by R = {(a, b) : a <= b^3} is reflexive, symmetric or transitive.",
-          "type": "short"
+          "type": "short",
+          "answer": "R is neither reflexive (take a = -1, then -1 <= (-1)^3 = -1 is true, but take a = 1/2, then 1/2 <= 1/8 is false), nor symmetric ((1, 2) in R since 1 <= 8 but (2, 1) not in R since 2 <= 1 is false), nor transitive ((25, 3) and (3, 3/2) are in R but (25, 3/2) not in R since 25 <= 27/8 is false). So R is none of reflexive, symmetric or transitive."
         },
         {
           "qno": 6,
           "question": "Show that the relation R in the set {1, 2, 3} given by R = {(1, 2), (2, 1)} is symmetric but neither reflexive nor transitive.",
-          "type": "short"
+          "type": "short",
+          "answer": "Symmetric — (1,2) in R and (2,1) in R. Not reflexive — (1,1), (2,2), (3,3) are not in R. Not transitive — (1,2) and (2,1) in R but (1,1) not in R."
         },
         {
           "qno": 7,
           "question": "Show that the relation R in the set A of all the books in a library of a college, given by R = {(x, y) : x and y have same number of pages} is an equivalence relation.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Reflexive — every book has the same number of pages as itself. Symmetric — if x has same pages as y, then y has same pages as x. Transitive — if x has same pages as y and y has same pages as z, then x has same pages as z."
         },
         {
           "qno": 8,
           "question": "Show that the relation R in the set A = {1, 2, 3, 4, 5} given by R = {(a, b) : |a - b| is even}, is an equivalence relation. Show that all the elements of {1, 3, 5} are related to each other and all the elements of {2, 4} are related to each other. But no element of {1, 3, 5} is related to any element of {2, 4}.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Reflexive — |a - a| = 0 is even. Symmetric — |a - b| = |b - a|. Transitive — if |a - b| and |b - c| are even then a - b and b - c are even, so a - c = (a - b) + (b - c) is even. Equivalence classes are {1, 3, 5} (odd numbers) and {2, 4} (even numbers). Odd minus even is odd (not even), so no element of {1,3,5} is related to any element of {2,4}."
         },
         {
           "qno": 9,
           "question": "Show that each of the relation R in the set A = {x in Z : 0 <= x <= 12}, given by\n(i) R = {(a, b) : |a - b| is a multiple of 4}\n(ii) R = {(a, b) : a = b}\nis an equivalence relation. Find the set of all elements related to 1 in each case.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: (i) Reflexive: |a-a| = 0 is a multiple of 4. Symmetric: |a-b| = |b-a|. Transitive: if 4 divides |a-b| and |b-c|, then 4 divides |a-c|. Elements related to 1: {1, 5, 9}. (ii) This is the identity relation. Reflexive: a = a. Symmetric: a = b implies b = a. Transitive: a = b, b = c implies a = c. Elements related to 1: {1}."
         },
         {
           "qno": 10,
           "question": "Give an example of a relation. Which is\n(i) Symmetric but neither reflexive nor transitive.\n(ii) Transitive but neither reflexive nor symmetric.\n(iii) Reflexive and symmetric but not transitive.\n(iv) Reflexive and transitive but not symmetric.\n(v) Symmetric and transitive but not reflexive.",
-          "type": "long"
+          "type": "long",
+          "answer": "Let A = {1, 2, 3}. (i) R = {(1,2),(2,1)} — symmetric, not reflexive ((1,1) missing), not transitive ((1,2),(2,1) but (1,1) missing). (ii) R = {(1,2)} — transitive (vacuously), not reflexive, not symmetric. (iii) R = {(1,1),(2,2),(3,3),(1,2),(2,1),(2,3),(3,2)} — reflexive, symmetric, not transitive ((1,2),(2,3) in R but (1,3) not in R). (iv) R = {(1,1),(2,2),(3,3),(1,2)} — reflexive, transitive, not symmetric. (v) R = {(1,1),(2,2),(1,2),(2,1)} — symmetric, transitive, not reflexive ((3,3) missing)."
         },
         {
           "qno": 11,
           "question": "Show that the relation R in the set A of points in a plane given by R = {(P, Q) : distance of the point P from the origin is same as the distance of the point Q from the origin}, is an equivalence relation. Further, show that the set of all points related to a point P != (0, 0) is the circle passing through P with origin as centre.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Reflexive — d(P,O) = d(P,O). Symmetric — d(P,O) = d(Q,O) implies d(Q,O) = d(P,O). Transitive — d(P,O) = d(Q,O) and d(Q,O) = d(R,O) implies d(P,O) = d(R,O). The equivalence class of P is {Q : d(Q,O) = d(P,O)} = circle with centre O and radius |OP|."
         },
         {
           "qno": 12,
           "question": "Show that the relation R defined in the set A of all triangles as R = {(T1, T2) : T1 is similar to T2}, is equivalence relation. Consider three right angle triangles T1 with sides 3, 4, 5, T2 with sides 5, 12, 13 and T3 with sides 6, 8, 10. Which triangles among T1, T2 and T3 are related?",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Reflexive — every triangle is similar to itself. Symmetric — if T1 ~ T2 then T2 ~ T1. Transitive — if T1 ~ T2 and T2 ~ T3 then T1 ~ T3. T1 (3,4,5) and T3 (6,8,10) are related since 3/6 = 4/8 = 5/10 = 1/2. T2 is not related to T1 or T3."
         },
         {
           "qno": 13,
           "question": "Show that the relation R defined in the set A of all polygons as R = {(P1, P2) : P1 and P2 have same number of sides}, is an equivalence relation. What is the set of all elements in A related to the right angle triangle T with sides 3, 4 and 5?",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Reflexive — any polygon has same number of sides as itself. Symmetric — if P1 has same number of sides as P2, then P2 has same as P1. Transitive — follows similarly. The set of all elements related to T (a triangle, 3 sides) is the set of all triangles in A."
         },
         {
           "qno": 14,
           "question": "Let L be the set of all lines in XY plane and R be the relation in L defined as R = {(L1, L2) : L1 is parallel to L2}. Show that R is an equivalence relation. Find the set of all lines related to the line y = 2x + 4.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Reflexive — every line is parallel to itself. Symmetric — L1 || L2 implies L2 || L1. Transitive — L1 || L2 and L2 || L3 implies L1 || L3. The set of all lines related to y = 2x + 4 is the family of lines y = 2x + c, where c is any real number (all lines with slope 2)."
         },
         {
           "qno": 15,
           "question": "Let R be the relation in the set {1, 2, 3, 4} given by R = {(1, 2), (2, 2), (1, 1), (4, 4), (1, 3), (3, 3), (3, 2)}. Choose the correct answer.\n(A) R is reflexive and symmetric but not transitive.\n(B) R is reflexive and transitive but not symmetric.\n(C) R is symmetric and transitive but not reflexive.\n(D) R is an equivalence relation.",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "(B) R is reflexive and transitive but not symmetric. R is reflexive as (1,1),(2,2),(3,3),(4,4) are all in R. Not symmetric since (1,2) in R but (2,1) not in R. Transitive can be verified for all pairs."
         },
         {
           "qno": 16,
           "question": "Let R be the relation in the set N given by R = {(a, b) : a = b - 2, b > 6}. Choose the correct answer.\n(A) (2, 4) in R\n(B) (3, 8) in R\n(C) (6, 8) in R\n(D) (8, 7) in R",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "(C) (6, 8) in R. Here b = 8 > 6 and a = 8 - 2 = 6. (A) fails since b = 4, not > 6. (B) fails since 3 != 8 - 2 = 6. (D) fails since 8 != 7 - 2 = 5."
         }
       ]
     },
@@ -330,62 +346,74 @@
         {
           "qno": 1,
           "question": "Show that the function f: R* -> R* defined by f(x) = 1/x is one-one and onto, where R* is the set of all non-zero real numbers. Is the result true, if the domain R* is replaced by N with co-domain being same as R*?",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: One-one — f(x1) = f(x2) gives 1/x1 = 1/x2, so x1 = x2. Onto — for any y in R*, take x = 1/y, then f(x) = y. When domain is N: f is still one-one, but not onto since for y = 1/3 in R*, there is no n in N with f(n) = 1/3."
         },
         {
           "qno": 2,
           "question": "Check the injectivity and surjectivity of the following functions:\n(i) f: N -> N given by f(x) = x^2\n(ii) f: Z -> Z given by f(x) = x^2\n(iii) f: R -> R given by f(x) = x^2\n(iv) f: N -> N given by f(x) = x^3\n(v) f: Z -> Z given by f(x) = x^3",
-          "type": "long"
+          "type": "long",
+          "answer": "(i) Injective (x1^2 = x2^2 in N implies x1 = x2), not surjective (e.g., 3 has no preimage). (ii) Not injective (f(1) = f(-1) = 1), not surjective (e.g., 3 has no preimage). (iii) Not injective (f(1) = f(-1)), not surjective (e.g., -1 has no preimage). (iv) Injective (x1^3 = x2^3 in N implies x1 = x2), not surjective (e.g., 2 has no preimage). (v) Injective (x1^3 = x2^3 implies x1 = x2), not surjective (e.g., 2 has no preimage in Z)."
         },
         {
           "qno": 3,
           "question": "Prove that the Greatest Integer Function f: R -> R, given by f(x) = [x], is neither one-one nor onto, where [x] denotes the greatest integer less than or equal to x.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Not one-one — f(1.2) = f(1.5) = 1 but 1.2 != 1.5. Not onto — for y = 0.5 in R, there is no x with [x] = 0.5 since [x] is always an integer."
         },
         {
           "qno": 4,
           "question": "Show that the Modulus Function f: R -> R, given by f(x) = |x|, is neither one-one nor onto, where |x| is x, if x is positive or 0 and |x| is -x, if x is negative.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Not one-one — f(1) = f(-1) = 1. Not onto — f(x) = |x| >= 0 for all x, so negative numbers like -1 have no preimage."
         },
         {
           "qno": 5,
           "question": "Show that the Signum Function f: R -> R, given by f(x) = 1 if x > 0, f(x) = 0 if x = 0, f(x) = -1 if x < 0, is neither one-one nor onto.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Not one-one — f(1) = f(2) = 1 but 1 != 2. Not onto — range of f is {-1, 0, 1} which is not all of R, e.g., 2 has no preimage."
         },
         {
           "qno": 6,
           "question": "Let A = {1, 2, 3}, B = {4, 5, 6, 7} and let f = {(1, 4), (2, 5), (3, 6)} be a function from A to B. Show that f is one-one.",
-          "type": "short"
+          "type": "short",
+          "answer": "f(1) = 4, f(2) = 5, f(3) = 6. All images are distinct, so f is one-one. Note: f is not onto since 7 in B has no preimage."
         },
         {
           "qno": 7,
           "question": "In each of the following cases, state whether the function is one-one, onto or bijective. Justify your answer.\n(i) f: R -> R defined by f(x) = 3 - 4x\n(ii) f: R -> R defined by f(x) = 1 + x^2",
-          "type": "long"
+          "type": "long",
+          "answer": "(i) Bijective. One-one: f(x1) = f(x2) gives 3 - 4x1 = 3 - 4x2, so x1 = x2. Onto: for any y in R, x = (3 - y)/4 gives f(x) = y. (ii) Neither one-one nor onto. Not one-one: f(1) = f(-1) = 2. Not onto: f(x) = 1 + x^2 >= 1, so 0 has no preimage."
         },
         {
           "qno": 8,
           "question": "Let A and B be sets. Show that f: A x B -> B x A such that f(a, b) = (b, a) is bijective function.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: One-one — f(a1,b1) = f(a2,b2) gives (b1,a1) = (b2,a2), so a1 = a2 and b1 = b2. Onto — for any (b,a) in B x A, f(a,b) = (b,a). Hence f is bijective."
         },
         {
           "qno": 9,
           "question": "Let f: N -> N be defined by f(n) = (n+1)/2 if n is odd, and f(n) = n/2 if n is even, for all n in N. State whether the function f is bijective. Justify your answer.",
-          "type": "long"
+          "type": "long",
+          "answer": "f is onto but not one-one, hence not bijective. Not one-one: f(1) = (1+1)/2 = 1 and f(2) = 2/2 = 1, so f(1) = f(2) but 1 != 2. Onto: for any m in N, f(2m) = m, so every m has a preimage."
         },
         {
           "qno": 10,
           "question": "Let A = R - {3} and B = R - {1}. Consider the function f: A -> B defined by f(x) = (x - 2)/(x - 3). Is f one-one and onto? Justify your answer.",
-          "type": "long"
+          "type": "long",
+          "answer": "Yes, f is both one-one and onto (bijective). One-one: f(x1) = f(x2) gives (x1-2)/(x1-3) = (x2-2)/(x2-3), cross-multiplying and simplifying gives x1 = x2. Onto: for any y in B (y != 1), solving y = (x-2)/(x-3) gives x = (3y-2)/(y-1), which is in A since x != 3 when y != 1."
         },
         {
           "qno": 11,
           "question": "Let f: R -> R be defined as f(x) = x^4. Choose the correct answer.\n(A) f is one-one onto\n(B) f is many-one onto\n(C) f is one-one but not onto\n(D) f is neither one-one nor onto.",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "(D) f is neither one-one nor onto. Not one-one: f(1) = f(-1) = 1. Not onto: f(x) = x^4 >= 0, so negative numbers like -1 have no preimage."
         },
         {
           "qno": 12,
           "question": "Let f: R -> R be defined as f(x) = 3x. Choose the correct answer.\n(A) f is one-one onto\n(B) f is many-one onto\n(C) f is one-one but not onto\n(D) f is neither one-one nor onto.",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "(A) f is one-one onto. One-one: f(x1) = f(x2) gives 3x1 = 3x2, so x1 = x2. Onto: for any y in R, x = y/3 gives f(x) = y."
         }
       ]
     },
@@ -396,37 +424,44 @@
         {
           "qno": 1,
           "question": "Show that the function f: R -> {x in R : -1 < x < 1} defined by f(x) = x/(1 + |x|), x in R is one-one and onto function.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: One-one — consider cases x1, x2 >= 0 and x1, x2 < 0 separately; f(x1) = f(x2) implies x1 = x2 in each case. For mixed signs, f(x1) and f(x2) have different signs. Onto — for y in (-1,1), solve y = x/(1+|x|): if y >= 0, x = y/(1-y); if y < 0, x = y/(1+y). Both give x in R with f(x) = y."
         },
         {
           "qno": 2,
           "question": "Show that the function f: R -> R given by f(x) = x^3 is injective.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Suppose f(x1) = f(x2), i.e., x1^3 = x2^3. Then x1^3 - x2^3 = 0, i.e., (x1 - x2)(x1^2 + x1*x2 + x2^2) = 0. For real numbers, x1^2 + x1*x2 + x2^2 = (x1 + x2/2)^2 + 3x2^2/4 >= 0, and equals 0 only when x1 = x2 = 0. Hence x1 = x2."
         },
         {
           "qno": 3,
           "question": "Given a non empty set X, consider P(X) which is the set of all subsets of X. Define the relation R in P(X) as follows: For subsets A, B in P(X), A R B if and only if A (subset of) B. Is R an equivalence relation on P(X)? Justify your answer.",
-          "type": "long"
+          "type": "long",
+          "answer": "No, R is not an equivalence relation. R is reflexive (A is a subset of A) and transitive (A subset of B and B subset of C implies A subset of C), but R is not symmetric. For example, if X = {1,2}, then {1} is a subset of {1,2} but {1,2} is not a subset of {1}."
         },
         {
           "qno": 4,
           "question": "Find the number of all onto functions from the set {1, 2, 3, ..., n} to itself.",
-          "type": "short"
+          "type": "short",
+          "answer": "n! (n factorial). A function from a finite set to itself is onto if and only if it is one-one, and the number of bijections from {1,2,...,n} to itself is n!."
         },
         {
           "qno": 5,
           "question": "Let A = {-1, 0, 1, 2}, B = {-4, -2, 0, 2} and f, g: A -> B be functions defined by f(x) = x^2 - x, x in A and g(x) = 2|x - 1/2| - 1, x in A. Are f and g equal? Justify your answer. (Hint: One may note that two functions f: A -> B and g: A -> B such that f(a) = g(a) for all a in A, are called equal functions).",
-          "type": "long"
+          "type": "long",
+          "answer": "Yes, f and g are equal. f(-1) = 1+1 = 2, g(-1) = 2|-3/2|-1 = 3-1 = 2. f(0) = 0, g(0) = 2|−1/2|−1 = 1-1 = 0. f(1) = 1-1 = 0, g(1) = 2|1/2|-1 = 1-1 = 0. f(2) = 4-2 = 2, g(2) = 2|3/2|-1 = 3-1 = 2. Since f(a) = g(a) for all a in A, f = g."
         },
         {
           "qno": 6,
           "question": "Let A = {1, 2, 3}. Then number of relations containing (1, 2) and (1, 3) which are reflexive and symmetric but not transitive is\n(A) 1\n(B) 2\n(C) 3\n(D) 4",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "(A) 1. The relation must contain (1,1),(2,2),(3,3) (reflexive), (2,1),(3,1) (symmetric). The only such relation that is not transitive is R = {(1,1),(2,2),(3,3),(1,2),(2,1),(1,3),(3,1)}. Adding (2,3) and (3,2) would make it transitive."
         },
         {
           "qno": 7,
           "question": "Let A = {1, 2, 3}. Then number of equivalence relations containing (1, 2) is\n(A) 1\n(B) 2\n(C) 3\n(D) 4",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "(B) 2. The two equivalence relations containing (1,2) are: R1 = {(1,1),(2,2),(3,3),(1,2),(2,1)} with partition {{1,2},{3}}, and R2 = {(1,1),(2,2),(3,3),(1,2),(2,1),(1,3),(3,1),(2,3),(3,2)} with partition {{1,2,3}}."
         }
       ]
     }

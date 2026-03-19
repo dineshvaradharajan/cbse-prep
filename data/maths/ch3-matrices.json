@@ -47,7 +47,7 @@
       "formulas": [
         {
           "name": "General m x n matrix",
-          "formula": "A = [a_ij]_{m x n}, 1 <= i <= m, 1 <= j <= n, i, j in N",
+          "formula": "A = [a_{ij}]_{m \\times n}, \\; 1 \\leq i \\leq m, \\; 1 \\leq j \\leq n",
           "notes": "The i-th row consists of elements a_i1, a_i2, ..., a_in and the j-th column consists of elements a_1j, a_2j, ..., a_mj"
         }
       ],
@@ -157,17 +157,17 @@
       "formulas": [
         {
           "name": "Matrix addition",
-          "formula": "If A = [a_ij] and B = [b_ij] are m x n matrices, then A + B = [a_ij + b_ij]_{m x n}",
+          "formula": "A + B = [a_{ij} + b_{ij}]_{m \\times n}",
           "notes": "Both matrices must be of the same order"
         },
         {
           "name": "Scalar multiplication",
-          "formula": "kA = [k * a_ij]_{m x n}",
+          "formula": "kA = [k \\cdot a_{ij}]_{m \\times n}",
           "notes": "The (i,j)-th element of kA is k * a_ij"
         },
         {
           "name": "Matrix multiplication element",
-          "formula": "c_ik = a_i1*b_1k + a_i2*b_2k + ... + a_in*b_nk = sum_{j=1}^{n} a_ij * b_jk",
+          "formula": "c_{ik} = a_{i1}b_{1k} + a_{i2}b_{2k} + \\cdots + a_{in}b_{nk} = \\sum_{j=1}^{n} a_{ij} b_{jk}",
           "notes": "Number of columns of A must equal number of rows of B"
         },
         {
@@ -250,22 +250,22 @@
       "formulas": [
         {
           "name": "Transpose of transpose",
-          "formula": "(A')' = A",
+          "formula": "(A^{T})^{T} = A",
           "notes": "Taking transpose twice gives back the original matrix"
         },
         {
           "name": "Transpose of scalar multiple",
-          "formula": "(kA)' = kA'",
+          "formula": "(kA)^{T} = kA^{T}",
           "notes": "Where k is any constant"
         },
         {
           "name": "Transpose of sum",
-          "formula": "(A + B)' = A' + B'",
+          "formula": "(A + B)^{T} = A^{T} + B^{T}",
           "notes": "For matrices A and B of suitable orders"
         },
         {
           "name": "Transpose of product",
-          "formula": "(AB)' = B'A'",
+          "formula": "(AB)^{T} = B^{T}A^{T}",
           "notes": "The order reverses when taking transpose of a product"
         }
       ],
@@ -296,17 +296,17 @@
       "formulas": [
         {
           "name": "Symmetric part of a matrix",
-          "formula": "(1/2)(A + A') is a symmetric matrix",
+          "formula": "\\frac{1}{2}(A + A') \\text{ is symmetric}",
           "notes": "For any square matrix A with real number entries"
         },
         {
           "name": "Skew symmetric part of a matrix",
-          "formula": "(1/2)(A - A') is a skew symmetric matrix",
+          "formula": "\\frac{1}{2}(A - A') \\text{ is skew-symmetric}",
           "notes": "For any square matrix A with real number entries"
         },
         {
           "name": "Decomposition of a square matrix",
-          "formula": "A = (1/2)(A + A') + (1/2)(A - A')",
+          "formula": "A = \\frac{1}{2}(A + A') + \\frac{1}{2}(A - A')",
           "notes": "Any square matrix can be expressed as the sum of a symmetric and a skew symmetric matrix"
         }
       ],
@@ -343,7 +343,7 @@
       "formulas": [
         {
           "name": "Inverse of a product",
-          "formula": "(AB)^(-1) = B^(-1) A^(-1)",
+          "formula": "(AB)^{-1} = B^{-1} A^{-1}",
           "notes": "If A and B are invertible matrices of the same order"
         }
       ],
@@ -401,52 +401,62 @@
         {
           "qno": 1,
           "question": "In the matrix A = [[2, 5, 19, -7], [35, -2, 5/2, 12], [sqrt(3), 1, -5, 17]], write:\n(i) The order of the matrix\n(ii) The number of elements\n(iii) Write the elements a_13, a_21, a_33, a_24, a_23.",
-          "type": "short"
+          "type": "short",
+          "answer": "(i) 3 x 4 (ii) 12 (iii) a_13 = 19, a_21 = 35, a_33 = -5, a_24 = 12, a_23 = 5/2"
         },
         {
           "qno": 2,
           "question": "If a matrix has 24 elements, what are the possible orders it can have? What, if it has 13 elements?",
-          "type": "short"
+          "type": "short",
+          "answer": "For 24 elements: 1x24, 2x12, 3x8, 4x6, 6x4, 8x3, 12x2, 24x1. For 13 elements: 1x13, 13x1"
         },
         {
           "qno": 3,
           "question": "If a matrix has 18 elements, what are the possible orders it can have? What, if it has 5 elements?",
-          "type": "short"
+          "type": "short",
+          "answer": "For 18 elements: 1x18, 2x9, 3x6, 6x3, 9x2, 18x1. For 5 elements: 1x5, 5x1"
         },
         {
           "qno": 4,
           "question": "Construct a 2 x 2 matrix, A = [a_ij], whose elements are given by:\n(i) a_ij = (i + j)^2 / 2\n(ii) a_ij = i / j\n(iii) a_ij = (i + 2j)^2 / 2",
-          "type": "short"
+          "type": "short",
+          "answer": "(i) [[2, 9/2], [9/2, 8]] (ii) [[1, 1/2], [2, 1]] (iii) [[9/2, 8], [8, 25/2]]"
         },
         {
           "qno": 5,
           "question": "Construct a 3 x 4 matrix, whose elements are given by:\n(i) a_ij = (1/2)|{-3i + j}|\n(ii) a_ij = 2i - j",
-          "type": "short"
+          "type": "short",
+          "answer": "(i) [[1, 1/2, 0, 1/2], [5/2, 2, 3/2, 1], [4, 7/2, 3, 5/2]] (ii) [[1, 0, -1, -2], [3, 2, 1, 0], [5, 4, 3, 2]]"
         },
         {
           "qno": 6,
           "question": "Find the values of x, y and z from the following equations:\n(i) [[4, 3], [x, 5]] = [[y, z], [1, 5]]\n(ii) [[x+y, 2], [5+z, xy]] = [[6, 2], [5, 8]]\n(iii) [[x+y+z], [x+z], [y+z]] = [[9], [5], [7]]",
-          "type": "short"
+          "type": "short",
+          "answer": "(i) x = 1, y = 4, z = 3 (ii) x = 4, y = 2, z = 0 or x = 2, y = 4, z = 0 (iii) x = 2, y = 4, z = 3"
         },
         {
           "qno": 7,
           "question": "Find the value of a, b, c and d from the equation: [[a-b, 2a+c], [2a-b, 3c+d]] = [[-1, 5], [0, 13]]",
-          "type": "short"
+          "type": "short",
+          "answer": "a = 1, b = 2, c = 3, d = 4"
         },
         {
           "qno": 8,
           "question": "A = [a_ij]_{m x n} is a square matrix, if\n(A) m < n\n(B) m > n\n(C) m = n\n(D) None of these",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "C"
         },
         {
           "qno": 9,
           "question": "Which of the given values of x and y make the following pair of matrices equal: [[3x+7, 5], [y+1, 2-3x]], [[0, y-2], [8, 4]]\n(A) x = -1/3, y = 7\n(B) Not possible to find\n(C) y = 7, x = -2/3\n(D) x = -1/3, y = -2/3",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "B"
         },
         {
           "qno": 10,
           "question": "The number of all possible matrices of order 3 x 3 with each entry 0 or 1 is:\n(A) 27\n(B) 18\n(C) 81\n(D) 512",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "D"
         }
       ]
     },
@@ -457,112 +467,134 @@
         {
           "qno": 1,
           "question": "Let A = [[2, 4], [3, 2]], B = [[1, 3], [-2, 5]], C = [[-2, 5], [3, 4]]. Find each of the following:\n(i) A + B\n(ii) A - B\n(iii) 3A - C\n(iv) AB\n(v) BA",
-          "type": "long"
+          "type": "long",
+          "answer": "(i) [[3, 7], [1, 7]] (ii) [[1, 1], [5, -3]] (iii) [[8, 7], [6, 2]] (iv) [[-6, 26], [-1, 19]] (v) [[11, 10], [11, -4]]"
         },
         {
           "qno": 2,
           "question": "Compute the following:\n(i) [[a, b], [-b, a]] + [[a, b], [b, a]]\n(ii) [[a^2+b^2, b^2+c^2], [a^2+c^2, a^2+b^2]] + [[2ab, 2bc], [-2ac, -2ab]]\n(iii) [[-1, 4, -6], [8, 5, 16], [2, 8, 5]] + [[12, 7, 6], [8, 0, 5], [3, 2, 4]]\n(iv) [[cos^2(x), sin^2(x)], [sin^2(x), cos^2(x)]] + [[sin^2(x), cos^2(x)], [cos^2(x), sin^2(x)]]",
-          "type": "short"
+          "type": "short",
+          "answer": "(i) [[2a, 2b], [0, 2a]] (ii) [[(a+b)^2, (b+c)^2], [(a-c)^2, (a-b)^2]] (iii) [[11, 11, 0], [16, 5, 21], [5, 10, 9]] (iv) [[1, 1], [1, 1]]"
         },
         {
           "qno": 3,
           "question": "Compute the indicated products:\n(i) [[a, b], [-b, a]][[a, -b], [b, a]]\n(ii) [[1], [2], [3]][2, 3, 4]\n(iii) [[1, -2], [2, 3]][[1, 2, 3], [2, 3, 1]]\n(iv) [[2, 3, 4], [3, 4, 5], [4, 5, 6]][[1, -3, 5], [0, 2, 4], [3, 0, 5]]\n(v) [[2, 1], [3, 2], [-1, 1]][[1, 0, 1], [-1, 2, 1]]\n(vi) [[3, -1, 3], [-1, 0, 2]][[2, -3], [1, 0], [3, 1]]",
-          "type": "long"
+          "type": "long",
+          "answer": "(i) [[a^2+b^2, 0], [0, a^2+b^2]] (ii) [[2, 3, 4], [4, 6, 8], [6, 9, 12]] (iii) [[-3, -4, 1], [8, 13, 9]] (iv) [[14, 0, 42], [18, -1, 56], [22, -2, 70]] (v) [[1, 2, 3], [1, 4, 5], [-2, 2, 0]] (vi) [[14, -6], [4, 5]]"
         },
         {
           "qno": 4,
           "question": "If A = [[1, 2, -3], [5, 0, 2], [1, -1, 1]], B = [[3, -1, 2], [4, 2, 5], [2, 0, 3]] and C = [[4, 1, 2], [0, 3, 2], [1, -2, 3]], then compute (A+B) and (B-C). Also, verify that A + (B - C) = (A + B) - C.",
-          "type": "long"
+          "type": "long",
+          "answer": "A+B = [[4, 1, -1], [9, 2, 7], [3, -1, 4]]. B-C = [[-1, -2, 0], [4, -1, 3], [1, 2, 0]]. Verified: A+(B-C) = (A+B)-C = [[0, 0, -3], [9, -1, 5], [2, 1, 1]]"
         },
         {
           "qno": 5,
           "question": "If A = [[2/3, 1, 5/3], [1/3, 2/3, 4/3], [7/3, 2, 2/3]] and B = [[2/5, 3/5, 1], [1/5, 2/5, 4/5], [7/5, 6/5, 2/5]], then compute 3A - 5B.",
-          "type": "short"
+          "type": "short",
+          "answer": "[[0, 0, 0], [0, 0, 0], [0, 0, 0]] (zero matrix)"
         },
         {
           "qno": 6,
           "question": "Simplify: cos(theta) * [[cos(theta), sin(theta)], [-sin(theta), cos(theta)]] + sin(theta) * [[sin(theta), -cos(theta)], [cos(theta), sin(theta)]]",
-          "type": "short"
+          "type": "short",
+          "answer": "[[1, 0], [0, 1]] = I (Identity matrix)"
         },
         {
           "qno": 7,
           "question": "Find X and Y, if\n(i) X + Y = [[7, 0], [2, 5]] and X - Y = [[3, 0], [0, 3]]\n(ii) 2X + 3Y = [[2, 3], [4, 0]] and 3X + 2Y = [[2, -2], [-1, 5]]",
-          "type": "short"
+          "type": "short",
+          "answer": "(i) X = [[5, 0], [1, 4]], Y = [[2, 0], [1, 1]] (ii) X = [[2/5, -12/5], [-11/5, 3]], Y = [[2/5, 13/5], [14/5, -2]]"
         },
         {
           "qno": 8,
           "question": "Find X, if Y = [[3, 2], [1, 4]] and 2X + Y = [[1, 0], [-3, 2]].",
-          "type": "short"
+          "type": "short",
+          "answer": "X = [[-1, -1], [-2, -1]]"
         },
         {
           "qno": 9,
           "question": "Find x and y, if 2[[1, 3], [0, x]] + [[y, 0], [1, 2]] = [[5, 6], [1, 8]].",
-          "type": "short"
+          "type": "short",
+          "answer": "x = 3, y = 3"
         },
         {
           "qno": 10,
           "question": "Solve the equation for x, y, z and t, if 2[[x, z], [y, t]] + 3[[1, -1], [0, 2]] = 3[[3, 5], [4, 6]].",
-          "type": "short"
+          "type": "short",
+          "answer": "x = 3, y = 6, z = 9, t = 6"
         },
         {
           "qno": 11,
           "question": "If x[[2], [3]] + y[[-1], [1]] = [[10], [5]], find the values of x and y.",
-          "type": "short"
+          "type": "short",
+          "answer": "x = 3, y = -4"
         },
         {
           "qno": 12,
           "question": "Given 3[[x, y], [z, w]] = [[x, 6], [-1, 2w]] + [[4, x+y], [z+w, 3]], find the values of x, y, z and w.",
-          "type": "short"
+          "type": "short",
+          "answer": "x = 2, y = 4, z = 1, w = 3"
         },
         {
           "qno": 13,
           "question": "If F(x) = [[cos(x), -sin(x), 0], [sin(x), cos(x), 0], [0, 0, 1]], show that F(x) F(y) = F(x + y).",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Multiply F(x)F(y) and use addition formulas cos(x)cos(y) - sin(x)sin(y) = cos(x+y) and sin(x)cos(y) + cos(x)sin(y) = sin(x+y) to get F(x+y)"
         },
         {
           "qno": 14,
           "question": "Show that\n(i) [[5, -1], [6, 7]][[2, 1], [3, 4]] != [[2, 1], [3, 4]][[5, -1], [6, 7]]\n(ii) [[1, 2, 3], [0, 1, 0], [1, 1, 0]][[-1, 1, 0], [0, -1, 1], [2, 3, 4]] != [[-1, 1, 0], [0, -1, 1], [2, 3, 4]][[1, 2, 3], [0, 1, 0], [1, 1, 0]]",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Compute both products separately and show they are not equal. (i) AB = [[7, 1], [33, 34]], BA = [[16, 5], [39, 25]]. (ii) AB = [[5, 8, 14], [0, -1, 1], [1, 0, 1]], BA = [[-1, -1, -3], [1, 0, 0], [6, 11, 6]]"
         },
         {
           "qno": 15,
           "question": "Find A^2 - 5A + 6I, if A = [[2, 0, 1], [2, 1, 3], [1, -1, 0]].",
-          "type": "long"
+          "type": "long",
+          "answer": "A^2 = [[5, -1, 2], [9, -2, 5], [0, -1, -2]]. A^2 - 5A + 6I = [[1, -1, -3], [-1, 3, -10], [-5, 4, 4]]"
         },
         {
           "qno": 16,
           "question": "If A = [[1, 0, 2], [0, 2, 1], [2, 0, 3]], prove that A^3 - 6A^2 + 7A + 2I = 0.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Compute A^2 = [[5, 0, 8], [2, 4, 5], [8, 0, 13]], then A^3 = A*A^2 = [[21, 0, 34], [12, 8, 23], [34, 0, 55]]. Substitute and verify each entry equals 0."
         },
         {
           "qno": 17,
           "question": "If A = [[3, -2], [4, -2]] and I = [[1, 0], [0, 1]], find k so that A^2 = kA - 2I.",
-          "type": "short"
+          "type": "short",
+          "answer": "k = 1"
         },
         {
           "qno": 18,
           "question": "If A = [[0, -tan(alpha/2)], [tan(alpha/2), 0]] and I is the identity matrix of order 2, show that I + A = (I - A)[[cos(alpha), -sin(alpha)], [sin(alpha), cos(alpha)]].",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Let t = tan(alpha/2). Compute (I-A) times the rotation matrix. Use identities cos(alpha) = (1-t^2)/(1+t^2) and sin(alpha) = 2t/(1+t^2) to show LHS = RHS."
         },
         {
           "qno": 19,
           "question": "A trust fund has Rs 30,000 that must be invested in two different types of bonds. The first bond pays 5% interest per year, and the second bond pays 7% interest per year. Using matrix multiplication, determine how to divide Rs 30,000 among the two types of bonds. If the trust fund must obtain an annual total interest of:\n(a) Rs 1800\n(b) Rs 2000",
-          "type": "long"
+          "type": "long",
+          "answer": "(a) Rs 15,000 in first bond and Rs 15,000 in second bond. (b) Rs 5,000 in first bond and Rs 25,000 in second bond."
         },
         {
           "qno": 20,
           "question": "The bookshop of a particular school has 10 dozen chemistry books, 8 dozen physics books, 10 dozen economics books. Their selling prices are Rs 80, Rs 60 and Rs 40 each respectively. Find the total amount the bookshop will receive from selling all the books using matrix algebra.",
-          "type": "short"
+          "type": "short",
+          "answer": "Rs 20,160"
         },
         {
           "qno": 21,
           "question": "Assume X, Y, Z, W and P are matrices of order 2 x n, 3 x k, 2 x p, n x 3 and p x k, respectively. The restriction on n, k and p so that PY + WY will be defined are:\n(A) k = 3, p = n\n(B) k is arbitrary, p = 2\n(C) p is arbitrary, k = 3\n(D) k = 2, p = 3",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "A"
         },
         {
           "qno": 22,
           "question": "If n = p, then the order of the matrix 7X - 5Z is:\n(A) p x 2\n(B) 2 x n\n(C) n x 3\n(D) p x n",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "B"
         }
       ]
     },
@@ -573,62 +605,74 @@
         {
           "qno": 1,
           "question": "Find the transpose of each of the following matrices:\n(i) [[5], [1/2], [-1]]\n(ii) [[1, -1], [2, 3]]\n(iii) [[-1, 5, 6], [sqrt(3), 5, 6], [2, 3, -1]]",
-          "type": "short"
+          "type": "short",
+          "answer": "(i) [5, 1/2, -1] (ii) [[1, 2], [-1, 3]] (iii) [[-1, sqrt(3), 2], [5, 5, 3], [6, 6, -1]]"
         },
         {
           "qno": 2,
           "question": "If A = [[-1, 2, 3], [5, 7, 9], [-2, 1, 1]] and B = [[-4, 1, -5], [1, 2, 0], [1, 3, 1]], then verify that\n(i) (A + B)' = A' + B'\n(ii) (A - B)' = A' - B'",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Compute A+B = [[-5, 3, -2], [6, 9, 9], [-1, 4, 2]], then take transposes of both sides and verify equality. Similarly for A-B."
         },
         {
           "qno": 3,
           "question": "If A' = [[3, 4], [-1, 2], [0, 1]] and B = [[-1, 2, 1], [1, 2, 3]], then verify that\n(i) (A + B)' = A' + B'\n(ii) (A - B)' = A' - B'",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: First find A from A' (transpose back): A = [[3, -1, 0], [4, 2, 1]]. Then compute A+B and A-B, take transposes, and verify."
         },
         {
           "qno": 4,
           "question": "If A' = [[-2, 3], [1, 2]] and B = [[-1, 0], [1, 2]], then find (A + 2B)'.",
-          "type": "short"
+          "type": "short",
+          "answer": "[[-4, 3], [3, 6]]"
         },
         {
           "qno": 5,
           "question": "For the matrices A and B, verify that (AB)' = B'A', where\n(i) A = [[1], [-4], [3]], B = [-1, 2, 1]\n(ii) A = [[0], [1], [2]], B = [1, 5, 7]",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: (i) AB = [[-1, 2, 1], [4, -8, -4], [-3, 6, 3]], (AB)' = [[-1, 4, -3], [2, -8, 6], [1, -4, 3]]. Verify B'A' gives the same. (ii) AB = [[0, 0, 0], [1, 5, 7], [2, 10, 14]], verify similarly."
         },
         {
           "qno": 6,
           "question": "(i) If A = [[cos(alpha), sin(alpha)], [-sin(alpha), cos(alpha)]], then verify that A'A = I.\n(ii) If A = [[sin(alpha), cos(alpha)], [-cos(alpha), sin(alpha)]], then verify that A'A = I.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Compute A'A using sin^2(alpha) + cos^2(alpha) = 1 to show diagonal entries are 1 and off-diagonal entries are 0."
         },
         {
           "qno": 7,
           "question": "(i) Show that the matrix A = [[1, -1, 5], [-1, 2, 1], [5, 1, 3]] is a symmetric matrix.\n(ii) Show that the matrix A = [[0, 1, -1], [-1, 0, 1], [1, -1, 0]] is a skew symmetric matrix.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: (i) Show A' = A by verifying a_ij = a_ji for all i, j. (ii) Show A' = -A by verifying a_ji = -a_ij for all i, j, and diagonal elements are 0."
         },
         {
           "qno": 8,
           "question": "For the matrix A = [[1, 5], [6, 7]], verify that\n(i) (A + A') is a symmetric matrix\n(ii) (A - A') is a skew symmetric matrix",
-          "type": "short"
+          "type": "short",
+          "answer": "A' = [[1, 6], [5, 7]]. A+A' = [[2, 11], [11, 14]] (symmetric). A-A' = [[0, -1], [1, 0]] (skew symmetric)."
         },
         {
           "qno": 9,
           "question": "Find (1/2)(A + A') and (1/2)(A - A'), when A = [[0, a, b], [-a, 0, c], [-b, -c, 0]].",
-          "type": "short"
+          "type": "short",
+          "answer": "(1/2)(A + A') = [[0, 0, 0], [0, 0, 0], [0, 0, 0]] (zero matrix). (1/2)(A - A') = [[0, a, b], [-a, 0, c], [-b, -c, 0]] = A (since A is skew symmetric)."
         },
         {
           "qno": 10,
           "question": "Express the following matrices as the sum of a symmetric and a skew symmetric matrix:\n(i) [[3, 5], [1, -1]]\n(ii) [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]\n(iii) [[3, 3, -1], [-2, -2, 1], [-4, -5, 2]]\n(iv) [[1, 5], [-1, 2]]",
-          "type": "long"
+          "type": "long",
+          "answer": "(i) Symmetric: [[3, 3], [3, -1]], Skew: [[0, 2], [-2, 0]]. (ii) Already symmetric: [[6, -2, 2], [-2, 3, -1], [2, -1, 3]], Skew: zero matrix. (iii) Symmetric: [[3, 1/2, -5/2], [1/2, -2, -2], [-5/2, -2, 2]], Skew: [[0, 5/2, 3/2], [-5/2, 0, 3], [-3/2, -3, 0]]. (iv) Symmetric: [[1, 2], [2, 2]], Skew: [[0, 3], [-3, 0]]."
         },
         {
           "qno": 11,
           "question": "If A, B are symmetric matrices of same order, then AB - BA is a\n(A) Skew symmetric matrix\n(B) Symmetric matrix\n(C) Zero matrix\n(D) Identity matrix",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "A"
         },
         {
           "qno": 12,
           "question": "If A = [[cos(alpha), -sin(alpha)], [sin(alpha), cos(alpha)]], and A + A' = I, then the value of alpha is\n(A) pi/6\n(B) pi/3\n(C) pi\n(D) 3*pi/2",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "B"
         }
       ]
     },
@@ -639,7 +683,8 @@
         {
           "qno": 1,
           "question": "Matrices A and B will be inverse of each other only if\n(A) AB = BA\n(B) AB = BA = 0\n(C) AB = 0, BA = I\n(D) AB = BA = I",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "D"
         }
       ]
     },
@@ -650,57 +695,68 @@
         {
           "qno": 1,
           "question": "If A and B are symmetric matrices, prove that AB - BA is a skew symmetric matrix.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Use the fact that A' = A and B' = B. Compute (AB - BA)' = (AB)' - (BA)' = B'A' - A'B' = BA - AB = -(AB - BA). Hence AB - BA is skew symmetric."
         },
         {
           "qno": 2,
           "question": "Show that the matrix B'AB is symmetric or skew symmetric according as A is symmetric or skew symmetric.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: Compute (B'AB)' = B'A'(B')' = B'A'B. If A is symmetric (A' = A), this gives B'AB (symmetric). If A is skew symmetric (A' = -A), this gives -B'AB (skew symmetric)."
         },
         {
           "qno": 3,
           "question": "Find the values of x, y, z if the matrix A = [[0, 2y, z], [x, y, -z], [x, -y, z]] satisfy the equation A'A = I.",
-          "type": "long"
+          "type": "long",
+          "answer": "x = +/-1/sqrt(2), y = +/-1/sqrt(6), z = +/-1/sqrt(3)"
         },
         {
           "qno": 4,
           "question": "For what values of x: [1, 2, 1][[1, 2, 0], [2, 0, 1], [1, 0, 2]][[0], [2], [x]] = O?",
-          "type": "short"
+          "type": "short",
+          "answer": "x = -1"
         },
         {
           "qno": 5,
           "question": "If A = [[3, 1], [-1, 2]], show that A^2 - 5A + 7I = 0.",
-          "type": "long"
+          "type": "long",
+          "answer": "Hint: A^2 = [[8, 5], [-5, 3]]. Then A^2 - 5A + 7I = [[8, 5], [-5, 3]] - [[15, 5], [-5, 10]] + [[7, 0], [0, 7]] = [[0, 0], [0, 0]]."
         },
         {
           "qno": 6,
           "question": "Find x, if [x, -5, -1][[1, 0, 2], [0, 2, 1], [2, 0, 3]][[x], [4], [1]] = O.",
-          "type": "short"
+          "type": "short",
+          "answer": "x = +/-4*sqrt(2)"
         },
         {
           "qno": 7,
           "question": "A manufacturer produces three products x, y, z which he sells in two markets. Annual sales are indicated below:\nMarket I: 10000, 2000, 18000\nMarket II: 6000, 20000, 8000\n(a) If unit sale prices of x, y and z are Rs 2.50, Rs 1.50 and Rs 1.00, respectively, find the total revenue in each market with the help of matrix algebra.\n(b) If the unit costs of the above three commodities are Rs 2.00, Rs 1.00 and 50 paise respectively, find the gross profit.",
-          "type": "long"
+          "type": "long",
+          "answer": "(a) Market I revenue = Rs 46,000, Market II revenue = Rs 53,000. (b) Total cost: Market I = Rs 31,000, Market II = Rs 36,000. Gross profit = Rs 32,000."
         },
         {
           "qno": 8,
           "question": "Find the matrix X so that X[[1, 2, 3], [4, 5, 6]] = [[-7, -8, -9], [2, 4, 6]].",
-          "type": "short"
+          "type": "short",
+          "answer": "X = [[1, -2], [2, 0]]"
         },
         {
           "qno": 9,
           "question": "If A = [[alpha, beta], [gamma, -alpha]] is such that A^2 = I, then\n(A) 1 + alpha^2 + beta*gamma = 0\n(B) 1 - alpha^2 + beta*gamma = 0\n(C) 1 - alpha^2 - beta*gamma = 0\n(D) 1 + alpha^2 - beta*gamma = 0",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "C"
         },
         {
           "qno": 10,
           "question": "If the matrix A is both symmetric and skew symmetric, then\n(A) A is a diagonal matrix\n(B) A is a zero matrix\n(C) A is a square matrix\n(D) None of these",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "B"
         },
         {
           "qno": 11,
           "question": "If A is square matrix such that A^2 = A, then (I + A)^3 - 7A is equal to\n(A) A\n(B) I - A\n(C) I\n(D) 3A",
-          "type": "mcq"
+          "type": "mcq",
+          "answer": "C"
         }
       ]
     }

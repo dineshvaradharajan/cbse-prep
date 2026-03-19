@@ -151,7 +151,7 @@
 .formula-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .5rem }
 .formula-list li { display: flex; flex-direction: column; gap: .18rem }
 .fl-name  { font-size: .77rem; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em }
-.fl-eq    { font-family: monospace; font-size: .89rem; color: #166534; background: #f0fdf4; border: 1px solid #86efac; border-radius: 5px; padding: .25rem .6rem; display: inline-block; line-height: 1.55 }
+.fl-eq    { font-size: 1.05rem; color: #166534; background: #f0fdf4; border: 1px solid #86efac; border-radius: 5px; padding: .3rem .7rem; display: inline-block; line-height: 1.7 }
 .fl-note  { font-size: .78rem; color: var(--ink-3); line-height: 1.5 }
 
 /* Tips list */

@@ -6,25 +6,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/mock-tests.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <style>:root{
   --subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;
   --green:#16a34a;--orange:#d97706;--red:#dc2626;
 }
-.year-badge {
-  display:inline-block;font-size:.6rem;font-weight:700;padding:.12em .5em;
-  border-radius:100px;letter-spacing:.02em;margin-left:.35rem;
-  background:#f5f3ff;color:#7c3aed;border:1px solid #c4b5fd;
-}
-.review-year { display:inline-block;font-size:.6rem;font-weight:700;padding:.12em .5em;border-radius:100px;margin-left:.25rem;background:#f5f3ff;color:#7c3aed }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mathematics MCQ Mock Tests for CBSE Class 12 — timed PYQ-based practice with instant scoring.">
+<meta name="description" content="Mathematics MCQ Mock Tests for CBSE Class 12 — timed practice based on PYQ questions.">
 <meta name="author" content="Dinesh Varadharajan">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Maths Mock Tests | CBSE Class 12">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://ncert.myailab.space/maths/mock-tests.html">
-<title>Maths Mock Tests — PYQ Based — CBSE XII</title>
+<link rel="canonical" href="https://cbse-prep.pages.dev/maths/mock-tests.html">
+<title>Maths Mock Tests | CBSE Class 12</title>
 </head>
 <body>
 <div class="container">
@@ -35,7 +32,7 @@
   <div id="screen-select">
     <div class="page-header">
       <h1>MCQ Mock Tests</h1>
-      <p>PYQ-based tests &middot; 5 questions each &middot; 5 minutes &middot; from CBSE 2019–2025 papers</p>
+      <p>9 tests &middot; 16 questions each &middot; 30 minutes &middot; All chapters &middot; PYQ-based</p>
     </div>
 
     <div class="test-grid" id="test-grid"></div>
@@ -47,16 +44,16 @@
     <div class="test-topbar">
       <div>
         <div class="test-topbar-name" id="topbar-name"></div>
-        <div class="test-topbar-meta"><span id="topbar-qcount">5</span> questions &middot; 1 mark each &middot; No negative marking</div>
+        <div class="test-topbar-meta">16 questions &middot; 1 mark each &middot; No negative marking</div>
       </div>
       <div class="timer-wrap">
         <div class="timer-label">Time left</div>
-        <div id="timer-display">05:00</div>
+        <div id="timer-display">30:00</div>
       </div>
     </div>
 
     <div class="progress-bar-wrap"><div class="progress-bar-fill" id="prog-fill" style="width:0%"></div></div>
-    <div class="progress-label" id="prog-label">0 / 5 answered</div>
+    <div class="progress-label" id="prog-label">0 / 16 answered</div>
 
     <div class="q-nav-bar" id="q-nav-bar">
       <div class="nav-legend">
@@ -70,7 +67,7 @@
       <div class="q-meta">
         <span class="q-number" id="q-number-label"></span>
         <span class="q-chapter-tag" id="q-chapter-tag"></span>
-        <span class="year-badge" id="q-year-tag"></span>
+        <span class="q-chapter-tag" id="q-year-tag" style="margin-left:.25rem"></span>
         <span class="q-chapter-tag" id="q-diff-tag" style="margin-left:auto"></span>
       </div>
       <div class="q-text" id="q-text"></div>
@@ -92,7 +89,7 @@
   <!-- ══════════════════ RESULT SCREEN ══════════════════ -->
   <div id="screen-result">
     <div class="result-hero">
-      <div class="result-score-big"><span id="res-score">&mdash;</span><span class="denom" id="res-denom"> / 5</span></div>
+      <div class="result-score-big"><span id="res-score">&mdash;</span><span class="denom"> / 16</span></div>
       <div class="result-pct" id="res-pct"></div>
       <div class="result-grade" id="res-grade"></div>
       <div class="result-stats">
@@ -114,56 +111,31 @@
 </div><!-- /container -->
 
 <script src="../data/maths-mock-tests.js"></script>
+<script src="../js/matrix-render.js"></script>
 <script src="../js/mobile-dropdowns.js"></script>
 <script>
 /* ═══════════════════════════════════════════════
-   MATH TEXT FORMATTER
+   MATHS TEXT FORMATTER
+   Renders basic math notation — superscripts, fractions, etc.
 ═══════════════════════════════════════════════ */
-function mathFmt(s) {
+function mathFormat(s) {
   if (!s) return s;
-  // Superscripts: x^(n+1), x^2, x^(-1)
-  s = s.replace(/\^(\([^)]+\))/g, function(m, exp) {
-    return '<sup>' + exp.replace(/[()]/g,'') + '</sup>';
-  });
-  s = s.replace(/\^(-?\d+)/g, '<sup>$1</sup>');
 
-  // Greek letters
-  s = s.replace(/\bpi\b/g, '\u03C0');
-  s = s.replace(/\btheta\b/g, '\u03B8');
-  s = s.replace(/\balpha\b/g, '\u03B1');
-  s = s.replace(/\bbeta\b/g, '\u03B2');
-  s = s.replace(/\bgamma\b/g, '\u03B3');
-  s = s.replace(/\blambda\b/g, '\u03BB');
-  s = s.replace(/\bdelta\b/g, '\u03B4');
-  s = s.replace(/\bphi\b/g, '\u03C6');
-  s = s.replace(/\binfinity\b/g, '\u221E');
-  s = s.replace(/-infinity\b/g, '-\u221E');
+  // Convert matrix notation to LaTeX
+  s = formatMatrices(s);
 
-  // Vector notation
-  s = s.replace(/([a-z])_vec\b/g, '<span style="text-decoration:overline;font-weight:600">$1</span>');
-  s = s.replace(/\b([ijk])_hat\b/g, '$1\u0302');
-  s = s.replace(/\br_vec\b/g, '<span style="text-decoration:overline;font-weight:600">r</span>');
+  // Protect LaTeX segments from HTML escaping
+  var latexSlots = [];
+  s = s.replace(/\$[^$]+\$/g, function(m) { latexSlots.push(m); return '\x00LATEX' + (latexSlots.length - 1) + '\x00'; });
 
-  // sqrt
-  s = s.replace(/\bsqrt\(([^)]+)\)/g, '\u221A($1)');
+  // Escape HTML
+  s = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-  // Integral notation
-  s = s.replace(/\bintegral_(\S+?)\^(\S+?)\s/g, '\u222B<sub>$1</sub><sup>$2</sup> ');
-  s = s.replace(/\bintegral\b/g, '\u222B');
-
-  // Trig power notation: sin^(-1), cos^2
-  s = s.replace(/\b(sin|cos|tan|cot|sec|cosec)\^(-?\d+)/g, function(m, fn, exp) {
-    return fn + '<sup>' + exp + '</sup>';
-  });
-
-  // Subscripts: x_1, a_12
-  s = s.replace(/([a-zA-Z])_(\d+)/g, '$1<sub>$2</sub>');
-
-  // Arrows
-  s = s.replace(/->/g, ' \u2192 ');
-
-  // Newlines
+  // Newlines → <br>
   s = s.replace(/\n/g, '<br>');
+
+  // Restore LaTeX segments
+  s = s.replace(/\x00LATEX(\d+)\x00/g, function(m, i) { return latexSlots[i]; });
 
   return s;
 }
@@ -179,7 +151,6 @@ let timerSeconds = 0;
 let timerInterval = null;
 let startTime = null;
 const LETTERS = ['A','B','C','D'];
-let totalQ = 5;
 
 /* ═══════════════════════════════════════════════
    INIT — build test selection cards
@@ -188,8 +159,6 @@ function buildSelectScreen() {
   const grid = document.getElementById('test-grid');
   grid.innerHTML = '';
   MATHS_MOCK_TESTS.forEach(t => {
-    const qCount = t.questions.length;
-    const mins = Math.ceil(t.duration / 60);
     const card = document.createElement('div');
     card.className = 'test-card';
     card.innerHTML = `
@@ -201,10 +170,10 @@ function buildSelectScreen() {
         </div>
       </div>
       <div class="test-meta">
-        <span class="test-badge">${qCount} Questions</span>
-        <span class="test-badge time">&#9201; ${mins} min</span>
-        <span class="test-badge marks">&#9733; ${qCount} Marks</span>
-        <span class="test-badge">PYQ Based</span>
+        <span class="test-badge">16 Questions</span>
+        <span class="test-badge time">&#9201; 30 min</span>
+        <span class="test-badge marks">&#9733; 16 Marks</span>
+        <span class="test-badge">All Chapters</span>
       </div>
       <button class="test-start-btn" onclick="startTest(${t.id})">Start Test &rarr;</button>
     `;
@@ -217,7 +186,6 @@ function buildSelectScreen() {
 ═══════════════════════════════════════════════ */
 function startTest(testId) {
   activeTest = MATHS_MOCK_TESTS.find(t => t.id === testId);
-  totalQ = activeTest.questions.length;
   currentQ = 0;
   selections = {};
   submitted = false;
@@ -228,7 +196,6 @@ function startTest(testId) {
   document.getElementById('screen-test').style.display = 'block';
 
   document.getElementById('topbar-name').textContent = activeTest.name;
-  document.getElementById('topbar-qcount').textContent = totalQ;
 
   buildQNav();
   renderQuestion();
@@ -258,9 +225,9 @@ function updateTimerDisplay() {
   const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
   const s = (timerSeconds % 60).toString().padStart(2, '0');
   el.textContent = `${m}:${s}`;
-  el.className = timerSeconds < 60 ? 'urgent' : timerSeconds < 150 ? 'warn' : '';
-  if (timerSeconds < 60) el.style.color = '#dc2626';
-  else if (timerSeconds < 150) el.style.color = '#d97706';
+  el.className = timerSeconds < 300 ? 'urgent' : timerSeconds < 600 ? 'warn' : '';
+  if (timerSeconds < 300) el.style.color = '#dc2626';
+  else if (timerSeconds < 600) el.style.color = '#d97706';
   else el.style.color = '';
 }
 
@@ -322,9 +289,9 @@ function updateQNav() {
   }
 
   const answered = Object.keys(selections).length;
-  const pct = (answered / totalQ) * 100;
+  const pct = (answered / 16) * 100;
   document.getElementById('prog-fill').style.width = pct + '%';
-  document.getElementById('prog-label').textContent = `${answered} / ${totalQ} answered`;
+  document.getElementById('prog-label').textContent = `${answered} / 16 answered`;
 }
 
 /* ═══════════════════════════════════════════════
@@ -333,12 +300,12 @@ function updateQNav() {
 function renderQuestion() {
   const q = activeTest.questions[currentQ];
 
-  document.getElementById('q-number-label').textContent = `Question ${currentQ + 1} of ${totalQ}`;
+  document.getElementById('q-number-label').textContent = `Question ${currentQ + 1} of ${activeTest.questions.length}`;
   document.getElementById('q-chapter-tag').textContent = q.chapter;
 
   // Year badge
   const yearTag = document.getElementById('q-year-tag');
-  yearTag.textContent = q.year || '';
+  yearTag.textContent = q.year ? 'PYQ ' + q.year : '';
   yearTag.style.display = q.year ? '' : 'none';
 
   document.getElementById('q-diff-tag').textContent = q.difficulty;
@@ -346,8 +313,8 @@ function renderQuestion() {
     q.difficulty === 'easy' ? '#f0fdf4' : q.difficulty === 'medium' ? '#fefce8' : '#fef2f2';
   document.getElementById('q-diff-tag').style.color =
     q.difficulty === 'easy' ? '#166534' : q.difficulty === 'medium' ? '#854d0e' : '#991b1b';
-  document.getElementById('q-text').innerHTML = mathFmt(q.text);
-  document.getElementById('q-counter').textContent = `${currentQ + 1} / ${totalQ}`;
+  document.getElementById('q-text').innerHTML = mathFormat(q.text);
+  document.getElementById('q-counter').textContent = `${currentQ + 1} / ${activeTest.questions.length}`;
 
   const grid = document.getElementById('options-grid');
   grid.innerHTML = '';
@@ -366,7 +333,7 @@ function renderQuestion() {
       btn.onclick = () => selectAnswer(letter);
     }
 
-    btn.innerHTML = `<span class="opt-letter">${letter}</span><span>${mathFmt(opt)}</span>`;
+    btn.innerHTML = `<span class="opt-letter">${letter}</span><span>${mathFormat(opt)}</span>`;
     grid.appendChild(btn);
   });
 
@@ -377,16 +344,17 @@ function renderQuestion() {
     explBox.style.display = 'block';
     explBox.className = 'explanation-box' + (isCorrect ? '' : ' wrong');
     document.getElementById('expl-label').textContent = isCorrect ? 'Correct!' : `Incorrect \u2014 Answer: ${q.answer}`;
-    document.getElementById('expl-text').innerHTML = mathFmt(q.explanation);
+    document.getElementById('expl-text').innerHTML = mathFormat(q.explanation);
   } else {
     explBox.style.display = 'none';
   }
 
   document.getElementById('btn-prev').disabled = currentQ === 0;
-  document.getElementById('btn-next').disabled = currentQ === totalQ - 1;
+  document.getElementById('btn-next').disabled = currentQ === activeTest.questions.length - 1;
   document.getElementById('btn-submit').style.display = submitted ? 'none' : '';
 
   updateQNav();
+  renderMath(document.getElementById('screen-test'));
 }
 
 /* ═══════════════════════════════════════════════
@@ -408,7 +376,7 @@ function selectAnswer(letter) {
 ═══════════════════════════════════════════════ */
 function navigate(dir) {
   const newIdx = currentQ + dir;
-  if (newIdx < 0 || newIdx >= totalQ) return;
+  if (newIdx < 0 || newIdx >= activeTest.questions.length) return;
   currentQ = newIdx;
   renderQuestion();
 }
@@ -418,7 +386,7 @@ function navigate(dir) {
 ═══════════════════════════════════════════════ */
 function confirmSubmit() {
   const answered = Object.keys(selections).length;
-  const remaining = totalQ - answered;
+  const remaining = 16 - answered;
   if (remaining > 0) {
     if (!confirm(`You have ${remaining} unanswered question${remaining > 1 ? 's' : ''}. Submit anyway?`)) return;
   }
@@ -445,9 +413,8 @@ function submitTest(auto) {
   document.getElementById('screen-test').style.display = 'none';
   document.getElementById('screen-result').style.display = 'block';
 
-  const pct = Math.round((correct / totalQ) * 100);
+  const pct = Math.round((correct / 16) * 100);
   document.getElementById('res-score').textContent = correct;
-  document.getElementById('res-denom').textContent = ` / ${totalQ}`;
   document.getElementById('res-pct').textContent = `${pct}%`;
   document.getElementById('res-correct').textContent = correct;
   document.getElementById('res-wrong').textContent = wrong;
@@ -488,8 +455,8 @@ function buildReview() {
     const item = document.createElement('div');
     item.className = `review-item ${cls}`;
 
-    const yourText = sel ? `Your answer: ${sel} \u2014 ${mathFmt(q.options[LETTERS.indexOf(sel)])}` : 'Not attempted';
-    const correctText = `Correct: ${q.answer} \u2014 ${mathFmt(q.options[LETTERS.indexOf(q.answer)])}`;
+    const yourText = sel ? `Your answer: ${sel} \u2014 ${mathFormat(q.options[LETTERS.indexOf(sel)])}` : 'Not attempted';
+    const correctText = `Correct: ${q.answer} \u2014 ${mathFormat(q.options[LETTERS.indexOf(q.answer)])}`;
 
     const diffColor = q.difficulty === 'easy' ? '#166534' : q.difficulty === 'medium' ? '#854d0e' : '#991b1b';
     const diffBg = q.difficulty === 'easy' ? '#f0fdf4' : q.difficulty === 'medium' ? '#fefce8' : '#fef2f2';
@@ -497,21 +464,22 @@ function buildReview() {
     item.innerHTML = `
       <div class="review-header">
         <div class="review-num">${i + 1}</div>
-        <div class="review-q-text">${mathFmt(q.text)}</div>
+        <div class="review-q-text">${mathFormat(q.text)}</div>
       </div>
       <div class="review-answers">
         <span class="review-your">${yourText}</span>
         ${!isCorrect ? `<span class="review-correct-tag">${correctText}</span>` : ''}
       </div>
-      <div class="review-expl">${mathFmt(q.explanation)}</div>
+      <div class="review-expl">${mathFormat(q.explanation)}</div>
       <div style="display:flex;gap:.35rem;flex-wrap:wrap">
         <span class="review-chapter">${q.chapter}</span>
-        ${q.year ? `<span class="review-year">${q.year}</span>` : ''}
+        ${q.year ? `<span class="review-chapter" style="background:#f5f3ff;color:#6d28d9">PYQ ${q.year}</span>` : ''}
         <span class="review-chapter" style="background:${diffBg};color:${diffColor}">${q.difficulty}</span>
       </div>
     `;
     list.appendChild(item);
   });
+  renderMath(list);
 }
 
 /* ═══════════════════════════════════════════════

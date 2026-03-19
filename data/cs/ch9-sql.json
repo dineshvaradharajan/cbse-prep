@@ -1,0 +1,694 @@
+{
+  "chapter": 9,
+  "title": "Structured Query Language (SQL)",
+  "sections": [
+    {
+      "id": "9.1",
+      "title": "Introduction to SQL",
+      "concepts": [
+        "SQL stands for Structured Query Language",
+        "SQL is a standard language for managing and manipulating relational databases",
+        "SQL is non-procedural (declarative): you specify WHAT you want, not HOW to get it",
+        "SQL is case-insensitive for keywords (SELECT, select, Select are all valid)",
+        "SQL was developed by IBM in the 1970s and standardized by ANSI and ISO",
+        "MySQL is a popular open-source RDBMS that uses SQL"
+      ],
+      "definitions": [
+        {
+          "term": "SQL (Structured Query Language)",
+          "definition": "SQL is a standard programming language used to manage and manipulate relational databases. It allows users to create, read, update, and delete data (CRUD operations) using declarative statements."
+        },
+        {
+          "term": "MySQL",
+          "definition": "MySQL is a popular open-source Relational Database Management System (RDBMS) that uses SQL for querying and managing databases. It is widely used in web applications."
+        },
+        {
+          "term": "Query",
+          "definition": "A query is a request for data or information from a database. In SQL, queries are written using statements like SELECT to retrieve specific data from one or more tables."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "SQL is the standard language for relational database management",
+        "SQL is declarative — specify what data you need, not the steps to get it",
+        "SQL keywords are case-insensitive; table/column names may be case-sensitive depending on the system",
+        "SQL statements end with a semicolon (;)",
+        "MySQL is the RDBMS used in the CBSE syllabus for practical work"
+      ]
+    },
+    {
+      "id": "9.2",
+      "title": "SQL Overview — DDL, DML, DCL",
+      "concepts": [
+        "DDL (Data Definition Language): commands to define and modify database structure",
+        "DML (Data Manipulation Language): commands to manipulate data within tables",
+        "DCL (Data Control Language): commands to control access permissions",
+        "TCL (Transaction Control Language): commands to manage transactions",
+        "DDL commands: CREATE, ALTER, DROP",
+        "DML commands: INSERT, UPDATE, DELETE, SELECT",
+        "DCL commands: GRANT, REVOKE"
+      ],
+      "definitions": [
+        {
+          "term": "DDL (Data Definition Language)",
+          "definition": "DDL is a subset of SQL used to define and modify the structure of database objects such as databases, tables, and indexes. DDL commands include CREATE, ALTER, DROP, and TRUNCATE."
+        },
+        {
+          "term": "DML (Data Manipulation Language)",
+          "definition": "DML is a subset of SQL used to retrieve, insert, update, and delete data in database tables. DML commands include SELECT, INSERT, UPDATE, and DELETE."
+        },
+        {
+          "term": "DCL (Data Control Language)",
+          "definition": "DCL is a subset of SQL used to control access to data in the database. DCL commands include GRANT (to give permissions) and REVOKE (to remove permissions)."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "DDL defines structure: CREATE (create objects), ALTER (modify structure), DROP (delete objects)",
+        "DML manipulates data: SELECT (retrieve), INSERT (add), UPDATE (modify), DELETE (remove)",
+        "DCL controls access: GRANT (give permissions), REVOKE (remove permissions)",
+        "SELECT is technically DQL (Data Query Language) but often classified under DML",
+        "DDL commands auto-commit; DML commands can be rolled back (in transactional databases)"
+      ]
+    },
+    {
+      "id": "9.3",
+      "title": "Data Types and Constraints in MySQL",
+      "concepts": [
+        "Numeric data types: INT, SMALLINT, FLOAT, DOUBLE, DECIMAL",
+        "String data types: CHAR(n), VARCHAR(n), TEXT",
+        "Date/Time data types: DATE, TIME, DATETIME, TIMESTAMP",
+        "Constraints enforce rules on data: NOT NULL, UNIQUE, PRIMARY KEY, DEFAULT, CHECK, FOREIGN KEY",
+        "CHAR is fixed-length; VARCHAR is variable-length",
+        "DATE format in MySQL: YYYY-MM-DD"
+      ],
+      "definitions": [
+        {
+          "term": "CHAR(n)",
+          "definition": "CHAR(n) is a fixed-length string data type that stores exactly n characters. If the stored string is shorter than n, it is padded with spaces. Maximum size: 255 characters."
+        },
+        {
+          "term": "VARCHAR(n)",
+          "definition": "VARCHAR(n) is a variable-length string data type that stores up to n characters. It uses only as much space as the actual string length plus 1-2 bytes for length information. Maximum size: 65,535 characters."
+        },
+        {
+          "term": "INT",
+          "definition": "INT (or INTEGER) is a numeric data type that stores whole numbers (no decimal places). Range: -2,147,483,648 to 2,147,483,647."
+        },
+        {
+          "term": "FLOAT",
+          "definition": "FLOAT is a numeric data type that stores approximate floating-point numbers (numbers with decimal places). It uses 4 bytes of storage."
+        },
+        {
+          "term": "DATE",
+          "definition": "DATE is a data type that stores date values in the format YYYY-MM-DD. Range: '1000-01-01' to '9999-12-31'."
+        },
+        {
+          "term": "NOT NULL Constraint",
+          "definition": "The NOT NULL constraint ensures that a column cannot contain NULL (empty) values. Every row must have a value for this column."
+        },
+        {
+          "term": "UNIQUE Constraint",
+          "definition": "The UNIQUE constraint ensures that all values in a column (or combination of columns) are distinct. No two rows can have the same value in a UNIQUE column."
+        },
+        {
+          "term": "PRIMARY KEY Constraint",
+          "definition": "The PRIMARY KEY constraint uniquely identifies each row in a table. It is a combination of NOT NULL and UNIQUE. A table can have only one primary key."
+        },
+        {
+          "term": "DEFAULT Constraint",
+          "definition": "The DEFAULT constraint provides a default value for a column when no value is specified during insertion. Example: DEFAULT 0 for marks."
+        },
+        {
+          "term": "CHECK Constraint",
+          "definition": "The CHECK constraint limits the values that can be placed in a column based on a condition. Example: CHECK (Marks >= 0 AND Marks <= 100)."
+        },
+        {
+          "term": "FOREIGN KEY Constraint",
+          "definition": "The FOREIGN KEY constraint creates a link between two tables by referencing the primary key of another table. It enforces referential integrity."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "CHAR(n) is fixed-length (padded with spaces); VARCHAR(n) is variable-length (saves space)",
+        "Use CHAR for fixed-length data (e.g., gender 'M'/'F'); VARCHAR for variable-length (e.g., names)",
+        "INT for whole numbers; FLOAT/DOUBLE for decimal numbers; DECIMAL(p,s) for exact precision",
+        "DATE stores dates as 'YYYY-MM-DD'; use quotes around date values in SQL",
+        "NOT NULL: column must have a value; UNIQUE: all values must be distinct",
+        "PRIMARY KEY = NOT NULL + UNIQUE; only one per table",
+        "FOREIGN KEY references another table's primary key, enforcing referential integrity",
+        "CHECK constraint validates data before insertion"
+      ]
+    },
+    {
+      "id": "9.4",
+      "title": "SQL for Data Definition (DDL)",
+      "concepts": [
+        "CREATE DATABASE: creates a new database",
+        "USE: selects a database to work with",
+        "CREATE TABLE: creates a new table with specified columns and constraints",
+        "SHOW DATABASES: lists all databases",
+        "SHOW TABLES: lists all tables in the current database",
+        "DESCRIBE (DESC): shows the structure of a table",
+        "ALTER TABLE: modifies table structure (add/modify/drop columns)",
+        "DROP TABLE: permanently deletes a table",
+        "DROP DATABASE: permanently deletes a database"
+      ],
+      "definitions": [
+        {
+          "term": "CREATE DATABASE",
+          "definition": "The CREATE DATABASE statement creates a new database. Syntax: CREATE DATABASE database_name;"
+        },
+        {
+          "term": "CREATE TABLE",
+          "definition": "The CREATE TABLE statement creates a new table in the database with specified columns, data types, and constraints. Syntax: CREATE TABLE table_name (column1 datatype constraint, column2 datatype constraint, ...);"
+        },
+        {
+          "term": "ALTER TABLE",
+          "definition": "The ALTER TABLE statement modifies an existing table's structure — add new columns, modify existing columns, drop columns, add or remove constraints."
+        },
+        {
+          "term": "DROP TABLE",
+          "definition": "The DROP TABLE statement permanently deletes a table and all its data from the database. Syntax: DROP TABLE table_name; This action cannot be undone."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "CREATE DATABASE school; — creates a database named 'school'",
+        "USE school; — selects the 'school' database",
+        "CREATE TABLE student (RollNo INT PRIMARY KEY, Name VARCHAR(30) NOT NULL, Class VARCHAR(5), Marks FLOAT DEFAULT 0); — creates a table",
+        "SHOW DATABASES; — lists all databases",
+        "SHOW TABLES; — lists all tables in the current database",
+        "DESCRIBE student; or DESC student; — shows table structure (columns, types, constraints)",
+        "ALTER TABLE student ADD COLUMN Email VARCHAR(50); — adds a new column",
+        "ALTER TABLE student MODIFY COLUMN Name VARCHAR(50); — changes column data type/size",
+        "ALTER TABLE student DROP COLUMN Email; — removes a column",
+        "ALTER TABLE student ADD PRIMARY KEY (RollNo); — adds a primary key constraint",
+        "DROP TABLE student; — permanently deletes the table",
+        "DROP DATABASE school; — permanently deletes the database"
+      ]
+    },
+    {
+      "id": "9.5",
+      "title": "SQL for Data Manipulation — INSERT, UPDATE, DELETE",
+      "concepts": [
+        "INSERT INTO: adds new rows to a table",
+        "INSERT with specific columns or all columns",
+        "UPDATE: modifies existing data in a table",
+        "UPDATE with WHERE clause to modify specific rows",
+        "DELETE: removes rows from a table",
+        "DELETE with WHERE clause to remove specific rows",
+        "DELETE without WHERE removes ALL rows (be careful!)"
+      ],
+      "definitions": [
+        {
+          "term": "INSERT INTO",
+          "definition": "The INSERT INTO statement adds new rows (records) to a table. Syntax: INSERT INTO table_name (col1, col2, ...) VALUES (val1, val2, ...); or INSERT INTO table_name VALUES (val1, val2, ...);"
+        },
+        {
+          "term": "UPDATE",
+          "definition": "The UPDATE statement modifies existing data in a table. Syntax: UPDATE table_name SET col1 = val1, col2 = val2 WHERE condition; The WHERE clause specifies which rows to update."
+        },
+        {
+          "term": "DELETE",
+          "definition": "The DELETE statement removes rows from a table. Syntax: DELETE FROM table_name WHERE condition; Without a WHERE clause, all rows are deleted."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "INSERT INTO student VALUES (1, 'Aman', 'XII', 85); — inserts a complete row",
+        "INSERT INTO student (RollNo, Name) VALUES (2, 'Priya'); — inserts specific columns; others get default/NULL",
+        "UPDATE student SET Marks = 90 WHERE RollNo = 1; — updates marks for RollNo 1",
+        "UPDATE student SET Class = 'XII' WHERE Class = 'XI'; — updates all rows matching condition",
+        "UPDATE student SET Marks = Marks + 5; — increases marks by 5 for ALL students (no WHERE)",
+        "DELETE FROM student WHERE RollNo = 3; — deletes the row with RollNo 3",
+        "DELETE FROM student WHERE Marks < 40; — deletes all rows where marks < 40",
+        "DELETE FROM student; — deletes ALL rows (table structure remains)",
+        "String and date values must be enclosed in single quotes in SQL",
+        "Always use WHERE with UPDATE and DELETE to avoid unintended changes to all rows"
+      ]
+    },
+    {
+      "id": "9.6",
+      "title": "SQL for Data Query — SELECT",
+      "concepts": [
+        "SELECT retrieves data from one or more tables",
+        "SELECT * retrieves all columns",
+        "SELECT specific columns retrieves only listed columns",
+        "WHERE clause filters rows based on conditions",
+        "Comparison operators: =, <, >, <=, >=, <> (not equal)",
+        "Logical operators: AND, OR, NOT",
+        "BETWEEN operator for range conditions",
+        "IN operator for matching against a list of values",
+        "LIKE operator for pattern matching with wildcards (% and _)",
+        "IS NULL and IS NOT NULL for checking null values",
+        "DISTINCT keyword eliminates duplicate rows",
+        "ORDER BY clause sorts results (ASC or DESC)",
+        "LIMIT clause restricts the number of rows returned",
+        "Column aliases using AS keyword"
+      ],
+      "definitions": [
+        {
+          "term": "SELECT",
+          "definition": "The SELECT statement retrieves data from one or more tables. Syntax: SELECT column1, column2 FROM table_name WHERE condition ORDER BY column ASC|DESC;"
+        },
+        {
+          "term": "WHERE Clause",
+          "definition": "The WHERE clause filters rows based on specified conditions. Only rows that satisfy the condition are included in the result."
+        },
+        {
+          "term": "BETWEEN Operator",
+          "definition": "The BETWEEN operator selects values within a given range (inclusive). Syntax: column BETWEEN value1 AND value2. Equivalent to column >= value1 AND column <= value2."
+        },
+        {
+          "term": "IN Operator",
+          "definition": "The IN operator checks if a value matches any value in a list. Syntax: column IN (value1, value2, ...). Equivalent to multiple OR conditions."
+        },
+        {
+          "term": "LIKE Operator",
+          "definition": "The LIKE operator is used for pattern matching in strings. Wildcards: % matches zero or more characters; _ (underscore) matches exactly one character."
+        },
+        {
+          "term": "IS NULL",
+          "definition": "IS NULL is used to check for NULL values in a column. NULL represents a missing or unknown value. You cannot use = NULL; you must use IS NULL."
+        },
+        {
+          "term": "DISTINCT",
+          "definition": "The DISTINCT keyword eliminates duplicate rows from the result set of a SELECT query. Syntax: SELECT DISTINCT column FROM table_name;"
+        },
+        {
+          "term": "ORDER BY",
+          "definition": "The ORDER BY clause sorts the result set by one or more columns in ascending (ASC, default) or descending (DESC) order. Syntax: SELECT ... ORDER BY column ASC|DESC;"
+        },
+        {
+          "term": "Column Alias",
+          "definition": "A column alias gives a temporary name to a column in the result set using the AS keyword. Syntax: SELECT column AS alias_name FROM table_name;"
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "SELECT * FROM student; — retrieves all columns and rows",
+        "SELECT Name, Marks FROM student; — retrieves only Name and Marks columns",
+        "SELECT * FROM student WHERE Marks > 80; — rows where marks > 80",
+        "SELECT * FROM student WHERE Marks >= 70 AND Class = 'XII'; — multiple conditions with AND",
+        "SELECT * FROM student WHERE Class = 'XI' OR Class = 'XII'; — either condition",
+        "SELECT * FROM student WHERE NOT Class = 'X'; — negation",
+        "SELECT * FROM student WHERE Marks BETWEEN 60 AND 90; — range (inclusive)",
+        "SELECT * FROM student WHERE Class IN ('XI', 'XII'); — matches any value in the list",
+        "SELECT * FROM student WHERE Name LIKE 'A%'; — names starting with 'A'",
+        "SELECT * FROM student WHERE Name LIKE '%kumar'; — names ending with 'kumar'",
+        "SELECT * FROM student WHERE Name LIKE '_a%'; — second character is 'a'",
+        "SELECT * FROM student WHERE Marks IS NULL; — rows where marks is NULL",
+        "SELECT * FROM student WHERE Marks IS NOT NULL; — rows where marks is not NULL",
+        "SELECT DISTINCT Class FROM student; — unique classes only",
+        "SELECT * FROM student ORDER BY Marks DESC; — sorted by marks descending",
+        "SELECT * FROM student ORDER BY Class ASC, Marks DESC; — multi-column sort",
+        "SELECT Name, Marks * 0.5 AS WeightedMarks FROM student; — computed column with alias"
+      ]
+    },
+    {
+      "id": "9.7",
+      "title": "Aggregate Functions in SQL",
+      "concepts": [
+        "Aggregate functions perform calculations on a set of values and return a single value",
+        "COUNT(): counts the number of rows",
+        "SUM(): calculates the sum of numeric values",
+        "AVG(): calculates the average of numeric values",
+        "MAX(): returns the maximum value",
+        "MIN(): returns the minimum value",
+        "Aggregate functions ignore NULL values (except COUNT(*))",
+        "COUNT(*) counts all rows including NULLs; COUNT(column) counts non-NULL values"
+      ],
+      "definitions": [
+        {
+          "term": "Aggregate Function",
+          "definition": "An aggregate function performs a calculation on a set of values from multiple rows and returns a single summary value. SQL aggregate functions include COUNT, SUM, AVG, MAX, and MIN."
+        },
+        {
+          "term": "COUNT()",
+          "definition": "COUNT() returns the number of rows. COUNT(*) counts all rows; COUNT(column_name) counts rows where the specified column is not NULL."
+        },
+        {
+          "term": "SUM()",
+          "definition": "SUM() returns the total sum of a numeric column. NULL values are ignored."
+        },
+        {
+          "term": "AVG()",
+          "definition": "AVG() returns the average (mean) value of a numeric column. NULL values are ignored in both numerator and denominator."
+        },
+        {
+          "term": "MAX()",
+          "definition": "MAX() returns the largest value in a column. Works with numeric, string (alphabetically last), and date (latest) values."
+        },
+        {
+          "term": "MIN()",
+          "definition": "MIN() returns the smallest value in a column. Works with numeric, string (alphabetically first), and date (earliest) values."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "COUNT",
+          "formula": "SELECT COUNT(*) FROM table_name;",
+          "notes": "COUNT(*) counts all rows. COUNT(column) counts non-NULL values."
+        },
+        {
+          "name": "SUM",
+          "formula": "SELECT SUM(column) FROM table_name;",
+          "notes": "Returns the total of all values in the column. NULL values are ignored."
+        },
+        {
+          "name": "AVG",
+          "formula": "SELECT AVG(column) FROM table_name;",
+          "notes": "Returns the average. NULL values are excluded from the calculation."
+        },
+        {
+          "name": "MAX and MIN",
+          "formula": "SELECT MAX(column), MIN(column) FROM table_name;",
+          "notes": "Returns the largest and smallest values respectively."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "SELECT COUNT(*) FROM student; — total number of students",
+        "SELECT COUNT(Marks) FROM student; — count of students with non-NULL marks",
+        "SELECT SUM(Marks) FROM student; — total marks of all students",
+        "SELECT AVG(Marks) FROM student; — average marks",
+        "SELECT MAX(Marks) FROM student; — highest marks",
+        "SELECT MIN(Marks) FROM student; — lowest marks",
+        "SELECT COUNT(*) FROM student WHERE Class = 'XII'; — count of students in class XII",
+        "SELECT MAX(Marks) - MIN(Marks) AS Range FROM student; — range of marks",
+        "Aggregate functions ignore NULL values (except COUNT(*))",
+        "Aggregate functions cannot be used in the WHERE clause — use HAVING instead",
+        "You can use DISTINCT inside aggregate functions: SELECT COUNT(DISTINCT Class) FROM student;"
+      ]
+    },
+    {
+      "id": "9.8",
+      "title": "String Functions in SQL",
+      "concepts": [
+        "UPPER() / UCASE(): converts string to uppercase",
+        "LOWER() / LCASE(): converts string to lowercase",
+        "MID() / SUBSTRING(): extracts a substring",
+        "LENGTH(): returns the length of a string",
+        "LEFT(): extracts characters from the left",
+        "RIGHT(): extracts characters from the right",
+        "TRIM(): removes leading and trailing spaces",
+        "LTRIM(): removes leading spaces",
+        "RTRIM(): removes trailing spaces",
+        "CONCAT(): joins two or more strings",
+        "INSTR(): returns the position of a substring"
+      ],
+      "definitions": [
+        {
+          "term": "UPPER() / UCASE()",
+          "definition": "UPPER(string) or UCASE(string) converts all characters in the string to uppercase. Example: UPPER('hello') returns 'HELLO'."
+        },
+        {
+          "term": "LOWER() / LCASE()",
+          "definition": "LOWER(string) or LCASE(string) converts all characters in the string to lowercase. Example: LOWER('HELLO') returns 'hello'."
+        },
+        {
+          "term": "MID() / SUBSTRING()",
+          "definition": "MID(string, start, length) or SUBSTRING(string, start, length) extracts a substring starting at position 'start' for 'length' characters. Positions start at 1. Example: MID('HELLO', 2, 3) returns 'ELL'."
+        },
+        {
+          "term": "LENGTH()",
+          "definition": "LENGTH(string) returns the number of characters in the string. Example: LENGTH('HELLO') returns 5."
+        },
+        {
+          "term": "LEFT()",
+          "definition": "LEFT(string, n) extracts the first n characters from the left of the string. Example: LEFT('HELLO', 3) returns 'HEL'."
+        },
+        {
+          "term": "RIGHT()",
+          "definition": "RIGHT(string, n) extracts the last n characters from the right of the string. Example: RIGHT('HELLO', 3) returns 'LLO'."
+        },
+        {
+          "term": "TRIM()",
+          "definition": "TRIM(string) removes leading and trailing spaces from the string. Example: TRIM('  HELLO  ') returns 'HELLO'."
+        },
+        {
+          "term": "CONCAT()",
+          "definition": "CONCAT(string1, string2, ...) concatenates (joins) two or more strings. Example: CONCAT('Hello', ' ', 'World') returns 'Hello World'."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "SELECT UPPER(Name) FROM student; — names in uppercase",
+        "SELECT LOWER(Name) FROM student; — names in lowercase",
+        "SELECT MID(Name, 1, 3) FROM student; — first 3 characters of name",
+        "SELECT SUBSTRING(Name, 2, 4) FROM student; — 4 characters starting from position 2",
+        "SELECT LENGTH(Name) FROM student; — length of each name",
+        "SELECT LEFT(Name, 2) FROM student; — first 2 characters",
+        "SELECT RIGHT(Name, 3) FROM student; — last 3 characters",
+        "SELECT TRIM(Name) FROM student; — removes leading/trailing spaces",
+        "SELECT CONCAT(Name, ' - ', Class) FROM student; — concatenates name and class",
+        "SELECT INSTR(Name, 'an') FROM student; — position of 'an' in name (0 if not found)",
+        "String functions can be used in SELECT, WHERE, and ORDER BY clauses"
+      ]
+    },
+    {
+      "id": "9.9",
+      "title": "GROUP BY and HAVING Clauses",
+      "concepts": [
+        "GROUP BY groups rows with the same values into summary rows",
+        "Used with aggregate functions to get per-group summaries",
+        "HAVING clause filters groups based on aggregate conditions",
+        "HAVING is like WHERE but for groups (works with aggregate functions)",
+        "WHERE filters rows before grouping; HAVING filters groups after grouping",
+        "Order of clauses: SELECT ... FROM ... WHERE ... GROUP BY ... HAVING ... ORDER BY ..."
+      ],
+      "definitions": [
+        {
+          "term": "GROUP BY",
+          "definition": "The GROUP BY clause groups rows that have the same values in specified columns into summary rows. It is used with aggregate functions (COUNT, SUM, AVG, MAX, MIN) to perform calculations per group."
+        },
+        {
+          "term": "HAVING",
+          "definition": "The HAVING clause filters groups created by GROUP BY based on aggregate conditions. It is used instead of WHERE when the filtering condition involves an aggregate function."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "SELECT Class, COUNT(*) FROM student GROUP BY Class; — count of students per class",
+        "SELECT Class, AVG(Marks) FROM student GROUP BY Class; — average marks per class",
+        "SELECT Class, MAX(Marks), MIN(Marks) FROM student GROUP BY Class; — highest and lowest marks per class",
+        "SELECT Class, AVG(Marks) FROM student GROUP BY Class HAVING AVG(Marks) > 75; — classes with average marks > 75",
+        "SELECT Class, COUNT(*) FROM student GROUP BY Class HAVING COUNT(*) > 5; — classes with more than 5 students",
+        "WHERE filters individual rows BEFORE grouping; HAVING filters groups AFTER grouping",
+        "Columns in SELECT must either appear in GROUP BY or be used inside aggregate functions",
+        "SELECT Class, SUM(Marks) AS TotalMarks FROM student WHERE Marks IS NOT NULL GROUP BY Class HAVING SUM(Marks) > 500 ORDER BY TotalMarks DESC; — complete example with WHERE, GROUP BY, HAVING, and ORDER BY"
+      ]
+    },
+    {
+      "id": "9.10",
+      "title": "Operations on Relations — JOIN and Set Operations",
+      "concepts": [
+        "Cartesian Product: combines every row of one table with every row of another table",
+        "JOIN: combines rows from two or more tables based on a related column",
+        "Equi-Join: join based on equality condition between columns of two tables",
+        "Natural Join: equi-join that automatically matches columns with the same name and removes duplicate columns",
+        "UNION: combines results of two SELECT statements, removing duplicates",
+        "Querying multiple tables using comma-separated table names in FROM clause"
+      ],
+      "definitions": [
+        {
+          "term": "Cartesian Product (Cross Join)",
+          "definition": "The Cartesian product of two tables A and B produces a result where each row of A is combined with every row of B. If A has m rows and B has n rows, the result has m × n rows. Syntax: SELECT * FROM A, B; (without a WHERE condition)."
+        },
+        {
+          "term": "Equi-Join",
+          "definition": "An equi-join combines rows from two tables based on an equality condition between specified columns. Syntax: SELECT * FROM A, B WHERE A.column = B.column; or SELECT * FROM A JOIN B ON A.column = B.column;"
+        },
+        {
+          "term": "Natural Join",
+          "definition": "A natural join is an equi-join that automatically matches all columns with the same name in both tables and includes only one copy of the matched columns in the result. Syntax: SELECT * FROM A NATURAL JOIN B;"
+        },
+        {
+          "term": "UNION",
+          "definition": "The UNION operator combines the results of two or more SELECT statements into a single result set, removing duplicate rows. Both SELECT statements must have the same number of columns with compatible data types. Syntax: SELECT ... UNION SELECT ...;"
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Cartesian Product Size",
+          "formula": "Rows = m \\times n, \\; Columns = p + q",
+          "notes": "If table A has m rows and p columns, table B has n rows and q columns."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "SELECT * FROM student, result; — Cartesian product (every combination of rows)",
+        "SELECT * FROM student, result WHERE student.RollNo = result.RollNo; — Equi-join",
+        "SELECT student.Name, result.Subject, result.Marks FROM student, result WHERE student.RollNo = result.RollNo; — join with specific columns",
+        "SELECT * FROM student JOIN result ON student.RollNo = result.RollNo; — explicit JOIN syntax",
+        "SELECT * FROM student NATURAL JOIN result; — natural join (auto-matches common columns)",
+        "SELECT City FROM customer UNION SELECT City FROM supplier; — unique cities from both tables",
+        "UNION removes duplicates; UNION ALL keeps duplicates",
+        "For Cartesian product of tables with m and n rows: result has m × n rows",
+        "Table aliases for readability: SELECT s.Name, r.Marks FROM student s, result r WHERE s.RollNo = r.RollNo;",
+        "A self-join joins a table with itself using aliases"
+      ]
+    },
+    {
+      "id": "9.11",
+      "title": "Using Two Relations in a Query",
+      "concepts": [
+        "Querying data from multiple related tables using JOIN or WHERE condition",
+        "Matching foreign keys with primary keys to link tables",
+        "Displaying combined information from two or more tables",
+        "Using table prefixes (table_name.column_name) to avoid ambiguity",
+        "Sub-queries: a query nested inside another query"
+      ],
+      "definitions": [
+        {
+          "term": "Sub-query (Nested Query)",
+          "definition": "A sub-query is a SELECT query nested inside another SQL statement (SELECT, INSERT, UPDATE, or DELETE). The inner query executes first and its result is used by the outer query."
+        },
+        {
+          "term": "Table Alias",
+          "definition": "A table alias is a short, temporary name given to a table in a query using the AS keyword (or simply a space). It makes queries more readable, especially when working with multiple tables. Example: FROM student AS s."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Use foreign key relationships to join tables meaningfully",
+        "Example: Display student names with their subjects and marks:\nSELECT student.Name, result.Subject, result.Marks\nFROM student, result\nWHERE student.RollNo = result.RollNo;",
+        "Using table aliases:\nSELECT s.Name, r.Subject, r.Marks\nFROM student s, result r\nWHERE s.RollNo = r.RollNo;",
+        "Sub-query example: Find students who scored the highest marks:\nSELECT Name FROM student WHERE Marks = (SELECT MAX(Marks) FROM student);",
+        "Sub-query example: Find students in the same class as 'Aman':\nSELECT Name FROM student WHERE Class = (SELECT Class FROM student WHERE Name = 'Aman');",
+        "Always use table_name.column_name or alias.column_name when column names are ambiguous between tables"
+      ]
+    }
+  ],
+  "summary": [
+    "SQL (Structured Query Language) is the standard language for managing relational databases.",
+    "SQL categories: DDL (CREATE, ALTER, DROP), DML (INSERT, UPDATE, DELETE, SELECT), DCL (GRANT, REVOKE).",
+    "MySQL data types: INT, FLOAT, CHAR(n), VARCHAR(n), DATE.",
+    "Constraints: NOT NULL, UNIQUE, PRIMARY KEY, DEFAULT, CHECK, FOREIGN KEY.",
+    "CREATE TABLE defines structure; ALTER TABLE modifies it; DROP TABLE deletes it.",
+    "INSERT INTO adds rows; UPDATE modifies rows; DELETE removes rows.",
+    "SELECT retrieves data; WHERE filters rows; ORDER BY sorts results.",
+    "Operators in WHERE: =, <, >, <=, >=, <>, BETWEEN, IN, LIKE, IS NULL, AND, OR, NOT.",
+    "LIKE wildcards: % (zero or more characters), _ (exactly one character).",
+    "Aggregate functions: COUNT, SUM, AVG, MAX, MIN — work on groups of rows.",
+    "GROUP BY groups rows for aggregate calculations; HAVING filters groups.",
+    "String functions: UPPER, LOWER, MID/SUBSTRING, LENGTH, LEFT, RIGHT, TRIM, CONCAT.",
+    "Cartesian product combines every row of one table with every row of another.",
+    "Equi-join matches rows based on equality; Natural join auto-matches common column names.",
+    "UNION combines results of two queries, removing duplicates."
+  ],
+  "exercises": [
+    {
+      "id": "9.1",
+      "title": "Exercise 9.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is SQL? What are its advantages?",
+          "type": "short",
+          "answer": "SQL (Structured Query Language) is a standard programming language used to manage and manipulate relational databases.\n\nAdvantages of SQL:\n1. Simple and easy to learn — uses English-like syntax.\n2. Non-procedural — specify what data you want, not how to get it.\n3. Standardized — ANSI/ISO standard, works across different RDBMS.\n4. Can handle complex queries — supports joins, sub-queries, grouping.\n5. Supports data definition and data manipulation in one language.\n6. Widely used in industry and education."
+        },
+        {
+          "qno": 2,
+          "question": "Differentiate between DDL and DML commands with examples.",
+          "type": "short",
+          "answer": "DDL (Data Definition Language) defines the structure of database objects.\nCommands: CREATE, ALTER, DROP\nExample: CREATE TABLE student (RollNo INT PRIMARY KEY, Name VARCHAR(30));\n\nDML (Data Manipulation Language) manipulates the data within tables.\nCommands: INSERT, UPDATE, DELETE, SELECT\nExample: INSERT INTO student VALUES (1, 'Aman');\n\nKey difference: DDL changes structure (schema); DML changes data (content). DDL commands auto-commit; DML commands can be rolled back."
+        },
+        {
+          "qno": 3,
+          "question": "Differentiate between CHAR and VARCHAR data types.",
+          "type": "short",
+          "answer": "CHAR(n): Fixed-length string. Always uses n bytes regardless of actual string length. Shorter strings are padded with spaces. Faster for fixed-length data. Example: CHAR(10) storing 'ABC' uses 10 bytes.\n\nVARCHAR(n): Variable-length string. Uses only as much space as needed (plus 1-2 bytes overhead). More storage-efficient for varying-length data. Example: VARCHAR(10) storing 'ABC' uses 4-5 bytes.\n\nUse CHAR for fixed-length data (e.g., PIN codes, gender). Use VARCHAR for variable-length data (e.g., names, addresses)."
+        },
+        {
+          "qno": 4,
+          "question": "Write SQL commands to: (a) Create a database named SCHOOL. (b) Create a table STUDENT with columns RollNo (int, primary key), Name (varchar 30, not null), Class (varchar 5), Marks (float, default 0). (c) Display the structure of the table.",
+          "type": "long",
+          "answer": "(a) CREATE DATABASE SCHOOL;\n    USE SCHOOL;\n\n(b) CREATE TABLE STUDENT (\n        RollNo INT PRIMARY KEY,\n        Name VARCHAR(30) NOT NULL,\n        Class VARCHAR(5),\n        Marks FLOAT DEFAULT 0\n    );\n\n(c) DESCRIBE STUDENT;\n    -- or --\n    DESC STUDENT;\n\nThis will display:\n| Field  | Type        | Null | Key | Default | Extra |\n|--------|-------------|------|-----|---------|-------|\n| RollNo | int         | NO   | PRI | NULL    |       |\n| Name   | varchar(30) | NO   |     | NULL    |       |\n| Class  | varchar(5)  | YES  |     | NULL    |       |\n| Marks  | float       | YES  |     | 0       |       |"
+        },
+        {
+          "qno": 5,
+          "question": "Write SQL commands to insert the following data into the STUDENT table: (1, 'Aman', 'XII', 85), (2, 'Priya', 'XII', 92), (3, 'Rahul', 'XI', 78), (4, 'Sneha', 'XII', 88), (5, 'Karan', 'XI', 65).",
+          "type": "long",
+          "answer": "INSERT INTO STUDENT VALUES (1, 'Aman', 'XII', 85);\nINSERT INTO STUDENT VALUES (2, 'Priya', 'XII', 92);\nINSERT INTO STUDENT VALUES (3, 'Rahul', 'XI', 78);\nINSERT INTO STUDENT VALUES (4, 'Sneha', 'XII', 88);\nINSERT INTO STUDENT VALUES (5, 'Karan', 'XI', 65);\n\nAlternatively, in MySQL you can insert multiple rows:\nINSERT INTO STUDENT VALUES\n    (1, 'Aman', 'XII', 85),\n    (2, 'Priya', 'XII', 92),\n    (3, 'Rahul', 'XI', 78),\n    (4, 'Sneha', 'XII', 88),\n    (5, 'Karan', 'XI', 65);"
+        },
+        {
+          "qno": 6,
+          "question": "Write SQL queries for the following based on the STUDENT table: (a) Display all records. (b) Display names of students in class XII. (c) Display students with marks greater than 80. (d) Display students in class XII with marks between 80 and 95.",
+          "type": "long",
+          "answer": "(a) SELECT * FROM STUDENT;\n\n(b) SELECT Name FROM STUDENT WHERE Class = 'XII';\n    Output: Aman, Priya, Sneha\n\n(c) SELECT * FROM STUDENT WHERE Marks > 80;\n    Output: Aman (85), Priya (92), Sneha (88)\n\n(d) SELECT * FROM STUDENT WHERE Class = 'XII' AND Marks BETWEEN 80 AND 95;\n    Output: Aman (85), Priya (92), Sneha (88)"
+        },
+        {
+          "qno": 7,
+          "question": "Write SQL queries using LIKE, IN, ORDER BY, and DISTINCT on the STUDENT table.",
+          "type": "long",
+          "answer": "-- LIKE: Students whose name starts with 'A'\nSELECT * FROM STUDENT WHERE Name LIKE 'A%';\n-- Output: Aman\n\n-- LIKE: Students whose name has 'a' as the second character\nSELECT * FROM STUDENT WHERE Name LIKE '_a%';\n-- Output: Karan, Rahul\n\n-- IN: Students in class XI or XII\nSELECT * FROM STUDENT WHERE Class IN ('XI', 'XII');\n-- Output: All 5 students\n\n-- ORDER BY: Students sorted by marks in descending order\nSELECT * FROM STUDENT ORDER BY Marks DESC;\n-- Output: Priya(92), Sneha(88), Aman(85), Rahul(78), Karan(65)\n\n-- DISTINCT: Unique classes\nSELECT DISTINCT Class FROM STUDENT;\n-- Output: XII, XI"
+        },
+        {
+          "qno": 8,
+          "question": "Write SQL queries to: (a) Count total students. (b) Find average marks. (c) Find highest and lowest marks. (d) Find total marks of all students.",
+          "type": "long",
+          "answer": "(a) SELECT COUNT(*) AS TotalStudents FROM STUDENT;\n    Output: 5\n\n(b) SELECT AVG(Marks) AS AverageMarks FROM STUDENT;\n    Output: 81.6\n\n(c) SELECT MAX(Marks) AS Highest, MIN(Marks) AS Lowest FROM STUDENT;\n    Output: Highest = 92, Lowest = 65\n\n(d) SELECT SUM(Marks) AS TotalMarks FROM STUDENT;\n    Output: 408"
+        },
+        {
+          "qno": 9,
+          "question": "Write SQL queries using GROUP BY and HAVING: (a) Count students in each class. (b) Find average marks per class. (c) Display classes where average marks exceed 80.",
+          "type": "long",
+          "answer": "(a) SELECT Class, COUNT(*) AS StudentCount FROM STUDENT GROUP BY Class;\n    Output:\n    | Class | StudentCount |\n    |-------|--------------|\n    | XI    | 2            |\n    | XII   | 3            |\n\n(b) SELECT Class, AVG(Marks) AS AvgMarks FROM STUDENT GROUP BY Class;\n    Output:\n    | Class | AvgMarks |\n    |-------|----------|\n    | XI    | 71.5     |\n    | XII   | 88.33    |\n\n(c) SELECT Class, AVG(Marks) AS AvgMarks FROM STUDENT GROUP BY Class HAVING AVG(Marks) > 80;\n    Output:\n    | Class | AvgMarks |\n    |-------|----------|\n    | XII   | 88.33    |"
+        },
+        {
+          "qno": 10,
+          "question": "Write SQL commands to: (a) Update marks of RollNo 5 to 70. (b) Add 5 marks to all students in class XI. (c) Delete the record of RollNo 3. (d) Add a new column Email (VARCHAR 40) to the table.",
+          "type": "long",
+          "answer": "(a) UPDATE STUDENT SET Marks = 70 WHERE RollNo = 5;\n\n(b) UPDATE STUDENT SET Marks = Marks + 5 WHERE Class = 'XI';\n\n(c) DELETE FROM STUDENT WHERE RollNo = 3;\n\n(d) ALTER TABLE STUDENT ADD COLUMN Email VARCHAR(40);"
+        },
+        {
+          "qno": 11,
+          "question": "Explain the difference between WHERE and HAVING clauses.",
+          "type": "short",
+          "answer": "WHERE clause:\n- Filters individual rows before grouping.\n- Cannot use aggregate functions.\n- Applied before GROUP BY.\n- Example: SELECT * FROM STUDENT WHERE Marks > 80;\n\nHAVING clause:\n- Filters groups after GROUP BY.\n- Can use aggregate functions.\n- Applied after GROUP BY.\n- Example: SELECT Class, AVG(Marks) FROM STUDENT GROUP BY Class HAVING AVG(Marks) > 80;\n\nKey difference: WHERE works on rows; HAVING works on groups. WHERE cannot contain aggregate functions; HAVING can."
+        },
+        {
+          "qno": 12,
+          "question": "Write SQL queries using string functions: (a) Display names in uppercase. (b) Display first 3 characters of each name. (c) Display the length of each name. (d) Display names and their reverse.",
+          "type": "long",
+          "answer": "(a) SELECT UPPER(Name) AS UpperName FROM STUDENT;\n    Output: AMAN, PRIYA, RAHUL, SNEHA, KARAN\n\n(b) SELECT LEFT(Name, 3) AS ShortName FROM STUDENT;\n    -- or: SELECT MID(Name, 1, 3) AS ShortName FROM STUDENT;\n    Output: Ama, Pri, Rah, Sne, Kar\n\n(c) SELECT Name, LENGTH(Name) AS NameLength FROM STUDENT;\n    Output: Aman-4, Priya-5, Rahul-5, Sneha-5, Karan-5\n\n(d) SELECT Name, REVERSE(Name) AS ReverseName FROM STUDENT;\n    Output: Aman-namA, Priya-ayirP, Rahul-luhaR, Sneha-ahenS, Karan-naraK"
+        },
+        {
+          "qno": 13,
+          "question": "Consider two tables: STUDENT(RollNo, Name, Class) and RESULT(RollNo, Subject, Marks). Write SQL queries to: (a) Display the Cartesian product. (b) Display names and marks using equi-join. (c) Display names of students who scored more than 90 in any subject.",
+          "type": "long",
+          "answer": "(a) Cartesian Product:\nSELECT * FROM STUDENT, RESULT;\n-- This produces every combination of rows from both tables.\n-- If STUDENT has 5 rows and RESULT has 10 rows, result has 50 rows.\n\n(b) Equi-Join to display names with marks:\nSELECT STUDENT.Name, RESULT.Subject, RESULT.Marks\nFROM STUDENT, RESULT\nWHERE STUDENT.RollNo = RESULT.RollNo;\n\n-- Or using JOIN syntax:\nSELECT S.Name, R.Subject, R.Marks\nFROM STUDENT S\nJOIN RESULT R ON S.RollNo = R.RollNo;\n\n(c) Names of students scoring more than 90:\nSELECT DISTINCT STUDENT.Name\nFROM STUDENT, RESULT\nWHERE STUDENT.RollNo = RESULT.RollNo\nAND RESULT.Marks > 90;"
+        },
+        {
+          "qno": 14,
+          "question": "What is the difference between UNION and Cartesian Product?",
+          "type": "short",
+          "answer": "UNION combines rows from two SELECT statements vertically (stacks results). Both queries must have the same number of columns with compatible types. Duplicate rows are removed.\nExample: SELECT City FROM customer UNION SELECT City FROM supplier;\n\nCartesian Product combines rows from two tables horizontally (every combination). If table A has m rows and table B has n rows, the result has m × n rows with all columns from both tables.\nExample: SELECT * FROM student, result; (without WHERE)\n\nKey difference: UNION adds rows from two queries; Cartesian product multiplies rows from two tables."
+        },
+        {
+          "qno": 15,
+          "question": "What is a sub-query? Write an SQL query to find the name of the student with the highest marks using a sub-query.",
+          "type": "short",
+          "answer": "A sub-query (or nested query) is a SELECT query inside another SQL statement. The inner query executes first and its result is used by the outer query.\n\nQuery to find the student with the highest marks:\nSELECT Name, Marks FROM STUDENT\nWHERE Marks = (SELECT MAX(Marks) FROM STUDENT);\n\nExplanation: The inner query (SELECT MAX(Marks) FROM STUDENT) returns 92. The outer query then finds the student whose marks equal 92, returning 'Priya'."
+        },
+        {
+          "qno": 16,
+          "question": "Write the general syntax and order of clauses in a SELECT statement.",
+          "type": "short",
+          "answer": "General syntax with order of clauses:\n\nSELECT [DISTINCT] column1, column2, aggregate_function(column)\nFROM table1 [, table2]\n[WHERE condition]\n[GROUP BY column1, column2]\n[HAVING group_condition]\n[ORDER BY column1 [ASC|DESC]]\n[LIMIT n];\n\nOrder of execution:\n1. FROM — identifies the tables\n2. WHERE — filters individual rows\n3. GROUP BY — groups rows\n4. HAVING — filters groups\n5. SELECT — selects columns and computes expressions\n6. DISTINCT — removes duplicates\n7. ORDER BY — sorts the result\n8. LIMIT — limits output rows"
+        }
+      ]
+    }
+  ]
+}

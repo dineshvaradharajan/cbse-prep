@@ -1,0 +1,2570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<style>
+:root{--subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;}
+code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;background:#f0fdf4;padding:.1rem .35rem;border-radius:4px;border:1px solid #d1fae5;color:#065f46}
+
+.qb-chapter-section{margin-bottom:.75rem}
+.qb-chapter-toggle{display:flex;align-items:center;gap:.75rem;width:100%;padding:.75rem 1rem;background:#fff;border:1px solid var(--sand-200);border-radius:10px;cursor:pointer;font-family:"Lato",sans-serif;transition:all .15s}
+.qb-chapter-toggle:hover{border-color:var(--subject-border);background:var(--subject-bg)}
+.qb-ch-name{font-family:"Newsreader",serif;font-size:1rem;font-weight:600;color:var(--ink);flex:1;text-align:left}
+.qb-ch-count{font-size:.7rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.15rem .6rem}
+.qb-ch-arrow{font-size:.6rem;color:var(--ink-3);transition:transform .2s}
+.qb-chapter-toggle.collapsed .qb-ch-arrow{transform:rotate(-90deg)}
+.qb-chapter-body{padding:.5rem 0 0}
+.qb-chapter-body.collapsed{display:none}
+.qb-card{background:#fff;border:1px solid var(--sand-200);border-radius:12px;padding:1.25rem;margin-bottom:.75rem;transition:box-shadow .2s}
+.qb-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.qb-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.65rem;align-items:center}
+.qb-year-badge{font-size:.68rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.15rem .55rem}
+.qb-type-badge{font-size:.6rem;font-weight:800;border-radius:999px;padding:.12rem .5rem;text-transform:uppercase;letter-spacing:.04em}
+.qb-type-badge.subj{color:#78716c;background:var(--sand-100);border:1px solid var(--sand-300)}
+.qb-type-badge.mcq{color:#059669;background:#f0fdf4;border:1px solid #86efac}
+.qb-type-badge.case{color:#ea580c;background:#fff7ed;border:1px solid #fdba74}
+.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65;white-space:pre-line}
+.pyq-opts{display:grid;grid-template-columns:1fr 1fr;gap:.3rem .75rem;margin-top:.5rem}
+.pyq-opt{font-size:.82rem;color:var(--ink-2);padding:.25rem 0}
+.qb-ans-toggle{display:inline-block;margin-top:.6rem;padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
+.qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
+.qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
+.qb-answer.hidden{display:none}
+@media(max-width:640px){
+  .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
+  .qb-question{font-size:.82rem}
+  .pyq-opts{grid-template-columns:1fr}
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CBSE Class 12 Computer Science Previous Year Questions — 150 questions from 2025, 2024, 2023, 2022, 2020 board papers with answers.">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CS Previous Year Questions | CBSE Class 12">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/cs/pyq.html">
+<title>CS Previous Year Questions — 150 Board Exam Questions | CBSE Class 12</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+<div class="hero">
+  <div class="badge">Computer Science XII &middot; Board Papers 2025, 2024, 2023, 2022, 2020</div>
+  <h1>Previous Year Questions</h1>
+  <p class="sub">150 questions from CBSE board papers (2020–2025) with answers and explanations.</p>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">CBSE 2025</span>
+<span class="qb-ch-count">37 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">State True or False: "A Python List must always contain all its elements of same data type."</div>
+<div class="pyq-opts"><div class="pyq-opt">True</div><div class="pyq-opt">False</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> False. A Python list can contain elements of different data types.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What will be the output of the following statement?
+print(14%3**2*4)</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) 16</div><div class="pyq-opt">(B) 64</div><div class="pyq-opt">(C) 20</div><div class="pyq-opt">(D) 256</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (B) 64. 3**2 = 9, 14%9 = 5... Wait: operator precedence: ** first: 3**2=9, then * : 9*2=18... Actually: 14%3**2*4 =&gt; 14%(3**2)*4 but ** has highest precedence, so 3**2=9, then left to right: 14%9=5, 5*4=20. Wait let me recalculate. 14%3**2*4: ** first: 3**2=9. Then left to right: 14%9=5, 5*4=20. Answer is (C) 20. But looking at options again: the expression is 14%3**2*4. 3**2=9, 14%9=5, 5*4=20. Answer: (C) 20</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Identify the correct output of the following code snippet:
+game="Olympic2024"
+print(game.index("C"))</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) 0</div><div class="pyq-opt">(B) 6</div><div class="pyq-opt">(C) -1</div><div class="pyq-opt">(D) ValueError</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (B) 6. In the string 'Olympic2024', 'C' is not present (it's lowercase 'c' at index... wait: O-l-y-m-p-i-c = index 0,1,2,3,4,5,6. 'c' is at index 6. But the question searches for 'C' (uppercase). 'Olympic2024' has uppercase 'O' at 0. 'C' uppercase is not in the string. Actually wait - 'Olympic2024': O(0), l(1), y(2), m(3), p(4), i(5), c(6), 2(7), 0(8), 2(9), 4(10). Searching for 'C' (uppercase) - not found, so it raises ValueError. Answer: (D) ValueError</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which of the following is the correct identifier?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) global</div><div class="pyq-opt">(B) Break</div><div class="pyq-opt">(C) def</div><div class="pyq-opt">(D) with</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (B) Break. 'global', 'def', and 'with' are all Python keywords. 'Break' (with capital B) is a valid identifier since Python is case-sensitive and 'break' (lowercase) is the keyword.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Identify the invalid Python statement out of the following options:</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) print("A",10,end="*")</div><div class="pyq-opt">(B) print("A",sep="*",10)</div><div class="pyq-opt">(C) print("A",10,sep="*")</div><div class="pyq-opt">(D) print("A"*10)</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (D) print("A"*10). Actually all are valid. Let me re-check: (A) print("A",10,end="*") - valid, (B) print("A",sep="*",10) - INVALID because positional argument 10 follows keyword argument sep. Answer: (B) print("A",sep="*",10)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
+L=['TIC', 'TAC']
+print(L[::-1])</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) ['CIT', 'CAT']</div><div class="pyq-opt">(B) ['TIC', 'TAC']</div><div class="pyq-opt">(C) ['CAT', 'CIT']</div><div class="pyq-opt">(D) ['TAC', 'TIC']</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (D) ['TAC', 'TIC']. L[::-1] reverses the list.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which of the following operator evaluates to True if the variable on either side of the operator points towards the same memory location and False otherwise?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) is</div><div class="pyq-opt">(B) is not</div><div class="pyq-opt">(C) and</div><div class="pyq-opt">(D) or</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A) is. The 'is' operator checks if two variables refer to the same object in memory.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
+D={'S01':95, 'S02':96 }
+for I in D :
+    print(I,end='#')</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) S01#S02#</div><div class="pyq-opt">(B) 95#96#</div><div class="pyq-opt">(C) S01,95#S02,96#</div><div class="pyq-opt">(D) S01#95#S02#96#</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A) S01#S02#. When iterating over a dictionary, we get the keys.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">While creating a table, which constraint does not allow insertion of duplicate values in the table?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) UNIQUE</div><div class="pyq-opt">(B) DISTINCT</div><div class="pyq-opt">(C) NOT NULL</div><div class="pyq-opt">(D) HAVING</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A) UNIQUE. The UNIQUE constraint prevents duplicate values in a column.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
+def Change(N):
+    N=N+10
+    print(N,end='$$')
+N=15
+Change(N)
+print(N)</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) 25$$15</div><div class="pyq-opt">(B) 15$$25</div><div class="pyq-opt">(C) 25$$15</div><div class="pyq-opt">(D) 2525$$</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (C) 25$$15. Inside the function, N becomes 25 (15+10), printed with end='$$'. Outside, N remains 15 (integers are immutable).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Exception Handling</span></div>
+<div class="qb-question">Consider the statements given below and choose the correct output:
+N='5'
+try:
+    print('WORD' + N, end='#')
+except:
+    print('ERROR',end='#')
+finally:
+    print('OVER')</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) ERROR#</div><div class="pyq-opt">(B) WORD5#OVER</div><div class="pyq-opt">(C) WORD5#</div><div class="pyq-opt">(D) ERROR#OVER</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (B) WORD5#OVER. 'WORD' + '5' = 'WORD5' (string concatenation works). Then finally block executes printing 'OVER'.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which of the following built-in function/method returns a dictionary?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) dict()</div><div class="pyq-opt">(B) keys()</div><div class="pyq-opt">(C) values()</div><div class="pyq-opt">(D) items()</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (D) items(). Actually, items() returns dict_items (a view object), not a dictionary. dict() returns a dictionary. The correct answer is (A) dict().</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q13</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Which of the following is a DML command in SQL?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) UPDATE</div><div class="pyq-opt">(B) CREATE</div><div class="pyq-opt">(C) ALTER</div><div class="pyq-opt">(D) DROP</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A) UPDATE. UPDATE is a DML (Data Manipulation Language) command. CREATE, ALTER, and DROP are DDL commands.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q14</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Which aggregate function in SQL displays the number of values in the specified column ignoring the NULL values?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) len()</div><div class="pyq-opt">(B) count()</div><div class="pyq-opt">(C) number()</div><div class="pyq-opt">(D) num()</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (B) count(). The COUNT() function counts non-NULL values in a column.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q15</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">In MYSQL, which type of value should not be enclosed within quotation marks?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) DATE</div><div class="pyq-opt">(B) VARCHAR</div><div class="pyq-opt">(C) FLOAT</div><div class="pyq-opt">(D) CHAR</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (C) FLOAT. Numeric values (INT, FLOAT) are not enclosed in quotes. DATE, VARCHAR, and CHAR values are enclosed in quotes.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q16</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">State True or False: If table A has 6 rows and 3 columns, and table B has 5 rows and 2 columns, the Cartesian product of A and B will have 30 rows and 5 columns.</div>
+<div class="pyq-opts"><div class="pyq-opt">True</div><div class="pyq-opt">False</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> True. Cartesian product: rows = 6 x 5 = 30, columns = 3 + 2 = 5.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q17</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Which of the following networking devices is used to regenerate and transmit the weakened signal ahead?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) Hub</div><div class="pyq-opt">(B) Ethernet Card</div><div class="pyq-opt">(C) Repeater</div><div class="pyq-opt">(D) Modem</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (C) Repeater. A repeater regenerates and amplifies weakened signals for further transmission.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q18</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Which of the following options is the correct protocol used for phone calls over the internet?</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) PPP</div><div class="pyq-opt">(B) FTP</div><div class="pyq-opt">(C) HTTP</div><div class="pyq-opt">(D) VoIP</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (D) VoIP. Voice over Internet Protocol (VoIP) is used for phone calls over the internet.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q19</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Expand ARPANET.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> ARPANET stands for Advanced Research Projects Agency Network.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q20</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Assertion (A): For a binary file opened using 'rb' mode, the pickle.dump() method will display an error.
+Reason (R): The pickle.dump() method is used to read from a binary file.</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) Both A and R are true and R is the correct explanation for A</div><div class="pyq-opt">(B) Both A and R are true and R is not the correct explanation for A</div><div class="pyq-opt">(C) A is true but R is false</div><div class="pyq-opt">(D) A is false but R is true</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (C) Assertion (A) is true but Reason (R) is false. pickle.dump() is used to WRITE to a binary file (not read), so it will give error when file is opened in 'rb' (read) mode. But the reason states dump() is for reading, which is wrong - pickle.load() is for reading.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q21</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Assertion (A): We can retrieve records from more than one table in MYSQL.
+Reason (R): Foreign key is used to establish a relationship between two tables.</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) Both A and R are true and R is the correct explanation for A</div><div class="pyq-opt">(B) Both A and R are true and R is not the correct explanation for A</div><div class="pyq-opt">(C) A is true but R is false</div><div class="pyq-opt">(D) A is false but R is true</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (B) Both A and R are true but R is not the correct explanation for A. We retrieve from multiple tables using JOIN (not just because of foreign keys). Foreign keys establish relationships but retrieving can also be done via Cartesian product.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q22</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What does the return statement do in a function? Explain with the help of an example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> The return statement is used to exit a function and send a value back to the caller. It can return a single value, multiple values (as a tuple), or None (if no expression is given).
+
+Example:
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # Output: 8</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q23</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Exception Handling</span></div>
+<div class="qb-question">Write one example of each of the following in Python:
+(i) Syntax Error
+(ii) Implicit Type Conversion</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) Syntax Error:
+print("Hello"  # Missing closing parenthesis
+
+(ii) Implicit Type Conversion:
+a = 5      # int
+b = 2.5    # float
+c = a + b  # c becomes 7.5 (float) - Python automatically converts int to float</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q24</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Consider the following dictionaries, D and D1:
+D={"Suman": 40, "Raj":55, "Raman":60}
+D1={"Aditi":30, "Amit":90,"Raj":20}
+(Answer using built-in Python functions only)
+(i) (a) Write a statement to display/return the value corresponding to the key "Raj" in the dictionary D.
+OR
+(b) Write a statement to display the length of the dictionary D1.
+(ii) (a) Write a statement to append all the key-value pairs of the dictionary D to the dictionary D1.
+OR
+(b) Write a statement to delete the item with the given key, "Amit" from the dictionary D1.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i)(a) print(D["Raj"]) or print(D.get("Raj"))  # Output: 55
+(i)(b) print(len(D1))  # Output: 3
+(ii)(a) D1.update(D)
+(ii)(b) del D1["Amit"] or D1.pop("Amit")</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q25</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What possible output from the given options is expected to be displayed when the following code is executed?
+import random
+Cards=["Heart","Spade","Club","Diamond"]
+for i in range(2):
+    print(Cards[random.randint(1,i+2)],end="#")</div>
+<div class="pyq-opts"><div class="pyq-opt">(A) Spade#Diamond#</div><div class="pyq-opt">(B) Spade#Heart#</div><div class="pyq-opt">(C) Diamond#Club#</div><div class="pyq-opt">(D) Heart#Spade#</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A) Spade#Diamond#. When i=0: randint(1,2) can be 1 or 2, so Cards[1]='Spade' or Cards[2]='Club'. When i=1: randint(1,3) can be 1,2,3, so Cards[1]='Spade', Cards[2]='Club', or Cards[3]='Diamond'. Option (A) Spade#Diamond# is possible.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q26</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">The code given below accepts N as an integer argument and returns the sum of all integers from 1 to N. Observe the following code carefully and rewrite it after removing all syntax and logical errors. Underline all the corrections made.
+def Sum(N)
+    for I in range(N):
+        S=S+I
+    return S
+print(Sum(10))</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
+def Sum(N):          # Error 1: Missing colon after N)
+    S = 0            # Error 2: S not initialized
+    for I in range(1, N+1):  # Error 3: range(N) starts from 0, should be range(1, N+1)
+        S = S + I
+    return S
+print(Sum(10))       # Output: 55</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q27</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Nisha is assigned the task of maintaining the staff data of an organization. She has to store the details of the staff in the SQL table named EMPLOYEES with attributes as EMPNO, NAME, DEPARTMENT, BASICSAL.
+(i)(a) Help Nisha to identify the attribute which should be designated as the PRIMARY KEY. Justify your answer.
+OR
+(b) Help Nisha to identify the constraint which should be applied to the attribute NAME such that the Employees' Names cannot be left empty or NULL while entering the records but can have duplicate values.
+(ii)(a) Write the SQL command to change the size of the attribute BASICSAL in the table EMPLOYEES to allow the maximum value of 99999.99 to be stored in it.
+OR
+(b) Write the SQL command to delete the table EMPLOYEES.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i)(a) EMPNO should be the PRIMARY KEY because it uniquely identifies each employee. Names can be duplicate, departments can repeat, and salary can be same.
+(i)(b) NOT NULL constraint should be applied to NAME.
+(ii)(a) ALTER TABLE EMPLOYEES MODIFY BASICSAL DECIMAL(7,2);
+(ii)(b) DROP TABLE EMPLOYEES;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q28</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">(a) Expand and explain the term URL.
+OR
+(b) Expand the term PPP. What is the use of PPP?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) URL stands for Uniform Resource Locator. It is the address of a resource on the Internet. It specifies the protocol, domain name, and path to access a specific webpage or file. Example: https://www.example.com/page.html
+
+(b) PPP stands for Point-to-Point Protocol. It is a data link layer protocol used to establish a direct connection between two nodes. It is commonly used for serial connections like dial-up internet.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q29</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">(a) Write a Python function that displays all the lines containing the word 'vote' from a text file "Elections.txt".
+OR
+(b) Write a Python function that displays all the words starting and ending with a vowel from a text file "Report.txt". The consecutive words should be separated by a space in the output.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a)
+def display_vote():
+    f = open("Elections.txt", "r")
+    lines = f.readlines()
+    for line in lines:
+        if 'vote' in line:
+            print(line, end='')
+    f.close()
+
+(b)
+def display_vowel_words():
+    f = open("Report.txt", "r")
+    content = f.read()
+    words = content.split()
+    vowels = 'aeiouAEIOU'
+    for word in words:
+        if word[0] in vowels and word[-1] in vowels:
+            print(word, end=' ')
+    f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q30</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
+<div class="qb-question">(a) A stack, named ClrStack, contains records of some colors. Each record is represented as a tuple containing four elements - ColorName, RED, GREEN, BLUE. ColorName is a string, and RED, GREEN, BLUE are integers. For example, a record in the stack may be ('Yellow', 237, 250, 68). Write the following user-defined functions in Python:
+(i) push_Clr(ClrStack, new_Clr): pushes a new record onto the stack
+(ii) pop_Clr(ClrStack): pops the topmost record and returns it. If empty, display "Underflow"
+(iii) isEmpty(ClrStack): checks whether the stack is empty
+
+OR
+
+(b) Write the following user-defined functions in Python:
+(i) push_trail(N, myStack): pushes the last 5 elements from list N onto stack myStack
+(ii) pop_one(myStack): pops an element and returns it. If empty, display 'Stack Underflow' and return None
+(iii) display_all(myStack): displays all elements without deleting. If empty, display 'Empty Stack'</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a)
+def push_Clr(ClrStack, new_Clr):
+    ClrStack.append(new_Clr)
+
+def pop_Clr(ClrStack):
+    if isEmpty(ClrStack):
+        print("Underflow")
+    else:
+        return ClrStack.pop()
+
+def isEmpty(ClrStack):
+    if len(ClrStack) == 0:
+        return True
+    else:
+        return False
+
+(b)
+def push_trail(N, myStack):
+    for i in range(len(N)-5, len(N)):
+        myStack.append(N[i])
+
+def pop_one(myStack):
+    if len(myStack) == 0:
+        print('Stack Underflow')
+        return None
+    else:
+        return myStack.pop()
+
+def display_all(myStack):
+    if len(myStack) == 0:
+        print('Empty Stack')
+    else:
+        for i in range(len(myStack)-1, -1, -1):
+            print(myStack[i])</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q31</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">(a) Predict the output of the following code:
+def ExamOn(mystr):
+    newstr = ""
+    count = 0
+    for i in mystr:
+        if count%2 != 0:
+            newstr = newstr + str(count-1)
+        else:
+            newstr = newstr + i.lower()
+        count += 1
+    newstr = newstr + mystr[:2]
+    print("The new string is:", newstr)
+ExamOn("GenX")
+
+OR
+
+(b) Write the output on execution of the following Python code:
+def Change(X):
+    for K,V in X.items():
+        L1.append(K)
+        L2.append(V)
+D={1:"ONE",2:"TWO",3:"THREE"}
+L1=[]
+L2=[]
+Change(D)
+print(L1)
+print(L2)
+print(D)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Tracing:
+mystr = "GenX"
+count=0, i='G': count%2==0, newstr = '' + 'g' = 'g', count=1
+count=1, i='e': count%2!=0, newstr = 'g' + str(0) = 'g0', count=2
+count=2, i='n': count%2==0, newstr = 'g0' + 'n' = 'g0n', count=3
+count=3, i='X': count%2!=0, newstr = 'g0n' + str(2) = 'g0n2', count=4
+newstr = 'g0n2' + 'Ge' = 'g0n2Ge'
+Output: The new string is: g0n2Ge
+
+(b) Output:
+[1, 2, 3]
+['ONE', 'TWO', 'THREE']
+{1: 'ONE', 2: 'TWO', 3: 'THREE'}</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q32</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Suman has created a table named WORKER with columns WID, WNAME, WAGE, HOURS, TYPE, and SITEID.
+(a) Based on the data, answer the following:
+(i) Write the SQL statement to display the names and wages of those workers whose wages are between 800 and 1500.
+(ii) Write the SQL statement to display the record of workers whose SITEID is not known.
+(iii) Write the SQL statement to display WNAME, WAGE and HOURS of all those workers whose TYPE is 'Skilled'.
+(iv) Write the SQL statement to change the WAGE to 1200 of the workers where the TYPE is "Semiskilled".
+
+OR
+
+(b) Write the output on execution of the following SQL commands:
+(i) SELECT WNAME, WAGE*HOURS FROM WORKER WHERE SITEID = 103;
+(ii) SELECT COUNT(DISTINCT TYPE) FROM WORKER;
+(iii) SELECT MAX(WAGE), MIN(WAGE), TYPE FROM WORKER GROUP BY TYPE;
+(iv) SELECT WNAME,SITEID FROM WORKER WHERE TYPE="Unskilled" ORDER BY HOURS;</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a)(i) SELECT WNAME, WAGE FROM WORKER WHERE WAGE BETWEEN 800 AND 1500;
+(ii) SELECT * FROM WORKER WHERE SITEID IS NULL;
+(iii) SELECT WNAME, WAGE, HOURS FROM WORKER WHERE TYPE = 'Skilled';
+(iv) UPDATE WORKER SET WAGE = 1200 WHERE TYPE = 'Semiskilled';
+
+(b)(i)
+WNAME    WAGE*HOURS
+Ahmed J  300000
+Anju S   156000
+
+(ii)
+COUNT(DISTINCT TYPE)
+3
+
+(iii)
+MAX(WAGE)  MIN(WAGE)  TYPE
+1500       1500       Unskilled  -- Wait: Unskilled: 1500, 780. So MAX=1500, MIN=780
+1200       520        Skilled
+560        560        Semiskilled
+
+Corrected:
+MAX(WAGE)  MIN(WAGE)  TYPE
+560        560        Semiskilled
+1200       520        Skilled
+1500       780        Unskilled
+
+(iv)
+WNAME    SITEID
+Jacob B  101
+Ahmed J  103</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q33</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">A csv file "P_record.csv" contains the records of patients in a hospital. Each record contains: Name of patient, Disease, Number of days patient is admitted, Amount.
+For example: ["Gunjan","Jaundice",4,15000]
+Write the following Python functions:
+(i) read_data() which reads all the data from the file and displays the details of all the 'Cancer' patients.
+(ii) count_rec() which counts and returns the number of records in the file.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> import csv
+
+def read_data():
+    f = open("P_record.csv", "r")
+    reader = csv.reader(f)
+    for row in reader:
+        if row[1] == 'Cancer':
+            print(row)
+    f.close()
+
+def count_rec():
+    f = open("P_record.csv", "r")
+    reader = csv.reader(f)
+    count = 0
+    for row in reader:
+        count += 1
+    f.close()
+    return count</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q34</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Assume that you are working in the IT Department of a Creative Art Gallery (CAG), which sells different forms of art creations like Paintings, Sculptures etc. The data of Art Creations and Artists are kept in tables Articles and Artists respectively.
+Table: Articles (Code, A_Code, Article, DOC, Price)
+Table: Artists (A_Code, Name, Phone, Email, DOB)
+Write SQL queries for:
+(i) To display all the records from the Articles table in descending order of price.
+(ii) To display the details of Articles which were created in the year 2020.
+(iii) To display the structure of Artists table.
+(iv)(a) To display the name of all artists whose Article is Painting through Equi Join.
+OR
+(b) To display the name of all Artists whose Article is 'Painting' through Natural Join.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) SELECT * FROM Articles ORDER BY Price DESC;
+(ii) SELECT * FROM Articles WHERE DOC &gt;= '2020-01-01' AND DOC &lt;= '2020-12-31';
+    OR: SELECT * FROM Articles WHERE YEAR(DOC) = 2020;
+(iii) DESC Artists;
+    OR: DESCRIBE Artists;
+(iv)(a) SELECT Name FROM Artists, Articles WHERE Artists.A_Code = Articles.A_Code AND Article = 'Painting';
+(iv)(b) SELECT Name FROM Artists NATURAL JOIN Articles WHERE Article = 'Painting';</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q35</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">A table, named THEATRE, in CINEMA database, has the following structure:
+Th_ID char(5), Name varchar(15), City varchar(15), Location varchar(15), Seats int
+Write a function Delete_Theatre(), to input the value of Th_ID from the user and permanently delete the corresponding record from the table.
+Host: localhost, User: root, Password: Ex2025</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> import mysql.connector as mysql
+
+def Delete_Theatre():
+    th_id = input("Enter Theatre ID: ")
+    mydb = mysql.connect(host="localhost", user="root", passwd="Ex2025", database="CINEMA")
+    mycursor = mydb.cursor()
+    query = "DELETE FROM THEATRE WHERE Th_ID = '{}'".format(th_id)
+    mycursor.execute(query)
+    mydb.commit()
+    print("Record deleted successfully")
+    mydb.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q36</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">A file, PASSENGERS.DAT, stores the records of passengers using the following structure:
+[PNR, PName, BRDSTN, DESTN, FARE]
+Write user defined functions in Python for the following tasks:
+(i) Create() - to input data for passengers and write it in the binary file PASSENGERS.DAT.
+(ii) SearchDestn(D) - to read contents from the file PASSENGERS.DAT and display the details of those Passengers whose DESTN matches with the value of D.
+(iii) UpdateFare() - to increase the fare of all passengers by 5% and rewrite the updated records into the file PASSENGERS.DAT.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> import pickle
+
+def Create():
+    f = open("PASSENGERS.DAT", "ab")
+    PNR = input("Enter PNR: ")
+    PName = input("Enter Name: ")
+    BRDSTN = input("Enter Boarding Station: ")
+    DESTN = input("Enter Destination: ")
+    FARE = float(input("Enter Fare: "))
+    rec = [PNR, PName, BRDSTN, DESTN, FARE]
+    pickle.dump(rec, f)
+    f.close()
+
+def SearchDestn(D):
+    f = open("PASSENGERS.DAT", "rb")
+    try:
+        while True:
+            rec = pickle.load(f)
+            if rec[3] == D:
+                print(rec)
+    except EOFError:
+        f.close()
+
+def UpdateFare():
+    f = open("PASSENGERS.DAT", "rb")
+    records = []
+    try:
+        while True:
+            rec = pickle.load(f)
+            rec[4] = rec[4] * 1.05
+            records.append(rec)
+    except EOFError:
+        f.close()
+    f = open("PASSENGERS.DAT", "wb")
+    for rec in records:
+        pickle.dump(rec, f)
+    f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q37</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">'Swabhaav' is a big NGO working in the field of Psychological Treatment and Counselling, having its Head Office in Nagpur. It is planning to set up a center in Vijayawada. The Vijayawada Center will have four blocks - ADMIN, PSYCHIATRY, PSYCHOLOGY, and ICU.
+Distances: ADMIN to PSYCHIATRY 65m, ADMIN to PSYCHOLOGY 65m, ADMIN to ICU 65m, PSYCHIATRY to PSYCHOLOGY 100m, PSYCHIATRY to ICU 50m, PSYCHOLOGY to ICU 50m.
+Nagpur Head Office to Vijayawada Center = 700 km.
+Computers: ADMIN 16, PSYCHIATRY 40, PSYCHOLOGY 19, ICU 20.
+(i) Suggest the most appropriate location of the server inside the Vijayawada Center. Justify your choice.
+(ii) Which hardware device will you suggest to connect all the computers within each block?
+(iii) Draw a cable layout to efficiently connect various blocks within the Vijayawada Center.
+(iv) Where should the router be placed to provide internet to all the computers in the Vijayawada Center?
+(v)(a) The Manager at Nagpur wants to remotely access the computer in Admin block in Vijayawada. Which protocol will be used for this?
+OR
+(b) Which type of Network (PAN, LAN, MAN or WAN) will be set up among the computers connected with Vijayawada Center?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) PSYCHIATRY block should host the server as it has the maximum number of computers (40), reducing overall network traffic.
+(ii) Switch - to connect all computers within each block efficiently.
+(iii) Star/Bus topology cable layout connecting all blocks through the PSYCHIATRY block (central):
+ADMIN --- PSYCHIATRY --- PSYCHOLOGY
+                |                   |
+               ICU ----------------+
+(iv) The router should be placed in the PSYCHIATRY block (where the server is located) for optimal connectivity.
+(v)(a) SSH (Secure Shell) or Telnet protocol can be used for remote access.
+(v)(b) LAN (Local Area Network) will be set up as all blocks are within a small area (less than 1 km).</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">CBSE 2024</span>
+<span class="qb-ch-count">35 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">State True or False: While defining a function in Python, the positional parameters in the function header must always be written after the default parameters.</div>
+<div class="pyq-opts"><div class="pyq-opt">True</div><div class="pyq-opt">False</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> False. Positional parameters must come BEFORE default parameters in a function definition.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">The SELECT statement when combined with _______ clause, returns records without repetition.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) DISTINCT</div><div class="pyq-opt">(b) DESCRIBE</div><div class="pyq-opt">(c) UNIQUE</div><div class="pyq-opt">(d) NULL</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) DISTINCT. The DISTINCT clause eliminates duplicate records from the result set.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What will be the output of the following statement:
+print (16*5/4*2/5-8)</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) -3.33</div><div class="pyq-opt">(b) 6.0</div><div class="pyq-opt">(c) 0.0</div><div class="pyq-opt">(d) -13.33</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) -3.33... Wait: 16*5=80, 80/4=20.0, 20.0*2=40.0, 40.0/5=8.0, 8.0-8=0.0. Answer: (c) 0.0</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What possible output from the given options is expected to be displayed when the following Python code is executed?
+import random
+Signal = ['RED', 'YELLOW', 'GREEN']
+for K in range(2, 0, -1):
+    R = random.randrange(K)
+    print(Signal[R], end = '#')</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) YELLOW # RED #</div><div class="pyq-opt">(b) RED # GREEN #</div><div class="pyq-opt">(c) GREEN # RED #</div><div class="pyq-opt">(d) YELLOW # GREEN #</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) YELLOW # RED #. When K=2: randrange(2) gives 0 or 1, so Signal[0]='RED' or Signal[1]='YELLOW'. When K=1: randrange(1) gives 0, so Signal[0]='RED'. So second output is always RED. Options with RED as second: (a) YELLOW#RED# or (c) GREEN#RED# (but GREEN needs index 2 which randrange(2) can't give... randrange(2) gives 0 or 1). So answer is (a) YELLOW # RED #</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">In SQL, the aggregate function which will display the cardinality of the table is ______.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) sum()</div><div class="pyq-opt">(b) count(*)</div><div class="pyq-opt">(c) avg()</div><div class="pyq-opt">(d) sum(*)</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) count(*). COUNT(*) counts all rows in the table, giving its cardinality.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Which protocol out of the following is used to send and receive emails over a computer network?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) PPP</div><div class="pyq-opt">(b) HTTP</div><div class="pyq-opt">(c) FTP</div><div class="pyq-opt">(d) SMTP</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (d) SMTP. Simple Mail Transfer Protocol is used for sending emails.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Identify the invalid Python statement from the following:</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) d = dict()</div><div class="pyq-opt">(b) e = {}</div><div class="pyq-opt">(c) f = []</div><div class="pyq-opt">(d) g = dict{}</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (d) g = dict{}. The correct syntax would be g = dict() or g = {}. dict{} is invalid syntax.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
+myStr="MISSISSIPPI"
+print(myStr[:4]+"#"+myStr[-5:])</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) MISSI#SIPPI</div><div class="pyq-opt">(b) MISS#SIPPI</div><div class="pyq-opt">(c) MISS#IPPIS</div><div class="pyq-opt">(d) MISSI#IPPIS</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) MISS#SIPPI. myStr[:4] = 'MISS', myStr[-5:] = 'SIPPI'.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Identify the statement from the following which will raise an error:</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) print("A"*3)</div><div class="pyq-opt">(b) print(5*3)</div><div class="pyq-opt">(c) print("15" + 3)</div><div class="pyq-opt">(d) print("15" + "13")</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (c) print("15" + 3). This will raise a TypeError because you cannot concatenate a string with an integer.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Select the correct output of the following code:
+event="G20 Presidency@2023"
+L=event.split(' ')
+print(L[::-2])</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) 'G20'</div><div class="pyq-opt">(b) ['Presidency@2023']</div><div class="pyq-opt">(c) ['G20']</div><div class="pyq-opt">(d) 'Presidency@2023'</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) ['Presidency@2023']. L = ['G20', 'Presidency@2023']. L[::-2] reverses with step -2: starting from last element, every 2nd. L has 2 elements (index 0,1). [::-2] picks index 1 = ['Presidency@2023'].</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Which of the following options is the correct unit of measurement for network bandwidth?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) KB</div><div class="pyq-opt">(b) Bit</div><div class="pyq-opt">(c) Hz</div><div class="pyq-opt">(d) Km</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) Bit. Network bandwidth is measured in bits per second (bps).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Observe the given Python code carefully:
+a=20
+def convert(a):
+    b=20
+    a=a+b
+convert(10)
+print(a)
+Select the correct output from the given options:</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) 10</div><div class="pyq-opt">(b) 20</div><div class="pyq-opt">(c) 30</div><div class="pyq-opt">(d) Error</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) 10... Wait, the global a=20. convert(10) creates local a=10+20=30 but doesn't return or modify global. print(a) prints global a=20. Answer: (b) 20</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q13</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Exception Handling</span></div>
+<div class="qb-question">State whether the following statement is True or False: While handling exceptions in Python, name of the exception has to be compulsorily added with except clause.</div>
+<div class="pyq-opts"><div class="pyq-opt">True</div><div class="pyq-opt">False</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> False. The except clause can be used without specifying any exception name. A bare 'except:' will catch all exceptions.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q14</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Which of the following is not a DDL command in SQL?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) DROP</div><div class="pyq-opt">(b) CREATE</div><div class="pyq-opt">(c) UPDATE</div><div class="pyq-opt">(d) ALTER</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (c) UPDATE. UPDATE is a DML command. DROP, CREATE, and ALTER are DDL commands.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q15</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Fill in the blank: _______ is a set of rules that needs to be followed by the communicating parties in order to have a successful and reliable data communication over a network.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Protocol. A protocol is a set of rules governing data communication.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q16</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Consider the following Python statement:
+F=open('CONTENT.TXT')
+Which of the following is an invalid statement in Python?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) F.seek(1,0)</div><div class="pyq-opt">(b) F.seek(0,1)</div><div class="pyq-opt">(c) F.seek(0,-1)</div><div class="pyq-opt">(d) F.seek(0,2)</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (c) F.seek(0,-1). The seek() method takes (offset, whence). whence can be 0 (beginning), 1 (current), or 2 (end). -1 is not a valid value for whence.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q17</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Assertion (A): CSV file is a human readable text file where each line has a number of fields, separated by comma or some other delimiter.
+Reason (R): writerow() method is used to write a single row in a CSV file.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) Both A and R are true and R is the correct explanation for A</div><div class="pyq-opt">(b) Both A and R are true and R is not the correct explanation for A</div><div class="pyq-opt">(c) A is true but R is false</div><div class="pyq-opt">(d) A is false but R is true</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) Both A and R are true but R is not the correct explanation for A. Both statements are factually correct, but writerow() being used to write a row doesn't explain why CSV is human readable.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q18</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Assertion (A): The expression "HELLO".sort() in Python will give an error.
+Reason (R): sort() does not exist as a method/function for strings in Python.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) Both A and R are true and R is the correct explanation for A</div><div class="pyq-opt">(b) Both A and R are true and R is not the correct explanation for A</div><div class="pyq-opt">(c) A is true but R is false</div><div class="pyq-opt">(d) A is false but R is true</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Both A and R are true and R is the correct explanation for A. Strings don't have a sort() method; sort() is a list method.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q19</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">(A)(i) Expand the following terms: XML, PPP
+(ii) Give one difference between circuit switching and packet switching.
+OR
+(B)(i) Define the term web hosting.
+(ii) Name any two web browsers.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A)(i) XML - eXtensible Markup Language; PPP - Point-to-Point Protocol
+(ii) Circuit Switching: A dedicated communication path is established between sender and receiver for the entire duration. Packet Switching: Data is broken into packets, each finding its own route to the destination.
+
+(B)(i) Web hosting is a service that allows organizations and individuals to publish their websites on the Internet. The web host provides server space to store the website files.
+(ii) Google Chrome, Mozilla Firefox</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q20</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">The code given below accepts five numbers and displays whether they are even or odd. Observe the following code carefully and rewrite it after removing all syntax and logical errors. Underline all the corrections made.
+def EvenOdd()
+    for i in range(5):
+        num=int(input("Enter a number"))
+        if num/2==0:
+            print("Even")
+        else:
+        print("Odd")
+EvenOdd()</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
+def EvenOdd():           # Error 1: Missing colon
+    for i in range(5):
+        num=int(input("Enter a number"))
+        if num%2==0:     # Error 2: / should be % (modulo for checking even/odd)
+            print("Even")
+        else:
+            print("Odd") # Error 3: print("Odd") should be indented inside else block
+EvenOdd()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q21</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">(A) Write a user defined function in Python named showGrades(S) which takes the dictionary S as an argument. The dictionary S contains Name:[Eng,Math,Science] as key:value pairs. The function displays the corresponding grade obtained by the students according to grading rules: Average &gt;=90: A, &lt;90 but &gt;=60: B, &lt;60: C
+
+OR
+
+(B) Write a user defined function in Python named Puzzle(W,N) which takes the argument W as an English word and N as an integer and returns the string where every Nth alphabet of the word W is replaced with an underscore ("_").</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A)
+def showGrades(S):
+    for name in S:
+        avg = sum(S[name]) / len(S[name])
+        if avg &gt;= 90:
+            grade = 'A'
+        elif avg &gt;= 60:
+            grade = 'B'
+        else:
+            grade = 'C'
+        print(name, '-', grade)
+
+(B)
+def Puzzle(W, N):
+    result = ""
+    for i in range(len(W)):
+        if (i + 1) % N == 0:
+            result += "_"
+        else:
+            result += W[i]
+    return result</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q22</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Write the output displayed on execution of the following Python code:
+LS=["HIMALAYA", "NILGIRI", "ALASKA", "ALPS"]
+D={}
+for S in LS:
+    if len(S)%4 == 0:
+        D[S] = len(S)
+for K in D:
+    print(K,D[K], sep = "#")</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Tracing:
+'HIMALAYA' len=8, 8%4==0 True, D['HIMALAYA']=8
+'NILGIRI' len=7, 7%4==0 False
+'ALASKA' len=6, 6%4==0 False
+'ALPS' len=4, 4%4==0 True, D['ALPS']=4
+
+Output:
+HIMALAYA#8
+ALPS#4</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q23</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">(A) Write the Python statement for each of the following tasks using built-in functions/methods only:
+(i) To remove the item whose key is "NISHA" from a dictionary named Students.
+(ii) To display the number of occurrences of the substring "is" in a string named message.
+
+OR
+
+(B) A tuple named subject stores the names of different subjects. Write the Python commands to convert the given tuple to a list and thereafter delete the last element of the list.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A)(i) Students.pop("NISHA") or del Students["NISHA"]
+(ii) print(message.count("is"))
+
+(B)
+subject_list = list(subject)
+subject_list.pop()  # or del subject_list[-1]</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q24</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">(A) Ms. Veda created a table named Sports in a MySQL database, containing columns Game_id, P_Age and G_name. After creating the table, she realized that the attribute Category has to be added. Help her to write a command to add the Category column. Thereafter, write the command to insert the following record:
+Game_id: G42, P_Age: Above 18, G_name: Chess, Category: Senior
+
+OR
+
+(B) Write the SQL commands to perform the following tasks:
+(i) View the list of tables in the database, Exam.
+(ii) View the structure of the table, Term1.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A)
+ALTER TABLE Sports ADD Category VARCHAR(20);
+INSERT INTO Sports VALUES('G42', 'Above 18', 'Chess', 'Senior');
+
+(B)
+(i) USE Exam;
+    SHOW TABLES;
+(ii) DESC Term1;
+    OR DESCRIBE Term1;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q25</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Predict the output of the following code:
+def callon(b=20,a=10):
+    b=b+a
+    a=b-a
+    print(b,"#",a)
+    return b
+x=100
+y=200
+x=callon(x,y)
+print(x,"@",y)
+y=callon(y)
+print(x,"@",y)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Tracing:
+callon(100, 200): b=100+200=300, a=300-200=100, prints: 300 # 100, returns 300
+x = 300
+print(300, '@', 200) =&gt; 300 @ 200
+
+callon(200): b=200, a=10(default), b=200+10=210, a=210-10=200, prints: 210 # 200, returns 210
+y = 210
+print(300, '@', 210) =&gt; 300 @ 210
+
+Output:
+300 # 100
+300 @ 200
+210 # 200
+300 @ 210</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q26</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Write the output on execution of the following Python code:
+S="Racecar Car Radar"
+L=S.split()
+for W in L:
+    x=W.upper()
+    if x==x[::-1]:
+        for I in x:
+            print(I,end="*")
+    else:
+        for I in W:
+            print(I,end="#")
+    print()</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Tracing:
+L = ['Racecar', 'Car', 'Radar']
+
+W='Racecar': x='RACECAR', x[::-1]='RACECAR', equal (palindrome)
+Prints: R*A*C*E*C*A*R*
+
+W='Car': x='CAR', x[::-1]='RAC', not equal
+Prints: C#a#r#
+
+W='Radar': x='RADAR', x[::-1]='RADAR', equal (palindrome)
+Prints: R*A*D*A*R*
+
+Output:
+R*A*C*E*C*A*R*
+C#a#r#
+R*A*D*A*R*</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q27</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Consider the table ORDERS given below and write the output of the SQL queries that follow:
+ORDNO | ITEM | QTY | RATE | ORDATE
+1001 | RICE | 23 | 120 | 2023-09-10
+1002 | PULSES | 13 | 120 | 2023-10-18
+1003 | RICE | 25 | 110 | 2023-11-17
+1004 | WHEAT | 28 | 65 | 2023-12-25
+1005 | PULSES | 16 | 110 | 2024-01-15
+1006 | WHEAT | 27 | 55 | 2024-04-15
+1007 | WHEAT | 25 | 60 | 2024-04-30
+
+(i) SELECT ITEM, SUM(QTY) FROM ORDERS GROUP BY ITEM;
+(ii) SELECT ITEM, QTY FROM ORDERS WHERE ORDATE BETWEEN '2023-11-01' AND '2023-12-31';
+(iii) SELECT ORDNO, ORDATE FROM ORDERS WHERE ITEM = 'WHEAT' AND RATE&gt;=60;</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i)
+ITEM    SUM(QTY)
+RICE    48
+PULSES  29
+WHEAT   80
+
+(ii)
+ITEM    QTY
+RICE    25
+WHEAT   28
+
+(iii)
+ORDNO  ORDATE
+1004   2023-12-25
+1007   2024-04-30</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q28</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">(A) Write a user defined function in Python named showInLines() which reads contents of a text file named STORY.TXT and displays every sentence in a separate line. Assume that a sentence ends with a full stop (.), a question mark (?), or an exclamation mark (!).
+
+OR
+
+(B) Write a function, c_words() in Python that separately counts and displays the number of uppercase and lowercase alphabets in a text file, Words.txt.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A)
+def showInLines():
+    f = open("STORY.TXT", "r")
+    content = f.read()
+    sentence = ""
+    for ch in content:
+        sentence += ch
+        if ch in '.?!':
+            print(sentence.strip())
+            sentence = ""
+    f.close()
+
+(B)
+def c_words():
+    f = open("Words.txt", "r")
+    content = f.read()
+    upper = 0
+    lower = 0
+    for ch in content:
+        if ch.isupper():
+            upper += 1
+        elif ch.islower():
+            lower += 1
+    print("Uppercase:", upper)
+    print("Lowercase:", lower)
+    f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q29</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Consider the table Projects given below:
+P_id | Pname | Language | Startdate | Enddate
+P001 | School Management System | Python | 2023-01-12 | 2023-04-03
+P002 | Hotel Management System | C++ | 2022-12-01 | 2023-02-02
+P003 | Blood Bank | Python | 2023-02-11 | 2023-03-02
+P004 | Payroll Management System | Python | 2023-03-12 | 2023-06-02
+
+Based on the given table, write SQL queries for:
+(i) Add the constraint, primary key to column P_id in the existing table Projects.
+(ii) To change the language to Python of the project whose id is P002.
+(iii) To delete the table Projects from MySQL database along with its data.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) ALTER TABLE Projects ADD PRIMARY KEY (P_id);
+(ii) UPDATE Projects SET Language = 'Python' WHERE P_id = 'P002';
+(iii) DROP TABLE Projects;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q30</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
+<div class="qb-question">Consider a list named Nums which contains random integers. Write the following user defined functions in Python and perform the specified operations on a stack named BigNums.
+(i) PushBig(): It checks every number from the list Nums and pushes all such numbers which have 5 or more digits into the stack, BigNums.
+(ii) PopBig(): It pops the numbers from the stack, BigNums and displays them. The function should also display "Stack Empty" when there are no more numbers left in the stack.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> BigNums = []
+
+def PushBig():
+    for num in Nums:
+        if len(str(abs(num))) &gt;= 5:
+            BigNums.append(num)
+
+def PopBig():
+    while len(BigNums) &gt; 0:
+        print(BigNums.pop())
+    print("Stack Empty")</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q31</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Consider the tables Admin and Transport given below:
+Table Admin: S_id | S_name | Address | S_type
+S001 | Sandhya | Rohini | Day Boarder
+S002 | Vedanshi | Rohtak | Day Scholar
+S003 | Vibhu | Raj Nagar | NULL
+S004 | Atharva | Rampur | Day Boarder
+
+Table Transport: S_id | Bus_no | Stop_name
+S002 | TSS10 | Sarai Kale Khan
+S004 | TSS12 | Sainik Vihar
+S005 | TSS10 | Kamla Nagar
+
+Write SQL queries for the following:
+(i) Display the student name and their stop name from the tables Admin and Transport.
+(ii) Display the number of students whose S_type is not known.
+(iii) Display all details of the students whose name starts with 'V'.
+(iv) Display student id and address in alphabetical order of student name, from the table Admin.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) SELECT S_name, Stop_name FROM Admin A, Transport T WHERE A.S_id = T.S_id;
+(ii) SELECT COUNT(*) FROM Admin WHERE S_type IS NULL;
+(iii) SELECT * FROM Admin WHERE S_name LIKE 'V%';
+(iv) SELECT S_id, Address FROM Admin ORDER BY S_name;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q32</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Sangeeta is a Python programmer working in a computer hardware company. She has to maintain the records of the peripheral devices. She created a csv file named Peripheral.csv, to store the details. The structure of Peripheral.csv is: [P_id, P_name, Price]
+Sangeeta wants to write the following user defined functions:
+Add_Device(): to accept a record from the user and add it to a csv file, Peripheral.csv.
+Count_Device(): To count and display number of peripheral devices whose price is less than 1000.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> import csv
+
+def Add_Device():
+    f = open("Peripheral.csv", "a", newline='')
+    writer = csv.writer(f)
+    P_id = int(input("Enter device ID: "))
+    P_name = input("Enter device name: ")
+    Price = int(input("Enter price: "))
+    writer.writerow([P_id, P_name, Price])
+    f.close()
+
+def Count_Device():
+    f = open("Peripheral.csv", "r")
+    reader = csv.reader(f)
+    count = 0
+    for row in reader:
+        if int(row[2]) &lt; 1000:
+            count += 1
+    print("Number of devices with price less than 1000:", count)
+    f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q33</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Infotainment Ltd. is an event management company with its prime office located in Bengaluru. The company is planning to open its new division in Chennai named as - Vajra, Trishula and Sudershana.
+Distances: Vajra to Trishula 350m, Trishula to Sudershana 415m, Sudershana to Vajra 300m, Bengaluru Office to Chennai 2000 km.
+Computers: Vajra 120, Sudershana 75, Trishula 65, Bengaluru Office 250.
+(i) Suggest and draw the cable layout to efficiently connect various locations in Chennai division.
+(ii) Which block in Chennai division should host the server? Justify.
+(iii) Which fast and effective wired transmission medium should be used to connect the prime office at Bengaluru with the Chennai division?
+(iv) Which network device will be used to connect the digital devices within each location of Chennai division?
+(v) A considerable amount of data loss is noticed between different locations of the Chennai division. Suggest a networking device that should be installed to refresh the data and reduce the data loss.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) Star topology with Vajra as the center:
+Vajra --- Trishula (350m)
+Vajra --- Sudershana (300m)
+
+(ii) Vajra should host the server as it has the maximum number of computers (120).
+
+(iii) Optical Fiber cable should be used as it supports long-distance, high-speed data transmission over 2000 km.
+
+(iv) Switch - to connect digital devices within each location.
+
+(v) Repeater - to regenerate and refresh the data signal to reduce data loss during transmission between locations.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q34</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">(A)(i) Differentiate between 'w' and 'a' file modes in Python.
+(ii) Consider a binary file, items.dat, containing records stored in the format: {item_id: [item_name, amount]}. Write a function, Copy_new(), that copies all records whose amount is greater than 1000 from items.dat to new_items.dat.
+
+OR
+
+(B)(i) What is the advantage of using with clause while opening a data file in Python? Also give syntax of with clause.
+(ii) A binary file, EMP.DAT has the following structure: [Emp_Id, Name, Salary]. Write a user defined function, disp_Detail(), that would read the contents of the file EMP.DAT and display the details of those employees whose salary is below 25000.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A)(i) 'w' mode: Opens file for writing. If file exists, it overwrites (truncates) the content. If file doesn't exist, creates a new file.
+'a' mode: Opens file for appending. Data is added at the end. If file doesn't exist, creates a new file. Existing data is preserved.
+
+(ii)
+import pickle
+def Copy_new():
+    f1 = open("items.dat", "rb")
+    f2 = open("new_items.dat", "wb")
+    try:
+        while True:
+            rec = pickle.load(f1)
+            for key in rec:
+                if rec[key][1] &gt; 1000:
+                    pickle.dump(rec, f2)
+    except EOFError:
+        f1.close()
+        f2.close()
+
+(B)(i) The 'with' clause automatically closes the file when the block is exited, even if an exception occurs. This prevents resource leaks.
+Syntax: with open(filename, mode) as file_object:
+            # operations on file
+
+(ii)
+import pickle
+def disp_Detail():
+    f = open("EMP.DAT", "rb")
+    try:
+        while True:
+            rec = pickle.load(f)
+            if rec[2] &lt; 25000:
+                print(rec)
+    except EOFError:
+        f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q35</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">(A)(i) Define cartesian product with respect to RDBMS.
+(ii) Sunil wants to write a program in Python to update the quantity to 20 of the records whose item code is 111 in the table named shop in MySQL database named Keeper.
+Username: admin, Password: Shopping, Host: localhost
+
+OR
+
+(B)(i) Give any two features of SQL.
+(ii) Sumit wants to write a code in Python to display all the details of the passengers from the table flight in MySQL database, Travel.
+Username: root, Password: airplane, Host: localhost</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (A)(i) Cartesian Product (Cross Join) of two tables combines every row of the first table with every row of the second table. If table A has m rows and table B has n rows, the result will have m x n rows.
+
+(ii)
+import mysql.connector as mysql
+def update_qty():
+    mydb = mysql.connect(host="localhost", user="admin", passwd="Shopping", database="Keeper")
+    mycursor = mydb.cursor()
+    mycursor.execute("UPDATE shop SET Qty=20 WHERE Item_code=111")
+    mydb.commit()
+    print("Record updated")
+    mydb.close()
+
+(B)(i) Two features of SQL:
+1. SQL is a non-procedural language - you specify what to do, not how to do it.
+2. SQL can be used by both technical and non-technical users.
+
+(ii)
+import mysql.connector as mysql
+def display_passengers():
+    mydb = mysql.connect(host="localhost", user="root", passwd="airplane", database="Travel")
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM flight")
+    data = mycursor.fetchall()
+    for row in data:
+        print(row)
+    mydb.close()</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">CBSE 2023</span>
+<span class="qb-ch-count">35 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">State True or False: "Identifiers are names used to identify a variable, function in a program."</div>
+<div class="pyq-opts"><div class="pyq-opt">True</div><div class="pyq-opt">False</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> True. Identifiers are names given to variables, functions, classes, etc.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which of the following is a valid keyword in Python?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) false</div><div class="pyq-opt">(b) return</div><div class="pyq-opt">(c) non_local</div><div class="pyq-opt">(d) none</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) return. 'false' (lowercase) is not a keyword (False with capital F is). 'non_local' has underscore (nonlocal is correct). 'none' (lowercase) is not a keyword (None is).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Given the following Tuple:
+Tup= (10, 20, 30, (10, 20, 30), 40)
+Which of the following statements will result in an error?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) print(Tup[0])</div><div class="pyq-opt">(b) Tup.insert(2,3)</div><div class="pyq-opt">(c) print(Tup[1:2])</div><div class="pyq-opt">(d) print(len(Tup))</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) Tup.insert(2,3). Tuples are immutable, so insert() method does not exist for tuples.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Consider the given expression:
+5&lt;10 and 12&gt;7 or not 7&gt;4
+Which of the following will be the correct output, if the given expression is evaluated?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) True</div><div class="pyq-opt">(b) False</div><div class="pyq-opt">(c) NONE</div><div class="pyq-opt">(d) NULL</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) True. 5&lt;10 is True, 12&gt;7 is True, 7&gt;4 is True, not True is False. True and True = True. True or False = True.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Select the correct output of the code:
+S= "Amrit Mahotsav @ 75"
+A=S.partition(" ")
+print(A)</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) ('Amrit Mahotsav','@','75')</div><div class="pyq-opt">(b) ['Amrit','Mahotsav','@','75']</div><div class="pyq-opt">(c) ('Amrit', 'Mahotsav @ 75')</div><div class="pyq-opt">(d) ('Amrit', ' ', 'Mahotsav @ 75')</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (d) ('Amrit', ' ', 'Mahotsav @ 75'). The partition() method splits at the first occurrence of the separator and returns a 3-tuple.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Which of the following mode keeps the file offset position at the end of the file?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) r+</div><div class="pyq-opt">(b) r</div><div class="pyq-opt">(c) w</div><div class="pyq-opt">(d) a</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (d) a. The append mode 'a' positions the file pointer at the end of the file.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Fill in the blank: _____ function is used to arrange the elements of a list in ascending order.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) sort()</div><div class="pyq-opt">(b) arrange()</div><div class="pyq-opt">(c) ascending()</div><div class="pyq-opt">(d) asort()</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) sort(). The sort() method arranges list elements in ascending order by default.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which of the following operators will return either True or False?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) +=</div><div class="pyq-opt">(b) !=</div><div class="pyq-opt">(c) =</div><div class="pyq-opt">(d) *=</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) !=. The != (not equal to) comparison operator returns True or False.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which of the following statement(s) would give an error after executing the following code?
+Stud={"Murugan":100, "Mithu":95}  # Statement 1
+print(Stud[95])                    # Statement 2
+Stud["Murugan"]=99                 # Statement 3
+print(Stud.pop())                  # Statement 4
+print(Stud)                        # Statement 5</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) Statement 2</div><div class="pyq-opt">(b) Statement 3</div><div class="pyq-opt">(c) Statement 4</div><div class="pyq-opt">(d) Statements 2 and 4</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (d) Statements 2 and 4. Statement 2: KeyError (95 is not a key). Statement 4: TypeError (pop() requires at least 1 argument for dictionaries).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">Fill in the blank: _____ is a number of tuples in a relation.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) Attribute</div><div class="pyq-opt">(b) Degree</div><div class="pyq-opt">(c) Domain</div><div class="pyq-opt">(d) Cardinality</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (d) Cardinality. The number of tuples (rows) in a relation is called its cardinality.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">The syntax of seek() is: file_object.seek(offset[,reference_point]). What is the default value of reference_point?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) 0</div><div class="pyq-opt">(b) 1</div><div class="pyq-opt">(c) 2</div><div class="pyq-opt">(d) 3</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) 0. The default reference_point is 0 (beginning of the file).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Fill in the blank: _____ clause is used with SELECT statement to display data in a sorted form with respect to a specified column.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) WHERE</div><div class="pyq-opt">(b) ORDER BY</div><div class="pyq-opt">(c) HAVING</div><div class="pyq-opt">(d) DISTINCT</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) ORDER BY. The ORDER BY clause sorts the result set by a specified column.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q13</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Data Communication</span></div>
+<div class="qb-question">Fill in the blank: _____ is used for point-to-point communication or unicast communication such as radar and satellite.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) INFRARED WAVES</div><div class="pyq-opt">(b) BLUETOOTH</div><div class="pyq-opt">(c) MICROWAVES</div><div class="pyq-opt">(d) RADIOWAVES</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (c) MICROWAVES. Microwaves are used for point-to-point communication like radar and satellite links.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q14</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What will the following expression be evaluated to in Python?
+print(4+3*5/3-5%2)</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) 8.5</div><div class="pyq-opt">(b) 8.0</div><div class="pyq-opt">(c) 10.2</div><div class="pyq-opt">(d) 10.0</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) 8.0. 3*5=15, 15/3=5.0, 5%2=1, 4+5.0-1=8.0.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q15</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which function returns the sum of all elements of a list?</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) count()</div><div class="pyq-opt">(b) sum()</div><div class="pyq-opt">(c) total()</div><div class="pyq-opt">(d) add()</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) sum(). The sum() function returns the sum of all elements in a list.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q16</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">fetchall() method fetches all rows in a result set and returns a:</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) Tuple of lists</div><div class="pyq-opt">(b) List of tuples</div><div class="pyq-opt">(c) List of strings</div><div class="pyq-opt">(d) Tuple of strings</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) List of tuples. fetchall() returns a list of tuples where each tuple represents a row.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q17</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Assertion (A): To use a function from a particular module, we need to import the module.
+Reason (R): import statement can be written anywhere in the program, before using a function from that module.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) Both A and R are true and R is the correct explanation for A</div><div class="pyq-opt">(b) Both A and R are true and R is not the correct explanation for A</div><div class="pyq-opt">(c) A is true but R is false</div><div class="pyq-opt">(d) A is false but R is true</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (b) Both A and R are true but R is not the correct explanation for A. We import modules to use their functions. While technically import can be placed anywhere before usage, it doesn't explain WHY we need to import.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q18</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
+<div class="qb-question">Assertion (A): A stack is a LIFO structure.
+Reason (R): Any new element pushed into the stack always gets positioned at the index after the last existing element in the stack.</div>
+<div class="pyq-opts"><div class="pyq-opt">(a) Both A and R are true and R is the correct explanation for A</div><div class="pyq-opt">(b) Both A and R are true and R is not the correct explanation for A</div><div class="pyq-opt">(c) A is true but R is false</div><div class="pyq-opt">(d) A is false but R is true</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Both A and R are true and R is the correct explanation for A. Stack follows LIFO (Last In First Out) because new elements are always added at the top (end), and removal also happens from the top.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q19</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Atharva is a Python programmer working on a program to find and return the maximum value from the list. The code written below has syntactical errors. Rewrite the correct code and underline the corrections made.
+def max_num (L) :
+    max=L(0)
+    for a in L :
+        if a &gt; max
+        max=a
+    return max</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
+def max_num(L):
+    max = L[0]        # Error 1: L(0) should be L[0] (square brackets for indexing)
+    for a in L:
+        if a &gt; max:   # Error 2: Missing colon after if condition
+            max = a   # Error 3: Missing indentation
+    return max</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q20</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">(a) Differentiate between wired and wireless transmission.
+OR
+(b) Differentiate between URL and domain name with the help of an appropriate example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Wired transmission uses physical cables (twisted pair, coaxial, optical fiber) to transmit data. It offers higher speed, reliability, and security. Wireless transmission uses electromagnetic waves (radio waves, microwaves, infrared) without physical cables. It provides mobility and easier installation.
+
+(b) URL (Uniform Resource Locator) is the complete web address including protocol, domain, and path. Example: https://www.example.com/page.html
+Domain name is just the human-readable name of the website. Example: www.example.com
+URL includes the domain name along with protocol and specific page path.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q21</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">(a) Given is a Python list declaration:
+Listofnames=["Aman","Ankit","Ashish","Rajan","Rajat"]
+Write the output of: print(Listofnames[-1:-4:-1])
+
+(b) Consider the following tuple declaration:
+tupl=(10,20,30,(10,20,30),40)
+Write the output of: print(tupl.index(20))</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Listofnames[-1:-4:-1] starts from index -1 ('Rajat'), goes up to (but not including) index -4 ('Ankit'), stepping by -1.
+Output: ['Rajat', 'Rajan', 'Ashish']
+
+(b) tupl.index(20) finds the first occurrence of 20 in the tuple.
+Output: 1</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q22</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">Explain the concept of "Alternate Key" in a Relational Database Management System with an appropriate example.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Alternate Key: A candidate key that is not selected as the primary key is called an alternate key. In a table, there may be multiple candidate keys (columns or combinations of columns that can uniquely identify each row). One of them is chosen as the primary key, and the remaining candidate keys become alternate keys.
+
+Example: In a Student table with columns (Roll_No, Aadhar_No, Name, Class), both Roll_No and Aadhar_No can uniquely identify a student. If Roll_No is chosen as the primary key, then Aadhar_No becomes the alternate key.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q23</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">(a) Write the full forms of the following:
+(i) HTML
+(ii) TCP
+(b) What is the need of Protocols?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a)(i) HTML - HyperText Markup Language
+(ii) TCP - Transmission Control Protocol
+
+(b) Protocols are needed to establish standardized rules for communication between devices in a network. They ensure:
+- Reliable data transmission
+- Error detection and correction
+- Proper data formatting
+- Synchronization between sender and receiver</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q24</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">(a) Write the output of the code given below:
+def short_sub(lst,n):
+    for i in range(0,n):
+        if len(lst)&gt;4:
+            lst[i]=lst[i]+lst[i]
+        else:
+            lst[i]=lst[i]
+subject=['CS','HINDI','PHYSICS','CHEMISTRY','MATHS']
+short_sub(subject,5)
+print(subject)
+
+OR
+
+(b) Write the output of the code given below:
+a =30
+def call(x):
+    global a
+    if a%2==0:
+        x+=a
+    else:
+        x-=a
+    return x
+x=20
+print(call(35),end="#")
+print(call(40),end= "@")</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Tracing:
+len(subject) = 5, which is &gt; 4
+i=0: subject[0] = 'CS'+'CS' = 'CSCS'
+i=1: subject[1] = 'HINDI'+'HINDI' = 'HINDIHINDI'
+... but wait, after first iteration len changes? No, len(lst) is checked each time.
+After i=0: lst = ['CSCS','HINDI','PHYSICS','CHEMISTRY','MATHS'], len=5, still &gt;4
+i=1: lst[1] = 'HINDIHINDI'
+i=2: lst[2] = 'PHYSICSPHYSICS'
+i=3: lst[3] = 'CHEMISTRYCHEMISTRY'
+i=4: lst[4] = 'MATHSMATHS'
+Output: ['CSCS', 'HINDIHINDI', 'PHYSICSPHYSICS', 'CHEMISTRYCHEMISTRY', 'MATHSMATHS']
+
+(b) Tracing:
+a=30 (global)
+call(35): a%2==0 (30%2==0 True), x=35+30=65, returns 65
+print: 65#
+call(40): a%2==0 (30%2==0 True), x=40+30=70, returns 70
+print: 70@
+Output: 65#70@</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q25</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">(a) Differentiate between CHAR and VARCHAR data types in SQL with appropriate example.
+OR
+(b) Name any two DDL and any two DML commands.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) CHAR: Fixed-length data type. It always uses the specified number of bytes regardless of actual data length. E.g., CHAR(10) always stores 10 characters, padding with spaces if needed.
+VARCHAR: Variable-length data type. It uses only as many bytes as needed plus a small overhead. E.g., VARCHAR(10) storing 'Hi' uses only 2 bytes + overhead.
+
+(b) DDL commands: CREATE, DROP (also ALTER, TRUNCATE)
+DML commands: INSERT, UPDATE (also DELETE, SELECT)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q26</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">(a) Consider the following tables - LOAN and BORROWER:
+Table LOAN: LOAN_NO | B_NAME | AMOUNT
+L-170 | DELHI | 3000
+L-230 | KANPUR | 4000
+
+Table BORROWER: CUST_NAME | LOAN_NO
+JOHN | L-171
+KRISH | L-230
+RAVYA | L-170
+
+How many rows and columns will be there in the natural join of these two tables?
+
+(b) Write the output of the queries (i) to (iv) based on the table WORKER:
+W_ID | F_NAME | L_NAME | CITY | STATE
+102 | SAHIL | KHAN | KANPUR | UTTAR PRADESH
+104 | SAMEER | PARIKH | ROOP NAGAR | PUNJAB
+105 | MARY | JONES | DELHI | DELHI
+106 | MAHIR | SHARMA | SONIPAT | HARYANA
+107 | ATHARVA | BHARDWAJ | DELHI | DELHI
+108 | VEDA | SHARMA | KANPUR | UTTAR PRADESH
+
+(i) SELECT F_NAME, CITY FROM WORKER ORDER BY STATE DESC;
+(ii) SELECT DISTINCT(CITY) FROM WORKER;
+(iii) SELECT F_NAME, STATE FROM WORKER WHERE L_NAME LIKE '_HA%';
+(iv) SELECT CITY,COUNT(*) FROM WORKER GROUP BY CITY;</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Natural join matches on common column LOAN_NO. Matching rows: L-230 (KRISH) and L-170 (RAVYA). L-171 has no match.
+Rows: 2, Columns: 4 (LOAN_NO, B_NAME, AMOUNT, CUST_NAME)
+
+(b)
+(i) F_NAME    CITY
+   SAHIL     KANPUR
+   VEDA      KANPUR
+   SAMEER    ROOP NAGAR
+   MAHIR     SONIPAT
+   MARY      DELHI
+   ATHARVA   DELHI
+
+(ii) DISTINCT(CITY)
+    KANPUR
+    ROOP NAGAR
+    DELHI
+    SONIPAT
+
+(iii) L_NAME LIKE '_HA%': second and third chars are 'HA'
+     KHAN: K-H-A-N -&gt; _HA not matching (positions: K=1, H=2, A=3), pattern _HA% means 2nd char H, 3rd char A... Actually LIKE '_HA%' means: any single char, then 'HA', then anything.
+     KHAN -&gt; K-H-A-N: yes matches
+     SHARMA -&gt; S-H-A-R-M-A: yes matches
+     F_NAME    STATE
+     SAHIL     UTTAR PRADESH
+     MAHIR     HARYANA
+     VEDA      UTTAR PRADESH
+
+(iv) CITY           COUNT(*)
+    KANPUR         2
+    ROOP NAGAR     1
+    DELHI          2
+    SONIPAT        1</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q27</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">(a) Write the definition of a Python function named LongLines() which reads the contents of a text file named 'LINES.TXT' and displays those lines from the file which have at least 10 words in it.
+
+OR
+
+(b) Write a function count_Dwords() in Python to count the words ending with a digit in a text file "Details.txt".</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a)
+def LongLines():
+    f = open('LINES.TXT', 'r')
+    lines = f.readlines()
+    for line in lines:
+        words = line.split()
+        if len(words) &gt;= 10:
+            print(line, end='')
+    f.close()
+
+(b)
+def count_Dwords():
+    f = open("Details.txt", "r")
+    content = f.read()
+    words = content.split()
+    count = 0
+    for word in words:
+        if word[-1].isdigit():
+            count += 1
+    print("Number of words ending with a digit are", count)
+    f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q28</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">(a) Write the outputs of the SQL queries (i) to (iv) based on the relations COMPUTER and SALES given below:
+Table COMPUTER: PROD_ID | PROD_NAME | PRICE | COMPANY | TYPE
+P001 | MOUSE | 200 | LOGITECH | INPUT
+P002 | LASER PRINTER | 4000 | CANON | OUTPUT
+P003 | KEYBOARD | 500 | LOGITECH | INPUT
+P004 | JOYSTICK | 1000 | IBALL | INPUT
+P005 | SPEAKER | 1200 | CREATIVE | OUTPUT
+P006 | DESKJET PRINTER | 4300 | CANON | OUTPUT
+
+Table SALES: PROD_ID | QTY_SOLD | QUARTER
+P002 | 4 | 1
+P003 | 2 | 2
+P001 | 3 | 2
+P004 | 2 | 1
+
+(i) SELECT MIN(PRICE), MAX(PRICE) FROM COMPUTER;
+(ii) SELECT COMPANY, COUNT(*) FROM COMPUTER GROUP BY COMPANY HAVING COUNT(COMPANY) &gt; 1;
+(iii) SELECT PROD_NAME, QTY_SOLD FROM COMPUTER C, SALES S WHERE C.PROD_ID=S.PROD_ID AND TYPE = 'INPUT';
+(iv) SELECT PROD_NAME, COMPANY, QUARTER FROM COMPUTER C, SALES S WHERE C.PROD_ID=S.PROD_ID;
+
+(b) Write the command to view all databases.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) MIN(PRICE) | MAX(PRICE)
+    200        | 4300
+
+(ii) COMPANY    | COUNT(*)
+     LOGITECH   | 2
+     CANON      | 2
+
+(iii) PROD_NAME | QTY_SOLD
+      KEYBOARD  | 2
+      MOUSE     | 3
+      JOYSTICK  | 2
+
+(iv) PROD_NAME      | COMPANY   | QUARTER
+     LASER PRINTER  | CANON     | 1
+     KEYBOARD       | LOGITECH  | 2
+     MOUSE          | LOGITECH  | 2
+     JOYSTICK       | IBALL     | 1
+
+(b) SHOW DATABASES;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q29</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Write a function EOReplace() in Python, which accepts a list L of numbers. Thereafter, it increments all even numbers by 1 and decrements all odd numbers by 1.
+Example: If L=[10,20,30,40,35,55]
+Output will be: L=[11,21,31,41,34,54]</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def EOReplace(L):
+    for i in range(len(L)):
+        if L[i] % 2 == 0:
+            L[i] += 1
+        else:
+            L[i] -= 1
+    print(L)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q30</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
+<div class="qb-question">(a) A list contains following record of customer: [Customer_name, Room Type]
+Write the following user defined functions to perform given operations on the stack named 'Hotel':
+(i) Push_Cust() - To Push customers' names of those customers who are staying in 'Delux' Room Type.
+(ii) Pop_Cust() - To Pop the names of customers from the stack and display them. Also, display "Underflow" when there are no customers in the stack.
+
+OR
+
+(b) Write a function in Python, Push(Vehicle) where, Vehicle is a dictionary containing details of vehicles - {Car_Name: Maker}. The function should push the name of car manufactured by 'TATA' (including all possible cases like Tata, TaTa, etc.) to the stack.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a)
+Hotel = []
+
+def Push_Cust(customers):
+    for cust in customers:
+        if cust[1] == 'Delux':
+            Hotel.append(cust[0])
+
+def Pop_Cust():
+    while len(Hotel) &gt; 0:
+        print(Hotel.pop())
+    print("Underflow")
+
+(b)
+stack = []
+
+def Push(Vehicle):
+    for car_name in Vehicle:
+        if Vehicle[car_name].upper() == 'TATA':
+            stack.append(car_name)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q31</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Quickdev, an IT based firm, located in Delhi is planning to set up a network for its four branches within a city with its Marketing department in Kanpur.
+Branches: A, B, C, D
+Distances: A to B 40m, A to C 80m, A to D 65m, B to C 30m, B to D 35m, C to D 15m, Delhi to Kanpur 300 km.
+Computers: A 15, B 25, C 40, D 115.
+(i) Suggest the most suitable place to install the server for the Delhi branch with a suitable reason.
+(ii) Suggest an ideal layout for connecting all these branches within Delhi.
+(iii) Which device will you suggest to be placed in each of these branches to efficiently connect all the computers within these branches?
+(iv) Delhi firm is planning to connect to its Marketing department in Kanpur which is approximately 300 km away. Which type of network out of LAN, WAN or MAN will be formed? Justify.
+(v) Suggest a protocol that shall be needed to provide help for transferring files between Delhi and Kanpur branch.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) Branch D is the most suitable place to install the server as it has the maximum number of computers (115).
+
+(ii) Star topology layout with Branch D as center:
+Branch A --- Branch D --- Branch B
+                |              |
+            Branch C ----------+
+
+(iii) Switch - to efficiently connect all computers within each branch.
+
+(iv) WAN (Wide Area Network) will be formed as the distance between Delhi and Kanpur is 300 km, which exceeds the range of both LAN (typically up to 1 km) and MAN (typically up to a city, ~100 km).
+
+(v) FTP (File Transfer Protocol) should be used for transferring files between Delhi and Kanpur branches.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q32</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">(a) What possible output(s) are expected to be displayed on screen at the time of execution of the following program:
+import random
+M=[5,10,15,20,25,30]
+for i in range(1,3):
+    first=random.randint(2,5)- 1
+    sec=random.randint(3,6)- 2
+    third=random.randint(1,4)
+    print(M[first],M[sec],M[third],sep="#")
+
+(b) The code given below deletes the record from the table employee.
+Write the following statements to complete the code:
+Statement 1 - to import the desired library.
+Statement 2 - to execute the command that deletes the record with E_code as 'E101'.
+Statement 3 - to delete the record permanently from the database.
+
+import ____________ as mysql  # Statement 1
+def delete():
+    mydb=mysql.connect(host="localhost",user="root",passwd="root",database="emp")
+    mycursor=mydb.cursor()
+    ________________  # Statement 2
+    ________________  # Statement 3
+    print("Record deleted")
+
+OR
+
+(a) Predict the output of the code given below:
+def makenew(mystr):
+    newstr=""
+    count=0
+    for i in mystr:
+        if count%2!=0:
+            newstr=newstr+str(count)
+        else:
+            if i.lower():
+                newstr=newstr+i.upper()
+            else:
+                newstr=newstr+i
+        count+=1
+    print(newstr)
+makenew("No@1")
+
+(b) The code given below reads records from the table employee and displays only those records who have employees coming from city 'Delhi'.
+Statement 1 - to import the desired library.
+Statement 2 - to execute the query that fetches records of employees coming from city 'Delhi'.
+Statement 3 - to read the complete data of the query.
+
+import ____________ as mysql  # Statement 1
+def display():
+    mydb=mysql.connect(host="localhost",user="root",passwd="root",database="emp")
+    mycursor=mydb.cursor()
+    ___________________________  # Statement 2
+    details = __________________  # Statement 3
+    for i in details:
+        print(i)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Options analysis:
+first range: randint(2,5)-1 = 1 to 4, so M[1] to M[4] = 10,15,20,25
+sec range: randint(3,6)-2 = 1 to 4, so M[1] to M[4] = 10,15,20,25
+third range: randint(1,4) = 1 to 4, so M[1] to M[4] = 10,15,20,25
+Answer: (iv) 10#15#25#
+              15#20#10#
+
+(b)
+Statement 1: import mysql.connector as mysql
+Statement 2: mycursor.execute("DELETE FROM employee WHERE E_code='E101'")
+Statement 3: mydb.commit()
+
+OR
+
+(a) Tracing makenew("No@1"):
+count=0, i='N': count%2==0, i.lower()='n' (truthy), newstr='N' (i.upper()). Wait - i.lower() returns 'n' which is truthy. So newstr = '' + 'N' = 'N'. count=1
+count=1, i='o': count%2!=0, newstr = 'N' + str(1) = 'N1'. count=2
+count=2, i='@': count%2==0, i.lower() returns '@' (truthy for non-empty string), newstr = 'N1' + '@' = 'N1@'. count=3
+count=3, i='1': count%2!=0, newstr = 'N1@' + str(3) = 'N1@3'. count=4
+Output: N1@3
+
+(b)
+Statement 1: import mysql.connector as mysql
+Statement 2: mycursor.execute("SELECT * FROM employee WHERE City='Delhi'")
+Statement 3: details = mycursor.fetchall()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q33</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">(a) Write one difference between CSV and text files.
+Write a program in Python that defines and calls the following user defined functions:
+(i) COURIER_ADD(): It takes the values from the user and adds the details to a csv file 'courier.csv'. Each record consists of a list with field elements as cid, s_name, Source, destination.
+(ii) COURIER_SEARCH(): Takes the destination as the input and displays all the courier records going to that destination.
+
+OR
+
+(b) Why it is important to close a file before exiting?
+Write a program in Python that defines and calls the following user defined functions:
+(i) Add_Book(): Takes the details of the books and adds them to a csv file 'Book.csv'. Each record consists of a list with field elements as book_ID, B_name and pub.
+(ii) Search_Book(): Takes publisher name as input and counts and displays number of books published by them.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Difference: A CSV file stores data in comma-separated format where each field is separated by a delimiter (usually comma), making it easy to import into spreadsheets/databases. A text file stores data as plain text without any specific structure.
+
+import csv
+
+def COURIER_ADD():
+    f = open('courier.csv', 'a', newline='')
+    writer = csv.writer(f)
+    cid = input('Enter Courier ID: ')
+    s_name = input('Enter Sender Name: ')
+    source = input('Enter Source: ')
+    destination = input('Enter Destination: ')
+    writer.writerow([cid, s_name, source, destination])
+    f.close()
+
+def COURIER_SEARCH():
+    dest = input('Enter destination to search: ')
+    f = open('courier.csv', 'r')
+    reader = csv.reader(f)
+    for row in reader:
+        if row[3] == dest:
+            print(row)
+    f.close()
+
+(b) It is important to close a file to ensure all buffered data is written to disk, free up system resources, and prevent data corruption.
+
+import csv
+
+def Add_Book():
+    f = open('Book.csv', 'a', newline='')
+    writer = csv.writer(f)
+    book_ID = input('Enter Book ID: ')
+    B_name = input('Enter Book Name: ')
+    pub = input('Enter Publisher: ')
+    writer.writerow([book_ID, B_name, pub])
+    f.close()
+
+def Search_Book():
+    pub_name = input('Enter Publisher Name: ')
+    f = open('Book.csv', 'r')
+    reader = csv.reader(f)
+    count = 0
+    for row in reader:
+        if row[2] == pub_name:
+            count += 1
+    print('Number of books by', pub_name, ':', count)
+    f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q34</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">The school has asked their estate manager Mr. Rahul to maintain the data of all the labs in a table LAB. Rahul has created a table and entered data of 5 labs.
+LABNO | LAB_NAME | INCHARGE | CAPACITY | FLOOR
+L001 | CHEMISTRY | Daisy | 20 | I
+L002 | BIOLOGY | Venky | 20 | II
+L003 | MATH | Preeti | 15 | I
+L004 | LANGUAGE | Daisy | 36 | III
+L005 | COMPUTER | Mary Kom | 37 | II
+
+(i) Identify the columns which can be considered as Candidate keys.
+(ii) Write the degree and cardinality of the table.
+(iii) Write the statements to:
+(a) Insert a new row with appropriate data.
+(b) Increase the capacity of all the labs by 10 students which are on 'I' Floor.
+
+OR (for part iii only)
+(iii) Write the statements to:
+(a) Add a constraint PRIMARY KEY to the column LABNO in the table.
+(b) Delete the table LAB.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) LABNO and LAB_NAME can be considered as Candidate Keys as both can uniquely identify each row.
+
+(ii) Degree: 5 (number of columns)
+    Cardinality: 5 (number of rows)
+
+(iii)
+(a) INSERT INTO LAB VALUES('L006', 'PHYSICS', 'Raman', 30, 'III');
+(b) UPDATE LAB SET CAPACITY = CAPACITY + 10 WHERE FLOOR = 'I';
+
+OR
+(iii)
+(a) ALTER TABLE LAB ADD PRIMARY KEY (LABNO);
+(b) DROP TABLE LAB;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q35</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Shreyas is a programmer who has been given a task to write a user defined function named write_bin() to create a binary file called Cust_file.dat containing customer information - customer number (c_no), name (c_name), quantity (qty), price (price) and amount (amt) of each customer.
+The function accepts customer number, name, quantity and price. If quantity entered is less than 10, it displays the message 'Quantity less than 10..Cannot SAVE'. Otherwise the function calculates amount as price * quantity and then writes the record in the form of a list into the binary file.
+
+(i) Write the correct statement to open a file 'Cust_file.dat' for writing the data of the customer.
+(ii) Which statement should Shreyas fill in Statement 2 to check whether quantity is less than 10.
+(iii) Which statement should Shreyas fill in Statement 3 to write data to the binary file and in Statement 4 to stop further processing if the user does not wish to enter more records.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) Statement 1: bin_file = open('Cust_file.dat', 'ab')
+
+(ii) Statement 2: if qty &lt; 10:
+
+(iii) Statement 3: pickle.dump(c_detail, bin_file)
+Statement 4: break
+
+OR (for part iii only)
+Statement 5: bin_file.close()
+Statement 6: write_bin()</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">CBSE 2022</span>
+<span class="qb-ch-count">13 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
+<div class="qb-question">"Stack is a linear data structure which follows a particular order in which the operations are performed."
+What is the order in which the operations are performed in a Stack?
+Name the List method/function available in Python which is used to remove the last element from a list implemented stack.
+Also write an example using Python statements for removing the last element of the list.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Stack follows LIFO (Last In First Out) order.
+
+The pop() method is used to remove the last element from a list implemented stack.
+
+Example:
+stack = [10, 20, 30]
+element = stack.pop()  # Removes and returns 30
+print(element)  # Output: 30</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">(i) Expand the following: VoIP, PPP
+(ii) Riya wants to transfer pictures from her mobile phone to her laptop. She uses Bluetooth technology to connect two devices. Which type of network (PAN/LAN/MAN/WAN) will be formed in this case?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) VoIP - Voice over Internet Protocol
+    PPP - Point-to-Point Protocol
+
+(ii) PAN (Personal Area Network). Bluetooth creates a PAN as it connects devices within a very short range (typically up to 10 meters).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">Differentiate between the terms Attribute and Domain in the context of Relational Data Model.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Attribute: A column or field in a relation (table) that represents a specific characteristic of the entity. For example, in a Student table, Name, Roll_No, Class are attributes.
+
+Domain: The set of all possible values that an attribute can take. For example, the domain of a 'Gender' attribute could be {'Male', 'Female', 'Other'}.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">Consider the following SQL table MEMBER in a SQL Database CLUB:
+M_ID | NAME | ACTIVITY
+M1001 | Amina | GYM
+M1002 | Pratik | GYM
+M1003 | Simon | SWIMMING
+M1004 | Rakesh | GYM
+M1005 | Avneet | SWIMMING
+
+Predict the output of the following code:
+MYCUR = DB.cursor()
+MYCUR.execute("USE CLUB")
+MYCUR.execute("SELECT * FROM MEMBER WHERE ACTIVITY= 'GYM' ")
+R=MYCUR.fetchone()
+for i in range(2):
+    R=MYCUR.fetchone()
+    print(R[0], R[1], sep = "#")</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> The query returns all GYM members: (M1001, Amina, GYM), (M1002, Pratik, GYM), (M1004, Rakesh, GYM).
+R=MYCUR.fetchone() fetches the first row (M1001, Amina, GYM).
+Loop i=0: R=fetchone() gets (M1002, Pratik, GYM), prints: M1002#Pratik
+Loop i=1: R=fetchone() gets (M1004, Rakesh, GYM), prints: M1004#Rakesh
+
+Output:
+M1002#Pratik
+M1004#Rakesh</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Write the output of SQL queries (a) to (d) based on the table VACCINATION_DATA given below:
+VID | Name | Age | Dose1 | Dose2 | City
+101 | Jenny | 27 | 2021-12-25 | 2022-01-31 | Delhi
+102 | Harjot | 55 | 2021-07-14 | 2021-10-14 | Mumbai
+103 | Srikanth | 43 | 2021-04-18 | 2021-07-20 | Delhi
+104 | Gazala | 75 | 2021-07-31 | NULL | Kolkata
+105 | Shiksha | 32 | 2022-01-01 | NULL | Mumbai
+
+(a) SELECT Name, Age FROM VACCINATION_DATA WHERE Dose2 IS NOT NULL AND Age &gt; 40;
+(b) SELECT City, COUNT(*) FROM VACCINATION_DATA GROUP BY City;
+(c) SELECT DISTINCT City FROM VACCINATION_DATA;
+(d) SELECT MAX(Dose1), MIN(Dose2) FROM VACCINATION_DATA;</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Name     | Age
+    Harjot   | 55
+    Srikanth | 43
+
+(b) City    | COUNT(*)
+    Delhi   | 2
+    Mumbai  | 2
+    Kolkata | 1
+
+(c) DISTINCT City
+    Delhi
+    Mumbai
+    Kolkata
+
+(d) MAX(Dose1)  | MIN(Dose2)
+    2022-01-01  | 2021-07-20</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Write the output of SQL queries (a) and (b) based on the following two tables DOCTOR and PATIENT:
+Table DOCTOR: DNO | DNAME | FEES
+D1 | AMITABH | 1500
+D2 | ANIKET | 1000
+D3 | NIKHIL | 1500
+D4 | ANJANA | 1500
+
+Table PATIENT: PNO | PNAME | ADMDATE | DNO
+P1 | NOOR | 2021-12-25 | D1
+P2 | ANNIE | 2021-11-20 | D2
+P3 | PRAKASH | 2020-12-10 | NULL
+P4 | HARMEET | 2019-12-20 | D1
+
+(a) SELECT DNAME, PNAME FROM DOCTOR NATURAL JOIN PATIENT;
+(b) SELECT PNAME, ADMDATE, FEES FROM PATIENT P, DOCTOR D WHERE D.DNO = P.DNO AND FEES &gt; 1000;</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Natural join on common column DNO (NULL DNO won't match):
+DNAME    | PNAME
+AMITABH  | NOOR
+ANIKET   | ANNIE
+AMITABH  | HARMEET
+
+(b) FEES &gt; 1000 means FEES = 1500 (D1, D3, D4). Matching with PATIENT:
+PNAME    | ADMDATE    | FEES
+NOOR     | 2021-12-25 | 1500
+HARMEET  | 2019-12-20 | 1500</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">Differentiate between Candidate Key and Primary Key in the context of Relational Database Model.
+
+OR
+
+Consider the following table PLAYER:
+PNO | NAME | SCORE
+P1 | RISHABH | 52
+P2 | HUSSAIN | 45
+P3 | ARNOLD | 23
+P4 | ARNAV | 18
+P5 | GURSHARAN | 42
+
+(a) Identify and write the name of the most appropriate column from the given table PLAYER that can be used as a Primary key.
+(b) Define the term Degree in relational data model. What is the Degree of the given table PLAYER?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Candidate Key: A minimal set of attributes that can uniquely identify each row in a table. There can be multiple candidate keys.
+Primary Key: The candidate key that is selected by the database designer to uniquely identify rows. There is only one primary key per table.
+
+OR
+
+(a) PNO is the most appropriate column for Primary Key as it uniquely identifies each player.
+(b) Degree is the number of columns (attributes) in a relation. The Degree of PLAYER table is 3 (PNO, NAME, SCORE).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
+<div class="qb-question">Write the definition of a user defined function PushNV(N) which accepts a list of strings in the parameter N and pushes all strings which have no vowels present in it, into a list named NoVowel.
+Write a program in Python to input 5 words and push them one by one into a list named All. The program should then use the function PushNV() to create a stack of words in the list NoVowel so that it stores only those words which do not have any vowel present in it, from the list All. Thereafter, pop each word from the list NoVowel and display the popped word. When the stack is empty display the message "EmptyStack".
+
+OR
+
+Write the definition of a user defined function Push3_5(N) which accepts a list of integers in a parameter N and pushes all those integers which are divisible by 3 or divisible by 5 from the list N into a list named Only3_5.
+Write a program to input 5 integers into a list named NUM. The program should then use the function Push3_5() to create the stack of the list Only3_5. Thereafter pop each integer from the list Only3_5 and display the popped value. When the list is empty, display the message "StackEmpty".</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> NoVowel = []
+
+def PushNV(N):
+    vowels = 'aeiouAEIOU'
+    for word in N:
+        has_vowel = False
+        for ch in word:
+            if ch in vowels:
+                has_vowel = True
+                break
+        if not has_vowel:
+            NoVowel.append(word)
+
+# Main program
+All = []
+for i in range(5):
+    word = input("Enter a word: ")
+    All.append(word)
+
+PushNV(All)
+
+while len(NoVowel) &gt; 0:
+    print(NoVowel.pop(), end=" ")
+print("EmptyStack")
+
+--- OR ---
+
+Only3_5 = []
+
+def Push3_5(N):
+    for num in N:
+        if num % 3 == 0 or num % 5 == 0:
+            Only3_5.append(num)
+
+# Main program
+NUM = []
+for i in range(5):
+    n = int(input("Enter integer: "))
+    NUM.append(n)
+
+Push3_5(NUM)
+
+while len(Only3_5) &gt; 0:
+    print(Only3_5.pop(), end=" ")
+print("StackEmpty")</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">(i) A SQL table ITEMS contains the following columns: INO, INAME, QUANTITY, PRICE, DISCOUNT. Write the SQL command to remove the column DISCOUNT from the table.
+(ii) Categorize the following SQL commands into DDL and DML: CREATE, UPDATE, INSERT, DROP</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) ALTER TABLE ITEMS DROP COLUMN DISCOUNT;
+
+(ii) DDL (Data Definition Language): CREATE, DROP
+    DML (Data Manipulation Language): UPDATE, INSERT</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Rohan is learning to work upon Relational Database Management System (RDBMS) application. Help him to perform following tasks:
+(a) To open the database named "LIBRARY".
+(b) To display the names of all the tables stored in the opened database.
+(c) To display the structure of the table "BOOKS" existing in the already opened database "LIBRARY".</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) USE LIBRARY;
+(b) SHOW TABLES;
+(c) DESCRIBE BOOKS;
+   OR: DESC BOOKS;</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Write SQL queries for (a) to (d) based on the tables PASSENGER and FLIGHT given below:
+Table PASSENGER: PNO | NAME | GENDER | FNO
+1001 | Suresh | MALE | F101
+1002 | Anita | FEMALE | F104
+1003 | Harjas | MALE | F102
+1004 | Nita | FEMALE | F103
+
+Table FLIGHT: FNO | START | END | F_DATE | FARE
+F101 | MUMBAI | CHENNAI | 2021-12-25 | 4500
+F102 | MUMBAI | BENGALURU | 2021-11-20 | 4000
+F103 | DELHI | CHENNAI | 2021-12-10 | 5500
+F104 | KOLKATA | MUMBAI | 2021-12-20 | 4500
+F105 | DELHI | BENGALURU | 2021-01-15 | 5000
+
+(a) Write a query to change the fare to 6000 of the flight whose FNO is F104.
+(b) Write a query to display the total number of MALE and FEMALE PASSENGERS.
+(c) Write a query to display the NAME, corresponding FARE and F_DATE of all PASSENGERS who have a flight to START from DELHI.
+(d) Write a query to delete the records of flights which end at Mumbai.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) UPDATE FLIGHT SET FARE = 6000 WHERE FNO = 'F104';
+
+(b) SELECT GENDER, COUNT(*) FROM PASSENGER GROUP BY GENDER;
+
+(c) SELECT P.NAME, F.FARE, F.F_DATE FROM PASSENGER P, FLIGHT F WHERE P.FNO = F.FNO AND F.START = 'DELHI';
+
+(d) DELETE FROM FLIGHT WHERE END = 'Mumbai';
+   OR: DELETE FROM FLIGHT WHERE END = 'MUMBAI';</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">(i) Differentiate between Bus Topology and Tree Topology. Also, write one advantage of each of them.
+
+OR
+
+Differentiate between HTML and XML.
+
+(ii) What is a web browser? Write the names of any two commonly used web browsers.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) Bus Topology: All devices are connected to a single central cable (bus). Data travels in both directions along the bus.
+Advantage: Easy to install and extend. Less cabling required.
+
+Tree Topology: A hierarchical topology where groups of star-configured networks are connected to a linear bus backbone.
+Advantage: Scalable and supports future expansion easily.
+
+OR
+
+HTML (HyperText Markup Language): Used to display data with predefined tags. Focuses on how data looks.
+XML (eXtensible Markup Language): Used to transport and store data with user-defined tags. Focuses on what data is.
+
+(ii) A web browser is a software application used to access and view websites on the Internet. It interprets HTML code and displays web pages.
+Two commonly used web browsers: Google Chrome, Mozilla Firefox</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q13</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Galaxy Provider Ltd. is planning to connect its office in Texas, USA with its branch at Mumbai. The Mumbai branch has 3 Offices in three blocks located at some distance from each other for different operations - ADMIN, SALES and ACCOUNTS.
+Distances: ADMIN Block to SALES Block 300m, SALES Block to ACCOUNTS Block 175m, ADMIN Block to ACCOUNTS Block 350m, MUMBAI Branch to TEXAS Head Office 14000 km.
+Computers: ADMIN Block 255, ACCOUNTS Block 75, SALES Block 30, TEXAS Head Office 90.
+
+(a) Suggest the most appropriate networking device to be placed along the path of the wire connecting one block office with another to refresh the signal and forward it ahead.
+(b) Which hardware networking device will you suggest to connect all the computers within each block?
+(c) Which service/protocol will be most helpful to conduct live interactions of employees from Mumbai Branch and their counterparts in Texas?
+(d) Draw the cable layout (block to block) to efficiently connect the three offices of the Mumbai branch.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) (iii) REPEATER. A repeater regenerates weakened signals and forwards them along the cable.
+
+(b) (i) SWITCH. A switch efficiently connects all computers within each block by directing traffic only to intended recipients.
+
+(c) (iv) VoIP (Voice over Internet Protocol). VoIP enables live audio/video interactions over the internet.
+
+(d) Cable Layout (star with ADMIN as center, since it has most computers):
+ADMIN Block --- SALES Block (300m)
+ADMIN Block --- ACCOUNTS Block (350m)
+Or linear: ADMIN --- SALES --- ACCOUNTS (for shortest total cable using SALES as intermediate: 300 + 175 = 475m vs 300 + 350 = 650m)</div>
+</div>
+</div>
+</div>
+
+<div class="qb-chapter-section">
+<button class="qb-chapter-toggle" onclick="toggleChapter(this)">
+<span class="qb-ch-name">CBSE 2020</span>
+<span class="qb-ch-count">30 questions</span>
+<span class="qb-ch-arrow">&#9660;</span>
+</button>
+<div class="qb-chapter-body open">
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q1</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Which of the following is NOT a valid variable name in Python?
+(i) 5Radius (ii) Radius_ (iii) _Radius (iv) Radius</div>
+<div class="pyq-opts"><div class="pyq-opt">(i) 5Radius</div><div class="pyq-opt">(ii) Radius_</div><div class="pyq-opt">(iii) _Radius</div><div class="pyq-opt">(iv) Radius</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) 5Radius. A variable name cannot start with a digit in Python.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Identify the keywords from the following:
+(i) break (ii) check (iii) range (iv) while</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) break and (iv) while are Python keywords. 'check' is not a keyword, and 'range' is a built-in function, not a keyword.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Name the Python module which contains the definition of the following functions:
+(i) cos() (ii) randint()</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) math module contains cos()
+(ii) random module contains randint()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Rewrite the following code after removing all the syntax errors (if any). Underline each correction done.
+import math
+A = input('Enter a word',W)
+if W = 'Hello':
+    print(W)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
+import math
+W = input('Enter a word')
+if W == 'Hello':
+    print(W)
+
+Corrections: (1) W=input('Enter a word') — input() takes only prompt string, variable is assigned to the left. (2) if W == 'Hello' — use == for comparison, not = (assignment operator).</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Find the output of the following:
+def ChangeVal(M):
+    for I in range(len(M)):
+        if M[I]%5 == 0:
+            M[I] //= 5
+        if M[I]%3 == 0:
+            M[I] //= 3
+    print(M[I], end='#')
+ChangeVal([25, 8, 75, 12])</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> 5#8#15#4#
+
+Explanation: For 25: 25%5==0 so 25//5=5, 5%3!=0 → 5. For 8: 8%5!=0, 8%3!=0 → 8. For 75: 75%5==0 so 75//5=15, 15%3==0 so 15//3=5... Actually let me retrace: print is inside the loop (aligned with the for). 25→5 (div by 5), 5%3≠0→prints 5#. 8%5≠0, 8%3≠0→prints 8#. 75//5=15, 15//3=5→prints 5#. 12%5≠0, 12//3=4→prints 4#. Output: 5#8#5#4#</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Find the output of the following:
+def Call(P=40, Q=20):
+    P = P + Q
+    Q = P - Q
+    print(P, '@', Q)
+    return P
+R = 200
+S = 100
+R = Call(R, S)
+print(R, '@', S)
+S = Call(S)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> 300 @ 200
+300 @ 100
+120 @ 100
+
+Explanation: First call Call(200,100): P=200+100=300, Q=300-100=200, prints 300 @ 200, returns 300. R=300. Then prints R @ S = 300 @ 100. Second call Call(100): P=100, Q=20(default), P=100+20=120, Q=120-20=100, prints 120 @ 100.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What are the possible outputs of the following code? Also specify the minimum and maximum values that can be assigned to the variable End.
+import random
+Colours = ['VIOLET', 'INDIGO', 'BLUE', 'GREEN', 'YELLOW', 'ORANGE', 'RED']
+End = random.randint(2, 5)
+Beg = random.randint(0, 2)
+for I in range(Beg, End):
+    print(Colours[I], end='&amp;')</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Minimum value of End = 2, Maximum value of End = 5.
+One possible output: INDIGO&amp;BLUE&amp;GREEN&amp; (when Beg=1, End=4)
+
+The output depends on random values of Beg (0 to 2) and End (2 to 5). The loop prints colours from index Beg to End-1 separated by '&amp;'.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Name the immutable object(s) from the following:
+List, Tuple, String, Dictionary</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Tuple and String are immutable objects. Lists and Dictionaries are mutable.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Write a statement in Python to declare a dictionary whose keys are 1, 2, 3 and values are Reena, Rakesh, Zareen respectively.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> ClassRoll = {1: 'Reena', 2: 'Rakesh', 3: 'Zareen'}</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">What is the data type of the variable Vowels declared as:
+Vowels = ('A', 'E', 'I', 'O', 'U')</div>
+<div class="pyq-opts"><div class="pyq-opt">(i) List</div><div class="pyq-opt">(ii) String</div><div class="pyq-opt">(iii) Tuple</div><div class="pyq-opt">(iv) Dictionary</div></div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (iii) Tuple. Parentheses with comma-separated values create a tuple in Python.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Find the output of the following:
+for i in range(2, 7, 2):
+    print(i * '$')</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> $$
+$$$$
+$$$$$$
+
+Explanation: range(2,7,2) gives 2, 4, 6. For i=2: '$$', for i=4: '$$$$', for i=6: '$$$$$$'.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Find the output of the following:
+def Update(X):
+    X += 5
+    print('X =', X)
+X = 20
+Update(X)
+print('X =', X)</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> X = 25
+X = 20
+
+Explanation: Inside the function, X becomes 25 (local copy). Outside, the global X remains 20 since integers are immutable.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q13</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Differentiate between the "w" and "r" file modes used in Python.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> "w" (write mode): Opens a file for writing. If the file exists, it overwrites the existing content. If the file does not exist, it creates a new file.
+"r" (read mode): Opens a file for reading only. The file must exist; otherwise, it raises a FileNotFoundError. This is the default file mode.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q14</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
+<div class="qb-question">Write a function Show_words() in Python to read the content of a text file 'NOTES.TXT' and display the entire content in capital letters.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def Show_words():
+    f = open('NOTES.TXT', 'r')
+    data = f.read()
+    print(data.upper())
+    f.close()</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q15</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
+<div class="qb-question">Write a recursive function RecsumNat(N) in Python to find the sum of first N natural numbers.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def RecsumNat(N):
+    if N == 0:
+        return 0
+    else:
+        return N + RecsumNat(N - 1)
+
+Example: RecsumNat(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q16</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
+<div class="qb-question">Write the definition of a function PushS(List) to add a new element and PopS(List) to delete an element from a List of numbers, implementing stack operations (LIFO). Also handle underflow condition in PopS.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> def PushS(List):
+    val = int(input('Enter value to push: '))
+    List.append(val)
+
+def PopS(List):
+    if len(List) == 0:
+        print('Stack Underflow')
+    else:
+        val = List.pop()
+        print('Deleted element:', val)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q17</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">A network that connects computers spread across different cities is called ___.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> WAN (Wide Area Network). A WAN connects computers across different cities, countries or continents.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q18</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Name the tool used to check the speed of the internet.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Speedtest (e.g., speedtest.net or Ookla Speedtest) is used to check the speed of the internet connection.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q19</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Name the device that uses packet switching technique to connect different networks.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Router. A router uses packet switching to forward data packets between different networks.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q20</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Name the tool/utility used to determine the path taken by a packet to reach its destination.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> Traceroute (tracert in Windows). It displays the route and transit delays of packets across the network.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q21</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Write the full forms of the following:
+(i) POP (ii) VoIP (iii) NFC (iv) FTP</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) POP — Post Office Protocol
+(ii) VoIP — Voice over Internet Protocol
+(iii) NFC — Near Field Communication
+(iv) FTP — File Transfer Protocol</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q22</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Data Communication</span></div>
+<div class="qb-question">Match the following generations of mobile technology with their features:
+1G, 2G, 3G, 4G</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> 1G — Analog voice communication only
+2G — Digital voice and SMS, introduced CDMA/GSM
+3G — Mobile internet, video calling, higher data speeds
+4G — High-speed data, HD streaming, LTE technology</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q23</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">Differentiate between HTTP and HTTPS protocols.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> HTTP (HyperText Transfer Protocol): Transfers data in plain text, uses port 80, no encryption, less secure. Used for general web browsing.
+
+HTTPS (HyperText Transfer Protocol Secure): Transfers data in encrypted form using SSL/TLS, uses port 443, provides authentication and data integrity. Used for secure transactions like online banking and shopping.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q24</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
+<div class="qb-question">An NGO is setting up its centres in different parts of a city with 4 buildings — ADMIN, ACCOUNTS, HELPCENTRE and LOUNGE. Distances: ADMIN to ACCOUNTS 55m, ADMIN to HELPCENTRE 150m, ADMIN to LOUNGE 30m, ACCOUNTS to HELPCENTRE 125m, ACCOUNTS to LOUNGE 80m, HELPCENTRE to LOUNGE 175m. Number of computers: ADMIN-30, ACCOUNTS-20, HELPCENTRE-120, LOUNGE-10.
+(a) Suggest the most suitable topology for the network.
+(b) Suggest where to place the server.
+(c) Suggest the type of network for connecting offices across cities.
+(d) Suggest the most suitable medium for the backbone of the network.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) Star Topology — as it is easy to install, manage and troubleshoot.
+(b) The server should be placed in HELPCENTRE as it has the maximum number of computers (120).
+(c) WAN (Wide Area Network) for connecting offices in different cities.
+(d) Optical Fibre cable — as it provides high bandwidth and is suitable for backbone connections.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q25</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Name the SQL command to add an attribute/column in an existing table.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> ALTER TABLE ... ADD. For example: ALTER TABLE Student ADD Phone VARCHAR(15);</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q26</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Which aggregate function is used to count the total number of records in a table?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> COUNT(*). It counts all the records (rows) in a table including NULL values.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q27</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Which clause is used to arrange the records in ascending or descending order in SQL?</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> ORDER BY clause. By default, it sorts in ascending order. Use DESC keyword for descending order.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q28</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">Write the full forms of:
+(i) DDL (ii) DML</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) DDL — Data Definition Language (commands: CREATE, ALTER, DROP)
+(ii) DML — Data Manipulation Language (commands: INSERT, UPDATE, DELETE, SELECT)</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q29</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
+<div class="qb-question">Consider a table EMPLOYEES with columns: EMPNO, NAME, DEPARTMENT, SALARY, CITY.
+(i) What is the degree and cardinality of the table if it has 5 columns and 10 rows?
+(ii) Define Primary Key.</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (i) Degree = 5 (number of columns/attributes), Cardinality = 10 (number of rows/tuples).
+(ii) Primary Key is a column (or set of columns) that uniquely identifies each row/record in a table. It cannot contain NULL values and must have unique values.</div>
+</div>
+<div class="qb-card">
+<div class="qb-meta"><span class="qb-year-badge">Q30</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
+<div class="qb-question">Write the output of the following SQL queries based on the tables CUSTOMERS (CUS_ID, NAME, CITY) and PURCHASES (PUR_ID, CUS_ID, ITEM, PUR_DATE):
+(a) SELECT COUNT(DISTINCT CITY) FROM CUSTOMERS;
+(b) SELECT MAX(PUR_DATE) FROM PURCHASES;
+(c) SELECT NAME, ITEM FROM CUSTOMERS C, PURCHASES P WHERE C.CUS_ID = P.CUS_ID;</div>
+<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> (a) COUNT(DISTINCT CITY) returns the number of unique/distinct cities in the CUSTOMERS table.
+(b) MAX(PUR_DATE) returns the latest (most recent) purchase date from the PURCHASES table.
+(c) The JOIN query displays the NAME from CUSTOMERS and ITEM from PURCHASES for matching CUS_ID values in both tables (equi-join).</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+
+<script>
+function toggleChapter(btn) {
+  btn.classList.toggle('collapsed');
+  var body = btn.nextElementSibling;
+  body.classList.toggle('collapsed');
+  body.classList.toggle('open');
+}
+function toggleAnswer(btn) {
+  var ans = btn.nextElementSibling;
+  ans.classList.toggle('hidden');
+  btn.textContent = ans.classList.contains('hidden') ? 'Show Answer' : 'Hide Answer';
+}
+</script>
+</body>
+</html>

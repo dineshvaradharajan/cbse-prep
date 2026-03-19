@@ -1,0 +1,465 @@
+{
+  "chapter": 12,
+  "title": "Security Aspects",
+  "sections": [
+    {
+      "id": "12.1",
+      "title": "Threats and Prevention",
+      "concepts": [
+        "Cyber threats",
+        "Cyber security",
+        "Types of threats",
+        "Need for network security",
+        "Prevention measures"
+      ],
+      "definitions": [
+        {
+          "term": "Cyber Threat",
+          "definition": "A cyber threat is any malicious activity or potential danger that targets computer systems, networks, or data. Threats can come from malware, hackers, phishing attacks, or other sources aiming to steal, damage, or disrupt digital assets."
+        },
+        {
+          "term": "Cyber Security",
+          "definition": "Cyber security refers to the practice of protecting computers, servers, networks, data, and electronic systems from digital attacks, unauthorized access, damage, or theft. It involves technologies, processes, and practices designed to safeguard information."
+        },
+        {
+          "term": "Cyber Crime",
+          "definition": "Cyber crime is any criminal activity that involves a computer, network, or digital device. It includes hacking, identity theft, phishing, cyberstalking, online fraud, and spreading malware."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Cyber threats can target confidentiality, integrity, and availability of data",
+        "Common threats include malware, hacking, phishing, denial of service attacks, and data breaches",
+        "Cyber security aims to protect systems and data from unauthorized access and attacks",
+        "Prevention involves using antivirus software, firewalls, strong passwords, encryption, and regular updates",
+        "Awareness and education are key components of cyber security"
+      ]
+    },
+    {
+      "id": "12.2",
+      "title": "Malware",
+      "concepts": [
+        "Malware types",
+        "Virus",
+        "Worm",
+        "Trojan horse",
+        "Spyware",
+        "Adware",
+        "Ransomware",
+        "Differences between malware types"
+      ],
+      "definitions": [
+        {
+          "term": "Malware",
+          "definition": "Malware (malicious software) is any software intentionally designed to cause damage to a computer, server, network, or user. Types include viruses, worms, trojans, spyware, adware, and ransomware."
+        },
+        {
+          "term": "Virus",
+          "definition": "A computer virus is a malicious program that attaches itself to a legitimate program or file and replicates itself when the host program is executed. It spreads from one computer to another through infected files, email attachments, or removable media. It requires human action to spread."
+        },
+        {
+          "term": "Worm",
+          "definition": "A worm is a standalone malicious program that replicates itself and spreads automatically across networks without attaching to a host program or requiring human action. Worms exploit network vulnerabilities and can consume bandwidth and system resources."
+        },
+        {
+          "term": "Trojan Horse",
+          "definition": "A Trojan horse (or Trojan) is a malicious program disguised as legitimate or useful software. Unlike viruses and worms, Trojans do not replicate themselves. They trick users into installing them and then perform harmful actions such as stealing data, creating backdoors, or downloading other malware."
+        },
+        {
+          "term": "Spyware",
+          "definition": "Spyware is malicious software that secretly monitors and collects user information such as browsing habits, keystrokes, passwords, and personal data without the user's knowledge or consent. It transmits this information to a third party."
+        },
+        {
+          "term": "Adware",
+          "definition": "Adware is software that automatically displays or downloads unwanted advertisements on a user's computer. While not always malicious, it can slow down systems, track browsing habits, and redirect browsers to advertising sites."
+        },
+        {
+          "term": "Ransomware",
+          "definition": "Ransomware is a type of malware that encrypts the victim's files or locks them out of their system and demands a ransom payment (usually in cryptocurrency) to restore access. Examples include WannaCry and Petya."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Virus: Attaches to host files, needs human action to spread, replicates when host is executed",
+        "Worm: Self-replicating, spreads automatically over networks, does not need a host file",
+        "Trojan: Disguised as useful software, does not replicate, tricks users into installation",
+        "Spyware: Secretly monitors user activity, collects passwords and personal data",
+        "Adware: Displays unwanted advertisements, may track browsing habits",
+        "Ransomware: Encrypts files and demands payment for decryption, extremely dangerous",
+        "Key difference: Virus needs a host and human action; Worm spreads independently; Trojan disguises itself",
+        "Prevention: Use updated antivirus, avoid suspicious downloads, do not open unknown email attachments, keep OS updated"
+      ]
+    },
+    {
+      "id": "12.3",
+      "title": "Antivirus",
+      "concepts": [
+        "Antivirus software",
+        "How antivirus works",
+        "Virus detection techniques",
+        "Importance of updates"
+      ],
+      "definitions": [
+        {
+          "term": "Antivirus Software",
+          "definition": "Antivirus software is a program designed to detect, prevent, and remove malware (viruses, worms, trojans, spyware, etc.) from a computer. It scans files, monitors system activity, and provides real-time protection. Examples: Norton, McAfee, Kaspersky, Avast, Windows Defender."
+        },
+        {
+          "term": "Virus Signature",
+          "definition": "A virus signature (or virus definition) is a unique pattern of code or data that identifies a specific virus. Antivirus software maintains a database of known virus signatures and compares files against this database during scanning."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Antivirus software detects malware using signature-based detection (comparing files to known virus signatures) and heuristic analysis (detecting suspicious behaviour)",
+        "Signature-based detection compares files against a database of known malware signatures",
+        "Heuristic analysis identifies new or unknown threats by analysing suspicious code behaviour",
+        "Antivirus must be regularly updated to detect the latest threats — new virus signatures are added through updates",
+        "Real-time protection scans files as they are opened, downloaded, or executed",
+        "Full system scans check all files on the computer for malware",
+        "Examples of antivirus: Norton, McAfee, Kaspersky, Avast, Quick Heal, Windows Defender",
+        "No antivirus provides 100% protection — safe browsing habits are also essential"
+      ]
+    },
+    {
+      "id": "12.4",
+      "title": "Spam",
+      "concepts": [
+        "Spam emails",
+        "Spam prevention",
+        "Spam filters"
+      ],
+      "definitions": [
+        {
+          "term": "Spam",
+          "definition": "Spam refers to unsolicited, unwanted messages (usually emails) sent in bulk to a large number of recipients. Spam messages often contain advertisements, phishing links, or malware. They clog inboxes and waste bandwidth."
+        },
+        {
+          "term": "Spam Filter",
+          "definition": "A spam filter is a program or feature that detects and blocks unwanted spam messages from reaching a user's inbox. It works by analyzing message content, sender reputation, and known spam patterns."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Spam is unsolicited bulk email, usually containing advertisements or malicious content",
+        "Spam wastes bandwidth, storage space, and user time",
+        "Spam can carry phishing links, malware attachments, and fraudulent offers",
+        "Prevention: Use spam filters, do not share email publicly, unsubscribe from unwanted lists, do not reply to spam",
+        "Never click links or open attachments in spam emails",
+        "Most email services have built-in spam filters that automatically detect and separate spam"
+      ]
+    },
+    {
+      "id": "12.5",
+      "title": "HTTP vs HTTPS",
+      "concepts": [
+        "HTTP protocol",
+        "HTTPS protocol",
+        "SSL/TLS encryption",
+        "Secure communication"
+      ],
+      "definitions": [
+        {
+          "term": "HTTP",
+          "definition": "HTTP (HyperText Transfer Protocol) is a protocol for transferring data on the web. Data is sent in plain text, making it vulnerable to interception and eavesdropping. It uses port 80."
+        },
+        {
+          "term": "HTTPS",
+          "definition": "HTTPS (HyperText Transfer Protocol Secure) is the secure version of HTTP that encrypts data using SSL (Secure Sockets Layer) or TLS (Transport Layer Security) before transmission. It uses port 443 and displays a padlock icon in the browser."
+        },
+        {
+          "term": "SSL/TLS",
+          "definition": "SSL (Secure Sockets Layer) and its successor TLS (Transport Layer Security) are cryptographic protocols that provide secure communication over a network. They encrypt data between the web browser and the web server, preventing eavesdropping and tampering."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "HTTP sends data in plain text (not encrypted); HTTPS encrypts data using SSL/TLS",
+        "HTTP uses port 80; HTTPS uses port 443",
+        "HTTPS shows a padlock icon in the browser address bar indicating a secure connection",
+        "HTTPS is essential for websites handling sensitive data: banking, shopping, login pages",
+        "SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are the encryption protocols used by HTTPS",
+        "Always look for HTTPS and the padlock icon before entering personal or financial information online"
+      ]
+    },
+    {
+      "id": "12.6",
+      "title": "Firewall",
+      "concepts": [
+        "Firewall",
+        "Hardware firewall",
+        "Software firewall",
+        "Packet filtering",
+        "Network security"
+      ],
+      "definitions": [
+        {
+          "term": "Firewall",
+          "definition": "A firewall is a network security system (hardware, software, or both) that monitors and controls incoming and outgoing network traffic based on predefined security rules. It acts as a barrier between a trusted internal network and untrusted external networks (like the Internet)."
+        },
+        {
+          "term": "Hardware Firewall",
+          "definition": "A hardware firewall is a physical device placed between a network and its connection to the Internet. It filters traffic for all devices on the network. Often built into routers, it provides network-level protection."
+        },
+        {
+          "term": "Software Firewall",
+          "definition": "A software firewall is a program installed on an individual computer that monitors and filters traffic for that specific device. Examples include Windows Firewall and ZoneAlarm. It provides device-level protection."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "A firewall acts as a barrier between a trusted network and untrusted networks (Internet)",
+        "It monitors and controls network traffic based on predefined security rules",
+        "Hardware firewall: Physical device, protects entire network, often built into routers",
+        "Software firewall: Program on individual computer, protects that specific device",
+        "Firewalls can block unauthorized access while allowing legitimate traffic",
+        "Firewalls use techniques like packet filtering (inspecting each packet against rules), stateful inspection, and proxy service",
+        "Most operating systems include a built-in software firewall (e.g., Windows Firewall)",
+        "Best practice: Use both hardware and software firewalls for maximum protection"
+      ]
+    },
+    {
+      "id": "12.7",
+      "title": "Cookies",
+      "concepts": [
+        "Web cookies",
+        "Types of cookies",
+        "Cookie uses",
+        "Privacy concerns"
+      ],
+      "definitions": [
+        {
+          "term": "Cookie",
+          "definition": "A cookie is a small text file stored on a user's computer by a web browser at the request of a web server. Cookies store information about the user's browsing activity, preferences, login status, and shopping cart contents."
+        },
+        {
+          "term": "Session Cookie",
+          "definition": "A session cookie (or temporary cookie) is stored in memory and exists only during the browser session. It is deleted when the browser is closed. Used to maintain session state (e.g., items in a shopping cart)."
+        },
+        {
+          "term": "Persistent Cookie",
+          "definition": "A persistent cookie (or permanent cookie) is stored on the user's hard drive and remains even after the browser is closed. It has an expiration date and is used to remember user preferences, login information, and personalisation settings across visits."
+        },
+        {
+          "term": "Third-Party Cookie",
+          "definition": "A third-party cookie is set by a domain other than the one the user is currently visiting. It is commonly used by advertisers and analytics services to track user browsing behaviour across multiple websites."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Cookies are small text files stored on the user's computer by websites",
+        "Uses: remembering login status, user preferences, shopping cart contents, personalisation",
+        "Session cookies: temporary, deleted when browser closes, used to maintain session",
+        "Persistent cookies: stored on disk, survive browser restart, have an expiration date",
+        "Third-party cookies: set by external domains, used for tracking and advertising across websites",
+        "Privacy concerns: cookies can track browsing habits and build user profiles",
+        "Users can manage cookies through browser settings (accept, block, delete cookies)",
+        "Cookies themselves are not malware but can raise privacy concerns when used for extensive tracking"
+      ]
+    },
+    {
+      "id": "12.8",
+      "title": "Hackers and Crackers",
+      "concepts": [
+        "Hacker",
+        "Cracker",
+        "White hat hacker",
+        "Black hat hacker",
+        "Grey hat hacker",
+        "Ethical hacking"
+      ],
+      "definitions": [
+        {
+          "term": "Hacker",
+          "definition": "A hacker is a person with deep knowledge of computer systems and networks who uses their skills to explore and test systems. The term can refer to both ethical (white hat) and malicious (black hat) individuals, though originally it referred to skilled programmers."
+        },
+        {
+          "term": "Cracker",
+          "definition": "A cracker is a person who breaks into computer systems with malicious intent to steal data, cause damage, or gain unauthorized access. Crackers use their skills for illegal and destructive purposes."
+        },
+        {
+          "term": "White Hat Hacker",
+          "definition": "A white hat hacker (or ethical hacker) is a security professional who uses hacking skills legally and ethically to find vulnerabilities in systems and help organisations improve their security. They work with permission."
+        },
+        {
+          "term": "Black Hat Hacker",
+          "definition": "A black hat hacker is a person who breaks into computer systems illegally and with malicious intent. They steal data, install malware, and exploit vulnerabilities for personal gain or to cause harm."
+        },
+        {
+          "term": "Grey Hat Hacker",
+          "definition": "A grey hat hacker falls between white hat and black hat. They may find vulnerabilities without permission but do not have malicious intent. They may notify the organisation about the vulnerability or may publicly disclose it."
+        },
+        {
+          "term": "Ethical Hacking",
+          "definition": "Ethical hacking (or penetration testing) is the authorised practice of testing computer systems, networks, and applications for security vulnerabilities. Ethical hackers have written permission from the organisation and report their findings to improve security."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Hacker: Skilled computer expert — the term covers both ethical and unethical individuals",
+        "Cracker: Someone who breaks into systems with malicious intent (always illegal)",
+        "White Hat: Ethical hacker who tests security with permission — works to improve security",
+        "Black Hat: Malicious hacker who exploits systems illegally for personal gain",
+        "Grey Hat: Between white and black hat — may hack without permission but without malicious intent",
+        "Ethical hacking is a legal profession; organisations hire ethical hackers to test their security",
+        "Key difference: Hackers may be good or bad; Crackers are always malicious"
+      ]
+    },
+    {
+      "id": "12.9",
+      "title": "Network Security Threats",
+      "concepts": [
+        "Denial of Service (DoS)",
+        "Distributed Denial of Service (DDoS)",
+        "Intrusion",
+        "Phishing",
+        "Pharming",
+        "Eavesdropping",
+        "Man-in-the-Middle attack",
+        "Identity theft",
+        "Cyber attack types"
+      ],
+      "definitions": [
+        {
+          "term": "Denial of Service (DoS)",
+          "definition": "A Denial of Service (DoS) attack is an attack that floods a server or network with excessive traffic or requests, making it unavailable to legitimate users. The goal is to disrupt services, not to steal data."
+        },
+        {
+          "term": "Distributed Denial of Service (DDoS)",
+          "definition": "A DDoS attack is a type of DoS attack where the flood of traffic comes from multiple sources (often from a botnet of compromised computers), making it harder to stop. Multiple systems attack a single target simultaneously."
+        },
+        {
+          "term": "Intrusion",
+          "definition": "Intrusion is the unauthorized access to a computer system or network. An intruder (attacker) gains access to a system without permission to steal data, install malware, or cause damage."
+        },
+        {
+          "term": "Phishing",
+          "definition": "Phishing is a fraudulent attempt to obtain sensitive information (usernames, passwords, credit card details) by disguising as a trustworthy entity through fake emails, websites, or messages. The victim is tricked into clicking malicious links or entering personal data."
+        },
+        {
+          "term": "Pharming",
+          "definition": "Pharming is a cyber attack that redirects a website's traffic to a fraudulent (fake) website without the user's knowledge, even when the user types the correct URL. It is done by corrupting the DNS server or modifying the host file."
+        },
+        {
+          "term": "Eavesdropping",
+          "definition": "Eavesdropping (or sniffing) is the unauthorized interception of network communication. An attacker secretly listens to or captures data being transmitted over a network, including passwords, emails, and sensitive information."
+        },
+        {
+          "term": "Man-in-the-Middle (MitM) Attack",
+          "definition": "A Man-in-the-Middle attack occurs when an attacker secretly intercepts and possibly alters the communication between two parties who believe they are communicating directly with each other. The attacker can read, modify, or inject messages."
+        },
+        {
+          "term": "Identity Theft",
+          "definition": "Identity theft is the fraudulent use of someone's personal information (name, ID numbers, credit card details) without their permission, typically for financial gain or to commit crimes in the victim's name."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "DoS attack floods a server with traffic to make it unavailable; DDoS uses multiple sources (botnet)",
+        "Phishing uses fake emails/websites to trick users into revealing sensitive information",
+        "Pharming redirects website traffic to fake sites by corrupting DNS — more dangerous than phishing as user types the correct URL",
+        "Eavesdropping: Attacker secretly intercepts network communications (passwords, emails)",
+        "Man-in-the-Middle: Attacker intercepts communication between two parties, can read or alter messages",
+        "Identity theft: Fraudulent use of someone's personal information without permission",
+        "Prevention against DoS: Use firewalls, intrusion detection systems, and traffic filtering",
+        "Prevention against phishing: Verify sender, check URLs carefully, never share passwords via email, look for HTTPS",
+        "Prevention against eavesdropping: Use encryption (HTTPS, VPN), avoid public WiFi for sensitive transactions",
+        "General security practices: Strong passwords, two-factor authentication, regular software updates, awareness training"
+      ]
+    }
+  ],
+  "summary": [
+    "Cyber security protects computers, networks, and data from digital threats and unauthorized access",
+    "Malware types: Virus (needs host, human action), Worm (self-replicating, automatic), Trojan (disguised as useful software), Spyware (monitors secretly), Adware (unwanted ads), Ransomware (encrypts files, demands payment)",
+    "Antivirus software detects malware using signature-based detection and heuristic analysis; regular updates are essential",
+    "HTTP sends data in plain text; HTTPS encrypts data using SSL/TLS for secure communication",
+    "A firewall monitors and controls network traffic, acting as a barrier between trusted and untrusted networks",
+    "Cookies are small text files that store browsing data; session cookies are temporary, persistent cookies survive browser restart",
+    "White hat hackers are ethical and work with permission; Black hat hackers are malicious; Crackers always have harmful intent",
+    "Major network threats: DoS/DDoS (flooding), Phishing (fake emails/sites), Pharming (DNS corruption), Eavesdropping (interception), Man-in-the-Middle (altering communication)",
+    "Prevention: Strong passwords, antivirus, firewall, HTTPS, two-factor authentication, software updates, and user awareness"
+  ],
+  "exercises": [
+    {
+      "id": "12.1",
+      "title": "Exercise 12.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is malware? List the different types of malware.",
+          "type": "short",
+          "answer": "Malware (malicious software) is any software intentionally designed to cause harm to computers, networks, or users. Types of malware include: (1) Virus — attaches to files and replicates when executed, (2) Worm — self-replicating, spreads automatically over networks, (3) Trojan Horse — disguised as useful software, (4) Spyware — secretly monitors user activity, (5) Adware — displays unwanted advertisements, (6) Ransomware — encrypts files and demands ransom payment."
+        },
+        {
+          "qno": 2,
+          "question": "What is the difference between a virus, worm, and trojan?",
+          "type": "long",
+          "answer": "Virus: A malicious program that attaches itself to legitimate files. It requires human action (executing the infected file) to spread. It replicates by inserting its code into other programs.\n\nWorm: A standalone malicious program that replicates itself and spreads automatically across networks without needing a host file or human action. It exploits network vulnerabilities and consumes bandwidth.\n\nTrojan Horse: A malicious program disguised as useful or legitimate software. It does NOT replicate itself. It tricks users into installing it and then performs harmful actions like stealing data or creating backdoors.\n\nKey differences: Virus needs a host file and human action; Worm is standalone and automatic; Trojan disguises itself and does not replicate."
+        },
+        {
+          "qno": 3,
+          "question": "What is phishing? How can you prevent it?",
+          "type": "short",
+          "answer": "Phishing is a fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity through fake emails, websites, or messages. Prevention: (1) Verify the sender before clicking links, (2) Check URLs carefully for misspellings, (3) Never share passwords or personal information via email, (4) Look for HTTPS and padlock in browser, (5) Use spam filters, (6) Report suspicious emails."
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate between HTTP and HTTPS.",
+          "type": "short",
+          "answer": "HTTP (HyperText Transfer Protocol) sends data in plain text without encryption, uses port 80, and is vulnerable to eavesdropping. HTTPS (HyperText Transfer Protocol Secure) encrypts data using SSL/TLS before transmission, uses port 443, and shows a padlock icon in the browser. HTTPS should always be used for websites handling sensitive data like banking, shopping, and login credentials."
+        },
+        {
+          "qno": 5,
+          "question": "What is a firewall? Explain the difference between hardware and software firewalls.",
+          "type": "long",
+          "answer": "A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predefined security rules. It acts as a barrier between a trusted internal network and untrusted external networks.\n\nHardware Firewall: A physical device placed between the network and its Internet connection. It protects all devices on the network. Often built into routers. Provides network-level protection and is harder to configure.\n\nSoftware Firewall: A program installed on an individual computer. It protects only that specific device. Examples: Windows Firewall, ZoneAlarm. Easier to configure but uses system resources.\n\nBest practice is to use both hardware and software firewalls for comprehensive protection."
+        },
+        {
+          "qno": 6,
+          "question": "What are cookies? What are the different types?",
+          "type": "short",
+          "answer": "Cookies are small text files stored on a user's computer by websites to remember user information and preferences. Types: (1) Session Cookies — temporary, exist only during the browser session, deleted when browser closes. (2) Persistent Cookies — stored on disk, remain after browser closes, have an expiration date, used for remembering login and preferences. (3) Third-Party Cookies — set by external domains, used for tracking user behaviour across websites for advertising."
+        },
+        {
+          "qno": 7,
+          "question": "Differentiate between hackers and crackers.",
+          "type": "short",
+          "answer": "Hackers are skilled computer experts who use their knowledge to explore and test computer systems. They can be ethical (white hat) or malicious (black hat). Ethical hackers work with permission to improve security. Crackers are individuals who break into computer systems with malicious intent to steal data, cause damage, or gain unauthorized access. Crackers always operate illegally and destructively, while hackers may work legally as security professionals."
+        },
+        {
+          "qno": 8,
+          "question": "What is a Denial of Service (DoS) attack?",
+          "type": "short",
+          "answer": "A Denial of Service (DoS) attack floods a server or network with excessive traffic or requests, making it unavailable to legitimate users. The goal is to disrupt services, not to steal data. A Distributed DoS (DDoS) attack uses multiple compromised computers (botnet) to flood the target simultaneously, making it much harder to stop. Prevention includes using firewalls, intrusion detection systems, and traffic filtering."
+        },
+        {
+          "qno": 9,
+          "question": "What is the difference between phishing and pharming?",
+          "type": "short",
+          "answer": "Phishing uses fake emails or messages to trick users into clicking malicious links and entering personal information on fraudulent websites. The user is lured to a fake site. Pharming redirects website traffic to a fake site by corrupting the DNS server or host file — even when the user types the correct URL. Pharming is more dangerous because the user cannot easily detect the fraud as they typed the correct address."
+        },
+        {
+          "qno": 10,
+          "question": "What is a Man-in-the-Middle attack? How can it be prevented?",
+          "type": "short",
+          "answer": "A Man-in-the-Middle (MitM) attack occurs when an attacker secretly intercepts communication between two parties, potentially reading, modifying, or injecting messages without either party knowing. Prevention: Use HTTPS for web browsing, use VPN (Virtual Private Network), avoid using public/unsecured WiFi for sensitive transactions, use end-to-end encryption for messaging, and verify digital certificates."
+        },
+        {
+          "qno": 11,
+          "question": "What is ransomware? Give an example.",
+          "type": "short",
+          "answer": "Ransomware is a type of malware that encrypts the victim's files or locks them out of their system and demands a ransom payment (usually in cryptocurrency like Bitcoin) to restore access. Examples include WannaCry (2017, affected over 200,000 computers worldwide) and Petya. Prevention: Keep regular backups, update software, use antivirus, avoid suspicious email attachments and links."
+        }
+      ]
+    }
+  ]
+}

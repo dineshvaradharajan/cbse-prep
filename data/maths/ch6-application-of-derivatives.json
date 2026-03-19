@@ -51,12 +51,12 @@
       "formulas": [
         {
           "name": "Rate of change using Chain Rule",
-          "formula": "dy/dx = (dy/dt) / (dx/dt), if dx/dt != 0",
+          "formula": "\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}, \\; \\frac{dx}{dt} \\neq 0",
           "condition": "When x = f(t) and y = g(t), both varying with respect to t"
         },
         {
           "name": "Rate of change of area of circle",
-          "formula": "dA/dr = 2*pi*r",
+          "formula": "\\frac{dA}{dr} = 2\\pi r",
           "context": "A = pi*r^2"
         }
       ],
@@ -270,94 +270,122 @@
         {
           "qno": 1,
           "question": "Find the rate of change of the area of a circle with respect to its radius r when (a) r = 3 cm (b) r = 4 cm",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(a) 6*pi cm^2/cm (b) 8*pi cm^2/cm. dA/dr = 2*pi*r; at r=3: 6*pi, at r=4: 8*pi"
         },
         {
           "qno": 2,
           "question": "The volume of a cube is increasing at the rate of 8 cm^3/s. How fast is the surface area increasing when the length of an edge is 12 cm?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "8/3 cm^2/s. V = x^3, S = 6x^2. dS/dt = (dS/dx)(dx/dt) = 12x * (8/(3x^2)) = 32/x. At x=12: 32/12 = 8/3 cm^2/s"
         },
         {
           "qno": 3,
           "question": "The radius of a circle is increasing uniformly at the rate of 3 cm/s. Find the rate at which the area of the circle is increasing when the radius is 10 cm.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "60*pi cm^2/s. dA/dt = 2*pi*r*(dr/dt) = 2*pi*10*3 = 60*pi"
         },
         {
           "qno": 4,
           "question": "An edge of a variable cube is increasing at the rate of 3 cm/s. How fast is the volume of the cube increasing when the edge is 10 cm long?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "900 cm^3/s. dV/dt = 3x^2*(dx/dt) = 3*(100)*3 = 900"
         },
         {
           "qno": 5,
           "question": "A stone is dropped into a quiet lake and waves move in circles at the speed of 5 cm/s. At the instant when the radius of the circular wave is 8 cm, how fast is the enclosed area increasing?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "80*pi cm^2/s. dA/dt = 2*pi*r*(dr/dt) = 2*pi*8*5 = 80*pi"
         },
         {
           "qno": 6,
           "question": "The radius of a circle is increasing at the rate of 0.7 cm/s. What is the rate of increase of its circumference?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "1.4*pi cm/s (approximately 4.4 cm/s). dC/dt = 2*pi*(dr/dt) = 2*pi*0.7 = 1.4*pi"
         },
         {
           "qno": 7,
           "question": "The length x of a rectangle is decreasing at the rate of 5 cm/minute and the width y is increasing at the rate of 4 cm/minute. When x = 8cm and y = 6cm, find the rates of change of (a) the perimeter, and (b) the area of the rectangle.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(a) Perimeter is decreasing at 2 cm/min. dP/dt = 2(dx/dt + dy/dt) = 2(-5+4) = -2. (b) Area is increasing at 2 cm^2/min. dA/dt = x(dy/dt) + y(dx/dt) = 8(4) + 6(-5) = 32-30 = 2"
         },
         {
           "qno": 8,
           "question": "A balloon, which always remains spherical on inflation, is being inflated by pumping in 900 cubic centimetres of gas per second. Find the rate at which the radius of the balloon increases when the radius is 15 cm.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "1/pi cm/s. dV/dt = 4*pi*r^2*(dr/dt). 900 = 4*pi*225*(dr/dt). dr/dt = 900/(900*pi) = 1/pi"
         },
         {
           "qno": 9,
           "question": "A balloon, which always remains spherical has a variable radius. Find the rate at which its volume is increasing with the radius when the later is 10 cm.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "400*pi cm^3/cm. dV/dr = 4*pi*r^2 = 4*pi*100 = 400*pi"
         },
         {
           "qno": 10,
           "question": "A ladder 5 m long is leaning against a wall. The bottom of the ladder is pulled along the ground, away from the wall, at the rate of 2cm/s. How fast is its height on the wall decreasing when the foot of the ladder is 4 m away from the wall?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "8/3 cm/s. x^2 + y^2 = 25. When x=4, y=3. 2x(dx/dt) + 2y(dy/dt) = 0. dy/dt = -x(dx/dt)/y = -4(2)/3 = -8/3. Height decreasing at 8/3 cm/s"
         },
         {
           "qno": 11,
           "question": "A particle moves along the curve 6y = x^3 + 2. Find the points on the curve at which the y-coordinate is changing 8 times as fast as the x-coordinate.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(4, 11) and (-4, -31/3). 6(dy/dt) = 3x^2(dx/dt). dy/dt = 8(dx/dt) gives 48 = 3x^2, x^2 = 16, x = +/-4"
         },
         {
           "qno": 12,
           "question": "The radius of an air bubble is increasing at the rate of 1/2 cm/s. At what rate is the volume of the bubble increasing when the radius is 1 cm?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "2*pi cm^3/s. dV/dt = 4*pi*r^2*(dr/dt) = 4*pi*1*(1/2) = 2*pi"
         },
         {
           "qno": 13,
           "question": "A balloon, which always remains spherical, has a variable diameter (3/2)(2x + 1). Find the rate of change of its volume with respect to x.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "27*pi/8 * (2x+1)^2. Radius = (3/4)(2x+1). V = (4/3)*pi*r^3. dV/dx = 4*pi*r^2*(dr/dx) = 4*pi*(9/16)(2x+1)^2 * (3/2) = 27*pi/8 * (2x+1)^2"
         },
         {
           "qno": 14,
           "question": "Sand is pouring from a pipe at the rate of 12 cm^3/s. The falling sand forms a cone on the ground in such a way that the height of the cone is always one-sixth of the radius of the base. How fast is the height of the sand cone increasing when the height is 4 cm?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "1/(48*pi) cm/s. h = r/6 so r = 6h. V = (1/3)*pi*r^2*h = (1/3)*pi*36h^2*h = 12*pi*h^3. dV/dt = 36*pi*h^2*(dh/dt). 12 = 36*pi*16*(dh/dt). dh/dt = 1/(48*pi)"
         },
         {
           "qno": 15,
           "question": "The total cost C(x) in Rupees associated with the production of x units of an item is given by C(x) = 0.007x^3 - 0.003x^2 + 15x + 4000. Find the marginal cost when 17 units are produced.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Rs 20.967. MC = dC/dx = 0.021x^2 - 0.006x + 15. At x=17: 0.021(289) - 0.006(17) + 15 = 6.069 - 0.102 + 15 = 20.967"
         },
         {
           "qno": 16,
           "question": "The total revenue in Rupees received from the sale of x units of a product is given by R(x) = 13x^2 + 26x + 15. Find the marginal revenue when x = 7.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Rs 208. MR = dR/dx = 26x + 26. At x=7: 26(7) + 26 = 182 + 26 = 208"
         },
         {
           "qno": 17,
           "question": "The rate of change of the area of a circle with respect to its radius r at r = 6 cm is (A) 10*pi (B) 12*pi (C) 8*pi (D) 11*pi",
           "type": "MCQ",
-          "options": ["10*pi", "12*pi", "8*pi", "11*pi"]
+          "options": [
+            "10*pi",
+            "12*pi",
+            "8*pi",
+            "11*pi"
+          ],
+          "answer": "B"
         },
         {
           "qno": 18,
           "question": "The total revenue in Rupees received from the sale of x units of a product is given by R(x) = 3x^2 + 36x + 5. The marginal revenue, when x = 15 is (A) 116 (B) 96 (C) 90 (D) 126",
           "type": "MCQ",
-          "options": ["116", "96", "90", "126"]
+          "options": [
+            "116",
+            "96",
+            "90",
+            "126"
+          ],
+          "answer": "D"
         }
       ]
     },
@@ -369,100 +397,134 @@
         {
           "qno": 1,
           "question": "Show that the function given by f(x) = 3x + 17 is increasing on R.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = 3 > 0 for all x in R, hence f is strictly increasing on R."
         },
         {
           "qno": 2,
           "question": "Show that the function given by f(x) = e^(2x) is increasing on R.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = 2e^(2x) > 0 for all x in R (since exponential is always positive), hence f is strictly increasing on R."
         },
         {
           "qno": 3,
           "question": "Show that the function given by f(x) = sin x is (a) increasing in (0, pi/2) (b) decreasing in (pi/2, pi) (c) neither increasing nor decreasing in (0, pi)",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = cos x. (a) In (0, pi/2), cos x > 0, so f is increasing. (b) In (pi/2, pi), cos x < 0, so f is decreasing. (c) In (0, pi), f increases in first half and decreases in second half, so it is neither increasing nor decreasing on the whole interval."
         },
         {
           "qno": 4,
           "question": "Find the intervals in which the function f given by f(x) = 2x^2 - 3x is (a) increasing (b) decreasing",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "f'(x) = 4x - 3 = 0 gives x = 3/4. (a) Increasing on (3/4, infinity). (b) Decreasing on (-infinity, 3/4)."
         },
         {
           "qno": 5,
           "question": "Find the intervals in which the function f given by f(x) = 2x^3 - 3x^2 - 36x + 7 is (a) increasing (b) decreasing",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "f'(x) = 6x^2 - 6x - 36 = 6(x^2 - x - 6) = 6(x-3)(x+2). (a) Increasing on (-infinity, -2) and (3, infinity). (b) Decreasing on (-2, 3)."
         },
         {
           "qno": 6,
           "question": "Find the intervals in which the following functions are strictly increasing or decreasing: (a) x^2 + 2x - 5 (b) 10 - 6x - 2x^2 (c) -2x^3 - 9x^2 - 12x + 1 (d) 6 - 9x - x^2 (e) (x+1)^3 (x-3)^3",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(a) Increasing on (-1, infinity), decreasing on (-infinity, -1). (b) Increasing on (-infinity, -3/2), decreasing on (-3/2, infinity). (c) Increasing on (-2, -1), decreasing on (-infinity, -2) and (-1, infinity). (d) Increasing on (-infinity, -9/2), decreasing on (-9/2, infinity). (e) Increasing on (1, 3) and (3, infinity), decreasing on (-infinity, -1) and (-1, 1)."
         },
         {
           "qno": 7,
           "question": "Show that y = log(1+x) - 2x/(2+x), x > -1, is an increasing function of x throughout its domain.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "dy/dx = 1/(1+x) - 4/(2+x)^2 = x^2/((1+x)(2+x)^2) >= 0 for all x > -1. Hence y is increasing throughout its domain."
         },
         {
           "qno": 8,
           "question": "Find the values of x for which y = [x(x-2)]^2 is an increasing function.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "y = x^2(x-2)^2. dy/dx = 4x(x-1)(x-2). Increasing on [0, 1] and [2, infinity)."
         },
         {
           "qno": 9,
           "question": "Prove that y = (4*sin(theta))/(2+cos(theta)) - theta is an increasing function of theta in [0, pi/2].",
-          "type": "proof"
+          "type": "proof",
+          "answer": "dy/d(theta) = (8*cos(theta) + 4)/(2+cos(theta))^2 - 1 = (4-cos^2(theta)-4*cos(theta)+4*cos(theta)+4-4-cos^2(theta))... Simplifying: dy/d(theta) = cos(theta)(4-cos(theta))/(2+cos(theta))^2 which is >= 0 in [0, pi/2] since cos(theta) >= 0 and 4-cos(theta) > 0."
         },
         {
           "qno": 10,
           "question": "Prove that the logarithmic function is increasing on (0, infinity).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let f(x) = log x. Then f'(x) = 1/x > 0 for all x in (0, infinity). Hence log x is increasing on (0, infinity)."
         },
         {
           "qno": 11,
           "question": "Prove that the function f given by f(x) = x^2 - x + 1 is neither strictly increasing nor decreasing on (-1, 1).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = 2x - 1 = 0 at x = 1/2. For x < 1/2, f'(x) < 0 (decreasing). For x > 1/2, f'(x) > 0 (increasing). Since f changes from decreasing to increasing within (-1, 1), it is neither strictly increasing nor strictly decreasing on (-1, 1)."
         },
         {
           "qno": 12,
           "question": "Which of the following functions are decreasing on (0, pi/2)? (A) cos x (B) cos 2x (C) cos 3x (D) tan x",
           "type": "MCQ",
-          "options": ["cos x", "cos 2x", "cos 3x", "tan x"]
+          "options": [
+            "cos x",
+            "cos 2x",
+            "cos 3x",
+            "tan x"
+          ],
+          "answer": "A"
         },
         {
           "qno": 13,
           "question": "On which of the following intervals is the function f given by f(x) = x^100 + sin x - 1 decreasing? (A) (0,1) (B) (pi/2, pi) (C) (0, pi/2) (D) None of these",
           "type": "MCQ",
-          "options": ["(0,1)", "(pi/2, pi)", "(0, pi/2)", "None of these"]
+          "options": [
+            "(0,1)",
+            "(pi/2, pi)",
+            "(0, pi/2)",
+            "None of these"
+          ],
+          "answer": "D"
         },
         {
           "qno": 14,
           "question": "For what values of a the function f given by f(x) = x^2 + ax + 1 is increasing on [1, 2]?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "a >= -2. f'(x) = 2x + a. For f to be increasing on [1,2], f'(x) >= 0 for all x in [1,2]. The minimum of f'(x) on [1,2] is f'(1) = 2 + a >= 0, so a >= -2."
         },
         {
           "qno": 15,
           "question": "Let I be any interval disjoint from [-1, 1]. Prove that the function f given by f(x) = x + 1/x is increasing on I.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = 1 - 1/x^2 = (x^2 - 1)/x^2. For x outside [-1,1], x^2 > 1, so x^2 - 1 > 0 and x^2 > 0. Hence f'(x) > 0 on I, proving f is increasing."
         },
         {
           "qno": 16,
           "question": "Prove that the function f given by f(x) = log(sin x) is increasing on (0, pi/2) and decreasing on (pi/2, pi).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = cos x / sin x = cot x. In (0, pi/2), cot x > 0, so f is increasing. In (pi/2, pi), cot x < 0, so f is decreasing."
         },
         {
           "qno": 17,
           "question": "Prove that the function f given by f(x) = log|cos x| is decreasing on (0, pi/2) and increasing on (3*pi/2, 2*pi).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = -sin x / cos x = -tan x. In (0, pi/2), tan x > 0, so f'(x) < 0, hence decreasing. In (3*pi/2, 2*pi), tan x < 0, so f'(x) > 0, hence increasing."
         },
         {
           "qno": 18,
           "question": "Prove that the function given by f(x) = x^3 - 3x^2 + 3x - 100 is increasing in R.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = 3x^2 - 6x + 3 = 3(x^2 - 2x + 1) = 3(x-1)^2 >= 0 for all x in R. Hence f is increasing in R."
         },
         {
           "qno": 19,
           "question": "The interval in which y = x^2 * e^(-x) is increasing is (A) (-infinity, infinity) (B) (-2, 0) (C) (2, infinity) (D) (0, 2)",
           "type": "MCQ",
-          "options": ["(-infinity, infinity)", "(-2, 0)", "(2, infinity)", "(0, 2)"]
+          "options": [
+            "(-infinity, infinity)",
+            "(-2, 0)",
+            "(2, infinity)",
+            "(0, 2)"
+          ],
+          "answer": "D"
         }
       ]
     },
@@ -474,150 +536,194 @@
         {
           "qno": 1,
           "question": "Find the maximum and minimum values, if any, of the following functions given by (i) f(x) = (2x-1)^2 + 3 (ii) f(x) = 9x^2 + 12x + 2 (iii) f(x) = -(x-1)^2 + 10 (iv) g(x) = x^3 + 1",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) Minimum value = 3 at x = 1/2, no maximum. (ii) Minimum value = -2 at x = -2/3, no maximum. (iii) Maximum value = 10 at x = 1, no minimum. (iv) Neither maximum nor minimum (cubic function)."
         },
         {
           "qno": 2,
           "question": "Find the maximum and minimum values, if any, of the following functions given by (i) f(x) = |x+2| - 1 (ii) g(x) = -|x+1| + 3 (iii) h(x) = sin(2x) + 5 (iv) f(x) = |sin 4x + 3| (v) h(x) = x + 1, x in (-1, 1)",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) Minimum value = -1 at x = -2, no maximum. (ii) Maximum value = 3 at x = -1, no minimum. (iii) Maximum = 6, minimum = 4. (iv) Maximum = 4, minimum = 2. (v) Neither maximum nor minimum (open interval)."
         },
         {
           "qno": 3,
           "question": "Find the local maxima and local minima, if any, of the following functions. Find also the local maximum and the local minimum values, as the case may be: (i) f(x) = x^2 (ii) g(x) = x^3 - 3x (iii) h(x) = sin x + cos x, 0 < x < pi/2 (iv) f(x) = sin x - cos x, 0 < x < 2*pi (v) f(x) = x^3 - 6x^2 + 9x + 15 (vi) g(x) = x/2 + 2/x, x > 0 (vii) g(x) = 1/(x^2 + 2) (viii) f(x) = x*sqrt(1-x), 0 < x < 1",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) Local min = 0 at x = 0. (ii) Local max = 2 at x = -1; local min = -2 at x = 1. (iii) Local max = sqrt(2) at x = pi/4. (iv) Local min = -sqrt(2) at x = 7*pi/4; local max = sqrt(2) at x = 3*pi/4. (v) Local max = 19 at x = 1; local min = 15 at x = 3. (vi) Local min = 2 at x = 2. (vii) Local max = 1/2 at x = 0. (viii) Local max = 2*sqrt(3)/9 at x = 2/3."
         },
         {
           "qno": 4,
           "question": "Prove that the following functions do not have maxima or minima: (i) f(x) = e^x (ii) g(x) = log x (iii) h(x) = x^3 + x^2 + x + 1",
-          "type": "proof"
+          "type": "proof",
+          "answer": "(i) f'(x) = e^x > 0 for all x, so f is strictly increasing with no turning point. (ii) g'(x) = 1/x > 0 for x > 0, so g is strictly increasing. (iii) h'(x) = 3x^2 + 2x + 1; discriminant = 4 - 12 = -8 < 0 and coefficient of x^2 > 0, so h'(x) > 0 for all x. Hence h is strictly increasing with no extrema."
         },
         {
           "qno": 5,
           "question": "Find the absolute maximum value and the absolute minimum value of the following functions in the given intervals: (i) f(x) = x^3, x in [-2, 2] (ii) f(x) = sin x + cos x, x in [0, pi] (iii) f(x) = 4x - (1/2)x^2, x in [-2, 9/2] (iv) f(x) = (x-1)^2 + 3, x in [-3, 1]",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) Absolute max = 8 at x = 2; absolute min = -8 at x = -2. (ii) Absolute max = sqrt(2) at x = pi/4; absolute min = -1 at x = pi. (iii) Absolute max = 8 at x = 4; absolute min = -10 at x = -2. (iv) Absolute max = 19 at x = -3; absolute min = 3 at x = 1."
         },
         {
           "qno": 6,
           "question": "Find the maximum profit that a company can make, if the profit function is given by p(x) = 41 - 72x - 18x^2",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Maximum profit = 113. p'(x) = -72 - 36x = 0 gives x = -2. p''(x) = -36 < 0, so x = -2 is a maximum. p(-2) = 41 - 72(-2) - 18(4) = 41 + 144 - 72 = 113."
         },
         {
           "qno": 7,
           "question": "Find both the maximum value and the minimum value of 3x^4 - 8x^3 + 12x^2 - 48x + 25 on the interval [0, 3].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Maximum value = 25 at x = 0; minimum value = -39 at x = 2. f'(x) = 12x^3 - 24x^2 + 24x - 48 = 12(x^3 - 2x^2 + 2x - 4) = 12(x-2)(x^2+2). Critical point x = 2. f(0) = 25, f(2) = 48 - 64 + 48 - 96 + 25 = -39, f(3) = 243 - 216 + 108 - 144 + 25 = 16."
         },
         {
           "qno": 8,
           "question": "At what points in the interval [0, 2*pi], does the function sin 2x attain its maximum value?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "sin 2x attains maximum value 1 at x = pi/4 and x = 5*pi/4."
         },
         {
           "qno": 9,
           "question": "What is the maximum value of the function sin x + cos x?",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "sqrt(2). sin x + cos x = sqrt(2)*sin(x + pi/4). Maximum value of sin is 1, so maximum = sqrt(2)."
         },
         {
           "qno": 10,
           "question": "Find the maximum value of 2x^3 - 24x + 107 in the interval [1, 3]. Find the maximum value of the same function in [-3, -1].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "In [1, 3]: maximum = 89 at x = 3. f(1) = 2-24+107 = 85, f(2) = 16-48+107 = 75, f(3) = 54-72+107 = 89. In [-3, -1]: maximum = 139 at x = -3. f(-3) = -54+72+107 = 125... Actually f(-1) = -2+24+107 = 129, f(-2) = -16+48+107 = 139. Wait: f'(x) = 6x^2-24 = 0 at x = +/-2. In [-3,-1], critical point x = -2. f(-3) = -54+72+107 = 125, f(-2) = -16+48+107 = 139, f(-1) = -2+24+107 = 129. Maximum = 139 at x = -2."
         },
         {
           "qno": 11,
           "question": "It is given that at x = 1, the function x^4 - 62x^2 + ax + 9 attains its maximum value, on the interval [0, 2]. Find the value of a.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "a = 120. f'(x) = 4x^3 - 124x + a. At x = 1: f'(1) = 0. So 4 - 124 + a = 0, giving a = 120."
         },
         {
           "qno": 12,
           "question": "Find the maximum and minimum values of x + sin 2x on [0, 2*pi].",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Maximum value = 2*pi at x = 2*pi; minimum value = 0 at x = 0."
         },
         {
           "qno": 13,
           "question": "Find two numbers whose sum is 24 and whose product is as large as possible.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "12 and 12. Let numbers be x and 24-x. P = x(24-x). P'(x) = 24-2x = 0 gives x = 12. P''(x) = -2 < 0, confirming maximum."
         },
         {
           "qno": 14,
           "question": "Find two positive numbers x and y such that x + y = 60 and xy^3 is maximum.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "x = 15, y = 45. P = x*y^3 = (60-y)*y^3. dP/dy = 180y^2 - 4y^3 = 4y^2(45-y) = 0 gives y = 45. So x = 15."
         },
         {
           "qno": 15,
           "question": "Find two positive numbers x and y such that their sum is 35 and the product x^2 * y^5 is a maximum.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "x = 10, y = 25. P = x^2 * y^5 = (35-y)^2 * y^5. Setting dP/dy = 0 gives y^4(35-y)[5(35-y) - 2y] = 0, so 175-7y = 0, y = 25, x = 10."
         },
         {
           "qno": 16,
           "question": "Find two positive numbers whose sum is 16 and the sum of whose cubes is minimum.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "8 and 8. Let numbers be x and 16-x. S = x^3 + (16-x)^3. S' = 3x^2 - 3(16-x)^2 = 0 gives x = 16-x, so x = 8."
         },
         {
           "qno": 17,
           "question": "A square piece of tin of side 18 cm is to be made into a box without top, by cutting a square from each corner and folding up the flaps to form the box. What should be the side of the square to be cut off so that the volume of the box is the maximum possible.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "3 cm. V = x(18-2x)^2. V' = (18-2x)(18-6x) = 0 gives x = 3 or x = 9. x = 9 gives zero volume. At x = 3, V'' < 0, so maximum volume."
         },
         {
           "qno": 18,
           "question": "A rectangular sheet of tin 45 cm by 24 cm is to be made into a box without top, by cutting off square from each corner and folding up the flaps. What should be the side of the square to be cut off so that the volume of the box is maximum?",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "5 cm. V = x(45-2x)(24-2x). V' = 12x^2 - 138x + 1080/... Setting V'=0: 12x^2 - 138x + 540 = 0, i.e., 2x^2 - 23x + 90 = 0. x = (23 +/- sqrt(529-720))/4... Actually 4x^2 - 46x + 90 = 0 giving... Correct: V = x(45-2x)(24-2x) = 4x^3 - 138x^2 + 1080x. V' = 12x^2 - 276x + 1080 = 0, x^2 - 23x + 90 = 0, (x-5)(x-18) = 0. x = 5 (x=18 rejected). Side = 5 cm."
         },
         {
           "qno": 19,
           "question": "Show that of all the rectangles inscribed in a given fixed circle, the square has the maximum area.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let circle have radius a. Rectangle sides 2x, 2y with x^2 + y^2 = a^2. Area = 4xy. Maximizing 4xy subject to x^2+y^2 = a^2: A = 4x*sqrt(a^2-x^2). dA/dx = 0 gives a^2 - 2x^2 = 0, x = a/sqrt(2) = y. So 2x = 2y, rectangle is a square."
         },
         {
           "qno": 20,
           "question": "Show that the right circular cylinder of given surface and maximum volume is such that its height is equal to the diameter of the base.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let radius = r, height = h. S = 2*pi*r^2 + 2*pi*r*h (given constant). h = (S - 2*pi*r^2)/(2*pi*r). V = pi*r^2*h = r(S - 2*pi*r^2)/2. dV/dr = 0 gives S = 6*pi*r^2. Then h = (6*pi*r^2 - 2*pi*r^2)/(2*pi*r) = 2r = diameter."
         },
         {
           "qno": 21,
           "question": "Of all the closed cylindrical cans (right circular), of a given volume of 100 cubic centimetres, find the dimensions of the can which has the minimum surface area?",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "r = (50/pi)^(1/3) cm and h = 2*(50/pi)^(1/3) cm (i.e., h = 2r). V = pi*r^2*h = 100, so h = 100/(pi*r^2). S = 2*pi*r^2 + 200/r. dS/dr = 4*pi*r - 200/r^2 = 0 gives r^3 = 50/pi, so r = (50/pi)^(1/3)."
         },
         {
           "qno": 22,
           "question": "A wire of length 28 m is to be cut into two pieces. One of the pieces is to be made into a square and the other into a circle. What should be the length of the two pieces so that the combined area of the square and the circle is minimum?",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "Length for square = 112/(pi+4) m, length for circle = 28*pi/(pi+4) m. Let square piece = x, circle piece = 28-x. Side = x/4, radius = (28-x)/(2*pi). Area = x^2/16 + (28-x)^2/(4*pi). Setting dA/dx = 0: x/8 - (28-x)/(2*pi) = 0 gives x = 112/(pi+4)."
         },
         {
           "qno": 23,
           "question": "Prove that the volume of the largest cone that can be inscribed in a sphere of radius R is 8/27 of the volume of the sphere.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let height of cone = R + x where x is distance from center to base. Radius of cone base r^2 = R^2 - x^2. V = (pi/3)(R^2-x^2)(R+x). dV/dx = 0 gives x = R/3. V_max = (pi/3)(R^2 - R^2/9)(R + R/3) = (pi/3)(8R^2/9)(4R/3) = 32*pi*R^3/81 = (8/27)(4*pi*R^3/3) = 8/27 * V_sphere."
         },
         {
           "qno": 24,
           "question": "Show that the right circular cone of least curved surface and given volume has an altitude equal to sqrt(2) times the radius of the base.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "V = (1/3)*pi*r^2*h (given). Curved surface S = pi*r*l = pi*r*sqrt(r^2+h^2). Minimize S^2 = pi^2*r^2(r^2+h^2) with h = 3V/(pi*r^2). Setting d(S^2)/dr = 0 and simplifying gives h = r*sqrt(2), i.e., altitude = sqrt(2) times the radius."
         },
         {
           "qno": 25,
           "question": "Show that the semi-vertical angle of the cone of the maximum volume and of given slant height is tan^(-1)(sqrt(2)).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let slant height = l (fixed). r = l*sin(alpha), h = l*cos(alpha). V = (pi/3)*l^2*sin^2(alpha)*l*cos(alpha) = (pi*l^3/3)*sin^2(alpha)*cos(alpha). dV/d(alpha) = 0 gives 2*sin(alpha)*cos^2(alpha) - sin^3(alpha) = 0, so 2*cos^2(alpha) = sin^2(alpha), tan^2(alpha) = 2, alpha = tan^(-1)(sqrt(2))."
         },
         {
           "qno": 26,
           "question": "Show that semi-vertical angle of right circular cone of given surface area and maximum volume is sin^(-1)(1/3).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "S = pi*r*l + pi*r^2 (given constant). Express V in terms of r and use S constraint. Maximizing V^2 and using calculus, the optimal condition gives sin(alpha) = 1/3, i.e., alpha = sin^(-1)(1/3)."
         },
         {
           "qno": 27,
           "question": "The point on the curve x^2 = 2y which is nearest to the point (0, 5) is (A) (2*sqrt(2), 4) (B) (2*sqrt(2), 0) (C) (0, 0) (D) (2, 2)",
           "type": "MCQ",
-          "options": ["(2*sqrt(2), 4)", "(2*sqrt(2), 0)", "(0, 0)", "(2, 2)"]
+          "options": [
+            "(2*sqrt(2), 4)",
+            "(2*sqrt(2), 0)",
+            "(0, 0)",
+            "(2, 2)"
+          ],
+          "answer": "A"
         },
         {
           "qno": 28,
           "question": "For all real values of x, the minimum value of (1 - x + x^2)/(1 + x + x^2) is (A) 0 (B) 1 (C) 3 (D) 1/3",
           "type": "MCQ",
-          "options": ["0", "1", "3", "1/3"]
+          "options": [
+            "0",
+            "1",
+            "3",
+            "1/3"
+          ],
+          "answer": "D"
         },
         {
           "qno": 29,
           "question": "The maximum value of [x(x-1)+1]^(1/3), 0 <= x <= 1 is (A) (1/3)^(1/3) (B) 1/2 (C) 1 (D) 0",
           "type": "MCQ",
-          "options": ["(1/3)^(1/3)", "1/2", "1", "0"]
+          "options": [
+            "(1/3)^(1/3)",
+            "1/2",
+            "1",
+            "0"
+          ],
+          "answer": "C"
         }
       ]
     },
@@ -629,83 +735,104 @@
         {
           "qno": 1,
           "question": "Show that the function given by f(x) = (log x)/x has maximum at x = e.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "f'(x) = (1 - log x)/x^2. Setting f'(x) = 0: log x = 1, x = e. f''(x) = (-3 + 2*log x)/x^3. At x = e: f''(e) = (-3+2)/e^3 = -1/e^3 < 0. Hence maximum at x = e."
         },
         {
           "qno": 2,
           "question": "The two equal sides of an isosceles triangle with fixed base b are decreasing at the rate of 3 cm per second. How fast is the area decreasing when the two equal sides are equal to the base?",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "Area decreasing at b*sqrt(3) cm^2/s. A = (b/4)*sqrt(4a^2 - b^2). dA/dt = (b/4) * (4a)/(sqrt(4a^2 - b^2)) * da/dt. When a = b: dA/dt = (b/4)*(4b)/(sqrt(3)*b)*(-3) = -b*sqrt(3) cm^2/s."
         },
         {
           "qno": 3,
           "question": "Find the intervals in which the function f given by f(x) = (4*sin x - 2x - x*cos x)/(2 + cos x) is (i) increasing (ii) decreasing.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) Increasing on (0, pi/2) and (3*pi/2, 2*pi). (ii) Decreasing on (pi/2, 3*pi/2). f'(x) simplifies to cos x/(2 + cos x)^2 * ... After simplification, f'(x) has same sign as cos x."
         },
         {
           "qno": 4,
           "question": "Find the intervals in which the function f given by f(x) = x^3 + 1/x^3, x != 0 is (i) increasing (ii) decreasing.",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "f'(x) = 3x^2 - 3/x^4 = 3(x^6 - 1)/x^4. (i) Increasing on (-infinity, -1) and (1, infinity). (ii) Decreasing on (-1, 0) and (0, 1)."
         },
         {
           "qno": 5,
           "question": "Find the maximum area of an isosceles triangle inscribed in the ellipse x^2/a^2 + y^2/b^2 = 1 with its vertex at one end of the major axis.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "(3*sqrt(3)*a*b)/4. Let vertex be at (a, 0) and base endpoints at (x, y) and (x, -y) on the ellipse. Area = (1/2)(2y)(a-x) = y(a-x). Using parametric form x = a*cos(t), y = b*sin(t). Maximizing gives t such that cos(t) = -1/2, giving maximum area = (3*sqrt(3)*a*b)/4."
         },
         {
           "qno": 6,
           "question": "A tank with rectangular base and rectangular sides, open at the top is to be constructed so that its depth is 2 m and volume is 8 m^3. If building of tank costs Rs 70 per sq metres for the base and Rs 45 per square metre for sides. What is the cost of least expensive tank?",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "Rs 1000. Volume: l*b*2 = 8, so lb = 4, b = 4/l. Cost = 70*lb + 45*2*2*(l+b) = 280 + 180(l + 4/l). dC/dl = 180(1 - 4/l^2) = 0 gives l = 2, b = 2. Cost = 280 + 180(2+2) = 280 + 720 = 1000."
         },
         {
           "qno": 7,
           "question": "The sum of the perimeter of a circle and square is k, where k is some constant. Prove that the sum of their areas is least when the side of square is double the radius of the circle.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let side = a, radius = r. 4a + 2*pi*r = k, so a = (k - 2*pi*r)/4. A = a^2 + pi*r^2. dA/dr = 2a*(-pi/2) + 2*pi*r = -pi*a + 2*pi*r = 0 gives a = 2r. d^2A/dr^2 > 0 confirms minimum."
         },
         {
           "qno": 8,
           "question": "A window is in the form of a rectangle surmounted by a semicircular opening. The total perimeter of the window is 10 m. Find the dimensions of the window to admit maximum light through the whole opening.",
-          "type": "word_problem"
+          "type": "word_problem",
+          "answer": "Length = 20/(pi+4) m, breadth (height of rectangle) = 10/(pi+4) m. Let width = 2r (diameter of semicircle), height = h. Perimeter: 2h + 2r + pi*r = 10. A = 2rh + pi*r^2/2. Substituting h and maximizing: dA/dr = 0 gives r = 10/(pi+4), so width = 20/(pi+4)."
         },
         {
           "qno": 9,
           "question": "A point on the hypotenuse of a triangle is at distance a and b from the sides of the triangle. Show that the minimum length of the hypotenuse is (a^(2/3) + b^(2/3))^(3/2).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let angle at one vertex = theta. The hypotenuse l = a/sin(theta) + b/cos(theta). dl/d(theta) = 0 gives -a*cos(theta)/sin^2(theta) + b*sin(theta)/cos^2(theta) = 0, so tan^3(theta) = a/b... Substituting back gives l_min = (a^(2/3) + b^(2/3))^(3/2)."
         },
         {
           "qno": 10,
           "question": "Find the points at which the function f given by f(x) = (x-2)^4 * (x+1)^3 has (i) local maxima (ii) local minima (iii) point of inflexion",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "(i) Local maxima at x = -1. (ii) Local minima at x = -1/7... Actually: f'(x) = (x-2)^3*(x+1)^2*(7x+2). Critical points: x = 2, x = -1, x = -2/7. (i) Local maximum at x = -1 (odd power sign change not applicable since (x+1)^2 doesn't change sign... Actually (x+1)^2 is always positive). Correct: (i) No local maxima. Wait - need careful analysis. f'(x) = (x-2)^3(x+1)^2(7x+2) = 0 at x = -1, -2/7, 2. At x = -1: (x+1)^2 doesn't change sign, so point of inflexion. At x = -2/7: f' changes from + to -, so local maximum. At x = 2: f' changes from - to +, so local minimum. So: (i) Local maxima at x = -2/7. (ii) Local minima at x = 2. (iii) Point of inflexion at x = -1."
         },
         {
           "qno": 11,
           "question": "Find the absolute maximum and minimum values of the function f given by f(x) = cos^2(x) + sin x, x in [0, pi]",
-          "type": "short_answer"
+          "type": "short_answer",
+          "answer": "Absolute maximum = 5/4 at x = pi/6 and x = 5*pi/6. Absolute minimum = -1 at x = pi... Wait: f(x) = cos^2(x) + sin x = 1 - sin^2(x) + sin x. Let t = sin x. g(t) = -t^2 + t + 1 = -(t-1/2)^2 + 5/4. Max at t = 1/2 (sin x = 1/2, x = pi/6 or 5*pi/6), g = 5/4. f(0) = 1, f(pi) = 1. f(pi/2) = 0 + 1 = 1. Absolute max = 5/4, absolute min = 1... Actually checking all: f(0) = 1+0 = 1, f(pi/6) = 3/4 + 1/2 = 5/4, f(pi/2) = 0+1 = 1, f(5*pi/6) = 3/4 + 1/2 = 5/4, f(pi) = 1+0 = 1. Absolute maximum = 5/4, absolute minimum = 1."
         },
         {
           "qno": 12,
           "question": "Show that the altitude of the right circular cone of maximum volume that can be inscribed in a sphere of radius r is 4r/3.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let h be the height of cone. Distance from center to base = h - r. Radius of base: R^2 = r^2 - (h-r)^2 = 2hr - h^2. V = (pi/3)(2hr-h^2)h = (pi/3)(2h^2*r - h^3). dV/dh = (pi/3)(4hr - 3h^2) = 0 gives h = 4r/3. d^2V/dh^2 < 0 confirms maximum."
         },
         {
           "qno": 13,
           "question": "Let f be a function defined on [a, b] such that f'(x) > 0, for all x in (a, b). Then prove that f is an increasing function on (a, b).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let x1, x2 in (a,b) with x1 < x2. By Mean Value Theorem, there exists c in (x1,x2) such that f(x2) - f(x1) = f'(c)(x2-x1). Since f'(c) > 0 and x2 - x1 > 0, f(x2) - f(x1) > 0, so f(x2) > f(x1). Hence f is increasing."
         },
         {
           "qno": 14,
           "question": "Show that the height of the cylinder of maximum volume that can be inscribed in a sphere of radius R is 2R/sqrt(3). Also find the maximum volume.",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let half-height = h, radius of cylinder = r. r^2 + h^2 = R^2. V = pi*r^2*(2h) = 2*pi*(R^2-h^2)*h. dV/dh = 2*pi*(R^2-3h^2) = 0 gives h = R/sqrt(3). Height = 2h = 2R/sqrt(3). Maximum volume = 4*pi*R^3/(3*sqrt(3))."
         },
         {
           "qno": 15,
           "question": "Show that height of the cylinder of greatest volume which can be inscribed in a right circular cone of height h and semi vertical angle alpha is one-third that of the cone and the greatest volume of cylinder is (4/27)*pi*h^3*tan^2(alpha).",
-          "type": "proof"
+          "type": "proof",
+          "answer": "Let cylinder height = H, radius = r. By similar triangles: r = (h-H)*tan(alpha). V = pi*r^2*H = pi*tan^2(alpha)*(h-H)^2*H. dV/dH = pi*tan^2(alpha)*[(h-H)^2 - 2H(h-H)] = pi*tan^2(alpha)*(h-H)(h-3H) = 0. H = h/3. V_max = pi*tan^2(alpha)*(2h/3)^2*(h/3) = (4/27)*pi*h^3*tan^2(alpha)."
         },
         {
           "qno": 16,
           "question": "A cylindrical tank of radius 10 m is being filled with wheat at the rate of 314 cubic metre per hour. Then the depth of the wheat is increasing at the rate of (A) 1 m/h (B) 0.1 m/h (C) 1.1 m/h (D) 0.5 m/h",
           "type": "MCQ",
-          "options": ["1 m/h", "0.1 m/h", "1.1 m/h", "0.5 m/h"]
+          "options": [
+            "1 m/h",
+            "0.1 m/h",
+            "1.1 m/h",
+            "0.5 m/h"
+          ],
+          "answer": "A"
         }
       ]
     }

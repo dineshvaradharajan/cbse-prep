@@ -4,67 +4,265 @@
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <link rel="stylesheet" href="../css/base.css">
-<style>:root{--subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;}</style>
+<style>:root{--subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;--green:#16a34a;--red:#dc2626;--orange:#d97706;}
+
+/* ── Hero ── */
+.hero { text-align:center;padding:2rem 0 1.5rem }
+.badge { display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--subject-text);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.3em 1em;margin-bottom:.75rem }
+.hero h1 { font-family:'Newsreader',serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--ink);margin:.25rem 0 }
+.hero .sub { font-size:.88rem;color:var(--ink-2);max-width:520px;margin:.5rem auto 0;line-height:1.6 }
+
+/* ── Stats bar ── */
+.stats-bar { display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:1.5rem 0 }
+.stat-pill { background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:.5rem 1rem;font-size:.78rem;font-weight:600;color:var(--ink) }
+.stat-pill span { color:var(--subject-color);font-weight:800 }
+
+/* ── Chapter filter ── */
+.filter-bar { display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin:1rem 0 1.5rem }
+.filter-btn { border:1.5px solid var(--sand-200);background:#fff;border-radius:999px;padding:.35rem .85rem;font-size:.75rem;font-weight:600;color:var(--ink-2);cursor:pointer;transition:all .15s }
+.filter-btn:hover { border-color:var(--subject-border);color:var(--subject-color) }
+.filter-btn.active { background:var(--subject-bg);border-color:var(--subject-border);color:var(--subject-color) }
+
+/* ── Case study card ── */
+.cs-card { background:#fff;border:1px solid var(--sand-200);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;border-left:4px solid var(--subject-color) }
+.cs-header { display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.75rem }
+.cs-chapter { font-size:.7rem;font-weight:700;color:var(--subject-text);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.2em .7em;white-space:nowrap }
+.cs-source { font-size:.65rem;font-weight:600;color:var(--ink-3);background:var(--sand-100);border-radius:999px;padding:.2em .6em }
+.cs-passage { font-size:.85rem;color:var(--ink-2);line-height:1.7;margin-bottom:1.25rem;padding:.75rem 1rem;background:var(--sand-50);border-radius:10px;border:1px solid var(--sand-100) }
+
+/* ── Question inside case study ── */
+.cs-question { margin-bottom:1rem;padding:.75rem 0;border-top:1px solid var(--sand-100) }
+.cs-question:first-of-type { border-top:none }
+.cs-q-label { font-size:.78rem;font-weight:700;color:var(--ink);margin-bottom:.5rem }
+.cs-q-text { font-size:.84rem;color:var(--ink);line-height:1.6;margin-bottom:.6rem }
+
+.cs-options { display:grid;grid-template-columns:1fr 1fr;gap:.4rem }
+@media(max-width:600px) { .cs-options { grid-template-columns:1fr } }
+
+.cs-opt-btn { display:flex;align-items:flex-start;gap:.5rem;padding:.55rem .75rem;border:1.5px solid var(--sand-200);border-radius:10px;background:#fff;cursor:pointer;text-align:left;font-size:.82rem;color:var(--ink);transition:all .15s;line-height:1.4 }
+.cs-opt-btn:hover:not(.locked) { border-color:var(--subject-border);background:var(--subject-bg) }
+.cs-opt-btn.selected { border-color:var(--subject-color);background:var(--subject-bg);font-weight:600 }
+.cs-opt-btn.correct { border-color:var(--green);background:#f0fdf4;color:#166534 }
+.cs-opt-btn.wrong { border-color:var(--red);background:#fef2f2;color:#991b1b }
+.cs-opt-btn.locked { cursor:default;opacity:.7 }
+.cs-opt-btn.locked.correct { opacity:1 }
+.cs-opt-letter { font-weight:800;font-size:.75rem;color:var(--ink-3);min-width:1.2rem }
+
+/* ── Check button ── */
+.cs-check-row { display:flex;align-items:center;gap:1rem;margin-top:.75rem }
+.cs-check-btn { background:var(--subject-color);color:#fff;border:none;border-radius:10px;padding:.5rem 1.3rem;font-size:.82rem;font-weight:700;cursor:pointer;transition:opacity .15s }
+.cs-check-btn:hover { opacity:.85 }
+.cs-check-btn:disabled { opacity:.4;cursor:default }
+.cs-result-tag { font-size:.78rem;font-weight:700;border-radius:999px;padding:.25em .7em }
+.cs-result-tag.correct { color:#166534;background:#dcfce7 }
+.cs-result-tag.wrong { color:#991b1b;background:#fee2e2 }
+
+/* ── Score summary per case study ── */
+.cs-score { display:flex;align-items:center;gap:.5rem;margin-top:1rem;padding:.6rem .8rem;background:var(--sand-50);border-radius:10px;font-size:.8rem;font-weight:600 }
+.cs-score .score-num { font-size:1rem;font-weight:800;color:var(--subject-color) }
+
+/* ── Collapse toggle ── */
+.cs-toggle { display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:.5rem }
+.cs-toggle .arrow { transition:transform .2s;font-size:.7rem }
+.cs-toggle .arrow.open { transform:rotate(90deg) }
+.cs-questions-wrap { overflow:hidden }
+.cs-questions-wrap.collapsed { display:none }
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Case study MCQ practice for CBSE Class 12 Mathematics — real-world scenarios with linked questions.">
 <meta name="author" content="Dinesh Varadharajan">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Maths Case Study Questions | CBSE Class 12">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://ncert.myailab.space/maths/case-study.html">
+<link rel="canonical" href="https://cbse-prep.pages.dev/maths/case-study.html">
 <title>Maths Case Study Questions | CBSE Class 12</title>
 </head>
 <body>
 <div class="container">
-<a href="../index.html" class="back-link">← Back to Hub</a>
+<a href="../index.html" class="back-link">&larr; Back to Hub</a>
 
 <div class="hero">
   <div class="badge">Mathematics XII &middot; Case-Based Questions</div>
   <h1>Case Study Questions</h1>
-  <p class="sub">Real-world scenario-based MCQs — the newest CBSE pattern with 4 linked questions per case.</p>
+  <p class="sub">Real-world scenario-based MCQs — the newest CBSE pattern with 5 linked questions per case. Practice all 17 case studies across 12 chapters.</p>
 </div>
 
-<div style="background:var(--subject-bg);border:1.5px solid var(--subject-border);border-radius:12px;padding:2rem;margin:2rem 0;text-align:center">
-  <div style="font-size:2rem;margin-bottom:.5rem">🚧</div>
-  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem">Case Studies Coming Soon</h3>
-  <p style="font-size:.85rem;color:var(--ink-2);line-height:1.6;max-width:480px;margin:0 auto">
-    We're preparing case-based questions from recent CBSE papers (2021–2025) covering all 13 chapters. Each case study includes a real-world passage followed by 4 MCQs.
-  </p>
-  <p style="font-size:.8rem;color:var(--ink-3);margin-top:.75rem">In the meantime, practice with the <a href="question-bank.html" style="color:var(--subject-color);font-weight:700">Question Bank</a> or review <a href="chapters.html" style="color:var(--subject-color);font-weight:700">Chapters</a> for exam preparation.</p>
+<div class="stats-bar">
+  <div class="stat-pill"><span>17</span> Case Studies</div>
+  <div class="stat-pill"><span>85</span> Questions</div>
+  <div class="stat-pill"><span>12</span> Chapters</div>
 </div>
 
-<div style="margin-top:2rem">
-  <h3 style="font-family:'Newsreader',serif;font-size:1rem;color:var(--ink);margin-bottom:.75rem">📋 Expected Topics for Case Studies</h3>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.6rem">
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid #7c3aed">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">📈 Application of Derivatives</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Maxima/minima in real-life contexts — cost optimisation, area maximisation</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid #7c3aed">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">📐 Linear Programming</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Manufacturing, diet, transportation problems with constraints</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid #7c3aed">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">🎲 Probability</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Medical testing, quality control, real-world Bayes' theorem applications</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid #7c3aed">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">∫ Integrals</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Area under curves, physics applications, volume of revolution</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid #7c3aed">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">🔢 Matrices &amp; Determinants</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Cryptography, solving systems of equations in business contexts</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid #7c3aed">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">🧭 3D Geometry</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Navigation, architecture, shortest distance problems</div>
-    </div>
-  </div>
-</div>
+<div class="filter-bar" id="filter-bar"></div>
+
+<div id="cs-list"></div>
 
 </div>
+
+<script src="../data/maths-case-studies.js"></script>
+<script src="../js/matrix-render.js"></script>
+<script>
+const LETTERS = ['A','B','C','D'];
+const state = {}; // csKey -> { qIdx -> { selected: number|null, checked: boolean } }
+
+function getCSKey(ch, idx) { return ch + '_' + idx; }
+
+function buildFilterBar() {
+  const bar = document.getElementById('filter-bar');
+  const allBtn = document.createElement('button');
+  allBtn.className = 'filter-btn active';
+  allBtn.textContent = 'All';
+  allBtn.onclick = () => filterChapter('all');
+  bar.appendChild(allBtn);
+
+  const chapters = Object.keys(MATHS_CASE_STUDIES).sort((a, b) => {
+    return parseInt(a.replace('ch','')) - parseInt(b.replace('ch',''));
+  });
+
+  chapters.forEach(ch => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.ch = ch;
+    const num = ch.replace('ch','');
+    btn.textContent = 'Ch ' + num;
+    btn.onclick = () => filterChapter(ch);
+    bar.appendChild(btn);
+  });
+}
+
+function filterChapter(ch) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (ch === 'all') {
+    document.querySelector('.filter-btn').classList.add('active');
+    document.querySelectorAll('.cs-card').forEach(c => c.style.display = '');
+  } else {
+    document.querySelector(`.filter-btn[data-ch="${ch}"]`).classList.add('active');
+    document.querySelectorAll('.cs-card').forEach(c => {
+      c.style.display = c.dataset.ch === ch ? '' : 'none';
+    });
+  }
+}
+
+function buildCaseStudies() {
+  const list = document.getElementById('cs-list');
+  list.innerHTML = '';
+
+  const chapters = Object.keys(MATHS_CASE_STUDIES).sort((a, b) => {
+    return parseInt(a.replace('ch','')) - parseInt(b.replace('ch',''));
+  });
+
+  let csNum = 0;
+  chapters.forEach(ch => {
+    const chName = CASE_STUDY_CHAPTER_NAMES[ch] || ch;
+    const chNum = ch.replace('ch','');
+
+    MATHS_CASE_STUDIES[ch].forEach((cs, idx) => {
+      csNum++;
+      const key = getCSKey(ch, idx);
+      if (!state[key]) {
+        state[key] = {};
+        cs.questions.forEach((q, qi) => {
+          state[key][qi] = { selected: null, checked: false };
+        });
+      }
+
+      const card = document.createElement('div');
+      card.className = 'cs-card';
+      card.dataset.ch = ch;
+      card.id = 'cs-' + key;
+
+      const header = `
+        <div class="cs-header">
+          <div style="display:flex;gap:.4rem;flex-wrap:wrap;align-items:center">
+            <span class="cs-chapter">Ch ${chNum}: ${chName}</span>
+            <span class="cs-source">${cs.source || 'Practice'}</span>
+          </div>
+          <span style="font-size:.75rem;font-weight:700;color:var(--ink-3)">Case ${csNum}</span>
+        </div>
+      `;
+
+      const passage = `<div class="cs-passage">${formatMatrices(cs.passage)}</div>`;
+
+      let questionsHTML = '';
+      cs.questions.forEach((q, qi) => {
+        const qState = state[key][qi];
+        let optionsHTML = '';
+        q.options.forEach((opt, oi) => {
+          let cls = 'cs-opt-btn';
+          if (qState.checked) {
+            cls += ' locked';
+            if (oi === q.answer) cls += ' correct';
+            else if (qState.selected === oi) cls += ' wrong';
+          } else if (qState.selected === oi) {
+            cls += ' selected';
+          }
+          optionsHTML += `<button class="${cls}" onclick="selectOpt('${key}',${qi},${oi})"><span class="cs-opt-letter">${LETTERS[oi]}</span><span>${formatMatrices(q.options[oi])}</span></button>`;
+        });
+
+        let resultHTML = '';
+        if (qState.checked) {
+          const isCorrect = qState.selected === q.answer;
+          resultHTML = `<span class="cs-result-tag ${isCorrect ? 'correct' : 'wrong'}">${isCorrect ? 'Correct!' : 'Incorrect — Answer: ' + LETTERS[q.answer]}</span>`;
+        }
+
+        questionsHTML += `
+          <div class="cs-question" id="csq-${key}-${qi}">
+            <div class="cs-q-label">Q${q.qno}.</div>
+            <div class="cs-q-text">${formatMatrices(q.question)}</div>
+            <div class="cs-options">${optionsHTML}</div>
+            <div class="cs-check-row">
+              <button class="cs-check-btn" onclick="checkAnswer('${key}',${qi})" ${qState.checked || qState.selected === null ? 'disabled' : ''}>Check Answer</button>
+              ${resultHTML}
+            </div>
+          </div>
+        `;
+      });
+
+      // Score if all checked
+      const allChecked = cs.questions.every((q, qi) => state[key][qi].checked);
+      let scoreHTML = '';
+      if (allChecked) {
+        const correct = cs.questions.filter((q, qi) => state[key][qi].selected === q.answer).length;
+        scoreHTML = `<div class="cs-score"><span class="score-num">${correct}/${cs.questions.length}</span> questions correct</div>`;
+      }
+
+      card.innerHTML = header + passage + `<div class="cs-questions-wrap">${questionsHTML}</div>` + scoreHTML;
+      list.appendChild(card);
+    });
+  });
+
+  // Re-apply active chapter filter after rebuild
+  const activeBtn = document.querySelector('.filter-btn.active');
+  if (activeBtn && activeBtn.dataset.ch) {
+    const ch = activeBtn.dataset.ch;
+    document.querySelectorAll('.cs-card').forEach(c => {
+      c.style.display = c.dataset.ch === ch ? '' : 'none';
+    });
+  }
+
+  renderMath(list);
+}
+
+function selectOpt(key, qi, oi) {
+  if (state[key][qi].checked) return;
+  state[key][qi].selected = state[key][qi].selected === oi ? null : oi;
+  buildCaseStudies();
+}
+
+function checkAnswer(key, qi) {
+  if (state[key][qi].selected === null) return;
+  state[key][qi].checked = true;
+  buildCaseStudies();
+}
+
+buildFilterBar();
+buildCaseStudies();
+</script>
+
 <footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
 </body>
 </html>

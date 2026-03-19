@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataDir = path.join(__dirname, '..', 'data', 'maths');
-const outPath = path.join(__dirname, '..', 'maths', 'chapters.html');
+const dataDir = path.join(__dirname, '..', 'data', 'cs');
+const outPath = path.join(__dirname, '..', 'cs', 'chapters.html');
 
 // ── Load all chapter JSONs in order ──
 const files = fs.readdirSync(dataDir)
@@ -23,50 +23,14 @@ function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-/** Convert ASCII math notation to proper Unicode symbols (used for prose text) */
-function mathFmt(s) {
+/** Format code blocks and basic text formatting for CS content */
+function fmt(s) {
   if (!s) return '';
   let t = s;
-  // Vectors (before Greek to avoid conflicts)
-  t = t.replace(/i_hat/g, 'î'); t = t.replace(/j_hat/g, 'ĵ');
-  t = t.replace(/k_hat/g, 'k̂'); t = t.replace(/n_hat/g, 'n̂');
-  t = t.replace(/b_hat/g, 'b̂'); t = t.replace(/a_hat/g, 'â');
-  t = t.replace(/0_vec/g, '0⃗');
-  // Greek letters
-  t = t.replace(/\btheta\b/g, 'θ'); t = t.replace(/\balpha\b/g, 'α');
-  t = t.replace(/\bbeta\b/g, 'β'); t = t.replace(/\bgamma\b/g, 'γ');
-  t = t.replace(/\bdelta\b/g, 'δ'); t = t.replace(/\bDelta\b/g, 'Δ');
-  t = t.replace(/\blambda\b/g, 'λ'); t = t.replace(/\bmu\b/g, 'μ');
-  t = t.replace(/\bsigma\b/g, 'σ'); t = t.replace(/\bpi\b/g, 'π');
-  t = t.replace(/\bphi\b/g, 'φ'); t = t.replace(/\bepsilon\b/g, 'ε');
-  t = t.replace(/\bomega\b/g, 'ω');
-  // Operators
-  t = t.replace(/\bintegral\b/g, '∫'); t = t.replace(/\bsum\b/g, '∑');
-  t = t.replace(/\binfinity\b/g, '∞');
-  t = t.replace(/!=/g, '≠'); t = t.replace(/>=/g, '≥'); t = t.replace(/<=/g, '≤');
-  t = t.replace(/\s=>\s/g, ' ⇒ '); t = t.replace(/\s->\s/g, ' → ');
-  t = t.replace(/\(subset of\)/g, '⊂'); t = t.replace(/\biff\b/g, '⟺');
-  t = t.replace(/(?<=\s)in(?=\s)/g, '∈');
-  t = t.replace(/([A-Z)]) n ([A-Z(])/g, '$1 ∩ $2'); t = t.replace(/([A-Z)]) u ([A-Z(])/g, '$1 ∪ $2');
-  // sqrt
-  t = t.replace(/sqrt\(([^)]+)\)/g, '√($1)');
-  // Superscripts
-  const supMap = {'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','n':'ⁿ','i':'ⁱ','r':'ʳ','x':'ˣ','+':'⁺','-':'⁻'};
-  t = t.replace(/\^\(-1\)/g, '⁻¹');
-  t = t.replace(/\^\(([^)]+)\)/g, '<sup>$1</sup>');
-  t = t.replace(/\^([0-9a-z])/g, (_, c) => supMap[c] || '<sup>' + c + '</sup>');
-  // Subscripts
-  const subMap = {'0':'₀','1':'₁','2':'₂','3':'₃','4':'₄','5':'₅','6':'₆','7':'₇','8':'₈','9':'₉','i':'ᵢ','j':'ⱼ','k':'ₖ','n':'ₙ','m':'ₘ','r':'ᵣ','p':'ₚ','a':'ₐ','e':'ₑ','o':'ₒ','x':'ₓ'};
-  t = t.replace(/_{([^}]+)}/g, (_, inner) => { let sub=''; for(const c of inner) sub += subMap[c]||c; return sub; });
-  t = t.replace(/_([0-9a-z]{2,3})(?=[^a-z0-9_]|$)/g, (_, chars) => { let sub=''; for(const c of chars) sub += subMap[c]||c; return sub; });
-  t = t.replace(/_([0-9a-z])(?=[^a-z0-9_]|$)/g, (_, c) => subMap[c] || '_' + c);
-  // Matrix semicolons
-  if (t.includes(';') && (t.includes('[') || t.includes('|'))) t = t.replace(/;\s*/g, ' ┃ ');
-  // Multiplication
-  t = t.replace(/\s\*\s/g, ' · '); t = t.replace(/(\w)\*(\w)/g, '$1·$2');
-  // HTML escape then restore <sup>
+  // HTML escape
   t = t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  t = t.replace(/&lt;sup&gt;/g, '<sup>').replace(/&lt;\/sup&gt;/g, '</sup>');
+  // Inline code: `code` → <code>code</code>
+  t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
   return t;
 }
 
@@ -74,7 +38,6 @@ function slug(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '').replace(/^-+/, '');
 }
 
-// Get subtopics string from sections
 function getSubtopics(ch) {
   return ch.sections
     .filter(s => !s.title.toLowerCase().includes('introduction'))
@@ -82,7 +45,6 @@ function getSubtopics(ch) {
     .join(' · ');
 }
 
-// Gather all definitions from all sections
 function getAllDefinitions(ch) {
   const defs = [];
   ch.sections.forEach(s => {
@@ -95,7 +57,6 @@ function getAllDefinitions(ch) {
   return defs;
 }
 
-// Gather all formulas from all sections
 function getAllFormulas(ch) {
   const formulas = [];
   ch.sections.forEach(s => {
@@ -114,65 +75,52 @@ function getAllFormulas(ch) {
   return formulas;
 }
 
-// Gather all theorems from all sections
 function getAllTheorems(ch) {
   const thms = [];
   ch.sections.forEach(s => {
     (s.theorems || []).forEach(t => {
-      thms.push({
-        name: t.name || t.id || '',
-        statement: t.statement || ''
-      });
+      thms.push({ name: t.name || t.id || '', statement: t.statement || '' });
     });
   });
   return thms;
 }
 
-// Gather all key_points from all sections
 function getAllKeyPoints(ch) {
   const pts = [];
   ch.sections.forEach(s => {
-    (s.key_points || []).forEach(p => {
-      if (typeof p === 'string') pts.push(p);
-    });
+    (s.key_points || []).forEach(p => { if (typeof p === 'string') pts.push(p); });
   });
   return pts;
 }
 
-// Count total questions
 function getQuestionCount(ch) {
   return (ch.exercises || []).reduce((a, e) => a + e.questions.length, 0);
 }
 
-// ── Banner colours (cycle 3 colours within purple palette) ──
-const bannerStyles = [
-  { bg: '#f5f3ff', color: '#3b0764' },  // light violet
-  { bg: '#ede9fe', color: '#4c1d95' },  // medium violet
-  { bg: '#e8e0ff', color: '#5b21b6' },  // deeper violet
-];
-
-// ── Chapter marks (approximate CBSE 2024-25 weightage) ──
+// ── Chapter marks (CBSE 2025-26 CS syllabus) ──
 const chapterMarks = {
-  1: 3, 2: 3, 3: 5, 4: 5, 5: 8, 6: 8, 7: 8, 8: 5, 9: 5, 10: 5, 11: 5, 12: 5, 13: 8
+  1: 8, 2: 16, 3: 16, 4: 0, 5: 0, 6: 0, 7: 0, 8: 5, 9: 15, 10: 5, 11: 5, 12: 0, 13: 0
 };
 
+// Banner colour cycle (green palette for CS)
+const bannerStyles = [
+  { bg: '#f0fdf4', color: '#14532d' },
+  { bg: '#ecfdf5', color: '#065f46' },
+  { bg: '#e6fff0', color: '#166534' },
+];
+
 // ── Build must-read section ──
-// Top 5 key points per chapter or from summary
 function buildMustRead(ch) {
   const keyPts = getAllKeyPoints(ch);
   const summary = ch.summary || [];
-  // Use key points first, supplement with summary
   const pool = [...keyPts];
   summary.forEach(s => { if (!pool.includes(s)) pool.push(s); });
   const top5 = pool.slice(0, 5);
   if (top5.length === 0) return '';
-
   let html = `  <div class="mustread">
     <h4>🎯 Must-Read — Key concepts for this chapter</h4>
     <ol>\n`;
-  top5.forEach(p => {
-    html += `      <li>${mathFmt(p)}</li>\n`;
-  });
+  top5.forEach(p => { html += `      <li>${fmt(p)}</li>\n`; });
   html += `    </ol>
   </div>\n`;
   return html;
@@ -181,65 +129,43 @@ function buildMustRead(ch) {
 // ── Build summary table ──
 function buildSummaryTable(ch) {
   const defs = getAllDefinitions(ch);
-  const keyPts = getAllKeyPoints(ch);
   const summary = ch.summary || [];
-
-  // Build rows from definitions first, then summary items
   const rows = [];
-  defs.forEach(d => {
-    rows.push({
-      concept: d.term,
-      fact: d.definition,
-      example: ''
-    });
-  });
-
-  // Add summary items not already covered
+  defs.forEach(d => rows.push({ concept: d.term, fact: d.definition }));
   summary.forEach(s => {
-    // Extract concept from beginning if possible
     const m = s.match(/^(.+?) is (.+)/);
-    if (m) {
-      rows.push({ concept: m[1], fact: m[2], example: '' });
-    } else {
-      rows.push({ concept: '', fact: s, example: '' });
-    }
+    if (m) rows.push({ concept: m[1], fact: m[2] });
+    else rows.push({ concept: '', fact: s });
   });
-
   if (rows.length === 0) return '';
-
-  // Limit to ~15 rows for readability
   const displayRows = rows.slice(0, 15);
-
   let html = `  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
   <table class="sum-table">
-    <thead><tr style="background:#7c3aed"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
     <tbody>\n`;
   displayRows.forEach(r => {
     const concept = r.concept ? `<strong>${esc(r.concept)}</strong>` : '';
-    html += `      <tr><td>${concept}</td><td>${mathFmt(r.fact)}</td></tr>\n`;
+    html += `      <tr><td>${concept}</td><td>${fmt(r.fact)}</td></tr>\n`;
   });
   html += `    </tbody>
   </table>\n`;
   return html;
 }
 
-// ── Build formulas block ──
+// ── Build formulas block (syntax/commands for CS) ──
 function buildFormulasBlock(ch) {
   const formulas = getAllFormulas(ch);
   if (formulas.length === 0) return '';
-
-  // Limit display
   const display = formulas.slice(0, 20);
-
   let html = `    <div class="content-block">
-      <div class="block-head" style="background:#f5f3ff;color:#6d28d9">📐 Key Formulas</div>
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
       <div class="block-body">
         <ul class="formula-list">\n`;
   display.forEach(f => {
     html += `          <li>\n`;
     if (f.name) html += `            <span class="fl-name">${esc(f.name)}</span>\n`;
-    if (f.formula) html += `            <span class="fl-eq">$${f.formula}$</span>\n`;
-    if (f.note) html += `            <span class="fl-note">${mathFmt(f.note)}</span>\n`;
+    if (f.formula) html += `            <code class="fl-eq">${esc(f.formula)}</code>\n`;
+    if (f.note) html += `            <span class="fl-note">${fmt(f.note)}</span>\n`;
     html += `          </li>\n`;
   });
   html += `        </ul>
@@ -248,19 +174,18 @@ function buildFormulasBlock(ch) {
   return html;
 }
 
-// ── Build theorems block ──
+// ── Build theorems/algorithms block ──
 function buildTheoremsBlock(ch) {
   const thms = getAllTheorems(ch);
   if (thms.length === 0) return '';
-
   let html = `    <div class="content-block">
-      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Theorems</div>
+      <div class="block-head" style="background:#fffbeb;color:#92400e">📜 Important Algorithms & Concepts</div>
       <div class="block-body">
         <ul class="tip-list">\n`;
   thms.forEach(t => {
     html += `          <li><span class="tip-icon">📌</span><div>`;
     if (t.name) html += `<strong>${esc(t.name)}:</strong> `;
-    html += `${mathFmt(t.statement)}</div></li>\n`;
+    html += `${fmt(t.statement)}</div></li>\n`;
   });
   html += `        </ul>
       </div>
@@ -268,42 +193,33 @@ function buildTheoremsBlock(ch) {
   return html;
 }
 
-// ── Build tips box from key points ──
+// ── Build tips box ──
 function buildTipsBox(ch) {
   const keyPts = getAllKeyPoints(ch);
-  // Use items beyond the first 5 (those go in must-read)
   const tips = keyPts.slice(5, 12);
   if (tips.length === 0) return '';
-
   let html = `  <div class="trick-box">
     <h4>💡 Quick Tips & Memory Aids</h4>
     <ul style="margin-top:.4rem;margin-left:1rem">\n`;
-  tips.forEach(t => {
-    html += `      <li>${mathFmt(t)}</li>\n`;
-  });
+  tips.forEach(t => { html += `      <li>${fmt(t)}</li>\n`; });
   html += `    </ul>
   </div>\n`;
   return html;
 }
 
-// ── Build exercise stats box ──
+// ── Build exercise stats ──
 function buildExerciseInfo(ch) {
   const exs = ch.exercises || [];
   if (exs.length === 0) return '';
-
   const totalQ = getQuestionCount(ch);
-  const mcqCount = exs.reduce((a, e) =>
-    a + e.questions.filter(q => q.type === 'mcq').length, 0);
-  const longCount = exs.reduce((a, e) =>
-    a + e.questions.filter(q => q.type === 'long').length, 0);
-  const shortCount = exs.reduce((a, e) =>
-    a + e.questions.filter(q => q.type === 'short').length, 0);
-
-  let html = `  <div class="mistake-box" style="border-left-color:#7c3aed">
+  const mcqCount = exs.reduce((a, e) => a + e.questions.filter(q => q.type === 'mcq').length, 0);
+  const longCount = exs.reduce((a, e) => a + e.questions.filter(q => q.type === 'long').length, 0);
+  const shortCount = exs.reduce((a, e) => a + e.questions.filter(q => q.type === 'short').length, 0);
+  let html = `  <div class="mistake-box" style="border-left-color:#059669">
     <h4>📝 Exercise Overview</h4>
     <ul>
       <li><strong>${totalQ} total questions</strong> across ${exs.length} exercise${exs.length > 1 ? 's' : ''}</li>\n`;
-  if (longCount > 0) html += `      <li>${longCount} long-answer questions (proofs, show-that, derivations)</li>\n`;
+  if (longCount > 0) html += `      <li>${longCount} long-answer / programming questions</li>\n`;
   if (shortCount > 0) html += `      <li>${shortCount} short-answer questions</li>\n`;
   if (mcqCount > 0) html += `      <li>${mcqCount} multiple-choice questions</li>\n`;
   html += `    </ul>
@@ -316,7 +232,8 @@ function buildChapter(ch, index) {
   const id = slug(ch.title);
   const isActive = index === 0 ? ' active' : '';
   const style = bannerStyles[index % bannerStyles.length];
-  const marks = chapterMarks[ch.chapter] || 5;
+  const marks = chapterMarks[ch.chapter] || 0;
+  const marksLabel = marks > 0 ? `${marks}<span>marks</span>` : '<span style="font-size:.6rem">Supplementary</span>';
 
   let html = `<!-- ${'═'.repeat(30)} ${ch.title.toUpperCase()} ${'═'.repeat(30)} -->
 <div class="ch-section${isActive}" id="${id}">
@@ -327,7 +244,7 @@ function buildChapter(ch, index) {
       <div class="ch-title">${esc(ch.title)}</div>
       <div class="ch-sub">${esc(getSubtopics(ch))}</div>
     </div>
-    <div class="ch-marks-badge" style="color:#6d28d9">${marks}<span>marks</span></div>
+    <div class="ch-marks-badge" style="color:#059669">${marksLabel}</div>
   </div>
 
 `;
@@ -337,7 +254,6 @@ function buildChapter(ch, index) {
   html += buildSummaryTable(ch);
   html += '\n';
 
-  // Block grid: formulas + theorems side by side
   const formulasBlock = buildFormulasBlock(ch);
   const theoremsBlock = buildTheoremsBlock(ch);
   if (formulasBlock || theoremsBlock) {
@@ -372,7 +288,6 @@ function buildTabBar() {
 }
 
 // ── Assemble full page ──
-const allChapterNames = chapters.map(c => c.title).join(', ');
 const totalQuestions = chapters.reduce((a, c) => a + getQuestionCount(c), 0);
 
 const html = `<!DOCTYPE html>
@@ -381,38 +296,31 @@ const html = `<!DOCTYPE html>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.body, {
-    delimiters: [
-      {left: '$$', right: '$$', display: true},
-      {left: '$', right: '$', display: false}
-    ]
-  });"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/chapter.css">
 <style>:root{
-  --subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;
-  --c1:#7c3aed;--c2:#a855f7;--c3:#6d28d9;
-}</style>
+  --subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;
+  --c1:#059669;--c2:#10b981;--c3:#047857;
+}
+code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;background:#f0fdf4;padding:.1rem .35rem;border-radius:4px;border:1px solid #d1fae5;color:#065f46}
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Chapter notes for Mathematics — all 13 chapters covering Relations, Calculus, Algebra, Vectors, Probability for CBSE Class 12 board exam.">
-<meta name="keywords" content="maths class 12, CBSE XII mathematics, calculus integration derivatives probability">
+<meta name="description" content="Chapter notes for Computer Science — all 13 chapters covering Python, Data Structures, SQL, Networks for CBSE Class 12 board exam.">
+<meta name="keywords" content="computer science class 12, CBSE XII CS, Python file handling stack SQL networks">
 <meta name="author" content="Dinesh Varadharajan">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Mathematics Chapter Notes | CBSE Class 12">
-<meta property="og:description" content="Chapter notes for Mathematics — 13 chapters with formulas, theorems, tips and exercise overviews for CBSE Class 12.">
+<meta property="og:title" content="Computer Science Chapter Notes | CBSE Class 12">
+<meta property="og:description" content="Chapter notes for Computer Science — 13 chapters with syntax, algorithms, tips and exercises for CBSE Class 12.">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://ncert.myailab.space/maths/chapters.html">
-<title>Mathematics Chapter Notes | CBSE Class 12</title>
+<link rel="canonical" href="https://ncert.myailab.space/cs/chapters.html">
+<title>Computer Science Chapter Notes | CBSE Class 12</title>
 </head>
 <body>
 <div class="container">
 <a href="../index.html" class="back-link">← Back to Hub</a>
 
-<h1>Mathematics Chapters</h1>
-<p class="subtitle">Chapter summaries, key formulas, important theorems, exam tips and exercise overviews for all 13 chapters — ${totalQuestions} NCERT questions covered.</p>
+<h1>Computer Science Chapters</h1>
+<p class="subtitle">Chapter summaries, key syntax, important algorithms, exam tips and exercise overviews for all 13 chapters — ${totalQuestions} NCERT questions covered.</p>
 
 ${buildTabBar()}
 ${chapters.map((ch, i) => buildChapter(ch, i)).join('')}

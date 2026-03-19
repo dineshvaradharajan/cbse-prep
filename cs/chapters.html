@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/chapter.css">
+<style>:root{
+  --subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;
+  --c1:#059669;--c2:#10b981;--c3:#047857;
+}
+code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;background:#f0fdf4;padding:.1rem .35rem;border-radius:4px;border:1px solid #d1fae5;color:#065f46}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapter notes for Computer Science — all 13 chapters covering Python, Data Structures, SQL, Networks for CBSE Class 12 board exam.">
+<meta name="keywords" content="computer science class 12, CBSE XII CS, Python file handling stack SQL networks">
+<meta name="author" content="Dinesh Varadharajan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Computer Science Chapter Notes | CBSE Class 12">
+<meta property="og:description" content="Chapter notes for Computer Science — 13 chapters with syntax, algorithms, tips and exercises for CBSE Class 12.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ncert.myailab.space/cs/chapters.html">
+<title>Computer Science Chapter Notes | CBSE Class 12</title>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← Back to Hub</a>
+
+<h1>Computer Science Chapters</h1>
+<p class="subtitle">Chapter summaries, key syntax, important algorithms, exam tips and exercise overviews for all 13 chapters — 129 NCERT questions covered.</p>
+
+<div class="chapter-bar">
+  <div class="chapter-tabs" id="chapterTabs">
+    <button class="tab active" data-tab="exception-handling-in-python" onclick="showCh('exception-handling-in-python',this)">1. Exception Handling in Python</button>
+    <button class="tab" data-tab="file-handling-in-python" onclick="showCh('file-handling-in-python',this)">2. File Handling in Python</button>
+    <button class="tab" data-tab="stack" onclick="showCh('stack',this)">3. Stack</button>
+    <button class="tab" data-tab="queue" onclick="showCh('queue',this)">4. Queue</button>
+    <button class="tab" data-tab="sorting" onclick="showCh('sorting',this)">5. Sorting</button>
+    <button class="tab" data-tab="searching" onclick="showCh('searching',this)">6. Searching</button>
+    <button class="tab" data-tab="understanding-data" onclick="showCh('understanding-data',this)">7. Understanding Data</button>
+    <button class="tab" data-tab="database-concepts" onclick="showCh('database-concepts',this)">8. Database Concepts</button>
+    <button class="tab" data-tab="structured-query-language-sql" onclick="showCh('structured-query-language-sql',this)">9. Structured Query Language (SQL)</button>
+    <button class="tab" data-tab="computer-networks" onclick="showCh('computer-networks',this)">10. Computer Networks</button>
+    <button class="tab" data-tab="data-communication" onclick="showCh('data-communication',this)">11. Data Communication</button>
+    <button class="tab" data-tab="security-aspects" onclick="showCh('security-aspects',this)">12. Security Aspects</button>
+    <button class="tab" data-tab="project-based-learning" onclick="showCh('project-based-learning',this)">13. Project Based Learning</button>
+  </div>
+  <button class="more-btn" id="moreBtn" onclick="toggleMoreDropdown()">More ▾</button>
+  <div class="more-dropdown" id="moreDropdown"></div>
+</div>
+
+
+<!-- ══════════════════════════════ EXCEPTION HANDLING IN PYTHON ══════════════════════════════ -->
+<div class="ch-section active" id="exception-handling-in-python">
+
+  <div class="ch-banner" style="background:#f0fdf4;color:#14532d">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 1</div>
+      <div class="ch-title">Exception Handling in Python</div>
+      <div class="ch-sub">Syntax Errors · Exceptions · Built-in Exceptions · Raising Exceptions · Handling Exceptions · Finally Clause</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669">8<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>A program can have two types of errors — syntax errors and exceptions (runtime errors)</li>
+      <li>Syntax errors are detected by the interpreter before the program runs</li>
+      <li>Exceptions occur during the execution of a program</li>
+      <li>Python provides a robust exception handling mechanism using try-except blocks</li>
+      <li>Exception handling allows programs to handle errors gracefully without crashing</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Error</strong></td><td>An error is a mistake or bug in a program that causes it to behave unexpectedly or terminate abnormally. Errors can be broadly categorized as syntax errors and exceptions (logical/runtime errors).</td></tr>
+      <tr><td><strong>Exception</strong></td><td>An exception is an error that occurs during the execution of a program, disrupting the normal flow of instructions. Unlike syntax errors, exceptions happen at run-time.</td></tr>
+      <tr><td><strong>Syntax Error</strong></td><td>A syntax error occurs when the Python parser encounters a statement that does not conform to the rules (syntax) of the Python language. The program will not execute until all syntax errors are corrected.</td></tr>
+      <tr><td><strong>Traceback</strong></td><td>A traceback is a report that Python generates when an exception occurs. It shows the sequence of function calls that led to the error, along with the file name, line number, and the type of exception.</td></tr>
+      <tr><td><strong>SyntaxError</strong></td><td>Raised when the Python parser encounters a syntax error in the code. Example: print('Hello' — missing closing parenthesis.</td></tr>
+      <tr><td><strong>ValueError</strong></td><td>Raised when a built-in operation or function receives an argument that has the right type but an inappropriate value. Example: int('abc') raises ValueError.</td></tr>
+      <tr><td><strong>IOError</strong></td><td>Raised when an I/O operation (such as open(), read(), write()) fails for an I/O related reason. Example: trying to open a file that does not exist.</td></tr>
+      <tr><td><strong>KeyboardInterrupt</strong></td><td>Raised when the user presses the interrupt key (usually Ctrl+C or Delete). This can be used to gracefully exit an infinite loop or long-running process.</td></tr>
+      <tr><td><strong>ImportError</strong></td><td>Raised when an import statement fails to find the specified module, or when a from...import fails to find the specified name in the module.</td></tr>
+      <tr><td><strong>EOFError</strong></td><td>Raised when the input() function hits an end-of-file condition (EOF) without reading any data.</td></tr>
+      <tr><td><strong>ZeroDivisionError</strong></td><td>Raised when the second operand of a division or modulo operation is zero. Example: 5/0 or 10%0.</td></tr>
+      <tr><td><strong>IndexError</strong></td><td>Raised when a sequence (list, tuple, string) index is out of range. Example: accessing list[5] when the list has only 3 elements.</td></tr>
+      <tr><td><strong>NameError</strong></td><td>Raised when a local or global name (variable, function, etc.) is not found. Example: using a variable that has not been defined.</td></tr>
+      <tr><td><strong>IndentationError</strong></td><td>Raised when there is incorrect indentation. It is a subclass of SyntaxError. Example: inconsistent use of tabs and spaces in indentation.</td></tr>
+      <tr><td><strong>TypeError</strong></td><td>Raised when an operation or function is applied to an object of inappropriate type. Example: '2' + 2 raises TypeError because a string and integer cannot be added.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">raise syntax</span>
+            <code class="fl-eq">raise ExceptionType('error message')</code>
+            <span class="fl-note">ExceptionType can be any built-in or user-defined exception class</span>
+          </li>
+          <li>
+            <span class="fl-name">assert syntax</span>
+            <code class="fl-eq">assert condition, 'error message'</code>
+            <span class="fl-note">If condition is False, AssertionError is raised with the optional message</span>
+          </li>
+          <li>
+            <span class="fl-name">try-except basic syntax</span>
+            <code class="fl-eq">try:
+    # statements that may raise exception
+except ExceptionType:
+    # handler code</code>
+            <span class="fl-note">The except block executes only if the specified exception occurs in the try block</span>
+          </li>
+          <li>
+            <span class="fl-name">Multiple except clauses</span>
+            <code class="fl-eq">try:
+    # statements
+except ValueError:
+    # handle ValueError
+except ZeroDivisionError:
+    # handle ZeroDivisionError</code>
+            <span class="fl-note">Each except clause handles a different type of exception</span>
+          </li>
+          <li>
+            <span class="fl-name">try-except-else syntax</span>
+            <code class="fl-eq">try:
+    # statements
+except ExceptionType:
+    # handle exception
+else:
+    # runs only if no exception occurred</code>
+            <span class="fl-note">The else block is optional and runs when try succeeds without any exception</span>
+          </li>
+          <li>
+            <span class="fl-name">try-except-finally syntax</span>
+            <code class="fl-eq">try:
+    # statements
+except ExceptionType:
+    # handle exception
+finally:
+    # always executes (cleanup code)</code>
+            <span class="fl-note">The finally block is guaranteed to execute in all circumstances</span>
+          </li>
+          <li>
+            <span class="fl-name">Complete try block syntax</span>
+            <code class="fl-eq">try:
+    # risky code
+except ExceptionType:
+    # handle error
+else:
+    # no exception occurred
+finally:
+    # cleanup — always runs</code>
+            <span class="fl-note">This is the most complete form of exception handling in Python</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Syntax errors are also called parsing errors</li>
+      <li>Python displays the file name, line number, and a caret (^) pointing to the earliest point where the error was detected</li>
+      <li>Common causes: missing colon after if/else/while/for/def/class, unmatched parentheses or quotes, incorrect indentation, misspelled keywords</li>
+      <li>Syntax errors prevent the program from running at all</li>
+      <li>Even if a statement is syntactically correct, it may cause an error during execution — such errors are called exceptions</li>
+      <li>When an exception occurs and is not handled, the program terminates and Python displays a traceback</li>
+      <li>The traceback includes the type of exception and a descriptive message</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>9 total questions</strong> across 1 exercise</li>
+      <li>5 long-answer / programming questions</li>
+      <li>4 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ FILE HANDLING IN PYTHON ══════════════════════════════ -->
+<div class="ch-section" id="file-handling-in-python">
+
+  <div class="ch-banner" style="background:#ecfdf5;color:#065f46">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 2</div>
+      <div class="ch-title">File Handling in Python</div>
+      <div class="ch-sub">Types of Files · Opening and Closing a Text File · Writing to a Text File · Reading from a Text File · Setting Offsets in a File · Creating and Traversing a Text File · The Pickle Module</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669">16<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Data stored in variables (RAM) is temporary and lost when the program terminates</li>
+      <li>Files provide a way to store data permanently on secondary storage</li>
+      <li>Python treats files as a sequence of lines (text files) or bytes (binary files)</li>
+      <li>A file object (file handle) is used to interact with the file on disk</li>
+      <li>Text files store data as characters and are human-readable</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>File</strong></td><td>A file is a named location on a secondary storage medium (disk) used to store data permanently. It is a sequence of bytes stored on the disk.</td></tr>
+      <tr><td><strong>File Handle</strong></td><td>A file handle (or file object) is a reference to a file on disk. It is created by the open() function and is used to perform read, write, and other operations on the file.</td></tr>
+      <tr><td><strong>Text File</strong></td><td>A text file stores data in the form of characters (strings). Each line is terminated by a special character called EOL (End of Line), which is the newline character ('\n') in Python. Text files are human-readable.</td></tr>
+      <tr><td><strong>Binary File</strong></td><td>A binary file stores data in the same format as it is stored in memory (as bytes). Binary files are not human-readable and are used for storing images, audio, video, and serialized objects.</td></tr>
+      <tr><td><strong>EOL (End of Line)</strong></td><td>EOL is a special character that marks the end of a line in a text file. In Python, the default EOL character is '\n' (newline). On Windows, it is '\r\n'.</td></tr>
+      <tr><td><strong>open() Function</strong></td><td>The open() function is used to open a file and returns a file object. Syntax: file_object = open(filename, mode). The filename is a string representing the path to the file, and mode specifies how the file should be opened.</td></tr>
+      <tr><td><strong>File Mode 'r'</strong></td><td>Opens the file for reading only. The file pointer is placed at the beginning. This is the default mode. Raises FileNotFoundError if the file does not exist.</td></tr>
+      <tr><td><strong>File Mode 'w'</strong></td><td>Opens the file for writing only. If the file exists, its contents are overwritten (truncated). If the file does not exist, a new file is created.</td></tr>
+      <tr><td><strong>File Mode 'a'</strong></td><td>Opens the file for appending. Data is written at the end of the file. The file pointer is placed at the end. If the file does not exist, a new file is created.</td></tr>
+      <tr><td><strong>File Mode 'r+'</strong></td><td>Opens the file for both reading and writing. The file pointer is placed at the beginning. Raises FileNotFoundError if the file does not exist.</td></tr>
+      <tr><td><strong>File Mode 'w+'</strong></td><td>Opens the file for both writing and reading. If the file exists, its contents are overwritten. If the file does not exist, a new file is created.</td></tr>
+      <tr><td><strong>File Mode 'a+'</strong></td><td>Opens the file for both appending and reading. The file pointer is placed at the end. If the file does not exist, a new file is created.</td></tr>
+      <tr><td><strong>with Statement</strong></td><td>The with statement is used to open a file and ensures that the file is automatically closed when the block inside the with statement is exited, even if an exception occurs. Syntax: with open('file.txt', 'r') as f:</td></tr>
+      <tr><td><strong>write() Method</strong></td><td>The write() method writes a string to the file and returns the number of characters written. It does not add a newline character at the end. Syntax: file_object.write(string)</td></tr>
+      <tr><td><strong>writelines() Method</strong></td><td>The writelines() method writes a list (or any iterable) of strings to the file. It does not add newline characters between the strings. Syntax: file_object.writelines(list_of_strings)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">open() syntax</span>
+            <code class="fl-eq">file_object = open(filename, mode)</code>
+            <span class="fl-note">Default mode is 'r'. Returns a file object (file handle).</span>
+          </li>
+          <li>
+            <span class="fl-name">close() syntax</span>
+            <code class="fl-eq">file_object.close()</code>
+            <span class="fl-note">Flushes any unwritten data and closes the file. Good practice to always close files.</span>
+          </li>
+          <li>
+            <span class="fl-name">with statement syntax</span>
+            <code class="fl-eq">with open('filename', 'mode') as file_object:
+    # file operations</code>
+            <span class="fl-note">Automatically closes the file when the with block is exited</span>
+          </li>
+          <li>
+            <span class="fl-name">write() syntax</span>
+            <code class="fl-eq">file_object.write(string)</code>
+            <span class="fl-note">Returns the number of characters written. Does not add newline automatically.</span>
+          </li>
+          <li>
+            <span class="fl-name">writelines() syntax</span>
+            <code class="fl-eq">file_object.writelines(list_of_strings)</code>
+            <span class="fl-note">Writes each string from the list. No newline added between strings.</span>
+          </li>
+          <li>
+            <span class="fl-name">read() syntax</span>
+            <code class="fl-eq">content = file_object.read([size])</code>
+            <span class="fl-note">Without argument, reads the entire file. With size, reads at most that many characters.</span>
+          </li>
+          <li>
+            <span class="fl-name">readline() syntax</span>
+            <code class="fl-eq">line = file_object.readline()</code>
+            <span class="fl-note">Reads one line including newline. Returns empty string '' at EOF.</span>
+          </li>
+          <li>
+            <span class="fl-name">readlines() syntax</span>
+            <code class="fl-eq">lines = file_object.readlines()</code>
+            <span class="fl-note">Returns a list of all lines. Each line includes the trailing newline character.</span>
+          </li>
+          <li>
+            <span class="fl-name">tell() syntax</span>
+            <code class="fl-eq">position = file_object.tell()</code>
+            <span class="fl-note">Returns an integer representing the current position of the file pointer in bytes</span>
+          </li>
+          <li>
+            <span class="fl-name">seek() syntax</span>
+            <code class="fl-eq">file_object.seek(offset, reference_point)</code>
+            <span class="fl-note">reference_point: 0 = beginning (default), 1 = current, 2 = end. For text files, only 0 is allowed as reference_point.</span>
+          </li>
+          <li>
+            <span class="fl-name">pickle.dump() syntax</span>
+            <code class="fl-eq">import pickle
+pickle.dump(object, file_object)</code>
+            <span class="fl-note">file_object must be opened in binary write mode ('wb' or 'ab')</span>
+          </li>
+          <li>
+            <span class="fl-name">pickle.load() syntax</span>
+            <code class="fl-eq">import pickle
+object = pickle.load(file_object)</code>
+            <span class="fl-note">file_object must be opened in binary read mode ('rb'). Raises EOFError when no more objects to read.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Binary files store data as bytes and are not human-readable</li>
+      <li>Each line in a text file ends with an EOL character (\n)</li>
+      <li>Binary files are used to store non-text data like images, audio, video, and pickled objects</li>
+      <li>Text files can be opened in any text editor; binary files require specific programs</li>
+      <li>The open() function returns a file object used for all file operations</li>
+      <li>Mode 'r' is default and raises an error if the file doesn't exist</li>
+      <li>Mode 'w' creates a new file or overwrites an existing file</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>10 total questions</strong> across 1 exercise</li>
+      <li>6 long-answer / programming questions</li>
+      <li>4 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ STACK ══════════════════════════════ -->
+<div class="ch-section" id="stack">
+
+  <div class="ch-banner" style="background:#e6fff0;color:#166534">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 3</div>
+      <div class="ch-title">Stack</div>
+      <div class="ch-sub">Stack · Operations on Stack · Implementation of Stack in Python · Notations for Arithmetic Expressions · Conversion from Infix to Postfix Notation · Evaluation of Postfix Expression</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669">16<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Data structures help in organizing data for efficient access and modification</li>
+      <li>Linear data structures have elements in a sequential arrangement</li>
+      <li>Stacks and queues are special types of linear data structures with restricted operations</li>
+      <li>The choice of data structure depends on the nature of operations to be performed</li>
+      <li>Stack follows LIFO — the last element inserted is the first to be removed</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Data Structure</strong></td><td>A data structure is a particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently. It defines the relationship between the data and the operations that can be performed on it.</td></tr>
+      <tr><td><strong>Linear Data Structure</strong></td><td>A linear data structure is one in which data elements are arranged in a sequential order, where each element has a predecessor and a successor (except the first and last elements). Examples: arrays, stacks, queues, linked lists.</td></tr>
+      <tr><td><strong>Stack</strong></td><td>A stack is a linear data structure that follows the LIFO (Last In First Out) principle. Elements can only be added (pushed) or removed (popped) from one end called the TOP of the stack.</td></tr>
+      <tr><td><strong>LIFO</strong></td><td>LIFO stands for Last In First Out. It means the last element added to the stack is the first element to be removed. The most recently pushed element is always at the top and is the first to be popped.</td></tr>
+      <tr><td><strong>TOP</strong></td><td>TOP is a pointer/variable that keeps track of the topmost element of the stack. It indicates the position where the next element will be added or from where the next element will be removed.</td></tr>
+      <tr><td><strong>Overflow</strong></td><td>Stack overflow occurs when an attempt is made to push an element onto a stack that is already full (has reached its maximum capacity).</td></tr>
+      <tr><td><strong>Underflow</strong></td><td>Stack underflow occurs when an attempt is made to pop an element from an empty stack (no elements to remove).</td></tr>
+      <tr><td><strong>PUSH</strong></td><td>PUSH is the operation of adding (inserting) a new element to the top of the stack. After a push operation, the new element becomes the topmost element and TOP is incremented.</td></tr>
+      <tr><td><strong>POP</strong></td><td>POP is the operation of removing (deleting) the topmost element from the stack. The element at TOP is removed and returned, and TOP is decremented. POP on an empty stack causes underflow.</td></tr>
+      <tr><td><strong>Infix Notation</strong></td><td>In infix notation, the operator is placed between the two operands. Example: A + B, (A + B) * C. This is the most commonly used notation by humans but requires parentheses to override operator precedence.</td></tr>
+      <tr><td><strong>Prefix Notation (Polish Notation)</strong></td><td>In prefix notation, the operator is placed before its operands. Example: + A B, * + A B C. Named after Polish mathematician Jan Lukasiewicz. Does not require parentheses.</td></tr>
+      <tr><td><strong>Postfix Notation (Reverse Polish Notation)</strong></td><td>In postfix notation, the operator is placed after its operands. Example: A B +, A B + C *. Also called Reverse Polish Notation (RPN). Does not require parentheses and is easy for computers to evaluate using a stack.</td></tr>
+      <tr><td><strong>A stack</strong></td><td>a linear data structure that follows the LIFO (Last In First Out) principle.</td></tr>
+      <tr><td></td><td>Elements can only be inserted (PUSH) or removed (POP) from the TOP of the stack.</td></tr>
+      <tr><td></td><td>Stack overflow occurs when pushing to a full stack; underflow occurs when popping from an empty stack.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">PUSH algorithm</span>
+            <code class="fl-eq">Step 1: If stack is full, print 'Overflow' and return
+Step 2: Increment TOP by 1
+Step 3: Set stack[TOP] = element
+Step 4: Return</code>
+            <span class="fl-note">In Python using list, we use append() which handles resizing automatically</span>
+          </li>
+          <li>
+            <span class="fl-name">POP algorithm</span>
+            <code class="fl-eq">Step 1: If stack is empty, print 'Underflow' and return
+Step 2: Set element = stack[TOP]
+Step 3: Decrement TOP by 1
+Step 4: Return element</code>
+            <span class="fl-note">In Python using list, we use pop() which removes and returns the last element</span>
+          </li>
+          <li>
+            <span class="fl-name">Stack implementation using list</span>
+            <code class="fl-eq">stack = []  # empty stack
+stack.append(element)  # PUSH
+element = stack.pop()  # POP
+top = stack[-1]  # PEEK
+len(stack)  # SIZE
+len(stack) == 0  # isEmpty</code>
+            <span class="fl-note">Python lists grow dynamically, so no overflow check needed for list-based stacks</span>
+          </li>
+          <li>
+            <span class="fl-name">Operator precedence (highest to lowest)</span>
+            <code class="fl-eq">** (exponentiation) &gt; *, /, //, % &gt; +, -</code>
+            <span class="fl-note">** is right-associative; all others are left-associative</span>
+          </li>
+          <li>
+            <span class="fl-name">Infix to Postfix conversion examples</span>
+            <code class="fl-eq">A + B -&gt; A B +
+A + B * C -&gt; A B C * +
+(A + B) * C -&gt; A B + C *
+A + B * C - D -&gt; A B C * + D -
+(A + B) * (C - D) -&gt; A B + C D - *</code>
+            <span class="fl-note">Follow operator precedence and associativity rules during conversion</span>
+          </li>
+          <li>
+            <span class="fl-name">Infix to Postfix Algorithm</span>
+            <code class="fl-eq">1. Create an empty stack and output list
+2. Scan the infix expression left to right:
+   a. If operand, add to output
+   b. If '(', push onto stack
+   c. If ')', pop and add to output until '(' is found; discard '('
+   d. If operator, pop and add to output while stack top has &gt;= precedence (for left-assoc) or &gt; precedence (for right-assoc); then push current operator
+3. Pop all remaining operators from stack to output</code>
+            <span class="fl-note">Handle operator associativity: left-to-right for +, -, *, /; right-to-left for **</span>
+          </li>
+          <li>
+            <span class="fl-name">Postfix Evaluation Algorithm</span>
+            <code class="fl-eq">1. Create an empty stack
+2. Scan the postfix expression left to right:
+   a. If operand, push onto stack
+   b. If operator, pop two operands (op2 = pop, op1 = pop), compute op1 operator op2, push result
+3. The final element in the stack is the result</code>
+            <span class="fl-note">op1 is the second popped element, op2 is the first popped. Order: op1 operator op2.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>All insertions and deletions happen at the TOP of the stack</li>
+      <li>Stack has two main operations: PUSH (insert) and POP (delete)</li>
+      <li>Stack overflow occurs when pushing to a full stack</li>
+      <li>Stack underflow occurs when popping from an empty stack</li>
+      <li>Applications: expression evaluation, string reversal, undo operations, browser back button, parenthesis matching, function call management</li>
+      <li>PUSH adds an element to the top; POP removes the top element</li>
+      <li>Before PUSH, check for overflow (stack full)</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>7 total questions</strong> across 1 exercise</li>
+      <li>4 long-answer / programming questions</li>
+      <li>3 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ QUEUE ══════════════════════════════ -->
+<div class="ch-section" id="queue">
+
+  <div class="ch-banner" style="background:#f0fdf4;color:#14532d">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 4</div>
+      <div class="ch-title">Queue</div>
+      <div class="ch-sub">Operations on Queue · Implementation of Queue Using Python · Implementation of Deque Using Python</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669"><span style="font-size:.6rem">Supplementary</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Queue follows FIFO — the first element inserted is the first to be removed</li>
+      <li>Insertion happens at the rear end; deletion happens at the front end</li>
+      <li>A queue has two pointers: front and rear</li>
+      <li>Queue is different from a stack (LIFO) — stack uses one end, queue uses two ends</li>
+      <li>Applications: job scheduling, print queue, BFS traversal, handling requests in web servers</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Queue</strong></td><td>A queue is a linear data structure that follows the FIFO (First In First Out) principle. Elements are inserted at the rear end and removed from the front end.</td></tr>
+      <tr><td><strong>FIFO</strong></td><td>FIFO stands for First In First Out. It means the element that is inserted first is the first one to be removed. The oldest element in the queue is always at the front.</td></tr>
+      <tr><td><strong>Front</strong></td><td>Front is the end of the queue from which elements are removed (dequeued). It points to the first (oldest) element in the queue.</td></tr>
+      <tr><td><strong>Rear</strong></td><td>Rear is the end of the queue at which new elements are added (enqueued). It points to the last (newest) element in the queue.</td></tr>
+      <tr><td><strong>Enqueue</strong></td><td>Enqueue is the operation of adding (inserting) a new element at the rear end of the queue. After enqueue, the new element becomes the last element and the rear pointer is updated.</td></tr>
+      <tr><td><strong>Dequeue</strong></td><td>Dequeue is the operation of removing (deleting) an element from the front end of the queue. The element at the front is removed and returned, and the front pointer is updated.</td></tr>
+      <tr><td><strong>Peek</strong></td><td>Peek (or front) is the operation of viewing the front element of the queue without removing it. It returns the element that would be dequeued next.</td></tr>
+      <tr><td><strong>Deque (Double-Ended Queue)</strong></td><td>A deque (pronounced 'deck') is a linear data structure that allows insertion and deletion of elements from both the front and the rear end. It is a generalization of both stack and queue.</td></tr>
+      <tr><td><strong>Input-Restricted Deque</strong></td><td>An input-restricted deque is a deque where insertion is allowed only at one end (rear), but deletion is allowed from both ends (front and rear).</td></tr>
+      <tr><td><strong>Output-Restricted Deque</strong></td><td>An output-restricted deque is a deque where deletion is allowed only at one end (front), but insertion is allowed at both ends (front and rear).</td></tr>
+      <tr><td><strong>A queue</strong></td><td>a linear data structure that follows the FIFO (First In First Out) principle.</td></tr>
+      <tr><td></td><td>Elements are added at the rear end (enqueue) and removed from the front end (dequeue).</td></tr>
+      <tr><td></td><td>Queue overflow occurs when inserting into a full queue; underflow occurs when removing from an empty queue.</td></tr>
+      <tr><td></td><td>In Python, a queue can be implemented using a list: append() for enqueue and pop(0) for dequeue.</td></tr>
+      <tr><td></td><td>A deque (double-ended queue) allows insertion and deletion from both the front and rear ends.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Enqueue algorithm</span>
+            <code class="fl-eq">Step 1: If queue is full, print 'Overflow' and return
+Step 2: Increment rear by 1
+Step 3: Set queue[rear] = element
+Step 4: If front is -1, set front = 0
+Step 5: Return</code>
+            <span class="fl-note">In Python using list, we use append() which adds to the end automatically</span>
+          </li>
+          <li>
+            <span class="fl-name">Dequeue algorithm</span>
+            <code class="fl-eq">Step 1: If queue is empty, print 'Underflow' and return
+Step 2: Set element = queue[front]
+Step 3: Increment front by 1
+Step 4: If front &gt; rear, reset front = rear = -1 (queue empty)
+Step 5: Return element</code>
+            <span class="fl-note">In Python using list, we use pop(0) which removes the first element</span>
+          </li>
+          <li>
+            <span class="fl-name">Queue implementation using list</span>
+            <code class="fl-eq">queue = []  # empty queue
+queue.append(element)  # Enqueue
+element = queue.pop(0)  # Dequeue
+front = queue[0]  # Peek
+len(queue)  # Size
+len(queue) == 0  # isEmpty</code>
+            <span class="fl-note">pop(0) is O(n) — for better performance, use collections.deque</span>
+          </li>
+          <li>
+            <span class="fl-name">Deque implementation using list</span>
+            <code class="fl-eq">deque = []  # empty deque
+deque.append(element)  # Add at rear
+deque.insert(0, element)  # Add at front
+element = deque.pop()  # Remove from rear
+element = deque.pop(0)  # Remove from front</code>
+            <span class="fl-note">insert(0, elem) and pop(0) are O(n). For O(1), use collections.deque with appendleft() and popleft()</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Enqueue adds an element at the rear; dequeue removes an element from the front</li>
+      <li>Before enqueue, check for overflow (queue full)</li>
+      <li>Before dequeue, check for underflow (queue empty)</li>
+      <li>Peek returns the front element without removing it</li>
+      <li>In Python, append() is used for enqueue and pop(0) is used for dequeue</li>
+      <li>Python list can be used to implement a queue</li>
+      <li>append() adds to the rear of the queue — enqueue operation</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>7 total questions</strong> across 1 exercise</li>
+      <li>3 long-answer / programming questions</li>
+      <li>4 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ SORTING ══════════════════════════════ -->
+<div class="ch-section" id="sorting">
+
+  <div class="ch-banner" style="background:#ecfdf5;color:#065f46">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 5</div>
+      <div class="ch-title">Sorting</div>
+      <div class="ch-sub">Bubble Sort · Selection Sort · Insertion Sort · Time Complexity of Algorithms</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669"><span style="font-size:.6rem">Supplementary</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Sorting arranges data in ascending or descending order</li>
+      <li>Sorting is essential for efficient searching (e.g., binary search requires sorted data)</li>
+      <li>Common sorting algorithms in CBSE syllabus: Bubble Sort, Selection Sort, Insertion Sort</li>
+      <li>All three algorithms studied are comparison-based sorts</li>
+      <li>Sorting can be done on numbers, strings, or any comparable data</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sorting</strong></td><td>Sorting is the process of arranging data elements in a specific order, either ascending (increasing) or descending (decreasing), based on some key value.</td></tr>
+      <tr><td><strong>In-place Sorting</strong></td><td>A sorting algorithm is said to be in-place if it requires only a constant amount O(1) of extra memory space, apart from the input array.</td></tr>
+      <tr><td><strong>Stable Sort</strong></td><td>A sorting algorithm is stable if two elements with equal keys appear in the same order in the sorted output as they appear in the input.</td></tr>
+      <tr><td><strong>Bubble Sort</strong></td><td>Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.</td></tr>
+      <tr><td><strong>Pass</strong></td><td>A pass is one complete traversal through the list during which adjacent elements are compared and swapped if necessary. In Bubble Sort, after each pass, the largest unsorted element moves to its correct position.</td></tr>
+      <tr><td><strong>Selection Sort</strong></td><td>Selection Sort is a sorting algorithm that repeatedly selects the smallest (or largest) element from the unsorted portion and places it at the beginning (or end) of the sorted portion. It divides the input list into a sorted and an unsorted region.</td></tr>
+      <tr><td><strong>Insertion Sort</strong></td><td>Insertion Sort is a sorting algorithm that builds a sorted array one element at a time by picking each element from the unsorted portion and inserting it into its correct position in the sorted portion, shifting elements as needed.</td></tr>
+      <tr><td><strong>Key Element</strong></td><td>The key element is the current element being picked from the unsorted portion to be inserted into its correct position in the sorted portion during Insertion Sort.</td></tr>
+      <tr><td><strong>Time Complexity</strong></td><td>Time complexity of an algorithm is a measure of the amount of time required by an algorithm to run as a function of the input size n. It provides an estimate of the number of elementary operations performed.</td></tr>
+      <tr><td><strong>Big-O Notation</strong></td><td>Big-O notation O(f(n)) describes the upper bound of the time complexity of an algorithm. It represents the worst-case scenario of how the running time grows relative to the input size n.</td></tr>
+      <tr><td><strong>Best Case Complexity</strong></td><td>The minimum number of operations an algorithm performs for an input of size n. For example, Bubble Sort best case is O(n) when the array is already sorted.</td></tr>
+      <tr><td><strong>Worst Case Complexity</strong></td><td>The maximum number of operations an algorithm performs for any input of size n. For example, Bubble Sort worst case is O(n^2) when the array is in reverse sorted order.</td></tr>
+      <tr><td><strong>Average Case Complexity</strong></td><td>The expected number of operations an algorithm performs over all possible inputs of size n. It gives a realistic estimate of algorithm performance.</td></tr>
+      <tr><td><strong>Sorting</strong></td><td>the process of arranging data elements in ascending or descending order.</td></tr>
+      <tr><td></td><td>Bubble Sort compares and swaps adjacent elements; largest element bubbles to the end in each pass.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Bubble Sort Time Complexity (Worst/Average)</span>
+            <code class="fl-eq">O(n^2)</code>
+            <span class="fl-note">Occurs when the array is sorted in reverse order. Total comparisons = n(n-1)/2.</span>
+          </li>
+          <li>
+            <span class="fl-name">Bubble Sort Time Complexity (Best Case)</span>
+            <code class="fl-eq">O(n)</code>
+            <span class="fl-note">Occurs when the array is already sorted (with optimized version using a flag). Only one pass with n-1 comparisons and no swaps.</span>
+          </li>
+          <li>
+            <span class="fl-name">Bubble Sort Space Complexity</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">In-place sorting algorithm; only requires a temporary variable for swapping.</span>
+          </li>
+          <li>
+            <span class="fl-name">Total Comparisons (Worst Case)</span>
+            <code class="fl-eq">(n-1) + (n-2) + ... + 1 = n(n-1)/2</code>
+            <span class="fl-note">In pass i, the number of comparisons is (n - i).</span>
+          </li>
+          <li>
+            <span class="fl-name">Selection Sort Time Complexity (All Cases)</span>
+            <code class="fl-eq">O(n^2)</code>
+            <span class="fl-note">Always performs n(n-1)/2 comparisons regardless of input order. Best, worst, and average cases are all O(n^2).</span>
+          </li>
+          <li>
+            <span class="fl-name">Selection Sort Space Complexity</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">In-place sorting algorithm.</span>
+          </li>
+          <li>
+            <span class="fl-name">Maximum Number of Swaps</span>
+            <code class="fl-eq">n - 1</code>
+            <span class="fl-note">At most one swap per pass, making it efficient when swapping is costly.</span>
+          </li>
+          <li>
+            <span class="fl-name">Insertion Sort Time Complexity (Worst Case)</span>
+            <code class="fl-eq">O(n^2)</code>
+            <span class="fl-note">Occurs when the array is sorted in reverse order. Total comparisons and shifts = n(n-1)/2.</span>
+          </li>
+          <li>
+            <span class="fl-name">Insertion Sort Time Complexity (Best Case)</span>
+            <code class="fl-eq">O(n)</code>
+            <span class="fl-note">Occurs when the array is already sorted. Only n-1 comparisons and no shifts needed.</span>
+          </li>
+          <li>
+            <span class="fl-name">Insertion Sort Time Complexity (Average Case)</span>
+            <code class="fl-eq">O(n^2)</code>
+            <span class="fl-note">On average, each insertion requires shifting half of the sorted portion.</span>
+          </li>
+          <li>
+            <span class="fl-name">Insertion Sort Space Complexity</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">In-place sorting algorithm; only needs a variable to hold the key.</span>
+          </li>
+          <li>
+            <span class="fl-name">Constant Time</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">Time does not depend on input size. Example: accessing an array element by index.</span>
+          </li>
+          <li>
+            <span class="fl-name">Logarithmic Time</span>
+            <code class="fl-eq">O(\log n)</code>
+            <span class="fl-note">Time grows logarithmically. Example: Binary Search.</span>
+          </li>
+          <li>
+            <span class="fl-name">Linear Time</span>
+            <code class="fl-eq">O(n)</code>
+            <span class="fl-note">Time grows linearly with input size. Example: Linear Search.</span>
+          </li>
+          <li>
+            <span class="fl-name">Quadratic Time</span>
+            <code class="fl-eq">O(n^2)</code>
+            <span class="fl-note">Time grows quadratically. Example: Bubble Sort, Selection Sort, Insertion Sort (worst case).</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Bubble Sort compares adjacent elements and swaps if out of order</li>
+      <li>After each pass, the largest unsorted element reaches its correct position</li>
+      <li>Maximum n-1 passes are needed for n elements</li>
+      <li>Optimization: if no swaps in a pass, list is already sorted — stop early</li>
+      <li>Worst case: O(n^2) comparisons and O(n^2) swaps</li>
+      <li>Best case (already sorted, with optimization): O(n) comparisons, 0 swaps</li>
+      <li>Bubble Sort is stable and in-place</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>10 total questions</strong> across 1 exercise</li>
+      <li>7 long-answer / programming questions</li>
+      <li>3 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ SEARCHING ══════════════════════════════ -->
+<div class="ch-section" id="searching">
+
+  <div class="ch-banner" style="background:#e6fff0;color:#166534">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 6</div>
+      <div class="ch-title">Searching</div>
+      <div class="ch-sub">Linear Search · Binary Search · Search by Hashing</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669"><span style="font-size:.6rem">Supplementary</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Searching is one of the most fundamental operations in computer science</li>
+      <li>The choice of search algorithm depends on whether data is sorted or unsorted</li>
+      <li>Linear Search works on both sorted and unsorted data</li>
+      <li>Binary Search requires data to be sorted</li>
+      <li>Efficiency is measured by the number of comparisons made</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Searching</strong></td><td>Searching is the process of locating a given element (called the search key) in a collection of data. If the element is found, the search is successful and typically returns the position; otherwise, it is unsuccessful.</td></tr>
+      <tr><td><strong>Search Key</strong></td><td>The search key is the specific value or element that is being looked for within a data collection during a search operation.</td></tr>
+      <tr><td><strong>Linear Search</strong></td><td>Linear Search (or Sequential Search) is a searching algorithm that checks each element of a list sequentially, starting from the first element, until the desired element is found or the end of the list is reached.</td></tr>
+      <tr><td><strong>Binary Search</strong></td><td>Binary Search is an efficient searching algorithm that works on sorted lists by repeatedly dividing the search interval in half. It compares the target value with the middle element and eliminates half of the remaining elements in each step.</td></tr>
+      <tr><td><strong>Divide and Conquer</strong></td><td>Divide and Conquer is an algorithmic paradigm that breaks a problem into smaller sub-problems, solves each sub-problem, and combines the results. Binary Search divides the search space in half at each step.</td></tr>
+      <tr><td><strong>Hashing</strong></td><td>Hashing is a technique used to uniquely identify a specific object from a group of similar objects. It uses a hash function to map data of arbitrary size to fixed-size values (hash codes) that serve as indices in a hash table.</td></tr>
+      <tr><td><strong>Hash Function</strong></td><td>A hash function is a function that takes a key as input and returns an index (hash value) in the hash table where the corresponding value can be stored or retrieved. A common hash function is h(key) = key % table_size.</td></tr>
+      <tr><td><strong>Hash Table</strong></td><td>A hash table is a data structure that stores key-value pairs. It uses a hash function to compute an index into an array of slots, from which the desired value can be found.</td></tr>
+      <tr><td><strong>Collision</strong></td><td>A collision occurs when two different keys produce the same hash value (index) through the hash function. Collisions must be resolved to store both values.</td></tr>
+      <tr><td><strong>Linear Probing</strong></td><td>Linear probing is a collision resolution technique in which, if a collision occurs at index i, the algorithm sequentially checks i+1, i+2, i+3, ... (wrapping around) until an empty slot is found.</td></tr>
+      <tr><td><strong>Chaining</strong></td><td>Chaining is a collision resolution technique where each slot in the hash table holds a linked list (or Python list) of all elements that hash to the same index.</td></tr>
+      <tr><td><strong>Searching</strong></td><td>the process of finding a specific element in a collection of data.</td></tr>
+      <tr><td><strong>Linear Search checks each element sequentially; time complexity</strong></td><td>O(n).</td></tr>
+      <tr><td><strong>Binary Search works on sorted data using divide and conquer; time complexity</strong></td><td>O(log n).</td></tr>
+      <tr><td><strong>Binary Search</strong></td><td>significantly faster than Linear Search for large sorted datasets.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Linear Search Time Complexity (Best Case)</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">Element is found at the first position. Only 1 comparison needed.</span>
+          </li>
+          <li>
+            <span class="fl-name">Linear Search Time Complexity (Worst Case)</span>
+            <code class="fl-eq">O(n)</code>
+            <span class="fl-note">Element is at the last position or not present. All n elements are compared.</span>
+          </li>
+          <li>
+            <span class="fl-name">Linear Search Time Complexity (Average Case)</span>
+            <code class="fl-eq">O(n)</code>
+            <span class="fl-note">On average, n/2 comparisons are needed. Still linear.</span>
+          </li>
+          <li>
+            <span class="fl-name">Linear Search Space Complexity</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">Only a few variables are used regardless of input size.</span>
+          </li>
+          <li>
+            <span class="fl-name">Binary Search Time Complexity (Best Case)</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">Element is found at the middle position in the first comparison.</span>
+          </li>
+          <li>
+            <span class="fl-name">Binary Search Time Complexity (Worst Case)</span>
+            <code class="fl-eq">O(\log_2 n)</code>
+            <span class="fl-note">Maximum number of comparisons is floor(log2(n)) + 1. The search space halves each time.</span>
+          </li>
+          <li>
+            <span class="fl-name">Binary Search Time Complexity (Average Case)</span>
+            <code class="fl-eq">O(\log_2 n)</code>
+            <span class="fl-note">On average, approximately log2(n) comparisons are needed.</span>
+          </li>
+          <li>
+            <span class="fl-name">Binary Search Space Complexity (Iterative)</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">Iterative version uses constant extra space.</span>
+          </li>
+          <li>
+            <span class="fl-name">Middle Element Index</span>
+            <code class="fl-eq">mid = (low + high) // 2</code>
+            <span class="fl-note">low is the start index and high is the end index of the current search range.</span>
+          </li>
+          <li>
+            <span class="fl-name">Common Hash Function (Division Method)</span>
+            <code class="fl-eq">h(key) = key \% table\_size</code>
+            <span class="fl-note">The modulo operation ensures the hash value falls within the valid index range [0, table_size - 1].</span>
+          </li>
+          <li>
+            <span class="fl-name">Hashing Time Complexity (Average Case)</span>
+            <code class="fl-eq">O(1)</code>
+            <span class="fl-note">Average-case search, insert, and delete are constant time with a good hash function.</span>
+          </li>
+          <li>
+            <span class="fl-name">Hashing Time Complexity (Worst Case)</span>
+            <code class="fl-eq">O(n)</code>
+            <span class="fl-note">Worst case occurs when all keys hash to the same index (all collisions).</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Linear Search examines each element one by one from start to end</li>
+      <li>Best case: 1 comparison (element at first position)</li>
+      <li>Worst case: n comparisons (element at last position or not found)</li>
+      <li>Average case: n/2 comparisons</li>
+      <li>Does not require sorted data</li>
+      <li>Simple to implement but inefficient for large datasets</li>
+      <li>Python implementation:
+def linear_search(a, key):
+    for i in range(len(a)):
+        if a[i] == key:
+            return i
+    return -1</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>10 total questions</strong> across 1 exercise</li>
+      <li>7 long-answer / programming questions</li>
+      <li>3 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ UNDERSTANDING DATA ══════════════════════════════ -->
+<div class="ch-section" id="understanding-data">
+
+  <div class="ch-banner" style="background:#f0fdf4;color:#14532d">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 7</div>
+      <div class="ch-title">Understanding Data</div>
+      <div class="ch-sub">Data Collection · Data Storage · Data Processing · Statistical Techniques for Data Processing</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669"><span style="font-size:.6rem">Supplementary</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Data is raw facts; information is processed data with meaning</li>
+      <li>Qualitative data describes qualities (categories); quantitative data deals with numbers</li>
+      <li>Discrete data: whole numbers (e.g., number of books). Continuous data: any value in a range (e.g., temperature)</li>
+      <li>Data → Processing → Information → Analysis → Knowledge → Wisdom</li>
+      <li>Data is the foundation of all computing and data science applications</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Data</strong></td><td>Data is a collection of raw, unprocessed facts and figures. It can be in the form of numbers, text, images, audio, or video. Data by itself has no meaning until it is processed and interpreted.</td></tr>
+      <tr><td><strong>Information</strong></td><td>Information is data that has been processed, organized, and structured in a meaningful way. It provides context and is useful for decision making.</td></tr>
+      <tr><td><strong>Qualitative Data</strong></td><td>Qualitative data (also called categorical data) describes qualities or characteristics. It is non-numerical and includes categories such as colors, names, labels, and opinions.</td></tr>
+      <tr><td><strong>Quantitative Data</strong></td><td>Quantitative data represents measurable quantities and is expressed as numbers. It can be discrete (countable, e.g., number of students) or continuous (measurable, e.g., height, weight).</td></tr>
+      <tr><td><strong>Primary Data</strong></td><td>Primary data is data collected directly by the researcher for a specific research purpose through surveys, experiments, interviews, or direct observation. It is original and first-hand.</td></tr>
+      <tr><td><strong>Secondary Data</strong></td><td>Secondary data is data that has already been collected by someone else for a different purpose and is available for reuse. Examples include government reports, published research, and databases.</td></tr>
+      <tr><td><strong>Survey</strong></td><td>A survey is a data collection method that involves asking a set of questions to a group of people to gather information about their opinions, behaviors, or characteristics.</td></tr>
+      <tr><td><strong>Sampling</strong></td><td>Sampling is the process of selecting a representative subset (sample) from a larger population to make inferences about the entire population.</td></tr>
+      <tr><td><strong>CSV File</strong></td><td>A CSV (Comma-Separated Values) file is a plain text file that stores tabular data where each line represents a row and values within a row are separated by commas.</td></tr>
+      <tr><td><strong>Structured Data</strong></td><td>Structured data is data that is organized in a predefined format, typically in rows and columns (tables), making it easy to search, sort, and analyze. Examples include relational databases and spreadsheets.</td></tr>
+      <tr><td><strong>Unstructured Data</strong></td><td>Unstructured data is data that does not have a predefined format or organization. Examples include text documents, images, audio files, and social media posts.</td></tr>
+      <tr><td><strong>Data Cleaning</strong></td><td>Data cleaning (or data cleansing) is the process of identifying and correcting (or removing) errors, inconsistencies, and inaccuracies in a dataset to improve its quality.</td></tr>
+      <tr><td><strong>Data Transformation</strong></td><td>Data transformation is the process of converting data from one format, structure, or value to another. Examples include converting units, encoding categorical variables, and normalizing values.</td></tr>
+      <tr><td><strong>Missing Value</strong></td><td>A missing value is a data point that is absent from the dataset. Missing values can result from data entry errors, equipment malfunction, or non-response in surveys.</td></tr>
+      <tr><td><strong>Imputation</strong></td><td>Imputation is the process of replacing missing data with substituted values, such as the mean, median, or mode of the available data.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Mean (Arithmetic Mean)</span>
+            <code class="fl-eq">\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n}</code>
+            <span class="fl-note">Sum of all values divided by the count of values.</span>
+          </li>
+          <li>
+            <span class="fl-name">Median (Odd n)</span>
+            <code class="fl-eq">Median = x_{(n+1)/2}</code>
+            <span class="fl-note">Middle value when n is odd and data is sorted.</span>
+          </li>
+          <li>
+            <span class="fl-name">Median (Even n)</span>
+            <code class="fl-eq">Median = \frac{x_{n/2} + x_{(n/2)+1}}{2}</code>
+            <span class="fl-note">Average of two middle values when n is even and data is sorted.</span>
+          </li>
+          <li>
+            <span class="fl-name">Range</span>
+            <code class="fl-eq">Range = x_{max} - x_{min}</code>
+            <span class="fl-note">Difference between the largest and smallest values.</span>
+          </li>
+          <li>
+            <span class="fl-name">Variance (Population)</span>
+            <code class="fl-eq">\sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}</code>
+            <span class="fl-note">Average of squared deviations from the mean. Uses n in the denominator for population variance.</span>
+          </li>
+          <li>
+            <span class="fl-name">Variance (Sample)</span>
+            <code class="fl-eq">s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}</code>
+            <span class="fl-note">Uses (n-1) in the denominator to provide an unbiased estimate.</span>
+          </li>
+          <li>
+            <span class="fl-name">Standard Deviation</span>
+            <code class="fl-eq">\sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}</code>
+            <span class="fl-note">Square root of variance. Expressed in the same units as the data.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Primary data is original and collected for a specific purpose</li>
+      <li>Secondary data is pre-existing and collected by others</li>
+      <li>Surveys and questionnaires are common primary data collection methods</li>
+      <li>Government databases and published reports are examples of secondary data</li>
+      <li>Sampling allows studying a population without examining every member</li>
+      <li>Data quality depends on the collection method, sample size, and design</li>
+      <li>CSV files are simple and widely used for storing tabular data</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>10 total questions</strong> across 1 exercise</li>
+      <li>4 long-answer / programming questions</li>
+      <li>6 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ DATABASE CONCEPTS ══════════════════════════════ -->
+<div class="ch-section" id="database-concepts">
+
+  <div class="ch-banner" style="background:#ecfdf5;color:#065f46">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 8</div>
+      <div class="ch-title">Database Concepts</div>
+      <div class="ch-sub">File System vs DBMS · Database Management System · Relational Data Model · Keys in a Relational Database</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>A database stores related data in an organized manner</li>
+      <li>DBMS is the software used to manage databases</li>
+      <li>DBMS provides data independence, security, integrity, and concurrent access</li>
+      <li>Examples of DBMS: MySQL (open-source), Oracle, PostgreSQL, MS SQL Server</li>
+      <li>File system limitations: redundancy, inconsistency, isolation, security issues, no concurrent access</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Database</strong></td><td>A database is an organized collection of structured data (or information) stored electronically, so that it can be easily accessed, managed, and updated.</td></tr>
+      <tr><td><strong>Database Management System (DBMS)</strong></td><td>A Database Management System (DBMS) is a software system that provides an interface for users and applications to define, create, maintain, and control access to a database. It acts as an intermediary between the user and the database.</td></tr>
+      <tr><td><strong>Data Redundancy</strong></td><td>Data redundancy is the unnecessary duplication of data across multiple files. It wastes storage and can lead to data inconsistency when one copy is updated but others are not.</td></tr>
+      <tr><td><strong>Data Inconsistency</strong></td><td>Data inconsistency occurs when multiple copies of the same data have different values due to redundancy, leading to unreliable and conflicting information.</td></tr>
+      <tr><td><strong>Data Isolation</strong></td><td>Data isolation is a problem in file systems where data is scattered in various files with different formats, making it difficult to write programs to retrieve appropriate data.</td></tr>
+      <tr><td><strong>Data Abstraction</strong></td><td>Data abstraction hides the complexity of data storage from users. It has three levels: Physical level (how data is stored), Logical level (what data is stored and relationships), and View level (part of database relevant to a particular user).</td></tr>
+      <tr><td><strong>Data Independence</strong></td><td>Data independence is the ability to modify the schema at one level without affecting the schema at the next higher level. Physical data independence means changing storage without affecting logical schema. Logical data independence means changing logical schema without affecting external views.</td></tr>
+      <tr><td><strong>Database Administrator (DBA)</strong></td><td>A Database Administrator (DBA) is a person responsible for managing the database system, including defining the schema, setting access permissions, backup and recovery, performance tuning, and ensuring data security and integrity.</td></tr>
+      <tr><td><strong>Relation (Table)</strong></td><td>In the relational model, a relation is a two-dimensional table consisting of rows and columns. Each relation has a unique name and stores data about a particular entity.</td></tr>
+      <tr><td><strong>Attribute (Column)</strong></td><td>An attribute is a column in a relation (table) that represents a particular property of the entity. For example, in a STUDENT table, Name, RollNo, and Marks are attributes.</td></tr>
+      <tr><td><strong>Tuple (Row)</strong></td><td>A tuple is a single row in a relation (table) that represents one record or instance of the entity. Each tuple contains values for all attributes of the relation.</td></tr>
+      <tr><td><strong>Domain</strong></td><td>The domain of an attribute is the set of all permissible values that the attribute can take. For example, the domain of Marks might be integers from 0 to 100.</td></tr>
+      <tr><td><strong>Degree</strong></td><td>The degree of a relation is the number of attributes (columns) in the relation. For example, a table with columns RollNo, Name, Marks has degree 3.</td></tr>
+      <tr><td><strong>Cardinality</strong></td><td>The cardinality of a relation is the number of tuples (rows) in the relation. Cardinality changes as rows are inserted or deleted.</td></tr>
+      <tr><td><strong>Schema</strong></td><td>A relation schema defines the structure of a relation, including its name, attribute names, and their domains. Example: STUDENT(RollNo, Name, Class, Marks).</td></tr>
+    </tbody>
+  </table>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>DBMS advantages: reduced redundancy, data consistency, data sharing, data security, data integrity, concurrent access, backup and recovery</li>
+      <li>File system: data stored in flat files with no relationships defined</li>
+      <li>DBMS: data stored in structured tables with relationships, constraints, and access control</li>
+      <li>DBMS provides data abstraction — users do not need to know how data is stored internally</li>
+      <li>DBMS functions: define, create, manipulate, share, protect, and maintain databases</li>
+      <li>Three levels of data abstraction: Physical (storage), Logical (structure), View (user perspective)</li>
+      <li>Data independence allows changes at one level without affecting other levels</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>10 total questions</strong> across 1 exercise</li>
+      <li>4 long-answer / programming questions</li>
+      <li>6 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ STRUCTURED QUERY LANGUAGE (SQL) ══════════════════════════════ -->
+<div class="ch-section" id="structured-query-language-sql">
+
+  <div class="ch-banner" style="background:#e6fff0;color:#166534">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 9</div>
+      <div class="ch-title">Structured Query Language (SQL)</div>
+      <div class="ch-sub">SQL Overview — DDL, DML, DCL · Data Types and Constraints in MySQL · SQL for Data Definition (DDL) · SQL for Data Manipulation — INSERT, UPDATE, DELETE · SQL for Data Query — SELECT · Aggregate Functions in SQL · String Functions in SQL · GROUP BY and HAVING Clauses · Operations on Relations — JOIN and Set Operations · Using Two Relations in a Query</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669">15<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>SQL is the standard language for relational database management</li>
+      <li>SQL is declarative — specify what data you need, not the steps to get it</li>
+      <li>SQL keywords are case-insensitive; table/column names may be case-sensitive depending on the system</li>
+      <li>SQL statements end with a semicolon (;)</li>
+      <li>MySQL is the RDBMS used in the CBSE syllabus for practical work</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>SQL (Structured Query Language)</strong></td><td>SQL is a standard programming language used to manage and manipulate relational databases. It allows users to create, read, update, and delete data (CRUD operations) using declarative statements.</td></tr>
+      <tr><td><strong>MySQL</strong></td><td>MySQL is a popular open-source Relational Database Management System (RDBMS) that uses SQL for querying and managing databases. It is widely used in web applications.</td></tr>
+      <tr><td><strong>Query</strong></td><td>A query is a request for data or information from a database. In SQL, queries are written using statements like SELECT to retrieve specific data from one or more tables.</td></tr>
+      <tr><td><strong>DDL (Data Definition Language)</strong></td><td>DDL is a subset of SQL used to define and modify the structure of database objects such as databases, tables, and indexes. DDL commands include CREATE, ALTER, DROP, and TRUNCATE.</td></tr>
+      <tr><td><strong>DML (Data Manipulation Language)</strong></td><td>DML is a subset of SQL used to retrieve, insert, update, and delete data in database tables. DML commands include SELECT, INSERT, UPDATE, and DELETE.</td></tr>
+      <tr><td><strong>DCL (Data Control Language)</strong></td><td>DCL is a subset of SQL used to control access to data in the database. DCL commands include GRANT (to give permissions) and REVOKE (to remove permissions).</td></tr>
+      <tr><td><strong>CHAR(n)</strong></td><td>CHAR(n) is a fixed-length string data type that stores exactly n characters. If the stored string is shorter than n, it is padded with spaces. Maximum size: 255 characters.</td></tr>
+      <tr><td><strong>VARCHAR(n)</strong></td><td>VARCHAR(n) is a variable-length string data type that stores up to n characters. It uses only as much space as the actual string length plus 1-2 bytes for length information. Maximum size: 65,535 characters.</td></tr>
+      <tr><td><strong>INT</strong></td><td>INT (or INTEGER) is a numeric data type that stores whole numbers (no decimal places). Range: -2,147,483,648 to 2,147,483,647.</td></tr>
+      <tr><td><strong>FLOAT</strong></td><td>FLOAT is a numeric data type that stores approximate floating-point numbers (numbers with decimal places). It uses 4 bytes of storage.</td></tr>
+      <tr><td><strong>DATE</strong></td><td>DATE is a data type that stores date values in the format YYYY-MM-DD. Range: '1000-01-01' to '9999-12-31'.</td></tr>
+      <tr><td><strong>NOT NULL Constraint</strong></td><td>The NOT NULL constraint ensures that a column cannot contain NULL (empty) values. Every row must have a value for this column.</td></tr>
+      <tr><td><strong>UNIQUE Constraint</strong></td><td>The UNIQUE constraint ensures that all values in a column (or combination of columns) are distinct. No two rows can have the same value in a UNIQUE column.</td></tr>
+      <tr><td><strong>PRIMARY KEY Constraint</strong></td><td>The PRIMARY KEY constraint uniquely identifies each row in a table. It is a combination of NOT NULL and UNIQUE. A table can have only one primary key.</td></tr>
+      <tr><td><strong>DEFAULT Constraint</strong></td><td>The DEFAULT constraint provides a default value for a column when no value is specified during insertion. Example: DEFAULT 0 for marks.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">COUNT</span>
+            <code class="fl-eq">SELECT COUNT(*) FROM table_name;</code>
+            <span class="fl-note">COUNT(*) counts all rows. COUNT(column) counts non-NULL values.</span>
+          </li>
+          <li>
+            <span class="fl-name">SUM</span>
+            <code class="fl-eq">SELECT SUM(column) FROM table_name;</code>
+            <span class="fl-note">Returns the total of all values in the column. NULL values are ignored.</span>
+          </li>
+          <li>
+            <span class="fl-name">AVG</span>
+            <code class="fl-eq">SELECT AVG(column) FROM table_name;</code>
+            <span class="fl-note">Returns the average. NULL values are excluded from the calculation.</span>
+          </li>
+          <li>
+            <span class="fl-name">MAX and MIN</span>
+            <code class="fl-eq">SELECT MAX(column), MIN(column) FROM table_name;</code>
+            <span class="fl-note">Returns the largest and smallest values respectively.</span>
+          </li>
+          <li>
+            <span class="fl-name">Cartesian Product Size</span>
+            <code class="fl-eq">Rows = m \times n, \; Columns = p + q</code>
+            <span class="fl-note">If table A has m rows and p columns, table B has n rows and q columns.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>DDL defines structure: CREATE (create objects), ALTER (modify structure), DROP (delete objects)</li>
+      <li>DML manipulates data: SELECT (retrieve), INSERT (add), UPDATE (modify), DELETE (remove)</li>
+      <li>DCL controls access: GRANT (give permissions), REVOKE (remove permissions)</li>
+      <li>SELECT is technically DQL (Data Query Language) but often classified under DML</li>
+      <li>DDL commands auto-commit; DML commands can be rolled back (in transactional databases)</li>
+      <li>CHAR(n) is fixed-length (padded with spaces); VARCHAR(n) is variable-length (saves space)</li>
+      <li>Use CHAR for fixed-length data (e.g., gender 'M'/'F'); VARCHAR for variable-length (e.g., names)</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>16 total questions</strong> across 1 exercise</li>
+      <li>9 long-answer / programming questions</li>
+      <li>7 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ COMPUTER NETWORKS ══════════════════════════════ -->
+<div class="ch-section" id="computer-networks">
+
+  <div class="ch-banner" style="background:#f0fdf4;color:#14532d">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 10</div>
+      <div class="ch-title">Computer Networks</div>
+      <div class="ch-sub">Evolution of Networking · Types of Networks · Network Devices · Networking Topologies · Identifying Nodes in a Networked Communication · Internet, Web and the Internet of Things · Domain Name System</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>A computer network allows communication and resource sharing between connected devices</li>
+      <li>Advantages of networking include file sharing, hardware sharing (printers, scanners), internet sharing, communication (email, video conferencing), and centralized data management</li>
+      <li>Networks can follow client-server or peer-to-peer architecture</li>
+      <li>A server provides services to clients; in peer-to-peer, each node can act as both</li>
+      <li>Networking reduces cost by sharing expensive resources like printers and storage</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Computer Network</strong></td><td>A computer network is an interconnection of computers and other devices that can communicate with each other and share hardware, software, and data resources.</td></tr>
+      <tr><td><strong>Node</strong></td><td>Any device connected to a network that is capable of sending, receiving, or forwarding information is called a node. Examples include computers, printers, servers, and smartphones.</td></tr>
+      <tr><td><strong>Server</strong></td><td>A server is a computer on a network that provides services and resources (such as files, printers, or applications) to other computers (clients) on the network.</td></tr>
+      <tr><td><strong>Client</strong></td><td>A client is a computer on a network that requests and uses the services and resources provided by a server.</td></tr>
+      <tr><td><strong>Peer-to-Peer Network</strong></td><td>A network in which each computer can act as both a server and a client, sharing resources directly with other computers without a dedicated server.</td></tr>
+      <tr><td><strong>ARPANET</strong></td><td>Advanced Research Projects Agency Network (ARPANET) was the first wide-area packet-switching network, developed by the US Department of Defense in 1969. It initially connected four universities: UCLA, Stanford, UC Santa Barbara, and University of Utah.</td></tr>
+      <tr><td><strong>NSFNET</strong></td><td>National Science Foundation Network (NSFNET) was a network established in 1986 by the US National Science Foundation to connect five supercomputer centers. It eventually replaced ARPANET as the backbone of the Internet.</td></tr>
+      <tr><td><strong>Internet</strong></td><td>The Internet is a global network of interconnected computer networks that use the TCP/IP protocol suite to communicate. It evolved from ARPANET and NSFNET and became publicly accessible in the 1990s.</td></tr>
+      <tr><td><strong>PAN (Personal Area Network)</strong></td><td>A PAN is a network of personal devices such as smartphones, tablets, laptops, and wearable devices, typically within a range of about 10 metres. Examples include Bluetooth and infrared connections.</td></tr>
+      <tr><td><strong>LAN (Local Area Network)</strong></td><td>A LAN is a network that connects computers and devices within a small geographical area such as a room, building, or campus. It typically spans up to a few kilometres and offers high data transfer rates (10 Mbps to 1 Gbps or more).</td></tr>
+      <tr><td><strong>MAN (Metropolitan Area Network)</strong></td><td>A MAN is a network that spans a city or a large campus, typically covering a range of 5 to 50 kilometres. It connects multiple LANs within a metropolitan area. Cable TV network is an example of MAN.</td></tr>
+      <tr><td><strong>WAN (Wide Area Network)</strong></td><td>A WAN is a network that spans a large geographical area, such as a country or the entire world. The Internet is the largest WAN. WANs typically use leased telecommunication lines and satellites.</td></tr>
+      <tr><td><strong>Modem</strong></td><td>Modem (Modulator-Demodulator) is a device that converts digital signals from a computer into analog signals for transmission over telephone lines (modulation) and converts incoming analog signals back to digital form (demodulation).</td></tr>
+      <tr><td><strong>Ethernet Card (NIC)</strong></td><td>An Ethernet card or Network Interface Card (NIC) is a hardware component that connects a computer to a network using an Ethernet cable. Each NIC has a unique MAC address. It operates at speeds of 10/100/1000 Mbps.</td></tr>
+      <tr><td><strong>RJ45 Connector</strong></td><td>RJ45 (Registered Jack 45) is a standard connector used to connect Ethernet cables to network devices. It has 8 pins and is used with twisted pair cables for LAN connections.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Number of links in Mesh Topology</span>
+            <code class="fl-eq">Number of links = n(n-1)/2, where n is the number of devices</code>
+            <span class="fl-note">Each device has (n-1) ports. For example, 5 devices need 5(4)/2 = 10 links.</span>
+          </li>
+          <li>
+            <span class="fl-name">Number of ports per device in Mesh</span>
+            <code class="fl-eq">Ports per device = n - 1</code>
+            <span class="fl-note">Each device must have (n-1) I/O ports to connect to every other device.</span>
+          </li>
+          <li>
+            <span class="fl-name">Total IPv4 Addresses</span>
+            <code class="fl-eq">2^32 = 4,294,967,296 (approximately 4.3 billion)</code>
+            <span class="fl-note">32-bit address space, each octet ranges from 0 to 255</span>
+          </li>
+          <li>
+            <span class="fl-name">Total IPv6 Addresses</span>
+            <code class="fl-eq">2^128 = approximately 3.4 x 10^38</code>
+            <span class="fl-note">128-bit address space, providing virtually unlimited addresses</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>ARPANET (1969) was the first computer network, funded by the US Department of Defense (ARPA/DARPA)</li>
+      <li>ARPANET initially connected 4 nodes at UCLA, Stanford Research Institute, UC Santa Barbara, and University of Utah</li>
+      <li>ARPANET used packet switching technology for data transfer</li>
+      <li>NSFNET (1986) was created to connect supercomputer centers for academic and research use</li>
+      <li>NSFNET replaced ARPANET as the main backbone network</li>
+      <li>Tim Berners-Lee invented the World Wide Web (WWW) in 1989 at CERN</li>
+      <li>The Internet became publicly available in the early 1990s after commercialization</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>12 total questions</strong> across 1 exercise</li>
+      <li>3 long-answer / programming questions</li>
+      <li>9 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ DATA COMMUNICATION ══════════════════════════════ -->
+<div class="ch-section" id="data-communication">
+
+  <div class="ch-banner" style="background:#ecfdf5;color:#065f46">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 11</div>
+      <div class="ch-title">Data Communication</div>
+      <div class="ch-sub">Concept of Communication · Measuring Capacity of Communication Media · Types of Data Communication · Switching Techniques · Transmission Media · Mobile Telecommunication Technologies · Protocols</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669">5<span>marks</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Data communication requires five components: sender, receiver, message, transmission medium, and protocol</li>
+      <li>The sender generates the data; the receiver accepts the data</li>
+      <li>The message can be text, image, audio, video, or multimedia</li>
+      <li>The medium can be wired (guided) or wireless (unguided)</li>
+      <li>Protocols define the rules that both sender and receiver must follow for successful communication</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Data Communication</strong></td><td>Data communication is the exchange of data (in the form of 0s and 1s) between two devices via some form of transmission medium such as a wire cable or wireless medium.</td></tr>
+      <tr><td><strong>Sender</strong></td><td>The sender (also called source or transmitter) is the device that generates and sends the message or data. It can be a computer, telephone, camera, or any other device.</td></tr>
+      <tr><td><strong>Receiver</strong></td><td>The receiver (also called destination) is the device that receives the message or data sent by the sender. It can be a computer, telephone, printer, or any other device.</td></tr>
+      <tr><td><strong>Message</strong></td><td>The message is the data or information to be communicated. It can be in the form of text, numbers, images, audio, video, or any combination of these.</td></tr>
+      <tr><td><strong>Communication Medium</strong></td><td>The communication medium (also called transmission medium or channel) is the physical path through which the message travels from sender to receiver. It can be wired (cable) or wireless (air, vacuum).</td></tr>
+      <tr><td><strong>Protocol</strong></td><td>A protocol is a set of rules that governs data communication. It defines the format, timing, sequence, and error control methods for data exchange between devices. Both sender and receiver must follow the same protocol.</td></tr>
+      <tr><td><strong>Bandwidth</strong></td><td>Bandwidth is the range of frequencies available for transmission of data on a communication channel. It determines the maximum data transfer rate of the channel. Higher bandwidth means more data can be transmitted per unit time.</td></tr>
+      <tr><td><strong>Data Transfer Rate</strong></td><td>Data transfer rate (also called bit rate) is the number of bits transmitted per second over a communication channel. It is measured in bits per second (bps).</td></tr>
+      <tr><td><strong>Simplex Communication</strong></td><td>In simplex mode, communication is unidirectional — data can flow in only one direction. Only one device can transmit and the other can only receive. Examples: keyboard to computer, radio broadcasting, TV broadcasting.</td></tr>
+      <tr><td><strong>Half-Duplex Communication</strong></td><td>In half-duplex mode, data can flow in both directions but not simultaneously. Only one device can transmit at a time while the other receives. Example: walkie-talkie.</td></tr>
+      <tr><td><strong>Full-Duplex Communication</strong></td><td>In full-duplex mode, data can flow in both directions simultaneously. Both devices can transmit and receive at the same time. Example: telephone conversation, video calling.</td></tr>
+      <tr><td><strong>Circuit Switching</strong></td><td>In circuit switching, a dedicated communication path (circuit) is established between the sender and receiver before data transfer begins. The circuit remains reserved for the entire duration of the communication, even if no data is being transmitted. Example: traditional telephone network (PSTN).</td></tr>
+      <tr><td><strong>Packet Switching</strong></td><td>In packet switching, the message is broken into smaller units called packets. Each packet is sent independently and may take different routes to reach the destination. Packets are reassembled at the destination in the correct order. Example: the Internet.</td></tr>
+      <tr><td><strong>Packet</strong></td><td>A packet is a small unit of data that includes the actual data (payload), source address, destination address, sequence number, and error-checking information. Packets are the fundamental units of data in packet-switched networks.</td></tr>
+      <tr><td><strong>Message Switching</strong></td><td>In message switching, the entire message is sent from node to node. Each intermediate node stores the complete message and then forwards it to the next node (store-and-forward). No dedicated path is established.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block-grid">
+    <div class="content-block">
+      <div class="block-head" style="background:#f0fdf4;color:#059669">💻 Key Syntax & Commands</div>
+      <div class="block-body">
+        <ul class="formula-list">
+          <li>
+            <span class="fl-name">Data Transfer Rate Units</span>
+            <code class="fl-eq">1 Kbps = 1,024 bps (or 10^3 bps); 1 Mbps = 1,024 Kbps (or 10^6 bps); 1 Gbps = 1,024 Mbps (or 10^9 bps); 1 Tbps = 1,024 Gbps (or 10^12 bps)</code>
+            <span class="fl-note">bps = bits per second, Kbps = Kilobits per second, Mbps = Megabits per second, Gbps = Gigabits per second, Tbps = Terabits per second</span>
+          </li>
+          <li>
+            <span class="fl-name">Time to transfer data</span>
+            <code class="fl-eq">Time = File Size (in bits) / Data Transfer Rate (in bps)</code>
+            <span class="fl-note">Remember to convert file size from bytes to bits (multiply by 8) if given in bytes</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Bandwidth determines the capacity (maximum data transfer rate) of a communication channel</li>
+      <li>Higher bandwidth allows faster data transmission</li>
+      <li>Data transfer rate is measured in bps (bits per second)</li>
+      <li>Common units: bps, Kbps (10^3 bps), Mbps (10^6 bps), Gbps (10^9 bps), Tbps (10^12 bps)</li>
+      <li>1 byte = 8 bits; when converting file size from bytes to bits, multiply by 8</li>
+      <li>Time to transfer = File size (bits) / Data transfer rate (bps)</li>
+      <li>Simplex: One-way communication only (e.g., keyboard input, radio, TV broadcast)</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>11 total questions</strong> across 1 exercise</li>
+      <li>5 long-answer / programming questions</li>
+      <li>6 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ SECURITY ASPECTS ══════════════════════════════ -->
+<div class="ch-section" id="security-aspects">
+
+  <div class="ch-banner" style="background:#e6fff0;color:#166534">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 12</div>
+      <div class="ch-title">Security Aspects</div>
+      <div class="ch-sub">Threats and Prevention · Malware · Antivirus · Spam · HTTP vs HTTPS · Firewall · Cookies · Hackers and Crackers · Network Security Threats</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669"><span style="font-size:.6rem">Supplementary</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>Cyber threats can target confidentiality, integrity, and availability of data</li>
+      <li>Common threats include malware, hacking, phishing, denial of service attacks, and data breaches</li>
+      <li>Cyber security aims to protect systems and data from unauthorized access and attacks</li>
+      <li>Prevention involves using antivirus software, firewalls, strong passwords, encryption, and regular updates</li>
+      <li>Awareness and education are key components of cyber security</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Cyber Threat</strong></td><td>A cyber threat is any malicious activity or potential danger that targets computer systems, networks, or data. Threats can come from malware, hackers, phishing attacks, or other sources aiming to steal, damage, or disrupt digital assets.</td></tr>
+      <tr><td><strong>Cyber Security</strong></td><td>Cyber security refers to the practice of protecting computers, servers, networks, data, and electronic systems from digital attacks, unauthorized access, damage, or theft. It involves technologies, processes, and practices designed to safeguard information.</td></tr>
+      <tr><td><strong>Cyber Crime</strong></td><td>Cyber crime is any criminal activity that involves a computer, network, or digital device. It includes hacking, identity theft, phishing, cyberstalking, online fraud, and spreading malware.</td></tr>
+      <tr><td><strong>Malware</strong></td><td>Malware (malicious software) is any software intentionally designed to cause damage to a computer, server, network, or user. Types include viruses, worms, trojans, spyware, adware, and ransomware.</td></tr>
+      <tr><td><strong>Virus</strong></td><td>A computer virus is a malicious program that attaches itself to a legitimate program or file and replicates itself when the host program is executed. It spreads from one computer to another through infected files, email attachments, or removable media. It requires human action to spread.</td></tr>
+      <tr><td><strong>Worm</strong></td><td>A worm is a standalone malicious program that replicates itself and spreads automatically across networks without attaching to a host program or requiring human action. Worms exploit network vulnerabilities and can consume bandwidth and system resources.</td></tr>
+      <tr><td><strong>Trojan Horse</strong></td><td>A Trojan horse (or Trojan) is a malicious program disguised as legitimate or useful software. Unlike viruses and worms, Trojans do not replicate themselves. They trick users into installing them and then perform harmful actions such as stealing data, creating backdoors, or downloading other malware.</td></tr>
+      <tr><td><strong>Spyware</strong></td><td>Spyware is malicious software that secretly monitors and collects user information such as browsing habits, keystrokes, passwords, and personal data without the user's knowledge or consent. It transmits this information to a third party.</td></tr>
+      <tr><td><strong>Adware</strong></td><td>Adware is software that automatically displays or downloads unwanted advertisements on a user's computer. While not always malicious, it can slow down systems, track browsing habits, and redirect browsers to advertising sites.</td></tr>
+      <tr><td><strong>Ransomware</strong></td><td>Ransomware is a type of malware that encrypts the victim's files or locks them out of their system and demands a ransom payment (usually in cryptocurrency) to restore access. Examples include WannaCry and Petya.</td></tr>
+      <tr><td><strong>Antivirus Software</strong></td><td>Antivirus software is a program designed to detect, prevent, and remove malware (viruses, worms, trojans, spyware, etc.) from a computer. It scans files, monitors system activity, and provides real-time protection. Examples: Norton, McAfee, Kaspersky, Avast, Windows Defender.</td></tr>
+      <tr><td><strong>Virus Signature</strong></td><td>A virus signature (or virus definition) is a unique pattern of code or data that identifies a specific virus. Antivirus software maintains a database of known virus signatures and compares files against this database during scanning.</td></tr>
+      <tr><td><strong>Spam</strong></td><td>Spam refers to unsolicited, unwanted messages (usually emails) sent in bulk to a large number of recipients. Spam messages often contain advertisements, phishing links, or malware. They clog inboxes and waste bandwidth.</td></tr>
+      <tr><td><strong>Spam Filter</strong></td><td>A spam filter is a program or feature that detects and blocks unwanted spam messages from reaching a user's inbox. It works by analyzing message content, sender reputation, and known spam patterns.</td></tr>
+      <tr><td><strong>HTTP</strong></td><td>HTTP (HyperText Transfer Protocol) is a protocol for transferring data on the web. Data is sent in plain text, making it vulnerable to interception and eavesdropping. It uses port 80.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>Virus: Attaches to host files, needs human action to spread, replicates when host is executed</li>
+      <li>Worm: Self-replicating, spreads automatically over networks, does not need a host file</li>
+      <li>Trojan: Disguised as useful software, does not replicate, tricks users into installation</li>
+      <li>Spyware: Secretly monitors user activity, collects passwords and personal data</li>
+      <li>Adware: Displays unwanted advertisements, may track browsing habits</li>
+      <li>Ransomware: Encrypts files and demands payment for decryption, extremely dangerous</li>
+      <li>Key difference: Virus needs a host and human action; Worm spreads independently; Trojan disguises itself</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>11 total questions</strong> across 1 exercise</li>
+      <li>2 long-answer / programming questions</li>
+      <li>9 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ PROJECT BASED LEARNING ══════════════════════════════ -->
+<div class="ch-section" id="project-based-learning">
+
+  <div class="ch-banner" style="background:#f0fdf4;color:#14532d">
+    <div class="ch-banner-left">
+      <div class="ch-num">Chapter 13</div>
+      <div class="ch-title">Project Based Learning</div>
+      <div class="ch-sub">Approaches for Solving Projects · Teamwork · Project Descriptions and Examples</div>
+    </div>
+    <div class="ch-marks-badge" style="color:#059669"><span style="font-size:.6rem">Supplementary</span></div>
+  </div>
+
+  <div class="mustread">
+    <h4>🎯 Must-Read — Key concepts for this chapter</h4>
+    <ol>
+      <li>PBL is a student-centred approach where learning happens through working on real-world projects</li>
+      <li>Benefits of PBL: develops problem-solving skills, critical thinking, creativity, teamwork, and communication skills</li>
+      <li>PBL bridges the gap between theoretical knowledge and practical application</li>
+      <li>Students take ownership of their learning and develop self-management skills</li>
+      <li>PBL encourages collaboration and peer learning</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.75rem">📖 Chapter Summary</h3>
+  <table class="sum-table">
+    <thead><tr style="background:#059669"><th>Concept</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Project Based Learning (PBL)</strong></td><td>Project Based Learning is an instructional methodology where students learn by actively working on meaningful projects over an extended period. Students investigate and respond to real-world problems, developing deeper knowledge and skills through hands-on experience.</td></tr>
+      <tr><td><strong>Project</strong></td><td>A project is a planned piece of work that involves investigation and creation of something, carried out over a period of time. In computer science, a project typically involves identifying a problem, designing a solution, writing code, and testing the final product.</td></tr>
+      <tr><td><strong>Problem Identification</strong></td><td>The first step in project development where the problem to be solved is clearly defined. This involves understanding the requirements, identifying the target users, and determining the scope and objectives of the project.</td></tr>
+      <tr><td><strong>Planning and Analysis</strong></td><td>The phase where the project requirements are analyzed in detail, resources are identified, a timeline is created, and a plan is developed. This includes deciding on programming language, database, and tools to be used.</td></tr>
+      <tr><td><strong>Design</strong></td><td>The phase where the solution architecture is planned. This includes designing the user interface, database schema, data flow diagrams, and algorithms. The design serves as a blueprint for implementation.</td></tr>
+      <tr><td><strong>Implementation</strong></td><td>The phase where the actual code is written based on the design. This involves programming the solution using the chosen language and tools, creating the database, and building the user interface.</td></tr>
+      <tr><td><strong>Testing</strong></td><td>The phase where the developed software is tested for errors (bugs), correctness, and performance. Types include unit testing (individual components), integration testing (combined components), and user acceptance testing.</td></tr>
+      <tr><td><strong>Debugging</strong></td><td>Debugging is the process of finding and fixing errors (bugs) in the code. It involves identifying the cause of incorrect behaviour, locating the faulty code, and correcting it.</td></tr>
+      <tr><td><strong>Deployment</strong></td><td>The phase where the completed and tested software is released to users. This includes installation, configuration, and making the application available for actual use.</td></tr>
+      <tr><td><strong>Teamwork</strong></td><td>Teamwork is the collaborative effort of a group of individuals working together to achieve a common goal. In software projects, teamwork involves dividing tasks, communicating effectively, resolving conflicts, and combining individual contributions into a complete product.</td></tr>
+      <tr><td><strong>Version Control</strong></td><td>Version control is a system that records changes to files over time, allowing you to recall specific versions later. It helps team members work on the same project simultaneously without overwriting each other's work. Examples: Git, SVN.</td></tr>
+      <tr><td><strong>Project Manager</strong></td><td>A project manager is the person responsible for planning, executing, and closing a project. They coordinate team activities, manage timelines and resources, and ensure the project meets its objectives.</td></tr>
+      <tr><td><strong>Library Management System</strong></td><td>A software application for managing library operations including cataloguing books, tracking book issues and returns, managing member records, calculating fines, and generating reports. It typically uses a database (like MySQL) and a programming language (like Python).</td></tr>
+      <tr><td><strong>Student Database Management System</strong></td><td>A software application for managing student records including personal details, enrollment information, marks, attendance, and reports. It uses database operations (CRUD — Create, Read, Update, Delete) to manage student data.</td></tr>
+      <tr><td><strong>Quiz Application</strong></td><td>A software application that presents questions to users, accepts answers, calculates scores, and displays results. It can be built using Python with a text-based or graphical interface, storing questions in a file or database.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="trick-box">
+    <h4>💡 Quick Tips & Memory Aids</h4>
+    <ul style="margin-top:.4rem;margin-left:1rem">
+      <li>A good project addresses a real-world need or problem</li>
+      <li>Step 1 — Problem Identification: Clearly define the problem, understand requirements, identify users and scope</li>
+      <li>Step 2 — Planning and Analysis: Analyze requirements, plan resources and timeline, choose tools and technologies</li>
+      <li>Step 3 — Design: Create the solution blueprint — UI design, database design, algorithm design, flowcharts</li>
+      <li>Step 4 — Implementation: Write the actual code, build the database, create the user interface</li>
+      <li>Step 5 — Testing: Test for correctness, find and fix bugs, ensure all requirements are met</li>
+      <li>Step 6 — Deployment: Release the software to users, install and configure</li>
+    </ul>
+  </div>
+
+  <div class="mistake-box" style="border-left-color:#059669">
+    <h4>📝 Exercise Overview</h4>
+    <ul>
+      <li><strong>6 total questions</strong> across 1 exercise</li>
+      <li>2 long-answer / programming questions</li>
+      <li>4 short-answer questions</li>
+    </ul>
+  </div>
+</div>
+
+
+</div><!-- /container --><script src="../js/chapter-nav.js"></script><script src="../js/mobile-dropdowns.js"></script>
+
+<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>
+</body>
+</html>

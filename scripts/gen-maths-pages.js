@@ -26,7 +26,7 @@ function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-/** Convert ASCII math notation to proper Unicode symbols */
+/** Convert ASCII math notation to proper Unicode symbols (used for prose text) */
 function mathFmt(s) {
   if (!s) return '';
   let t = s;
@@ -131,6 +131,16 @@ const chColors = [
 
 const fonts = `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">`;
+
+const katexCDN = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>`;
 const cssVars = `:root{--subject-color:#7c3aed;--subject-bg:#f5f3ff;--subject-border:#c4b5fd;--subject-text:#6d28d9;}`;
 const footer = `<footer class="site-footer">Released under the <a href="https://github.com/dineshvaradharajan/cbse-prep/blob/main/LICENSE" target="_blank">MIT License</a> &middot; &copy; 2026 Dinesh Varadharajan &middot; Built for CBSE XII revision</footer>`;
 
@@ -246,19 +256,9 @@ function genFormulas() {
     </div>\n`;
     } else {
       formulas.forEach(f => {
-        // Detect if formula is mostly descriptive text (more words than symbols)
-        const wordCount = (f.formula.match(/[a-zA-Z]{3,}/g) || []).length;
-        const hasEquals = f.formula.includes('=');
-        const isTextHeavy = wordCount > 6 && f.formula.length > 80;
-
         chapSections += `    <div class="formula-card" style="border-left-color:${color}">\n`;
         if (f.name) chapSections += `      <div class="fc-name">${esc(f.name)}</div>\n`;
-        if (isTextHeavy && !hasEquals) {
-          // Render as description text, not code
-          chapSections += `      <div class="fc-note" style="font-size:.8rem;color:var(--ink-2)">${mathFmt(f.formula)}</div>\n`;
-        } else {
-          chapSections += `      <code class="fc-eq">${mathFmt(f.formula)}</code>\n`;
-        }
+        if (f.formula) chapSections += `      <span class="fc-eq">$${f.formula}$</span>\n`;
         if (f.note) chapSections += `      <div class="fc-note">${mathFmt(f.note)}</div>\n`;
         chapSections += `    </div>\n`;
       });
@@ -273,6 +273,7 @@ function genFormulas() {
 <head>
 <meta charset="UTF-8">
 ${fonts}
+${katexCDN}
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/formulas.css">
 <style>${cssVars}</style>
@@ -301,7 +302,7 @@ ${chapNav}
 <div class="quick-ref">
   <h3>⚡ Critical Formulas — Memorise These First</h3>
   <div class="qr-grid">
-${quickRef.map(f => `    <div class="qr-item"><span class="qr-label">${esc(f.name)}</span><span class="qr-val">${mathFmt(f.formula)}</span></div>`).join('\n')}
+${quickRef.map(f => `    <div class="qr-item"><span class="qr-label">${esc(f.name)}</span><span class="qr-val">$${f.formula}$</span></div>`).join('\n')}
   </div>
 </div>
 
@@ -364,6 +365,7 @@ function genConcepts() {
 <head>
 <meta charset="UTF-8">
 ${fonts}
+${katexCDN}
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/concepts.css">
 <style>${cssVars}</style>
@@ -463,6 +465,7 @@ function genDerivations() {
 <head>
 <meta charset="UTF-8">
 ${fonts}
+${katexCDN}
 <link rel="stylesheet" href="../css/base.css">
 <style>
 ${cssVars}
@@ -548,8 +551,12 @@ function genQuestionBank() {
 
         chapterSections += `<div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q${q.qno}</span>${typeBadge}</div>
-<div class="qb-question">${esc(q.question)}</div>
-</div>\n`;
+<div class="qb-question">${esc(q.question)}</div>`;
+        if (q.answer) {
+          chapterSections += `\n<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="qb-answer hidden"><strong>Answer:</strong> ${esc(q.answer)}</div>`;
+        }
+        chapterSections += `\n</div>\n`;
       });
     });
 
@@ -585,6 +592,10 @@ ${cssVars}
 .qb-type-badge.mcq{color:#7c3aed;background:#f5f3ff;border:1px solid #c4b5fd}
 .qb-type-badge.case{color:#ea580c;background:#fff7ed;border:1px solid #fdba74}
 .qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65;white-space:pre-line}
+.qb-ans-toggle{display:inline-block;margin-top:.6rem;padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
+.qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
+.qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
+.qb-answer.hidden{display:none}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
   .qb-question{font-size:.82rem}
@@ -622,6 +633,11 @@ function toggleChapter(btn) {
   var body = btn.nextElementSibling;
   body.classList.toggle('collapsed');
   body.classList.toggle('open');
+}
+function toggleAnswer(btn) {
+  var ans = btn.nextElementSibling;
+  ans.classList.toggle('hidden');
+  btn.textContent = ans.classList.contains('hidden') ? 'Show Answer' : 'Hide Answer';
 }
 </script>
 </body>
@@ -709,15 +725,75 @@ ${footer}
 // PAGE 6: CASE STUDY (placeholder page)
 // ═══════════════════════════════════════════════════════════════
 function genCaseStudy() {
+  // Collect all case studies from chapter JSONs
+  const allCases = [];
+  chapters.forEach(ch => {
+    (ch.case_studies || []).forEach(cs => {
+      allCases.push({ chapter: ch.chapter, title: ch.title, ...cs });
+    });
+  });
+
+  let caseCards = '';
+  allCases.forEach((cs, idx) => {
+    const color = chColors[(cs.chapter - 1) % chColors.length];
+    caseCards += `<div class="cs-card">
+  <div class="cs-header" style="border-left-color:${color}">
+    <span class="cs-badge">Case ${idx + 1}</span>
+    <span class="cs-ch">Ch ${cs.chapter}: ${esc(cs.title)}</span>
+    ${cs.source ? `<span class="cs-source">${esc(cs.source)}</span>` : ''}
+  </div>
+  <div class="cs-passage">${esc(cs.passage)}</div>
+  <div class="cs-questions">\n`;
+
+    (cs.questions || []).forEach((q, qi) => {
+      caseCards += `    <div class="cs-q">
+      <div class="cs-q-text"><strong>(${qi + 1})</strong> ${esc(q.question)}</div>
+      <div class="cs-opts">\n`;
+      (q.options || []).forEach((opt, oi) => {
+        const letter = String.fromCharCode(97 + oi);
+        caseCards += `        <div class="cs-opt">(${letter}) ${esc(opt)}</div>\n`;
+      });
+      caseCards += `      </div>
+      <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="qb-answer hidden"><strong>Answer:</strong> (${String.fromCharCode(97 + q.answer)}) ${esc(q.options[q.answer])}</div>
+    </div>\n`;
+    });
+
+    caseCards += `  </div>\n</div>\n\n`;
+  });
+
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 ${fonts}
 <link rel="stylesheet" href="../css/base.css">
-<style>${cssVars}</style>
+<style>
+${cssVars}
+.cs-card{background:#fff;border:1px solid var(--sand-200);border-radius:14px;margin-bottom:1.5rem;overflow:hidden}
+.cs-header{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;padding:1rem 1.25rem;border-left:5px solid;background:var(--sand-50)}
+.cs-badge{font-size:.68rem;font-weight:800;color:#fff;background:var(--subject-color);border-radius:999px;padding:.2rem .65rem;text-transform:uppercase;letter-spacing:.03em}
+.cs-ch{font-family:'Newsreader',serif;font-size:.92rem;font-weight:600;color:var(--ink)}
+.cs-source{font-size:.65rem;font-weight:700;color:var(--ink-3);background:var(--sand-100);border:1px solid var(--sand-200);border-radius:999px;padding:.15rem .5rem;margin-left:auto}
+.cs-passage{padding:1.25rem;font-size:.86rem;color:var(--ink-2);line-height:1.75;border-bottom:1px solid var(--sand-200);white-space:pre-line}
+.cs-questions{padding:1rem 1.25rem}
+.cs-q{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--sand-100)}
+.cs-q:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cs-q-text{font-size:.86rem;font-weight:500;color:var(--ink);line-height:1.6;margin-bottom:.5rem}
+.cs-opts{display:grid;grid-template-columns:1fr 1fr;gap:.3rem .75rem}
+.cs-opt{font-size:.82rem;color:var(--ink-2);padding:.25rem 0}
+.qb-ans-toggle{display:inline-block;margin-top:.5rem;padding:.25rem .7rem;font-size:.7rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
+.qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
+.qb-answer{margin-top:.5rem;padding:.6rem .85rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.8rem;color:#166534;line-height:1.6}
+.qb-answer.hidden{display:none}
+@media(max-width:640px){
+  .cs-opts{grid-template-columns:1fr}
+  .cs-passage{padding:1rem;font-size:.82rem}
+  .cs-header{padding:.75rem 1rem}
+}
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Case study MCQ practice for CBSE Class 12 Mathematics — real-world scenarios with linked questions.">
+<meta name="description" content="Case study MCQ practice for CBSE Class 12 Mathematics — ${allCases.length} real-world scenarios with linked questions.">
 <meta name="author" content="Dinesh Varadharajan">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Maths Case Study Questions | CBSE Class 12">
@@ -730,52 +806,22 @@ ${fonts}
 <a href="../index.html" class="back-link">← Back to Hub</a>
 
 <div class="hero">
-  <div class="badge">Mathematics XII &middot; Case-Based Questions</div>
+  <div class="badge">Mathematics XII &middot; ${allCases.length} Case Studies</div>
   <h1>Case Study Questions</h1>
-  <p class="sub">Real-world scenario-based MCQs — the newest CBSE pattern with 4 linked questions per case.</p>
+  <p class="sub">Real-world scenario-based MCQs — the CBSE competency-based pattern with 5 linked questions per case.</p>
 </div>
 
-<div style="background:var(--subject-bg);border:1.5px solid var(--subject-border);border-radius:12px;padding:2rem;margin:2rem 0;text-align:center">
-  <div style="font-size:2rem;margin-bottom:.5rem">🚧</div>
-  <h3 style="font-family:'Newsreader',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem">Case Studies Coming Soon</h3>
-  <p style="font-size:.85rem;color:var(--ink-2);line-height:1.6;max-width:480px;margin:0 auto">
-    We're preparing case-based questions from recent CBSE papers (2021–2025) covering all 13 chapters. Each case study includes a real-world passage followed by 4 MCQs.
-  </p>
-  <p style="font-size:.8rem;color:var(--ink-3);margin-top:.75rem">In the meantime, practice with the <a href="question-bank.html" style="color:var(--subject-color);font-weight:700">Question Bank</a> or review <a href="chapters.html" style="color:var(--subject-color);font-weight:700">Chapters</a> for exam preparation.</p>
-</div>
-
-<div style="margin-top:2rem">
-  <h3 style="font-family:'Newsreader',serif;font-size:1rem;color:var(--ink);margin-bottom:.75rem">📋 Expected Topics for Case Studies</h3>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.6rem">
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid ${purpleColor}">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">📈 Application of Derivatives</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Maxima/minima in real-life contexts — cost optimisation, area maximisation</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid ${purpleColor}">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">📐 Linear Programming</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Manufacturing, diet, transportation problems with constraints</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid ${purpleColor}">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">🎲 Probability</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Medical testing, quality control, real-world Bayes' theorem applications</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid ${purpleColor}">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">∫ Integrals</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Area under curves, physics applications, volume of revolution</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid ${purpleColor}">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">🔢 Matrices &amp; Determinants</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Cryptography, solving systems of equations in business contexts</div>
-    </div>
-    <div style="background:#fff;border:1px solid var(--sand-200);border-radius:10px;padding:1rem;border-left:4px solid ${purpleColor}">
-      <div style="font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.3rem">🧭 3D Geometry</div>
-      <div style="font-size:.75rem;color:var(--ink-3)">Navigation, architecture, shortest distance problems</div>
-    </div>
-  </div>
-</div>
+${caseCards}
 
 </div>
 ${footer}
+<script>
+function toggleAnswer(btn) {
+  var ans = btn.nextElementSibling;
+  ans.classList.toggle('hidden');
+  btn.textContent = ans.classList.contains('hidden') ? 'Show Answer' : 'Hide Answer';
+}
+</script>
 </body>
 </html>`;
 

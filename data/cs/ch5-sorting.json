@@ -1,0 +1,345 @@
+{
+  "chapter": 5,
+  "title": "Sorting",
+  "sections": [
+    {
+      "id": "5.1",
+      "title": "Introduction to Sorting",
+      "concepts": [
+        "Sorting is arranging data elements in a particular order (ascending or descending)",
+        "Need for sorting: efficient searching, organized data representation, simplifying complex problems",
+        "In-place sorting: sorting that uses only a constant amount of extra memory",
+        "Stable sorting: maintains the relative order of equal elements",
+        "Internal sorting: all data fits in memory",
+        "External sorting: data is too large to fit in memory"
+      ],
+      "definitions": [
+        {
+          "term": "Sorting",
+          "definition": "Sorting is the process of arranging data elements in a specific order, either ascending (increasing) or descending (decreasing), based on some key value."
+        },
+        {
+          "term": "In-place Sorting",
+          "definition": "A sorting algorithm is said to be in-place if it requires only a constant amount O(1) of extra memory space, apart from the input array."
+        },
+        {
+          "term": "Stable Sort",
+          "definition": "A sorting algorithm is stable if two elements with equal keys appear in the same order in the sorted output as they appear in the input."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Sorting arranges data in ascending or descending order",
+        "Sorting is essential for efficient searching (e.g., binary search requires sorted data)",
+        "Common sorting algorithms in CBSE syllabus: Bubble Sort, Selection Sort, Insertion Sort",
+        "All three algorithms studied are comparison-based sorts",
+        "Sorting can be done on numbers, strings, or any comparable data"
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Bubble Sort",
+      "concepts": [
+        "Bubble Sort repeatedly steps through the list and swaps adjacent elements if they are in the wrong order",
+        "The largest element 'bubbles up' to the end of the list in each pass",
+        "After pass i, the i-th largest element is in its correct position",
+        "If no swaps occur during a pass, the list is already sorted (optimization)",
+        "Number of passes required: at most n-1 for a list of n elements",
+        "Total comparisons in worst case: n(n-1)/2"
+      ],
+      "definitions": [
+        {
+          "term": "Bubble Sort",
+          "definition": "Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted."
+        },
+        {
+          "term": "Pass",
+          "definition": "A pass is one complete traversal through the list during which adjacent elements are compared and swapped if necessary. In Bubble Sort, after each pass, the largest unsorted element moves to its correct position."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Bubble Sort Time Complexity (Worst/Average)",
+          "formula": "O(n^2)",
+          "notes": "Occurs when the array is sorted in reverse order. Total comparisons = n(n-1)/2."
+        },
+        {
+          "name": "Bubble Sort Time Complexity (Best Case)",
+          "formula": "O(n)",
+          "notes": "Occurs when the array is already sorted (with optimized version using a flag). Only one pass with n-1 comparisons and no swaps."
+        },
+        {
+          "name": "Bubble Sort Space Complexity",
+          "formula": "O(1)",
+          "notes": "In-place sorting algorithm; only requires a temporary variable for swapping."
+        },
+        {
+          "name": "Total Comparisons (Worst Case)",
+          "formula": "(n-1) + (n-2) + ... + 1 = n(n-1)/2",
+          "notes": "In pass i, the number of comparisons is (n - i)."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Bubble Sort compares adjacent elements and swaps if out of order",
+        "After each pass, the largest unsorted element reaches its correct position",
+        "Maximum n-1 passes are needed for n elements",
+        "Optimization: if no swaps in a pass, list is already sorted — stop early",
+        "Worst case: O(n^2) comparisons and O(n^2) swaps",
+        "Best case (already sorted, with optimization): O(n) comparisons, 0 swaps",
+        "Bubble Sort is stable and in-place",
+        "Python implementation:\ndef bubble_sort(a):\n    n = len(a)\n    for i in range(n - 1):\n        swapped = False\n        for j in range(n - 1 - i):\n            if a[j] > a[j + 1]:\n                a[j], a[j + 1] = a[j + 1], a[j]\n                swapped = True\n        if not swapped:\n            break"
+      ]
+    },
+    {
+      "id": "5.3",
+      "title": "Selection Sort",
+      "concepts": [
+        "Selection Sort divides the array into sorted and unsorted parts",
+        "In each pass, find the minimum element in the unsorted part",
+        "Swap the minimum element with the first element of the unsorted part",
+        "After pass i, the i smallest elements are in their correct sorted positions",
+        "Number of comparisons is always n(n-1)/2 regardless of input order",
+        "Number of swaps is at most n-1"
+      ],
+      "definitions": [
+        {
+          "term": "Selection Sort",
+          "definition": "Selection Sort is a sorting algorithm that repeatedly selects the smallest (or largest) element from the unsorted portion and places it at the beginning (or end) of the sorted portion. It divides the input list into a sorted and an unsorted region."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Selection Sort Time Complexity (All Cases)",
+          "formula": "O(n^2)",
+          "notes": "Always performs n(n-1)/2 comparisons regardless of input order. Best, worst, and average cases are all O(n^2)."
+        },
+        {
+          "name": "Selection Sort Space Complexity",
+          "formula": "O(1)",
+          "notes": "In-place sorting algorithm."
+        },
+        {
+          "name": "Maximum Number of Swaps",
+          "formula": "n - 1",
+          "notes": "At most one swap per pass, making it efficient when swapping is costly."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Selection Sort selects the minimum element and places it at the correct position",
+        "The array is divided into two parts: sorted (left) and unsorted (right)",
+        "In pass i (0-indexed), find the minimum in a[i..n-1] and swap with a[i]",
+        "Total comparisons are always n(n-1)/2, regardless of initial order",
+        "At most n-1 swaps are performed (fewer swaps than Bubble Sort)",
+        "Selection Sort is NOT stable (relative order of equal elements may change)",
+        "Selection Sort is in-place",
+        "Python implementation:\ndef selection_sort(a):\n    n = len(a)\n    for i in range(n - 1):\n        min_idx = i\n        for j in range(i + 1, n):\n            if a[j] < a[min_idx]:\n                min_idx = j\n        if min_idx != i:\n            a[i], a[min_idx] = a[min_idx], a[min_idx]"
+      ]
+    },
+    {
+      "id": "5.4",
+      "title": "Insertion Sort",
+      "concepts": [
+        "Insertion Sort builds the sorted array one element at a time",
+        "It picks each element and inserts it into its correct position in the sorted portion",
+        "Similar to how people sort playing cards in their hands",
+        "Elements in the sorted portion are shifted right to make room for the new element",
+        "Efficient for small datasets and nearly sorted arrays",
+        "Adaptive: performs fewer operations if the input is partially sorted"
+      ],
+      "definitions": [
+        {
+          "term": "Insertion Sort",
+          "definition": "Insertion Sort is a sorting algorithm that builds a sorted array one element at a time by picking each element from the unsorted portion and inserting it into its correct position in the sorted portion, shifting elements as needed."
+        },
+        {
+          "term": "Key Element",
+          "definition": "The key element is the current element being picked from the unsorted portion to be inserted into its correct position in the sorted portion during Insertion Sort."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Insertion Sort Time Complexity (Worst Case)",
+          "formula": "O(n^2)",
+          "notes": "Occurs when the array is sorted in reverse order. Total comparisons and shifts = n(n-1)/2."
+        },
+        {
+          "name": "Insertion Sort Time Complexity (Best Case)",
+          "formula": "O(n)",
+          "notes": "Occurs when the array is already sorted. Only n-1 comparisons and no shifts needed."
+        },
+        {
+          "name": "Insertion Sort Time Complexity (Average Case)",
+          "formula": "O(n^2)",
+          "notes": "On average, each insertion requires shifting half of the sorted portion."
+        },
+        {
+          "name": "Insertion Sort Space Complexity",
+          "formula": "O(1)",
+          "notes": "In-place sorting algorithm; only needs a variable to hold the key."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Insertion Sort picks each element and inserts it into the correct position in the sorted part",
+        "Start from the second element (index 1); the first element is considered sorted",
+        "For each key element, compare with elements in the sorted portion from right to left",
+        "Shift elements greater than the key one position to the right",
+        "Insert the key at the correct position",
+        "Best case O(n) for already sorted arrays — very efficient for nearly sorted data",
+        "Worst case O(n^2) for reverse-sorted arrays",
+        "Insertion Sort is stable and in-place",
+        "Python implementation:\ndef insertion_sort(a):\n    n = len(a)\n    for i in range(1, n):\n        key = a[i]\n        j = i - 1\n        while j >= 0 and a[j] > key:\n            a[j + 1] = a[j]\n            j -= 1\n        a[j + 1] = key"
+      ]
+    },
+    {
+      "id": "5.5",
+      "title": "Time Complexity of Algorithms",
+      "concepts": [
+        "Time complexity measures how the running time of an algorithm grows with input size",
+        "Big-O notation describes the upper bound of an algorithm's growth rate",
+        "Best case: minimum time taken for any input of size n",
+        "Worst case: maximum time taken for any input of size n",
+        "Average case: expected time taken over all possible inputs of size n",
+        "Common complexities: O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n)"
+      ],
+      "definitions": [
+        {
+          "term": "Time Complexity",
+          "definition": "Time complexity of an algorithm is a measure of the amount of time required by an algorithm to run as a function of the input size n. It provides an estimate of the number of elementary operations performed."
+        },
+        {
+          "term": "Big-O Notation",
+          "definition": "Big-O notation O(f(n)) describes the upper bound of the time complexity of an algorithm. It represents the worst-case scenario of how the running time grows relative to the input size n."
+        },
+        {
+          "term": "Best Case Complexity",
+          "definition": "The minimum number of operations an algorithm performs for an input of size n. For example, Bubble Sort best case is O(n) when the array is already sorted."
+        },
+        {
+          "term": "Worst Case Complexity",
+          "definition": "The maximum number of operations an algorithm performs for any input of size n. For example, Bubble Sort worst case is O(n^2) when the array is in reverse sorted order."
+        },
+        {
+          "term": "Average Case Complexity",
+          "definition": "The expected number of operations an algorithm performs over all possible inputs of size n. It gives a realistic estimate of algorithm performance."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Constant Time",
+          "formula": "O(1)",
+          "notes": "Time does not depend on input size. Example: accessing an array element by index."
+        },
+        {
+          "name": "Logarithmic Time",
+          "formula": "O(\\log n)",
+          "notes": "Time grows logarithmically. Example: Binary Search."
+        },
+        {
+          "name": "Linear Time",
+          "formula": "O(n)",
+          "notes": "Time grows linearly with input size. Example: Linear Search."
+        },
+        {
+          "name": "Quadratic Time",
+          "formula": "O(n^2)",
+          "notes": "Time grows quadratically. Example: Bubble Sort, Selection Sort, Insertion Sort (worst case)."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Time complexity helps compare the efficiency of different algorithms",
+        "Big-O notation gives the upper bound (worst case) growth rate",
+        "O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n)",
+        "Comparison of sorting algorithms:\n  Bubble Sort:    Best O(n),   Average O(n^2), Worst O(n^2), Stable: Yes\n  Selection Sort: Best O(n^2), Average O(n^2), Worst O(n^2), Stable: No\n  Insertion Sort: Best O(n),   Average O(n^2), Worst O(n^2), Stable: Yes",
+        "All three sorting algorithms have O(1) space complexity (in-place)",
+        "Insertion Sort is the most efficient among the three for nearly sorted data",
+        "Selection Sort performs the fewest swaps (at most n-1)",
+        "For large datasets, O(n log n) algorithms like Merge Sort are preferred"
+      ]
+    }
+  ],
+  "summary": [
+    "Sorting is the process of arranging data elements in ascending or descending order.",
+    "Bubble Sort compares and swaps adjacent elements; largest element bubbles to the end in each pass.",
+    "Selection Sort finds the minimum element in the unsorted portion and places it at the beginning of the sorted portion.",
+    "Insertion Sort picks each element and inserts it into its correct position in the sorted portion by shifting elements.",
+    "All three algorithms have O(n^2) worst-case time complexity and O(1) space complexity.",
+    "Bubble Sort and Insertion Sort have O(n) best-case complexity for already sorted arrays.",
+    "Selection Sort always performs O(n^2) comparisons regardless of input order.",
+    "Insertion Sort is the most efficient for small or nearly sorted datasets.",
+    "Big-O notation describes how an algorithm's time requirement grows with input size.",
+    "Stability means equal elements maintain their relative order after sorting."
+  ],
+  "exercises": [
+    {
+      "id": "5.1",
+      "title": "Exercise 5.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is sorting? Why is it necessary?",
+          "type": "short",
+          "answer": "Sorting is the process of arranging data elements in a specific order — either ascending (smallest to largest) or descending (largest to smallest). It is necessary because: (1) It makes searching more efficient (e.g., binary search requires sorted data). (2) It helps in organizing and presenting data in a meaningful way. (3) It simplifies complex problems like finding duplicates, computing medians, etc."
+        },
+        {
+          "qno": 2,
+          "question": "Write the Bubble Sort algorithm and trace it for the list [5, 3, 8, 1, 2].",
+          "type": "long",
+          "answer": "Bubble Sort Algorithm:\n1. Start from the first element, compare adjacent elements.\n2. If the current element is greater than the next, swap them.\n3. Continue till the end of the list (one pass).\n4. Repeat for n-1 passes, reducing the comparison range by 1 each time.\n5. If no swaps in a pass, stop (list is sorted).\n\nTrace for [5, 3, 8, 1, 2]:\nPass 1: [3,5,8,1,2] → [3,5,8,1,2] → [3,5,1,8,2] → [3,5,1,2,8] (3 swaps)\nPass 2: [3,5,1,2,8] → [3,1,5,2,8] → [3,1,2,5,8] (2 swaps)\nPass 3: [1,3,2,5,8] → [1,2,3,5,8] (2 swaps)\nPass 4: [1,2,3,5,8] (0 swaps — sorted, stop)\nSorted list: [1, 2, 3, 5, 8]"
+        },
+        {
+          "qno": 3,
+          "question": "Write a Python function to implement Bubble Sort.",
+          "type": "long",
+          "answer": "def bubble_sort(a):\n    n = len(a)\n    for i in range(n - 1):\n        swapped = False\n        for j in range(n - 1 - i):\n            if a[j] > a[j + 1]:\n                a[j], a[j + 1] = a[j + 1], a[j]\n                swapped = True\n        if not swapped:\n            break\n    return a\n\n# Example usage:\ndata = [64, 34, 25, 12, 22, 11, 90]\nprint(bubble_sort(data))  # Output: [11, 12, 22, 25, 34, 64, 90]"
+        },
+        {
+          "qno": 4,
+          "question": "How many passes and comparisons does Bubble Sort need for a list of 6 elements in the worst case?",
+          "type": "short",
+          "answer": "For n = 6 elements:\nNumber of passes = n - 1 = 5\nNumber of comparisons = n(n-1)/2 = 6 × 5 / 2 = 15\nPass 1: 5 comparisons, Pass 2: 4 comparisons, Pass 3: 3 comparisons, Pass 4: 2 comparisons, Pass 5: 1 comparison. Total = 5 + 4 + 3 + 2 + 1 = 15."
+        },
+        {
+          "qno": 5,
+          "question": "Explain Selection Sort with an example.",
+          "type": "long",
+          "answer": "Selection Sort works by repeatedly finding the minimum element from the unsorted portion and placing it at the beginning.\n\nAlgorithm:\n1. Find the minimum element in the unsorted part of the array.\n2. Swap it with the first element of the unsorted part.\n3. Move the boundary between sorted and unsorted parts one element to the right.\n4. Repeat until the entire array is sorted.\n\nExample: Sort [29, 10, 14, 37, 13]\nPass 1: Min = 10 (index 1), swap with index 0 → [10, 29, 14, 37, 13]\nPass 2: Min = 13 (index 4), swap with index 1 → [10, 13, 14, 37, 29]\nPass 3: Min = 14 (index 2), already in place → [10, 13, 14, 37, 29]\nPass 4: Min = 29 (index 4), swap with index 3 → [10, 13, 14, 29, 37]\nSorted list: [10, 13, 14, 29, 37]"
+        },
+        {
+          "qno": 6,
+          "question": "Write a Python function to implement Selection Sort.",
+          "type": "long",
+          "answer": "def selection_sort(a):\n    n = len(a)\n    for i in range(n - 1):\n        min_idx = i\n        for j in range(i + 1, n):\n            if a[j] < a[min_idx]:\n                min_idx = j\n        if min_idx != i:\n            a[i], a[min_idx] = a[min_idx], a[i]\n    return a\n\n# Example usage:\ndata = [64, 25, 12, 22, 11]\nprint(selection_sort(data))  # Output: [11, 12, 22, 25, 64]"
+        },
+        {
+          "qno": 7,
+          "question": "Explain Insertion Sort with a suitable example.",
+          "type": "long",
+          "answer": "Insertion Sort builds the sorted array one element at a time by picking each element and inserting it into its correct position in the sorted portion.\n\nAlgorithm:\n1. Start from the second element (index 1). The first element is considered sorted.\n2. Pick the current element as the 'key'.\n3. Compare the key with elements in the sorted portion from right to left.\n4. Shift elements greater than the key one position to the right.\n5. Insert the key at the correct position.\n6. Repeat for all elements.\n\nExample: Sort [7, 4, 5, 2]\nPass 1: key=4, compare with 7, shift 7 right → [4, 7, 5, 2]\nPass 2: key=5, compare with 7 (shift), compare with 4 (stop) → [4, 5, 7, 2]\nPass 3: key=2, compare with 7 (shift), 5 (shift), 4 (shift) → [2, 4, 5, 7]\nSorted list: [2, 4, 5, 7]"
+        },
+        {
+          "qno": 8,
+          "question": "Write a Python function to implement Insertion Sort.",
+          "type": "long",
+          "answer": "def insertion_sort(a):\n    n = len(a)\n    for i in range(1, n):\n        key = a[i]\n        j = i - 1\n        while j >= 0 and a[j] > key:\n            a[j + 1] = a[j]\n            j -= 1\n        a[j + 1] = key\n    return a\n\n# Example usage:\ndata = [12, 11, 13, 5, 6]\nprint(insertion_sort(data))  # Output: [5, 6, 11, 12, 13]"
+        },
+        {
+          "qno": 9,
+          "question": "Compare Bubble Sort, Selection Sort, and Insertion Sort in terms of time complexity, space complexity, and stability.",
+          "type": "long",
+          "answer": "Comparison Table:\n\n| Property         | Bubble Sort | Selection Sort | Insertion Sort |\n|-----------------|-------------|----------------|----------------|\n| Best Case       | O(n)        | O(n^2)         | O(n)           |\n| Average Case    | O(n^2)      | O(n^2)         | O(n^2)         |\n| Worst Case      | O(n^2)      | O(n^2)         | O(n^2)         |\n| Space           | O(1)        | O(1)           | O(1)           |\n| Stable          | Yes         | No             | Yes            |\n| In-place        | Yes         | Yes            | Yes            |\n| Swaps (worst)   | O(n^2)      | O(n)           | O(n^2) shifts  |\n\nKey observations:\n- All three have O(n^2) worst-case time complexity.\n- Bubble Sort and Insertion Sort are adaptive (best case O(n) for sorted input).\n- Selection Sort always does O(n^2) comparisons but minimal swaps.\n- Insertion Sort is preferred for small or nearly sorted datasets."
+        },
+        {
+          "qno": 10,
+          "question": "What is Big-O notation? List common time complexities in increasing order.",
+          "type": "short",
+          "answer": "Big-O notation describes the upper bound of an algorithm's growth rate as a function of input size n. It represents the worst-case scenario of how execution time or space requirements grow.\n\nCommon time complexities in increasing order:\nO(1) — Constant time\nO(log n) — Logarithmic time\nO(n) — Linear time\nO(n log n) — Linearithmic time\nO(n^2) — Quadratic time\nO(n^3) — Cubic time\nO(2^n) — Exponential time\nO(n!) — Factorial time"
+        }
+      ]
+    }
+  ]
+}

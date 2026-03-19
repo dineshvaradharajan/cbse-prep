@@ -1,0 +1,252 @@
+{
+  "chapter": 4,
+  "title": "Queue",
+  "sections": [
+    {
+      "id": "4.1",
+      "title": "Introduction to Queue",
+      "concepts": [
+        "Queue follows FIFO (First In First Out) principle",
+        "Elements are added at the rear and removed from the front",
+        "Real-world analogies: queue at ticket counter, printer queue, CPU task scheduling",
+        "Queue has two ends: front (for deletion) and rear (for insertion)",
+        "Applications of queues in computing: print spooling, CPU scheduling, BFS in graphs",
+        "Difference between stack (LIFO) and queue (FIFO)"
+      ],
+      "definitions": [
+        {
+          "term": "Queue",
+          "definition": "A queue is a linear data structure that follows the FIFO (First In First Out) principle. Elements are inserted at the rear end and removed from the front end."
+        },
+        {
+          "term": "FIFO",
+          "definition": "FIFO stands for First In First Out. It means the element that is inserted first is the first one to be removed. The oldest element in the queue is always at the front."
+        },
+        {
+          "term": "Front",
+          "definition": "Front is the end of the queue from which elements are removed (dequeued). It points to the first (oldest) element in the queue."
+        },
+        {
+          "term": "Rear",
+          "definition": "Rear is the end of the queue at which new elements are added (enqueued). It points to the last (newest) element in the queue."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Queue follows FIFO — the first element inserted is the first to be removed",
+        "Insertion happens at the rear end; deletion happens at the front end",
+        "A queue has two pointers: front and rear",
+        "Queue is different from a stack (LIFO) — stack uses one end, queue uses two ends",
+        "Applications: job scheduling, print queue, BFS traversal, handling requests in web servers"
+      ]
+    },
+    {
+      "id": "4.2",
+      "title": "Operations on Queue",
+      "concepts": [
+        "Enqueue — adds an element at the rear of the queue",
+        "Dequeue — removes and returns the element from the front of the queue",
+        "Peek/Front — returns the front element without removing it",
+        "isEmpty — checks if the queue is empty",
+        "size — returns the number of elements in the queue",
+        "Queue overflow — inserting into a full queue",
+        "Queue underflow — removing from an empty queue"
+      ],
+      "definitions": [
+        {
+          "term": "Enqueue",
+          "definition": "Enqueue is the operation of adding (inserting) a new element at the rear end of the queue. After enqueue, the new element becomes the last element and the rear pointer is updated."
+        },
+        {
+          "term": "Dequeue",
+          "definition": "Dequeue is the operation of removing (deleting) an element from the front end of the queue. The element at the front is removed and returned, and the front pointer is updated."
+        },
+        {
+          "term": "Peek",
+          "definition": "Peek (or front) is the operation of viewing the front element of the queue without removing it. It returns the element that would be dequeued next."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Enqueue algorithm",
+          "formula": "Step 1: If queue is full, print 'Overflow' and return\nStep 2: Increment rear by 1\nStep 3: Set queue[rear] = element\nStep 4: If front is -1, set front = 0\nStep 5: Return",
+          "notes": "In Python using list, we use append() which adds to the end automatically"
+        },
+        {
+          "name": "Dequeue algorithm",
+          "formula": "Step 1: If queue is empty, print 'Underflow' and return\nStep 2: Set element = queue[front]\nStep 3: Increment front by 1\nStep 4: If front > rear, reset front = rear = -1 (queue empty)\nStep 5: Return element",
+          "notes": "In Python using list, we use pop(0) which removes the first element"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Enqueue adds an element at the rear; dequeue removes an element from the front",
+        "Before enqueue, check for overflow (queue full)",
+        "Before dequeue, check for underflow (queue empty)",
+        "Peek returns the front element without removing it",
+        "In Python, append() is used for enqueue and pop(0) is used for dequeue"
+      ]
+    },
+    {
+      "id": "4.3",
+      "title": "Implementation of Queue Using Python",
+      "concepts": [
+        "Using Python list to implement a queue",
+        "append() method for enqueue operation",
+        "pop(0) method for dequeue operation",
+        "Accessing front element using index 0",
+        "Checking empty queue using len() == 0",
+        "Implementing queue operations as functions",
+        "Menu-driven program for queue operations",
+        "Limitation of pop(0) — O(n) time complexity"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Queue implementation using list",
+          "formula": "queue = []  # empty queue\nqueue.append(element)  # Enqueue\nelement = queue.pop(0)  # Dequeue\nfront = queue[0]  # Peek\nlen(queue)  # Size\nlen(queue) == 0  # isEmpty",
+          "notes": "pop(0) is O(n) — for better performance, use collections.deque"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Python list can be used to implement a queue",
+        "append() adds to the rear of the queue — enqueue operation",
+        "pop(0) removes from the front of the queue — dequeue operation",
+        "queue[0] gives the front element — peek operation",
+        "len(queue) == 0 checks if the queue is empty",
+        "Always check for underflow (empty queue) before dequeue",
+        "pop(0) shifts all elements, making it O(n) — collections.deque is more efficient"
+      ]
+    },
+    {
+      "id": "4.4",
+      "title": "Introduction to Deque",
+      "concepts": [
+        "Deque stands for Double-Ended Queue",
+        "Elements can be added or removed from both front and rear",
+        "Deque is a generalization of both stack and queue",
+        "Input-restricted deque — insertion only at one end, deletion from both ends",
+        "Output-restricted deque — deletion only at one end, insertion at both ends",
+        "Deque supports all operations of both stack and queue",
+        "Applications: palindrome checking, sliding window problems"
+      ],
+      "definitions": [
+        {
+          "term": "Deque (Double-Ended Queue)",
+          "definition": "A deque (pronounced 'deck') is a linear data structure that allows insertion and deletion of elements from both the front and the rear end. It is a generalization of both stack and queue."
+        },
+        {
+          "term": "Input-Restricted Deque",
+          "definition": "An input-restricted deque is a deque where insertion is allowed only at one end (rear), but deletion is allowed from both ends (front and rear)."
+        },
+        {
+          "term": "Output-Restricted Deque",
+          "definition": "An output-restricted deque is a deque where deletion is allowed only at one end (front), but insertion is allowed at both ends (front and rear)."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Deque allows insertion and deletion from both front and rear ends",
+        "A deque can function as both a stack and a queue",
+        "Input-restricted deque: insert at one end, delete from both ends",
+        "Output-restricted deque: delete from one end, insert at both ends",
+        "Deque is more flexible than both stack and queue"
+      ]
+    },
+    {
+      "id": "4.5",
+      "title": "Implementation of Deque Using Python",
+      "concepts": [
+        "Using Python list to implement a deque",
+        "insert(0, element) for adding at front",
+        "append(element) for adding at rear",
+        "pop(0) for removing from front",
+        "pop() for removing from rear",
+        "Implementing deque operations as functions",
+        "Using collections.deque for efficient implementation",
+        "Menu-driven program for deque operations"
+      ],
+      "definitions": [],
+      "formulas": [
+        {
+          "name": "Deque implementation using list",
+          "formula": "deque = []  # empty deque\ndeque.append(element)  # Add at rear\ndeque.insert(0, element)  # Add at front\nelement = deque.pop()  # Remove from rear\nelement = deque.pop(0)  # Remove from front",
+          "notes": "insert(0, elem) and pop(0) are O(n). For O(1), use collections.deque with appendleft() and popleft()"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Python list can implement a deque using append(), insert(0,), pop(), and pop(0)",
+        "append() adds at the rear, insert(0, element) adds at the front",
+        "pop() removes from the rear, pop(0) removes from the front",
+        "List-based deque has O(n) operations for front operations",
+        "collections.deque provides O(1) operations: appendleft(), popleft(), append(), pop()",
+        "A deque can simulate both stack (use one end) and queue (use both ends)"
+      ]
+    }
+  ],
+  "summary": [
+    "A queue is a linear data structure that follows the FIFO (First In First Out) principle.",
+    "Elements are added at the rear end (enqueue) and removed from the front end (dequeue).",
+    "Queue overflow occurs when inserting into a full queue; underflow occurs when removing from an empty queue.",
+    "In Python, a queue can be implemented using a list: append() for enqueue and pop(0) for dequeue.",
+    "A deque (double-ended queue) allows insertion and deletion from both the front and rear ends.",
+    "A deque is a generalization of both stack and queue.",
+    "An input-restricted deque allows insertion at only one end; an output-restricted deque allows deletion at only one end.",
+    "In Python, a deque can be implemented using a list with append(), insert(0,), pop(), and pop(0).",
+    "For efficient deque operations, the collections.deque class provides O(1) operations for both ends."
+  ],
+  "exercises": [
+    {
+      "id": "4.1",
+      "title": "Exercise 4",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "Differentiate between a stack and a queue.",
+          "type": "short",
+          "answer": "Stack:\n- Follows LIFO (Last In First Out) principle\n- Insertion (PUSH) and deletion (POP) happen at the same end (TOP)\n- Uses a single pointer (TOP)\n- Example: stack of plates, undo operation\n\nQueue:\n- Follows FIFO (First In First Out) principle\n- Insertion (enqueue) happens at the rear; deletion (dequeue) happens at the front\n- Uses two pointers (front and rear)\n- Example: queue at a ticket counter, print queue"
+        },
+        {
+          "qno": 2,
+          "question": "What is a deque? How is it different from a simple queue?",
+          "type": "short",
+          "answer": "A deque (double-ended queue) is a linear data structure that allows insertion and deletion from both the front and rear ends.\n\nDifferences from a simple queue:\n- Simple queue: insertion at rear only, deletion at front only\n- Deque: insertion and deletion at both front and rear\n- Simple queue supports only enqueue (rear) and dequeue (front)\n- Deque supports add_front, add_rear, remove_front, remove_rear\n- A deque can function as both a stack and a queue\n- Simple queue is more restrictive than a deque"
+        },
+        {
+          "qno": 3,
+          "question": "Write a Python program to implement a queue using a list with the following functions:\n(a) enqueue(queue, element) — to add an element\n(b) dequeue(queue) — to remove and return the front element\n(c) peek(queue) — to return the front element without removing\n(d) display(queue) — to display all elements\n(e) isEmpty(queue) — to check if the queue is empty",
+          "type": "long",
+          "answer": "def isEmpty(queue):\n    return len(queue) == 0\n\ndef enqueue(queue, element):\n    queue.append(element)\n    print(element, 'added to queue')\n\ndef dequeue(queue):\n    if isEmpty(queue):\n        print('Queue Underflow! Queue is empty.')\n        return None\n    return queue.pop(0)\n\ndef peek(queue):\n    if isEmpty(queue):\n        print('Queue is empty.')\n        return None\n    return queue[0]\n\ndef display(queue):\n    if isEmpty(queue):\n        print('Queue is empty.')\n    else:\n        print('Queue (front to rear):')\n        for element in queue:\n            print(element, end=' ')\n        print()\n\n# Main program\nqueue = []\nenqueue(queue, 10)\nenqueue(queue, 20)\nenqueue(queue, 30)\ndisplay(queue)\nprint('Front element:', peek(queue))\nprint('Dequeued:', dequeue(queue))\ndisplay(queue)"
+        },
+        {
+          "qno": 4,
+          "question": "What will be the output of the following code?\nqueue = []\nqueue.append(1)\nqueue.append(2)\nqueue.append(3)\nprint(queue.pop(0))\nqueue.append(4)\nprint(queue.pop(0))\nprint(queue)",
+          "type": "short",
+          "answer": "Output:\n1\n2\n[3, 4]\n\nExplanation:\n- append(1) -> queue = [1]\n- append(2) -> queue = [1, 2]\n- append(3) -> queue = [1, 2, 3]\n- pop(0) returns 1 -> queue = [2, 3] -> prints 1\n- append(4) -> queue = [2, 3, 4]\n- pop(0) returns 2 -> queue = [3, 4] -> prints 2\n- print(queue) -> prints [3, 4]"
+        },
+        {
+          "qno": 5,
+          "question": "Write a Python program to implement a deque using a list with functions to add and remove elements from both ends.",
+          "type": "long",
+          "answer": "def isEmpty(deque):\n    return len(deque) == 0\n\ndef add_front(deque, element):\n    deque.insert(0, element)\n    print(element, 'added at front')\n\ndef add_rear(deque, element):\n    deque.append(element)\n    print(element, 'added at rear')\n\ndef remove_front(deque):\n    if isEmpty(deque):\n        print('Deque Underflow! Deque is empty.')\n        return None\n    return deque.pop(0)\n\ndef remove_rear(deque):\n    if isEmpty(deque):\n        print('Deque Underflow! Deque is empty.')\n        return None\n    return deque.pop()\n\ndef display(deque):\n    if isEmpty(deque):\n        print('Deque is empty.')\n    else:\n        print('Deque (front to rear):', deque)\n\n# Main program\ndq = []\nadd_rear(dq, 10)\nadd_rear(dq, 20)\nadd_front(dq, 5)\ndisplay(dq)  # [5, 10, 20]\nprint('Removed from front:', remove_front(dq))\nprint('Removed from rear:', remove_rear(dq))\ndisplay(dq)  # [10]"
+        },
+        {
+          "qno": 6,
+          "question": "Write a Python program to implement a queue of customer orders in a restaurant. Each order has an order number and item name. Implement enqueue, dequeue, and display using a menu-driven approach.",
+          "type": "long",
+          "answer": "queue = []\n\ndef enqueue_order():\n    order_no = int(input('Enter order number: '))\n    item = input('Enter item name: ')\n    order = {'order_no': order_no, 'item': item}\n    queue.append(order)\n    print('Order', order_no, 'added to queue.')\n\ndef dequeue_order():\n    if len(queue) == 0:\n        print('No orders in the queue!')\n    else:\n        order = queue.pop(0)\n        print('Processing Order', order['order_no'], '- Item:', order['item'])\n\ndef display_orders():\n    if len(queue) == 0:\n        print('No orders in the queue.')\n    else:\n        print('Pending Orders (front to rear):')\n        for order in queue:\n            print('Order No:', order['order_no'], '| Item:', order['item'])\n\n# Menu-driven program\nwhile True:\n    print('\\n--- Restaurant Order Queue ---')\n    print('1. Add new order')\n    print('2. Process next order')\n    print('3. Display all orders')\n    print('4. Exit')\n    choice = int(input('Enter your choice: '))\n    if choice == 1:\n        enqueue_order()\n    elif choice == 2:\n        dequeue_order()\n    elif choice == 3:\n        display_orders()\n    elif choice == 4:\n        print('Exiting program.')\n        break\n    else:\n        print('Invalid choice!')"
+        },
+        {
+          "qno": 7,
+          "question": "List any four applications of queues in computer science.",
+          "type": "short",
+          "answer": "Four applications of queues in computer science:\n1. CPU Scheduling: Operating systems use queues to manage processes waiting for CPU time (e.g., round-robin scheduling).\n2. Print Spooling: Print jobs are placed in a queue and processed in FIFO order by the printer.\n3. Breadth-First Search (BFS): BFS algorithm in graphs and trees uses a queue to explore nodes level by level.\n4. Handling Requests in Web Servers: Incoming HTTP requests are placed in a queue and handled one by one.\n\nOther applications: keyboard buffer, call center systems, traffic management, message queues in distributed systems."
+        }
+      ]
+    }
+  ]
+}

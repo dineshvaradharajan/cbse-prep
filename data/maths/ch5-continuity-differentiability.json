@@ -118,15 +118,16 @@
       "formulas": [
         {
           "name": "Sum/Difference Rule",
-          "formula": "(u +/- v)' = u' +/- v'"
+          "formula": "(u \\pm v)' = u' \\pm v'"
         },
         {
           "name": "Product Rule (Leibnitz Rule)",
-          "formula": "(uv)' = u'v + uv'"
+          "formula": "(uv)' = u'v + uv'",
+          "notes": "Derivative of a product of two functions"
         },
         {
           "name": "Quotient Rule",
-          "formula": "(u/v)' = (u'v - uv')/v^2, where v != 0"
+          "formula": "\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}, \\; v \\neq 0"
         }
       ],
       "theorems": [
@@ -157,11 +158,11 @@
       "formulas": [
         {
           "name": "Chain Rule (two functions)",
-          "formula": "If f = v o u, t = u(x), then df/dx = (dv/dt) . (dt/dx)"
+          "formula": "\\frac{df}{dx} = \\frac{dv}{dt} \\cdot \\frac{dt}{dx}"
         },
         {
           "name": "Chain Rule (three functions)",
-          "formula": "If f = (w o u) o v, t = v(x), s = u(t), then df/dx = (dw/ds) . (ds/dt) . (dt/dx)"
+          "formula": "\\frac{df}{dx} = \\frac{dw}{ds} \\cdot \\frac{ds}{dt} \\cdot \\frac{dt}{dx}"
         }
       ],
       "theorems": [
@@ -212,17 +213,17 @@
       "formulas": [
         {
           "name": "Derivative of sin^(-1) x",
-          "formula": "d/dx(sin^(-1) x) = 1/sqrt(1 - x^2)",
+          "formula": "\\frac{d}{dx}(\\sin^{-1} x) = \\frac{1}{\\sqrt{1 - x^2}}",
           "domain": "x in (-1, 1)"
         },
         {
           "name": "Derivative of cos^(-1) x",
-          "formula": "d/dx(cos^(-1) x) = -1/sqrt(1 - x^2)",
+          "formula": "\\frac{d}{dx}(\\cos^{-1} x) = \\frac{-1}{\\sqrt{1 - x^2}}",
           "domain": "x in (-1, 1)"
         },
         {
           "name": "Derivative of tan^(-1) x",
-          "formula": "d/dx(tan^(-1) x) = 1/(1 + x^2)",
+          "formula": "\\frac{d}{dx}(\\tan^{-1} x) = \\frac{1}{1 + x^2}",
           "domain": "x in R"
         }
       ],
@@ -256,31 +257,31 @@
       "formulas": [
         {
           "name": "Derivative of e^x",
-          "formula": "d/dx(e^x) = e^x"
+          "formula": "\\frac{d}{dx}(e^x) = e^x"
         },
         {
           "name": "Derivative of log x (natural log)",
-          "formula": "d/dx(log x) = 1/x"
+          "formula": "\\frac{d}{dx}(\\log x) = \\frac{1}{x}"
         },
         {
           "name": "Derivative of a^x",
-          "formula": "d/dx(a^x) = a^x log a"
+          "formula": "\\frac{d}{dx}(a^x) = a^x \\log a"
         },
         {
           "name": "Change of base formula",
-          "formula": "log_a p = (log_b p)/(log_b a)"
+          "formula": "\\log_a p = \\frac{\\log_b p}{\\log_b a}"
         },
         {
           "name": "Log of product",
-          "formula": "log_b(pq) = log_b p + log_b q"
+          "formula": "\\log_b(pq) = \\log_b p + \\log_b q"
         },
         {
           "name": "Log of power",
-          "formula": "log_b(p^n) = n log_b p"
+          "formula": "\\log_b(p^n) = n \\log_b p"
         },
         {
           "name": "Log of quotient",
-          "formula": "log_b(x/y) = log_b x - log_b y"
+          "formula": "\\log_b\\!\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y"
         }
       ],
       "theorems": [
@@ -313,7 +314,7 @@
       "formulas": [
         {
           "name": "Logarithmic differentiation formula",
-          "formula": "For y = [u(x)]^(v(x)): log y = v(x) . log[u(x)], then (1/y)(dy/dx) = v(x) . (1/u(x)) . u'(x) + v'(x) . log[u(x)], so dy/dx = y[v(x) . u'(x)/u(x) + v'(x) . log(u(x))]"
+          "formula": "\\frac{dy}{dx} = y\\left[v(x) \\cdot \\frac{u'(x)}{u(x)} + v'(x) \\cdot \\log u(x)\\right]"
         }
       ],
       "theorems": [],
@@ -335,7 +336,7 @@
       "formulas": [
         {
           "name": "Parametric differentiation",
-          "formula": "dy/dx = (dy/dt)/(dx/dt) = g'(t)/f'(t), provided f'(t) != 0"
+          "formula": "\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{g'(t)}{f'(t)}, \\; f'(t) \\neq 0"
         }
       ],
       "theorems": [],
@@ -471,27 +472,27 @@
   "differentiation_rules": [
     {
       "name": "Sum/Difference Rule",
-      "formula": "d/dx(u +/- v) = du/dx +/- dv/dx"
+      "formula": "\\frac{d}{dx}(u \\pm v) = \\frac{du}{dx} \\pm \\frac{dv}{dx}"
     },
     {
       "name": "Product Rule (Leibnitz Rule)",
-      "formula": "d/dx(uv) = u'v + uv'"
+      "formula": "\\frac{d}{dx}(uv) = u'v + uv'"
     },
     {
       "name": "Quotient Rule",
-      "formula": "d/dx(u/v) = (u'v - uv')/v^2, v != 0"
+      "formula": "\\frac{d}{dx}\\!\\left(\\frac{u}{v}\\right) = \\frac{u'v - uv'}{v^2}, \\; v \\neq 0"
     },
     {
       "name": "Chain Rule",
-      "formula": "df/dx = (dv/dt)(dt/dx) where f = v o u, t = u(x)"
+      "formula": "\\frac{df}{dx} = \\frac{dv}{dt} \\cdot \\frac{dt}{dx}, \\; f = v \\circ u, \\; t = u(x)"
     },
     {
       "name": "Parametric Differentiation",
-      "formula": "dy/dx = (dy/dt)/(dx/dt), dx/dt != 0"
+      "formula": "\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}, \\; \\frac{dx}{dt} \\neq 0"
     },
     {
       "name": "Logarithmic Differentiation",
-      "formula": "For y = [u(x)]^(v(x)): take log, then (1/y)(dy/dx) = v(x)u'(x)/u(x) + v'(x) log[u(x)]"
+      "formula": "\\frac{1}{y}\\frac{dy}{dx} = v(x) \\cdot \\frac{u'(x)}{u(x)} + v'(x) \\cdot \\log u(x)"
     }
   ],
   "summary": [

@@ -1,0 +1,490 @@
+{
+  "chapter": 10,
+  "title": "Computer Networks",
+  "sections": [
+    {
+      "id": "10.1",
+      "title": "Introduction to Computer Networks",
+      "concepts": [
+        "What is a computer network",
+        "Need for networking",
+        "Advantages of computer networks",
+        "Resource sharing",
+        "Communication and collaboration",
+        "Data and information sharing"
+      ],
+      "definitions": [
+        {
+          "term": "Computer Network",
+          "definition": "A computer network is an interconnection of computers and other devices that can communicate with each other and share hardware, software, and data resources."
+        },
+        {
+          "term": "Node",
+          "definition": "Any device connected to a network that is capable of sending, receiving, or forwarding information is called a node. Examples include computers, printers, servers, and smartphones."
+        },
+        {
+          "term": "Server",
+          "definition": "A server is a computer on a network that provides services and resources (such as files, printers, or applications) to other computers (clients) on the network."
+        },
+        {
+          "term": "Client",
+          "definition": "A client is a computer on a network that requests and uses the services and resources provided by a server."
+        },
+        {
+          "term": "Peer-to-Peer Network",
+          "definition": "A network in which each computer can act as both a server and a client, sharing resources directly with other computers without a dedicated server."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "A computer network allows communication and resource sharing between connected devices",
+        "Advantages of networking include file sharing, hardware sharing (printers, scanners), internet sharing, communication (email, video conferencing), and centralized data management",
+        "Networks can follow client-server or peer-to-peer architecture",
+        "A server provides services to clients; in peer-to-peer, each node can act as both",
+        "Networking reduces cost by sharing expensive resources like printers and storage"
+      ]
+    },
+    {
+      "id": "10.2",
+      "title": "Evolution of Networking",
+      "concepts": [
+        "ARPANET",
+        "NSFNET",
+        "Evolution to the Internet",
+        "History of computer networking"
+      ],
+      "definitions": [
+        {
+          "term": "ARPANET",
+          "definition": "Advanced Research Projects Agency Network (ARPANET) was the first wide-area packet-switching network, developed by the US Department of Defense in 1969. It initially connected four universities: UCLA, Stanford, UC Santa Barbara, and University of Utah."
+        },
+        {
+          "term": "NSFNET",
+          "definition": "National Science Foundation Network (NSFNET) was a network established in 1986 by the US National Science Foundation to connect five supercomputer centers. It eventually replaced ARPANET as the backbone of the Internet."
+        },
+        {
+          "term": "Internet",
+          "definition": "The Internet is a global network of interconnected computer networks that use the TCP/IP protocol suite to communicate. It evolved from ARPANET and NSFNET and became publicly accessible in the 1990s."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "ARPANET (1969) was the first computer network, funded by the US Department of Defense (ARPA/DARPA)",
+        "ARPANET initially connected 4 nodes at UCLA, Stanford Research Institute, UC Santa Barbara, and University of Utah",
+        "ARPANET used packet switching technology for data transfer",
+        "NSFNET (1986) was created to connect supercomputer centers for academic and research use",
+        "NSFNET replaced ARPANET as the main backbone network",
+        "Tim Berners-Lee invented the World Wide Web (WWW) in 1989 at CERN",
+        "The Internet became publicly available in the early 1990s after commercialization"
+      ]
+    },
+    {
+      "id": "10.3",
+      "title": "Types of Networks",
+      "concepts": [
+        "Personal Area Network (PAN)",
+        "Local Area Network (LAN)",
+        "Metropolitan Area Network (MAN)",
+        "Wide Area Network (WAN)",
+        "Network classification by geographical spread",
+        "Comparison of network types"
+      ],
+      "definitions": [
+        {
+          "term": "PAN (Personal Area Network)",
+          "definition": "A PAN is a network of personal devices such as smartphones, tablets, laptops, and wearable devices, typically within a range of about 10 metres. Examples include Bluetooth and infrared connections."
+        },
+        {
+          "term": "LAN (Local Area Network)",
+          "definition": "A LAN is a network that connects computers and devices within a small geographical area such as a room, building, or campus. It typically spans up to a few kilometres and offers high data transfer rates (10 Mbps to 1 Gbps or more)."
+        },
+        {
+          "term": "MAN (Metropolitan Area Network)",
+          "definition": "A MAN is a network that spans a city or a large campus, typically covering a range of 5 to 50 kilometres. It connects multiple LANs within a metropolitan area. Cable TV network is an example of MAN."
+        },
+        {
+          "term": "WAN (Wide Area Network)",
+          "definition": "A WAN is a network that spans a large geographical area, such as a country or the entire world. The Internet is the largest WAN. WANs typically use leased telecommunication lines and satellites."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "PAN: Range ~10 metres, connects personal devices, uses Bluetooth/infrared/USB, privately owned",
+        "LAN: Range up to a few km, connects devices in a building/campus, high speed (10 Mbps to 1 Gbps+), privately owned, uses Ethernet/WiFi",
+        "MAN: Range 5-50 km, connects LANs across a city, moderate speed, may be privately or publicly owned, cable TV is an example",
+        "WAN: Range unlimited (worldwide), connects LANs and MANs across countries, lower speed compared to LAN, uses leased lines/satellites, may be privately or publicly owned",
+        "The Internet is the largest example of a WAN",
+        "As geographical spread increases, speed generally decreases and cost increases",
+        "Comparison: PAN < LAN < MAN < WAN (in terms of geographical coverage)"
+      ]
+    },
+    {
+      "id": "10.4",
+      "title": "Network Devices",
+      "concepts": [
+        "Modem",
+        "Ethernet card (NIC)",
+        "RJ45 connector",
+        "Repeater",
+        "Hub",
+        "Switch",
+        "Router",
+        "Gateway",
+        "WiFi card",
+        "Networking hardware"
+      ],
+      "definitions": [
+        {
+          "term": "Modem",
+          "definition": "Modem (Modulator-Demodulator) is a device that converts digital signals from a computer into analog signals for transmission over telephone lines (modulation) and converts incoming analog signals back to digital form (demodulation)."
+        },
+        {
+          "term": "Ethernet Card (NIC)",
+          "definition": "An Ethernet card or Network Interface Card (NIC) is a hardware component that connects a computer to a network using an Ethernet cable. Each NIC has a unique MAC address. It operates at speeds of 10/100/1000 Mbps."
+        },
+        {
+          "term": "RJ45 Connector",
+          "definition": "RJ45 (Registered Jack 45) is a standard connector used to connect Ethernet cables to network devices. It has 8 pins and is used with twisted pair cables for LAN connections."
+        },
+        {
+          "term": "Repeater",
+          "definition": "A repeater is a network device that receives a signal, amplifies (regenerates) it, and retransmits it to extend the range of the network. It operates at the Physical layer (Layer 1) of the OSI model."
+        },
+        {
+          "term": "Hub",
+          "definition": "A hub is a network device that connects multiple computers in a network. It broadcasts incoming data packets to all connected devices regardless of the destination. It operates at the Physical layer and does not filter data."
+        },
+        {
+          "term": "Switch",
+          "definition": "A switch is a network device that connects multiple computers in a LAN and forwards data packets only to the intended destination device using MAC addresses. It operates at the Data Link layer (Layer 2) and is more efficient than a hub."
+        },
+        {
+          "term": "Router",
+          "definition": "A router is a network device that forwards data packets between different networks. It uses IP addresses to determine the best path for data transmission. It operates at the Network layer (Layer 3) and connects LANs to WANs."
+        },
+        {
+          "term": "Gateway",
+          "definition": "A gateway is a network device that connects two networks that use different communication protocols. It acts as a translator between networks with different architectures. It operates at all layers of the OSI model."
+        },
+        {
+          "term": "WiFi Card",
+          "definition": "A WiFi card (Wireless Network Interface Card) is a hardware component that allows a device to connect to a wireless network. It uses radio waves to communicate with a WiFi access point or router."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "Modem converts digital to analog (modulation) and analog to digital (demodulation) for transmission over telephone lines",
+        "Ethernet card (NIC) has a unique 48-bit MAC address and connects a computer to a wired LAN",
+        "RJ45 is the standard 8-pin connector used with twisted pair Ethernet cables",
+        "Repeater regenerates and amplifies signals to extend network range (Physical layer device)",
+        "Hub broadcasts data to all ports — it is a non-intelligent device (Physical layer)",
+        "Switch sends data only to the intended recipient using MAC address table — it is an intelligent device (Data Link layer)",
+        "Router directs data between different networks using IP addresses (Network layer)",
+        "Gateway connects networks with different protocols and acts as a protocol translator",
+        "Hub vs Switch: Hub broadcasts to all, Switch sends only to destination; Switch is faster and more secure",
+        "Switch vs Router: Switch connects devices within a LAN (uses MAC), Router connects different networks (uses IP)",
+        "WiFi card enables wireless connectivity using radio waves and IEEE 802.11 standards"
+      ]
+    },
+    {
+      "id": "10.5",
+      "title": "Networking Topologies",
+      "concepts": [
+        "Bus topology",
+        "Star topology",
+        "Tree topology",
+        "Mesh topology",
+        "Network layout",
+        "Comparison of topologies"
+      ],
+      "definitions": [
+        {
+          "term": "Network Topology",
+          "definition": "Network topology refers to the layout or arrangement pattern in which computers and other network devices are connected to each other. It defines the physical or logical structure of the network."
+        },
+        {
+          "term": "Bus Topology",
+          "definition": "In bus topology, all devices are connected to a single central cable called the bus or backbone. Data sent by a device travels in both directions along the bus. Terminators are placed at both ends to prevent signal reflection."
+        },
+        {
+          "term": "Star Topology",
+          "definition": "In star topology, all devices are connected to a central device (hub or switch). All communication passes through the central device. If the central device fails, the entire network goes down."
+        },
+        {
+          "term": "Tree Topology",
+          "definition": "Tree topology (also called hierarchical topology) is a combination of bus and star topologies. Multiple star networks are connected to a bus backbone, forming a tree-like structure."
+        },
+        {
+          "term": "Mesh Topology",
+          "definition": "In mesh topology, every device is connected to every other device through dedicated point-to-point links. If there are n devices, each device has (n-1) connections, and the total number of links is n(n-1)/2."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Number of links in Mesh Topology",
+          "formula": "Number of links = n(n-1)/2, where n is the number of devices",
+          "notes": "Each device has (n-1) ports. For example, 5 devices need 5(4)/2 = 10 links."
+        },
+        {
+          "name": "Number of ports per device in Mesh",
+          "formula": "Ports per device = n - 1",
+          "notes": "Each device must have (n-1) I/O ports to connect to every other device."
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "Bus Topology — Advantages: Easy to install, inexpensive, requires less cable. Disadvantages: If backbone fails, entire network fails; difficult to troubleshoot; performance degrades with more devices; limited cable length",
+        "Star Topology — Advantages: Easy to set up and manage, failure of one node does not affect others, easy to add/remove devices. Disadvantages: If central device (hub/switch) fails, entire network fails; requires more cable than bus; central device cost",
+        "Tree Topology — Advantages: Supports hierarchical structure, easy to expand, fault isolation is easier. Disadvantages: If backbone fails, entire network is affected; difficult to configure; requires more cable",
+        "Mesh Topology — Advantages: Very reliable (multiple paths), no traffic congestion, fault tolerance is high, data privacy. Disadvantages: Very expensive, complex installation, large number of cables and ports needed",
+        "Star topology is the most commonly used topology in modern LANs",
+        "Mesh topology provides the highest reliability but at the highest cost",
+        "Bus topology is the simplest and cheapest but least reliable"
+      ]
+    },
+    {
+      "id": "10.6",
+      "title": "Identifying Nodes in a Networked Communication",
+      "concepts": [
+        "MAC address",
+        "IP address",
+        "IPv4 addressing",
+        "IPv6 addressing",
+        "Network addressing",
+        "Unique identification of devices"
+      ],
+      "definitions": [
+        {
+          "term": "MAC Address",
+          "definition": "MAC (Media Access Control) address is a unique 48-bit (6-byte) hardware address assigned to a Network Interface Card (NIC) by the manufacturer. It is written as six pairs of hexadecimal digits separated by colons or hyphens (e.g., 00:1A:2B:3C:4D:5E). It is also called the physical address."
+        },
+        {
+          "term": "IP Address",
+          "definition": "IP (Internet Protocol) address is a unique logical address assigned to each device on a network. It is used to identify and locate devices for communication. Unlike MAC address, IP address can change when a device moves to a different network."
+        },
+        {
+          "term": "IPv4",
+          "definition": "IPv4 (Internet Protocol version 4) uses 32-bit addresses written as four decimal numbers (0-255) separated by dots (e.g., 192.168.1.1). It supports approximately 4.3 billion (2^32) unique addresses."
+        },
+        {
+          "term": "IPv6",
+          "definition": "IPv6 (Internet Protocol version 6) uses 128-bit addresses written as eight groups of four hexadecimal digits separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334). It supports approximately 3.4 x 10^38 unique addresses."
+        }
+      ],
+      "formulas": [
+        {
+          "name": "Total IPv4 Addresses",
+          "formula": "2^32 = 4,294,967,296 (approximately 4.3 billion)",
+          "notes": "32-bit address space, each octet ranges from 0 to 255"
+        },
+        {
+          "name": "Total IPv6 Addresses",
+          "formula": "2^128 = approximately 3.4 x 10^38",
+          "notes": "128-bit address space, providing virtually unlimited addresses"
+        }
+      ],
+      "theorems": [],
+      "key_points": [
+        "MAC address is a 48-bit hardware address (physical address) permanently assigned to a NIC by the manufacturer",
+        "MAC address format: six pairs of hexadecimal digits (e.g., 00:1A:2B:3C:4D:5E)",
+        "IP address is a logical address that can be assigned and changed; MAC address is a physical address that is permanent",
+        "IPv4 uses 32 bits (4 octets in dotted decimal notation, e.g., 192.168.0.1)",
+        "IPv6 uses 128 bits (8 groups of 4 hex digits, e.g., 2001:0db8::8a2e:0370:7334)",
+        "IPv4 supports ~4.3 billion addresses; IPv6 supports ~3.4 x 10^38 addresses",
+        "IPv6 was introduced because IPv4 addresses were running out due to the growing number of devices",
+        "Every device on a network must have a unique IP address for proper communication"
+      ]
+    },
+    {
+      "id": "10.7",
+      "title": "Internet, Web and the Internet of Things",
+      "concepts": [
+        "World Wide Web (WWW)",
+        "Web browser",
+        "Web server",
+        "Web page",
+        "Website",
+        "URL",
+        "Internet of Things (IoT)"
+      ],
+      "definitions": [
+        {
+          "term": "World Wide Web (WWW)",
+          "definition": "The World Wide Web is an information system on the Internet that allows documents (web pages) to be connected to other documents through hyperlinks. It was invented by Tim Berners-Lee in 1989 at CERN."
+        },
+        {
+          "term": "Web Browser",
+          "definition": "A web browser is a software application used to access and view websites and web pages on the Internet. Examples include Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari."
+        },
+        {
+          "term": "Web Server",
+          "definition": "A web server is a computer system that hosts websites and delivers web pages to clients (browsers) upon request using the HTTP/HTTPS protocol."
+        },
+        {
+          "term": "Web Page",
+          "definition": "A web page is a single document on the World Wide Web, written in HTML, that can contain text, images, videos, and hyperlinks to other web pages."
+        },
+        {
+          "term": "Website",
+          "definition": "A website is a collection of related web pages hosted on a web server, accessible via a common domain name (e.g., www.example.com)."
+        },
+        {
+          "term": "URL",
+          "definition": "URL (Uniform Resource Locator) is the address used to access a resource on the Internet. It consists of a protocol (http/https), domain name, and path. For example: https://www.example.com/page.html"
+        },
+        {
+          "term": "Internet of Things (IoT)",
+          "definition": "The Internet of Things (IoT) refers to the network of physical objects (things) embedded with sensors, software, and connectivity that allows them to collect and exchange data over the Internet. Examples include smart home devices, wearables, and industrial sensors."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "The Internet is a network of networks; the Web (WWW) is a service that runs on the Internet",
+        "WWW was invented by Tim Berners-Lee in 1989 at CERN, Switzerland",
+        "A web browser is the client software that requests and displays web pages",
+        "A web server hosts websites and serves web pages to browsers using HTTP/HTTPS",
+        "URL structure: protocol://domain-name/path/filename (e.g., https://www.ncert.nic.in/textbook.php)",
+        "A website is a collection of related web pages; a web page is a single document",
+        "IoT connects everyday physical objects to the Internet for data exchange",
+        "IoT applications: smart homes (lights, thermostat), wearable health monitors, smart agriculture, traffic management, industrial automation"
+      ]
+    },
+    {
+      "id": "10.8",
+      "title": "Domain Name System",
+      "concepts": [
+        "DNS (Domain Name System)",
+        "Domain name",
+        "Domain name hierarchy",
+        "Top-level domains",
+        "URL structure"
+      ],
+      "definitions": [
+        {
+          "term": "DNS (Domain Name System)",
+          "definition": "The Domain Name System (DNS) is a hierarchical naming system that translates human-readable domain names (e.g., www.google.com) into IP addresses (e.g., 172.217.14.206) that computers use to identify each other on the network."
+        },
+        {
+          "term": "Domain Name",
+          "definition": "A domain name is a human-readable address of a website (e.g., google.com, ncert.nic.in). It is mapped to an IP address through DNS so users do not need to remember numerical IP addresses."
+        },
+        {
+          "term": "Top-Level Domain (TLD)",
+          "definition": "A Top-Level Domain is the last part of a domain name (e.g., .com, .org, .edu, .in, .gov). TLDs can be generic (.com, .org, .net) or country-code (.in for India, .uk for UK, .us for USA)."
+        },
+        {
+          "term": "DNS Server",
+          "definition": "A DNS server (also called name server) is a computer that stores the database of domain names and their corresponding IP addresses. When a browser requests a website, the DNS server resolves the domain name to its IP address."
+        }
+      ],
+      "formulas": [],
+      "theorems": [],
+      "key_points": [
+        "DNS translates domain names (human-readable) to IP addresses (machine-readable)",
+        "DNS works like a phone book of the Internet",
+        "Domain name hierarchy: host name . second-level domain . top-level domain (e.g., www.ncert.nic.in)",
+        "Common generic TLDs: .com (commercial), .org (organisation), .edu (education), .gov (government), .net (network)",
+        "Common country-code TLDs: .in (India), .uk (United Kingdom), .us (United States), .au (Australia)",
+        "URL structure: protocol://domain-name/path/page (e.g., https://www.ncert.nic.in/textbook/textbook.htm)",
+        "When you type a URL, your browser contacts a DNS server to resolve the domain name into an IP address before connecting to the web server",
+        "DNS resolution process: Browser cache -> OS cache -> Router cache -> ISP DNS server -> Root DNS server"
+      ]
+    }
+  ],
+  "summary": [
+    "A computer network is an interconnection of computers and devices for communication and resource sharing",
+    "ARPANET (1969) was the first computer network; it evolved into the Internet through NSFNET",
+    "Networks are classified by size: PAN (personal, ~10m), LAN (building/campus), MAN (city, 5-50km), WAN (worldwide)",
+    "Key network devices: Modem (analog-digital conversion), Hub (broadcasts to all), Switch (sends to destination using MAC), Router (routes between networks using IP), Gateway (connects different protocol networks)",
+    "Network topologies: Bus (single backbone), Star (central device), Tree (hierarchical), Mesh (all-to-all connections)",
+    "MAC address is a 48-bit permanent hardware address; IP address is a logical address that can change",
+    "IPv4 uses 32-bit addresses (~4.3 billion); IPv6 uses 128-bit addresses (~3.4 x 10^38)",
+    "WWW is a service on the Internet; DNS translates domain names to IP addresses",
+    "IoT connects everyday physical objects to the Internet for data collection and exchange"
+  ],
+  "exercises": [
+    {
+      "id": "10.1",
+      "title": "Exercise 10.1",
+      "questions": [
+        {
+          "qno": 1,
+          "question": "What is a computer network?",
+          "type": "short",
+          "answer": "A computer network is an interconnection of computers and other devices that can communicate with each other and share hardware, software, and data resources."
+        },
+        {
+          "qno": 2,
+          "question": "What are the advantages of computer networks?",
+          "type": "long",
+          "answer": "Advantages of computer networks include: (1) Resource Sharing — hardware (printers, scanners) and software can be shared among users, reducing costs. (2) Data Sharing — files and databases can be accessed by multiple users simultaneously. (3) Communication — email, video conferencing, and instant messaging enable fast communication. (4) Internet Access Sharing — a single internet connection can be shared among multiple devices. (5) Centralized Management — data can be stored and managed centrally, making backup and security easier. (6) Reliability — data can be replicated across multiple machines for backup."
+        },
+        {
+          "qno": 3,
+          "question": "What was ARPANET? When was it developed?",
+          "type": "short",
+          "answer": "ARPANET (Advanced Research Projects Agency Network) was the first wide-area packet-switching network. It was developed in 1969 by the US Department of Defense (ARPA/DARPA). It initially connected four university nodes: UCLA, Stanford Research Institute, UC Santa Barbara, and University of Utah."
+        },
+        {
+          "qno": 4,
+          "question": "Differentiate between LAN, MAN, and WAN.",
+          "type": "long",
+          "answer": "LAN (Local Area Network): Covers a small area like a room, building, or campus (up to a few km). It offers high speed (10 Mbps to 1 Gbps+), is privately owned, and uses Ethernet/WiFi. Example: office network.\n\nMAN (Metropolitan Area Network): Covers a city or metropolitan area (5-50 km). It has moderate speed, may be public or private, and connects multiple LANs. Example: cable TV network.\n\nWAN (Wide Area Network): Covers large geographical areas like countries or the entire world. It has relatively lower speed, uses leased lines and satellites, and may be public or private. Example: the Internet."
+        },
+        {
+          "qno": 5,
+          "question": "What is the difference between a hub and a switch?",
+          "type": "short",
+          "answer": "A hub broadcasts incoming data packets to all connected devices regardless of the intended destination, operating at the Physical layer. A switch forwards data packets only to the intended destination device using MAC addresses, operating at the Data Link layer. A switch is more efficient, faster, and more secure than a hub."
+        },
+        {
+          "qno": 6,
+          "question": "What is the difference between a switch and a router?",
+          "type": "short",
+          "answer": "A switch connects devices within a single LAN and forwards data using MAC addresses (Data Link layer). A router connects different networks (LANs to WANs) and forwards data using IP addresses (Network layer). A router can determine the best path for data transmission across networks."
+        },
+        {
+          "qno": 7,
+          "question": "Compare bus, star, and mesh topologies.",
+          "type": "long",
+          "answer": "Bus Topology: All devices connect to a single backbone cable. It is cheap and easy to install but the entire network fails if the backbone breaks. Performance degrades as more devices are added.\n\nStar Topology: All devices connect to a central hub/switch. It is easy to manage and add devices, failure of one node does not affect others, but if the central device fails the entire network goes down. It requires more cable.\n\nMesh Topology: Every device connects to every other device. It is highly reliable with multiple paths and excellent fault tolerance, but it is very expensive and complex. Number of connections = n(n-1)/2."
+        },
+        {
+          "qno": 8,
+          "question": "What is the difference between IPv4 and IPv6?",
+          "type": "short",
+          "answer": "IPv4 uses 32-bit addresses (4 octets in dotted decimal notation, e.g., 192.168.1.1) and supports about 4.3 billion addresses. IPv6 uses 128-bit addresses (8 groups of 4 hex digits, e.g., 2001:0db8::7334) and supports approximately 3.4 x 10^38 addresses. IPv6 was introduced to overcome the address exhaustion problem of IPv4."
+        },
+        {
+          "qno": 9,
+          "question": "What is DNS? How does it work?",
+          "type": "short",
+          "answer": "DNS (Domain Name System) is a hierarchical naming system that translates human-readable domain names (e.g., www.google.com) into machine-readable IP addresses (e.g., 172.217.14.206). When a user types a URL in a browser, the browser contacts a DNS server which looks up the domain name and returns the corresponding IP address, allowing the browser to connect to the correct web server."
+        },
+        {
+          "qno": 10,
+          "question": "What is IoT? Give examples.",
+          "type": "short",
+          "answer": "IoT (Internet of Things) is the network of physical objects embedded with sensors, software, and connectivity to collect and exchange data over the Internet. Examples include: smart home devices (smart lights, thermostat, security cameras), wearable health monitors (fitness trackers, smartwatches), smart agriculture sensors, traffic management systems, and industrial automation systems."
+        },
+        {
+          "qno": 11,
+          "question": "What is the difference between MAC address and IP address?",
+          "type": "short",
+          "answer": "MAC address is a 48-bit hardware (physical) address permanently assigned to a NIC by the manufacturer; it cannot change and is written in hexadecimal (e.g., 00:1A:2B:3C:4D:5E). IP address is a logical address assigned by the network administrator or DHCP server; it can change when a device moves to a different network. MAC address works at the Data Link layer; IP address works at the Network layer."
+        },
+        {
+          "qno": 12,
+          "question": "What is a modem? Explain its working.",
+          "type": "short",
+          "answer": "A modem (Modulator-Demodulator) is a device that enables computers to communicate over telephone lines. During modulation, it converts digital signals from the computer into analog signals suitable for transmission over telephone lines. During demodulation, it converts incoming analog signals back into digital form that the computer can understand."
+        }
+      ]
+    }
+  ]
+}
