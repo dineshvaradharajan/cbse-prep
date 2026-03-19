@@ -85,6 +85,12 @@ pre.code-block .copy-btn:hover{background:#475569;color:#fff}
 .compare-col pre.match{color:#a7f3d0}
 .compare-col pre.mismatch{color:#fca5a5}
 
+.file-content-wrap{border-bottom:1px solid #334155}
+.file-content-header{display:flex;align-items:center;justify-content:space-between;padding:.4rem .75rem;background:#1e1b4b;border-bottom:1px solid #334155}
+.file-content-label{font-size:.72rem;font-weight:700;color:#a5b4fc}
+.file-content-hint{font-size:.6rem;color:#6366f1}
+.file-content-area{width:100%;min-height:80px;padding:.6rem .75rem;background:#1e1b33;color:#c4b5fd;border:none;font-family:'Courier New',monospace;font-size:.76rem;line-height:1.5;resize:vertical;outline:none}
+.file-content-area:focus{box-shadow:inset 0 0 0 1px #6366f1}
 .no-run-note{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;background:#1e1b33;border:1px solid #6366f1;border-radius:8px;margin-top:.5rem;font-size:.75rem;color:#c4b5fd;line-height:1.4}
 .no-run-note .note-icon{font-size:1rem;flex-shrink:0}
 
@@ -124,18 +130,42 @@ pre.code-block .copy-btn:hover{background:#475569;color:#fff}
 <script>
 const ICONS = {'File Handling':'📄','Binary File':'💾','CSV File':'📊','Stack':'📚','Python Functions':'🐍','SQL':'🗃️'};
 
-/* Determine if a specific program can run in the browser by checking its code */
-function isProgramRunnable(prog) {
-  const code = (prog.code || '').toLowerCase();
-  // Can't run: file I/O, pickle, csv module, SQL, mysql.connector
-  if (/\bopen\s*\(/.test(code)) return false;
-  if (/\bimport\s+(pickle|csv|mysql)/.test(code)) return false;
-  if (/\bfrom\s+(pickle|csv|mysql)/.test(code)) return false;
-  if (/\b(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)\b/i.test(code) && /\b(cursor|execute|connect)\b/.test(code)) return false;
-  // SQL-only programs (no Python)
-  if (/^\s*(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)\b/im.test(code) && !/\bdef\b/.test(code) && !/\bprint\b/.test(code)) return false;
-  return true;
+/* Check if program needs file I/O (text files — we can simulate these) */
+function needsFileIO(prog) {
+  const code = (prog.code || '');
+  return /\bopen\s*\(/.test(code) && !/\bimport\s+(pickle|csv)/.test(code.toLowerCase());
 }
+
+/* Check if program truly can't run (pickle, csv, mysql, SQL-only) */
+function isTrulyUnrunnable(prog) {
+  const code = (prog.code || '').toLowerCase();
+  if (/\bimport\s+(pickle|csv|mysql)/.test(code)) return true;
+  if (/\bfrom\s+(pickle|csv|mysql)/.test(code)) return true;
+  if (/\b(cursor|execute|connect)\b/.test(code) && /\b(mysql|sql)\b/.test(code)) return true;
+  // SQL-only programs (no Python)
+  if (/^\s*(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)\b/im.test(code) && !/\bdef\b/.test(code) && !/\bprint\b/.test(code)) return true;
+  return false;
+}
+
+/* Extract filename from code like open("NOTES.TXT") or open('Elections.txt') */
+function extractFilenames(code) {
+  const matches = code.match(/open\s*\(\s*["']([^"']+)["']/g) || [];
+  const names = matches.map(m => {
+    const f = m.match(/["']([^"']+)["']/);
+    return f ? f[1] : null;
+  }).filter(Boolean);
+  return [...new Set(names)];
+}
+
+/* Default sample content for common file names */
+const SAMPLE_FILES = {
+  'NOTES.TXT': 'This is a sample file.\nThe file contains many sentences.\nPython is easy to learn.\nData handling is important.\nPractice makes perfect.',
+  'Elections.txt': 'In an election many people vote to choose their representative.\nThe candidate getting the maximum share of votes stands elected.\nNormally one person has to vote once.\nThe process of voting may vary with time and region.',
+  'Report.txt': 'Once there was a wise man in a village.\nHe was an awesome story-teller.\nHe was able to keep people anchored while listening to him.',
+  'testfile.txt': 'Hello everyone\nWelcome to Python programming\nThis is a test file\nPython is fun to learn',
+  'practice.txt': 'Computer Science is interesting\nPython makes coding easy\nData structures are fundamental',
+  'hello.txt': 'Welcome my class\nIt is a fun place\nYou will learn and play',
+};
 
 /* Build a skeleton comment for the Try It Yourself editor */
 function buildSkeleton(prog) {
@@ -180,8 +210,11 @@ function render(data) {
     cat.programs.forEach((prog, pi) => {
       const freqClass = prog.frequency === 'Very High' ? 'badge-freq' : 'badge-freq-med';
       const codeId = `code-${ci}-${pi}`;
-      const runnable = isProgramRunnable(prog);
+      const unrunnable = isTrulyUnrunnable(prog);
+      const hasFileIO = needsFileIO(prog);
+      const runnable = !unrunnable;
       const tryId = `try-${ci}-${pi}`;
+      const fileId = `file-${ci}-${pi}`;
       const editorId = `editor-${ci}-${pi}`;
       const outputId = `output-${ci}-${pi}`;
       const compareId = `compare-${ci}-${pi}`;
@@ -222,7 +255,11 @@ function render(data) {
       if (runnable) {
         const skeleton = buildSkeleton(prog);
         const refOutput = prog.output || '';
-        html += `<div class="try-it-section collapsed" id="${tryId}" data-ref-output="${escHtml(refOutput)}" data-ref-code="${escHtml(prog.code)}">
+        const filenames = hasFileIO ? extractFilenames(prog.code) : [];
+        const firstFile = filenames[0] || 'sample.txt';
+        const sampleContent = SAMPLE_FILES[firstFile] || SAMPLE_FILES[Object.keys(SAMPLE_FILES).find(k => k.toLowerCase() === firstFile.toLowerCase())] || 'This is sample file content.\nAdd your own text here.\nEach line represents a line in the file.';
+
+        html += `<div class="try-it-section collapsed" id="${tryId}" data-ref-output="${escHtml(refOutput)}" data-ref-code="${escHtml(prog.code)}" data-has-file="${hasFileIO}" data-filename="${escHtml(firstFile)}">
           <div class="try-it-header">
             <span class="try-it-label">Code Editor</span>
             <div class="try-it-actions">
@@ -230,8 +267,19 @@ function render(data) {
               <button class="btn-peek" onclick="toggleSolution('${codeId}',null)">Peek Solution</button>
               <button class="btn-run" onclick="runEditorCode('${editorId}','${outputId}','${compareId}','${tryId}')">&#9654; Run Code</button>
             </div>
-          </div>
-          <textarea class="editor-area" id="${editorId}" spellcheck="false">${escHtml(skeleton)}</textarea>
+          </div>`;
+
+        if (hasFileIO) {
+          html += `<div class="file-content-wrap">
+            <div class="file-content-header">
+              <span class="file-content-label">📄 File: ${escHtml(firstFile)}</span>
+              <span class="file-content-hint">Edit the file content below — your code will read from this</span>
+            </div>
+            <textarea class="file-content-area" id="${fileId}" spellcheck="false">${escHtml(sampleContent)}</textarea>
+          </div>`;
+        }
+
+        html += `<textarea class="editor-area" id="${editorId}" spellcheck="false">${escHtml(skeleton)}</textarea>
           <div class="output-panel">
             <div class="output-panel-header">
               <span class="output-panel-label">Output</span>
@@ -250,14 +298,13 @@ function render(data) {
           </div>
         </div>`;
       } else {
-        const reason = /\bopen\s*\(/.test((prog.code||'').toLowerCase()) ? 'file I/O (open/read/write)' :
-                        /\bimport\s+(pickle)/.test((prog.code||'').toLowerCase()) ? 'pickle module (binary files)' :
+        const reason = /\bimport\s+(pickle)/.test((prog.code||'').toLowerCase()) ? 'pickle module (binary files)' :
                         /\bimport\s+(csv)/.test((prog.code||'').toLowerCase()) ? 'csv module' :
                         /\b(mysql|cursor|execute)\b/.test((prog.code||'').toLowerCase()) ? 'MySQL database connectivity' :
-                        'SQL commands';
+                        'modules not available in browser';
         html += `<div class="no-run-note">
           <span class="note-icon">&#9432;</span>
-          <span>This program uses <strong>${reason}</strong> which requires system access not available in the browser. Study the solution code and practice on your computer.</span>
+          <span>This program uses <strong>${reason}</strong> — practice on your computer with Python installed. Study the solution code above.</span>
         </div>`;
       }
 
@@ -339,11 +386,101 @@ function runPython(code, outputElementId) {
   });
 }
 
+/* Virtual file system mock — prepended to code when program uses file I/O */
+function buildVFSMock(filename, content) {
+  // Escape content for Python string
+  var escaped = content.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n');
+  return `
+class _VFile:
+    def __init__(self, data, mode='r'):
+        self._data = data
+        self._lines = data.split('\\n')
+        self._pos = 0
+        self._mode = mode
+        self._out = []
+    def read(self, n=-1):
+        if n == -1:
+            r = self._data[self._pos:]
+            self._pos = len(self._data)
+            return r
+        r = self._data[self._pos:self._pos+n]
+        self._pos += n
+        return r
+    def readline(self):
+        if self._pos >= len(self._data):
+            return ''
+        e = self._data.find('\\n', self._pos)
+        if e == -1:
+            ln = self._data[self._pos:]
+            self._pos = len(self._data)
+        else:
+            ln = self._data[self._pos:e+1]
+            self._pos = e + 1
+        return ln
+    def readlines(self):
+        result = []
+        while True:
+            ln = self.readline()
+            if not ln:
+                break
+            result.append(ln)
+        return result
+    def write(self, s):
+        self._out.append(s)
+        return len(s)
+    def writelines(self, lines):
+        for l in lines:
+            self.write(l)
+    def seek(self, pos, ref=0):
+        if ref == 0:
+            self._pos = pos
+        elif ref == 1:
+            self._pos += pos
+        else:
+            self._pos = len(self._data) + pos
+    def tell(self):
+        return self._pos
+    def close(self):
+        pass
+    def __enter__(self):
+        return self
+    def __exit__(self, *a):
+        pass
+    def __iter__(self):
+        return self
+    def __next__(self):
+        ln = self.readline()
+        if not ln:
+            raise StopIteration
+        return ln
+
+_vfs_data = {'` + filename + `': '` + escaped + `'}
+_real_open = open
+def open(name, mode='r'):
+    for k in _vfs_data:
+        if k.lower() == name.lower():
+            return _VFile(_vfs_data[k], mode)
+    return _VFile('', mode)
+
+`;
+}
+
 /* Run code from editor and show comparison */
 function runEditorCode(editorId, outputId, compareId, tryId) {
   var code = document.getElementById(editorId).value;
   var trySection = document.getElementById(tryId);
   var refOutput = trySection.getAttribute('data-ref-output');
+  var hasFile = trySection.getAttribute('data-has-file') === 'true';
+  var filename = trySection.getAttribute('data-filename') || 'sample.txt';
+
+  // If this program uses file I/O, prepend the virtual file system
+  if (hasFile) {
+    var fileArea = trySection.querySelector('.file-content-area');
+    if (fileArea) {
+      var fileContent = fileArea.value;
+      code = buildVFSMock(filename, fileContent) + code;
+    }
+  }
 
   runPython(code, outputId).then(function(userOutput) {
     if (userOutput === null) return; // Error occurred
