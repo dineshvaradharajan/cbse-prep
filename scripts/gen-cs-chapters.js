@@ -6,7 +6,7 @@ const outPath = path.join(__dirname, '..', 'cs', 'chapters.html');
 
 // ── Load all chapter JSONs in order ──
 const files = fs.readdirSync(dataDir)
-  .filter(f => f.endsWith('.json'))
+  .filter(f => f.endsWith('.json') && f.startsWith('ch'))
   .sort((a, b) => {
     const na = parseInt(a.match(/ch(\d+)/)[1]);
     const nb = parseInt(b.match(/ch(\d+)/)[1]);
@@ -164,7 +164,14 @@ function buildFormulasBlock(ch) {
   display.forEach(f => {
     html += `          <li>\n`;
     if (f.name) html += `            <span class="fl-name">${esc(f.name)}</span>\n`;
-    if (f.formula) html += `            <code class="fl-eq">${esc(f.formula)}</code>\n`;
+    if (f.formula) {
+      const isLatex = /\\[a-zA-Z]|\\frac|\\sum|\\sqrt|\^{|_{/.test(f.formula);
+      if (isLatex) {
+        html += `            <span class="fl-eq">$${f.formula}$</span>\n`;
+      } else {
+        html += `            <code class="fl-eq">${esc(f.formula)}</code>\n`;
+      }
+    }
     if (f.note) html += `            <span class="fl-note">${fmt(f.note)}</span>\n`;
     html += `          </li>\n`;
   });
@@ -296,6 +303,15 @@ const html = `<!DOCTYPE html>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/chapter.css">
 <style>:root{

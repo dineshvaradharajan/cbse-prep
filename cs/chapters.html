@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/chapter.css">
 <style>:root{
@@ -695,7 +704,7 @@ element = deque.pop(0)  # Remove from front</code>
           </li>
           <li>
             <span class="fl-name">Logarithmic Time</span>
-            <code class="fl-eq">O(\log n)</code>
+            <span class="fl-eq">$O(\log n)$</span>
             <span class="fl-note">Time grows logarithmically. Example: Binary Search.</span>
           </li>
           <li>
@@ -813,12 +822,12 @@ element = deque.pop(0)  # Remove from front</code>
           </li>
           <li>
             <span class="fl-name">Binary Search Time Complexity (Worst Case)</span>
-            <code class="fl-eq">O(\log_2 n)</code>
+            <span class="fl-eq">$O(\log_2 n)$</span>
             <span class="fl-note">Maximum number of comparisons is floor(log2(n)) + 1. The search space halves each time.</span>
           </li>
           <li>
             <span class="fl-name">Binary Search Time Complexity (Average Case)</span>
-            <code class="fl-eq">O(\log_2 n)</code>
+            <span class="fl-eq">$O(\log_2 n)$</span>
             <span class="fl-note">On average, approximately log2(n) comparisons are needed.</span>
           </li>
           <li>
@@ -931,37 +940,37 @@ def linear_search(a, key):
         <ul class="formula-list">
           <li>
             <span class="fl-name">Mean (Arithmetic Mean)</span>
-            <code class="fl-eq">\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n}</code>
+            <span class="fl-eq">$\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n}$</span>
             <span class="fl-note">Sum of all values divided by the count of values.</span>
           </li>
           <li>
             <span class="fl-name">Median (Odd n)</span>
-            <code class="fl-eq">Median = x_{(n+1)/2}</code>
+            <span class="fl-eq">$Median = x_{(n+1)/2}$</span>
             <span class="fl-note">Middle value when n is odd and data is sorted.</span>
           </li>
           <li>
             <span class="fl-name">Median (Even n)</span>
-            <code class="fl-eq">Median = \frac{x_{n/2} + x_{(n/2)+1}}{2}</code>
+            <span class="fl-eq">$Median = \frac{x_{n/2} + x_{(n/2)+1}}{2}$</span>
             <span class="fl-note">Average of two middle values when n is even and data is sorted.</span>
           </li>
           <li>
             <span class="fl-name">Range</span>
-            <code class="fl-eq">Range = x_{max} - x_{min}</code>
+            <span class="fl-eq">$Range = x_{max} - x_{min}$</span>
             <span class="fl-note">Difference between the largest and smallest values.</span>
           </li>
           <li>
             <span class="fl-name">Variance (Population)</span>
-            <code class="fl-eq">\sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}</code>
+            <span class="fl-eq">$\sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}$</span>
             <span class="fl-note">Average of squared deviations from the mean. Uses n in the denominator for population variance.</span>
           </li>
           <li>
             <span class="fl-name">Variance (Sample)</span>
-            <code class="fl-eq">s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}</code>
+            <span class="fl-eq">$s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}$</span>
             <span class="fl-note">Uses (n-1) in the denominator to provide an unbiased estimate.</span>
           </li>
           <li>
             <span class="fl-name">Standard Deviation</span>
-            <code class="fl-eq">\sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}</code>
+            <span class="fl-eq">$\sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}$</span>
             <span class="fl-note">Square root of variance. Expressed in the same units as the data.</span>
           </li>
         </ul>
@@ -1132,7 +1141,7 @@ def linear_search(a, key):
           </li>
           <li>
             <span class="fl-name">Cartesian Product Size</span>
-            <code class="fl-eq">Rows = m \times n, \; Columns = p + q</code>
+            <span class="fl-eq">$Rows = m \times n, \; Columns = p + q$</span>
             <span class="fl-note">If table A has m rows and p columns, table B has n rows and q columns.</span>
           </li>
         </ul>

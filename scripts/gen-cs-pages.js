@@ -10,7 +10,7 @@ const outDir = path.join(__dirname, '..', 'cs');
 
 // ── Load all chapter JSONs ──
 const files = fs.readdirSync(dataDir)
-  .filter(f => f.endsWith('.json'))
+  .filter(f => f.endsWith('.json') && f.startsWith('ch'))
   .sort((a, b) => {
     const na = parseInt(a.match(/ch(\d+)/)[1]);
     const nb = parseInt(b.match(/ch(\d+)/)[1]);
@@ -24,6 +24,41 @@ const chapters = files.map(f =>
 function esc(s) {
   if (!s) return '';
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+/** Escape HTML and wrap Python/SQL code snippets in <pre><code> blocks */
+function escCode(s) {
+  if (!s) return '';
+  let t = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // Detect if text contains code (Python keywords, SQL keywords, indented lines)
+  const hasCode = /\b(def |print\(|import |for |while |if |try:|except|SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP |FROM |WHERE )/i.test(t);
+  if (hasCode && t.includes('\n')) {
+    // Split into prose and code parts — lines starting with keywords or indentation are code
+    const lines = t.split('\n');
+    let inCode = false;
+    let result = '';
+    let codeBlock = '';
+    for (const line of lines) {
+      const isCodeLine = /^(def |class |print|import |from |for |if |elif |else:|while |try:|except|finally:|return |    |SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP |SHOW |DESC )/i.test(line.trim()) ||
+        (inCode && (line.startsWith('  ') || line.startsWith('\t') || line.trim() === '' || /^[A-Z_]+=/.test(line.trim())));
+      if (isCodeLine) {
+        if (!inCode) { inCode = true; codeBlock = ''; }
+        codeBlock += line + '\n';
+      } else {
+        if (inCode) {
+          result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>';
+          inCode = false;
+          codeBlock = '';
+        }
+        result += line + '\n';
+      }
+    }
+    if (inCode) {
+      result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>';
+    }
+    return result.trimEnd();
+  }
+  return t;
 }
 
 function fmt(s) {
@@ -45,6 +80,20 @@ const chColors = [
 
 const fonts = `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">`;
+
+const katexCDN = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });"></script>`;
+
+function isLatex(s) {
+  return /\\[a-zA-Z]|\\frac|\\sum|\\sqrt|\^{|_{/.test(s);
+}
 
 const cssVars = `:root{--subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46;}`;
 const codeStyle = `code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;background:#f0fdf4;padding:.1rem .35rem;border-radius:4px;border:1px solid #d1fae5;color:#065f46}`;
@@ -132,7 +181,13 @@ function genFormulas() {
       formulas.forEach(f => {
         chapSections += `    <div class="formula-card" style="border-left-color:${color}">\n`;
         if (f.name) chapSections += `      <div class="fc-name">${esc(f.name)}</div>\n`;
-        if (f.formula) chapSections += `      <code class="fc-eq">${esc(f.formula)}</code>\n`;
+        if (f.formula) {
+          if (isLatex(f.formula)) {
+            chapSections += `      <span class="fc-eq">$${f.formula}$</span>\n`;
+          } else {
+            chapSections += `      <code class="fc-eq">${esc(f.formula)}</code>\n`;
+          }
+        }
         if (f.note) chapSections += `      <div class="fc-note">${fmt(f.note)}</div>\n`;
         chapSections += `    </div>\n`;
       });
@@ -147,6 +202,7 @@ function genFormulas() {
 <head>
 <meta charset="UTF-8">
 ${fonts}
+${katexCDN}
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/formulas.css">
 <style>${cssVars}
@@ -446,7 +502,7 @@ function genPYQ() {
 
       yearSections += `<div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q${q.qno}</span>${typeBadge}${marksBadge}${chBadge}</div>
-<div class="qb-question">${esc(q.question)}</div>`;
+<div class="qb-question">${escCode(q.question)}</div>`;
 
       if (q.options && q.options.length > 0) {
         yearSections += `\n<div class="pyq-opts">${q.options.map(o => `<div class="pyq-opt">${esc(o)}</div>`).join('')}</div>`;
@@ -454,7 +510,7 @@ function genPYQ() {
 
       if (q.answer) {
         yearSections += `\n<button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> ${esc(q.answer)}</div>`;
+<div class="qb-answer hidden"><strong>Answer:</strong> ${escCode(q.answer)}</div>`;
       }
       yearSections += `\n</div>\n`;
     });
@@ -496,6 +552,7 @@ ${codeStyle}
 .qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
 .qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
 .qb-answer.hidden{display:none}
+pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
   .qb-question{font-size:.82rem}

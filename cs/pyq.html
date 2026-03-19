@@ -33,6 +33,7 @@ code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;backgro
 .qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
 .qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
 .qb-answer.hidden{display:none}
+pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
   .qb-question{font-size:.82rem}
@@ -74,7 +75,7 @@ code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;backgro
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">What will be the output of the following statement?
-print(14%3**2*4)</div>
+<pre class="pyq-code">print(14%3**2*4)</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(A) 16</div><div class="pyq-opt">(B) 64</div><div class="pyq-opt">(C) 20</div><div class="pyq-opt">(D) 256</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (B) 64. 3**2 = 9, 14%9 = 5... Wait: operator precedence: ** first: 3**2=9, then * : 9*2=18... Actually: 14%3**2*4 =&gt; 14%(3**2)*4 but ** has highest precedence, so 3**2=9, then left to right: 14%9=5, 5*4=20. Wait let me recalculate. 14%3**2*4: ** first: 3**2=9. Then left to right: 14%9=5, 5*4=20. Answer is (C) 20. But looking at options again: the expression is 14%3**2*4. 3**2=9, 14%9=5, 5*4=20. Answer: (C) 20</div>
@@ -83,7 +84,7 @@ print(14%3**2*4)</div>
 <div class="qb-meta"><span class="qb-year-badge">Q3</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Identify the correct output of the following code snippet:
 game="Olympic2024"
-print(game.index("C"))</div>
+<pre class="pyq-code">print(game.index("C"))</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(A) 0</div><div class="pyq-opt">(B) 6</div><div class="pyq-opt">(C) -1</div><div class="pyq-opt">(D) ValueError</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (B) 6. In the string 'Olympic2024', 'C' is not present (it's lowercase 'c' at index... wait: O-l-y-m-p-i-c = index 0,1,2,3,4,5,6. 'c' is at index 6. But the question searches for 'C' (uppercase). 'Olympic2024' has uppercase 'O' at 0. 'C' uppercase is not in the string. Actually wait - 'Olympic2024': O(0), l(1), y(2), m(3), p(4), i(5), c(6), 2(7), 0(8), 2(9), 4(10). Searching for 'C' (uppercase) - not found, so it raises ValueError. Answer: (D) ValueError</div>
@@ -106,7 +107,7 @@ print(game.index("C"))</div>
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
 L=['TIC', 'TAC']
-print(L[::-1])</div>
+<pre class="pyq-code">print(L[::-1])</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(A) ['CIT', 'CAT']</div><div class="pyq-opt">(B) ['TIC', 'TAC']</div><div class="pyq-opt">(C) ['CAT', 'CIT']</div><div class="pyq-opt">(D) ['TAC', 'TIC']</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (D) ['TAC', 'TIC']. L[::-1] reverses the list.</div>
@@ -122,8 +123,8 @@ print(L[::-1])</div>
 <div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
 D={'S01':95, 'S02':96 }
-for I in D :
-    print(I,end='#')</div>
+<pre class="pyq-code">for I in D :
+    print(I,end='#')</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(A) S01#S02#</div><div class="pyq-opt">(B) 95#96#</div><div class="pyq-opt">(C) S01,95#S02,96#</div><div class="pyq-opt">(D) S01#95#S02#96#</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (A) S01#S02#. When iterating over a dictionary, we get the keys.</div>
@@ -138,12 +139,11 @@ for I in D :
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
-def Change(N):
+<pre class="pyq-code">def Change(N):
     N=N+10
     print(N,end='$$')
-N=15
-Change(N)
-print(N)</div>
+N=15</pre>Change(N)
+<pre class="pyq-code">print(N)</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(A) 25$$15</div><div class="pyq-opt">(B) 15$$25</div><div class="pyq-opt">(C) 25$$15</div><div class="pyq-opt">(D) 2525$$</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (C) 25$$15. Inside the function, N becomes 25 (15+10), printed with end='$$'. Outside, N remains 15 (integers are immutable).</div>
@@ -152,12 +152,12 @@ print(N)</div>
 <div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Exception Handling</span></div>
 <div class="qb-question">Consider the statements given below and choose the correct output:
 N='5'
-try:
+<pre class="pyq-code">try:
     print('WORD' + N, end='#')
 except:
     print('ERROR',end='#')
 finally:
-    print('OVER')</div>
+    print('OVER')</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(A) ERROR#</div><div class="pyq-opt">(B) WORD5#OVER</div><div class="pyq-opt">(C) WORD5#</div><div class="pyq-opt">(D) ERROR#OVER</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (B) WORD5#OVER. 'WORD' + '5' = 'WORD5' (string concatenation works). Then finally block executes printing 'OVER'.</div>
@@ -240,11 +240,9 @@ Reason (R): Foreign key is used to establish a relationship between two tables.<
 <div class="qb-answer hidden"><strong>Answer:</strong> The return statement is used to exit a function and send a value back to the caller. It can return a single value, multiple values (as a tuple), or None (if no expression is given).
 
 Example:
-def add(a, b):
-    return a + b
-
-result = add(3, 5)
-print(result)  # Output: 8</div>
+<pre class="pyq-code">def add(a, b):
+    return a + b</pre>result = add(3, 5)
+<pre class="pyq-code">print(result)  # Output: 8</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q23</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Exception Handling</span></div>
@@ -253,9 +251,7 @@ print(result)  # Output: 8</div>
 (ii) Implicit Type Conversion</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (i) Syntax Error:
-print("Hello"  # Missing closing parenthesis
-
-(ii) Implicit Type Conversion:
+<pre class="pyq-code">print("Hello"  # Missing closing parenthesis</pre>(ii) Implicit Type Conversion:
 a = 5      # int
 b = 2.5    # float
 c = a + b  # c becomes 7.5 (float) - Python automatically converts int to float</div>
@@ -281,10 +277,9 @@ OR
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q25</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">What possible output from the given options is expected to be displayed when the following code is executed?
-import random
-Cards=["Heart","Spade","Club","Diamond"]
-for i in range(2):
-    print(Cards[random.randint(1,i+2)],end="#")</div>
+<pre class="pyq-code">import random</pre>Cards=["Heart","Spade","Club","Diamond"]
+<pre class="pyq-code">for i in range(2):
+    print(Cards[random.randint(1,i+2)],end="#")</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(A) Spade#Diamond#</div><div class="pyq-opt">(B) Spade#Heart#</div><div class="pyq-opt">(C) Diamond#Club#</div><div class="pyq-opt">(D) Heart#Spade#</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (A) Spade#Diamond#. When i=0: randint(1,2) can be 1 or 2, so Cards[1]='Spade' or Cards[2]='Club'. When i=1: randint(1,3) can be 1,2,3, so Cards[1]='Spade', Cards[2]='Club', or Cards[3]='Diamond'. Option (A) Spade#Diamond# is possible.</div>
@@ -292,19 +287,19 @@ for i in range(2):
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q26</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">The code given below accepts N as an integer argument and returns the sum of all integers from 1 to N. Observe the following code carefully and rewrite it after removing all syntax and logical errors. Underline all the corrections made.
-def Sum(N)
+<pre class="pyq-code">def Sum(N)
     for I in range(N):
         S=S+I
     return S
-print(Sum(10))</div>
+print(Sum(10))</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
-def Sum(N):          # Error 1: Missing colon after N)
+<pre class="pyq-code">def Sum(N):          # Error 1: Missing colon after N)
     S = 0            # Error 2: S not initialized
     for I in range(1, N+1):  # Error 3: range(N) starts from 0, should be range(1, N+1)
         S = S + I
     return S
-print(Sum(10))       # Output: 55</div>
+print(Sum(10))       # Output: 55</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q27</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
@@ -338,16 +333,14 @@ OR
 (b) Write a Python function that displays all the words starting and ending with a vowel from a text file "Report.txt". The consecutive words should be separated by a space in the output.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a)
-def display_vote():
+<pre class="pyq-code">def display_vote():
     f = open("Elections.txt", "r")
     lines = f.readlines()
     for line in lines:
         if 'vote' in line:
             print(line, end='')
-    f.close()
-
-(b)
-def display_vowel_words():
+    f.close()</pre>(b)
+<pre class="pyq-code">def display_vowel_words():
     f = open("Report.txt", "r")
     content = f.read()
     words = content.split()
@@ -355,7 +348,7 @@ def display_vowel_words():
     for word in words:
         if word[0] in vowels and word[-1] in vowels:
             print(word, end=' ')
-    f.close()</div>
+    f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q30</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
@@ -372,7 +365,7 @@ OR
 (iii) display_all(myStack): displays all elements without deleting. If empty, display 'Empty Stack'</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a)
-def push_Clr(ClrStack, new_Clr):
+<pre class="pyq-code">def push_Clr(ClrStack, new_Clr):
     ClrStack.append(new_Clr)
 
 def pop_Clr(ClrStack):
@@ -385,10 +378,8 @@ def isEmpty(ClrStack):
     if len(ClrStack) == 0:
         return True
     else:
-        return False
-
-(b)
-def push_trail(N, myStack):
+        return False</pre>(b)
+<pre class="pyq-code">def push_trail(N, myStack):
     for i in range(len(N)-5, len(N)):
         myStack.append(N[i])
 
@@ -404,12 +395,12 @@ def display_all(myStack):
         print('Empty Stack')
     else:
         for i in range(len(myStack)-1, -1, -1):
-            print(myStack[i])</div>
+            print(myStack[i])</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q31</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">(a) Predict the output of the following code:
-def ExamOn(mystr):
+<pre class="pyq-code">def ExamOn(mystr):
     newstr = ""
     count = 0
     for i in mystr:
@@ -419,23 +410,21 @@ def ExamOn(mystr):
             newstr = newstr + i.lower()
         count += 1
     newstr = newstr + mystr[:2]
-    print("The new string is:", newstr)
-ExamOn("GenX")
+    print("The new string is:", newstr)</pre>ExamOn("GenX")
 
 OR
 
 (b) Write the output on execution of the following Python code:
-def Change(X):
+<pre class="pyq-code">def Change(X):
     for K,V in X.items():
         L1.append(K)
         L2.append(V)
-D={1:"ONE",2:"TWO",3:"THREE"}
-L1=[]
+D={1:"ONE",2:"TWO",3:"THREE"}</pre>L1=[]
 L2=[]
 Change(D)
-print(L1)
+<pre class="pyq-code">print(L1)
 print(L2)
-print(D)</div>
+print(D)</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) Tracing:
 mystr = "GenX"
@@ -502,12 +491,11 @@ Ahmed J  103</div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q33</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
 <div class="qb-question">A csv file "P_record.csv" contains the records of patients in a hospital. Each record contains: Name of patient, Disease, Number of days patient is admitted, Amount.
-For example: ["Gunjan","Jaundice",4,15000]
-Write the following Python functions:
+<pre class="pyq-code">For example: ["Gunjan","Jaundice",4,15000]</pre>Write the following Python functions:
 (i) read_data() which reads all the data from the file and displays the details of all the 'Cancer' patients.
 (ii) count_rec() which counts and returns the number of records in the file.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> import csv
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">import csv
 
 def read_data():
     f = open("P_record.csv", "r")
@@ -524,7 +512,7 @@ def count_rec():
     for row in reader:
         count += 1
     f.close()
-    return count</div>
+    return count</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q34</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
@@ -554,7 +542,7 @@ Th_ID char(5), Name varchar(15), City varchar(15), Location varchar(15), Seats i
 Write a function Delete_Theatre(), to input the value of Th_ID from the user and permanently delete the corresponding record from the table.
 Host: localhost, User: root, Password: Ex2025</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> import mysql.connector as mysql
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">import mysql.connector as mysql
 
 def Delete_Theatre():
     th_id = input("Enter Theatre ID: ")
@@ -564,7 +552,7 @@ def Delete_Theatre():
     mycursor.execute(query)
     mydb.commit()
     print("Record deleted successfully")
-    mydb.close()</div>
+    mydb.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q36</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
@@ -575,7 +563,7 @@ Write user defined functions in Python for the following tasks:
 (ii) SearchDestn(D) - to read contents from the file PASSENGERS.DAT and display the details of those Passengers whose DESTN matches with the value of D.
 (iii) UpdateFare() - to increase the fare of all passengers by 5% and rewrite the updated records into the file PASSENGERS.DAT.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> import pickle
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">import pickle
 
 def Create():
     f = open("PASSENGERS.DAT", "ab")
@@ -611,7 +599,7 @@ def UpdateFare():
     f = open("PASSENGERS.DAT", "wb")
     for rec in records:
         pickle.dump(rec, f)
-    f.close()</div>
+    f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q37</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
@@ -672,11 +660,10 @@ print (16*5/4*2/5-8)</div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">What possible output from the given options is expected to be displayed when the following Python code is executed?
-import random
-Signal = ['RED', 'YELLOW', 'GREEN']
-for K in range(2, 0, -1):
+<pre class="pyq-code">import random</pre>Signal = ['RED', 'YELLOW', 'GREEN']
+<pre class="pyq-code">for K in range(2, 0, -1):
     R = random.randrange(K)
-    print(Signal[R], end = '#')</div>
+    print(Signal[R], end = '#')</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(a) YELLOW # RED #</div><div class="pyq-opt">(b) RED # GREEN #</div><div class="pyq-opt">(c) GREEN # RED #</div><div class="pyq-opt">(d) YELLOW # GREEN #</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) YELLOW # RED #. When K=2: randrange(2) gives 0 or 1, so Signal[0]='RED' or Signal[1]='YELLOW'. When K=1: randrange(1) gives 0, so Signal[0]='RED'. So second output is always RED. Options with RED as second: (a) YELLOW#RED# or (c) GREEN#RED# (but GREEN needs index 2 which randrange(2) can't give... randrange(2) gives 0 or 1). So answer is (a) YELLOW # RED #</div>
@@ -706,7 +693,7 @@ for K in range(2, 0, -1):
 <div class="qb-meta"><span class="qb-year-badge">Q8</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Consider the statements given below and then choose the correct output from the given options:
 myStr="MISSISSIPPI"
-print(myStr[:4]+"#"+myStr[-5:])</div>
+<pre class="pyq-code">print(myStr[:4]+"#"+myStr[-5:])</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(a) MISSI#SIPPI</div><div class="pyq-opt">(b) MISS#SIPPI</div><div class="pyq-opt">(c) MISS#IPPIS</div><div class="pyq-opt">(d) MISSI#IPPIS</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (b) MISS#SIPPI. myStr[:4] = 'MISS', myStr[-5:] = 'SIPPI'.</div>
@@ -720,10 +707,9 @@ print(myStr[:4]+"#"+myStr[-5:])</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
-<div class="qb-question">Select the correct output of the following code:
-event="G20 Presidency@2023"
+<div class="qb-question"><pre class="pyq-code">Select the correct output of the following code:</pre>event="G20 Presidency@2023"
 L=event.split(' ')
-print(L[::-2])</div>
+<pre class="pyq-code">print(L[::-2])</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(a) 'G20'</div><div class="pyq-opt">(b) ['Presidency@2023']</div><div class="pyq-opt">(c) ['G20']</div><div class="pyq-opt">(d) 'Presidency@2023'</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (b) ['Presidency@2023']. L = ['G20', 'Presidency@2023']. L[::-2] reverses with step -2: starting from last element, every 2nd. L has 2 elements (index 0,1). [::-2] picks index 1 = ['Presidency@2023'].</div>
@@ -739,12 +725,11 @@ print(L[::-2])</div>
 <div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Observe the given Python code carefully:
 a=20
-def convert(a):
+<pre class="pyq-code">def convert(a):
     b=20
-    a=a+b
-convert(10)
-print(a)
-Select the correct output from the given options:</div>
+    a=a+b</pre>convert(10)
+<pre class="pyq-code">print(a)
+Select the correct output from the given options:</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(a) 10</div><div class="pyq-opt">(b) 20</div><div class="pyq-opt">(c) 30</div><div class="pyq-opt">(d) Error</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) 10... Wait, the global a=20. convert(10) creates local a=10+20=30 but doesn't return or modify global. print(a) prints global a=20. Answer: (b) 20</div>
@@ -811,24 +796,22 @@ OR
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q20</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">The code given below accepts five numbers and displays whether they are even or odd. Observe the following code carefully and rewrite it after removing all syntax and logical errors. Underline all the corrections made.
-def EvenOdd()
+<pre class="pyq-code">def EvenOdd()
     for i in range(5):
         num=int(input("Enter a number"))
         if num/2==0:
             print("Even")
         else:
-        print("Odd")
-EvenOdd()</div>
+        print("Odd")</pre>EvenOdd()</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
-def EvenOdd():           # Error 1: Missing colon
+<pre class="pyq-code">def EvenOdd():           # Error 1: Missing colon
     for i in range(5):
         num=int(input("Enter a number"))
         if num%2==0:     # Error 2: / should be % (modulo for checking even/odd)
             print("Even")
         else:
-            print("Odd") # Error 3: print("Odd") should be indented inside else block
-EvenOdd()</div>
+            print("Odd") # Error 3: print("Odd") should be indented inside else block</pre>EvenOdd()</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q21</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
@@ -839,7 +822,7 @@ OR
 (B) Write a user defined function in Python named Puzzle(W,N) which takes the argument W as an English word and N as an integer and returns the string where every Nth alphabet of the word W is replaced with an underscore ("_").</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (A)
-def showGrades(S):
+<pre class="pyq-code">def showGrades(S):
     for name in S:
         avg = sum(S[name]) / len(S[name])
         if avg &gt;= 90:
@@ -848,28 +831,26 @@ def showGrades(S):
             grade = 'B'
         else:
             grade = 'C'
-        print(name, '-', grade)
-
-(B)
-def Puzzle(W, N):
+        print(name, '-', grade)</pre>(B)
+<pre class="pyq-code">def Puzzle(W, N):
     result = ""
     for i in range(len(W)):
         if (i + 1) % N == 0:
             result += "_"
         else:
             result += W[i]
-    return result</div>
+    return result</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q22</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Write the output displayed on execution of the following Python code:
 LS=["HIMALAYA", "NILGIRI", "ALASKA", "ALPS"]
 D={}
-for S in LS:
+<pre class="pyq-code">for S in LS:
     if len(S)%4 == 0:
         D[S] = len(S)
 for K in D:
-    print(K,D[K], sep = "#")</div>
+    print(K,D[K], sep = "#")</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Tracing:
 'HIMALAYA' len=8, 8%4==0 True, D['HIMALAYA']=8
@@ -910,40 +891,31 @@ OR
 (ii) View the structure of the table, Term1.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (A)
-ALTER TABLE Sports ADD Category VARCHAR(20);
-INSERT INTO Sports VALUES('G42', 'Above 18', 'Chess', 'Senior');
-
-(B)
+<pre class="pyq-code">ALTER TABLE Sports ADD Category VARCHAR(20);
+INSERT INTO Sports VALUES('G42', 'Above 18', 'Chess', 'Senior');</pre>(B)
 (i) USE Exam;
-    SHOW TABLES;
-(ii) DESC Term1;
+<pre class="pyq-code">    SHOW TABLES;</pre>(ii) DESC Term1;
     OR DESCRIBE Term1;</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q25</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Predict the output of the following code:
-def callon(b=20,a=10):
+<pre class="pyq-code">def callon(b=20,a=10):
     b=b+a
     a=b-a
     print(b,"#",a)
-    return b
-x=100
+    return b</pre>x=100
 y=200
 x=callon(x,y)
-print(x,"@",y)
-y=callon(y)
-print(x,"@",y)</div>
+<pre class="pyq-code">print(x,"@",y)</pre>y=callon(y)
+<pre class="pyq-code">print(x,"@",y)</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Tracing:
 callon(100, 200): b=100+200=300, a=300-200=100, prints: 300 # 100, returns 300
 x = 300
-print(300, '@', 200) =&gt; 300 @ 200
-
-callon(200): b=200, a=10(default), b=200+10=210, a=210-10=200, prints: 210 # 200, returns 210
+<pre class="pyq-code">print(300, '@', 200) =&gt; 300 @ 200</pre>callon(200): b=200, a=10(default), b=200+10=210, a=210-10=200, prints: 210 # 200, returns 210
 y = 210
-print(300, '@', 210) =&gt; 300 @ 210
-
-Output:
+<pre class="pyq-code">print(300, '@', 210) =&gt; 300 @ 210</pre>Output:
 300 # 100
 300 @ 200
 210 # 200
@@ -954,7 +926,7 @@ Output:
 <div class="qb-question">Write the output on execution of the following Python code:
 S="Racecar Car Radar"
 L=S.split()
-for W in L:
+<pre class="pyq-code">for W in L:
     x=W.upper()
     if x==x[::-1]:
         for I in x:
@@ -962,7 +934,7 @@ for W in L:
     else:
         for I in W:
             print(I,end="#")
-    print()</div>
+    print()</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Tracing:
 L = ['Racecar', 'Car', 'Radar']
@@ -1022,7 +994,7 @@ OR
 (B) Write a function, c_words() in Python that separately counts and displays the number of uppercase and lowercase alphabets in a text file, Words.txt.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (A)
-def showInLines():
+<pre class="pyq-code">def showInLines():
     f = open("STORY.TXT", "r")
     content = f.read()
     sentence = ""
@@ -1031,10 +1003,8 @@ def showInLines():
         if ch in '.?!':
             print(sentence.strip())
             sentence = ""
-    f.close()
-
-(B)
-def c_words():
+    f.close()</pre>(B)
+<pre class="pyq-code">def c_words():
     f = open("Words.txt", "r")
     content = f.read()
     upper = 0
@@ -1046,7 +1016,7 @@ def c_words():
             lower += 1
     print("Uppercase:", upper)
     print("Lowercase:", lower)
-    f.close()</div>
+    f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q29</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
@@ -1074,7 +1044,7 @@ Based on the given table, write SQL queries for:
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> BigNums = []
 
-def PushBig():
+<pre class="pyq-code">def PushBig():
     for num in Nums:
         if len(str(abs(num))) &gt;= 5:
             BigNums.append(num)
@@ -1082,7 +1052,7 @@ def PushBig():
 def PopBig():
     while len(BigNums) &gt; 0:
         print(BigNums.pop())
-    print("Stack Empty")</div>
+    print("Stack Empty")</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q31</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
@@ -1116,7 +1086,7 @@ Sangeeta wants to write the following user defined functions:
 Add_Device(): to accept a record from the user and add it to a csv file, Peripheral.csv.
 Count_Device(): To count and display number of peripheral devices whose price is less than 1000.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> import csv
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">import csv
 
 def Add_Device():
     f = open("Peripheral.csv", "a", newline='')
@@ -1135,7 +1105,7 @@ def Count_Device():
         if int(row[2]) &lt; 1000:
             count += 1
     print("Number of devices with price less than 1000:", count)
-    f.close()</div>
+    f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q33</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
@@ -1174,7 +1144,7 @@ OR
 'a' mode: Opens file for appending. Data is added at the end. If file doesn't exist, creates a new file. Existing data is preserved.
 
 (ii)
-import pickle
+<pre class="pyq-code">import pickle
 def Copy_new():
     f1 = open("items.dat", "rb")
     f2 = open("new_items.dat", "wb")
@@ -1186,14 +1156,12 @@ def Copy_new():
                     pickle.dump(rec, f2)
     except EOFError:
         f1.close()
-        f2.close()
-
-(B)(i) The 'with' clause automatically closes the file when the block is exited, even if an exception occurs. This prevents resource leaks.
+        f2.close()</pre>(B)(i) The 'with' clause automatically closes the file when the block is exited, even if an exception occurs. This prevents resource leaks.
 Syntax: with open(filename, mode) as file_object:
             # operations on file
 
 (ii)
-import pickle
+<pre class="pyq-code">import pickle
 def disp_Detail():
     f = open("EMP.DAT", "rb")
     try:
@@ -1202,7 +1170,7 @@ def disp_Detail():
             if rec[2] &lt; 25000:
                 print(rec)
     except EOFError:
-        f.close()</div>
+        f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q35</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
@@ -1219,21 +1187,19 @@ Username: root, Password: airplane, Host: localhost</div>
 <div class="qb-answer hidden"><strong>Answer:</strong> (A)(i) Cartesian Product (Cross Join) of two tables combines every row of the first table with every row of the second table. If table A has m rows and table B has n rows, the result will have m x n rows.
 
 (ii)
-import mysql.connector as mysql
+<pre class="pyq-code">import mysql.connector as mysql
 def update_qty():
     mydb = mysql.connect(host="localhost", user="admin", passwd="Shopping", database="Keeper")
     mycursor = mydb.cursor()
     mycursor.execute("UPDATE shop SET Qty=20 WHERE Item_code=111")
     mydb.commit()
     print("Record updated")
-    mydb.close()
-
-(B)(i) Two features of SQL:
+    mydb.close()</pre>(B)(i) Two features of SQL:
 1. SQL is a non-procedural language - you specify what to do, not how to do it.
 2. SQL can be used by both technical and non-technical users.
 
 (ii)
-import mysql.connector as mysql
+<pre class="pyq-code">import mysql.connector as mysql
 def display_passengers():
     mydb = mysql.connect(host="localhost", user="root", passwd="airplane", database="Travel")
     mycursor = mydb.cursor()
@@ -1241,7 +1207,7 @@ def display_passengers():
     data = mycursor.fetchall()
     for row in data:
         print(row)
-    mydb.close()</div>
+    mydb.close()</pre></div>
 </div>
 </div>
 </div>
@@ -1287,10 +1253,10 @@ Which of the following will be the correct output, if the given expression is ev
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
-<div class="qb-question">Select the correct output of the code:
+<div class="qb-question"><pre class="pyq-code">Select the correct output of the code:
 S= "Amrit Mahotsav @ 75"
 A=S.partition(" ")
-print(A)</div>
+print(A)</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(a) ('Amrit Mahotsav','@','75')</div><div class="pyq-opt">(b) ['Amrit','Mahotsav','@','75']</div><div class="pyq-opt">(c) ('Amrit', 'Mahotsav @ 75')</div><div class="pyq-opt">(d) ('Amrit', ' ', 'Mahotsav @ 75')</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (d) ('Amrit', ' ', 'Mahotsav @ 75'). The partition() method splits at the first occurrence of the separator and returns a 3-tuple.</div>
@@ -1320,10 +1286,9 @@ print(A)</div>
 <div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Which of the following statement(s) would give an error after executing the following code?
 Stud={"Murugan":100, "Mithu":95}  # Statement 1
-print(Stud[95])                    # Statement 2
-Stud["Murugan"]=99                 # Statement 3
-print(Stud.pop())                  # Statement 4
-print(Stud)                        # Statement 5</div>
+<pre class="pyq-code">print(Stud[95])                    # Statement 2</pre>Stud["Murugan"]=99                 # Statement 3
+<pre class="pyq-code">print(Stud.pop())                  # Statement 4
+print(Stud)                        # Statement 5</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(a) Statement 2</div><div class="pyq-opt">(b) Statement 3</div><div class="pyq-opt">(c) Statement 4</div><div class="pyq-opt">(d) Statements 2 and 4</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (d) Statements 2 and 4. Statement 2: KeyError (95 is not a key). Statement 4: TypeError (pop() requires at least 1 argument for dictionaries).</div>
@@ -1359,7 +1324,7 @@ print(Stud)                        # Statement 5</div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q14</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">What will the following expression be evaluated to in Python?
-print(4+3*5/3-5%2)</div>
+<pre class="pyq-code">print(4+3*5/3-5%2)</pre></div>
 <div class="pyq-opts"><div class="pyq-opt">(a) 8.5</div><div class="pyq-opt">(b) 8.0</div><div class="pyq-opt">(c) 10.2</div><div class="pyq-opt">(d) 10.0</div></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (b) 8.0. 3*5=15, 15/3=5.0, 5%2=1, 4+5.0-1=8.0.</div>
@@ -1397,20 +1362,20 @@ Reason (R): Any new element pushed into the stack always gets positioned at the 
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q19</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Atharva is a Python programmer working on a program to find and return the maximum value from the list. The code written below has syntactical errors. Rewrite the correct code and underline the corrections made.
-def max_num (L) :
+<pre class="pyq-code">def max_num (L) :
     max=L(0)
     for a in L :
         if a &gt; max
         max=a
-    return max</div>
+    return max</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
-def max_num(L):
+<pre class="pyq-code">def max_num(L):
     max = L[0]        # Error 1: L(0) should be L[0] (square brackets for indexing)
     for a in L:
         if a &gt; max:   # Error 2: Missing colon after if condition
             max = a   # Error 3: Missing indentation
-    return max</div>
+    return max</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q20</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
@@ -1467,30 +1432,26 @@ Example: In a Student table with columns (Roll_No, Aadhar_No, Name, Class), both
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q24</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">(a) Write the output of the code given below:
-def short_sub(lst,n):
+<pre class="pyq-code">def short_sub(lst,n):
     for i in range(0,n):
         if len(lst)&gt;4:
             lst[i]=lst[i]+lst[i]
         else:
-            lst[i]=lst[i]
-subject=['CS','HINDI','PHYSICS','CHEMISTRY','MATHS']
+            lst[i]=lst[i]</pre>subject=['CS','HINDI','PHYSICS','CHEMISTRY','MATHS']
 short_sub(subject,5)
-print(subject)
-
-OR
+<pre class="pyq-code">print(subject)</pre>OR
 
 (b) Write the output of the code given below:
 a =30
-def call(x):
+<pre class="pyq-code">def call(x):
     global a
     if a%2==0:
         x+=a
     else:
         x-=a
-    return x
-x=20
-print(call(35),end="#")
-print(call(40),end= "@")</div>
+    return x</pre>x=20
+<pre class="pyq-code">print(call(35),end="#")
+print(call(40),end= "@")</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) Tracing:
 len(subject) = 5, which is &gt; 4
@@ -1594,17 +1555,15 @@ OR
 (b) Write a function count_Dwords() in Python to count the words ending with a digit in a text file "Details.txt".</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a)
-def LongLines():
+<pre class="pyq-code">def LongLines():
     f = open('LINES.TXT', 'r')
     lines = f.readlines()
     for line in lines:
         words = line.split()
         if len(words) &gt;= 10:
             print(line, end='')
-    f.close()
-
-(b)
-def count_Dwords():
+    f.close()</pre>(b)
+<pre class="pyq-code">def count_Dwords():
     f = open("Details.txt", "r")
     content = f.read()
     words = content.split()
@@ -1613,7 +1572,7 @@ def count_Dwords():
         if word[-1].isdigit():
             count += 1
     print("Number of words ending with a digit are", count)
-    f.close()</div>
+    f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q28</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
@@ -1665,13 +1624,13 @@ P004 | 2 | 1
 Example: If L=[10,20,30,40,35,55]
 Output will be: L=[11,21,31,41,34,54]</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def EOReplace(L):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def EOReplace(L):
     for i in range(len(L)):
         if L[i] % 2 == 0:
             L[i] += 1
         else:
             L[i] -= 1
-    print(L)</div>
+    print(L)</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q30</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
@@ -1687,7 +1646,7 @@ OR
 <div class="qb-answer hidden"><strong>Answer:</strong> (a)
 Hotel = []
 
-def Push_Cust(customers):
+<pre class="pyq-code">def Push_Cust(customers):
     for cust in customers:
         if cust[1] == 'Delux':
             Hotel.append(cust[0])
@@ -1695,15 +1654,13 @@ def Push_Cust(customers):
 def Pop_Cust():
     while len(Hotel) &gt; 0:
         print(Hotel.pop())
-    print("Underflow")
-
-(b)
+    print("Underflow")</pre>(b)
 stack = []
 
-def Push(Vehicle):
+<pre class="pyq-code">def Push(Vehicle):
     for car_name in Vehicle:
         if Vehicle[car_name].upper() == 'TATA':
-            stack.append(car_name)</div>
+            stack.append(car_name)</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q31</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
@@ -1733,32 +1690,28 @@ Branch A --- Branch D --- Branch B
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q32</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">5 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
 <div class="qb-question">(a) What possible output(s) are expected to be displayed on screen at the time of execution of the following program:
-import random
+<pre class="pyq-code">import random
 M=[5,10,15,20,25,30]
 for i in range(1,3):
     first=random.randint(2,5)- 1
     sec=random.randint(3,6)- 2
     third=random.randint(1,4)
-    print(M[first],M[sec],M[third],sep="#")
-
-(b) The code given below deletes the record from the table employee.
+    print(M[first],M[sec],M[third],sep="#")</pre>(b) The code given below deletes the record from the table employee.
 Write the following statements to complete the code:
 Statement 1 - to import the desired library.
 Statement 2 - to execute the command that deletes the record with E_code as 'E101'.
 Statement 3 - to delete the record permanently from the database.
 
-import ____________ as mysql  # Statement 1
+<pre class="pyq-code">import ____________ as mysql  # Statement 1
 def delete():
     mydb=mysql.connect(host="localhost",user="root",passwd="root",database="emp")
     mycursor=mydb.cursor()
     ________________  # Statement 2
     ________________  # Statement 3
-    print("Record deleted")
-
-OR
+    print("Record deleted")</pre>OR
 
 (a) Predict the output of the code given below:
-def makenew(mystr):
+<pre class="pyq-code">def makenew(mystr):
     newstr=""
     count=0
     for i in mystr:
@@ -1770,22 +1723,21 @@ def makenew(mystr):
             else:
                 newstr=newstr+i
         count+=1
-    print(newstr)
-makenew("No@1")
+    print(newstr)</pre>makenew("No@1")
 
 (b) The code given below reads records from the table employee and displays only those records who have employees coming from city 'Delhi'.
 Statement 1 - to import the desired library.
 Statement 2 - to execute the query that fetches records of employees coming from city 'Delhi'.
 Statement 3 - to read the complete data of the query.
 
-import ____________ as mysql  # Statement 1
+<pre class="pyq-code">import ____________ as mysql  # Statement 1
 def display():
     mydb=mysql.connect(host="localhost",user="root",passwd="root",database="emp")
     mycursor=mydb.cursor()
     ___________________________  # Statement 2
     details = __________________  # Statement 3
     for i in details:
-        print(i)</div>
+        print(i)</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) Options analysis:
 first range: randint(2,5)-1 = 1 to 4, so M[1] to M[4] = 10,15,20,25
@@ -1829,7 +1781,7 @@ Write a program in Python that defines and calls the following user defined func
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) Difference: A CSV file stores data in comma-separated format where each field is separated by a delimiter (usually comma), making it easy to import into spreadsheets/databases. A text file stores data as plain text without any specific structure.
 
-import csv
+<pre class="pyq-code">import csv
 
 def COURIER_ADD():
     f = open('courier.csv', 'a', newline='')
@@ -1848,11 +1800,9 @@ def COURIER_SEARCH():
     for row in reader:
         if row[3] == dest:
             print(row)
-    f.close()
+    f.close()</pre>(b) It is important to close a file to ensure all buffered data is written to disk, free up system resources, and prevent data corruption.
 
-(b) It is important to close a file to ensure all buffered data is written to disk, free up system resources, and prevent data corruption.
-
-import csv
+<pre class="pyq-code">import csv
 
 def Add_Book():
     f = open('Book.csv', 'a', newline='')
@@ -1872,7 +1822,7 @@ def Search_Book():
         if row[2] == pub_name:
             count += 1
     print('Number of books by', pub_name, ':', count)
-    f.close()</div>
+    f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q34</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
@@ -1953,7 +1903,7 @@ The pop() method is used to remove the last element from a list implemented stac
 Example:
 stack = [10, 20, 30]
 element = stack.pop()  # Removes and returns 30
-print(element)  # Output: 30</div>
+<pre class="pyq-code">print(element)  # Output: 30</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q2</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
@@ -1988,9 +1938,9 @@ MYCUR = DB.cursor()
 MYCUR.execute("USE CLUB")
 MYCUR.execute("SELECT * FROM MEMBER WHERE ACTIVITY= 'GYM' ")
 R=MYCUR.fetchone()
-for i in range(2):
+<pre class="pyq-code">for i in range(2):
     R=MYCUR.fetchone()
-    print(R[0], R[1], sep = "#")</div>
+    print(R[0], R[1], sep = "#")</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> The query returns all GYM members: (M1001, Amina, GYM), (M1002, Pratik, GYM), (M1004, Rakesh, GYM).
 R=MYCUR.fetchone() fetches the first row (M1001, Amina, GYM).
@@ -2099,7 +2049,7 @@ Write a program to input 5 integers into a list named NUM. The program should th
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> NoVowel = []
 
-def PushNV(N):
+<pre class="pyq-code">def PushNV(N):
     vowels = 'aeiouAEIOU'
     for word in N:
         has_vowel = False
@@ -2108,40 +2058,30 @@ def PushNV(N):
                 has_vowel = True
                 break
         if not has_vowel:
-            NoVowel.append(word)
-
-# Main program
+            NoVowel.append(word)</pre># Main program
 All = []
-for i in range(5):
+<pre class="pyq-code">for i in range(5):
     word = input("Enter a word: ")
-    All.append(word)
+    All.append(word)</pre>PushNV(All)
 
-PushNV(All)
-
-while len(NoVowel) &gt; 0:
+<pre class="pyq-code">while len(NoVowel) &gt; 0:
     print(NoVowel.pop(), end=" ")
-print("EmptyStack")
-
---- OR ---
+print("EmptyStack")</pre>--- OR ---
 
 Only3_5 = []
 
-def Push3_5(N):
+<pre class="pyq-code">def Push3_5(N):
     for num in N:
         if num % 3 == 0 or num % 5 == 0:
-            Only3_5.append(num)
-
-# Main program
+            Only3_5.append(num)</pre># Main program
 NUM = []
-for i in range(5):
+<pre class="pyq-code">for i in range(5):
     n = int(input("Enter integer: "))
-    NUM.append(n)
+    NUM.append(n)</pre>Push3_5(NUM)
 
-Push3_5(NUM)
-
-while len(Only3_5) &gt; 0:
+<pre class="pyq-code">while len(Only3_5) &gt; 0:
     print(Only3_5.pop(), end=" ")
-print("StackEmpty")</div>
+print("StackEmpty")</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q9</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
@@ -2277,30 +2217,25 @@ Or linear: ADMIN --- SALES --- ACCOUNTS (for shortest total cable using SALES as
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Rewrite the following code after removing all the syntax errors (if any). Underline each correction done.
-import math
-A = input('Enter a word',W)
-if W = 'Hello':
-    print(W)</div>
+<pre class="pyq-code">import math</pre>A = input('Enter a word',W)
+<pre class="pyq-code">if W = 'Hello':
+    print(W)</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Corrected code:
-import math
-W = input('Enter a word')
-if W == 'Hello':
-    print(W)
-
-Corrections: (1) W=input('Enter a word') — input() takes only prompt string, variable is assigned to the left. (2) if W == 'Hello' — use == for comparison, not = (assignment operator).</div>
+<pre class="pyq-code">import math</pre>W = input('Enter a word')
+<pre class="pyq-code">if W == 'Hello':
+    print(W)</pre>Corrections: (1) W=input('Enter a word') — input() takes only prompt string, variable is assigned to the left. (2) if W == 'Hello' — use == for comparison, not = (assignment operator).</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Find the output of the following:
-def ChangeVal(M):
+<pre class="pyq-code">def ChangeVal(M):
     for I in range(len(M)):
         if M[I]%5 == 0:
             M[I] //= 5
         if M[I]%3 == 0:
             M[I] //= 3
-    print(M[I], end='#')
-ChangeVal([25, 8, 75, 12])</div>
+    print(M[I], end='#')</pre>ChangeVal([25, 8, 75, 12])</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> 5#8#15#4#
 
@@ -2309,16 +2244,14 @@ Explanation: For 25: 25%5==0 so 25//5=5, 5%3!=0 → 5. For 8: 8%5!=0, 8%3!=0 →
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Find the output of the following:
-def Call(P=40, Q=20):
+<pre class="pyq-code">def Call(P=40, Q=20):
     P = P + Q
     Q = P - Q
     print(P, '@', Q)
-    return P
-R = 200
+    return P</pre>R = 200
 S = 100
 R = Call(R, S)
-print(R, '@', S)
-S = Call(S)</div>
+<pre class="pyq-code">print(R, '@', S)</pre>S = Call(S)</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> 300 @ 200
 300 @ 100
@@ -2329,12 +2262,11 @@ Explanation: First call Call(200,100): P=200+100=300, Q=300-100=200, prints 300 
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">What are the possible outputs of the following code? Also specify the minimum and maximum values that can be assigned to the variable End.
-import random
-Colours = ['VIOLET', 'INDIGO', 'BLUE', 'GREEN', 'YELLOW', 'ORANGE', 'RED']
+<pre class="pyq-code">import random</pre>Colours = ['VIOLET', 'INDIGO', 'BLUE', 'GREEN', 'YELLOW', 'ORANGE', 'RED']
 End = random.randint(2, 5)
 Beg = random.randint(0, 2)
-for I in range(Beg, End):
-    print(Colours[I], end='&amp;')</div>
+<pre class="pyq-code">for I in range(Beg, End):
+    print(Colours[I], end='&amp;')</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Minimum value of End = 2, Maximum value of End = 5.
 One possible output: INDIGO&amp;BLUE&amp;GREEN&amp; (when Beg=1, End=4)
@@ -2365,8 +2297,8 @@ Vowels = ('A', 'E', 'I', 'O', 'U')</div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Find the output of the following:
-for i in range(2, 7, 2):
-    print(i * '$')</div>
+<pre class="pyq-code">for i in range(2, 7, 2):
+    print(i * '$')</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> $$
 $$$$
@@ -2377,12 +2309,11 @@ Explanation: range(2,7,2) gives 2, 4, 6. For i=2: '$$', for i=4: '$$$$', for i=6
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q12</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Find the output of the following:
-def Update(X):
+<pre class="pyq-code">def Update(X):
     X += 5
-    print('X =', X)
-X = 20
+    print('X =', X)</pre>X = 20
 Update(X)
-print('X =', X)</div>
+<pre class="pyq-code">print('X =', X)</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> X = 25
 X = 20
@@ -2400,29 +2331,27 @@ Explanation: Inside the function, X becomes 25 (local copy). Outside, the global
 <div class="qb-meta"><span class="qb-year-badge">Q14</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">File Handling</span></div>
 <div class="qb-question">Write a function Show_words() in Python to read the content of a text file 'NOTES.TXT' and display the entire content in capital letters.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def Show_words():
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def Show_words():
     f = open('NOTES.TXT', 'r')
     data = f.read()
     print(data.upper())
-    f.close()</div>
+    f.close()</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q15</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Python Fundamentals</span></div>
 <div class="qb-question">Write a recursive function RecsumNat(N) in Python to find the sum of first N natural numbers.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def RecsumNat(N):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def RecsumNat(N):
     if N == 0:
         return 0
     else:
-        return N + RecsumNat(N - 1)
-
-Example: RecsumNat(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15</div>
+        return N + RecsumNat(N - 1)</pre>Example: RecsumNat(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q16</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Stack</span></div>
 <div class="qb-question">Write the definition of a function PushS(List) to add a new element and PopS(List) to delete an element from a List of numbers, implementing stack operations (LIFO). Also handle underflow condition in PopS.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> def PushS(List):
+<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">def PushS(List):
     val = int(input('Enter value to push: '))
     List.append(val)
 
@@ -2431,7 +2360,7 @@ def PopS(List):
         print('Stack Underflow')
     else:
         val = List.pop()
-        print('Deleted element:', val)</div>
+        print('Deleted element:', val)</pre></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q17</span><span class="qb-type-badge mcq">MCQ</span><span class="qb-type-badge case">1 mark</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Computer Networks</span></div>
