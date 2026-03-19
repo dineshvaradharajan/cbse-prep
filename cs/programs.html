@@ -124,11 +124,17 @@ pre.code-block .copy-btn:hover{background:#475569;color:#fff}
 <script>
 const ICONS = {'File Handling':'📄','Binary File':'💾','CSV File':'📊','Stack':'📚','Python Functions':'🐍','SQL':'🗃️'};
 
-/* Determine if a category contains programs that cannot run in the browser */
-function isCategoryRunnable(catName) {
-  const noRun = ['file', 'csv', 'binary', 'pickle', 'sql'];
-  const lower = catName.toLowerCase();
-  return !noRun.some(kw => lower.includes(kw));
+/* Determine if a specific program can run in the browser by checking its code */
+function isProgramRunnable(prog) {
+  const code = (prog.code || '').toLowerCase();
+  // Can't run: file I/O, pickle, csv module, SQL, mysql.connector
+  if (/\bopen\s*\(/.test(code)) return false;
+  if (/\bimport\s+(pickle|csv|mysql)/.test(code)) return false;
+  if (/\bfrom\s+(pickle|csv|mysql)/.test(code)) return false;
+  if (/\b(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)\b/i.test(code) && /\b(cursor|execute|connect)\b/.test(code)) return false;
+  // SQL-only programs (no Python)
+  if (/^\s*(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)\b/im.test(code) && !/\bdef\b/.test(code) && !/\bprint\b/.test(code)) return false;
+  return true;
 }
 
 /* Build a skeleton comment for the Try It Yourself editor */
@@ -160,8 +166,6 @@ function render(data) {
   data.categories.forEach((cat, ci) => {
     const icon = ICONS[cat.name] || '💻';
     const slug = 'cat-' + ci;
-    const runnable = isCategoryRunnable(cat.name);
-
     nav.innerHTML += `<a href="#${slug}">${icon} ${cat.name} (${cat.programs.length})</a>`;
 
     let html = `<div class="cat-section" id="${slug}">
@@ -176,6 +180,7 @@ function render(data) {
     cat.programs.forEach((prog, pi) => {
       const freqClass = prog.frequency === 'Very High' ? 'badge-freq' : 'badge-freq-med';
       const codeId = `code-${ci}-${pi}`;
+      const runnable = isProgramRunnable(prog);
       const tryId = `try-${ci}-${pi}`;
       const editorId = `editor-${ci}-${pi}`;
       const outputId = `output-${ci}-${pi}`;
@@ -245,9 +250,14 @@ function render(data) {
           </div>
         </div>`;
       } else {
+        const reason = /\bopen\s*\(/.test((prog.code||'').toLowerCase()) ? 'file I/O (open/read/write)' :
+                        /\bimport\s+(pickle)/.test((prog.code||'').toLowerCase()) ? 'pickle module (binary files)' :
+                        /\bimport\s+(csv)/.test((prog.code||'').toLowerCase()) ? 'csv module' :
+                        /\b(mysql|cursor|execute)\b/.test((prog.code||'').toLowerCase()) ? 'MySQL database connectivity' :
+                        'SQL commands';
         html += `<div class="no-run-note">
           <span class="note-icon">&#9432;</span>
-          <span>File handling / CSV / Binary / SQL programs cannot run in the browser. Study the solution code instead.</span>
+          <span>This program uses <strong>${reason}</strong> which requires system access not available in the browser. Study the solution code and practice on your computer.</span>
         </div>`;
       }
 
