@@ -33,6 +33,11 @@ code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;backgro
 .qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7}
 .qb-answer.hidden{display:none}
 pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
+table.pyq-table{border-collapse:collapse;width:100%;margin:.5rem 0;font-size:.8rem;border:1px solid var(--sand-200);border-radius:8px;overflow:hidden}
+table.pyq-table th{background:var(--subject-color);color:#fff;padding:.35rem .6rem;text-align:left;font-weight:700;font-family:'Courier New',monospace;font-size:.72rem;white-space:nowrap}
+table.pyq-table td{padding:.3rem .6rem;border-bottom:1px solid var(--sand-100);font-family:'Courier New',monospace;font-size:.76rem;color:var(--ink);white-space:nowrap}
+table.pyq-table tr:nth-child(even) td{background:var(--sand-50)}
+table.pyq-table tr:hover td{background:var(--subject-bg)}
 .qb-answer pre.pyq-code{background:#064e3b;color:#d1fae5;border:1px solid #059669}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
@@ -480,14 +485,7 @@ Postfix: A B C D ** * + E -
 <div class="qb-question">Evaluate the following postfix expression: 5 3 + 8 2 - *</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Step-by-step evaluation:
-Token | Stack        | Action
-5     | [5]          | Push 5
-3     | [5, 3]       | Push 3
-+     | [8]          | Pop 3, 5; compute 5+3=8; Push 8
-8     | [8, 8]       | Push 8
-2     | [8, 8, 2]    | Pop 2, 8; (not yet — push 2 first)
--     | [8, 6]       | Pop 2, 8; compute 8-2=6; Push 6
-*     | [48]         | Pop 6, 8; compute 8*6=48; Push 48
+<table class="pyq-table"><thead><tr><th>Token</th><th>Stack</th><th>Action</th></tr></thead><tbody><tr><td>5</td><td>[5]</td><td>Push 5</td></tr><tr><td>3</td><td>[5, 3]</td><td>Push 3</td></tr><tr><td>+</td><td>[8]</td><td>Pop 3, 5; compute 5+3=8; Push 8</td></tr><tr><td>8</td><td>[8, 8]</td><td>Push 8</td></tr><tr><td>2</td><td>[8, 8, 2]</td><td>Pop 2, 8; (not yet — push 2 first)</td></tr><tr><td>-</td><td>[8, 6]</td><td>Pop 2, 8; compute 8-2=6; Push 6</td></tr><tr><td>*</td><td>[48]</td><td>Pop 6, 8; compute 8*6=48; Push 48</td></tr></tbody></table>
 
 <pre class="pyq-code">Result = 48</pre></div>
 </div>
@@ -886,10 +884,10 @@ Other applications: keyboard buffer, call center systems, traffic management, me
 5. If no swaps in a pass, stop (list is sorted).
 
 Trace for [5, 3, 8, 1, 2]:
-<pre class="pyq-code">Pass 1: [3,5,8,1,2] → [3,5,8,1,2] → [3,5,1,8,2] → [3,5,1,2,8] (3 swaps)
+Pass 1: [3,5,8,1,2] → [3,5,8,1,2] → [3,5,1,8,2] → [3,5,1,2,8] (3 swaps)
 Pass 2: [3,5,1,2,8] → [3,1,5,2,8] → [3,1,2,5,8] (2 swaps)
 Pass 3: [1,3,2,5,8] → [1,2,3,5,8] (2 swaps)
-Pass 4: [1,2,3,5,8] (0 swaps — sorted, stop)</pre>
+Pass 4: [1,2,3,5,8] (0 swaps — sorted, stop)
 Sorted list: [1, 2, 3, 5, 8]</div>
 </div>
 <div class="qb-card">
@@ -919,7 +917,7 @@ print(bubble_sort(data))  # Output: [11, 12, 22, 25, 34, 64, 90]</pre></div>
 <div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">For n = 6 elements:</pre>
 Number of passes = n - 1 = 5
 Number of comparisons = n(n-1)/2 = 6 × 5 / 2 = 15
-<pre class="pyq-code">Pass 1: 5 comparisons, Pass 2: 4 comparisons, Pass 3: 3 comparisons, Pass 4: 2 comparisons, Pass 5: 1 comparison. Total = 5 + 4 + 3 + 2 + 1 = 15.</pre></div>
+Pass 1: 5 comparisons, Pass 2: 4 comparisons, Pass 3: 3 comparisons, Pass 4: 2 comparisons, Pass 5: 1 comparison. Total = 5 + 4 + 3 + 2 + 1 = 15.</div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
@@ -934,10 +932,10 @@ Algorithm:
 4. Repeat until the entire array is sorted.
 
 Example: Sort [29, 10, 14, 37, 13]
-<pre class="pyq-code">Pass 1: Min = 10 (index 1), swap with index 0 → [10, 29, 14, 37, 13]
+Pass 1: Min = 10 (index 1), swap with index 0 → [10, 29, 14, 37, 13]
 Pass 2: Min = 13 (index 4), swap with index 1 → [10, 13, 14, 37, 29]
 Pass 3: Min = 14 (index 2), already in place → [10, 13, 14, 37, 29]
-Pass 4: Min = 29 (index 4), swap with index 3 → [10, 13, 14, 29, 37]</pre>
+Pass 4: Min = 29 (index 4), swap with index 3 → [10, 13, 14, 29, 37]
 Sorted list: [10, 13, 14, 29, 37]</div>
 </div>
 <div class="qb-card">
@@ -974,9 +972,9 @@ Algorithm:
 6. Repeat for all elements.
 
 Example: Sort [7, 4, 5, 2]
-<pre class="pyq-code">Pass 1: key=4, compare with 7, shift 7 right → [4, 7, 5, 2]
+Pass 1: key=4, compare with 7, shift 7 right → [4, 7, 5, 2]
 Pass 2: key=5, compare with 7 (shift), compare with 4 (stop) → [4, 5, 7, 2]
-Pass 3: key=2, compare with 7 (shift), 5 (shift), 4 (shift) → [2, 4, 5, 7]</pre>
+Pass 3: key=2, compare with 7 (shift), 5 (shift), 4 (shift) → [2, 4, 5, 7]
 Sorted list: [2, 4, 5, 7]</div>
 </div>
 <div class="qb-card">
@@ -1004,15 +1002,9 @@ print(insertion_sort(data))  # Output: [5, 6, 11, 12, 13]</pre></div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Comparison Table:
 
-| Property         | Bubble Sort | Selection Sort | Insertion Sort |
+<table class="pyq-table"><thead><tr><th></th><th>Property</th><th>Bubble Sort</th><th>Selection Sort</th><th>Insertion Sort</th><th></th></tr></thead><tbody></tbody></table>
 |-----------------|-------------|----------------|----------------|
-| Best Case       | O(n)        | O(n^2)         | O(n)           |
-| Average Case    | O(n^2)      | O(n^2)         | O(n^2)         |
-| Worst Case      | O(n^2)      | O(n^2)         | O(n^2)         |
-| Space           | O(1)        | O(1)           | O(1)           |
-| Stable          | Yes         | No             | Yes            |
-| In-place        | Yes         | Yes            | Yes            |
-| Swaps (worst)   | O(n^2)      | O(n)           | O(n^2) shifts  |
+<table class="pyq-table"><thead><tr><th></th><th>Best Case</th><th>O(n)</th><th>O(n^2)</th><th>O(n)</th><th></th></tr></thead><tbody><tr><td></td><td>Average Case</td><td>O(n^2)</td><td>O(n^2)</td><td>O(n^2)</td><td></td></tr><tr><td></td><td>Worst Case</td><td>O(n^2)</td><td>O(n^2)</td><td>O(n^2)</td><td></td></tr><tr><td></td><td>Space</td><td>O(1)</td><td>O(1)</td><td>O(1)</td><td></td></tr><tr><td></td><td>Stable</td><td>Yes</td><td>No</td><td>Yes</td><td></td></tr><tr><td></td><td>In-place</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td></tr><tr><td></td><td>Swaps (worst)</td><td>O(n^2)</td><td>O(n)</td><td>O(n^2) shifts</td><td></td></tr></tbody></table>
 
 Key observations:
 - All three have O(n^2) worst-case time complexity.
@@ -1123,16 +1115,9 @@ else:
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Comparison of Linear Search and Binary Search:
 
-| Feature          | Linear Search      | Binary Search        |
+<table class="pyq-table"><thead><tr><th></th><th>Feature</th><th>Linear Search</th><th>Binary Search</th><th></th></tr></thead><tbody></tbody></table>
 |-----------------|--------------------|----------------------|
-| Data requirement | Unsorted or sorted | Must be sorted       |
-| Approach         | Sequential         | Divide and Conquer   |
-| Best Case        | O(1)              | O(1)                 |
-| Worst Case       | O(n)              | O(log n)             |
-| Average Case     | O(n)              | O(log n)             |
-| Space            | O(1)              | O(1) iterative       |
-| Simplicity       | Very simple        | Slightly complex     |
-| Use case         | Small/unsorted     | Large sorted data    |
+<table class="pyq-table"><thead><tr><th></th><th>Data requirement</th><th>Unsorted or sorted</th><th>Must be sorted</th><th></th></tr></thead><tbody><tr><td></td><td>Approach</td><td>Sequential</td><td>Divide and Conquer</td><td></td></tr><tr><td></td><td>Best Case</td><td>O(1)</td><td>O(1)</td><td></td></tr><tr><td></td><td>Worst Case</td><td>O(n)</td><td>O(log n)</td><td></td></tr><tr><td></td><td>Average Case</td><td>O(n)</td><td>O(log n)</td><td></td></tr><tr><td></td><td>Space</td><td>O(1)</td><td>O(1) iterative</td><td></td></tr><tr><td></td><td>Simplicity</td><td>Very simple</td><td>Slightly complex</td><td></td></tr><tr><td></td><td>Use case</td><td>Small/unsorted</td><td>Large sorted data</td><td></td></tr></tbody></table>
 
 <pre class="pyq-code">For n = 1024, Linear Search may need 1024 comparisons, while Binary Search needs at most 11 comparisons (log2(1024) + 1 = 11).</pre></div>
 </div>
@@ -1389,11 +1374,9 @@ Semi-structured Data: Has some organizational properties (tags, markers) but doe
 <div class="qb-question">Explain the terms: Relation, Attribute, Tuple, Domain, Degree, and Cardinality with reference to a relational database.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> Consider the STUDENT table:
-| RollNo | Name   | Class | Marks |
+<table class="pyq-table"><thead><tr><th></th><th>RollNo</th><th>Name</th><th>Class</th><th>Marks</th><th></th></tr></thead><tbody></tbody></table>
 |--------|--------|-------|-------|
-| 1      | Aman   | XII   | 85    |
-| 2      | Priya  | XII   | 92    |
-| 3      | Rahul  | XII   | 78    |
+<table class="pyq-table"><thead><tr><th></th><th>1</th><th>Aman</th><th>XII</th><th>85</th><th></th></tr></thead><tbody><tr><td></td><td>2</td><td>Priya</td><td>XII</td><td>92</td><td></td></tr><tr><td></td><td>3</td><td>Rahul</td><td>XII</td><td>78</td><td></td></tr></tbody></table>
 
 1. Relation: A table in the database. STUDENT is a relation.
 2. Attribute: A column in the table representing a property. RollNo, Name, Class, Marks are attributes.
@@ -1420,17 +1403,14 @@ Difference: All primary keys are candidate keys, but not all candidate keys are 
 
 Example:
 STUDENT table:
-| RollNo (PK) | Name  | Class |
+<table class="pyq-table"><thead><tr><th></th><th>RollNo (PK)</th><th>Name</th><th>Class</th><th></th></tr></thead><tbody></tbody></table>
 |-------------|-------|-------|
-| 1           | Aman  | XII   |
-| 2           | Priya | XII   |
+<table class="pyq-table"><thead><tr><th></th><th>1</th><th>Aman</th><th>XII</th><th></th></tr></thead><tbody><tr><td></td><td>2</td><td>Priya</td><td>XII</td><td></td></tr></tbody></table>
 
 RESULT table:
-| RollNo (FK) | Subject | Marks |
+<table class="pyq-table"><thead><tr><th></th><th>RollNo (FK)</th><th>Subject</th><th>Marks</th><th></th></tr></thead><tbody></tbody></table>
 |-------------|---------|-------|
-| 1           | Maths   | 85    |
-| 1           | Physics | 78    |
-| 2           | Maths   | 92    |
+<table class="pyq-table"><thead><tr><th></th><th>1</th><th>Maths</th><th>85</th><th></th></tr></thead><tbody><tr><td></td><td>1</td><td>Physics</td><td>78</td><td></td></tr><tr><td></td><td>2</td><td>Maths</td><td>92</td><td></td></tr></tbody></table>
 
 Here, RollNo in RESULT is a foreign key that references RollNo (primary key) in STUDENT. This means: (1) Every RollNo in RESULT must exist in STUDENT. (2) You cannot insert RollNo=5 in RESULT if RollNo=5 does not exist in STUDENT. (3) You cannot delete RollNo=1 from STUDENT if it is referenced in RESULT.</div>
 </div>
@@ -1477,11 +1457,9 @@ Importance: (1) Prevents orphan records — a RESULT record cannot reference a s
 <div class="qb-answer hidden"><strong>Answer:</strong> A composite key is a primary key (or candidate key) that consists of two or more attributes which together uniquely identify each tuple, even though individually they may not.
 
 Example: In the ENROLLMENT table:
-| StudentID | CourseID | EnrollDate |
+<table class="pyq-table"><thead><tr><th></th><th>StudentID</th><th>CourseID</th><th>EnrollDate</th><th></th></tr></thead><tbody></tbody></table>
 |-----------|----------|------------|
-| 101       | CS101    | 2024-01-15 |
-| 101       | MA201    | 2024-01-16 |
-| 102       | CS101    | 2024-01-15 |
+<table class="pyq-table"><thead><tr><th></th><th>101</th><th>CS101</th><th>2024-01-15</th><th></th></tr></thead><tbody><tr><td></td><td>101</td><td>MA201</td><td>2024-01-16</td><td></td></tr><tr><td></td><td>102</td><td>CS101</td><td>2024-01-15</td><td></td></tr></tbody></table>
 
 Neither StudentID nor CourseID alone is unique. But the combination (StudentID, CourseID) uniquely identifies each enrollment. So (StudentID, CourseID) is a composite key.</div>
 </div>
@@ -1563,12 +1541,9 @@ Use CHAR for fixed-length data (e.g., PIN codes, gender). Use VARCHAR for variab
     -- or --
 <pre class="pyq-code">    DESC STUDENT;</pre>
 This will display:
-| Field  | Type        | Null | Key | Default | Extra |
+<table class="pyq-table"><thead><tr><th></th><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default</th><th>Extra</th><th></th></tr></thead><tbody></tbody></table>
 |--------|-------------|------|-----|---------|-------|
-| RollNo | int         | NO   | PRI | NULL    |       |
-| Name   | varchar(30) | NO   |     | NULL    |       |
-| Class  | varchar(5)  | YES  |     | NULL    |       |
-| Marks  | float       | YES  |     | 0       |       |</div>
+<table class="pyq-table"><thead><tr><th></th><th>RollNo</th><th>int</th><th>NO</th><th>PRI</th><th>NULL</th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Name</td><td>varchar(30)</td><td>NO</td><td></td><td>NULL</td><td></td><td></td></tr><tr><td></td><td>Class</td><td>varchar(5)</td><td>YES</td><td></td><td>NULL</td><td></td><td></td></tr><tr><td></td><td>Marks</td><td>float</td><td>YES</td><td></td><td>0</td><td></td><td></td></tr></tbody></table></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span></div>
@@ -1648,23 +1623,21 @@ Alternatively, in MySQL you can insert multiple rows:
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
 <div class="qb-answer hidden"><strong>Answer:</strong> (a) SELECT Class, COUNT(*) AS StudentCount FROM STUDENT GROUP BY Class;
     Output:
-    | Class | StudentCount |
+<table class="pyq-table"><thead><tr><th></th><th>Class</th><th>StudentCount</th><th></th></tr></thead><tbody></tbody></table>
     |-------|--------------|
-    | XI    | 2            |
-    | XII   | 3            |
+<table class="pyq-table"><thead><tr><th></th><th>XI</th><th>2</th><th></th></tr></thead><tbody><tr><td></td><td>XII</td><td>3</td><td></td></tr></tbody></table>
 
 (b) SELECT Class, AVG(Marks) AS AvgMarks FROM STUDENT GROUP BY Class;
     Output:
-    | Class | AvgMarks |
+<table class="pyq-table"><thead><tr><th></th><th>Class</th><th>AvgMarks</th><th></th></tr></thead><tbody></tbody></table>
     |-------|----------|
-    | XI    | 71.5     |
-    | XII   | 88.33    |
+<table class="pyq-table"><thead><tr><th></th><th>XI</th><th>71.5</th><th></th></tr></thead><tbody><tr><td></td><td>XII</td><td>88.33</td><td></td></tr></tbody></table>
 
 (c) SELECT Class, AVG(Marks) AS AvgMarks FROM STUDENT GROUP BY Class HAVING AVG(Marks) &gt; 80;
     Output:
-    | Class | AvgMarks |
+<table class="pyq-table"><thead><tr><th></th><th>Class</th><th>AvgMarks</th><th></th></tr></thead><tbody></tbody></table>
     |-------|----------|
-    | XII   | 88.33    |</div>
+<table class="pyq-table"><thead><tr><th></th><th>XII</th><th>88.33</th><th></th></tr></thead><tbody></tbody></table></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q10</span><span class="qb-type-badge subj">Long</span></div>
@@ -1682,7 +1655,7 @@ Alternatively, in MySQL you can insert multiple rows:
 <div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge case">Short</span></div>
 <div class="qb-question">Explain the difference between WHERE and HAVING clauses.</div>
 <button class="qb-ans-toggle" onclick="toggleAnswer(this)">Show Answer</button>
-<div class="qb-answer hidden"><strong>Answer:</strong> <pre class="pyq-code">WHERE clause:</pre>
+<div class="qb-answer hidden"><strong>Answer:</strong> WHERE clause:
 - Filters individual rows before grouping.
 - Cannot use aggregate functions.
 - Applied before GROUP BY.
@@ -1724,8 +1697,9 @@ Key difference: WHERE works on rows; HAVING works on groups. WHERE cannot contai
 
 (b) Equi-Join to display names with marks:
 <pre class="pyq-code">SELECT STUDENT.Name, RESULT.Subject, RESULT.Marks
-FROM STUDENT, RESULT
-WHERE STUDENT.RollNo = RESULT.RollNo;</pre>
+FROM STUDENT, RESULT</pre>
+WHERE STUDENT.RollNo = RESULT.RollNo;
+
 -- Or using JOIN syntax:
 <pre class="pyq-code">SELECT S.Name, R.Subject, R.Marks
 FROM STUDENT S</pre>
@@ -1733,8 +1707,8 @@ JOIN RESULT R ON S.RollNo = R.RollNo;
 
 (c) Names of students scoring more than 90:
 <pre class="pyq-code">SELECT DISTINCT STUDENT.Name
-FROM STUDENT, RESULT
-WHERE STUDENT.RollNo = RESULT.RollNo</pre>
+FROM STUDENT, RESULT</pre>
+WHERE STUDENT.RollNo = RESULT.RollNo
 AND RESULT.Marks &gt; 90;</div>
 </div>
 <div class="qb-card">
@@ -1756,8 +1730,9 @@ Key difference: UNION adds rows from two queries; Cartesian product multiplies r
 <div class="qb-answer hidden"><strong>Answer:</strong> A sub-query (or nested query) is a SELECT query inside another SQL statement. The inner query executes first and its result is used by the outer query.
 
 Query to find the student with the highest marks:
-<pre class="pyq-code">SELECT Name, Marks FROM STUDENT
-WHERE Marks = (SELECT MAX(Marks) FROM STUDENT);</pre>
+<pre class="pyq-code">SELECT Name, Marks FROM STUDENT</pre>
+WHERE Marks = (SELECT MAX(Marks) FROM STUDENT);
+
 Explanation: The inner query (SELECT MAX(Marks) FROM STUDENT) returns 92. The outer query then finds the student whose marks equal 92, returning 'Priya'.</div>
 </div>
 <div class="qb-card">
@@ -1774,7 +1749,7 @@ FROM table1 [, table2]</pre>
 [ORDER BY column1 [ASC|DESC]]
 [LIMIT n];
 
-<pre class="pyq-code">Order of execution:</pre>
+Order of execution:
 1. FROM — identifies the tables
 2. WHERE — filters individual rows
 3. GROUP BY — groups rows

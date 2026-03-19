@@ -35,6 +35,11 @@ code,.fl-eq{font-family:'Courier New',Courier,monospace;font-size:.82rem;backgro
 .qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
 .qb-answer.hidden{display:none}
 pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
+table.pyq-table{border-collapse:collapse;width:100%;margin:.5rem 0;font-size:.8rem;border:1px solid var(--sand-200);border-radius:8px;overflow:hidden}
+table.pyq-table th{background:var(--subject-color);color:#fff;padding:.35rem .6rem;text-align:left;font-weight:700;font-family:'Courier New',monospace;font-size:.72rem;white-space:nowrap}
+table.pyq-table td{padding:.3rem .6rem;border-bottom:1px solid var(--sand-100);font-family:'Courier New',monospace;font-size:.76rem;color:var(--ink);white-space:nowrap}
+table.pyq-table tr:nth-child(even) td{background:var(--sand-50)}
+table.pyq-table tr:hover td{background:var(--subject-bg)}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
   .qb-question{font-size:.82rem}
@@ -979,14 +984,7 @@ R*A*D*A*R*</div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q27</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">Consider the table ORDERS given below and write the output of the SQL queries that follow:
-ORDNO | ITEM | QTY | RATE | ORDATE
-1001 | RICE | 23 | 120 | 2023-09-10
-1002 | PULSES | 13 | 120 | 2023-10-18
-1003 | RICE | 25 | 110 | 2023-11-17
-1004 | WHEAT | 28 | 65 | 2023-12-25
-1005 | PULSES | 16 | 110 | 2024-01-15
-1006 | WHEAT | 27 | 55 | 2024-04-15
-1007 | WHEAT | 25 | 60 | 2024-04-30
+<table class="pyq-table"><thead><tr><th>ORDNO</th><th>ITEM</th><th>QTY</th><th>RATE</th><th>ORDATE</th></tr></thead><tbody><tr><td>1001</td><td>RICE</td><td>23</td><td>120</td><td>2023-09-10</td></tr><tr><td>1002</td><td>PULSES</td><td>13</td><td>120</td><td>2023-10-18</td></tr><tr><td>1003</td><td>RICE</td><td>25</td><td>110</td><td>2023-11-17</td></tr><tr><td>1004</td><td>WHEAT</td><td>28</td><td>65</td><td>2023-12-25</td></tr><tr><td>1005</td><td>PULSES</td><td>16</td><td>110</td><td>2024-01-15</td></tr><tr><td>1006</td><td>WHEAT</td><td>27</td><td>55</td><td>2024-04-15</td></tr><tr><td>1007</td><td>WHEAT</td><td>25</td><td>60</td><td>2024-04-30</td></tr></tbody></table>
 
 (i) SELECT ITEM, SUM(QTY) FROM ORDERS GROUP BY ITEM;
 (ii) SELECT ITEM, QTY FROM ORDERS WHERE ORDATE BETWEEN '2023-11-01' AND '2023-12-31';
@@ -1045,11 +1043,7 @@ OR
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q29</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">Consider the table Projects given below:
-P_id | Pname | Language | Startdate | Enddate
-P001 | School Management System | Python | 2023-01-12 | 2023-04-03
-P002 | Hotel Management System | C++ | 2022-12-01 | 2023-02-02
-P003 | Blood Bank | Python | 2023-02-11 | 2023-03-02
-P004 | Payroll Management System | Python | 2023-03-12 | 2023-06-02
+<table class="pyq-table"><thead><tr><th>P_id</th><th>Pname</th><th>Language</th><th>Startdate</th><th>Enddate</th></tr></thead><tbody><tr><td>P001</td><td>School Management System</td><td>Python</td><td>2023-01-12</td><td>2023-04-03</td></tr><tr><td>P002</td><td>Hotel Management System</td><td>C++</td><td>2022-12-01</td><td>2023-02-02</td></tr><tr><td>P003</td><td>Blood Bank</td><td>Python</td><td>2023-02-11</td><td>2023-03-02</td></tr><tr><td>P004</td><td>Payroll Management System</td><td>Python</td><td>2023-03-12</td><td>2023-06-02</td></tr></tbody></table>
 
 Based on the given table, write SQL queries for:
 (i) Add the constraint, primary key to column P_id in the existing table Projects.
@@ -1081,16 +1075,9 @@ def PopBig():
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q31</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">Consider the tables Admin and Transport given below:
-Table Admin: S_id | S_name | Address | S_type
-S001 | Sandhya | Rohini | Day Boarder
-S002 | Vedanshi | Rohtak | Day Scholar
-S003 | Vibhu | Raj Nagar | NULL
-S004 | Atharva | Rampur | Day Boarder
+<table class="pyq-table"><thead><tr><th>Table Admin: S_id</th><th>S_name</th><th>Address</th><th>S_type</th></tr></thead><tbody><tr><td>S001</td><td>Sandhya</td><td>Rohini</td><td>Day Boarder</td></tr><tr><td>S002</td><td>Vedanshi</td><td>Rohtak</td><td>Day Scholar</td></tr><tr><td>S003</td><td>Vibhu</td><td>Raj Nagar</td><td>NULL</td></tr><tr><td>S004</td><td>Atharva</td><td>Rampur</td><td>Day Boarder</td></tr></tbody></table>
 
-Table Transport: S_id | Bus_no | Stop_name
-S002 | TSS10 | Sarai Kale Khan
-S004 | TSS12 | Sainik Vihar
-S005 | TSS10 | Kamla Nagar
+<table class="pyq-table"><thead><tr><th>Table Transport: S_id</th><th>Bus_no</th><th>Stop_name</th></tr></thead><tbody><tr><td>S002</td><td>TSS10</td><td>Sarai Kale Khan</td></tr><tr><td>S004</td><td>TSS12</td><td>Sainik Vihar</td></tr><tr><td>S005</td><td>TSS10</td><td>Kamla Nagar</td></tr></tbody></table>
 
 Write SQL queries for the following:
 (i) Display the student name and their stop name from the tables Admin and Transport.
@@ -1517,9 +1504,7 @@ DML commands: INSERT, UPDATE (also DELETE, SELECT)</div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q26</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">(a) Consider the following tables - LOAN and BORROWER:
-Table LOAN: LOAN_NO | B_NAME | AMOUNT
-L-170 | DELHI | 3000
-L-230 | KANPUR | 4000
+<table class="pyq-table"><thead><tr><th>Table LOAN: LOAN_NO</th><th>B_NAME</th><th>AMOUNT</th></tr></thead><tbody><tr><td>L-170</td><td>DELHI</td><td>3000</td></tr><tr><td>L-230</td><td>KANPUR</td><td>4000</td></tr></tbody></table>
 
 Table BORROWER: CUST_NAME | LOAN_NO
 JOHN | L-171
@@ -1529,13 +1514,7 @@ RAVYA | L-170
 How many rows and columns will be there in the natural join of these two tables?
 
 (b) Write the output of the queries (i) to (iv) based on the table WORKER:
-W_ID | F_NAME | L_NAME | CITY | STATE
-102 | SAHIL | KHAN | KANPUR | UTTAR PRADESH
-104 | SAMEER | PARIKH | ROOP NAGAR | PUNJAB
-105 | MARY | JONES | DELHI | DELHI
-106 | MAHIR | SHARMA | SONIPAT | HARYANA
-107 | ATHARVA | BHARDWAJ | DELHI | DELHI
-108 | VEDA | SHARMA | KANPUR | UTTAR PRADESH
+<table class="pyq-table"><thead><tr><th>W_ID</th><th>F_NAME</th><th>L_NAME</th><th>CITY</th><th>STATE</th></tr></thead><tbody><tr><td>102</td><td>SAHIL</td><td>KHAN</td><td>KANPUR</td><td>UTTAR PRADESH</td></tr><tr><td>104</td><td>SAMEER</td><td>PARIKH</td><td>ROOP NAGAR</td><td>PUNJAB</td></tr><tr><td>105</td><td>MARY</td><td>JONES</td><td>DELHI</td><td>DELHI</td></tr><tr><td>106</td><td>MAHIR</td><td>SHARMA</td><td>SONIPAT</td><td>HARYANA</td></tr><tr><td>107</td><td>ATHARVA</td><td>BHARDWAJ</td><td>DELHI</td><td>DELHI</td></tr><tr><td>108</td><td>VEDA</td><td>SHARMA</td><td>KANPUR</td><td>UTTAR PRADESH</td></tr></tbody></table>
 
 (i) SELECT F_NAME, CITY FROM WORKER ORDER BY STATE DESC;
 (ii) SELECT DISTINCT(CITY) FROM WORKER;
@@ -1607,19 +1586,9 @@ OR
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q28</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">3 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">(a) Write the outputs of the SQL queries (i) to (iv) based on the relations COMPUTER and SALES given below:
-Table COMPUTER: PROD_ID | PROD_NAME | PRICE | COMPANY | TYPE
-P001 | MOUSE | 200 | LOGITECH | INPUT
-P002 | LASER PRINTER | 4000 | CANON | OUTPUT
-P003 | KEYBOARD | 500 | LOGITECH | INPUT
-P004 | JOYSTICK | 1000 | IBALL | INPUT
-P005 | SPEAKER | 1200 | CREATIVE | OUTPUT
-P006 | DESKJET PRINTER | 4300 | CANON | OUTPUT
+<table class="pyq-table"><thead><tr><th>Table COMPUTER: PROD_ID</th><th>PROD_NAME</th><th>PRICE</th><th>COMPANY</th><th>TYPE</th></tr></thead><tbody><tr><td>P001</td><td>MOUSE</td><td>200</td><td>LOGITECH</td><td>INPUT</td></tr><tr><td>P002</td><td>LASER PRINTER</td><td>4000</td><td>CANON</td><td>OUTPUT</td></tr><tr><td>P003</td><td>KEYBOARD</td><td>500</td><td>LOGITECH</td><td>INPUT</td></tr><tr><td>P004</td><td>JOYSTICK</td><td>1000</td><td>IBALL</td><td>INPUT</td></tr><tr><td>P005</td><td>SPEAKER</td><td>1200</td><td>CREATIVE</td><td>OUTPUT</td></tr><tr><td>P006</td><td>DESKJET PRINTER</td><td>4300</td><td>CANON</td><td>OUTPUT</td></tr></tbody></table>
 
-Table SALES: PROD_ID | QTY_SOLD | QUARTER
-P002 | 4 | 1
-P003 | 2 | 2
-P001 | 3 | 2
-P004 | 2 | 1
+<table class="pyq-table"><thead><tr><th>Table SALES: PROD_ID</th><th>QTY_SOLD</th><th>QUARTER</th></tr></thead><tbody><tr><td>P002</td><td>4</td><td>1</td></tr><tr><td>P003</td><td>2</td><td>2</td></tr><tr><td>P001</td><td>3</td><td>2</td></tr><tr><td>P004</td><td>2</td><td>1</td></tr></tbody></table>
 
 (i) SELECT MIN(PRICE), MAX(PRICE) FROM COMPUTER;
 (ii) SELECT COMPANY, COUNT(*) FROM COMPUTER GROUP BY COMPANY HAVING COUNT(COMPANY) &gt; 1;
@@ -1640,11 +1609,7 @@ P004 | 2 | 1
       MOUSE     | 3
       JOYSTICK  | 2
 
-(iv) PROD_NAME      | COMPANY   | QUARTER
-     LASER PRINTER  | CANON     | 1
-     KEYBOARD       | LOGITECH  | 2
-     MOUSE          | LOGITECH  | 2
-     JOYSTICK       | IBALL     | 1
+<table class="pyq-table"><thead><tr><th>(iv) PROD_NAME</th><th>COMPANY</th><th>QUARTER</th></tr></thead><tbody><tr><td>LASER PRINTER</td><td>CANON</td><td>1</td></tr><tr><td>KEYBOARD</td><td>LOGITECH</td><td>2</td></tr><tr><td>MOUSE</td><td>LOGITECH</td><td>2</td></tr><tr><td>JOYSTICK</td><td>IBALL</td><td>1</td></tr></tbody></table>
 
 (b) SHOW DATABASES;</div>
 </div>
@@ -1861,12 +1826,7 @@ def Search_Book():
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q34</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
 <div class="qb-question">The school has asked their estate manager Mr. Rahul to maintain the data of all the labs in a table LAB. Rahul has created a table and entered data of 5 labs.
-LABNO | LAB_NAME | INCHARGE | CAPACITY | FLOOR
-L001 | CHEMISTRY | Daisy | 20 | I
-L002 | BIOLOGY | Venky | 20 | II
-L003 | MATH | Preeti | 15 | I
-L004 | LANGUAGE | Daisy | 36 | III
-L005 | COMPUTER | Mary Kom | 37 | II
+<table class="pyq-table"><thead><tr><th>LABNO</th><th>LAB_NAME</th><th>INCHARGE</th><th>CAPACITY</th><th>FLOOR</th></tr></thead><tbody><tr><td>L001</td><td>CHEMISTRY</td><td>Daisy</td><td>20</td><td>I</td></tr><tr><td>L002</td><td>BIOLOGY</td><td>Venky</td><td>20</td><td>II</td></tr><tr><td>L003</td><td>MATH</td><td>Preeti</td><td>15</td><td>I</td></tr><tr><td>L004</td><td>LANGUAGE</td><td>Daisy</td><td>36</td><td>III</td></tr><tr><td>L005</td><td>COMPUTER</td><td>Mary Kom</td><td>37</td><td>II</td></tr></tbody></table>
 
 (i) Identify the columns which can be considered as Candidate keys.
 (ii) Write the degree and cardinality of the table.
@@ -1960,12 +1920,7 @@ Domain: The set of all possible values that an attribute can take. For example, 
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q4</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
 <div class="qb-question">Consider the following SQL table MEMBER in a SQL Database CLUB:
-M_ID | NAME | ACTIVITY
-M1001 | Amina | GYM
-M1002 | Pratik | GYM
-M1003 | Simon | SWIMMING
-M1004 | Rakesh | GYM
-M1005 | Avneet | SWIMMING
+<table class="pyq-table"><thead><tr><th>M_ID</th><th>NAME</th><th>ACTIVITY</th></tr></thead><tbody><tr><td>M1001</td><td>Amina</td><td>GYM</td></tr><tr><td>M1002</td><td>Pratik</td><td>GYM</td></tr><tr><td>M1003</td><td>Simon</td><td>SWIMMING</td></tr><tr><td>M1004</td><td>Rakesh</td><td>GYM</td></tr><tr><td>M1005</td><td>Avneet</td><td>SWIMMING</td></tr></tbody></table>
 
 Predict the output of the following code:
 <pre class="pyq-code">MYCUR = DB.cursor()
@@ -1988,12 +1943,7 @@ M1004#Rakesh</div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q5</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">Write the output of SQL queries (a) to (d) based on the table VACCINATION_DATA given below:
-VID | Name | Age | Dose1 | Dose2 | City
-101 | Jenny | 27 | 2021-12-25 | 2022-01-31 | Delhi
-102 | Harjot | 55 | 2021-07-14 | 2021-10-14 | Mumbai
-103 | Srikanth | 43 | 2021-04-18 | 2021-07-20 | Delhi
-104 | Gazala | 75 | 2021-07-31 | NULL | Kolkata
-105 | Shiksha | 32 | 2022-01-01 | NULL | Mumbai
+<table class="pyq-table"><thead><tr><th>VID</th><th>Name</th><th>Age</th><th>Dose1</th><th>Dose2</th><th>City</th></tr></thead><tbody><tr><td>101</td><td>Jenny</td><td>27</td><td>2021-12-25</td><td>2022-01-31</td><td>Delhi</td></tr><tr><td>102</td><td>Harjot</td><td>55</td><td>2021-07-14</td><td>2021-10-14</td><td>Mumbai</td></tr><tr><td>103</td><td>Srikanth</td><td>43</td><td>2021-04-18</td><td>2021-07-20</td><td>Delhi</td></tr><tr><td>104</td><td>Gazala</td><td>75</td><td>2021-07-31</td><td>NULL</td><td>Kolkata</td></tr><tr><td>105</td><td>Shiksha</td><td>32</td><td>2022-01-01</td><td>NULL</td><td>Mumbai</td></tr></tbody></table>
 
 (a) SELECT Name, Age FROM VACCINATION_DATA WHERE Dose2 IS NOT NULL AND Age &gt; 40;
 (b) SELECT City, COUNT(*) FROM VACCINATION_DATA GROUP BY City;
@@ -2020,17 +1970,9 @@ VID | Name | Age | Dose1 | Dose2 | City
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q6</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">Write the output of SQL queries (a) and (b) based on the following two tables DOCTOR and PATIENT:
-Table DOCTOR: DNO | DNAME | FEES
-D1 | AMITABH | 1500
-D2 | ANIKET | 1000
-D3 | NIKHIL | 1500
-D4 | ANJANA | 1500
+<table class="pyq-table"><thead><tr><th>Table DOCTOR: DNO</th><th>DNAME</th><th>FEES</th></tr></thead><tbody><tr><td>D1</td><td>AMITABH</td><td>1500</td></tr><tr><td>D2</td><td>ANIKET</td><td>1000</td></tr><tr><td>D3</td><td>NIKHIL</td><td>1500</td></tr><tr><td>D4</td><td>ANJANA</td><td>1500</td></tr></tbody></table>
 
-Table PATIENT: PNO | PNAME | ADMDATE | DNO
-P1 | NOOR | 2021-12-25 | D1
-P2 | ANNIE | 2021-11-20 | D2
-P3 | PRAKASH | 2020-12-10 | NULL
-P4 | HARMEET | 2019-12-20 | D1
+<table class="pyq-table"><thead><tr><th>Table PATIENT: PNO</th><th>PNAME</th><th>ADMDATE</th><th>DNO</th></tr></thead><tbody><tr><td>P1</td><td>NOOR</td><td>2021-12-25</td><td>D1</td></tr><tr><td>P2</td><td>ANNIE</td><td>2021-11-20</td><td>D2</td></tr><tr><td>P3</td><td>PRAKASH</td><td>2020-12-10</td><td>NULL</td></tr><tr><td>P4</td><td>HARMEET</td><td>2019-12-20</td><td>D1</td></tr></tbody></table>
 
 (a) SELECT DNAME, PNAME FROM DOCTOR NATURAL JOIN PATIENT;
 (b) SELECT PNAME, ADMDATE, FEES FROM PATIENT P, DOCTOR D WHERE D.DNO = P.DNO AND FEES &gt; 1000;</div>
@@ -2042,9 +1984,7 @@ ANIKET   | ANNIE
 AMITABH  | HARMEET
 
 (b) FEES &gt; 1000 means FEES = 1500 (D1, D3, D4). Matching with PATIENT:
-PNAME    | ADMDATE    | FEES
-NOOR     | 2021-12-25 | 1500
-HARMEET  | 2019-12-20 | 1500</div>
+<table class="pyq-table"><thead><tr><th>PNAME</th><th>ADMDATE</th><th>FEES</th></tr></thead><tbody><tr><td>NOOR</td><td>2021-12-25</td><td>1500</td></tr><tr><td>HARMEET</td><td>2019-12-20</td><td>1500</td></tr></tbody></table></div>
 </div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q7</span><span class="qb-type-badge case">Short</span><span class="qb-type-badge case">2 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">Database Concepts</span></div>
@@ -2053,12 +1993,7 @@ HARMEET  | 2019-12-20 | 1500</div>
 OR
 
 Consider the following table PLAYER:
-PNO | NAME | SCORE
-P1 | RISHABH | 52
-P2 | HUSSAIN | 45
-P3 | ARNOLD | 23
-P4 | ARNAV | 18
-P5 | GURSHARAN | 42
+<table class="pyq-table"><thead><tr><th>PNO</th><th>NAME</th><th>SCORE</th></tr></thead><tbody><tr><td>P1</td><td>RISHABH</td><td>52</td></tr><tr><td>P2</td><td>HUSSAIN</td><td>45</td></tr><tr><td>P3</td><td>ARNOLD</td><td>23</td></tr><tr><td>P4</td><td>ARNAV</td><td>18</td></tr><tr><td>P5</td><td>GURSHARAN</td><td>42</td></tr></tbody></table>
 
 (a) Identify and write the name of the most appropriate column from the given table PLAYER that can be used as a Primary key.
 (b) Define the term Degree in relational data model. What is the Degree of the given table PLAYER?</div>
@@ -2151,18 +2086,9 @@ print("StackEmpty")</pre></div>
 <div class="qb-card">
 <div class="qb-meta"><span class="qb-year-badge">Q11</span><span class="qb-type-badge subj">Long</span><span class="qb-type-badge case">4 marks</span><span class="qb-type-badge" style="color:#059669;background:#f0fdf4;border:1px solid #86efac">SQL</span></div>
 <div class="qb-question">Write SQL queries for (a) to (d) based on the tables PASSENGER and FLIGHT given below:
-Table PASSENGER: PNO | NAME | GENDER | FNO
-1001 | Suresh | MALE | F101
-1002 | Anita | FEMALE | F104
-1003 | Harjas | MALE | F102
-1004 | Nita | FEMALE | F103
+<table class="pyq-table"><thead><tr><th>Table PASSENGER: PNO</th><th>NAME</th><th>GENDER</th><th>FNO</th></tr></thead><tbody><tr><td>1001</td><td>Suresh</td><td>MALE</td><td>F101</td></tr><tr><td>1002</td><td>Anita</td><td>FEMALE</td><td>F104</td></tr><tr><td>1003</td><td>Harjas</td><td>MALE</td><td>F102</td></tr><tr><td>1004</td><td>Nita</td><td>FEMALE</td><td>F103</td></tr></tbody></table>
 
-Table FLIGHT: FNO | START | END | F_DATE | FARE
-F101 | MUMBAI | CHENNAI | 2021-12-25 | 4500
-F102 | MUMBAI | BENGALURU | 2021-11-20 | 4000
-F103 | DELHI | CHENNAI | 2021-12-10 | 5500
-F104 | KOLKATA | MUMBAI | 2021-12-20 | 4500
-F105 | DELHI | BENGALURU | 2021-01-15 | 5000
+<table class="pyq-table"><thead><tr><th>Table FLIGHT: FNO</th><th>START</th><th>END</th><th>F_DATE</th><th>FARE</th></tr></thead><tbody><tr><td>F101</td><td>MUMBAI</td><td>CHENNAI</td><td>2021-12-25</td><td>4500</td></tr><tr><td>F102</td><td>MUMBAI</td><td>BENGALURU</td><td>2021-11-20</td><td>4000</td></tr><tr><td>F103</td><td>DELHI</td><td>CHENNAI</td><td>2021-12-10</td><td>5500</td></tr><tr><td>F104</td><td>KOLKATA</td><td>MUMBAI</td><td>2021-12-20</td><td>4500</td></tr><tr><td>F105</td><td>DELHI</td><td>BENGALURU</td><td>2021-01-15</td><td>5000</td></tr></tbody></table>
 
 (a) Write a query to change the fare to 6000 of the flight whose FNO is F104.
 (b) Write a query to display the total number of MALE and FEMALE PASSENGERS.

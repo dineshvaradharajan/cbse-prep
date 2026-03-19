@@ -26,7 +26,7 @@ function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-/** Escape HTML and wrap Python/SQL code snippets in <pre><code> blocks */
+/** Escape HTML and format Python/SQL code and pipe-tables */
 function escCode(s) {
   if (!s) return '';
   let t = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -36,34 +36,68 @@ function escCode(s) {
   let result = '';
   let codeBlock = '';
   let inCode = false;
+  let tableRows = [];
+  let inTable = false;
+
+  function flushCode() {
+    if (inCode && codeBlock) {
+      result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>\n';
+      inCode = false;
+      codeBlock = '';
+    }
+  }
+
+  function flushTable() {
+    if (inTable && tableRows.length > 0) {
+      result += '<table class="pyq-table"><thead><tr>';
+      const headers = tableRows[0];
+      headers.forEach(h => { result += '<th>' + h.trim() + '</th>'; });
+      result += '</tr></thead><tbody>';
+      for (let r = 1; r < tableRows.length; r++) {
+        result += '<tr>';
+        tableRows[r].forEach(c => { result += '<td>' + c.trim() + '</td>'; });
+        result += '</tr>';
+      }
+      result += '</tbody></table>\n';
+      inTable = false;
+      tableRows = [];
+    }
+  }
 
   for (const line of lines) {
     const trimmed = line.trim();
-    // Detect code lines: Python syntax, SQL commands, indented lines, assignments
+
+    // Detect pipe-separated table rows (at least 2 pipes)
+    if (trimmed.includes(' | ') && (trimmed.match(/\|/g) || []).length >= 2) {
+      flushCode();
+      inTable = true;
+      tableRows.push(trimmed.split('|').map(c => c.trim()));
+      continue;
+    }
+
+    // If we were in a table but this line isn't a table row, flush
+    if (inTable) flushTable();
+
+    // Detect code lines
     const isCodeLine =
-      /^(def |class |print\(|import |from |for |if |elif |else:|while |try:|except|finally:|return |assert |raise |with |global |lambda |pass|break|continue)/i.test(trimmed) ||
-      /^(SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP |SHOW |DESC |ORDER |GROUP |HAVING |WHERE )/i.test(trimmed) ||
-      /^[A-Za-z_]\w*\s*[=\[({]/.test(trimmed) ||  // assignments: X=20, L=[1,2]
-      /^[A-Za-z_]\w*\.\w+\(/.test(trimmed) ||  // method calls: F.close(), pickle.dump()
-      /^#/.test(trimmed) ||  // comments
-      /^&gt;&gt;&gt;/.test(trimmed) ||  // Python shell prompts
+      /^(def |class |print\(|import |from |for |if |elif |else:|while |try:|except|finally:|return |assert |raise |with |global |lambda |pass$|break$|continue$)/i.test(trimmed) ||
+      /^(SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP |SHOW |DESC |ORDER BY|GROUP BY|HAVING )/i.test(trimmed) ||
+      /^[A-Za-z_]\w*\s*[=\[({]/.test(trimmed) ||
+      /^[A-Za-z_]\w*\.\w+\(/.test(trimmed) ||
+      /^#/.test(trimmed) ||
+      /^&gt;&gt;&gt;/.test(trimmed) ||
       (inCode && (line.startsWith('  ') || line.startsWith('\t') || trimmed === '' || /^\)/.test(trimmed)));
 
     if (isCodeLine) {
       if (!inCode) { inCode = true; codeBlock = ''; }
       codeBlock += line + '\n';
     } else {
-      if (inCode) {
-        result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>\n';
-        inCode = false;
-        codeBlock = '';
-      }
+      flushCode();
       result += line + '\n';
     }
   }
-  if (inCode) {
-    result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>';
-  }
+  flushCode();
+  flushTable();
   return result.trimEnd();
 }
 
@@ -436,6 +470,11 @@ ${codeStyle}
 .qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7}
 .qb-answer.hidden{display:none}
 pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
+table.pyq-table{border-collapse:collapse;width:100%;margin:.5rem 0;font-size:.8rem;border:1px solid var(--sand-200);border-radius:8px;overflow:hidden}
+table.pyq-table th{background:var(--subject-color);color:#fff;padding:.35rem .6rem;text-align:left;font-weight:700;font-family:'Courier New',monospace;font-size:.72rem;white-space:nowrap}
+table.pyq-table td{padding:.3rem .6rem;border-bottom:1px solid var(--sand-100);font-family:'Courier New',monospace;font-size:.76rem;color:var(--ink);white-space:nowrap}
+table.pyq-table tr:nth-child(even) td{background:var(--sand-50)}
+table.pyq-table tr:hover td{background:var(--subject-bg)}
 .qb-answer pre.pyq-code{background:#064e3b;color:#d1fae5;border:1px solid #059669}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
@@ -574,6 +613,11 @@ ${codeStyle}
 .qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
 .qb-answer.hidden{display:none}
 pre.pyq-code{background:#1e293b;color:#e2e8f0;padding:.75rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;overflow-x:auto;margin:.5rem 0;white-space:pre}
+table.pyq-table{border-collapse:collapse;width:100%;margin:.5rem 0;font-size:.8rem;border:1px solid var(--sand-200);border-radius:8px;overflow:hidden}
+table.pyq-table th{background:var(--subject-color);color:#fff;padding:.35rem .6rem;text-align:left;font-weight:700;font-family:'Courier New',monospace;font-size:.72rem;white-space:nowrap}
+table.pyq-table td{padding:.3rem .6rem;border-bottom:1px solid var(--sand-100);font-family:'Courier New',monospace;font-size:.76rem;color:var(--ink);white-space:nowrap}
+table.pyq-table tr:nth-child(even) td{background:var(--sand-50)}
+table.pyq-table tr:hover td{background:var(--subject-bg)}
 @media(max-width:640px){
   .qb-card{padding:.85rem;border-radius:10px;margin-bottom:.6rem}
   .qb-question{font-size:.82rem}
