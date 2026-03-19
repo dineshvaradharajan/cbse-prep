@@ -81,6 +81,71 @@ table.result-table tr:nth-child(even) td{background:var(--sand-50)}
 .history-item .q{flex:1;font-family:'Courier New',monospace;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .history-item .t{color:var(--ink-3);flex-shrink:0}
 .history-item.err .q{color:#dc2626}
+
+/* ── Tab Switcher ── */
+.mode-tabs{display:flex;gap:0;margin-top:1.5rem;border-bottom:2px solid var(--sand-200)}
+.mode-tab{padding:.6rem 1.5rem;font-size:.85rem;font-weight:700;font-family:'Lato',sans-serif;color:var(--ink-3);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;transition:all .15s}
+.mode-tab:hover{color:var(--ink)}
+.mode-tab.active{color:var(--subject-color);border-bottom-color:var(--subject-color)}
+
+/* ── Practice Mode ── */
+.practice-container{display:none;margin-top:1.5rem}
+.practice-container.visible{display:block}
+.playground.hidden-mode{display:none}
+
+.practice-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-bottom:1.25rem}
+.practice-header h2{font-family:'Newsreader',serif;font-size:1.25rem;color:var(--ink)}
+.practice-stats{display:flex;gap:1rem;font-size:.8rem;font-weight:700}
+.stat-box{padding:.3rem .75rem;border-radius:6px;font-family:'Lato',sans-serif}
+.stat-box.solved{background:#f0fdf4;color:#166534;border:1px solid #86efac}
+.stat-box.remaining{background:#fef3c7;color:#92400e;border:1px solid #fcd34d}
+.practice-filters{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.filter-btn{padding:.35rem .85rem;font-size:.72rem;font-weight:700;border-radius:20px;border:1px solid var(--sand-300);background:#fff;color:var(--ink-2);cursor:pointer;transition:all .15s}
+.filter-btn:hover{border-color:var(--subject-color);color:var(--subject-color)}
+.filter-btn.active{background:var(--subject-color);color:#fff;border-color:var(--subject-color)}
+
+.question-list{display:flex;flex-direction:column;gap:1rem}
+.question-card{background:#fff;border:1px solid var(--sand-200);border-radius:12px;overflow:hidden;transition:box-shadow .15s}
+.question-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.question-card.solved-card{border-color:#86efac}
+.qc-header{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--sand-50);border-bottom:1px solid var(--sand-200);cursor:pointer}
+.qc-number{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:.75rem;font-weight:800;background:var(--sand-200);color:var(--ink-2);flex-shrink:0}
+.solved-card .qc-number{background:var(--subject-color);color:#fff}
+.qc-title{flex:1;font-size:.85rem;font-weight:600;color:var(--ink);line-height:1.4}
+.qc-badges{display:flex;gap:.4rem;flex-shrink:0}
+.qc-badge{font-size:.62rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;text-transform:uppercase;letter-spacing:.03em}
+.qc-badge.easy{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.qc-badge.medium{background:#fef3c7;color:#92400e;border:1px solid #fde68a}
+.qc-badge.hard{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+.qc-badge.marks{background:var(--subject-bg);color:var(--subject-text);border:1px solid var(--subject-border)}
+.qc-badge.tables{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.qc-check-icon{font-size:1rem;color:var(--subject-color);flex-shrink:0;display:none}
+.solved-card .qc-check-icon{display:inline}
+
+.qc-body{display:none;padding:1rem;border-top:1px solid var(--sand-100)}
+.qc-body.open{display:block}
+.qc-editor-label{font-size:.72rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.4rem}
+.qc-editor{width:100%;min-height:100px;padding:.75rem;font-family:'Courier New',Courier,monospace;font-size:.82rem;line-height:1.55;border:1px solid var(--sand-200);border-radius:8px;outline:none;resize:vertical;color:var(--ink);background:#fff;tab-size:2}
+.qc-editor:focus{border-color:var(--subject-color);box-shadow:0 0 0 2px rgba(5,150,105,.12)}
+.qc-actions{display:flex;gap:.5rem;margin-top:.75rem;align-items:center}
+.qc-actions .btn{font-size:.75rem}
+.btn-check{background:var(--subject-color);color:#fff}
+.btn-check:hover{background:#047857}
+.btn-hint{background:#eff6ff;color:#2563eb;border:1px solid #93c5fd}
+.btn-hint:hover{background:#dbeafe}
+
+.qc-feedback{margin-top:.75rem;padding:.75rem 1rem;border-radius:8px;font-size:.82rem;line-height:1.5;display:none}
+.qc-feedback.show{display:block}
+.qc-feedback.correct{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.qc-feedback.incorrect{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.qc-feedback .fb-title{font-weight:700;margin-bottom:.35rem;font-size:.85rem}
+.qc-expected-wrap{margin-top:.5rem}
+.qc-expected-label{font-size:.7rem;font-weight:700;color:#991b1b;text-transform:uppercase;margin-bottom:.3rem}
+.qc-expected-table{border-collapse:collapse;width:100%;font-size:.75rem;margin-top:.3rem}
+.qc-expected-table th{background:#991b1b;color:#fff;padding:.3rem .5rem;text-align:left;font-family:'Courier New',monospace;font-size:.68rem;text-transform:uppercase}
+.qc-expected-table td{padding:.25rem .5rem;border-bottom:1px solid #fecaca;font-family:'Courier New',monospace;color:#991b1b;font-size:.72rem}
+.qc-hint-box{margin-top:.6rem;padding:.6rem .8rem;background:#eff6ff;border:1px solid #93c5fd;border-radius:6px;font-size:.78rem;color:#1e40af;font-family:'Courier New',monospace;display:none}
+.qc-hint-box.show{display:block}
 </style>
 </head>
 <body>
@@ -93,7 +158,12 @@ table.result-table tr:nth-child(even) td{background:var(--sand-50)}
   <p class="sub">Write and run SQL queries right in your browser — pre-loaded with CBSE exam-style tables. No setup needed.</p>
 </div>
 
-<div class="playground">
+<div class="mode-tabs">
+  <button class="mode-tab active" onclick="switchMode('free')">Free Mode</button>
+  <button class="mode-tab" onclick="switchMode('practice')">Practice Mode</button>
+</div>
+
+<div class="playground" id="freeMode">
   <!-- Sidebar: Tables & Sample Queries -->
   <div class="sidebar">
     <h3>Tables</h3>
@@ -127,6 +197,23 @@ table.result-table tr:nth-child(even) td{background:var(--sand-50)}
       </div>
     </div>
   </div>
+</div>
+
+<div class="practice-container" id="practiceMode">
+  <div class="practice-header">
+    <h2>Practice Questions</h2>
+    <div class="practice-stats">
+      <span class="stat-box solved" id="solvedCount">0 / 15 Solved</span>
+    </div>
+  </div>
+  <div class="practice-filters" id="practiceFilters">
+    <button class="filter-btn active" onclick="filterQuestions('all')">All (15)</button>
+    <button class="filter-btn" onclick="filterQuestions('easy')">Easy (5)</button>
+    <button class="filter-btn" onclick="filterQuestions('medium')">Medium (5)</button>
+    <button class="filter-btn" onclick="filterQuestions('hard')">Hard (5)</button>
+    <button class="filter-btn" onclick="filterQuestions('unsolved')">Unsolved</button>
+  </div>
+  <div class="question-list" id="questionList"></div>
 </div>
 
 </div>
@@ -411,6 +498,321 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// ── Practice Mode ──
+const PRACTICE_QUESTIONS = [
+  {
+    id: 1, difficulty: 'easy', marks: 1, tables: ['STUDENT'],
+    question: 'Display all records from the STUDENT table.',
+    expectedSQL: 'SELECT * FROM STUDENT'
+  },
+  {
+    id: 2, difficulty: 'easy', marks: 2, tables: ['STUDENT'],
+    question: 'Display NAME and MARKS from STUDENT where MARKS > 85.',
+    expectedSQL: 'SELECT NAME, MARKS FROM STUDENT WHERE MARKS > 85'
+  },
+  {
+    id: 3, difficulty: 'easy', marks: 1, tables: ['STUDENT'],
+    question: 'Display DISTINCT CITY values from the STUDENT table.',
+    expectedSQL: 'SELECT DISTINCT CITY FROM STUDENT'
+  },
+  {
+    id: 4, difficulty: 'easy', marks: 1, tables: ['STUDENT'],
+    question: 'Count the total number of students.',
+    expectedSQL: 'SELECT COUNT(*) FROM STUDENT'
+  },
+  {
+    id: 5, difficulty: 'easy', marks: 2, tables: ['PRODUCT'],
+    question: "Display PNAME and PRICE from PRODUCT where CATEGORY is 'Electronics'.",
+    expectedSQL: "SELECT PNAME, PRICE FROM PRODUCT WHERE CATEGORY = 'Electronics'"
+  },
+  {
+    id: 6, difficulty: 'medium', marks: 2, tables: ['STUDENT'],
+    question: 'Display NAME and MARKS from STUDENT sorted by MARKS in descending order.',
+    expectedSQL: 'SELECT NAME, MARKS FROM STUDENT ORDER BY MARKS DESC'
+  },
+  {
+    id: 7, difficulty: 'medium', marks: 2, tables: ['STUDENT'],
+    question: 'Count the number of students in each CITY.',
+    expectedSQL: 'SELECT CITY, COUNT(*) FROM STUDENT GROUP BY CITY'
+  },
+  {
+    id: 8, difficulty: 'medium', marks: 3, tables: ['EMPLOYEE'],
+    question: 'Display DEPARTMENT and the average SALARY from EMPLOYEE, grouped by DEPARTMENT.',
+    expectedSQL: 'SELECT DEPARTMENT, AVG(SALARY) FROM EMPLOYEE GROUP BY DEPARTMENT'
+  },
+  {
+    id: 9, difficulty: 'medium', marks: 2, tables: ['STUDENT'],
+    question: "Display names of students whose name starts with 'A'.",
+    expectedSQL: "SELECT NAME FROM STUDENT WHERE NAME LIKE 'A%'"
+  },
+  {
+    id: 10, difficulty: 'medium', marks: 3, tables: ['PRODUCT'],
+    question: 'Display CATEGORY and total PRICE from PRODUCT grouped by CATEGORY, showing only groups where total exceeds 5000.',
+    expectedSQL: 'SELECT CATEGORY, SUM(PRICE) FROM PRODUCT GROUP BY CATEGORY HAVING SUM(PRICE) > 5000'
+  },
+  {
+    id: 11, difficulty: 'hard', marks: 3, tables: ['ORDERS', 'PRODUCT'],
+    question: 'Display PNAME, CUST_NAME, and QUANTITY by joining ORDERS with PRODUCT.',
+    expectedSQL: 'SELECT P.PNAME, O.CUST_NAME, O.QUANTITY FROM ORDERS O, PRODUCT P WHERE O.PID = P.PID'
+  },
+  {
+    id: 12, difficulty: 'hard', marks: 3, tables: ['STUDENT'],
+    question: 'Display CITY and the maximum MARKS from STUDENT grouped by CITY, showing only cities where the maximum marks exceed 80.',
+    expectedSQL: 'SELECT CITY, MAX(MARKS) FROM STUDENT GROUP BY CITY HAVING MAX(MARKS) > 80'
+  },
+  {
+    id: 13, difficulty: 'hard', marks: 4, tables: ['EMPLOYEE'],
+    question: 'Display names of employees who earn more than the average salary (use a subquery).',
+    expectedSQL: 'SELECT ENAME FROM EMPLOYEE WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYEE)'
+  },
+  {
+    id: 14, difficulty: 'hard', marks: 4, tables: ['STUDENT'],
+    question: 'Update the MARKS of the student with RNO = 5 to 75, then display the updated record.',
+    expectedSQL: 'UPDATE STUDENT SET MARKS = 75 WHERE RNO = 5; SELECT * FROM STUDENT WHERE RNO = 5'
+  },
+  {
+    id: 15, difficulty: 'hard', marks: 3, tables: ['ORDERS'],
+    question: 'Display CUST_NAME and total QUANTITY ordered, grouped by CUST_NAME, sorted by total quantity in descending order.',
+    expectedSQL: 'SELECT CUST_NAME, SUM(QUANTITY) FROM ORDERS GROUP BY CUST_NAME ORDER BY SUM(QUANTITY) DESC'
+  }
+];
+
+const solvedSet = new Set();
+let currentFilter = 'all';
+
+function switchMode(mode) {
+  const tabs = document.querySelectorAll('.mode-tab');
+  tabs[0].classList.toggle('active', mode === 'free');
+  tabs[1].classList.toggle('active', mode === 'practice');
+
+  const freeEl = document.getElementById('freeMode');
+  const practiceEl = document.getElementById('practiceMode');
+
+  if (mode === 'free') {
+    freeEl.classList.remove('hidden-mode');
+    practiceEl.classList.remove('visible');
+  } else {
+    freeEl.classList.add('hidden-mode');
+    practiceEl.classList.add('visible');
+    renderQuestions();
+  }
+}
+
+function filterQuestions(filter) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase().startsWith(filter === 'unsolved' ? 'unsolved' : filter));
+  });
+  renderQuestions();
+}
+
+function renderQuestions() {
+  const list = document.getElementById('questionList');
+  const filtered = PRACTICE_QUESTIONS.filter(q => {
+    if (currentFilter === 'all') return true;
+    if (currentFilter === 'unsolved') return !solvedSet.has(q.id);
+    return q.difficulty === currentFilter;
+  });
+
+  list.innerHTML = filtered.map(q => {
+    const solved = solvedSet.has(q.id);
+    return `<div class="question-card${solved ? ' solved-card' : ''}" id="qcard-${q.id}">
+      <div class="qc-header" onclick="toggleQuestion(${q.id})">
+        <span class="qc-number">${q.id}</span>
+        <span class="qc-title">${escapeHtml(q.question)}</span>
+        <div class="qc-badges">
+          <span class="qc-badge ${q.difficulty}">${q.difficulty}</span>
+          <span class="qc-badge marks">${q.marks} mark${q.marks > 1 ? 's' : ''}</span>
+          <span class="qc-badge tables">${q.tables.join(', ')}</span>
+        </div>
+        <span class="qc-check-icon">&#10003;</span>
+      </div>
+      <div class="qc-body" id="qbody-${q.id}">
+        <div class="qc-editor-label">Your Query</div>
+        <textarea class="qc-editor" id="qeditor-${q.id}" placeholder="-- Write your SQL query here" spellcheck="false">${getStoredAnswer(q.id)}</textarea>
+        <div class="qc-actions">
+          <button class="btn btn-check" onclick="checkAnswer(${q.id})">Check Answer</button>
+          <button class="btn btn-hint" onclick="showHint(${q.id})">Show Hint</button>
+          <button class="btn btn-clear" onclick="document.getElementById('qeditor-${q.id}').value='';document.getElementById('qeditor-${q.id}').focus()">Clear</button>
+        </div>
+        <div class="qc-hint-box" id="qhint-${q.id}">Tables: ${q.tables.join(', ')}<br>Expected columns in output: check the question carefully.</div>
+        <div class="qc-feedback" id="qfeedback-${q.id}"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  updateStats();
+}
+
+const storedAnswers = {};
+function getStoredAnswer(id) {
+  return storedAnswers[id] || '';
+}
+
+function toggleQuestion(id) {
+  const body = document.getElementById('qbody-' + id);
+  body.classList.toggle('open');
+}
+
+function showHint(id) {
+  const hint = document.getElementById('qhint-' + id);
+  hint.classList.toggle('show');
+}
+
+function updateStats() {
+  const el = document.getElementById('solvedCount');
+  el.textContent = solvedSet.size + ' / 15 Solved';
+}
+
+function runSQLSilent(sql) {
+  // Run SQL and return the final SELECT result's values (as sorted string arrays for comparison).
+  // For multi-statement queries, we need to handle UPDATE + SELECT combos.
+  const statements = sql.split(';').map(s => s.trim()).filter(s => s.length > 0);
+  let lastResult = null;
+
+  for (const stmt of statements) {
+    const isSelect = /^\s*(SELECT|PRAGMA|DESCRIBE|SHOW|EXPLAIN)/i.test(stmt);
+    if (isSelect) {
+      const results = db.exec(stmt);
+      if (results.length > 0) {
+        lastResult = results[0];
+      }
+    } else {
+      db.run(stmt);
+    }
+  }
+  return lastResult;
+}
+
+function normalizeResultValues(result) {
+  if (!result || !result.values) return [];
+  // Convert each row to a string for comparison — sort rows for order-insensitive comparison
+  return result.values.map(row => row.map(v => v === null ? 'NULL' : String(v)));
+}
+
+function arraysMatch(a, b, orderMatters) {
+  if (a.length !== b.length) return false;
+  const stringify = rows => rows.map(r => r.join('|||'));
+  if (orderMatters) {
+    const sa = stringify(a);
+    const sb = stringify(b);
+    return sa.every((v, i) => v === sb[i]);
+  } else {
+    const sa = stringify(a).sort();
+    const sb = stringify(b).sort();
+    return sa.every((v, i) => v === sb[i]);
+  }
+}
+
+function checkAnswer(id) {
+  const q = PRACTICE_QUESTIONS.find(p => p.id === id);
+  const editorEl = document.getElementById('qeditor-' + id);
+  const feedbackEl = document.getElementById('qfeedback-' + id);
+  const userSQL = editorEl.value.trim();
+
+  storedAnswers[id] = userSQL;
+
+  if (!userSQL) {
+    feedbackEl.className = 'qc-feedback show incorrect';
+    feedbackEl.innerHTML = '<div class="fb-title">Please write a query first.</div>';
+    return;
+  }
+
+  // Before running, reset DB to ensure clean state for comparison
+  // Save current db state, reset, run expected, then run user query on clean state too
+  // Actually, we need both to run on the same clean state. Let's use savepoints.
+  try {
+    // Snapshot: reset tables for a fair comparison
+    // Run expected query on clean state
+    TABLES.forEach(t => { try { db.run('DROP TABLE IF EXISTS ' + t.name); } catch(e){} });
+    loadTables();
+
+    let expectedResult, userResult;
+    let expectedError = null, userError = null;
+
+    try {
+      expectedResult = runSQLSilent(q.expectedSQL);
+    } catch (e) {
+      expectedError = e.message;
+    }
+
+    // Reset again for user query (in case expected had side effects like UPDATE)
+    TABLES.forEach(t => { try { db.run('DROP TABLE IF EXISTS ' + t.name); } catch(e){} });
+    loadTables();
+
+    try {
+      userResult = runSQLSilent(userSQL);
+    } catch (e) {
+      userError = e.message;
+    }
+
+    if (userError) {
+      feedbackEl.className = 'qc-feedback show incorrect';
+      feedbackEl.innerHTML = `<div class="fb-title">SQL Error</div><div style="font-family:'Courier New',monospace;margin-top:.3rem">${escapeHtml(userError)}</div>`;
+      return;
+    }
+
+    const expectedVals = normalizeResultValues(expectedResult);
+    const userVals = normalizeResultValues(userResult);
+
+    // Check if this query involves ORDER BY — if so, order matters
+    const orderMatters = /ORDER\s+BY/i.test(q.expectedSQL);
+    const match = arraysMatch(userVals, expectedVals, orderMatters);
+
+    if (match) {
+      solvedSet.add(id);
+      feedbackEl.className = 'qc-feedback show correct';
+      feedbackEl.innerHTML = `<div class="fb-title">Correct!</div><div>Your query produced the expected output. Well done!</div>`;
+      // Update card styling
+      const card = document.getElementById('qcard-' + id);
+      if (card) card.classList.add('solved-card');
+      updateStats();
+    } else {
+      feedbackEl.className = 'qc-feedback show incorrect';
+      let html = '<div class="fb-title">Incorrect</div>';
+      html += '<div>Your query output does not match the expected result.</div>';
+
+      if (expectedResult && expectedResult.values.length > 0) {
+        html += '<div class="qc-expected-wrap"><div class="qc-expected-label">Expected Output</div>';
+        html += '<table class="qc-expected-table"><thead><tr>';
+        expectedResult.columns.forEach(c => { html += '<th>' + escapeHtml(c) + '</th>'; });
+        html += '</tr></thead><tbody>';
+        expectedResult.values.forEach(row => {
+          html += '<tr>';
+          row.forEach(v => { html += '<td>' + (v === null ? 'NULL' : escapeHtml(String(v))) + '</td>'; });
+          html += '</tr>';
+        });
+        html += '</tbody></table></div>';
+      }
+
+      if (userResult && userResult.values.length > 0) {
+        html += '<div class="qc-expected-wrap" style="margin-top:.75rem"><div class="qc-expected-label" style="color:var(--ink-2)">Your Output</div>';
+        html += '<table class="qc-expected-table" style="color:var(--ink)"><thead><tr>';
+        userResult.columns.forEach(c => { html += '<th style="background:var(--ink-2)">' + escapeHtml(c) + '</th>'; });
+        html += '</tr></thead><tbody>';
+        userResult.values.forEach(row => {
+          html += '<tr>';
+          row.forEach(v => { html += '<td style="color:var(--ink);border-color:var(--sand-200)">' + (v === null ? 'NULL' : escapeHtml(String(v))) + '</td>'; });
+          html += '</tr>';
+        });
+        html += '</tbody></table></div>';
+      } else if (!userResult) {
+        html += '<div style="margin-top:.5rem;font-style:italic">Your query returned no rows.</div>';
+      }
+
+      feedbackEl.innerHTML = html;
+    }
+  } catch (e) {
+    feedbackEl.className = 'qc-feedback show incorrect';
+    feedbackEl.innerHTML = `<div class="fb-title">Error</div><div style="font-family:'Courier New',monospace">${escapeHtml(e.message)}</div>`;
+    // Ensure tables are restored
+    try {
+      TABLES.forEach(t => { try { db.run('DROP TABLE IF EXISTS ' + t.name); } catch(e){} });
+      loadTables();
+    } catch(e2){}
+  }
+}
 
 // ── Boot ──
 initDB().catch(err => {

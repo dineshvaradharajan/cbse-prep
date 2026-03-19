@@ -9,6 +9,8 @@
 <meta name="description" content="33 most important Python & SQL programs for CBSE Class 12 Computer Science board exam — with code, output, and examiner tips.">
 <meta name="author" content="Dinesh Varadharajan">
 <title>Important Programs Bank | CBSE Class 12 CS</title>
+<script src="https://skulpt.org/js/skulpt.min.js"></script>
+<script src="https://skulpt.org/js/skulpt-stdlib.js"></script>
 <style>
 :root{--subject-color:#059669;--subject-bg:#f0fdf4;--subject-border:#86efac;--subject-text:#065f46}
 .cat-section{margin-bottom:2rem}
@@ -51,10 +53,54 @@ pre.code-block .copy-btn:hover{background:#475569;color:#fff}
 .nav-bar a{font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;padding:.3rem .7rem;text-decoration:none;transition:all .15s}
 .nav-bar a:hover{background:var(--subject-color);color:#fff}
 
+/* Try It Yourself editor and runner */
+.try-it-section{margin-top:.75rem;border:1px solid #334155;border-radius:10px;overflow:hidden;background:#1e293b}
+.try-it-header{display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:#0f172a;border-bottom:1px solid #334155}
+.try-it-label{font-size:.7rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.04em}
+.try-it-actions{display:flex;gap:.4rem;align-items:center}
+.editor-area{width:100%;min-height:160px;padding:.75rem;background:#1e293b;color:#e2e8f0;border:none;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.6;resize:vertical;outline:none;tab-size:4}
+.editor-area:focus{box-shadow:inset 0 0 0 1px #3b82f6}
+.btn-run{padding:.3rem .75rem;font-size:.68rem;font-weight:700;color:#fff;background:#059669;border:1px solid #34d399;border-radius:6px;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:.3rem}
+.btn-run:hover{background:#047857;transform:translateY(-1px)}
+.btn-run:active{transform:translateY(0)}
+.btn-run:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-clear{padding:.3rem .6rem;font-size:.65rem;font-weight:700;color:#94a3b8;background:#334155;border:1px solid #475569;border-radius:6px;cursor:pointer;transition:all .15s}
+.btn-clear:hover{background:#475569;color:#fff}
+.btn-peek{padding:.3rem .6rem;font-size:.65rem;font-weight:700;color:#fbbf24;background:transparent;border:1px solid #fbbf24;border-radius:6px;cursor:pointer;transition:all .15s}
+.btn-peek:hover{background:#fbbf24;color:#0f172a}
+
+.output-panel{border-top:1px solid #334155}
+.output-panel-header{display:flex;align-items:center;justify-content:space-between;padding:.4rem .75rem;background:#0f172a}
+.output-panel-label{font-size:.65rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.04em}
+.output-content{padding:.6rem .75rem;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.5;color:#a7f3d0;min-height:2rem;white-space:pre-wrap;word-break:break-word}
+.output-content.has-error{color:#fca5a5}
+
+.compare-panel{display:flex;gap:0;border-top:1px solid #334155}
+.compare-col{flex:1;padding:.5rem .75rem}
+.compare-col+.compare-col{border-left:1px solid #334155}
+.compare-col-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.3rem}
+.compare-col-label.yours{color:#60a5fa}
+.compare-col-label.ref{color:#a78bfa}
+.compare-col pre{font-family:'Courier New',monospace;font-size:.75rem;line-height:1.5;white-space:pre-wrap;word-break:break-word;margin:0}
+.compare-col pre.match{color:#a7f3d0}
+.compare-col pre.mismatch{color:#fca5a5}
+
+.no-run-note{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;background:#1e1b33;border:1px solid #6366f1;border-radius:8px;margin-top:.5rem;font-size:.75rem;color:#c4b5fd;line-height:1.4}
+.no-run-note .note-icon{font-size:1rem;flex-shrink:0}
+
+.btn-group{display:flex;gap:.35rem;margin-top:.5rem;flex-wrap:wrap}
+.toggle-code{margin-top:0}
+.btn-try{display:inline-block;padding:.25rem .7rem;font-size:.7rem;font-weight:700;color:#fff;background:#059669;border:1px solid #34d399;border-radius:999px;cursor:pointer;transition:all .15s}
+.btn-try:hover{background:#047857}
+.btn-try:disabled{opacity:.45;cursor:not-allowed;background:#6b7280;border-color:#9ca3af;color:#d1d5db}
+
 @media(max-width:640px){
   .prog-card{padding:.85rem;border-radius:10px}
   pre.code-block{font-size:.72rem;padding:.75rem}
   .prog-header{flex-direction:column;gap:.35rem}
+  .compare-panel{flex-direction:column}
+  .compare-col+.compare-col{border-left:none;border-top:1px solid #334155}
+  .editor-area{min-height:120px;font-size:.72rem}
 }
 </style>
 </head>
@@ -78,11 +124,25 @@ pre.code-block .copy-btn:hover{background:#475569;color:#fff}
 <script>
 const ICONS = {'File Handling':'📄','Binary File':'💾','CSV File':'📊','Stack':'📚','Python Functions':'🐍','SQL':'🗃️'};
 
+/* Determine if a category contains programs that cannot run in the browser */
+function isCategoryRunnable(catName) {
+  const noRun = ['file', 'csv', 'binary', 'pickle', 'sql'];
+  const lower = catName.toLowerCase();
+  return !noRun.some(kw => lower.includes(kw));
+}
+
+/* Build a skeleton comment for the Try It Yourself editor */
+function buildSkeleton(prog) {
+  const lines = ['# Write your code here'];
+  if (prog.title) lines.push('# Task: ' + prog.title);
+  lines.push('');
+  return lines.join('\n');
+}
+
 fetch('../data/cs/programs-bank.json')
   .then(r => r.json())
   .then(data => render(data))
   .catch(() => {
-    // Fallback: try loading from script tag
     const x = new XMLHttpRequest();
     x.open('GET', '../data/cs/programs-bank.json', true);
     x.onload = function() { render(JSON.parse(x.responseText)); };
@@ -100,6 +160,7 @@ function render(data) {
   data.categories.forEach((cat, ci) => {
     const icon = ICONS[cat.name] || '💻';
     const slug = 'cat-' + ci;
+    const runnable = isCategoryRunnable(cat.name);
 
     nav.innerHTML += `<a href="#${slug}">${icon} ${cat.name} (${cat.programs.length})</a>`;
 
@@ -115,6 +176,10 @@ function render(data) {
     cat.programs.forEach((prog, pi) => {
       const freqClass = prog.frequency === 'Very High' ? 'badge-freq' : 'badge-freq-med';
       const codeId = `code-${ci}-${pi}`;
+      const tryId = `try-${ci}-${pi}`;
+      const editorId = `editor-${ci}-${pi}`;
+      const outputId = `output-${ci}-${pi}`;
+      const compareId = `compare-${ci}-${pi}`;
 
       html += `<div class="prog-card">
         <div class="prog-header">
@@ -125,10 +190,20 @@ function render(data) {
           </div>
         </div>
         <div class="prog-desc">${escHtml(prog.description)}</div>
-        <button class="toggle-code" onclick="document.getElementById('${codeId}').classList.toggle('collapsed');this.textContent=this.textContent.includes('Show')?'Hide Code':'Show Code'">Show Code</button>
-        <div class="code-section collapsed" id="${codeId}">
-          <pre class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button>${escHtml(prog.code)}</pre>`;
+        <div class="btn-group">
+          <button class="toggle-code" onclick="toggleSolution('${codeId}',this)">Show Solution</button>`;
 
+      if (runnable) {
+        html += `<button class="btn-try" onclick="toggleTryIt('${tryId}',this)">Try It Yourself</button>`;
+      } else {
+        html += `<button class="btn-try" disabled title="This program requires file I/O or modules not available in the browser">Try It Yourself</button>`;
+      }
+
+      html += `</div>`;
+
+      /* Solution section (collapsed by default) */
+      html += `<div class="code-section collapsed" id="${codeId}">
+          <pre class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button>${escHtml(prog.code)}</pre>`;
       if (prog.output) {
         html += `<div class="output-label">Expected Output:</div>
           <div class="output-block">${escHtml(prog.output)}</div>`;
@@ -136,11 +211,151 @@ function render(data) {
       if (prog.tips) {
         html += `<div class="tip-box"><strong>Examiner Tip:</strong> ${escHtml(prog.tips)}</div>`;
       }
-      html += `</div></div>`;
+      html += `</div>`;
+
+      /* Try It Yourself section */
+      if (runnable) {
+        const skeleton = buildSkeleton(prog);
+        const refOutput = prog.output || '';
+        html += `<div class="try-it-section collapsed" id="${tryId}" data-ref-output="${escHtml(refOutput)}" data-ref-code="${escHtml(prog.code)}">
+          <div class="try-it-header">
+            <span class="try-it-label">Code Editor</span>
+            <div class="try-it-actions">
+              <button class="btn-clear" onclick="clearEditor('${editorId}','${outputId}','${compareId}')">Clear</button>
+              <button class="btn-peek" onclick="toggleSolution('${codeId}',null)">Peek Solution</button>
+              <button class="btn-run" onclick="runEditorCode('${editorId}','${outputId}','${compareId}','${tryId}')">&#9654; Run Code</button>
+            </div>
+          </div>
+          <textarea class="editor-area" id="${editorId}" spellcheck="false">${escHtml(skeleton)}</textarea>
+          <div class="output-panel">
+            <div class="output-panel-header">
+              <span class="output-panel-label">Output</span>
+            </div>
+            <div class="output-content" id="${outputId}">Click "Run Code" to see output here.</div>
+          </div>
+          <div class="compare-panel collapsed" id="${compareId}">
+            <div class="compare-col">
+              <div class="compare-col-label yours">Your Output</div>
+              <pre class="compare-yours"></pre>
+            </div>
+            <div class="compare-col">
+              <div class="compare-col-label ref">Reference Output</div>
+              <pre class="compare-ref"></pre>
+            </div>
+          </div>
+        </div>`;
+      } else {
+        html += `<div class="no-run-note">
+          <span class="note-icon">&#9432;</span>
+          <span>File handling / CSV / Binary / SQL programs cannot run in the browser. Study the solution code instead.</span>
+        </div>`;
+      }
+
+      html += `</div>`;
     });
 
     html += `</div></div>`;
     container.innerHTML += html;
+  });
+}
+
+/* Toggle solution panel */
+function toggleSolution(codeId, btn) {
+  const el = document.getElementById(codeId);
+  el.classList.toggle('collapsed');
+  if (btn) {
+    btn.textContent = el.classList.contains('collapsed') ? 'Show Solution' : 'Hide Solution';
+  }
+}
+
+/* Toggle Try It Yourself panel */
+function toggleTryIt(tryId, btn) {
+  const el = document.getElementById(tryId);
+  el.classList.toggle('collapsed');
+  btn.textContent = el.classList.contains('collapsed') ? 'Try It Yourself' : 'Close Editor';
+}
+
+/* Clear editor and output */
+function clearEditor(editorId, outputId, compareId) {
+  document.getElementById(editorId).value = '# Write your code here\n';
+  const out = document.getElementById(outputId);
+  out.textContent = 'Click "Run Code" to see output here.';
+  out.classList.remove('has-error');
+  out.style.color = '';
+  document.getElementById(compareId).classList.add('collapsed');
+}
+
+/* Run Python code with Skulpt */
+function runPython(code, outputElementId) {
+  return new Promise(function(resolve) {
+    var output = document.getElementById(outputElementId);
+    output.textContent = '';
+    output.classList.remove('has-error');
+    output.style.color = '';
+
+    function outf(text) {
+      output.textContent += text;
+    }
+
+    function builtinRead(x) {
+      if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+        throw "File not found: '" + x + "'";
+      }
+      return Sk.builtinFiles["files"][x];
+    }
+
+    Sk.configure({
+      output: outf,
+      read: builtinRead,
+      __future__: Sk.python3,
+      execLimit: 5000
+    });
+
+    var myPromise = Sk.misceval.asyncToPromise(function() {
+      return Sk.importMainWithBody("<stdin>", false, code, true);
+    });
+
+    myPromise.then(function() {
+      if (output.textContent === '') {
+        output.textContent = '(No output)';
+      }
+      resolve(output.textContent);
+    }, function(e) {
+      output.textContent = 'Error: ' + e.toString();
+      output.classList.add('has-error');
+      output.style.color = '#fca5a5';
+      resolve(null);
+    });
+  });
+}
+
+/* Run code from editor and show comparison */
+function runEditorCode(editorId, outputId, compareId, tryId) {
+  var code = document.getElementById(editorId).value;
+  var trySection = document.getElementById(tryId);
+  var refOutput = trySection.getAttribute('data-ref-output');
+
+  runPython(code, outputId).then(function(userOutput) {
+    if (userOutput === null) return; // Error occurred
+
+    var comparePanel = document.getElementById(compareId);
+    comparePanel.classList.remove('collapsed');
+
+    var yoursEl = comparePanel.querySelector('.compare-yours');
+    var refEl = comparePanel.querySelector('.compare-ref');
+
+    yoursEl.textContent = userOutput;
+    refEl.textContent = refOutput || '(No reference output)';
+
+    /* Highlight match / mismatch */
+    var normalizeStr = function(s) { return s.replace(/\s+/g,' ').trim(); };
+    if (normalizeStr(userOutput) === normalizeStr(refOutput)) {
+      yoursEl.className = 'compare-yours match';
+      refEl.className = 'compare-ref match';
+    } else {
+      yoursEl.className = 'compare-yours mismatch';
+      refEl.className = 'compare-ref';
+    }
   });
 }
 
