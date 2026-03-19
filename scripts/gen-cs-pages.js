@@ -30,33 +30,51 @@ function esc(s) {
 function escCode(s) {
   if (!s) return '';
   let t = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  // Detect if text contains code (Python keywords, SQL keywords, indented lines)
-  const hasCode = /\b(def |print\(|import |for |while |if |try:|except|SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP |FROM |WHERE )/i.test(t);
-  if (hasCode && t.includes('\n')) {
-    // Split into prose and code parts — lines starting with keywords or indentation are code
-    const lines = t.split('\n');
-    let inCode = false;
-    let result = '';
-    let codeBlock = '';
-    for (const line of lines) {
-      const isCodeLine = /^(def |class |print|import |from |for |if |elif |else:|while |try:|except|finally:|return |    |SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP |SHOW |DESC )/i.test(line.trim()) ||
-        (inCode && (line.startsWith('  ') || line.startsWith('\t') || line.trim() === '' || /^[A-Z_]+=/.test(line.trim())));
-      if (isCodeLine) {
-        if (!inCode) { inCode = true; codeBlock = ''; }
-        codeBlock += line + '\n';
-      } else {
-        if (inCode) {
-          result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>';
-          inCode = false;
-          codeBlock = '';
-        }
-        result += line + '\n';
+  if (!t.includes('\n')) return t;
+
+  const lines = t.split('\n');
+  let result = '';
+  let codeBlock = '';
+  let inCode = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    // Detect code lines: Python syntax, SQL commands, indented lines, assignments
+    const isCodeLine =
+      /^(def |class |print\(|import |from |for |if |elif |else:|while |try:|except|finally:|return |assert |raise |with |global |lambda |pass|break|continue)/i.test(trimmed) ||
+      /^(SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP |SHOW |DESC |ORDER |GROUP |HAVING |WHERE )/i.test(trimmed) ||
+      /^[A-Za-z_]\w*\s*[=\[({]/.test(trimmed) ||  // assignments: X=20, L=[1,2]
+      /^[A-Za-z_]\w*\.\w+\(/.test(trimmed) ||  // method calls: F.close(), pickle.dump()
+      /^#/.test(trimmed) ||  // comments
+      /^&gt;&gt;&gt;/.test(trimmed) ||  // Python shell prompts
+      (inCode && (line.startsWith('  ') || line.startsWith('\t') || trimmed === '' || /^\)/.test(trimmed)));
+
+    if (isCodeLine) {
+      if (!inCode) { inCode = true; codeBlock = ''; }
+      codeBlock += line + '\n';
+    } else {
+      if (inCode) {
+        result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>\n';
+        inCode = false;
+        codeBlock = '';
       }
+      result += line + '\n';
     }
-    if (inCode) {
-      result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>';
-    }
-    return result.trimEnd();
+  }
+  if (inCode) {
+    result += '<pre class="pyq-code">' + codeBlock.trimEnd() + '</pre>';
+  }
+  return result.trimEnd();
+}
+
+/** Format options — wrap code-like options in <code> tags */
+function escOpt(s) {
+  if (!s) return '';
+  let t = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // If option looks like code (contains parentheses, brackets, operators, keywords)
+  if (/[\[\](){}=]|print|def |True|False|None|SELECT|INSERT|UPDATE|DELETE|Error|__/.test(t)) {
+    // Wrap the code part in <code> tag (after the option letter)
+    t = t.replace(/^(\([A-D]\)\s*)(.+)$/, '$1<code>$2</code>');
   }
   return t;
 }
@@ -505,7 +523,7 @@ function genPYQ() {
 <div class="qb-question">${escCode(q.question)}</div>`;
 
       if (q.options && q.options.length > 0) {
-        yearSections += `\n<div class="pyq-opts">${q.options.map(o => `<div class="pyq-opt">${esc(o)}</div>`).join('')}</div>`;
+        yearSections += `\n<div class="pyq-opts">${q.options.map(o => `<div class="pyq-opt">${escOpt(o)}</div>`).join('')}</div>`;
       }
 
       if (q.answer) {
@@ -545,9 +563,10 @@ ${codeStyle}
 .qb-type-badge.subj{color:#78716c;background:var(--sand-100);border:1px solid var(--sand-300)}
 .qb-type-badge.mcq{color:#059669;background:#f0fdf4;border:1px solid #86efac}
 .qb-type-badge.case{color:#ea580c;background:#fff7ed;border:1px solid #fdba74}
-.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65;white-space:pre-line}
-.pyq-opts{display:grid;grid-template-columns:1fr 1fr;gap:.3rem .75rem;margin-top:.5rem}
-.pyq-opt{font-size:.82rem;color:var(--ink-2);padding:.25rem 0}
+.qb-question{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.65}
+.pyq-opts{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .75rem;margin-top:.6rem;padding:.5rem .75rem;background:var(--sand-50);border-radius:8px;border:1px solid var(--sand-200)}
+.pyq-opt{font-size:.82rem;color:var(--ink-2);padding:.3rem .4rem;border-radius:4px}
+.pyq-opt code{font-family:'Courier New',monospace;font-size:.8rem;background:#fff;padding:.1rem .3rem;border-radius:3px;border:1px solid var(--sand-200);color:var(--ink)}
 .qb-ans-toggle{display:inline-block;margin-top:.6rem;padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:var(--subject-color);background:var(--subject-bg);border:1px solid var(--subject-border);border-radius:999px;cursor:pointer;transition:all .15s}
 .qb-ans-toggle:hover{background:var(--subject-color);color:#fff}
 .qb-answer{margin-top:.6rem;padding:.75rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:.84rem;color:#166534;line-height:1.7;white-space:pre-line}
